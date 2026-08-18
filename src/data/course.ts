@@ -353,6 +353,25 @@ if (levelTwo) {
   });
 }
 
+const levelThree = course.find((level) => level.number === 3);
+if (levelThree) {
+  levelThree.title = "Navegación y automatización";
+  levelThree.description = "Planifica, navega y usa las ayudas del C172 sin dejar de pilotar.";
+  levelThree.modules.push({
+    id: "navigation-foundations",
+    title: "Sección 8 · Navegación en el C172",
+    description: "Mapa, VOR, GPS G1000 y piloto automático, en una secuencia única.",
+    lessons: [
+      makeLesson("vfr-map-route", "Mapa VFR: dibuja tu ruta antes de salir", "Usa el EFB para entender origen, destino, rumbo y referencias antes de encender.", 3, "Sección 8 · Navegación en el C172", ["Identificar origen y destino", "Leer rumbo y distancia", "Elegir referencias visuales"], "el mapa VFR"),
+      makeLesson("nav-time-fuel", "Rumbo, tiempo y combustible restante", "Convierte una ruta corta en un plan que puedas seguir y comprobar en vuelo.", 3, "Sección 8 · Navegación en el C172", ["Estimar tiempo de ruta", "Calcular combustible con reserva", "Revisar el plan durante el vuelo"], "el cálculo VFR básico"),
+      makeLesson("vor-dme-basics", "VOR y DME desde cero", "Sintoniza una estación, interpreta radial, TO/FROM y distancia sin adivinar.", 3, "Sección 8 · Navegación en el C172", ["Entender qué mide un VOR", "Distinguir TO y FROM", "Usar DME como distancia"], "la navegación por radio"),
+      makeLesson("g1000-gps-route", "GPS G1000: seguir un plan de vuelo", "Comprueba que GPS guía el CDI y usa el plan sin apartar la vista del vuelo.", 3, "Sección 8 · Navegación en el C172", ["Ver el plan activo", "Confirmar fuente GPS", "Usar Direct-To sin perder orientación"], "el GPS del G1000"),
+      makeLesson("c172-autopilot-basics", "Piloto automático: HDG, ALT y NAV", "Aprende a activar cada modo, comprobar qué está haciendo y desconectarlo.", 3, "Sección 8 · Navegación en el C172", ["Preparar rumbo y altitud antes de activar", "Distinguir HDG de NAV", "Supervisar y desconectar"], "el piloto automático básico"),
+      makeLesson("navigation-consolidation", "Vuelo de navegación SKCL–SKUL", "Une planificación, mapa, GPS y piloto automático en una ruta corta colombiana.", 3, "Sección 8 · Navegación en el C172", ["Ejecutar una ruta VFR corta", "Cruzar datos entre mapa y cabina", "Mantener control manual como prioridad"], "un vuelo de navegación completo"),
+    ],
+  });
+}
+
 const levelZero = course.find((level) => level.number === 0);
 if (levelZero) {
   levelZero.modules.splice(
@@ -1801,6 +1820,15 @@ const c172GroundProcedures: Record<string, Partial<Lesson>> = {
   },
 };
 
+const navigationProcedures: Record<string, Partial<Lesson>> = {
+  "vfr-map-route": lessonPlan("El mapa no vuela el avión: te permite saber dónde estás, qué dirección general seguir y qué deberías ver fuera. Para una primera ruta usa SKCL–SKUL, una distancia corta por el valle.", "1. En el menú de Vuelo libre, abre el mapa/EFB y fija salida SKCL y destino SKUL.\n2. Selecciona reglas VFR, día y cielo despejado.\n3. Lee tres datos: rumbo general, distancia total y tiempo estimado.\n4. Elige dos referencias grandes visibles, por ejemplo el valle y una población o carretera. Escríbelas.\n5. Antes de iniciar el vuelo, explica con tus palabras hacia dónde saldrás y qué esperas ver primero.", "No sigas una línea de mapa con la cabeza abajo. No elijas una ruta larga ni nocturna para aprender. Si no puedes describir las dos referencias, reduce la ruta antes de despegar.", "Mapa antes de motor", "Sin encender el motor, prepara SKCL–SKUL y anota rumbo general, distancia y dos referencias. El resultado correcto es un plan sencillo que puedas contar sin mirar la pantalla.", ["Origen y destino definidos", "Ruta VFR seleccionada", "Rumbo y distancia leídos", "Dos referencias anotadas", "Clima diurno y despejado confirmado"]),
+  "nav-time-fuel": lessonPlan("Una navegación básica une cuatro datos: distancia, velocidad sobre el terreno, tiempo y combustible. No necesitas una calculadora complicada: tiempo aproximado = distancia ÷ velocidad. Después añades taxi y reserva a la fórmula de combustible que ya conoces.", "1. Del mapa toma la distancia de SKCL–SKUL.\n2. Para esta práctica usa 100 kt como velocidad sobre el terreno de planificación; tiempo aproximado en horas = distancia ÷ 100.\n3. Convierte el resultado a minutos y añade 15 min de taxi y 45 min de reserva.\n4. Multiplica el tiempo total por 8 gal/h.\n5. En vuelo, cada 15 minutos compara: combustible indicado, tiempo transcurrido y posición en mapa. Si uno no coincide, mantén el avión estable y revisa antes de seguir.", "No confundas la velocidad indicada con la velocidad sobre el terreno; el viento puede cambiar el tiempo real. No uses el combustible restante como una adivinanza: compáralo con tu hora de salida y tu plan.", "Plan de tres números", "Escribe distancia, tiempo previsto y combustible de salida para SKCL–SKUL. Durante un vuelo de práctica, pausa a los 15 minutos y di cuánto esperabas haber consumido.", ["Distancia anotada", "Velocidad de planificación elegida", "Tiempo estimado calculado", "Taxi y reserva agregados", "Chequeo de 15 minutos preparado"]),
+  "vor-dme-basics": lessonPlan("VOR es una estación de radio que te dice en qué radial estás respecto a ella. DME muestra distancia. TO significa que el curso seleccionado te lleva hacia la estación; FROM significa que te aleja. Primero aprende a leerlos: no conectes piloto automático todavía.", "1. En una zona segura, abre el mapa o la información de navegación y elige un VOR cercano que tenga frecuencia publicada.\n2. En el G1000, sintoniza esa frecuencia en NAV1 y pásala de espera a activa.\n3. Espera una identificación o señal válida; si no hay señal, no uses la aguja.\n4. Selecciona la fuente NAV1/VOR en el CDI, no GPS.\n5. Gira el curso hasta que aparezca TO. Mira la aguja: si está a la izquierda, el curso está a tu izquierda; gira suavemente hacia ella para interceptar.\n6. Lee DME como distancia a la estación. Vuelve a GPS al terminar la práctica.", "No intentes seguir un VOR sin señal ni memorices una frecuencia inventada. No confundas radial con rumbo: un radial es la línea que sale desde la estación. Si TO/FROM cambia de forma inesperada, nivela alas y vuelve a comprobar fuente, frecuencia y curso.", "Leer antes de perseguir", "Con el C172 estable, sintoniza un VOR válido y di: frecuencia, TO o FROM, dirección de aguja y distancia DME. Solo después haz una corrección de rumbo pequeña.", ["VOR elegido en mapa", "Frecuencia NAV1 activa", "Señal válida comprobada", "CDI en NAV1/VOR", "TO/FROM leído", "DME leído", "CDI devuelto a GPS"]),
+  "g1000-gps-route": lessonPlan("El GPS del G1000 puede mostrar un plan y guiar el CDI, pero no decide por ti. Antes de usarlo confirma tres cosas: el plan existe, el siguiente punto es el correcto y el CDI muestra GPS.", "1. Crea el plan SKCL–SKUL en el EFB antes de iniciar el vuelo.\n2. Ya estable en crucero, en el MFD pulsa FPL para ver el plan activo. Comprueba origen, destino y el siguiente punto.\n3. En el PFD localiza la fuente del CDI: debe decir GPS, no VOR. Si muestra VOR, usa la tecla CDI para alternar hasta GPS.\n4. Usa Direct-To solo si sabes a qué punto vas: pulsa la tecla con D→, escribe/elige SKUL y confirma.\n5. Mira el mapa como confirmación y vuelve la atención afuera. El GPS es respaldo de posición, no una razón para dejar de vigilar altura, terreno o combustible.", "No pulses NAV del piloto automático solo porque ves una línea magenta: primero confirma que el CDI dice GPS. No uses Direct-To para corregir cada desviación pequeña ni cambies el plan durante despegue, ascenso o aproximación.", "Plan activo visible", "En crucero, abre FPL, identifica el siguiente punto y confirma GPS en el CDI. Usa Direct-To únicamente si el destino correcto es SKUL y luego vuelve a la vista de vuelo.", ["Plan creado en EFB", "FPL abierto en MFD", "Origen y destino revisados", "Siguiente punto identificado", "CDI muestra GPS", "Vista exterior recuperada"]),
+  "c172-autopilot-basics": lessonPlan("El piloto automático reduce trabajo, no reemplaza al piloto. HDG sigue el rumbo seleccionado; ALT mantiene la altitud actual o seleccionada; NAV sigue la fuente del CDI. Tú siempre verificas qué modo está armado o activo y estás listo para desconectarlo.", "1. Solo en vuelo recto y nivelado, lejos de terreno y a una altitud segura, ajusta primero el bug de rumbo hacia donde quieres ir.\n2. Ajusta la altitud objetivo antes de pulsar ningún modo.\n3. Pulsa AP y después HDG. Confirma en la parte superior del PFD que HDG aparece activo y que el avión gira suavemente hacia el bug.\n4. Pulsa ALT para mantener la altitud actual; confirma el anuncio en el PFD.\n5. Para seguir GPS, confirma primero CDI=GPS y que estás cerca de la línea magenta. Pulsa NAV: puede aparecer armado en blanco y activarse en verde al capturar la ruta.\n6. Prueba desconexión: pulsa AP, toma el yoke y mantén alas niveladas. Nunca esperes a que el avión se desordene para recuperar el control.", "No conectes AP justo después de despegar, durante final ni con el avión sin estabilizar. HDG no sigue el GPS; sigue el bug de rumbo. NAV no funciona bien si CDI está en VOR o si intentas capturar la línea desde un ángulo grande.", "Tres modos, una supervisión", "En aire calmo activa AP+HDG, luego ALT. Una vez estable, arma NAV con CDI=GPS y observa la captura. Desconecta AP manualmente y recupera el control antes de terminar.", ["Zona segura elegida", "Bug de rumbo ajustado", "Altitud objetivo ajustada", "HDG confirmado en PFD", "ALT confirmado en PFD", "GPS confirmado antes de NAV", "AP desconectado y control manual recuperado"]),
+  "navigation-consolidation": lessonPlan("Este vuelo no es una demostración de botones. Es la cadena completa: plan, combustible, despegue manual, navegación vigilada y llegada preparada. El piloto automático se usa solo en crucero estable y se desconecta mucho antes de la llegada.", "1. Planifica SKCL–SKUL con EFB: VFR, clima despejado, rumbo, distancia, dos referencias y combustible calculado.\n2. Repite la cadena de Nivel 0 para encender, rodar y despegar.\n3. Asciende a una zona segura y estabiliza el C172 manualmente.\n4. Comprueba mapa, combustible y rumbo. Muestra FPL y confirma CDI=GPS.\n5. En crucero usa AP+HDG/ALT; si vas cerca de la línea, arma NAV y verifica la captura.\n6. Cada 15 minutos compara tiempo, combustible y posición.\n7. Antes de llegar, desconecta AP, vuelve a control manual y prepara el circuito/aterrizaje como en Nivel 2.", "No dejes el AP conectado hasta final ni uses la navegación para ignorar el clima, relieve o combustible. Si pierdes orientación, avía primero: alas niveladas, altitud segura, potencia estable; después revisa mapa o GPS.", "Vuelo completo de navegación", "Completa SKCL–SKUL o detente en una zona segura. Al final registra: rumbo previsto frente al real, combustible previsto frente al indicado, una referencia visual y un momento en que supervisaste el piloto automático.", ["Mapa y combustible preparados", "Salida manual completada", "Plan GPS comprobado", "AP usado solo en crucero", "Chequeo de 15 minutos realizado", "AP desconectado antes de llegada", "Debriefing escrito"]),
+};
+
 const fullC172Procedures: Record<string, Partial<Lesson>> = {
   "c172-fuel-basics": {
     estimatedTime: "25 min",
@@ -1985,6 +2013,12 @@ const fullC172Procedures: Record<string, Partial<Lesson>> = {
 };
 
 const flightSetups: Record<string, NonNullable<Lesson["flightSetup"]>> = {
+  "vfr-map-route": setup("SKCL · Alfonso Bonilla Aragón, Cali", "Mapa de Vuelo libre", "Crucero planificado: 7.500 ft MSL", "Preestablecido: despejado, viento ligero", "Día, 09:00", "No inicies todavía: crea la ruta VFR SKCL–SKUL en el EFB y anota tus referencias."),
+  "nav-time-fuel": setup("SKCL · Alfonso Bonilla Aragón, Cali", "Mapa de Vuelo libre", "Crucero planificado: 7.500 ft MSL", "Preestablecido: despejado, viento ligero", "Día, 09:00", "Usa la distancia de SKCL–SKUL para calcular tiempo y combustible antes de iniciar."),
+  "vor-dme-basics": setup("SKCL · Alfonso Bonilla Aragón, Cali", "En aire, zona segura", "7.500 ft MSL", "Preestablecido: despejado, sin viento", "Día, 10:00", "Empieza estable; busca en el mapa un VOR cercano con frecuencia válida antes de tocar NAV1."),
+  "g1000-gps-route": setup("SKCL · Alfonso Bonilla Aragón, Cali", "En aire, crucero estable", "7.500 ft MSL", "Preestablecido: despejado, sin viento", "Día, 10:00", "Crea el plan SKCL–SKUL en EFB antes de entrar al avión; no cambies el plan durante despegue."),
+  "c172-autopilot-basics": setup("SKCL · Alfonso Bonilla Aragón, Cali", "En aire, recto y nivelado", "7.500 ft MSL", "Preestablecido: despejado, sin viento", "Día, 10:00", "El avión debe estar estable y lejos de la pista antes de activar AP."),
+  "navigation-consolidation": setup("SKCL · Alfonso Bonilla Aragón, Cali", "Plataforma, motor apagado", "Crucero planificado: 7.500 ft MSL", "Preestablecido: despejado, viento ligero", "Día, 09:00", "Plan VFR SKCL–SKUL: calcula combustible y configura el EFB antes del arranque."),
   "c172-fuel-basics": setup(
     "SKCL Â· Alfonso Bonilla AragÃ³n, Cali",
     "Plataforma, motor apagado",
@@ -2413,6 +2447,36 @@ const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
       "Completaste o pausaste conscientemente un vuelo VFR corto y registraste el resultado.",
     next: "El siguiente bloque será navegación por instrumentos, VOR, GPS y piloto automático; no se mezclará antes de dominar esta ruta visual.",
   },
+  "vfr-map-route": {
+    start: "Mapa de Vuelo libre, antes de encender el C172.",
+    finish: "Ruta SKCL–SKUL, rumbo, distancia y dos referencias anotados.",
+    next: "Continúa con “Rumbo, tiempo y combustible restante”.",
+  },
+  "nav-time-fuel": {
+    start: "Ruta SKCL–SKUL ya visible en el mapa.",
+    finish: "Tiempo previsto, combustible y chequeo de 15 minutos calculados.",
+    next: "Abre “VOR y DME desde cero” en una zona segura de vuelo.",
+  },
+  "vor-dme-basics": {
+    start: "C172 estabilizado en aire, lejos de pista y relieve.",
+    finish: "VOR válido leído y CDI devuelto a GPS.",
+    next: "Continúa con “GPS G1000: seguir un plan de vuelo”.",
+  },
+  "g1000-gps-route": {
+    start: "Plan SKCL–SKUL creado en EFB; C172 en crucero estable.",
+    finish: "FPL y CDI=GPS comprobados; sabes usar Direct-To con intención.",
+    next: "Abre “Piloto automático: HDG, ALT y NAV”.",
+  },
+  "c172-autopilot-basics": {
+    start: "Vuelo recto y nivelado, con mapa y GPS ya comprobados.",
+    finish: "HDG, ALT y NAV supervisados; AP desconectado manualmente.",
+    next: "Continúa con “Vuelo de navegación SKCL–SKUL”.",
+  },
+  "navigation-consolidation": {
+    start: "Plataforma de SKCL, C172 apagado y plan preparado.",
+    finish: "Ruta ejecutada o detenida de forma consciente con debriefing registrado.",
+    next: "El bloque siguiente será navegación IFR; no avances hasta poder explicar cada modo del piloto automático.",
+  },
 };
 
 course.forEach((level) =>
@@ -2428,6 +2492,7 @@ course.forEach((level) =>
         c172TakeoffProcedures[lesson.id],
         airAndVfrProcedures[lesson.id],
         fullC172Procedures[lesson.id],
+        navigationProcedures[lesson.id],
         {
           flightSetup: flightSetups[lesson.id],
           continuity: lessonContinuity[lesson.id],
@@ -2440,8 +2505,20 @@ course.forEach((level) =>
 // Algunas lecciones nuevas se almacenan con secuencias UTF-8 heredadas del
 // editor. Se normalizan al cargar el curso para que el alumno siempre vea
 // español correcto, también en los textos extensos y las tarjetas visuales.
-const normalizeDisplayText = (text: string) =>
-  text
+const normalizeDisplayText = (text: string) => {
+  let value = text;
+
+  // Algunos editores pueden aplicar la conversión UTF-8 más de una vez.
+  // Reducimos primero esas capas y después reparamos las secuencias restantes.
+  for (let pass = 0; pass < 3; pass += 1) {
+    const reduced = value
+      .replaceAll("\u00C3\u0192", "\u00C3")
+      .replaceAll("\u00C2", "");
+    if (reduced === value) break;
+    value = reduced;
+  }
+
+  return value
     .replaceAll("\u00C3\u00A1", "á")
     .replaceAll("\u00C3\u00A9", "é")
     .replaceAll("\u00C3\u00AD", "í")
@@ -2457,6 +2534,7 @@ const normalizeDisplayText = (text: string) =>
     .replaceAll("\u00E2\u20AC\u201D", "—")
     .replaceAll("\u00E2\u2020\u2019", "’")
     .replaceAll("\u00C3\u2014", "×");
+};
 
 const normalizeCourseText = (value: unknown): void => {
   if (typeof value === "string") return;

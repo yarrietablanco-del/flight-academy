@@ -489,6 +489,12 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
     string,
     { src: string; alt: string; caption: string }
   > = {
+    "vfr-map-route": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "Primero entiendes la ruta en el mapa; después eliges qué instrumento usar." },
+    "nav-time-fuel": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "La planificación conecta distancia, tiempo y combustible antes de entrar a cabina." },
+    "vor-dme-basics": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "VOR entrega dirección y DME distancia; verifica siempre señal y fuente CDI." },
+    "g1000-gps-route": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "Antes de seguir la línea magenta, confirma que el CDI muestra GPS." },
+    "c172-autopilot-basics": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "HDG, ALT y NAV son modos diferentes: confirma el PFD y supervisa el resultado." },
+    "navigation-consolidation": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "La secuencia completa es planificar, volar estable, confirmar navegación y supervisar automatización." },
     "c172-fuel-basics": {
       src: `${import.meta.env.BASE_URL}c172-performance-card.svg`,
       alt: "Tarjeta visual de combustible y despegue del Cessna 172",
