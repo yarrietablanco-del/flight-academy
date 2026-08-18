@@ -51,6 +51,20 @@ if (levelTwo) {
   })
 }
 
+const levelZero = course.find((level) => level.number === 0)
+if (levelZero) {
+  levelZero.modules.splice(2, 1,
+    { id: 'before-start', title: 'Sección 3 · Antes de encender', description: 'Prepara el Cessna 172 Skyhawk G1000 apagado en plataforma.', lessons: [
+      makeLesson('c172-cold-dark', 'Escenario apagado: Cold & Dark', 'Entra a la cabina con el motor y los sistemas apagados.', 0, 'Sección 3 · Antes de encender', ['Seleccionar el estado correcto de inicio', 'Reconocer cuándo el avión está realmente apagado', 'Preparar una práctica segura en plataforma'], 'el escenario Cold & Dark'),
+      makeLesson('c172-before-start', 'Checklist antes de encender', 'Prepara cabina, combustible y electricidad antes de arrancar.', 0, 'Sección 3 · Antes de encender', ['Seguir el flujo previo al arranque', 'Entender el propósito de cada elemento', 'Dejar el C172 listo para el motor'], 'la preparación antes de encender'),
+    ] },
+    { id: 'engine-start', title: 'Sección 4 · Encendido realista', description: 'Arranca y comprueba el motor del Cessna paso a paso.', lessons: [
+      makeLesson('c172-engine-start', 'Arranque del motor', 'Enciende el motor del Cessna 172 usando el flujo normal.', 0, 'Sección 4 · Encendido realista', ['Cebar y arrancar sin saltar pasos', 'Reconocer el momento en que el motor toma vida', 'Estabilizar el motor al ralentí'], 'el arranque normal del motor'),
+      makeLesson('c172-after-start', 'Verificación después del arranque', 'Confirma que el motor y los sistemas básicos están saludables antes de rodar.', 0, 'Sección 4 · Encendido realista', ['Verificar presión de aceite y carga eléctrica', 'Encender la aviónica en el orden correcto', 'Decidir si el avión está listo para continuar'], 'la comprobación posterior al arranque'),
+    ] },
+  )
+}
+
 const lessonPlan = (concept: string, procedure: string, errors: string, exerciseTitle: string, exercise: string, checklist: string[]): Partial<Lesson> => ({
   estimatedTime: '15–20 min',
   sections: [
@@ -267,12 +281,59 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
   },
 }
 
+const c172NormalProcedures: Record<string, Partial<Lesson>> = {
+  'c172-cold-dark': {
+    estimatedTime: '15 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Crea el escenario correcto en MSFS 2024', content: '1. Entra a Vuelo libre.\n2. Elige Cessna 172 Skyhawk G1000. Esta será la única versión usada en estas lecciones.\n3. Selecciona SKCL · Alfonso Bonilla Aragón, Cali, y una posición de plataforma o estacionamiento; no elijas pista.\n4. En el selector de estado de inicio elige Parked / Shutdown / Cold & Dark, según cómo aparezca en tu versión. No selecciones Ready to Taxi ni una posición en el aire.\n5. Elige día, cielo despejado y viento ligero. Inicia el vuelo.' },
+      { kind: 'APRENDE', title: 'Cómo reconocer el estado apagado', content: 'Estás en el estado correcto si el motor está silencioso, la hélice no gira, las pantallas están negras y el avión permanece quieto en plataforma. Puedes usar el ratón para todos los interruptores de estas secciones; no necesitas configurar el VelocityOne.' },
+      { kind: 'ERRORES COMUNES', title: 'Si aparece el motor encendido', content: 'No intentes “apagarlo y empezar” todavía: volveremos al menú y elegiremos una posición de plataforma con estado apagado. La práctica solo cuenta si empiezas con la hélice detenida. MSFS puede mostrar los nombres del estado en inglés incluso con el juego en español.' },
+    ] as Lesson['sections'],
+    checklist: ['Vuelo libre seleccionado', 'Cessna 172 Skyhawk G1000 seleccionado', 'Posición de plataforma elegida', 'Estado Parked, Shutdown o Cold & Dark elegido', 'Motor apagado y pantallas negras al entrar'],
+    exercise: { title: 'Llegar al punto cero', instructions: 'No enciendas nada. Mira el avión desde fuera y luego entra a la cabina. Señala mentalmente tres evidencias: hélice detenida, pantallas negras y motor silencioso. Ese es el punto cero desde el que siempre empezará esta ruta.' },
+  },
+  'c172-before-start': {
+    estimatedTime: '25 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Flujo antes de encender: hazlo en este orden', content: 'Usa el ratón y lee un paso antes de tocarlo.\n1. Freno de estacionamiento: aplicado. Así el avión no se moverá al encender.\n2. Asientos, cinturones y puertas: confirma que están asegurados en la cabina. En MSFS basta con cerrar la puerta si estuviera abierta.\n3. Selector de combustible: BOTH / Ambos. Es la perilla situada en la parte baja central de cabina; en el simulador puedes acercar la cámara y pasar el cursor hasta ver su etiqueta.\n4. Palanca roja de mezcla: atrás, en IDLE CUTOFF / corte.\n5. Palanca negra de potencia: apenas abierta, aproximadamente el ancho de un dedo.\n6. Avionics: OFF. Deja radios y pantallas de navegación sin activar por ahora.\n7. Batería y alternador (MASTER): ON. Las pantallas pueden encenderse; es normal.\n8. Luz BEACON: ON, la luz roja intermitente que avisa que vas a arrancar.' },
+      { kind: 'APRENDE', title: 'Qué estás preparando, en lenguaje simple', content: 'Combustible en BOTH significa que el motor puede recibir combustible de los tanques. Mezcla en corte evita que el motor arranque antes de tiempo. La palanca negra deja pasar una cantidad pequeña de aire. MASTER da energía eléctrica. BEACON es una señal visual de que el motor va a encenderse. No necesitas memorizar estas palabras: sigue la lista y luego irán teniendo sentido.' },
+      { kind: 'ERRORES COMUNES', title: 'No continúes si algo no coincide', content: 'No uses el interruptor de arranque todavía si la palanca roja no está atrás o si el freno no está aplicado. Si no encuentras un control, no pulses todos los botones: usa la cámara para acercarte y pasa lentamente el cursor sobre cada interruptor hasta que MSFS muestre su nombre.' },
+    ] as Lesson['sections'],
+    checklist: ['Freno de estacionamiento aplicado', 'Puerta cerrada', 'Fuel Selector en BOTH / Ambos', 'Mezcla roja en IDLE CUTOFF / corte', 'Potencia negra apenas abierta', 'Avionics en OFF', 'MASTER en ON', 'BEACON en ON'],
+    exercise: { title: 'Cabina lista, motor aún apagado', instructions: 'Completa los ocho pasos y detente. Debes tener energía eléctrica y el motor aún apagado. No continúes por intuición: compara cada elemento con la checklist, marca cada casilla y solo después abre la siguiente lección.' },
+  },
+  'c172-engine-start': {
+    estimatedTime: '20 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Arranque normal del C172 G1000', content: 'Parte de la cabina lista de la lección anterior.\n1. Bomba eléctrica de combustible: ON.\n2. Mueve la mezcla roja a FULL RICH / rica solo unos segundos, hasta que el indicador de flujo de combustible se estabilice.\n3. Devuelve la mezcla roja a IDLE CUTOFF / corte.\n4. Bomba eléctrica: OFF.\n5. Mira fuera de la cabina y confirma que el área frente a la hélice está libre. En el simulador es una comprobación visual.\n6. Gira la llave de ignición a START y mantenla solo hasta que el motor empiece a girar y encender.\n7. Al encender, suelta la llave: debe volver a BOTH. Lleva suavemente la mezcla a FULL RICH / rica.\n8. Ajusta la palanca negra para estabilizar el motor cerca de 1.000 RPM.' },
+      { kind: 'APRENDE', title: 'La señal de que funcionó', content: 'Verás la hélice girar, escucharás el motor y aparecerán lecturas activas en la pantalla. “Rica” no es un ajuste de potencia: permite que el motor reciba combustible para mantenerse encendido después de arrancar. La llave no se queda en START; vuelve a BOTH cuando la sueltas.' },
+      { kind: 'ERRORES COMUNES', title: 'Si el motor no arranca', content: 'Detente y vuelve a comprobar: combustible en BOTH, mezcla en corte antes de girar START, bomba usada solo para cebar y MASTER encendido. No mantengas START indefinidamente ni hagas muchos intentos seguidos. En simulación, reinicia el escenario si no puedes identificar qué paso se omitió.' },
+    ] as Lesson['sections'],
+    checklist: ['Bomba de combustible usada para cebar', 'Mezcla volvió a corte antes de START', 'Área de hélice comprobada visualmente', 'Llave soltada en BOTH tras el arranque', 'Mezcla llevada a rica tras encender', 'Motor estabilizado cerca de 1.000 RPM'],
+    exercise: { title: 'Primer arranque completo', instructions: 'Haz el flujo completo sin acelerar. Al escuchar el motor, no ruedes ni despegues. Solo estabilízalo cerca de 1.000 RPM y mantén el freno aplicado. El objetivo es entender el orden, no ir rápido.' },
+  },
+  'c172-after-start': {
+    estimatedTime: '18 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Comprobación inmediata después del arranque', content: '1. Mira la pantalla del motor y busca presión de aceite: debe subir poco después de encender.\n2. Comprueba que no haya una alerta roja persistente relacionada con el motor.\n3. Confirma que el sistema eléctrico está cargando: batería/alternador deben mostrar que reciben energía.\n4. Enciende AVIONICS para habilitar los equipos de navegación y comunicación.\n5. Verifica que ambas pantallas G1000 estén encendidas y sin una X roja grande.\n6. Mantén freno de estacionamiento aplicado. Todavía no rodamos: el siguiente bloque del curso será taxi y prueba de frenos.' },
+      { kind: 'APRENDE', title: 'Qué estás comprobando', content: 'La presión de aceite confirma que el motor está lubricándose. La carga eléctrica confirma que la batería no se está agotando. Las pantallas G1000 muestran navegación y estado del avión. Una alerta roja persistente no se ignora: en simulación, pausa y reinicia el escenario mientras aprendes.' },
+      { kind: 'ERRORES COMUNES', title: 'Encender no significa salir rodando', content: 'No quites el freno ni aceleres todavía. Arrancar, comprobar y rodar son tres fases distintas. La disciplina de detenerse tras el arranque es justamente lo que hace que el procedimiento sea realista y repetible.' },
+    ] as Lesson['sections'],
+    checklist: ['Presión de aceite subió tras el arranque', 'Sin alerta roja persistente del motor', 'Sistema eléctrico cargando', 'AVIONICS encendido', 'Pantallas G1000 activas', 'Freno de estacionamiento sigue aplicado'],
+    exercise: { title: 'Motor listo, avión detenido', instructions: 'Después del arranque, espera unos segundos y realiza los seis chequeos. No ruedes. Cuando todo esté correcto, pausa el simulador y marca la lección como completada. Ya habrás encendido el C172 desde apagado y comprobado que está sano para continuar.' },
+  },
+}
+
 const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'how-training-works': setup('SKBO · El Dorado, Bogotá', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'No inicies el vuelo: prepara tu rutina y conoce el entorno.'),
   'prepare-msfs': setup('SKBO · El Dorado, Bogotá', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'Usa una puerta o plataforma tranquila; confirma mandos antes de rodar.'),
   'know-velocityone': setup('SKPE · Matecaña, Pereira', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'Ideal para reconocer mandos con el avión detenido.'),
   'initial-controls-check': setup('SKPE · Matecaña, Pereira', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'Mantén freno de estacionamiento aplicado durante toda la comprobación.'),
   'sensitivity-deadzones': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En aire', '6,500 ft MSL', 'Preestablecido: despejado, sin viento', 'Día, 10:00', 'Crea una situación estable para observar una entrada cada vez.'),
+  'c172-cold-dark': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma o estacionamiento', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Selecciona estado Parked / Shutdown / Cold & Dark; la hélice debe estar detenida.'),
+  'c172-before-start': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, estado apagado', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Usa el ratón en cabina. No necesitas tocar el controlador.'),
+  'c172-engine-start': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, estado apagado', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Continúa solo después de completar la checklist antes de encender.'),
+  'c172-after-start': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, motor al ralentí', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Mantén el freno aplicado: esta lección termina antes del taxi.'),
   'know-c172': setup('SKPE · Matecaña, Pereira', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'Tour de cabina en tierra; no necesitas despegar.'),
   'three-axes': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En aire', '6,500 ft MSL', 'Preestablecido: despejado, sin viento', 'Día, 10:00', 'Empieza recto y nivelado, lejos del aeropuerto y del relieve.'),
   'throttle-power': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En aire', '6,500 ft MSL', 'Preestablecido: despejado, sin viento', 'Día, 11:00', 'Mantén una zona amplia y segura para observar los cambios de potencia.'),
@@ -285,7 +346,7 @@ const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'vfr-consolidation': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado, viento ligero', 'Día, 09:00', 'Vuela una ruta corta SKCL–SKUL; mantén ayudas activas si las necesitas.'),
 }
 
-course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], practicalLevelZeroDetails[lesson.id], velocityOneC172Details[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
+course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], practicalLevelZeroDetails[lesson.id], velocityOneC172Details[lesson.id], c172NormalProcedures[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
 
 export const lessonOrder = course.flatMap((level) => level.modules.flatMap((module) => module.lessons.map((lesson) => lesson.id)))
 export const getLesson = (id: string) => course.flatMap((level) => level.modules).flatMap((module) => module.lessons).find((lesson) => lesson.id === id)

@@ -500,6 +500,26 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
       caption:
         "Ten esta guía abierta mientras haces la comprobación en tierra.",
     },
+    "c172-cold-dark": {
+      src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
+      alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
+      caption: "Lee el flujo completo primero; después realiza un paso a la vez en cabina.",
+    },
+    "c172-before-start": {
+      src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
+      alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
+      caption: "En esta lección completa únicamente las tarjetas 1 y 2; no gires la llave todavía.",
+    },
+    "c172-engine-start": {
+      src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
+      alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
+      caption: "Sigue las tarjetas 3 y 4; la tarjeta 5 pertenece a la lección siguiente.",
+    },
+    "c172-after-start": {
+      src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
+      alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
+      caption: "Después del arranque, usa la tarjeta 5 antes de pensar en rodar.",
+    },
     "sensitivity-deadzones": {
       src: `${import.meta.env.BASE_URL}sensitivity-guide.svg`,
       alt: "Ilustración de curva de sensibilidad inicial para el Cessna 172",
