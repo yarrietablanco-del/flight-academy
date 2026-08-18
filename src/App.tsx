@@ -490,12 +490,12 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
     { src: string; alt: string; caption: string }
   > = {
     "know-velocityone": {
-      src: `${import.meta.env.BASE_URL}control-menu-guide.svg`,
+      src: `${import.meta.env.BASE_URL}velocityone-c172-map.svg`,
       alt: "Ruta visual para abrir los controles del VelocityOne en MSFS 2024",
       caption: "Guía visual: ruta al perfil del controlador.",
     },
     "initial-controls-check": {
-      src: `${import.meta.env.BASE_URL}control-menu-guide.svg`,
+      src: `${import.meta.env.BASE_URL}velocityone-c172-map.svg`,
       alt: "Ruta visual para abrir los controles del VelocityOne en MSFS 2024",
       caption:
         "Ten esta guía abierta mientras haces la comprobación en tierra.",

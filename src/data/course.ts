@@ -242,6 +242,31 @@ const practicalLevelZeroDetails: Record<string, Partial<Lesson>> = {
   },
 }
 
+const velocityOneC172Details: Record<string, Partial<Lesson>> = {
+  'know-velocityone': {
+    estimatedTime: '35 min',
+    objectives: ['Poner el perfil correcto en el dispositivo', 'Identificar los dos dispositivos que aparecen en PC', 'Reconocer qué mando físico corresponde a cada función básica'],
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Primero: selecciona el perfil correcto en el control', content: '1. En la pantalla del propio VelocityOne, usa sus controles de perfil y elige Single Engine Prop. Es el perfil pensado para un avión monomotor como el Cessna 172.\n2. En MSFS 2024 abre Configuración > Controles. En PC verás dos dispositivos: YOKE (el volante) y QUAD (las palancas). Esto es normal.\n3. Selecciona YOKE y revisa que el perfil mostrado corresponda a Single Engine Prop. Después haz lo mismo con QUAD. El perfil de MSFS y el perfil físico deben coincidir.\n4. Si el perfil predeterminado ya tiene las acciones asignadas, no las borres ni las reasignes: esta lección es para reconocerlas y comprobarlas.' },
+      { kind: 'APRENDE', title: 'Mapa de asignaciones: YOKE', content: 'Mueve el VOLANTE a izquierda/derecha → busca “Aileron Axis”; inclina las alas.\nEmpuja o tira el VOLANTE → busca “Elevator Axis”; baja o sube el morro.\nGATILLO IZQUIERDO (LT) y GATILLO DERECHO (RT) → “Rudder Axis”; giran el timón de dirección.\nB2, en el mango derecho → “Brakes”; frena.\nHAT derecho ARRIBA/ABAJO → “Decrease Flaps” / “Increase Flaps”.\nHAT derecho IZQUIERDA → “Parking Brake”.\nNo memorices todo: mira la ilustración y prueba solo un mando a la vez.' },
+      { kind: 'APRENDE', title: 'Mapa de asignaciones: QUAD', content: 'PALANCA NEGRA → “Throttle 1 Axis” o “Throttle Axis”: potencia del motor.\nPALANCA AZUL → “Propeller 1 Axis”: hélice; la usarás más adelante.\nPALANCA ROJA → “Mixture 1 Axis”: mezcla; por ahora déjala adelante salvo que la lección indique otra cosa.\nRUEDA TRIM → “Elevator Trim”: sirve para quitar presión del yoke cuando ya estás en vuelo estable. No la muevas al azar en esta primera configuración.' },
+      { kind: 'ERRORES COMUNES', title: 'Regla importante antes de asignar', content: 'Si una acción ya aparece asignada, primero pruébala. Solo usa “buscar entrada” cuando la acción esté vacía o sea incorrecta. Asignar de nuevo un eje que ya existe puede dejar un duplicado. Para aprender el C172 no necesitas tocar B3–B12, los botones de autopilot ni las palancas grandes del cuadrante.' },
+    ] as Lesson['sections'],
+    checklist: ['Perfil físico Single Engine Prop seleccionado', 'YOKE identificado en MSFS', 'QUAD identificado en MSFS', 'Volante, gatillos, B2 y HAT derecho ubicados', 'Palancas negra, azul, roja y rueda Trim ubicadas'],
+    exercise: { title: 'No asignes todavía: verifica el mapa', instructions: 'Con el C172 detenido, selecciona primero YOKE y observa la línea “Aileron Axis”; gira el volante. Luego selecciona “Elevator Axis” y empuja/tira. Repite con QUAD y “Throttle 1 Axis” moviendo solo la palanca negra. Si las barras se mueven y el sentido es correcto, ya está asignado: no modifiques nada.' },
+  },
+  'initial-controls-check': {
+    estimatedTime: '30 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Comprueba y asigna solo si falta algo', content: 'Hazlo con el avión detenido y freno de estacionamiento aplicado.\n1. En YOKE, busca “Aileron Axis”. Gira el volante: si la barra no se mueve, pulsa buscar entrada y gira el volante; confirma.\n2. Busca “Elevator Axis”. Empuja/tira: si no se mueve, asigna ese movimiento.\n3. Busca “Brakes”. Pulsa B2.\n4. Busca “Parking Brake”. Pulsa HAT derecho a la izquierda.\n5. Busca “Increase Flaps” y “Decrease Flaps”. Pulsa HAT derecho abajo y arriba, respectivamente.\n6. En QUAD, busca “Throttle 1 Axis”. Mueve únicamente la palanca negra.\n7. Si tienes pedales, asígnalos a “Rudder Axis”. Si no tienes pedales, comprueba LT y RT en el yoke.' },
+      { kind: 'APRENDE', title: 'Cómo saber si una asignación quedó bien', content: 'Barra se mueve al usar el mando correcto: bien.\nBarra se mueve al usar dos mandos distintos: hay un duplicado; elimina la entrada adicional del perfil de entrenamiento.\nBarra se mueve en sentido contrario: abre el engranaje de esa acción y marca Reverse Axis.\nNo se mueve: usa buscar entrada una vez, mueve el mando hasta el final y confirma.\nNo continúes al siguiente paso hasta resolver el mando actual.' },
+      { kind: 'ERRORES COMUNES', title: 'Qué puedes dejar sin tocar hoy', content: 'No asignes el tren de aterrizaje: el C172 de entrenamiento tiene tren fijo. No asignes autopiloto, spoilers, reversa, botones B3–B12 ni las palancas grandes del cuadrante. Esos sistemas se introducirán cuando tengan sentido en una lección.' },
+    ] as Lesson['sections'],
+    checklist: ['Aileron Axis comprobado', 'Elevator Axis comprobado', 'B2 frenos comprobado', 'HAT derecho hacia la izquierda para freno de estacionamiento comprobado', 'HAT arriba/abajo para flaps comprobado', 'Palanca negra para Throttle Axis comprobada', 'Rudder comprobado con pedales o LT/RT'],
+    exercise: { title: 'Las siete asignaciones de principiante', instructions: 'Tu único objetivo es que estas siete funciones respondan: Aileron Axis, Elevator Axis, Rudder Axis, Brakes, Parking Brake, Increase/Decrease Flaps y Throttle 1 Axis. Termina la lección solo cuando sepas qué pieza física corresponde a cada nombre.' },
+  },
+}
+
 const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'how-training-works': setup('SKBO · El Dorado, Bogotá', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'No inicies el vuelo: prepara tu rutina y conoce el entorno.'),
   'prepare-msfs': setup('SKBO · El Dorado, Bogotá', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'Usa una puerta o plataforma tranquila; confirma mandos antes de rodar.'),
@@ -260,7 +285,7 @@ const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'vfr-consolidation': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado, viento ligero', 'Día, 09:00', 'Vuela una ruta corta SKCL–SKUL; mantén ayudas activas si las necesitas.'),
 }
 
-course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], practicalLevelZeroDetails[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
+course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], practicalLevelZeroDetails[lesson.id], velocityOneC172Details[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
 
 export const lessonOrder = course.flatMap((level) => level.modules.flatMap((module) => module.lessons.map((lesson) => lesson.id)))
 export const getLesson = (id: string) => course.flatMap((level) => level.modules).flatMap((module) => module.lessons).find((lesson) => lesson.id === id)
