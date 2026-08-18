@@ -49,9 +49,9 @@ function App() {
         <div className="brand"><span className="brand-mark">✦</span><div><strong>FLIGHT</strong><span>ACADEMY</span></div></div>
         <p className="sidebar-caption">SIMULACIÓN DE VUELO</p>
         <nav>{navItems.map((item) => <button key={item.id} className={view === item.id ? 'nav-item active' : 'nav-item'} onClick={() => navigate(item.id)}><span>{item.icon}</span>{item.label}</button>)}</nav>
+        <SyncPanel {...sync} />
         <div className="sidebar-level"><span className="eyebrow">RANGO ACTUAL</span><strong>Nivel 0</strong><span>Preparación</span><div className="mini-progress"><i style={{ width: `${progress}%` }} /></div><small>{completedCount} / {lessonOrder.length} lecciones</small></div>
         <div className="progress-actions"><button className="reset-button" onClick={resetProgress}>↻ Reiniciar progreso</button><button className="reset-button" onClick={exportProgress}>⇩ Guardar copia</button><label className="reset-button import-button">⇧ Restaurar copia<input type="file" accept="application/json" onChange={async (event) => { const file = event.target.files?.[0]; if (!file) return; const imported = await importProgress(file); window.alert(imported ? 'Progreso restaurado.' : 'No pudimos leer esa copia de seguridad.'); event.target.value = '' }} /></label></div>
-        <SyncPanel {...sync} />
       </aside>
 
       <main>
