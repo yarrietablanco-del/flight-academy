@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640">
+  <rect width="1200" height="640" rx="32" fill="#102b2b"/>
+  <path d="M40 120H1160M40 330H1160M40 540H1160" stroke="#7fb3a5" stroke-opacity=".15"/>
+  <text x="70" y="80" fill="#dff4ee" font-family="Arial, sans-serif" font-size="34" font-weight="700">Ruta para configurar tu VelocityOne</text>
+  <text x="70" y="111" fill="#a9c8bd" font-family="Arial, sans-serif" font-size="20">Hazlo con el avión detenido y freno de estacionamiento aplicado.</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(70 180)"><rect width="230" height="230" rx="18" fill="#1d4543" stroke="#62ad9c"/><circle cx="38" cy="38" r="22" fill="#d7a75e"/><text x="31" y="45" fill="#102b2b" font-size="21" font-weight="700">1</text><text x="25" y="92" fill="#dff4ee" font-size="25" font-weight="700">Pausa</text><text x="25" y="126" fill="#b8d2c8" font-size="19">Pulsa ESC durante</text><text x="25" y="153" fill="#b8d2c8" font-size="19">un vuelo, o usa el</text><text x="25" y="180" fill="#b8d2c8" font-size="19">engranaje en Vuelo libre.</text></g>
+    <path d="M320 295h68" stroke="#d7a75e" stroke-width="5"/><path d="m378 281 22 14-22 14" fill="none" stroke="#d7a75e" stroke-width="5"/>
+    <g transform="translate(420 180)"><rect width="230" height="230" rx="18" fill="#1d4543" stroke="#62ad9c"/><circle cx="38" cy="38" r="22" fill="#d7a75e"/><text x="31" y="45" fill="#102b2b" font-size="21" font-weight="700">2</text><text x="25" y="92" fill="#dff4ee" font-size="25" font-weight="700">Configuración</text><text x="25" y="126" fill="#b8d2c8" font-size="19">En el menú, entra</text><text x="25" y="153" fill="#b8d2c8" font-size="19">a Settings /</text><text x="25" y="180" fill="#b8d2c8" font-size="19">Configuración.</text></g>
+    <path d="M670 295h68" stroke="#d7a75e" stroke-width="5"/><path d="m728 281 22 14-22 14" fill="none" stroke="#d7a75e" stroke-width="5"/>
+    <g transform="translate(770 180)"><rect width="360" height="230" rx="18" fill="#1d4543" stroke="#62ad9c"/><circle cx="38" cy="38" r="22" fill="#d7a75e"/><text x="31" y="45" fill="#102b2b" font-size="21" font-weight="700">3</text><text x="25" y="92" fill="#dff4ee" font-size="25" font-weight="700">Controles</text><text x="25" y="126" fill="#b8d2c8" font-size="19">Selecciona Turtle Beach</text><text x="25" y="153" fill="#b8d2c8" font-size="19">VelocityOne Flight, luego</text><text x="25" y="180" fill="#b8d2c8" font-size="19">el engranaje del dispositivo.</text></g>
+    <rect x="70" y="475" width="1060" height="95" rx="16" fill="#dff4ee"/><text x="100" y="515" fill="#17413e" font-size="23" font-weight="700">Después: Hardware Settings → elige un eje → Tweak Action Curve.</text><text x="100" y="548" fill="#45635d" font-size="19">El nombre puede variar ligeramente según la versión de MSFS 2024.</text>
+  </g>
+</svg>

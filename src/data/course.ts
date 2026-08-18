@@ -193,6 +193,55 @@ const lessonDetails: Record<string, Partial<Lesson>> = {
 
 const setup = (airport: string, position: string, altitude: string, weather: string, time: string, note: string): NonNullable<Lesson['flightSetup']> => ({ mode: 'Vuelo libre', aircraft: 'Cessna 172', airport, position, altitude, weather, time, note })
 
+// Guía operativa para las primeras lecciones. Se mantiene separada del texto
+// conceptual para que el alumno tenga una ruta concreta dentro de MSFS 2024.
+const practicalLevelZeroDetails: Record<string, Partial<Lesson>> = {
+  'prepare-msfs': {
+    estimatedTime: '25 min',
+    objectives: ['Abrir y reconocer el menú correcto de configuración', 'Crear una base de práctica estable', 'Dejar listos avión, clima y ayudas antes de tocar los mandos'],
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Ruta exacta para preparar el simulador', content: '1. Desde la pantalla principal entra en VUELO LIBRE. No uses Modo Carrera para estas lecciones.\n2. En el mapa mundial selecciona Cessna 172 y el aeropuerto indicado arriba.\n3. Elige una plataforma (no una pista) para las lecciones de control; así el avión no se moverá mientras pruebas ejes.\n4. Abre CLIMA y selecciona un preajuste despejado. Pon hora de día, idealmente 10:00.\n5. Antes de iniciar, revisa que el viento sea calmo o muy ligero.\n6. Inicia el vuelo y aplica freno de estacionamiento. Solo entonces pasa a Configuración de controles.' },
+      { kind: 'APRENDE', title: 'Configuración inicial que sí conviene usar', content: 'Para aprender, deja activadas las ayudas que eviten frustración: etiquetas o indicaciones de navegación si las necesitas, pausa disponible y daño/desgaste desactivado al principio. No hay premio por desactivar ayudas demasiado pronto. La meta del Nivel 0 es que cada movimiento del control produzca una respuesta comprensible.' },
+      { kind: 'ERRORES COMUNES', title: 'No ajustes dentro de un vuelo complicado', content: 'No pruebes sensibilidad con viento fuerte, tormenta, noche, tráfico o una aproximación. Si cambias un eje, vuelve a esta misma situación: C172, día, despejado, avión detenido o vuelo recto. Así sabrás qué cambió realmente.' },
+    ] as Lesson['sections'],
+    checklist: ['Entré en Vuelo libre', 'Elegí Cessna 172 y una plataforma', 'Puse día, cielo despejado y viento ligero', 'Apliqué freno de estacionamiento', 'Dejé las ayudas de principiante activas'],
+    exercise: { title: 'Escenario base de entrenamiento', instructions: 'Crea el escenario indicado y no despegues todavía. Pausa si lo necesitas. Tu resultado correcto es ver el C172 quieto en plataforma, de día y sin clima que complique las pruebas.' },
+  },
+  'know-velocityone': {
+    estimatedTime: '30 min',
+    objectives: ['Crear un perfil propio para el C172', 'Ver qué asignaciones reconoce MSFS', 'Ubicar los ejes y botones esenciales antes de volar'],
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Entra al perfil del VelocityOne', content: '1. Dentro de Vuelo libre, abre el engranaje de la esquina superior derecha; durante un vuelo también puedes pulsar ESC y entrar en Configuración.\n2. Abre CONTROLES. Verás los dispositivos detectados. Selecciona Turtle Beach VelocityOne Flight.\n3. Crea o duplica un perfil y llámalo C172 — Training. Conserva el perfil predeterminado sin cambios para poder volver atrás.\n4. En Customization/Personalización, usa la búsqueda y escribe el nombre de cada acción. Al seleccionar una acción, mueve el mando físico cuando el simulador lo pida.\n5. Si el dispositivo fue reconocido, primero revisa las asignaciones existentes; no es necesario reasignarlas todas.' },
+      { kind: 'APRENDE', title: 'Lo mínimo que debe funcionar hoy', content: 'Ejes: Aileron Axis (girar yoke izquierda/derecha), Elevator Axis (empujar/tirar yoke), Throttle Axis, y si cuentas con pedales, Rudder Axis.\nPalancas: Flaps, Mixture y Propeller Axis pueden permanecer en el perfil detectado; todavía no las usarás en vuelo.\nBotones esenciales: Parking Brake, Brakes, Flaps Increase/Decrease, Elevator Trim Up/Down, Pause/Active Pause y una vista de cabina. No necesitas programar todos los botones del panel para comenzar.' },
+      { kind: 'ERRORES COMUNES', title: 'Antes de crear una asignación nueva', content: 'Busca primero la acción y comprueba si ya existe. Dos asignaciones para el mismo eje pueden producir movimientos inesperados. Si un mando queda invertido, usa Reverse Axis en esa acción: no cambies de sitio los cables ni intentes compensarlo con la mano.' },
+    ] as Lesson['sections'],
+    checklist: ['VelocityOne seleccionado en Controles', 'Perfil C172 — Training creado o duplicado', 'Aileron y Elevator Axis reconocidos', 'Throttle Axis reconocido', 'Botones de freno, trim, flaps y pausa revisados'],
+    exercise: { title: 'Inventario real de tu control', instructions: 'Con el avión quieto, entra al perfil y comprueba una acción por vez. Mueve el yoke, luego throttle y después cada palanca. Para cada eje responde: ¿se mueve?, ¿va en el sentido correcto?, ¿vuelve a cero sin temblar? No cambies sensibilidad todavía.' },
+  },
+  'initial-controls-check': {
+    estimatedTime: '25 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Prueba de ejes, en este orden', content: 'Con el C172 inmovilizado y freno de estacionamiento aplicado:\n1. Yoke a la izquierda: el alerón izquierdo debe subir y el derecho bajar.\n2. Yoke a la derecha: ocurre lo contrario.\n3. Yoke hacia ti: el elevador sube; yoke hacia delante: el elevador baja.\n4. Throttle: confirma que el porcentaje de potencia sube al avanzar y baja al retroceder.\n5. Pedales o controles de rudder: comprueba el timón de dirección, un lado a la vez.\n6. Mueve flaps, trim y mezcla sin motor acelerado; observa el indicador o la palanca de cabina.\n7. Devuelve todo a una posición segura antes del siguiente mando.' },
+      { kind: 'APRENDE', title: 'Cómo corregir algo que no coincide', content: 'Eje invertido: abre la acción específica y activa Reverse Axis.\nNo se mueve: busca el nombre de la acción y usa “buscar entrada” para asignarla; luego guarda el perfil.\nSe mueven dos cosas: elimina la duplicada del perfil C172 — Training, no del perfil original.\nSe mueve solo: eso se corrige en la siguiente lección con zona muerta pequeña, después de confirmar que no hay duplicados.' },
+      { kind: 'ERRORES COMUNES', title: 'No pruebes acelerando', content: 'Esta lección se hace detenido. No despegues para comprobar el yoke. Si el motor está encendido, deja throttle al mínimo y freno de estacionamiento aplicado. La prueba es visual: superficies, palancas e indicadores.' },
+    ] as Lesson['sections'],
+    checklist: ['Freno de estacionamiento aplicado', 'Alerones se mueven en el sentido esperado', 'Elevador se mueve en el sentido esperado', 'Throttle aumenta y reduce potencia correctamente', 'Rudder, flaps y trim revisados', 'Ningún eje está duplicado'],
+    exercise: { title: 'Checklist de respuesta', instructions: 'Haz la prueba de siete pasos sin prisa. Si algo falla, anótalo como “invertido”, “sin respuesta”, “duplicado” o “tiembla”. Corrige un solo problema, repite desde el paso 1 y no marques la lección completa hasta que todos los ejes principales respondan.' },
+  },
+  'sensitivity-deadzones': {
+    estimatedTime: '30 min',
+    objectives: ['Encontrar la curva de cada eje en MSFS 2024', 'Aplicar una base de sensibilidad conservadora', 'Ajustar zona muerta solo si existe movimiento no deseado'],
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Dónde está la sensibilidad en MSFS 2024', content: '1. Ve a Configuración > Controles y selecciona VelocityOne Flight.\n2. Pulsa el icono de engranaje junto al dispositivo y abre Hardware Settings/Configuración de hardware.\n3. Elige el eje: Aileron, Elevator, Rudder o Throttle. En algunas versiones debes abrir la acción y pulsar Tweak Action Curve/Ajustar curva de acción.\n4. Ajusta un único eje, guarda y vuelve a probar el mismo vuelo. Si no ves “Reactivity”, es normal: MSFS 2024 puede no mostrar ese ajuste.' },
+      { kind: 'APRENDE', title: 'Valores iniciales para C172 — Training', content: 'Empieza con esta base, no con valores extremos:\n• Aileron: sensibilidad -20 %, zona muerta 2 %, zona muerta extrema 0 %.\n• Elevator: sensibilidad -25 %, zona muerta 2 %, zona muerta extrema 0 %.\n• Rudder: sensibilidad -15 %, zona muerta 2 %, zona muerta extrema 0 %.\n• Throttle: sensibilidad 0 %, zona muerta 0–2 %.\nSi tu yoke está perfectamente estable en el centro, deja zona muerta en 0 %. Si ves temblor sin tocarlo, súbela solo a 3–4 %. Estos son valores de partida, no una receta obligatoria.' },
+      { kind: 'PROCEDIMIENTO', title: 'Método de ajuste que funciona', content: 'Usa el escenario de esta lección: aire calmo, C172 recto y nivelado. Haz tres entradas muy pequeñas de un eje. Si responde demasiado brusco cerca del centro, baja sensibilidad otros 5 puntos. Si el avión se mueve sin tocar el control, añade 1–2 puntos de zona muerta. Repite la misma prueba y anota el resultado. Cambia un solo eje por sesión.' },
+      { kind: 'ERRORES COMUNES', title: 'Qué NO arregla una curva', content: 'La sensibilidad no corrige un eje invertido ni una asignación duplicada. Una zona muerta grande tampoco es una solución para un yoke defectuoso: solo elimina precisión. Si el avión se inclina o asciende sin tocarlo, primero verifica viento, trim, duplicados y centrado físico.' },
+    ] as Lesson['sections'],
+    checklist: ['Abrí Hardware Settings o Ajustar curva de acción', 'Modifiqué un solo eje', 'Usé cambios de máximo 5 puntos', 'Probé en clima calmo y con el mismo avión', 'Anoté el valor que se sintió mejor'],
+    exercise: { title: 'Tu perfil inicial C172', instructions: 'Configura aileron -20 % y elevator -25 %, con zona muerta 2 % solo si observas ruido al centro. Vuela recto durante dos minutos a 6.500 ft. Si aún está nervioso, baja únicamente el eje problemático 5 puntos más. Guarda el perfil C172 — Training al terminar.' },
+  },
+}
+
 const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'how-training-works': setup('SKBO · El Dorado, Bogotá', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'No inicies el vuelo: prepara tu rutina y conoce el entorno.'),
   'prepare-msfs': setup('SKBO · El Dorado, Bogotá', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'Usa una puerta o plataforma tranquila; confirma mandos antes de rodar.'),
@@ -211,7 +260,7 @@ const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'vfr-consolidation': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado, viento ligero', 'Día, 09:00', 'Vuela una ruta corta SKCL–SKUL; mantén ayudas activas si las necesitas.'),
 }
 
-course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
+course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], practicalLevelZeroDetails[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
 
 export const lessonOrder = course.flatMap((level) => level.modules.flatMap((module) => module.lessons.map((lesson) => lesson.id)))
 export const getLesson = (id: string) => course.flatMap((level) => level.modules).flatMap((module) => module.lessons).find((lesson) => lesson.id === id)
