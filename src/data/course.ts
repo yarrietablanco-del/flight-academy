@@ -62,6 +62,13 @@ if (levelZero) {
       makeLesson('c172-engine-start', 'Arranque del motor', 'Enciende el motor del Cessna 172 usando el flujo normal.', 0, 'Sección 4 · Encendido realista', ['Cebar y arrancar sin saltar pasos', 'Reconocer el momento en que el motor toma vida', 'Estabilizar el motor al ralentí'], 'el arranque normal del motor'),
       makeLesson('c172-after-start', 'Verificación después del arranque', 'Confirma que el motor y los sistemas básicos están saludables antes de rodar.', 0, 'Sección 4 · Encendido realista', ['Verificar presión de aceite y carga eléctrica', 'Encender la aviónica en el orden correcto', 'Decidir si el avión está listo para continuar'], 'la comprobación posterior al arranque'),
     ] },
+    { id: 'ground-operations', title: 'Sección 5 · Operación en tierra', description: 'Aprende a rodar y preparar el motor antes del primer despegue.', lessons: [
+      makeLesson('airport-map-basics', 'El mapa del aeropuerto: dónde estás y adónde puedes ir', 'Distingue plataforma, calle de rodaje, pista y línea de espera antes de mover el avión.', 0, 'Sección 5 · Operación en tierra', ['Ubicar el avión en plataforma', 'Reconocer una calle de rodaje y una pista', 'Saber dónde detenerse antes de la pista'], 'el mapa básico del aeropuerto'),
+      makeLesson('airport-radio-basics', 'Radio y ATC: tu primera solicitud de taxi', 'Abre Comunicaciones, solicita taxi y usa la ayuda visual de MSFS.', 0, 'Sección 5 · Operación en tierra', ['Abrir el panel Comunicaciones', 'Solicitar taxi sin usar fraseología manual', 'Entender qué significa Hold Short'], 'la radio básica de aeropuerto'),
+      makeLesson('c172-taxi-basics', 'Primer taxi: mover el avión en tierra', 'Suelta el freno, prueba los frenos y rueda despacio sin despegar.', 0, 'Sección 5 · Operación en tierra', ['Diferenciar rodar de volar', 'Moverse despacio y detenerse', 'Hacer una prueba inicial de frenos'], 'el taxi básico'),
+      makeLesson('c172-engine-runup', 'Prueba del motor antes del despegue', 'En una zona segura, confirma que el motor responde antes de usar la pista.', 0, 'Sección 5 · Operación en tierra', ['Preparar el avión para la prueba', 'Observar los indicadores básicos del motor', 'Terminar con el motor estable'], 'la prueba de motor'),
+      makeLesson('c172-before-takeoff', 'Checklist antes de despegue', 'Deja el Cessna listo, pero detenido, antes del primer vuelo.', 0, 'Sección 5 · Operación en tierra', ['Completar una comprobación previa al despegue', 'Entender que aún no es momento de volar', 'Detenerse en el punto correcto'], 'la preparación final en tierra'),
+    ] },
   )
 }
 
@@ -324,6 +331,59 @@ const c172NormalProcedures: Record<string, Partial<Lesson>> = {
   },
 }
 
+const c172GroundProcedures: Record<string, Partial<Lesson>> = {
+  'airport-map-basics': {
+    estimatedTime: '18 min',
+    sections: [
+      { kind: 'APRENDE', title: 'Cuatro lugares que debes reconocer', content: 'PLATAFORMA: donde el avión está estacionado; aquí empiezas y terminas.\nCALLE DE RODAJE: el camino por el que el avión se mueve lentamente en tierra; suele tener una línea central amarilla.\nPISTA: la franja larga destinada a despegar y aterrizar; no entres por ahora.\nLÍNEA DE ESPERA: dos líneas amarillas continuas y dos discontinuas antes de una pista. Siempre te detienes del lado de las líneas continuas hasta que el simulador/ATC te autorice a cruzar.' },
+      { kind: 'PROCEDIMIENTO', title: 'Mira el mapa antes de liberar el freno', content: '1. En la pantalla de Vuelo libre, antes de iniciar, observa el punto de salida seleccionado: debe ser una plataforma.\n2. Identifica la pista principal: tiene un número grande, por ejemplo 01 o 19.\n3. Mira el trayecto entre plataforma y pista: las calles de rodaje conectan ambos lugares.\n4. Ya dentro del avión, mira hacia fuera: encuentra la línea amarilla de la calle y la zona amplia de pista.\n5. No memorices letras ni números todavía. Solo debes distinguir “estacionamiento”, “camino amarillo” y “pista”.' },
+      { kind: 'ERRORES COMUNES', title: 'La pista no es el primer destino', content: 'No sigas una carretera de servicio ni cruces una línea de espera solo porque ves mucho espacio. La línea de espera es el punto de pausa: significa “detente aquí hasta saber qué sigue”.' },
+    ] as Lesson['sections'],
+    checklist: ['Plataforma identificada', 'Calle de rodaje identificada', 'Pista identificada', 'Línea de espera identificada', 'Avión sigue detenido'],
+    exercise: { title: 'Orientación sin mover el avión', instructions: 'Con el motor encendido y freno aplicado, localiza desde la cabina la plataforma, una línea amarilla de taxi y la pista a distancia. No ruedes. El resultado correcto es poder señalar hacia dónde está cada lugar.' },
+  },
+  'airport-radio-basics': {
+    estimatedTime: '15 min',
+    sections: [
+      { kind: 'APRENDE', title: 'En MSFS no tienes que hablar por micrófono', content: 'Para este curso usarás el panel de Comunicaciones de MSFS. El simulador muestra opciones de texto: tú eliges una y el ATC responde. No debes memorizar frases ni sintonizar frecuencias manualmente todavía. La radio sirve para pedir una ruta de taxi y saber dónde debes detenerte.' },
+      { kind: 'PROCEDIMIENTO', title: 'Solicita taxi con la ayuda del simulador', content: '1. Mueve el cursor a la parte superior de la pantalla para mostrar la barra de herramientas.\n2. Pulsa el icono de globo de diálogo llamado Communications / Comunicaciones.\n3. En el panel, elige el aeropuerto actual y busca la opción Ground / Tierra o Request Taxi for Departure / Solicitar taxi para salida.\n4. Selecciona esa opción. MSFS puede dibujar una guía o flechas azules sobre la ruta.\n5. Lee el resultado: si aparece Hold Short, significa detenerse antes de la pista. No cruces esa línea hasta recibir una instrucción posterior.' },
+      { kind: 'ERRORES COMUNES', title: 'La ayuda azul no reemplaza mirar', content: 'Las flechas son una ayuda para aprender, no un permiso para cruzar una pista. Si la ruta visual parece confusa, detente en la línea de espera. Para esta etapa puedes mantener las ayudas de taxi activas.' },
+    ] as Lesson['sections'],
+    checklist: ['Panel Comunicaciones abierto', 'Aeropuerto actual seleccionado', 'Solicitud de taxi enviada', 'Ruta visual o respuesta de ATC observada', 'Significado de Hold Short entendido', 'Freno sigue aplicado antes de la práctica de taxi'],
+    exercise: { title: 'Pide taxi sin moverte', instructions: 'Abre Comunicaciones y solicita taxi para salida, pero no sueltes el freno todavía. Solo observa la respuesta y localiza la primera dirección de la ruta. En la siguiente lección usarás esa información para rodar despacio.' },
+  },
+  'c172-taxi-basics': {
+    estimatedTime: '20 min',
+    sections: [
+      { kind: 'APRENDE', title: 'Rodar no es volar', content: 'Taxi significa mover el avión lentamente por la plataforma o calle de rodaje. Todavía no vas a la pista ni despegarás. El objetivo de esta lección es sentir que puedes iniciar el movimiento, mantenerlo lento y detenerlo exactamente donde quieres.' },
+      { kind: 'PROCEDIMIENTO', title: 'Primer movimiento, sin prisa', content: '1. Con el motor estable y el freno de estacionamiento aplicado, mira que tengas espacio delante.\n2. Suelta el freno de estacionamiento con el ratón en cabina.\n3. Aumenta apenas la potencia; el C172 empezará a rodar lentamente. No busques una cifra exacta: si se mueve demasiado rápido, reduce potencia.\n4. Usa el control de dirección que MSFS ya reconoce para mantenerte sobre la calle de rodaje o plataforma. No cambies asignaciones en esta lección.\n5. Prueba los frenos suavemente una vez.\n6. Detén el avión, deja potencia al mínimo y vuelve a aplicar el freno de estacionamiento.' },
+      { kind: 'ERRORES COMUNES', title: 'Si no puedes mantenerlo lento', content: 'No aceleres para corregir dirección. Primero reduce potencia; después detén el avión con frenos. Si tu control de dirección no responde, detente y no intentes despegar: ese problema pertenece a la configuración del simulador y no a esta práctica de vuelo.' },
+    ] as Lesson['sections'],
+    checklist: ['Motor estable al ralentí', 'Espacio libre delante del avión', 'Freno de estacionamiento soltado', 'Movimiento iniciado con potencia mínima', 'Frenos probados', 'Avión detenido y freno aplicado de nuevo'],
+    exercise: { title: 'Avanza, frena y detente', instructions: 'Rueda una distancia corta en la plataforma, equivalente a unos pocos largos de avión. Detente de forma controlada. Repite una vez. No vayas a la pista y no intentes levantar el morro: esta es una lección de suelo.' },
+  },
+  'c172-engine-runup': {
+    estimatedTime: '25 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Prueba de motor: avión detenido', content: '1. Detén el C172 en una zona amplia, lejos de otros aviones. Aplica el freno de estacionamiento.\n2. Confirma combustible en BOTH / Ambos, mezcla en RICH / rica y flaps arriba.\n3. Lleva la potencia a aproximadamente 1.800 RPM y observa que las lecturas del motor permanezcan estables.\n4. Enciende y apaga cada magneto usando la llave de ignición: pasa de BOTH a un lado, vuelve a BOTH, pasa al otro lado y vuelve a BOTH. Debe haber una pequeña caída de RPM, no una caída extrema.\n5. Regresa la potencia a cerca de 1.000 RPM.\n6. Si aparece una alerta persistente o el motor no responde con normalidad, pausa y reinicia el escenario; no continúes a la pista.' },
+      { kind: 'APRENDE', title: 'Por qué se hace esta prueba', content: 'La prueba de motor no es para hacerlo sonar fuerte. Sirve para comprobar que el motor responde antes de depender de él en el despegue. Las magnetos son dos fuentes de encendido: se prueban una por una y siempre se termina de nuevo en BOTH.' },
+      { kind: 'ERRORES COMUNES', title: 'No hagas el run-up mientras ruedas', content: 'El run-up se hace completamente detenido y con freno aplicado. No mantengas el motor a 1.800 RPM más tiempo del necesario. Cuando termine la comprobación, vuelve a ralentí; aún no hay autorización para despegar.' },
+    ] as Lesson['sections'],
+    checklist: ['Zona amplia elegida', 'Freno de estacionamiento aplicado', 'Fuel BOTH y mezcla RICH confirmados', 'Prueba a aproximadamente 1.800 RPM realizada', 'Magnetos revisadas y llave devuelta a BOTH', 'Motor estabilizado de nuevo cerca de 1.000 RPM'],
+    exercise: { title: 'Motor comprobado, avión inmóvil', instructions: 'Realiza una sola prueba corta. Mantén el avión quieto, observa las RPM y termina de vuelta al ralentí. No ruedes a la pista todavía: el siguiente paso será la checklist final de tierra.' },
+  },
+  'c172-before-takeoff': {
+    estimatedTime: '18 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Checklist final antes de ir a la pista', content: 'Con el C172 detenido y el motor a ralentí:\n1. Fuel Selector: BOTH / Ambos.\n2. Mixture: FULL RICH / rica.\n3. Flaps: UP / arriba para este primer despegue.\n4. Elevator Trim: TAKEOFF / neutro.\n5. Puertas y cinturones: asegurados.\n6. Pantallas G1000: encendidas, sin alerta roja persistente.\n7. Altímetro: comprueba que su lectura sea razonable para la altitud del aeropuerto.\n8. Freno de estacionamiento sigue aplicado. La lección termina aquí.' },
+      { kind: 'APRENDE', title: 'Estar listo no significa despegar ya', content: 'Una checklist antes de despegue prepara el avión, pero la siguiente acción todavía será rodar hasta la pista, revisar que está libre y solo entonces comenzar el despegue. Separar estos pasos evita sentir que todo ocurre de golpe.' },
+      { kind: 'ERRORES COMUNES', title: 'No marques la lección mientras ruedas', content: 'Haz esta lista detenido. Si ya estás en la pista, vuelve a una zona segura o reinicia la práctica. El aprendizaje correcto hoy es poder llegar a “listo para ir a la pista” sin despegar por accidente.' },
+    ] as Lesson['sections'],
+    checklist: ['Fuel BOTH confirmado', 'Mezcla FULL RICH confirmada', 'Flaps arriba', 'Trim en posición de despegue o neutra', 'Puertas y cinturones asegurados', 'G1000 sin alerta roja persistente', 'Freno de estacionamiento aplicado al terminar'],
+    exercise: { title: 'Punto de pausa antes del vuelo', instructions: 'Completa la checklist final, deja el avión detenido y pausa el simulador. Cuando termines esta lección habrás llegado correctamente al punto previo a rodar hacia la pista. El primer despegue será una sección posterior, no un salto automático.' },
+  },
+}
+
 const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'how-training-works': setup('SKBO · El Dorado, Bogotá', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'No inicies el vuelo: prepara tu rutina y conoce el entorno.'),
   'prepare-msfs': setup('SKBO · El Dorado, Bogotá', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'Usa una puerta o plataforma tranquila; confirma mandos antes de rodar.'),
@@ -334,6 +394,11 @@ const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'c172-before-start': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, estado apagado', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Usa el ratón en cabina. No necesitas tocar el controlador.'),
   'c172-engine-start': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, estado apagado', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Continúa solo después de completar la checklist antes de encender.'),
   'c172-after-start': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, motor al ralentí', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Mantén el freno aplicado: esta lección termina antes del taxi.'),
+  'airport-map-basics': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, motor al ralentí', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'No liberes el freno: la meta es reconocer las zonas del aeropuerto.'),
+  'airport-radio-basics': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, motor al ralentí', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Abre Comunicaciones y solicita taxi, pero no muevas el avión.'),
+  'c172-taxi-basics': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, motor al ralentí', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'No vayas a la pista: rueda una distancia corta y vuelve a detenerte.'),
+  'c172-engine-runup': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma o zona amplia, motor encendido', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Haz la prueba detenido y termina con el motor cerca de 1.000 RPM.'),
+  'c172-before-takeoff': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, motor al ralentí', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Esta sección termina listo para rodar; no incluye despegue.'),
   'know-c172': setup('SKPE · Matecaña, Pereira', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'Tour de cabina en tierra; no necesitas despegar.'),
   'three-axes': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En aire', '6,500 ft MSL', 'Preestablecido: despejado, sin viento', 'Día, 10:00', 'Empieza recto y nivelado, lejos del aeropuerto y del relieve.'),
   'throttle-power': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En aire', '6,500 ft MSL', 'Preestablecido: despejado, sin viento', 'Día, 11:00', 'Mantén una zona amplia y segura para observar los cambios de potencia.'),
@@ -346,7 +411,7 @@ const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'vfr-consolidation': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado, viento ligero', 'Día, 09:00', 'Vuela una ruta corta SKCL–SKUL; mantén ayudas activas si las necesitas.'),
 }
 
-course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], practicalLevelZeroDetails[lesson.id], velocityOneC172Details[lesson.id], c172NormalProcedures[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
+course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], practicalLevelZeroDetails[lesson.id], velocityOneC172Details[lesson.id], c172NormalProcedures[lesson.id], c172GroundProcedures[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
 
 export const lessonOrder = course.flatMap((level) => level.modules.flatMap((module) => module.lessons.map((lesson) => lesson.id)))
 export const getLesson = (id: string) => course.flatMap((level) => level.modules).flatMap((module) => module.lessons).find((lesson) => lesson.id === id)

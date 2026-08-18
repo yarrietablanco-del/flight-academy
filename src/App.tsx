@@ -500,6 +500,16 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
       caption:
         "Ten esta guía abierta mientras haces la comprobación en tierra.",
     },
+    "airport-map-basics": {
+      src: `${import.meta.env.BASE_URL}airport-ground-map.svg`,
+      alt: "Mapa ilustrado de plataforma, calle de rodaje, pista y línea de espera",
+      caption: "No ruedes hasta poder distinguir estas cuatro zonas desde tu posición.",
+    },
+    "airport-radio-basics": {
+      src: `${import.meta.env.BASE_URL}airport-ground-map.svg`,
+      alt: "Guía visual del panel Comunicaciones de Microsoft Flight Simulator",
+      caption: "La radio básica va antes del taxi: solicita la ruta y aprende a detenerte en Hold Short.",
+    },
     "c172-cold-dark": {
       src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
       alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",

@@ -5,15 +5,22 @@ import { supabase } from '../lib/supabase'
 const STORAGE_KEY = 'flight-academy-progress-v1'
 const initialStatuses = (ids: string[]): Record<string, LessonStatus> => Object.fromEntries(ids.map((id, index) => [id, index === 0 ? 'available' : 'locked']))
 const statusRank: Record<LessonStatus, number> = { locked: 0, available: 1, 'in-progress': 2, completed: 3 }
+const unlockNextLesson = (ids: string[], statuses: Record<string, LessonStatus>) => {
+  const next = { ...statuses }
+  for (let index = 1; index < ids.length; index += 1) {
+    if (next[ids[index - 1]] === 'completed' && next[ids[index]] === 'locked') next[ids[index]] = 'available'
+  }
+  return next
+}
 
-const mergeStatuses = (ids: string[], local: Record<string, LessonStatus>, cloud?: Record<string, LessonStatus>) => Object.fromEntries(ids.map((id) => {
+const mergeStatuses = (ids: string[], local: Record<string, LessonStatus>, cloud?: Record<string, LessonStatus>) => unlockNextLesson(ids, Object.fromEntries(ids.map((id) => {
   const localStatus = local[id] ?? initialStatuses(ids)[id]
   const cloudStatus = cloud?.[id]
   return [id, cloudStatus && statusRank[cloudStatus] > statusRank[localStatus] ? cloudStatus : localStatus]
-})) as Record<string, LessonStatus>
+})) as Record<string, LessonStatus>)
 
 export function useProgress(ids: string[]) {
-  const [statuses, setStatuses] = useState<Record<string, LessonStatus>>(() => { try { const stored = localStorage.getItem(STORAGE_KEY); return stored ? { ...initialStatuses(ids), ...JSON.parse(stored) } : initialStatuses(ids) } catch { return initialStatuses(ids) } })
+  const [statuses, setStatuses] = useState<Record<string, LessonStatus>>(() => { try { const stored = localStorage.getItem(STORAGE_KEY); return unlockNextLesson(ids, stored ? { ...initialStatuses(ids), ...JSON.parse(stored) } : initialStatuses(ids)) } catch { return initialStatuses(ids) } })
   const [email, setEmail] = useState<string | null>(null)
   const [syncReady, setSyncReady] = useState(false)
   const [syncMessage, setSyncMessage] = useState(supabase ? 'Sincronización lista para iniciar sesión.' : 'Falta configurar Supabase.')
