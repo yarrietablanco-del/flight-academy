@@ -1,0 +1,96 @@
+import { useEffect, useState } from 'react'
+import type { LessonStatus } from '../types/course'
+import { supabase } from '../lib/supabase'
+
+const STORAGE_KEY = 'flight-academy-progress-v1'
+const initialStatuses = (ids: string[]): Record<string, LessonStatus> => Object.fromEntries(ids.map((id, index) => [id, index === 0 ? 'available' : 'locked']))
+const statusRank: Record<LessonStatus, number> = { locked: 0, available: 1, 'in-progress': 2, completed: 3 }
+
+const mergeStatuses = (ids: string[], local: Record<string, LessonStatus>, cloud?: Record<string, LessonStatus>) => Object.fromEntries(ids.map((id) => {
+  const localStatus = local[id] ?? initialStatuses(ids)[id]
+  const cloudStatus = cloud?.[id]
+  return [id, cloudStatus && statusRank[cloudStatus] > statusRank[localStatus] ? cloudStatus : localStatus]
+})) as Record<string, LessonStatus>
+
+export function useProgress(ids: string[]) {
+  const [statuses, setStatuses] = useState<Record<string, LessonStatus>>(() => { try { const stored = localStorage.getItem(STORAGE_KEY); return stored ? { ...initialStatuses(ids), ...JSON.parse(stored) } : initialStatuses(ids) } catch { return initialStatuses(ids) } })
+  const [email, setEmail] = useState<string | null>(null)
+  const [syncReady, setSyncReady] = useState(false)
+  const [syncMessage, setSyncMessage] = useState(supabase ? 'Sincronización lista para iniciar sesión.' : 'Falta configurar Supabase.')
+
+  useEffect(() => { localStorage.setItem(STORAGE_KEY, JSON.stringify(statuses)) }, [statuses])
+
+  useEffect(() => {
+    if (!supabase) return
+    const client = supabase
+    let active = true
+    const load = async () => {
+      const { data: { session } } = await client.auth.getSession()
+      if (!active) return
+      setEmail(session?.user.email ?? null)
+      if (!session) { setSyncReady(false); return }
+      const { data, error } = await client.from('user_progress').select('statuses').eq('user_id', session.user.id).maybeSingle()
+      if (!active) return
+      if (error) { setSyncMessage('No pudimos leer el progreso en la nube.'); return }
+      const merged = mergeStatuses(ids, statuses, data?.statuses as Record<string, LessonStatus> | undefined)
+      setStatuses(merged)
+      setSyncReady(true)
+      setSyncMessage('Progreso sincronizado.')
+    }
+    void load()
+    const { data: { subscription } } = client.auth.onAuthStateChange((_event, session) => { setEmail(session?.user.email ?? null); setSyncReady(false); if (session) void load() })
+    return () => { active = false; subscription.unsubscribe() }
+  // La sesión se carga una vez al iniciar; ids no cambia durante la vida de la app.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (!supabase || !email || !syncReady) return
+    const client = supabase
+    const save = async () => {
+      const { data: { user } } = await client.auth.getUser()
+      if (!user) return
+      const { error } = await client.from('user_progress').upsert({ user_id: user.id, statuses, updated_at: new Date().toISOString() })
+      if (error) setSyncMessage('El progreso quedó guardado localmente; reintentaremos sincronizarlo.')
+    }
+    void save()
+  }, [email, statuses, syncReady])
+
+  const startLesson = (id: string) => setStatuses((current) => current[id] === 'available' ? { ...current, [id]: 'in-progress' } : current)
+  const completeLesson = (id: string) => setStatuses((current) => { const next = { ...current, [id]: 'completed' as LessonStatus }; const index = ids.indexOf(id); if (index !== -1 && ids[index + 1] && next[ids[index + 1]] === 'locked') next[ids[index + 1]] = 'available'; return next })
+  const resetProgress = () => { if (window.confirm('¿Quieres reiniciar todo tu progreso local y sincronizado?')) setStatuses(initialStatuses(ids)) }
+  const exportProgress = () => {
+    const backup = JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), statuses }, null, 2)
+    const url = URL.createObjectURL(new Blob([backup], { type: 'application/json' }))
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `flight-academy-progreso-${new Date().toISOString().slice(0, 10)}.json`
+    link.click()
+    URL.revokeObjectURL(url)
+  }
+  const importProgress = async (file: File) => {
+    try {
+      const parsed = JSON.parse(await file.text()) as { statuses?: Record<string, LessonStatus> }
+      if (!parsed.statuses || typeof parsed.statuses !== 'object') throw new Error('invalid')
+      const valid: LessonStatus[] = ['locked', 'available', 'in-progress', 'completed']
+      const fallback = initialStatuses(ids)
+      setStatuses(Object.fromEntries(ids.map((id) => { const candidate = parsed.statuses?.[id]; return [id, candidate && valid.includes(candidate) ? candidate : fallback[id]] })) as Record<string, LessonStatus>)
+      return true
+    } catch { return false }
+  }
+  const signUp = async (accountEmail: string, password: string) => {
+    if (!supabase) return 'Falta configurar Supabase.'
+    const { data, error } = await supabase.auth.signUp({ email: accountEmail, password })
+    if (error) return error.message
+    if (!data.session) return 'Revisa tu correo y confirma la cuenta para iniciar sesión.'
+    return 'Cuenta creada y progreso sincronizado.'
+  }
+  const signIn = async (accountEmail: string, password: string) => {
+    if (!supabase) return 'Falta configurar Supabase.'
+    const { error } = await supabase.auth.signInWithPassword({ email: accountEmail, password })
+    return error ? error.message : 'Sesión iniciada. Sincronizando progreso…'
+  }
+  const signOut = async () => { if (supabase) await supabase.auth.signOut(); setSyncMessage('Sesión cerrada. El progreso sigue guardado en este dispositivo.') }
+  const completedCount = Object.values(statuses).filter((status) => status === 'completed').length
+  return { statuses, startLesson, completeLesson, resetProgress, exportProgress, importProgress, completedCount, progress: Math.round((completedCount / ids.length) * 100), sync: { email, message: syncMessage, signUp, signIn, signOut } }
+}
