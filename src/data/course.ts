@@ -69,7 +69,24 @@ if (levelZero) {
       makeLesson('c172-engine-runup', 'Prueba del motor antes del despegue', 'En una zona segura, confirma que el motor responde antes de usar la pista.', 0, 'Sección 5 · Operación en tierra', ['Preparar el avión para la prueba', 'Observar los indicadores básicos del motor', 'Terminar con el motor estable'], 'la prueba de motor'),
       makeLesson('c172-before-takeoff', 'Checklist antes de despegue', 'Deja el Cessna listo, pero detenido, antes del primer vuelo.', 0, 'Sección 5 · Operación en tierra', ['Completar una comprobación previa al despegue', 'Entender que aún no es momento de volar', 'Detenerse en el punto correcto'], 'la preparación final en tierra'),
     ] },
+    { id: 'first-departure', title: 'Sección 6 · Primer despegue', description: 'Entra a la pista, despega y sube a una altura segura.', lessons: [
+      makeLesson('c172-lineup', 'Entrar y alinearte en la pista', 'Reconoce el momento de entrar a la pista y mantén el avión centrado.', 0, 'Sección 6 · Primer despegue', ['Esperar en la línea correcta', 'Entrar a la pista sin prisa', 'Alinear el avión con el centro'], 'la alineación en pista'),
+      makeLesson('c172-takeoff-roll', 'Carrera de despegue', 'Acelera de forma continua y deja que el C172 vuele.', 0, 'Sección 6 · Primer despegue', ['Aplicar potencia de despegue', 'Mantener una trayectoria recta', 'Reconocer cuándo el avión está listo para elevarse'], 'la carrera de despegue'),
+      makeLesson('c172-climb-out', 'Ascenso inicial y zona segura', 'Después de despegar, establece un ascenso estable antes de practicar maniobras.', 0, 'Sección 6 · Primer despegue', ['Mantener una velocidad segura de ascenso', 'Alejarse del aeropuerto', 'Estabilizar el avión a una altura de práctica'], 'el ascenso inicial'),
+    ] },
   )
+}
+
+const levelOne = course.find((level) => level.number === 1)
+if (levelOne?.modules[0]) {
+  levelOne.modules[0].title = 'Sección 7 · Primer control en el aire'
+  levelOne.modules[0].description = 'Después del ascenso, aprende a estabilizar y controlar el C172 en una zona segura.'
+  const [references, axes, power, trim, integration] = levelOne.modules[0].lessons
+  if (references) { references.title = 'Tus tres referencias en vuelo'; references.moduleTitle = levelOne.modules[0].title }
+  if (axes) { axes.title = 'Mover el avión con suavidad'; axes.moduleTitle = levelOne.modules[0].title }
+  if (power) { power.title = 'Potencia: acelerar, subir y bajar'; power.moduleTitle = levelOne.modules[0].title }
+  if (trim) { trim.title = 'Trim: dejar de pelear con el yoke'; trim.moduleTitle = levelOne.modules[0].title }
+  if (integration) { integration.title = 'Primer vuelo controlado'; integration.moduleTitle = levelOne.modules[0].title }
 }
 
 const lessonPlan = (concept: string, procedure: string, errors: string, exerciseTitle: string, exercise: string, checklist: string[]): Partial<Lesson> => ({
@@ -331,6 +348,122 @@ const c172NormalProcedures: Record<string, Partial<Lesson>> = {
   },
 }
 
+const airAndVfrProcedures: Record<string, Partial<Lesson>> = {
+  'know-c172': lessonPlan(
+    'En vuelo solo necesitas tres referencias al principio: mira lejos por el parabrisas para saber hacia dónde va el avión; mira la velocidad para no volar demasiado lento; mira la altitud para confirmar si subes, bajas o mantienes nivel. No intentes leer toda la pantalla G1000.',
+    '1. Al llegar a una zona segura, elige una montaña, nube o punto lejano frente al morro.\n2. Mira fuera durante unos segundos.\n3. Revisa velocidad y altitud una vez.\n4. Vuelve a mirar fuera. Repite este ciclo sin tocar nada durante un minuto.\n5. Si el avión se desvía, haz una corrección pequeña y espera a ver el resultado.',
+    'No fijes la vista en el horizonte artificial ni en la pantalla durante todo el vuelo. Tampoco persigas cada número: la tendencia importa más que una variación pequeña.',
+    'Mirar, comprobar, volver a mirar',
+    'Mantén un rumbo aproximado durante dos minutos. Tu meta no es una cifra perfecta: es poder decir qué estabas mirando y por qué.',
+    ['Referencia exterior elegida', 'Velocidad revisada', 'Altitud revisada', 'Ciclo exterior-instrumentos repetido'],
+  ),
+  'three-axes': lessonPlan(
+    'El yoke hace dos cosas: girarlo inclina las alas; empujarlo o tirarlo cambia la altura del morro. El timón de dirección ayuda a mantener la trayectoria. En esta etapa se practican movimientos muy pequeños, uno a la vez.',
+    'Con el avión estable: 1. gira apenas el yoke a la derecha y vuelve al centro; observa que el ala derecha baja. 2. Repite a la izquierda. 3. Tira apenas del yoke durante dos segundos y vuelve al centro; observa el morro. 4. Empuja apenas y vuelve al centro. 5. Espera después de cada entrada.',
+    'No combines giros, tirones y potencia a la vez para “ver qué pasa”. Si el avión se inclina demasiado, nivela las alas primero y recupera con calma.',
+    'Cuatro movimientos controlados',
+    'Haz derecha, izquierda, nariz arriba y nariz abajo como ejercicios separados. Di en voz alta qué cambió después de cada entrada.',
+    ['Zona de práctica segura', 'Entrada derecha realizada', 'Entrada izquierda realizada', 'Cambio de morro arriba y abajo realizado', 'Avión estabilizado al terminar'],
+  ),
+  'throttle-power': lessonPlan(
+    'La palanca negra regula cuánta potencia entrega el motor. Más potencia tiende a acelerar y ayudar a subir; menos potencia tiende a desacelerar y permitir bajar. La actitud del morro sigue siendo importante.',
+    '1. En vuelo estable, anota mentalmente la velocidad. 2. Reduce potencia un poco y espera diez segundos sin cambiar el yoke. 3. Observa velocidad y altitud. 4. Vuelve a una potencia de crucero aproximada, alrededor de 2.300 RPM. 5. Aumenta suavemente y compara. No hagas cambios grandes.',
+    'No uses potencia máxima como solución a cada problema y no trates de mantener altitud solo con la palanca negra. Potencia y actitud trabajan juntas.',
+    'Dos cambios de potencia',
+    'Haz una reducción pequeña y un aumento pequeño. Después de cada uno, espera y describe qué hizo el avión antes de corregir.',
+    ['Vuelo estable establecido', 'Potencia reducida una vez', 'Potencia aumentada una vez', 'Velocidad observada', 'Avión estabilizado de nuevo'],
+  ),
+  'what-is-trim': lessonPlan(
+    'El trim es una ayuda para que no tengas que sostener fuerza constante en el yoke. Primero eliges la actitud y la potencia; después ajustas trim poco a poco hasta que el avión se mantenga más cómodo.',
+    '1. Establece vuelo recto y nivelado. 2. Mantén la presión suave necesaria en el yoke. 3. Ajusta trim en toques pequeños en la dirección que reduce esa presión. 4. Espera unos segundos. 5. Si el avión se aleja, vuelve primero con el yoke y repite con un toque menor.',
+    'No uses trim para recuperar una inclinación grande ni gires la rueda rápido. El trim no sustituye el control del avión; solo lo afina cuando ya está estable.',
+    'Soltar tensión del yoke',
+    'Busca un punto en el que puedas relajar las manos sin que el C172 cambie bruscamente de actitud. Si no lo logras, vuelve a la actitud estable y repite más despacio.',
+    ['Vuelo estable antes de trim', 'Trim ajustado en pasos pequeños', 'Presión en yoke reducida', 'Sin cambios bruscos', 'Avión estable al terminar'],
+  ),
+  'first-cockpit-exercise': lessonPlan(
+    'Ahora unes las cuatro ideas: mirar fuera, controlar con suavidad, ajustar potencia y usar trim. Esta práctica ocurre en zona segura, lejos de pista y terreno.',
+    '1. Mantén rumbo hacia una referencia exterior. 2. Estabiliza velocidad y altitud. 3. Haz una corrección pequeña de inclinación. 4. Ajusta potencia si cambia la velocidad. 5. Usa trim para soltar presión. 6. Mantén el resultado durante un minuto sin añadir otra maniobra.',
+    'No conviertas este ejercicio en navegación ni aterrizaje. Si te desordenas, nivela alas, conserva una actitud moderada y pausa si lo necesitas.',
+    'Primer minuto estable',
+    'Mantén el C172 estable durante un minuto completo. Al terminar escribe una sola cosa que controlaste bien y una que deseas repetir.',
+    ['Referencia exterior mantenida', 'Velocidad y altitud comprobadas', 'Corrección suave realizada', 'Trim usado con calma', 'Un minuto estable completado'],
+  ),
+  'straight-and-level': lessonPlan(
+    'Recto y nivelado es la habilidad que sostiene todo lo demás. Combina una referencia exterior, potencia de crucero, actitud suave y trim.',
+    'A 3.500–4.500 ft MSL, elige una referencia lejana. Ajusta potencia cerca de 2.300 RPM, coloca el morro en una actitud moderada y espera. Corrige solo una cosa por vez: alas niveladas, luego altitud, luego velocidad. Finalmente ajusta trim.',
+    'No hagas correcciones grandes ni mires solo el altímetro. Si estás 50–100 pies fuera, espera, observa la tendencia y corrige suavemente.',
+    'Tres minutos recto y nivelado',
+    'Mantén tres minutos dentro de una banda aproximada de ±150 ft y con rumbo reconocible. La estabilidad vale más que una perfección momentánea.',
+    ['Altura de práctica segura', 'Referencia exterior elegida', 'Potencia de crucero aproximada', 'Trim ajustado', 'Tres minutos completados'],
+  ),
+  'turns-and-coordination': lessonPlan(
+    'Un viraje suave cambia el rumbo sin perder el control. Inclinas las alas, sostienes ligeramente el morro y vuelves a nivel antes del rumbo deseado.',
+    'Desde vuelo recto y nivelado, elige un punto a 90 grados. Inclina el yoke suavemente hasta unos 20 grados de banco. Mantén una presión ligera hacia atrás si la altitud cae. Empieza a nivelar las alas unos 10 grados antes del rumbo objetivo. Repite al otro lado.',
+    'No uses una inclinación grande ni pises dirección a fondo. Si pierdes más de 150 ft, nivela alas, estabiliza y repite con un viraje menor.',
+    'Dos virajes de 90 grados',
+    'Haz un viraje de 90 grados a cada lado, con pausa recta y nivelada entre ambos. Observa altitud al salir.',
+    ['Vuelo estable al inicio', 'Viraje derecho realizado', 'Viraje izquierdo realizado', 'Altitud revisada', 'Alas niveladas al salir'],
+  ),
+  'airport-traffic-pattern': lessonPlan(
+    'El circuito organiza la llegada al aeropuerto: viento en cola, base y final preparan una aproximación ordenada. Para el primer intento usarás las ayudas y la radio del simulador.',
+    'Desde una zona segura, solicita o sigue la llegada a SKCL. Identifica la pista activa. Vuela paralelo a la pista en viento en cola, reduce potencia gradualmente, gira a base y después a final. Mantén una trayectoria estable; si no lo está, aplica potencia y vuelve a intentarlo.',
+    'No fuerces un aterrizaje desde una posición mala. Una aproximación inestable se abandona; en el simulador puedes dar motor, subir y repetir.',
+    'Primer circuito visual',
+    'Completa un circuito usando la guía ATC de MSFS. Tu objetivo es nombrar cada tramo, no aterrizar perfecto.',
+    ['Pista activa identificada', 'Viento en cola reconocido', 'Base volada', 'Final estabilizada intentada', 'Opción de frustrada comprendida'],
+  ),
+  'first-vfr-navigation': lessonPlan(
+    'VFR significa orientarte principalmente mirando el terreno. Para empezar usarás una ruta corta y dos referencias grandes, con el mapa como respaldo.',
+    'Planifica SKCL a SKUL. Antes de despegar, mira distancia, rumbo general y dos referencias: el valle y una población o carretera. En vuelo establece un rumbo general, busca la primera referencia y compárala con el mapa. Si te apartas, haz una corrección pequeña y vuelve a mirar fuera.',
+    'No sigas el mapa con la cabeza abajo ni intentes una ruta larga. Si te desorientas, mantén el avión estable, recupera una referencia conocida y usa el mapa solo para confirmar.',
+    'Ruta VFR corta',
+    'Vuela el trayecto SKCL–SKUL en día despejado. Anota dos referencias que viste y una corrección de rumbo que hiciste.',
+    ['Ruta revisada antes de salir', 'Dos referencias definidas', 'Rumbo general mantenido', 'Mapa usado como respaldo', 'Llegada o aproximación iniciada'],
+  ),
+  'vfr-consolidation': lessonPlan(
+    'Esta es la sesión completa: preparación, arranque, tierra, despegue, vuelo estable, navegación y llegada. No es un examen; es una forma de unir las piezas sin saltos.',
+    'Prepara SKCL–SKUL de día despejado. Sigue cada checklist de tierra, solicita taxi, despega, asciende a una altura segura, mantén un tramo recto y nivelado, realiza dos virajes suaves y navega por referencias. Al llegar, intenta el circuito con las ayudas activas si las necesitas.',
+    'No intentes corregir todo a la vez. Si algo se desordena, pausa o reinicia el tramo. Una buena sesión es aquella en la que sabes qué ocurrió.',
+    'Vuelo VFR de consolidación',
+    'Completa la ruta o, si no llegas, detente en una zona segura. Escribe: qué fue fácil, qué fue difícil y cuál será tu siguiente práctica.',
+    ['Checklist de tierra seguida', 'Despegue ordenado', 'Vuelo estable practicado', 'Dos virajes realizados', 'Referencias VFR usadas', 'Revisión final escrita'],
+  ),
+}
+
+const c172TakeoffProcedures: Record<string, Partial<Lesson>> = {
+  'c172-lineup': {
+    estimatedTime: '18 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'De la línea de espera a la pista', content: '1. Completa la checklist anterior y solicita o confirma autorización en Comunicaciones.\n2. Rueda lentamente hasta la línea de espera. Detente allí.\n3. Cuando tengas autorización para entrar, mira ambos lados de la pista en el simulador.\n4. Entra despacio, gira hasta quedar paralelo a la línea blanca del centro y detente.\n5. El morro debe apuntar a los números grandes de la pista. Mantén el avión centrado; aún no apliques potencia de despegue.' },
+      { kind: 'APRENDE', title: 'Tu referencia visual', content: 'La línea blanca discontinua de la pista es tu guía. No mires solo el morro: mira lejos, hacia el final de la pista, y corrige con movimientos pequeños. Estar alineado es una condición previa; no es una carrera.' },
+      { kind: 'ERRORES COMUNES', title: 'No cruces por costumbre', content: 'Si no recibiste autorización o no entiendes el mensaje de Comunicaciones, permanece detenido en la línea de espera. En este curso, detenerse es siempre una respuesta correcta cuando no sabes qué hacer.' },
+    ] as Lesson['sections'],
+    checklist: ['Checklist antes de despegue completada', 'Autorización o ruta revisada', 'Línea de espera respetada', 'Pista libre comprobada visualmente', 'Avión centrado y detenido en la pista'],
+    exercise: { title: 'Alineación sin despegar', instructions: 'Entra, alinea el C172 con el centro de la pista y detente. Mira hacia el final de pista y comprueba que la línea queda centrada bajo el morro. Reinicia si quedas inclinado o fuera de eje.' },
+  },
+  'c172-takeoff-roll': {
+    estimatedTime: '20 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Carrera de despegue del C172', content: '1. Con el avión alineado, libera el freno de estacionamiento.\n2. Aplica potencia suavemente hasta el máximo y confirma que el avión sigue recto sobre la línea central.\n3. Mantén la mirada al final de la pista; corrige dirección con entradas pequeñas.\n4. A medida que aumenta la velocidad, el yoke se vuelve más sensible. No tires de él de golpe.\n5. Cerca de 55 nudos, alivia suavemente la presión hacia delante. El avión se separará del suelo cuando esté listo.\n6. Una vez en el aire, mantén una actitud suave de ascenso. No busques girar todavía.' },
+      { kind: 'APRENDE', title: 'El avión despega; no lo arrancas del suelo', content: 'La potencia acelera el avión y las alas generan sustentación. Tu trabajo es mantenerlo recto y hacer una transición suave. Si tiras fuerte, puedes perder velocidad; si lo mantienes pegado a la pista demasiado tiempo, acumula demasiada velocidad. La salida correcta se siente continua, no brusca.' },
+      { kind: 'ERRORES COMUNES', title: 'Si algo se ve mal, detén el intento', content: 'Si el C172 se desvía mucho, pierde el centro de pista o el motor no responde como esperas, reduce potencia y frena mientras aún estás en tierra. En el simulador puedes reiniciar sin penalización: repetir un despegue ordenado es parte del entrenamiento.' },
+    ] as Lesson['sections'],
+    checklist: ['Avión alineado antes de aplicar potencia', 'Potencia máxima aplicada de forma continua', 'Centro de pista mantenido', 'Rotación suave cerca de 55 nudos', 'Avión en el aire sin giro brusco'],
+    exercise: { title: 'Un despegue, una sola meta', instructions: 'Despega y mantén la dirección. No intentes tocar botones, radios ni mapa durante la carrera. Cuando las ruedas dejen el suelo, sigue recto y abre inmediatamente la siguiente lección de ascenso.' },
+  },
+  'c172-climb-out': {
+    estimatedTime: '20 min',
+    sections: [
+      { kind: 'PROCEDIMIENTO', title: 'Después de dejar la pista', content: '1. Mantén el morro en una actitud suave de ascenso y conserva potencia de despegue.\n2. Deja que la velocidad se estabilice cerca de 70–75 nudos; no persigas cada variación pequeña.\n3. Sigue recto hasta tener altura y espacio.\n4. A 500 pies sobre el aeropuerto, si el circuito lo requiere, haz un giro suave siguiendo la ruta de salida.\n5. Al llegar a una zona libre y una altura segura, reduce un poco la potencia, nivela el avión y prepárate para la primera lección de control en el aire.' },
+      { kind: 'APRENDE', title: 'Tu prioridad es altura y calma', content: 'En los primeros segundos no necesitas mirar todos los instrumentos. Mira al frente, mantén la actitud, comprueba velocidad de vez en cuando y deja que el avión gane altura. La navegación, el mapa y la radio pueden esperar hasta que el avión esté estable.' },
+      { kind: 'ERRORES COMUNES', title: 'No gires ni ajustes demasiado pronto', content: 'No hagas giros fuertes justo después de despegar y no reduzcas potencia antes de estar seguro. Si sientes que perdiste el control, nivela suavemente las alas, mantén una actitud moderada y, si hace falta, pausa el simulador.' },
+    ] as Lesson['sections'],
+    checklist: ['Ascenso estable establecido', 'Velocidad aproximada de 70–75 nudos observada', 'Pista alejada con seguridad', 'Giro suave solo con altura suficiente', 'Avión nivelado en zona de práctica'],
+    exercise: { title: 'Llegar a la zona de práctica', instructions: 'Después de despegar, asciende hasta 3.500 ft MSL en los alrededores de SKCL. Cuando estés lejos de la pista, nivela el avión. Ahora sí estás listo para aprender qué hace cada movimiento en el aire.' },
+  },
+}
+
 const c172GroundProcedures: Record<string, Partial<Lesson>> = {
   'airport-map-basics': {
     estimatedTime: '18 min',
@@ -399,7 +532,10 @@ const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'c172-taxi-basics': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, motor al ralentí', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'No vayas a la pista: rueda una distancia corta y vuelve a detenerte.'),
   'c172-engine-runup': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma o zona amplia, motor encendido', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Haz la prueba detenido y termina con el motor cerca de 1.000 RPM.'),
   'c172-before-takeoff': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Plataforma, motor al ralentí', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Esta sección termina listo para rodar; no incluye despegue.'),
-  'know-c172': setup('SKPE · Matecaña, Pereira', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado', 'Día, 10:00', 'Tour de cabina en tierra; no necesitas despegar.'),
+  'c172-lineup': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Línea de espera, motor encendido', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Solicita taxi y detente antes de la pista; entra solo cuando estés listo para practicar.'),
+  'c172-takeoff-roll': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Inicio de pista, alineado', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Flaps arriba, trim neutro y pista despejada. Esta práctica termina al dejar el suelo.'),
+  'c172-climb-out': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'Pista de salida', 'Altitud del aeropuerto', 'Preestablecido: despejado, sin viento', 'Día, 09:00', 'Asciende recto antes de practicar cualquier viraje.'),
+  'know-c172': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En aire, después del ascenso', '3,500 ft MSL', 'Preestablecido: despejado, sin viento', 'Día, 10:00', 'Ya estás en zona segura: esta lección comienza después del primer despegue.'),
   'three-axes': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En aire', '6,500 ft MSL', 'Preestablecido: despejado, sin viento', 'Día, 10:00', 'Empieza recto y nivelado, lejos del aeropuerto y del relieve.'),
   'throttle-power': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En aire', '6,500 ft MSL', 'Preestablecido: despejado, sin viento', 'Día, 11:00', 'Mantén una zona amplia y segura para observar los cambios de potencia.'),
   'what-is-trim': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En aire', '6,500 ft MSL', 'Preestablecido: despejado, sin viento', 'Día, 11:00', 'Usa aire calmo; ajusta trim solo después de estabilizar la actitud.'),
@@ -411,7 +547,7 @@ const flightSetups: Record<string, NonNullable<Lesson['flightSetup']>> = {
   'vfr-consolidation': setup('SKCL · Alfonso Bonilla Aragón, Cali', 'En plataforma', 'Altitud del aeropuerto', 'Preestablecido: despejado, viento ligero', 'Día, 09:00', 'Vuela una ruta corta SKCL–SKUL; mantén ayudas activas si las necesitas.'),
 }
 
-course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], practicalLevelZeroDetails[lesson.id], velocityOneC172Details[lesson.id], c172NormalProcedures[lesson.id], c172GroundProcedures[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
+course.forEach((level) => level.modules.forEach((module) => module.lessons.forEach((lesson) => Object.assign(lesson, lessonDetails[lesson.id], practicalLevelZeroDetails[lesson.id], velocityOneC172Details[lesson.id], c172NormalProcedures[lesson.id], c172GroundProcedures[lesson.id], c172TakeoffProcedures[lesson.id], airAndVfrProcedures[lesson.id], { flightSetup: flightSetups[lesson.id] }))))
 
 export const lessonOrder = course.flatMap((level) => level.modules.flatMap((module) => module.lessons.map((lesson) => lesson.id)))
 export const getLesson = (id: string) => course.flatMap((level) => level.modules).flatMap((module) => module.lessons).find((lesson) => lesson.id === id)
