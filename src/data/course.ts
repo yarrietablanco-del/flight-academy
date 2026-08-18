@@ -285,6 +285,45 @@ if (levelTwo) {
         "el circuito de tránsito",
       ),
       makeLesson(
+        "c172-approach-setup",
+        "Preparar la aproximaciÃ³n",
+        "Reduce velocidad, usa flaps por etapas y construye una final ordenada.",
+        2,
+        "Fundamentos VFR",
+        [
+          "Reconocer el momento de configurar el aviÃ³n",
+          "Usar potencia y flaps por etapas",
+          "Llegar estabilizado a final",
+        ],
+        "la preparaciÃ³n de una aproximaciÃ³n",
+      ),
+      makeLesson(
+        "c172-landing",
+        "Aterrizaje paso a paso",
+        "Aprende quÃ© mirar, cuÃ¡ndo reducir potencia y cÃ³mo dejar que el C172 aterrice.",
+        2,
+        "Fundamentos VFR",
+        [
+          "Mantener una velocidad de aproximaciÃ³n adecuada",
+          "Hacer redondeo suave",
+          "Controlar el aviÃ³n despuÃ©s de tocar pista",
+        ],
+        "el aterrizaje del Cessna 172",
+      ),
+      makeLesson(
+        "c172-go-around",
+        "Frustrada: decidir no aterrizar",
+        "Aprende a abandonar una aproximaciÃ³n inestable de forma ordenada.",
+        2,
+        "Fundamentos VFR",
+        [
+          "Reconocer una aproximaciÃ³n inestable",
+          "Aplicar potencia y ascender",
+          "Reconfigurar el aviÃ³n con calma",
+        ],
+        "la maniobra de frustrada",
+      ),
+      makeLesson(
         "first-vfr-navigation",
         "Tu primera navegación VFR",
         "Sigue una ruta corta usando referencias visuales y el mapa.",
@@ -319,6 +358,40 @@ if (levelZero) {
   levelZero.modules.splice(
     2,
     1,
+    {
+      id: "flight-plan-basics",
+      title: "SecciÃ³n 2 Â· Plan antes de encender",
+      description:
+        "Carga combustible razonable y conoce las velocidades que usarÃ¡s en este C172 de entrenamiento.",
+      lessons: [
+        makeLesson(
+          "c172-fuel-basics",
+          "Combustible: cuÃ¡nto cargar y dÃ³nde hacerlo",
+          "Calcula una carga de entrenamiento sencilla y aplÃ­cala en el EFB de MSFS.",
+          0,
+          "SecciÃ³n 2 Â· Plan antes de encender",
+          [
+            "Calcular combustible de salida y reserva",
+            "Cargarlo desde el EFB sin adivinar",
+            "Comprender por quÃ© peso y combustible importan",
+          ],
+          "la planificaciÃ³n bÃ¡sica de combustible",
+        ),
+        makeLesson(
+          "c172-takeoff-card",
+          "Tarjeta de despegue: flaps y velocidades",
+          "Prepara una tarjeta simple con la configuraciÃ³n que usarÃ¡s antes de llegar a la pista.",
+          0,
+          "SecciÃ³n 2 Â· Plan antes de encender",
+          [
+            "Diferenciar KIAS de RPM",
+            "Saber la configuraciÃ³n normal de flaps",
+            "Reconocer VR y velocidad de ascenso",
+          ],
+          "la tarjeta de despegue del C172",
+        ),
+      ],
+    },
     {
       id: "before-start",
       title: "Sección 3 · Antes de encender",
@@ -1728,7 +1801,206 @@ const c172GroundProcedures: Record<string, Partial<Lesson>> = {
   },
 };
 
+const fullC172Procedures: Record<string, Partial<Lesson>> = {
+  "c172-fuel-basics": {
+    estimatedTime: "25 min",
+    sections: [
+      {
+        kind: "APRENDE",
+        title: "La cuenta simple que usarÃ¡s al principio",
+        content:
+          "Para estas prÃ¡cticas de simulador usa una regla conservadora, no un porcentaje al azar: COMBUSTIBLE = (tiempo de vuelo + 15 min de taxi + 45 min de reserva) Ã— 8 galones US por hora. Ejemplo: un vuelo local de 45 min: (0,75 + 0,25 + 0,75) Ã— 8 = 14 galones. Carga 18 galones para dejar margen. Es una base didÃ¡ctica para el C172 estÃ¡ndar de MSFS, no una autorizaciÃ³n para un aviÃ³n real.",
+      },
+      {
+        kind: "PROCEDIMIENTO",
+        title: "Cargarlo en MSFS 2024, sin buscar un menÃº oculto",
+        content:
+          "1. Inicia el vuelo libre con el C172 detenido en plataforma.\n2. Mueve el cursor arriba para abrir la barra de herramientas y pulsa EFB / Tablet.\n3. En la tablet elige el icono Aircraft / AviÃ³n.\n4. Abre Flight Performance y despuÃ©s Mass and Balance / Masa y balance.\n5. Abre la pestaÃ±a Fuel / Combustible. Introduce la cantidad indicada para cada tanque o usa el control total si tu versiÃ³n lo muestra. Para esta prÃ¡ctica reparte igual entre izquierdo y derecho.\n6. Pulsa Load in Aircraft / Cargar en el aviÃ³n. Ese Ãºltimo botÃ³n es el que aplica el cambio.\n7. Cierra la tablet y comprueba en cabina que el indicador de combustible no estÃ¡ en rojo.",
+      },
+      {
+        kind: "ERRORES COMUNES",
+        title: "Lo que esta lecciÃ³n no hace",
+        content:
+          "No llenes los tanques solo por tranquilidad: mÃ¡s combustible tambiÃ©n significa mÃ¡s peso. No intentes calcular centro de gravedad todavÃ­a ni ajustes pasajeros y equipaje al azar. Para una prÃ¡ctica solo, carga al piloto y combustible simÃ©trico; mÃ¡s adelante se incorporarÃ¡ peso y balance completo.",
+      },
+    ] as Lesson["sections"],
+    checklist: [
+      "DuraciÃ³n estimada anotada",
+      "15 min de taxi incluidos",
+      "45 min de reserva incluidos",
+      "Consumo de 8 gal/h usado como base",
+      "Combustible repartido entre ambos tanques",
+      "Load in Aircraft pulsado",
+    ],
+    exercise: {
+      title: "Tu primera carga calculada",
+      instructions:
+        "Planifica 45 minutos de vuelo local. Calcula 14 galones como mÃ­nimo didÃ¡ctico y carga 18 galones repartidos entre los dos tanques. Di en voz alta quÃ© parte corresponde al vuelo, al taxi y a la reserva. Termina con el aviÃ³n apagado en plataforma.",
+    },
+  },
+  "c172-takeoff-card": {
+    estimatedTime: "18 min",
+    sections: [
+      {
+        kind: "APRENDE",
+        title: "Tu tarjeta de referencia para este curso",
+        content:
+          "Estas cifras son una base de entrenamiento para el Cessna 172 Skyhawk G1000 estÃ¡ndar de MSFS, con dÃ­a despejado, viento ligero y peso moderado. KIAS significa nudos indicados en el indicador de velocidad; RPM es la potencia del motor. DESPEGUE NORMAL: flaps 0Â°, potencia mÃ¡xima, rotaciÃ³n cerca de 55 KIAS y ascenso inicial 70â€“75 KIAS. Si el clima, peso o aeropuerto cambian, no inventes una cifra: pausa y vuelve a esta tarjeta o consulta la lista del aviÃ³n dentro del simulador.",
+      },
+      {
+        kind: "PROCEDIMIENTO",
+        title: "Crea una tarjeta que puedas leer sin soltar la vista",
+        content:
+          "Escribe estas cuatro lÃ­neas en una nota del celular o papel: \n1. Antes de pista: FLAPS 0Â° â€” TRIM neutro â€” mezcla rica.\n2. Carrera: potencia mÃ¡xima â€” mirada al final de pista.\n3. 55 KIAS: aliviar presiÃ³n y dejar que vuele.\n4. En el aire: 70â€“75 KIAS, recto y con calma.\nNo necesitas operar flaps ahora. Solo compara la palanca de flaps de cabina: debe estar arriba y el indicador debe mostrar 0Â° antes de iniciar el arranque.",
+      },
+      {
+        kind: "ERRORES COMUNES",
+        title: "No confundas las cifras",
+        content:
+          "55 KIAS no es una orden para tirar fuerte: es una referencia para aliviar presiÃ³n cuando el aviÃ³n ya acelera recto. 70â€“75 KIAS es la referencia posterior, no la velocidad de rodaje. La potencia se observa en RPM; la velocidad de vuelo se lee en KIAS. Una cifra no sustituye mantener el centro de pista y mirar hacia delante.",
+      },
+    ] as Lesson["sections"],
+    checklist: [
+      "KIAS y RPM diferenciados",
+      "Flaps 0Â° anotados",
+      "55 KIAS anotados",
+      "70â€“75 KIAS anotados",
+      "Tarjeta visible para el primer despegue",
+    ],
+    exercise: {
+      title: "Leer sin memorizar",
+      instructions:
+        "Con el C172 apagado, localiza el indicador de flaps y el de velocidad. Repite la tarjeta en orden. No arranques ni muevas el aviÃ³n: esta tarjeta serÃ¡ tu apoyo al llegar a la pista en el Nivel 0.",
+    },
+  },
+  "c172-approach-setup": {
+    estimatedTime: "30 min",
+    sections: [
+      {
+        kind: "APRENDE",
+        title: "La aproximaciÃ³n empieza antes de final",
+        content:
+          "Una llegada ordenada se construye desde el circuito. No se baja de golpe ni se ponen todos los flaps de una vez. Para el C172 de este curso: entra al circuito aproximadamente 1.000 ft sobre el aeropuerto; en viento en cola reduce potencia para bajar de velocidad; a menos de 110 KIAS puedes seleccionar flaps 10Â°. Los flaps 20Â° y 30Â° solo se usan cuando estÃ¡s a menos de 85 KIAS y la pista ya estÃ¡ claramente alcanzable.",
+      },
+      {
+        kind: "PROCEDIMIENTO",
+        title: "De viento en cola a final, paso por paso",
+        content:
+          "1. En viento en cola, mantÃ©n la pista a tu lado y comprueba que estÃ¡s aproximadamente 1.000 ft por encima del aeropuerto.\n2. Cuando quedes a la altura del umbral de pista, reduce potencia hacia una base aproximada de 1.500â€“1.700 RPM; el objetivo es iniciar descenso, no fijar un nÃºmero perfecto.\n3. Cuando la velocidad baje de 110 KIAS, selecciona flaps 10Â°. Espera y observa.\n4. Gira suavemente a base. Si la pista se ve muy cerca, no aÃ±adas mÃ¡s flaps; conserva la separaciÃ³n.\n5. Solo bajo 85 KIAS, selecciona flaps 20Â°. En base/final, si la pista sigue claramente al alcance, puedes seleccionar flaps 30Â°.\n6. Gira a final y alinea el morro con el centro de pista. Busca alrededor de 65 KIAS como referencia inicial de final.\n7. A 500 ft sobre el aeropuerto pregunta: Â¿estoy alineado, a velocidad aproximada y con pista alcanzable? Si la respuesta es no, harÃ¡s frustrada en la siguiente lecciÃ³n.",
+      },
+      {
+        kind: "ERRORES COMUNES",
+        title: "Flaps no son frenos de emergencia",
+        content:
+          "No extiendas flaps por encima de sus velocidades lÃ­mite y no los subas o bajes todos de golpe. Si quedas alto, no apuntes el morro violentamente hacia la pista: reduce potencia, mantÃ©n una actitud moderada y decide pronto si debes frustrar. Una aproximaciÃ³n estable vale mÃ¡s que forzar un aterrizaje.",
+      },
+    ] as Lesson["sections"],
+    checklist: [
+      "Circuito a aproximadamente 1.000 ft AGL",
+      "Flaps 10Â° solo bajo 110 KIAS",
+      "Flaps 20Â°/30Â° solo bajo 85 KIAS",
+      "Final alineada",
+      "Referencia de 65 KIAS observada",
+      "DecisiÃ³n de aterrizar o frustrar tomada a tiempo",
+    ],
+    exercise: {
+      title: "Una aproximaciÃ³n sin aterrizar",
+      instructions:
+        "Vuela el circuito en SKCL. Configura hasta final con la secuencia 10Â° â†’ 20Â° â†’ 30Â° solo cuando corresponda. A unos 500 ft sobre el aeropuerto aplica frustrada deliberadamente; el aterrizaje se practica en la siguiente lecciÃ³n.",
+    },
+  },
+  "c172-landing": {
+    estimatedTime: "30 min",
+    sections: [
+      {
+        kind: "APRENDE",
+        title: "El objetivo no es tocar pronto",
+        content:
+          "En final mira principalmente el extremo de la pista y alterna con una revisiÃ³n breve de velocidad. Usa potencia para controlar si llegas corto o largo; usa una actitud suave para mantener la aproximaciÃ³n. Cerca del suelo, el redondeo es una elevaciÃ³n gradual del morro: no es un tirÃ³n. El C172 debe perder velocidad y posarse por sÃ­ mismo.",
+      },
+      {
+        kind: "PROCEDIMIENTO",
+        title: "De final a pista",
+        content:
+          "1. Llega a final alineado, con pista al alcance y alrededor de 65 KIAS como referencia inicial.\n2. Elige un punto de mira fijo en la pista. Si parece subir por el parabrisas, vas a quedar corto: aÃ±ade un poco de potencia. Si baja, vas a quedar largo: reduce un poco, sin empujar bruscamente.\n3. MantÃ©n la lÃ­nea central con correcciones pequeÃ±as y mira cada vez mÃ¡s lejos hacia el final de pista.\n4. Cerca del suelo, reduce potencia suavemente a ralentÃ­ y levanta apenas el morro para que el aviÃ³n deje de descender.\n5. Deja que las ruedas principales toquen. MantÃ©n el morro arriba suavemente mientras pierde velocidad.\n6. Cuando el aviÃ³n ya rueda lento, baja el morro con cuidado, frena suavemente y mantÃ©n el centro de pista.\n7. Sal de la pista por una calle de rodaje cuando el simulador te lo indique. DespuÃ©s del primer toque no intentes cambiar radios, mapa o configuraciones.",
+      },
+      {
+        kind: "ERRORES COMUNES",
+        title: "Si rebota, no lo persigas",
+        content:
+          "Un rebote es una seÃ±al para aplicar potencia y hacer frustrada; no empujes el morro para obligarlo a volver a la pista. Si estÃ¡s muy alto, muy rÃ¡pido, desalineado o la pista no parece alcanzable, no intentes corregir cuatro cosas a la vez: frustrada. En simulaciÃ³n, repetir es parte del aprendizaje.",
+      },
+    ] as Lesson["sections"],
+    checklist: [
+      "Final alineada",
+      "Pista al alcance",
+      "Velocidad aproximada de 65 KIAS observada",
+      "Punto de mira usado",
+      "Redondeo suave intentado",
+      "Centro de pista mantenido despuÃ©s del toque",
+      "Salida de pista solo a baja velocidad",
+    ],
+    exercise: {
+      title: "Tres aterrizajes tranquilos",
+      instructions:
+        "Haz tres circuitos en SKCL. En cada uno decide antes de 500 ft AGL: aterrizar o frustrar. Solo cuenta como prÃ¡ctica de aterrizaje si llegas estable; si no, practica la frustrada y vuelve a intentarlo.",
+    },
+  },
+  "c172-go-around": {
+    estimatedTime: "20 min",
+    sections: [
+      {
+        kind: "APRENDE",
+        title: "Frustrar es una decisiÃ³n correcta",
+        content:
+          "La frustrada no es un fracaso ni un castigo. Es la maniobra normal cuando la aproximaciÃ³n no permite un aterrizaje controlado. Tu prioridad vuelve a ser potencia, actitud, velocidad y ascenso; la pista y la radio pueden esperar unos segundos.",
+      },
+      {
+        kind: "PROCEDIMIENTO",
+        title: "Frustrada del C172, en orden",
+        content:
+          "1. Aplica potencia mÃ¡xima de forma continua.\n2. MantÃ©n el eje de pista y adopta una actitud de ascenso moderada; no tires fuerte.\n3. Confirma que la velocidad aumenta y busca 70â€“75 KIAS.\n4. Si tenÃ­as flaps 30Â°, retrÃ¡elos a 20Â° de inmediato para reducir resistencia, pero no los subas todos de golpe.\n5. Cuando tengas ascenso positivo y espacio sobre la pista, retrÃ¡elos a 10Â°; despuÃ©s a 0Â° gradualmente mientras sigues ascendiendo.\n6. MantÃ©n rumbo de salida y vuelve a una altura segura. Solo entonces reorganiza el circuito y decide el siguiente intento.",
+      },
+      {
+        kind: "ERRORES COMUNES",
+        title: "Nunca sacrifiques la velocidad",
+        content:
+          "No retires los flaps por completo al mismo tiempo que tiras del yoke. No gires bruscamente para volver al circuito justo al aplicar potencia. Si te desordenas, mantÃ©n alas niveladas, potencia y actitud moderada; ganar altura es el trabajo inmediato.",
+      },
+    ] as Lesson["sections"],
+    checklist: [
+      "Potencia mÃ¡xima aplicada",
+      "Eje de pista mantenido",
+      "70â€“75 KIAS buscados",
+      "Flaps retirados por etapas",
+      "Ascenso positivo confirmado",
+      "Circuito reorganizado solo a altura segura",
+    ],
+    exercise: {
+      title: "Frustrada planificada",
+      instructions:
+        "En una final estable de SKCL, a unos 500 ft AGL aplica una frustrada deliberadamente. Di en voz alta: potencia, actitud, velocidad, flaps por etapas. Repite hasta poder hacerlo sin buscar un paso que no sabes de dÃ³nde sale.",
+    },
+  },
+};
+
 const flightSetups: Record<string, NonNullable<Lesson["flightSetup"]>> = {
+  "c172-fuel-basics": setup(
+    "SKCL Â· Alfonso Bonilla AragÃ³n, Cali",
+    "Plataforma, motor apagado",
+    "Altitud del aeropuerto",
+    "Preestablecido: despejado, sin viento",
+    "DÃ­a, 09:00",
+    "Usa el EFB antes de encender. Para la prÃ¡ctica carga 18 galones US repartidos entre ambos tanques.",
+  ),
+  "c172-takeoff-card": setup(
+    "SKCL Â· Alfonso Bonilla AragÃ³n, Cali",
+    "Plataforma, motor apagado",
+    "Altitud del aeropuerto",
+    "Preestablecido: despejado, sin viento",
+    "DÃ­a, 09:00",
+    "Solo prepara la tarjeta y comprueba flaps 0Â°; todavÃ­a no arranques.",
+  ),
   "how-training-works": setup(
     "SKBO · El Dorado, Bogotá",
     "En plataforma",
@@ -1746,7 +2018,7 @@ const flightSetups: Record<string, NonNullable<Lesson["flightSetup"]>> = {
     "Usa una puerta o plataforma tranquila; confirma mandos antes de rodar.",
   ),
   "know-velocityone": setup(
-    "SKPE · Matecaña, Pereira",
+    "SKCL · Alfonso Bonilla Aragón, Cali",
     "En plataforma",
     "Altitud del aeropuerto",
     "Preestablecido: despejado",
@@ -1935,7 +2207,31 @@ const flightSetups: Record<string, NonNullable<Lesson["flightSetup"]>> = {
     "Altitud del aeropuerto",
     "Preestablecido: despejado, viento ligero",
     "Día, 09:00",
-    "Si el terreno te resulta exigente, usa SKCL como alternativa de circuito más amplio.",
+    "Completa la cadena de tierra y despegue de Nivel 0; practica el circuito sobre SKCL en clima despejado.",
+  ),
+  "c172-approach-setup": setup(
+    "SKCL · Alfonso Bonilla Aragón, Cali",
+    "En aire, circuito de transito",
+    "1.000 ft sobre el aeropuerto",
+    "Preestablecido: despejado, viento ligero",
+    "Dia, 10:00",
+    "Empieza en viento en cola tras el despegue; la meta es configurar final, no aterrizar todavia.",
+  ),
+  "c172-landing": setup(
+    "SKCL · Alfonso Bonilla Aragón, Cali",
+    "En aire, final estable",
+    "Aproximadamente 500 ft AGL",
+    "Preestablecido: despejado, viento ligero",
+    "Dia, 10:00",
+    "Llega desde la leccion de aproximacion o inicia una final estable con ayuda de MSFS.",
+  ),
+  "c172-go-around": setup(
+    "SKCL · Alfonso Bonilla Aragón, Cali",
+    "En aire, final estable",
+    "Aproximadamente 500 ft AGL",
+    "Preestablecido: despejado, viento ligero",
+    "Dia, 10:00",
+    "Esta practica termina en ascenso y circuito; no necesitas aterrizar.",
   ),
   "first-vfr-navigation": setup(
     "SKCL · Alfonso Bonilla Aragón, Cali",
@@ -1964,7 +2260,17 @@ const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
   "prepare-msfs": {
     start: "Pantalla principal de MSFS 2024.",
     finish: "C172 quieto en plataforma, de día y con clima despejado.",
-    next: "Continúa con “Escenario apagado: Cold & Dark”.",
+    next: "Continúa con “Combustible: cuánto cargar y dónde hacerlo”.",
+  },
+  "c172-fuel-basics": {
+    start: "C172 apagado en plataforma; Vuelo libre ya configurado.",
+    finish: "Carga de 18 galones aplicada desde EFB y combustible comprobado.",
+    next: "Continúa con “Tarjeta de despegue: flaps y velocidades”.",
+  },
+  "c172-takeoff-card": {
+    start: "C172 apagado en plataforma, combustible ya cargado.",
+    finish: "Tarjeta de flaps 0°, 55 KIAS y 70–75 KIAS preparada.",
+    next: "Abre “Escenario apagado: Cold & Dark” y conserva la tarjeta.",
   },
   "c172-cold-dark": {
     start: "Mapa de Vuelo libre.",
@@ -2072,8 +2378,28 @@ const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
   },
   "airport-traffic-pattern": {
     start:
-      "Nuevo Vuelo libre en SKPE o SKCL; completa el arranque y despegue de Nivel 0 antes de practicar.",
+      "Nuevo Vuelo libre en SKCL; completa el arranque y despegue de Nivel 0 antes de practicar.",
     finish: "Reconociste salida, viento cruzado, viento en cola, base y final.",
+    next: "Continúa con “Preparar la aproximación”.",
+  },
+  "c172-approach-setup": {
+    start:
+      "En viento en cola del circuito de SKCL, aproximadamente 1.000 ft AGL.",
+    finish:
+      "Final alineada, flaps configurados por etapas y decisión tomada antes de 500 ft AGL.",
+    next: "Continúa con “Aterrizaje paso a paso”.",
+  },
+  "c172-landing": {
+    start: "Final estable a aproximadamente 500 ft AGL; pista al alcance.",
+    finish:
+      "C172 en tierra, controlado y listo para salir de la pista lentamente.",
+    next: "Practica “Frustrada” para saber qué hacer cuando no puedas aterrizar estable.",
+  },
+  "c172-go-around": {
+    start:
+      "Final estable o inestable; hay suficiente pista y altura para iniciar la maniobra.",
+    finish:
+      "Avión en ascenso, flaps retirados por etapas y circuito reorganizado.",
     next: "Continúa con “Tu primera navegación VFR”.",
   },
   "first-vfr-navigation": {
@@ -2101,6 +2427,7 @@ course.forEach((level) =>
         c172GroundProcedures[lesson.id],
         c172TakeoffProcedures[lesson.id],
         airAndVfrProcedures[lesson.id],
+        fullC172Procedures[lesson.id],
         {
           flightSetup: flightSetups[lesson.id],
           continuity: lessonContinuity[lesson.id],
@@ -2109,6 +2436,46 @@ course.forEach((level) =>
     ),
   ),
 );
+
+// Algunas lecciones nuevas se almacenan con secuencias UTF-8 heredadas del
+// editor. Se normalizan al cargar el curso para que el alumno siempre vea
+// español correcto, también en los textos extensos y las tarjetas visuales.
+const normalizeDisplayText = (text: string) =>
+  text
+    .replaceAll("\u00C3\u00A1", "á")
+    .replaceAll("\u00C3\u00A9", "é")
+    .replaceAll("\u00C3\u00AD", "í")
+    .replaceAll("\u00C3\u00B3", "ó")
+    .replaceAll("\u00C3\u00BA", "ú")
+    .replaceAll("\u00C3\u00B1", "ñ")
+    .replaceAll("\u00C3\u0081", "Á")
+    .replaceAll("\u00C3\u0089", "É")
+    .replaceAll("\u00C3\u0093", "Ó")
+    .replaceAll("\u00C2\u00B0", "°")
+    .replaceAll("\u00C2\u00B7", "·")
+    .replaceAll("\u00E2\u20AC\u201C", "–")
+    .replaceAll("\u00E2\u20AC\u201D", "—")
+    .replaceAll("\u00E2\u2020\u2019", "’")
+    .replaceAll("\u00C3\u2014", "×");
+
+const normalizeCourseText = (value: unknown): void => {
+  if (typeof value === "string") return;
+  if (Array.isArray(value)) {
+    value.forEach(normalizeCourseText);
+    return;
+  }
+  if (value && typeof value === "object") {
+    Object.entries(value).forEach(([key, item]) => {
+      if (typeof item === "string") {
+        (value as Record<string, unknown>)[key] = normalizeDisplayText(item);
+      } else {
+        normalizeCourseText(item);
+      }
+    });
+  }
+};
+
+normalizeCourseText(course);
 
 export const lessonOrder = course.flatMap((level) =>
   level.modules.flatMap((module) => module.lessons.map((lesson) => lesson.id)),

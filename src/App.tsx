@@ -489,6 +489,17 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
     string,
     { src: string; alt: string; caption: string }
   > = {
+    "c172-fuel-basics": {
+      src: `${import.meta.env.BASE_URL}c172-performance-card.svg`,
+      alt: "Tarjeta visual de combustible y despegue del Cessna 172",
+      caption:
+        "Calcula primero y carga desde el EFB antes de encender el motor.",
+    },
+    "c172-takeoff-card": {
+      src: `${import.meta.env.BASE_URL}c172-performance-card.svg`,
+      alt: "Tarjeta visual de combustible y despegue del Cessna 172",
+      caption: "Mantén esta tarjeta visible al iniciar el primer despegue.",
+    },
     "know-velocityone": {
       src: `${import.meta.env.BASE_URL}velocityone-c172-map.svg`,
       alt: "Ruta visual para abrir los controles del VelocityOne en MSFS 2024",
@@ -625,6 +636,24 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
       alt: "Diagrama de circuito VFR alrededor de una pista",
       caption:
         "El circuito organiza la llegada; no tienes que inventar una ruta al azar.",
+    },
+    "c172-approach-setup": {
+      src: `${import.meta.env.BASE_URL}c172-landing-flow.svg`,
+      alt: "Flujo visual de aproximación y aterrizaje del Cessna 172",
+      caption:
+        "Flaps y velocidad se incorporan por etapas desde viento en cola; no de golpe en final.",
+    },
+    "c172-landing": {
+      src: `${import.meta.env.BASE_URL}c172-landing-flow.svg`,
+      alt: "Flujo visual de aproximación y aterrizaje del Cessna 172",
+      caption:
+        "La pista debe ser alcanzable y el avión estar estable; si no, aplica frustrada.",
+    },
+    "c172-go-around": {
+      src: `${import.meta.env.BASE_URL}c172-landing-flow.svg`,
+      alt: "Flujo visual de aproximación y aterrizaje del Cessna 172",
+      caption:
+        "La línea naranja recuerda la alternativa: potencia, actitud, velocidad y flaps por etapas.",
     },
     "first-vfr-navigation": {
       src: `${import.meta.env.BASE_URL}vfr-pattern.svg`,

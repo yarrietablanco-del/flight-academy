@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Tarjeta visual de combustible y despegue del Cessna 172</title>
+  <desc id="desc">Una fórmula de combustible de entrenamiento y una secuencia de flaps y velocidades para un despegue normal.</desc>
+  <rect width="900" height="430" fill="#f5f8f6"/>
+  <text x="50" y="56" font-family="Georgia, serif" font-size="31" fill="#123d3a">C172 · tarjeta de entrenamiento</text>
+  <text x="50" y="84" font-family="monospace" font-size="13" fill="#4e716a">MSFS · clima despejado · peso moderado</text>
+  <rect x="50" y="115" width="390" height="250" rx="14" fill="#e1f0ea" stroke="#86b7a8"/>
+  <text x="78" y="154" font-family="monospace" font-size="13" fill="#17645f">COMBUSTIBLE</text>
+  <text x="78" y="197" font-family="Georgia, serif" font-size="24" fill="#173c39">(vuelo + 15 min + 45 min) × 8 gal/h</text>
+  <path d="M86 235h50l13 22h-76z" fill="#d68c49"/><path d="M91 229h40" stroke="#d68c49" stroke-width="7"/>
+  <text x="165" y="250" font-family="Arial" font-size="18" fill="#294944">Ejemplo: 45 min local → 14 gal mínimo</text>
+  <text x="78" y="310" font-family="Arial" font-size="16" fill="#4a5f5a">Práctica inicial: carga 18 galones</text>
+  <text x="78" y="335" font-family="Arial" font-size="16" fill="#4a5f5a">repartidos entre tanque izquierdo y derecho.</text>
+  <rect x="470" y="115" width="380" height="250" rx="14" fill="#fff" stroke="#86b7a8"/>
+  <text x="500" y="154" font-family="monospace" font-size="13" fill="#17645f">DESPEGUE NORMAL</text>
+  <path d="M505 269h285" stroke="#6c7572" stroke-width="38" stroke-linecap="round"/><path d="M505 269h285" stroke="#fff" stroke-width="3" stroke-dasharray="14 14"/>
+  <path d="M565 239l26-13 26 13v17h-52z" fill="#17645f"/><path d="M575 226v-25" stroke="#17645f" stroke-width="4"/>
+  <text x="500" y="193" font-family="Arial" font-size="18" fill="#294944">Flaps 0° · trim neutro · potencia máxima</text>
+  <text x="500" y="320" font-family="Georgia, serif" font-size="23" fill="#173c39">55 KIAS: deja que vuele</text>
+  <text x="500" y="346" font-family="Arial" font-size="17" fill="#4a5f5a">En ascenso: 70–75 KIAS y alas niveladas</text>
+  <text x="50" y="405" font-family="Arial" font-size="13" fill="#65736f">Base didáctica para el C172 estándar de MSFS. Consulta la lista del avión si cambian peso, viento o pista.</text>
+</svg>
