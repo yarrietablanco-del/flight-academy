@@ -500,52 +500,144 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
       caption:
         "Ten esta guía abierta mientras haces la comprobación en tierra.",
     },
-    "c172-taxi-basics": { src: `${import.meta.env.BASE_URL}airport-ground-map.svg`, alt: "Mapa ilustrado de plataforma, calle de rodaje, pista y línea de espera", caption: "El taxi ocurre sobre la línea amarilla; la pista todavía no es tu destino." },
-    "c172-engine-runup": { src: `${import.meta.env.BASE_URL}c172-start-flow.svg`, alt: "Flujo visual de preparación y arranque del Cessna 172 G1000", caption: "La prueba de motor se hace detenido, con freno aplicado y sin entrar a la pista." },
-    "c172-before-takeoff": { src: `${import.meta.env.BASE_URL}c172-start-flow.svg`, alt: "Flujo visual de preparación y arranque del Cessna 172 G1000", caption: "La checklist final te deja listo para rodar; todavía no equivale a despegar." },
-    "c172-lineup": { src: `${import.meta.env.BASE_URL}airport-ground-map.svg`, alt: "Mapa ilustrado de plataforma, calle de rodaje, pista y línea de espera", caption: "La pista es el destino final del taxi; entra solo desde la línea de espera." },
-    "c172-takeoff-roll": { src: `${import.meta.env.BASE_URL}flight-basics.svg`, alt: "Ilustración de referencias básicas durante el vuelo", caption: "Durante la carrera mira lejos y mantén el avión centrado; no hagas correcciones bruscas." },
-    "c172-climb-out": { src: `${import.meta.env.BASE_URL}flight-basics.svg`, alt: "Ilustración de referencias básicas durante el vuelo", caption: "Tras despegar, altura y calma primero; la navegación puede esperar." },
+    "c172-taxi-basics": {
+      src: `${import.meta.env.BASE_URL}airport-ground-map.svg`,
+      alt: "Mapa ilustrado de plataforma, calle de rodaje, pista y línea de espera",
+      caption:
+        "El taxi ocurre sobre la línea amarilla; la pista todavía no es tu destino.",
+    },
+    "c172-taxi-to-hold": {
+      src: `${import.meta.env.BASE_URL}airport-ground-map.svg`,
+      alt: "Mapa ilustrado de plataforma, calle de rodaje, pista y línea de espera",
+      caption:
+        "Sigue la línea amarilla y la guía de MSFS hasta detenerte antes de la línea de espera.",
+    },
+    "c172-engine-runup": {
+      src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
+      alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
+      caption:
+        "La prueba de motor se hace detenido, con freno aplicado y sin entrar a la pista.",
+    },
+    "c172-before-takeoff": {
+      src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
+      alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
+      caption:
+        "La checklist final te deja listo para rodar; todavía no equivale a despegar.",
+    },
+    "c172-lineup": {
+      src: `${import.meta.env.BASE_URL}airport-ground-map.svg`,
+      alt: "Mapa ilustrado de plataforma, calle de rodaje, pista y línea de espera",
+      caption:
+        "La pista es el destino final del taxi; entra solo desde la línea de espera.",
+    },
+    "c172-takeoff-roll": {
+      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
+      alt: "Ilustración de referencias básicas durante el vuelo",
+      caption:
+        "Durante la carrera mira lejos y mantén el avión centrado; no hagas correcciones bruscas.",
+    },
+    "c172-climb-out": {
+      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
+      alt: "Ilustración de referencias básicas durante el vuelo",
+      caption:
+        "Tras despegar, altura y calma primero; la navegación puede esperar.",
+    },
     "airport-map-basics": {
       src: `${import.meta.env.BASE_URL}airport-ground-map.svg`,
       alt: "Mapa ilustrado de plataforma, calle de rodaje, pista y línea de espera",
-      caption: "No ruedes hasta poder distinguir estas cuatro zonas desde tu posición.",
+      caption:
+        "No ruedes hasta poder distinguir estas cuatro zonas desde tu posición.",
     },
     "airport-radio-basics": {
       src: `${import.meta.env.BASE_URL}airport-ground-map.svg`,
       alt: "Guía visual del panel Comunicaciones de Microsoft Flight Simulator",
-      caption: "La radio básica va antes del taxi: solicita la ruta y aprende a detenerte en Hold Short.",
+      caption:
+        "La radio básica va antes del taxi: solicita la ruta y aprende a detenerte en Hold Short.",
     },
     "c172-cold-dark": {
       src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
       alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
-      caption: "Lee el flujo completo primero; después realiza un paso a la vez en cabina.",
+      caption:
+        "Lee el flujo completo primero; después realiza un paso a la vez en cabina.",
     },
     "c172-before-start": {
       src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
       alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
-      caption: "En esta lección completa únicamente las tarjetas 1 y 2; no gires la llave todavía.",
+      caption:
+        "En esta lección completa únicamente las tarjetas 1 y 2; no gires la llave todavía.",
     },
     "c172-engine-start": {
       src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
       alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
-      caption: "Sigue las tarjetas 3 y 4; la tarjeta 5 pertenece a la lección siguiente.",
+      caption:
+        "Sigue las tarjetas 3 y 4; la tarjeta 5 pertenece a la lección siguiente.",
     },
     "c172-after-start": {
       src: `${import.meta.env.BASE_URL}c172-start-flow.svg`,
       alt: "Flujo visual de preparación y arranque del Cessna 172 G1000",
-      caption: "Después del arranque, usa la tarjeta 5 antes de pensar en rodar.",
+      caption:
+        "Después del arranque, usa la tarjeta 5 antes de pensar en rodar.",
     },
-    "know-c172": { src: `${import.meta.env.BASE_URL}flight-basics.svg`, alt: "Ilustración de referencias básicas durante el vuelo", caption: "Antes de tocar algo, mira fuera; después confirma velocidad y altitud." },
-    "three-axes": { src: `${import.meta.env.BASE_URL}flight-basics.svg`, alt: "Ilustración de referencias básicas durante el vuelo", caption: "Haz un movimiento pequeño y observa la referencia exterior antes de hacer otro." },
-    "throttle-power": { src: `${import.meta.env.BASE_URL}flight-basics.svg`, alt: "Ilustración de referencias básicas durante el vuelo", caption: "Potencia es solo una parte: observa siempre la actitud y la velocidad." },
-    "what-is-trim": { src: `${import.meta.env.BASE_URL}flight-basics.svg`, alt: "Ilustración de referencias básicas durante el vuelo", caption: "El trim se usa después de estabilizar el avión, no para recuperarlo." },
-    "first-cockpit-exercise": { src: `${import.meta.env.BASE_URL}flight-basics.svg`, alt: "Ilustración de referencias básicas durante el vuelo", caption: "La secuencia es: mirar fuera, comprobar, corregir poco y esperar." },
-    "straight-and-level": { src: `${import.meta.env.BASE_URL}flight-basics.svg`, alt: "Ilustración de referencias básicas durante el vuelo", caption: "Recto y nivelado empieza por la referencia exterior, no por perseguir números." },
-    "turns-and-coordination": { src: `${import.meta.env.BASE_URL}flight-basics.svg`, alt: "Ilustración de referencias básicas durante el vuelo", caption: "Después de cada viraje, nivela las alas y vuelve a estabilizar." },
-    "airport-traffic-pattern": { src: `${import.meta.env.BASE_URL}vfr-pattern.svg`, alt: "Diagrama de circuito VFR alrededor de una pista", caption: "El circuito organiza la llegada; no tienes que inventar una ruta al azar." },
-    "first-vfr-navigation": { src: `${import.meta.env.BASE_URL}vfr-pattern.svg`, alt: "Diagrama de circuito VFR alrededor de una pista", caption: "La navegación visual combina referencias en tierra y mapa como respaldo." },
-    "vfr-consolidation": { src: `${import.meta.env.BASE_URL}vfr-pattern.svg`, alt: "Diagrama de circuito VFR alrededor de una pista", caption: "La consolidación une tierra, despegue, control, navegación y llegada." },
+    "know-c172": {
+      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
+      alt: "Ilustración de referencias básicas durante el vuelo",
+      caption:
+        "Antes de tocar algo, mira fuera; después confirma velocidad y altitud.",
+    },
+    "three-axes": {
+      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
+      alt: "Ilustración de referencias básicas durante el vuelo",
+      caption:
+        "Haz un movimiento pequeño y observa la referencia exterior antes de hacer otro.",
+    },
+    "throttle-power": {
+      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
+      alt: "Ilustración de referencias básicas durante el vuelo",
+      caption:
+        "Potencia es solo una parte: observa siempre la actitud y la velocidad.",
+    },
+    "what-is-trim": {
+      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
+      alt: "Ilustración de referencias básicas durante el vuelo",
+      caption:
+        "El trim se usa después de estabilizar el avión, no para recuperarlo.",
+    },
+    "first-cockpit-exercise": {
+      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
+      alt: "Ilustración de referencias básicas durante el vuelo",
+      caption:
+        "La secuencia es: mirar fuera, comprobar, corregir poco y esperar.",
+    },
+    "straight-and-level": {
+      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
+      alt: "Ilustración de referencias básicas durante el vuelo",
+      caption:
+        "Recto y nivelado empieza por la referencia exterior, no por perseguir números.",
+    },
+    "turns-and-coordination": {
+      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
+      alt: "Ilustración de referencias básicas durante el vuelo",
+      caption:
+        "Después de cada viraje, nivela las alas y vuelve a estabilizar.",
+    },
+    "airport-traffic-pattern": {
+      src: `${import.meta.env.BASE_URL}vfr-pattern.svg`,
+      alt: "Diagrama de circuito VFR alrededor de una pista",
+      caption:
+        "El circuito organiza la llegada; no tienes que inventar una ruta al azar.",
+    },
+    "first-vfr-navigation": {
+      src: `${import.meta.env.BASE_URL}vfr-pattern.svg`,
+      alt: "Diagrama de circuito VFR alrededor de una pista",
+      caption:
+        "La navegación visual combina referencias en tierra y mapa como respaldo.",
+    },
+    "vfr-consolidation": {
+      src: `${import.meta.env.BASE_URL}vfr-pattern.svg`,
+      alt: "Diagrama de circuito VFR alrededor de una pista",
+      caption:
+        "La consolidación une tierra, despegue, control, navegación y llegada.",
+    },
     "sensitivity-deadzones": {
       src: `${import.meta.env.BASE_URL}sensitivity-guide.svg`,
       alt: "Ilustración de curva de sensibilidad inicial para el Cessna 172",
@@ -639,6 +731,29 @@ function DetailedLessonView({
               <p className="setup-note">{lesson.flightSetup.note}</p>
             </section>
           )}
+          {lesson.continuity && (
+            <section
+              className="lesson-continuity"
+              aria-label="Continuidad de la lección"
+            >
+              <p className="eyebrow">RUTA SIN SALTOS</p>
+              <h2>Antes, durante y después</h2>
+              <dl>
+                <div>
+                  <dt>Empiezas aquí</dt>
+                  <dd>{lesson.continuity.start}</dd>
+                </div>
+                <div>
+                  <dt>Al terminar</dt>
+                  <dd>{lesson.continuity.finish}</dd>
+                </div>
+                <div>
+                  <dt>Siguiente paso</dt>
+                  <dd>{lesson.continuity.next}</dd>
+                </div>
+              </dl>
+            </section>
+          )}
           <LessonIllustration lessonId={lesson.id} />
           {lesson.sections.map((section) => (
             <section className="lesson-section" key={section.title}>
@@ -685,7 +800,7 @@ function LessonView({
   onBack: () => void;
 }) {
   const lesson = sourceLesson as Lesson & {
-    flightSetup: NonNullable<Lesson['flightSetup']>;
+    flightSetup: NonNullable<Lesson["flightSetup"]>;
   };
   if (!lesson.flightSetup)
     return (
