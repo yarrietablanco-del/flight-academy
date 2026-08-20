@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react'
 import type { LessonStatus } from '../types/course'
 import { supabase } from '../lib/supabase'
 
-const STORAGE_KEY = 'flight-academy-progress-v1'
+// El recorrido se reorganizó para enseñar desde cero; no reutilizamos el orden
+// anterior, que podía desbloquear una lección avanzada antes de sus bases.
+const STORAGE_KEY = 'flight-academy-progress-v2'
+const CURRICULUM_VERSION = '2'
+type SyncedStatuses = Record<string, LessonStatus | string>
 const initialStatuses = (ids: string[]): Record<string, LessonStatus> => Object.fromEntries(ids.map((id, index) => [id, index === 0 ? 'available' : 'locked']))
 const statusRank: Record<LessonStatus, number> = { locked: 0, available: 1, 'in-progress': 2, completed: 3 }
 const unlockNextLesson = (ids: string[], statuses: Record<string, LessonStatus>) => {
@@ -13,11 +17,17 @@ const unlockNextLesson = (ids: string[], statuses: Record<string, LessonStatus>)
   return next
 }
 
-const mergeStatuses = (ids: string[], local: Record<string, LessonStatus>, cloud?: Record<string, LessonStatus>) => unlockNextLesson(ids, Object.fromEntries(ids.map((id) => {
+const mergeStatuses = (ids: string[], local: Record<string, LessonStatus>, cloud?: SyncedStatuses) => {
+  // La secuencia anterior no es compatible con el nuevo currículo. Al primer
+  // inicio de sesión tras esta actualización se ignora ese progreso y se
+  // escribe un estado nuevo, marcado con la versión 2, en la nube.
+  const compatibleCloud = cloud?.__curriculumVersion === CURRICULUM_VERSION ? cloud : undefined
+  return unlockNextLesson(ids, Object.fromEntries(ids.map((id) => {
   const localStatus = local[id] ?? initialStatuses(ids)[id]
-  const cloudStatus = cloud?.[id]
+  const cloudStatus = compatibleCloud?.[id] as LessonStatus | undefined
   return [id, cloudStatus && statusRank[cloudStatus] > statusRank[localStatus] ? cloudStatus : localStatus]
 })) as Record<string, LessonStatus>)
+}
 
 export function useProgress(ids: string[]) {
   const [statuses, setStatuses] = useState<Record<string, LessonStatus>>(() => { try { const stored = localStorage.getItem(STORAGE_KEY); return unlockNextLesson(ids, stored ? { ...initialStatuses(ids), ...JSON.parse(stored) } : initialStatuses(ids)) } catch { return initialStatuses(ids) } })
@@ -39,7 +49,7 @@ export function useProgress(ids: string[]) {
       const { data, error } = await client.from('user_progress').select('statuses').eq('user_id', session.user.id).maybeSingle()
       if (!active) return
       if (error) { setSyncMessage('No pudimos leer el progreso en la nube.'); return }
-      const merged = mergeStatuses(ids, statuses, data?.statuses as Record<string, LessonStatus> | undefined)
+      const merged = mergeStatuses(ids, statuses, data?.statuses as SyncedStatuses | undefined)
       setStatuses(merged)
       setSyncReady(true)
       setSyncMessage('Progreso sincronizado.')
@@ -57,7 +67,8 @@ export function useProgress(ids: string[]) {
     const save = async () => {
       const { data: { user } } = await client.auth.getUser()
       if (!user) return
-      const { error } = await client.from('user_progress').upsert({ user_id: user.id, statuses, updated_at: new Date().toISOString() })
+      const syncedStatuses: SyncedStatuses = { ...statuses, __curriculumVersion: CURRICULUM_VERSION }
+      const { error } = await client.from('user_progress').upsert({ user_id: user.id, statuses: syncedStatuses, updated_at: new Date().toISOString() })
       if (error) setSyncMessage('El progreso quedó guardado localmente; reintentaremos sincronizarlo.')
     }
     void save()

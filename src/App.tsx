@@ -503,22 +503,6 @@ function Course({
   );
 }
 
-function LessonControls() {
-  return (
-    <section className="lesson-controls" aria-label="Controles VelocityOne para esta lección">
-      <p className="eyebrow">TU VELOCITYONE · C172</p>
-      <h3>Controles rápidos</h3>
-      <dl>
-        <div><dt>Frenar</dt><dd><kbd>LB</kbd> izquierdo + <kbd>RB</kbd> derecho</dd></div>
-        <div><dt>Estacionamiento</dt><dd><kbd>B4</kbd> en el cuadrante</dd></div>
-        <div><dt>Dirección en tierra</dt><dd><kbd>LT</kbd> izquierda · <kbd>RT</kbd> derecha</dd></div>
-        <div><dt>Potencia</dt><dd>Palanca <strong>Throttle</strong></dd></div>
-      </dl>
-      <p className="control-note">Mapa basado en el perfil <strong>Single-Engine Prop</strong>. Si no responde así, revisa que el perfil del control y el de MSFS coincidan.</p>
-    </section>
-  );
-}
-
 function CockpitInstrumentMap() {
   const instruments = [
     ["Izquierda", "Velocidad", "Te dice qué tan rápido se mueve el avión. La unidad es nudos (kt)."],
@@ -531,6 +515,10 @@ function CockpitInstrumentMap() {
     <section className="cockpit-map" aria-label="Mapa básico de instrumentos del Cessna 172">
       <p className="eyebrow">MAPA DE CABINA · PRIMERO MIRA, NO TOQUES</p>
       <h2>Las cinco zonas que verás en pantalla</h2>
+      <figure className="reference-figure">
+        <img src={`${import.meta.env.BASE_URL}references/g1000-pfd-reference.png`} alt="Pantalla primaria Garmin G1000 con indicadores numerados" />
+        <figcaption>Referencia del PFD Garmin G1000. Hoy usa solo: 2 velocidad, 20 horizonte artificial, 15 altitud, 4 rumbo y 19 coordinación. Las demás zonas se explican cuando sean necesarias.</figcaption>
+      </figure>
       <div className="instrument-grid">
         {instruments.map(([position, name, description]) => (
           <article key={name}>
@@ -540,6 +528,103 @@ function CockpitInstrumentMap() {
           </article>
         ))}
       </div>
+    </section>
+  );
+}
+
+function FirstFlightPfdGuide() {
+  const areas = [
+    ["1 · izquierda", "Velocidad", "Indica qué tan rápido atraviesas el aire. El número aumenta al acelerar y baja al frenar. Está en KIAS (nudos), no km/h. Hoy solo observa cómo cambia."],
+    ["2 · centro", "Horizonte artificial", "Azul es cielo y marrón es tierra. La línea entre ambos representa el horizonte. Si se inclina, tus alas también. Al centrar el yoke, buscas que esa línea vuelva horizontal."],
+    ["3 · derecha", "Altitud", "Indica qué tan alto estás, en pies (ft). El número aumenta cuando subes y baja cuando desciendes. Si baja demasiado en este primer ejercicio, pausa y reinicia: no tienes que salvar el vuelo."],
+    ["4 · abajo", "Rumbo", "Es una brújula: te dice hacia dónde apunta el morro. Al girar, cambian los grados. 360° es norte, 090° este, 180° sur y 270° oeste."],
+    ["5 · arriba del centro", "Bola", "Muestra si el giro está equilibrado. No la corrijas todavía; por ahora solo reconoce dónde está. Te enseñaré a usarla cuando practiquemos virajes."],
+  ];
+
+  return (
+    <section className="cockpit-map first-flight-pfd" aria-label="Guía visual de la pantalla G1000 para el primer vuelo">
+      <p className="eyebrow">ANTES DE MOVER EL YOKE</p>
+      <h2>La pantalla te cuenta cinco cosas</h2>
+      <p className="instrument-intro">La imagen es una pantalla G1000 real de referencia. Las etiquetas turquesa señalan solo lo que usarás hoy; ignora los otros números de Garmin.</p>
+      <figure className="reference-figure pfd-first-flight">
+        <img src={`${import.meta.env.BASE_URL}references/g1000-pfd-reference.png`} alt="Pantalla Garmin G1000 con velocidad a la izquierda, horizonte al centro, altitud a la derecha y rumbo abajo" />
+        <span className="pfd-callout pfd-speed">1 · velocidad</span>
+        <span className="pfd-callout pfd-attitude">2 · horizonte</span>
+        <span className="pfd-callout pfd-altitude">3 · altitud</span>
+        <span className="pfd-callout pfd-heading">4 · rumbo</span>
+        <span className="pfd-callout pfd-ball">5 · bola</span>
+        <figcaption>No memorices cifras ni botones aún. Tu tarea es observar qué cambia después de cada movimiento pequeño del yoke.</figcaption>
+      </figure>
+      <div className="instrument-grid first-flight-grid">
+        {areas.map(([position, name, explanation]) => (
+          <article key={name}>
+            <span>{position}</span>
+            <h3>{name}</h3>
+            <p>{explanation}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function EfbReference() {
+  return (
+    <section className="cockpit-map efb-reference" aria-label="Referencia visual de la EFB de Microsoft Flight Simulator 2024">
+      <p className="eyebrow">EFB · PLANIFICA ANTES DE VOLAR</p>
+      <h2>La tablet de MSFS 2024, vista sobre el Mapa mundial</h2>
+      <p className="instrument-intro">Esta es una captura oficial de MSFS 2024. La EFB es el panel oscuro del centro; el mapa mundial queda detrás. Su apariencia puede cambiar un poco entre actualizaciones o aviones.</p>
+      <figure className="reference-figure efb-figure">
+        <img src={`${import.meta.env.BASE_URL}references/msfs2024-efb-world-map.png`} alt="EFB de Microsoft Flight Simulator 2024 abierta sobre el mapa mundial" />
+        <span className="efb-callout efb-search">1 · buscar</span>
+        <span className="efb-callout efb-apps">2 · apps</span>
+        <span className="efb-callout efb-map">3 · mapa</span>
+        <figcaption>1: aquí buscarás aeropuertos más adelante. 2: accesos a las aplicaciones de la EFB. 3: mapa en el que verás avión, aeropuertos y rutas. Hoy solo identifica las zonas.</figcaption>
+      </figure>
+      <div className="instrument-grid">
+        <article><span>HOY</span><h3>Solo abre y reconoce</h3><p>No escribas un origen ni un destino todavía. Abrir, ubicar y cerrar la EFB ya es el objetivo completo de esta primera lección.</p></article>
+        <article><span>DESPUÉS</span><h3>Ruta y aviónica</h3><p>Cuando conozcas mapa y G1000, crearás una ruta VFR corta y la enviarás a la aviónica. No se hace durante taxi ni despegue.</p></article>
+      </div>
+    </section>
+  );
+}
+
+function VelocityOneReference() {
+  return (
+    <section className="velocityone-reference" aria-label="Referencia visual del Turtle Beach VelocityOne Flight">
+      <p className="eyebrow">ANTES DE USAR EL CONTROL</p>
+      <h2>Tu Turtle Beach VelocityOne Flight</h2>
+      <figure className="reference-figure velocityone-annotated-photo">
+        <img src={`${import.meta.env.BASE_URL}references/turtlebeach-velocityone-official.png`} alt="Turtle Beach VelocityOne Flight: yoke, base y cuadrante de potencia" />
+        <span className="photo-callout callout-lb">LB: hombro del agarre izquierdo</span>
+        <span className="photo-callout callout-rb">RB: hombro del agarre derecho</span>
+        <span className="photo-callout callout-b4">B4<br /><small>parking</small></span>
+        <span className="photo-callout callout-b7">B7<br /><small>flaps −</small></span>
+        <span className="photo-callout callout-b8">B8<br /><small>flaps +</small></span>
+        <figcaption>Foto oficial anotada. Los marcadores B4, B7 y B8 señalan los botones blancos del cuadrante; LB/RB están en los hombros de los agarres del yoke y se usan con los índices.</figcaption>
+      </figure>
+      <div className="profile-warning">
+        <strong>Configuración del curso:</strong> Xbox + <em>Single-Engine Prop</em>. Las letras son nombres impresos en el control; esta guía siempre te dirá primero dónde está la pieza física. Comprueba que este mismo perfil aparezca en la pantalla del VelocityOne y en MSFS antes de practicar.
+      </div>
+      <section className="control-location-guide" aria-label="Dónde están LB, RB y los botones del cuadrante">
+        <h3>Ubícalos antes de usarlos</h3>
+        <div className="location-cards">
+          <article><b>LB</b><span>Botón superior del agarre <strong>izquierdo</strong> del yoke: donde llega tu índice izquierdo.</span><em>Freno izquierdo</em></article>
+          <article><b>RB</b><span>Botón superior del agarre <strong>derecho</strong> del yoke: donde llega tu índice derecho.</span><em>Freno derecho</em></article>
+          <article><b>LT / RT</b><span>Gatillos que están detrás de esos mismos agarres: LT a la izquierda, RT a la derecha.</span><em>Dirección en tierra</em></article>
+        </div>
+        <div className="quadrant-location">
+          <div>
+            <h4>Botones blancos del cuadrante (derecha)</h4>
+            <p>Son dos filas de cinco. Míralos de frente: <strong>B7</strong> es el botón de arriba en la tercera columna; <strong>B8</strong> es el de abajo justo debajo de B7.</p>
+          </div>
+          <div className="quadrant-button-grid" aria-label="Distribución física de los botones B3 a B12">
+            <span>B3</span><span>B5</span><span className="focus-button">B7<br /><small>flaps menos</small></span><span>B9</span><span>B11</span>
+            <span className="focus-button">B4<br /><small>parking</small></span><span>B6</span><span className="focus-button">B8<br /><small>flaps más</small></span><span>B10</span><span>B12</span>
+          </div>
+        </div>
+        <p className="location-note"><strong>Ahora solo necesitas LB y RB para frenar.</strong> B4 se verá al dejar el avión estacionado. B7/B8 se enseñan en aproximación; no los presiones todavía.</p>
+      </section>
     </section>
   );
 }
@@ -558,6 +643,53 @@ function TaxiRouteMap() {
         <div className="runway-block"><span>PISTA · NO ENTRAR TODAVÍA</span></div>
       </div>
       <p className="taxi-map-note">La forma real cambia en cada aeropuerto. No memorices este dibujo: pide taxi y sigue la cinta azul que MSFS dibuja sobre el suelo.</p>
+    </section>
+  );
+}
+
+function CircuitPatternMap() {
+  const legs = [
+    ["1", "Salida", "Recto tras despegar, siguiendo el rumbo de pista."],
+    ["2", "Viento cruzado", "Primer giro de 90°. Es un tramo, no una orden sobre el viento."],
+    ["3", "Viento en cola", "Paralelo a la pista, pero volando en sentido contrario al aterrizaje."],
+    ["4", "Base", "Segundo giro de 90°: vas hacia la prolongación de pista."],
+    ["5", "Final", "Alineado con la pista. La aproximación se enseña en la siguiente lección."],
+  ];
+  return (
+    <section className="circuit-map" aria-label="Mapa de un circuito de tránsito izquierdo">
+      <p className="eyebrow">EJEMPLO · CONFIRMA PISTA Y SENTIDO CON MSFS/ATC</p>
+      <h2>El avión da una vuelta alrededor de la pista</h2>
+      <p className="circuit-map-intro">El número de pista marca aproximadamente su rumbo de aterrizaje. Este dibujo enseña la forma del circuito, no asigna una pista ni un sentido de giro: sigue ATC, las señales del aeropuerto o la guía de MSFS.</p>
+      <ol>
+        {legs.map(([number, title, description]) => (
+          <li key={number}>
+            <strong>{number}</strong>
+            <div><h3>{title}</h3><p>{description}</p></div>
+          </li>
+        ))}
+      </ol>
+      <div className="wind-example"><strong>Viento:</strong> 360°/8 kt viene del norte. Para pista 01 es casi de cara; 180° sería de cola y 090°/270° lateral.</div>
+    </section>
+  );
+}
+
+void CircuitPatternMap;
+
+function TrafficPatternGuide() {
+  const legs = [
+    ["1", "Salida", "Recto después de despegar, siguiendo la dirección de la pista."],
+    ["2", "Viento cruzado", "Primer tramo de 90° que te aleja del eje de pista."],
+    ["3", "Viento en cola", "Paralelo a la pista, pero en dirección opuesta al aterrizaje."],
+    ["4", "Base", "Giro de regreso hacia la prolongación de pista. Se verá más adelante."],
+    ["5", "Final", "Alineado con la pista. Aproximación y aterrizaje se enseñan después."],
+  ];
+  return (
+    <section className="circuit-map" aria-label="Guía básica de circuito de tránsito">
+      <p className="eyebrow">MAPA DE FORMA · NO ASIGNA UNA PISTA</p>
+      <h2>Así se ordena un circuito alrededor de la pista</h2>
+      <p className="circuit-map-intro">El dibujo muestra posiciones, no un aeropuerto real ni una instrucción de giro. Usa la pista y el sentido que te indique MSFS/ATC; un circuito puede ser izquierdo o derecho.</p>
+      <ol>{legs.map(([number, title, description]) => <li key={number}><strong>{number}</strong><div><h3>{title}</h3><p>{description}</p></div></li>)}</ol>
+      <div className="wind-example"><strong>Viento:</strong> 360°/8 kt viene desde el norte. Compáralo con el rumbo de pista asignado: parecido = de cara; opuesto = de cola; unos 90° de diferencia = lateral. En la primera práctica usa 0–3 kt.</div>
     </section>
   );
 }
@@ -807,8 +939,14 @@ function DetailedLessonView({
               </ul>
             </div>
           </section>
+          {lesson.id === "first-flight-now" && <FirstFlightPfdGuide />}
+          {lesson.id === "efb-first-look" && <EfbReference />}
+          {["ifr-route-briefing", "ifr-approach-briefing", "ifr-gps-approach"].includes(lesson.id) && <EfbReference />}
           {lesson.id === "c172-instruments-first" && <CockpitInstrumentMap />}
-          {lesson.id === "airport-map-basics" && <TaxiRouteMap />}
+          {lesson.id.startsWith("ifr-") && <CockpitInstrumentMap />}
+          {["know-velocityone", "initial-controls-check", "c172-controls-first"].includes(lesson.id) && <VelocityOneReference />}
+          {["airport-map-basics", "c172-taxi-basics", "c172-taxi-to-hold"].includes(lesson.id) && <TaxiRouteMap />}
+          {lesson.id === "airport-traffic-pattern" && <TrafficPatternGuide />}
           {lesson.flightSetup && (
             <section className="flight-setup">
               <p className="eyebrow">CONFIGURACIÓN EN MSFS 2024</p>
@@ -885,7 +1023,6 @@ function DetailedLessonView({
         </article>
         <aside className="lesson-sidebar">
           <Checklist title="Checklist de la lección" items={lesson.checklist} />
-          <LessonControls />
           <button
             className={
               status === "completed"
@@ -1036,13 +1173,13 @@ function LessonView({
 
 function VelocityOne() {
   const zones = [
-    ["01", "Frenos", "LB = freno izquierdo · RB = freno derecho. Presiona ambos para detener el C172."],
-    ["02", "Freno de estacionamiento", "B4 del cuadrante: activa o libera el parking brake antes y después del taxi."],
-    ["03", "Dirección", "LT gira el timón a la izquierda · RT a la derecha. Úsalos para mantener la calle de rodaje."],
+    ["01", "Frenos", "LB: botón superior del agarre izquierdo. RB: botón superior del agarre derecho. Presiona ambos para detener el C172."],
+    ["02", "Freno de estacionamiento", "B4: botón blanco de ABAJO en la primera columna del cuadrante. Activa o libera el parking brake antes y después del taxi."],
+    ["03", "Dirección", "Xbox · Single-Engine Prop: LT gira el timón a la izquierda · RT a la derecha. Úsalos para mantener la calle de rodaje."],
     ["04", "Potencia", "La palanca Throttle controla la potencia del motor. Empieza suave al rodar."],
     ["05", "Trim", "La rueda Trim ajusta el compensador de elevador para no sostener fuerza constante."],
-    ["06", "Flaps", "HAT-2 arriba disminuye flaps · abajo los aumenta, en el perfil de monomotor."],
-    ["07", "Piloto automático", "B9 activa o desactiva AP. Úsalo solo estable y a altura segura."],
+    ["06", "Flaps", "B7: botón blanco de ARRIBA en la tercera columna del cuadrante; B8: el de ABAJO justo debajo. Se practica en aproximación, más adelante."],
+    ["07", "Piloto automático", "B9 activa o desactiva AP. No lo uses aún: se enseña en Nivel 3, solo en crucero estable."],
     ["08", "Yoke", "Gira para alabeo; tira para subir y empuja para bajar el morro."],
   ];
   return (
@@ -1060,15 +1197,7 @@ function VelocityOne() {
       <section className="hardware-panel">
         <div className="hardware-screen">
           <span className="screen-label">DIAGRAMA INTERACTIVO</span>
-          <div className="control yoke">YOKE</div>
-          <div className="control throttle">
-            THROTTLE
-            <br />
-            QUADRANT
-          </div>
-          <div className="control trim">TRIM</div>
-          <div className="control flaps">FLAPS</div>
-          <div className="control buttons">BUTTONS</div>
+          <img className="velocityone-product-image" src={`${import.meta.env.BASE_URL}references/turtlebeach-velocityone-official.png`} alt="Turtle Beach VelocityOne Flight" />
           <div className="hardware-grid" />
         </div>
         <div className="hardware-copy">
@@ -1080,8 +1209,8 @@ function VelocityOne() {
           </p>
           <div className="profile-card">
             <span>PERFIL ACTIVO</span>
-            <strong>C172 — Single-Engine Prop</strong>
-            <small>El perfil del simulador debe coincidir con el del control.</small>
+            <strong>Xbox · C172 — Single-Engine Prop</strong>
+            <small>Comprueba el mismo perfil en MSFS y en la pantalla del control.</small>
           </div>
           <button className="secondary-button">
             Gestionar perfiles <span>→</span>

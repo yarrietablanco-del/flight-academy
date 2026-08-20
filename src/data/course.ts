@@ -405,8 +405,195 @@ if (levelThree) {
   });
 }
 
+const levelFour = course.find((level) => level.number === 4);
+if (levelFour) {
+  levelFour.title = "Piloto IFR · fundamentos";
+  levelFour.description =
+    "Aprende a controlar el C172 por instrumentos antes de seguir procedimientos IFR.";
+  levelFour.modules.push(
+    {
+      id: "ifr-instrument-control",
+      title: "Sección 9 · Volar mirando instrumentos",
+      description:
+        "Del PFD al control estable: primero entiendes, después practicas.",
+      lessons: [
+        makeLesson(
+          "ifr-boundaries",
+          "Qué es IFR y qué practicarás aquí",
+          "Entiende cuándo mirar instrumentos y por qué este curso es una práctica de simulador, no una autorización real.",
+          4,
+          "Sección 9 · Volar mirando instrumentos",
+          [
+            "Distinguir volar visual de volar por instrumentos",
+            "Entender por qué se practica primero en aire calmo",
+            "Reconocer los límites de una lección de simulador",
+          ],
+          "los fundamentos y límites del entrenamiento IFR",
+        ),
+        makeLesson(
+          "ifr-pfd-scan",
+          "El PFD: tu mirada debe tener un orden",
+          "Aprende a leer actitud, velocidad, altitud, rumbo y coordinación sin fijarte en un solo número.",
+          4,
+          "Sección 9 · Volar mirando instrumentos",
+          [
+            "Iniciar un escaneo radial del PFD",
+            "Detectar una tendencia antes de que crezca",
+            "Volver siempre al horizonte artificial",
+          ],
+          "el escaneo básico del PFD G1000",
+        ),
+        makeLesson(
+          "ifr-straight-level",
+          "Recto y nivelado sin mirar afuera",
+          "Mantén una altitud, rumbo y velocidad con correcciones pequeñas y deliberadas.",
+          4,
+          "Sección 9 · Volar mirando instrumentos",
+          [
+            "Estabilizar actitud y potencia",
+            "Mantener 6.500 ft MSL y un rumbo elegido",
+            "Corregir una variable por vez",
+          ],
+          "el vuelo recto y nivelado por instrumentos",
+        ),
+        makeLesson(
+          "ifr-climbs-descents",
+          "Ascender y descender con un objetivo",
+          "Usa actitud, potencia y trim para cambiar altitud sin perder el control del rumbo.",
+          4,
+          "Sección 9 · Volar mirando instrumentos",
+          [
+            "Iniciar un ascenso y una bajada estabilizados",
+            "Nivelar antes de la altitud objetivo",
+            "Comprobar velocidad y rumbo durante el cambio",
+          ],
+          "ascensos y descensos por instrumentos",
+        ),
+        makeLesson(
+          "ifr-standard-turns",
+          "Virajes por instrumentos: banco, rumbo y salida",
+          "Haz virajes suaves y termina en el rumbo previsto sin perseguir la aguja.",
+          4,
+          "Sección 9 · Volar mirando instrumentos",
+          [
+            "Usar un banco moderado y coordinado",
+            "Anticipar la salida del viraje",
+            "Recuperar alas niveladas en el rumbo objetivo",
+          ],
+          "virajes coordinados por instrumentos",
+        ),
+      ],
+    },
+    {
+      id: "ifr-procedures",
+      title: "Sección 10 · Procedimientos IFR en simulador",
+      description:
+        "Plan, briefing, aproximación y frustrada: una secuencia que puedes explicar antes de volarla.",
+      lessons: [
+        makeLesson(
+          "ifr-route-briefing",
+          "Antes de IFR: plan y briefing",
+          "Aprende qué debes saber de una ruta antes de conectar el piloto automático o seguir una indicación.",
+          4,
+          "Sección 10 · Procedimientos IFR en simulador",
+          [
+            "Explicar origen, destino, altitud y ruta",
+            "Confirmar la fuente GPS antes de navegar",
+            "Definir una salida segura si algo no coincide",
+          ],
+          "el briefing IFR básico",
+        ),
+        makeLesson(
+          "ifr-approach-briefing",
+          "Cómo leer una aproximación antes de volarla",
+          "Reconoce las partes de un procedimiento sin intentar memorizar una carta completa.",
+          4,
+          "Sección 10 · Procedimientos IFR en simulador",
+          [
+            "Identificar el aeropuerto, pista y tipo de aproximación",
+            "Encontrar frecuencia, curso y altitudes publicadas",
+            "Saber qué harías si no puedes aterrizar",
+          ],
+          "el briefing de aproximación",
+        ),
+        makeLesson(
+          "ifr-gps-approach",
+          "Aproximación GPS: seguir, comprobar, estabilizar",
+          "Practica una aproximación GPS en clima bueno; la meta es entender la secuencia, no aterrizar a ciegas.",
+          4,
+          "Sección 10 · Procedimientos IFR en simulador",
+          [
+            "Confirmar la aproximación cargada y activa",
+            "Vigilar fuente CDI, rumbo y altitud",
+            "Decidir temprano entre continuar visual o frustrar",
+          ],
+          "una aproximación GPS de entrenamiento",
+        ),
+        makeLesson(
+          "ifr-missed-approach",
+          "Frustrada IFR: abandonar con un plan",
+          "Cuando la pista no está a la vista o la aproximación se desordena, ascender es la decisión correcta.",
+          4,
+          "Sección 10 · Procedimientos IFR en simulador",
+          [
+            "Reconocer el momento de frustrar",
+            "Aplicar potencia, actitud y ascenso en ese orden",
+            "Revisar el procedimiento antes de reintentar",
+          ],
+          "la frustrada por instrumentos",
+        ),
+      ],
+    },
+  );
+}
+
 const levelZero = course.find((level) => level.number === 0);
 if (levelZero) {
+  levelZero.modules.splice(
+    0,
+    0,
+    {
+      id: "first-flight-now",
+      title: "Empieza a volar ahora",
+      description: "Una misión corta en el aire, sin taxi ni procedimientos todavía. Primero sientes el avión; luego aprenderás por qué hace cada cosa.",
+      lessons: [
+        makeLesson(
+          "first-flight-now",
+          "Tu primer vuelo: controla el C172 durante 10 minutos",
+          "Empieza ya en el aire, con buen tiempo. Mantén el avión tranquilo y vuelve al menú: no hay taxi, despegue ni aterrizaje en esta primera misión.",
+          0,
+          "Empieza a volar ahora",
+          [
+            "Sentir cómo responde el yoke sin intentar hacer maniobras",
+            "Mirar velocidad, altitud y horizonte en la pantalla G1000",
+            "Terminar la sesión con el avión estable, sin tener que aterrizar",
+          ],
+          "tu primer vuelo seguro en el Cessna 172",
+        ),
+      ],
+    },
+    {
+      id: "efb-first-look",
+      title: "Tu EFB: mapa y plan antes de moverte",
+      description: "Aprende qué es la tablet de MSFS, cómo reconocer sus partes y qué usarás más adelante para planear y hacer taxi.",
+      lessons: [
+        makeLesson(
+          "efb-first-look",
+          "La EFB desde cero: tu mapa de vuelo",
+          "Reconoce la tablet de MSFS 2024 antes de pedirte crear una ruta. Hoy solo abrirás, mirarás y cerrarás el mapa.",
+          0,
+          "Tu EFB: mapa y plan antes de moverte",
+          [
+            "Saber qué es la EFB y cuándo usarla",
+            "Distinguir mapa, ruta y aplicaciones sin pulsar al azar",
+            "Abrir y cerrar la EFB antes de iniciar el vuelo",
+          ],
+          "la EFB de Microsoft Flight Simulator 2024",
+        ),
+      ],
+    },
+  );
+
   levelZero.modules.splice(
     2,
     1,
@@ -1183,7 +1370,7 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
     estimatedTime: "35 min",
     objectives: [
       "Poner el perfil correcto en el dispositivo",
-      "Identificar los dos dispositivos que aparecen en PC",
+      "Confirmar el control y perfil correctos en Xbox",
       "Reconocer qué mando físico corresponde a cada función básica",
     ],
     sections: [
@@ -1191,19 +1378,19 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
         kind: "PROCEDIMIENTO",
         title: "Primero: selecciona el perfil correcto en el control",
         content:
-          "1. En la pantalla del propio VelocityOne, usa sus controles de perfil y elige Default/Predeterminado. Para estas primeras lecciones conserva sus frenos y flaps ya asignados.\n2. En MSFS 2024 abre Configuración > Controles. En PC verás dos dispositivos: YOKE (el volante) y QUAD (las palancas). Esto es normal.\n3. Selecciona YOKE y revisa que el perfil mostrado corresponda a Default/Predeterminado. Después haz lo mismo con QUAD. El perfil de MSFS y el perfil físico deben coincidir.\n4. Si el perfil predeterminado ya tiene las acciones asignadas, no las borres ni las reasignes: esta lección es para reconocerlas y comprobarlas.",
+          "1. En la pantalla del propio VelocityOne, elige Single-Engine Prop. Este es el perfil del curso para el C172 en Xbox.\n2. En MSFS 2024 abre Configuración > Controles y selecciona VelocityOne Flight. Confirma que el perfil de MSFS también diga Single-Engine Prop.\n3. No continúes si los dos nombres no coinciden. El mismo botón puede hacer otra cosa si el perfil físico y el del simulador son distintos.\n4. Si las acciones ya aparecen asignadas, no las borres ni las reasignes: esta lección es para reconocerlas y comprobarlas.",
       },
       {
         kind: "APRENDE",
         title: "Mapa de asignaciones: YOKE",
         content:
-          "Mueve el VOLANTE a izquierda/derecha → busca “Aileron Axis”; inclina las alas.\nEmpuja o tira el VOLANTE → busca “Elevator Axis”; baja o sube el morro.\nGATILLO IZQUIERDO (LT) y GATILLO DERECHO (RT) → “Rudder Axis”; giran el timón de dirección.\nB2, en el mango derecho → “Brakes”; frena.\nHAT derecho ARRIBA/ABAJO → “Decrease Flaps” / “Increase Flaps”.\nHAT derecho IZQUIERDA → “Parking Brake”.\nNo memorices todo: mira la ilustración y prueba solo un mando a la vez.",
+          "Mueve el VOLANTE a izquierda/derecha → “Aileron Axis”; inclina las alas.\nEmpuja o tira el VOLANTE → “Elevator Axis”; baja o sube el morro.\nGATILLO IZQUIERDO (LT) y GATILLO DERECHO (RT) → “Rudder Axis”; giran el timón de dirección.\nPara frenar: el botón superior del agarre izquierdo se llama LB y el del agarre derecho RB. Pulsa ambos para detener el C172.\nNo memorices todavía los HAT, B1/B2 o botones de cámara: se explican únicamente cuando una lección los necesite.",
       },
       {
         kind: "APRENDE",
         title: "Mapa de asignaciones: QUAD",
         content:
-          "PALANCA NEGRA → “Throttle 1 Axis” o “Throttle Axis”: potencia del motor.\nPALANCA AZUL y PALANCA ROJA: en el perfil Default pueden quedar sin asignar; no las configures todavía. Más adelante aprenderás a usar Propeller y Mixture.\nRUEDA TRIM → “Elevator Trim”: sirve para quitar presión del yoke cuando ya estás en vuelo estable. No la muevas al azar en esta primera configuración.",
+          "PALANCA NEGRA → “Throttle 1 Axis” o “Throttle Axis”: potencia del motor.\nEn los diez botones blancos del cuadrante: B4 es el botón de ABAJO en la primera columna y activa o libera el freno de estacionamiento.\nB7 es el botón de ARRIBA en la tercera columna; B8 es el de ABAJO justo debajo. B7 disminuye flaps y B8 aumenta flaps: no los usarás hasta la lección de aproximación.\nPALANCA AZUL y PALANCA ROJA: Propeller y Mixture se explican más adelante; no las configures todavía.\nRUEDA TRIM → “Elevator Trim”: sirve para quitar presión del yoke cuando ya estás en vuelo estable. No la muevas al azar en esta primera configuración.",
       },
       {
         kind: "ERRORES COMUNES",
@@ -1213,11 +1400,10 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
       },
     ] as Lesson["sections"],
     checklist: [
-      "Perfil físico Default/Predeterminado seleccionado",
-      "YOKE identificado en MSFS",
-      "QUAD identificado en MSFS",
-      "Volante, gatillos, B2 y HAT derecho ubicados",
-      "Palancas negra, azul, roja y rueda Trim ubicadas",
+      "Perfil Single-Engine Prop seleccionado en el control y en MSFS",
+      "VelocityOne Flight identificado en MSFS",
+      "Volante, LT/RT, LB/RB ubicados",
+      "Palanca negra, B4, B7/B8 y rueda Trim ubicados",
     ],
     exercise: {
       title: "No asignes todavía: verifica el mapa",
@@ -1232,7 +1418,7 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
         kind: "PROCEDIMIENTO",
         title: "Comprueba y asigna solo si falta algo",
         content:
-          "Hazlo con el avión detenido y freno de estacionamiento aplicado.\n1. En YOKE, busca “Aileron Axis”. Gira el volante: si la barra no se mueve, pulsa buscar entrada y gira el volante; confirma.\n2. Busca “Elevator Axis”. Empuja/tira: si no se mueve, asigna ese movimiento.\n3. Busca “Brakes”. Pulsa B2.\n4. Busca “Parking Brake”. Pulsa HAT derecho a la izquierda.\n5. Busca “Increase Flaps” y “Decrease Flaps”. Pulsa HAT derecho abajo y arriba, respectivamente.\n6. En QUAD, busca “Throttle 1 Axis”. Mueve únicamente la palanca negra.\n7. Si tienes pedales, asígnalos a “Rudder Axis”. Si no tienes pedales, comprueba LT y RT en el yoke.",
+        "Hazlo con el avión detenido y freno de estacionamiento aplicado.\n1. En VelocityOne Flight, busca “Aileron Axis”. Gira el volante: si la barra no se mueve, pulsa buscar entrada y gira el volante; confirma.\n2. Busca “Elevator Axis”. Empuja/tira: si no se mueve, asigna ese movimiento.\n3. Busca “Left Brake” y “Right Brake”. Pulsa los botones superiores de los agarres izquierdo (LB) y derecho (RB), respectivamente; después prueba ambos juntos.\n4. Busca “Parking Brake”. Pulsa B4: botón blanco de ABAJO en la primera columna del cuadrante.\n5. Busca “Increase Flaps” y “Decrease Flaps”. B8 es el botón blanco de ABAJO en la tercera columna y B7 está justo arriba; todavía no los necesitas para rodar.\n6. Busca “Throttle 1 Axis”. Mueve únicamente la palanca negra.\n7. Comprueba “Rudder Axis” con LT y RT en el yoke. No necesitas pedales para este curso inicial.",
       },
       {
         kind: "APRENDE",
@@ -1250,16 +1436,16 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
     checklist: [
       "Aileron Axis comprobado",
       "Elevator Axis comprobado",
-      "B2 frenos comprobado",
-      "HAT derecho hacia la izquierda para freno de estacionamiento comprobado",
-      "HAT arriba/abajo para flaps comprobado",
+      "LB/RB frenos comprobados",
+      "B4 para freno de estacionamiento comprobado",
+      "B7/B8 para flaps comprobados",
       "Palanca negra para Throttle Axis comprobada",
       "Rudder comprobado con pedales o LT/RT",
     ],
     exercise: {
       title: "Las siete asignaciones de principiante",
       instructions:
-        "Tu único objetivo es que estas siete funciones respondan: Aileron Axis, Elevator Axis, Rudder Axis, Brakes, Parking Brake, Increase/Decrease Flaps y Throttle 1 Axis. Termina la lección solo cuando sepas qué pieza física corresponde a cada nombre.",
+        "Tu único objetivo es que estas siete funciones respondan: Aileron Axis, Elevator Axis, Rudder Axis con LT/RT, Left/Right Brake con LB/RB, Parking Brake con B4, Increase/Decrease Flaps con B8/B7 y Throttle 1 Axis con la palanca negra. Termina solo cuando sepas qué pieza física corresponde a cada nombre.",
     },
   },
 };
@@ -1511,17 +1697,19 @@ const airAndVfrProcedures: Record<string, Partial<Lesson>> = {
     ],
   ),
   "airport-traffic-pattern": lessonPlan(
-    "El circuito organiza la llegada al aeropuerto: viento en cola, base y final preparan una aproximación ordenada. Para el primer intento usarás las ayudas y la radio del simulador.",
-    "Desde una zona segura, solicita o sigue la llegada a SKCL. Identifica la pista activa. Vuela paralelo a la pista en viento en cola, reduce potencia gradualmente, gira a base y después a final. Mantén una trayectoria estable; si no lo está, aplica potencia y vuelve a intentarlo.",
-    "No fuerces un aterrizaje desde una posición mala. Una aproximación inestable se abandona; en el simulador puedes dar motor, subir y repetir.",
-    "Primer circuito visual",
-    "Completa un circuito usando la guía ATC de MSFS. Tu objetivo es nombrar cada tramo, no aterrizar perfecto.",
+    "Un circuito de tránsito es un rectángulo alrededor de una pista que evita que todos lleguen desde direcciones aleatorias. No es una figura que ya tengas que saber. Para aterrizar en una pista 01, el avión aterriza apuntando aproximadamente 010°; después despega en esa misma dirección. Los nombres son posiciones: SALIDA es recto tras despegar; VIENTO CRUZADO es un giro de 90° que te aleja del eje de pista; VIENTO EN COLA es el tramo paralelo a la pista, pero en dirección contraria al aterrizaje; BASE es otro giro de 90° hacia la pista; FINAL es la línea recta alineada con la pista. “Viento cruzado” también puede describir viento lateral, pero aquí primero lo usamos como nombre del tramo del circuito. Para leer el viento en MSFS: 360°/8 kt significa que viene DESDE el norte hacia el sur. En una pista 01, ese viento llega casi de frente: es viento de cara. Uno desde 180° llega por detrás: es viento de cola. Uno desde 090° o 270° llega de lado: es viento lateral. Para esta lección fija 0–3 kt y aprende primero la forma del circuito.",
+    "1. Configura Vuelo libre: C172 G1000, SKCL, día, cielo despejado y viento fijado en 0–3 kt. Para el primer intento no uses viento fuerte; así el nombre de cada tramo no se mezcla con correcciones meteorológicas. 2. Completa taxi y despegue de Nivel 0. Mantén rumbo de pista y 70–75 KIAS hasta 500 ft AGL. 3. Continúa ascendiendo hasta 1.000 ft AGL: AGL significa altura sobre el aeropuerto, no altitud MSL. En SKCL, cuya elevación ronda 3.160 ft MSL, esto equivale aproximadamente a 4.160 ft MSL; usa el valor que muestre tu simulador para el aeropuerto elegido. 4. Si la guía/ATC no indica otra cosa, haz un giro suave de 90° a la izquierda: ahora estás en VIENTO CRUZADO. 5. Cuando estés separado de la pista, vuelve a girar 90° a la izquierda: ahora estás en VIENTO EN COLA. Verás la pista a tu izquierda y volarás paralela a ella, pero en sentido opuesto al de aterrizaje. Mantén 1.000 ft AGL. 6. Al quedar a la altura del umbral de pista, todavía no desciendas de golpe: la siguiente lección enseña la configuración. Para hoy, identifica base y final en el dibujo, aplica frustrada o pausa.",
+    "No decidas por intuición si los giros son a la izquierda o derecha en un aeropuerto real: la carta, señales o ATC pueden indicar circuito derecho. En un aeropuerto controlado, ATC puede mandarte entrar en otro punto o hacer final directa. Para esta primera práctica usa la guía de MSFS y un circuito izquierdo de entrenamiento solo si no recibes una indicación distinta. Si no sabes qué pista está activa, no despega: abre Comunicaciones y sigue la instrucción o usa la pista que el simulador te asigne.",
+    "Llegar y nombrar, sin aterrizar",
+    "No necesitas aterrizar todavía. Despega, alcanza 1.000 ft AGL y completa salida → viento cruzado → viento en cola con dos giros suaves. Pausa allí y señala la pista: si está a tu izquierda y viajas paralela pero en dirección opuesta, estás en viento en cola. La próxima lección comenzará exactamente desde ese punto.",
     [
-      "Pista activa identificada",
-      "Viento en cola reconocido",
-      "Base volada",
-      "Final estabilizada intentada",
-      "Opción de frustrada comprendida",
+      "Viento fijado en 0–3 kt para la primera práctica",
+      "Pista activa confirmada en Comunicaciones/MSFS",
+      "1.000 ft AGL alcanzados",
+      "Salida y viento cruzado nombrados",
+      "Viento en cola reconocido con pista a un lado",
+      "Base y final identificadas en el mapa visual",
+      "Avión pausado o estabilizado antes de aproximar",
     ],
   ),
   "first-vfr-navigation": lessonPlan(
@@ -1894,6 +2082,249 @@ const navigationProcedures: Record<string, Partial<Lesson>> = {
   "navigation-consolidation": lessonPlan("Este vuelo no es una demostración de botones. Es la cadena completa: plan, combustible, despegue manual, navegación vigilada y llegada preparada. El piloto automático se usa solo en crucero estable y se desconecta mucho antes de la llegada.", "1. Planifica SKCL–SKUL con EFB: VFR, clima despejado, rumbo, distancia, dos referencias y combustible calculado.\n2. Repite la cadena de Nivel 0 para encender, rodar y despegar.\n3. Asciende a una zona segura y estabiliza el C172 manualmente.\n4. Comprueba mapa, combustible y rumbo. Muestra FPL y confirma CDI=GPS.\n5. En crucero usa AP+HDG/ALT; si vas cerca de la línea, arma NAV y verifica la captura.\n6. Cada 15 minutos compara tiempo, combustible y posición.\n7. Antes de llegar, desconecta AP, vuelve a control manual y prepara el circuito/aterrizaje como en Nivel 2.", "No dejes el AP conectado hasta final ni uses la navegación para ignorar el clima, relieve o combustible. Si pierdes orientación, avía primero: alas niveladas, altitud segura, potencia estable; después revisa mapa o GPS.", "Vuelo completo de navegación", "Completa SKCL–SKUL o detente en una zona segura. Al final registra: rumbo previsto frente al real, combustible previsto frente al indicado, una referencia visual y un momento en que supervisaste el piloto automático.", ["Mapa y combustible preparados", "Salida manual completada", "Plan GPS comprobado", "AP usado solo en crucero", "Chequeo de 15 minutos realizado", "AP desconectado antes de llegada", "Debriefing escrito"]),
 };
 
+const ifrTrainingProcedures: Record<string, Partial<Lesson>> = {
+  "ifr-boundaries": lessonPlan(
+    "IFR significa volar usando instrumentos y procedimientos cuando la referencia exterior no basta. En un avión real exige formación, habilitación, planificación meteorológica y procedimientos publicados vigentes. Aquí practicarás exclusivamente en MSFS: día, cielo despejado, aire calmo y con posibilidad de pausar. El propósito no es simular una emergencia ni autorizar vuelo real; es aprender a interpretar el PFD y mantener control preciso.",
+    "1. Crea un Vuelo libre con C172 G1000 ya en aire, a 6.500 ft MSL, clima despejado y sin turbulencia. 2. Pausa y localiza el horizonte artificial, velocidad, altitud y rumbo. 3. Quita la pausa y mantén mirada afuera; después mira el PFD durante cinco segundos. 4. Alterna afuera-PFD tres veces sin tocar mandos. 5. Declara la regla de esta sección: si te desorientas, alas niveladas, actitud moderada, potencia estable y pausa.",
+    "No empieces con nubes, noche, clima real o tráfico denso. No conectes piloto automático para evitar aprender el control básico. Un procedimiento IFR nunca sustituye revisar cartas, clima, combustible y autorizaciones reales; estas lecciones son una práctica guiada de simulador.",
+    "El límite de la práctica",
+    "Con el avión estable a 6.500 ft MSL, identifica velocidad, altitud, rumbo y horizonte. Antes de terminar, di qué harás si pierdes orientación: alas niveladas, potencia estable, pausa y revisión.",
+    ["Vuelo libre y clima despejado configurados", "Altitud inicial de 6.500 ft MSL confirmada", "PFD identificado", "Regla de pausa entendida", "Sin piloto automático usado"],
+  ),
+  "ifr-pfd-scan": lessonPlan(
+    "El PFD no se lee de izquierda a derecha como un texto. El horizonte artificial del centro es tu ancla: allí ves actitud de morro y banco. Desde allí haces miradas breves a velocidad a la izquierda, altitud a la derecha, rumbo abajo y bola/coordinación cerca del centro. Lo importante es tendencia: una altitud que cambia o una velocidad que se aleja requiere una corrección pequeña, no una reacción brusca.",
+    "1. Establece alas niveladas. 2. Mira el centro: ¿morro y banco son los deseados? 3. Mira velocidad a la izquierda y vuelve al centro. 4. Mira altitud a la derecha y vuelve al centro. 5. Mira rumbo en la parte baja y vuelve al centro. 6. Mira la bola/coordinación; si está desplazada, aplica una presión breve del pedal del mismo lado de la bola. 7. Repite el circuito durante un minuto. Cada mirada debe durar poco: no persigas un número exacto.",
+    "No fijes los ojos en el altímetro esperando que se mueva ni uses el rumbo como única referencia de giro. No cambies cuatro controles ante una desviación. Primero identifica qué variable se apartó; después aplica una corrección pequeña y vuelve al escaneo.",
+    "Un minuto de escaneo",
+    "Mantén el avión estable durante un minuto repitiendo centro-velocidad-centro-altitud-centro-rumbo-centro. Al terminar, explica qué instrumento usarías para saber si las alas se inclinan.",
+    ["Horizonte usado como ancla", "Velocidad comprobada", "Altitud comprobada", "Rumbo comprobado", "Coordinación observada", "Escaneo repetido un minuto"],
+  ),
+  "ifr-straight-level": lessonPlan(
+    "Volar recto y nivelado por instrumentos consiste en mantener una actitud que produce el resultado deseado y comprobar ese resultado. El horizonte artificial te muestra la actitud; altitud, velocidad y rumbo confirman el rendimiento. Para esta práctica el objetivo es 6.500 ft MSL, rumbo actual y una velocidad de crucero cómoda; no necesitas perseguir una cifra de RPM exacta.",
+    "1. En 6.500 ft MSL, nivela las alas en el horizonte artificial. 2. Ajusta el morro hasta que la altitud deje de subir o bajar. 3. Ajusta potencia suavemente para una velocidad de crucero estable. 4. Usa trim en toques pequeños para quitar presión del yoke. 5. Escanea velocidad, altitud y rumbo. 6. Si la altitud se aleja más de 100 ft, corrige primero con una actitud pequeña y espera; después vuelve a ajustar trim. 7. Mantén el resultado dos minutos.",
+    "No intentes mantener altitud tirando continuamente del yoke ni corrijas cada oscilación de pocos pies. No cambies potencia y pitch a la vez sin saber qué problema corrige cada uno. Si se acumulan desviaciones, estabiliza alas, actitud y potencia antes de seguir.",
+    "Dos minutos estables",
+    "Mantén 6.500 ft MSL dentro de aproximadamente ±100 ft y tu rumbo dentro de unos ±10° durante dos minutos. Si te sales, recupera con calma y reinicia el conteo; el objetivo es aprender, no aprobar a la primera.",
+    ["Alas niveladas en PFD", "Altitud objetivo 6.500 ft MSL elegida", "Potencia establecida", "Trim usado con pequeños toques", "Altitud dentro de ±100 ft", "Rumbo dentro de ±10° durante dos minutos"],
+  ),
+  "ifr-climbs-descents": lessonPlan(
+    "Un ascenso o descenso por instrumentos tiene cuatro partes: decidir altitud objetivo, establecer actitud, ajustar potencia y vigilar que velocidad y rumbo sigan controlados. No es una carrera hacia un número. Para nivelar, anticipas: reduces la actitud de ascenso o descenso antes de alcanzar la altitud, porque el avión tarda en responder.",
+    "1. Desde 6.500 ft MSL, elige 7.000 ft MSL como objetivo. 2. Mira el horizonte, eleva el morro ligeramente y conserva potencia suficiente para que la velocidad no caiga de forma preocupante. 3. Escanea velocidad, altitud y rumbo. 4. Unos 100 ft antes de 7.000 ft, baja suavemente el morro a actitud de nivel y ajusta potencia. 5. Estabiliza y usa trim. 6. Repite hacia 6.500 ft: reduce un poco potencia, baja el morro suavemente, y comienza a nivelar unos 100 ft antes de la altitud objetivo.",
+    "No fijes el morro alto hasta que la velocidad se deteriore, ni dejes que el avión acelere sin revisar actitud. No esperes a la altitud exacta para nivelar: eso suele producir sobrepasos. Si el rumbo se mueve, corrígelo con un banco mínimo y vuelve al horizonte.",
+    "Subir y volver",
+    "Completa un ascenso de 6.500 a 7.000 ft MSL y un descenso de regreso. En cada nivelación, explica qué hiciste antes de llegar a la altitud y por qué.",
+    ["7.000 ft MSL seleccionado", "Ascenso iniciado con actitud moderada", "Velocidad vigilada", "Nivelación anticipada", "Descenso a 6.500 ft completado", "Rumbo comprobado en ambos cambios"],
+  ),
+  "ifr-standard-turns": lessonPlan(
+    "En instrumentos, un viraje se controla con banco, coordinación, rumbo y una salida anticipada. Para un primer ejercicio usa bancos moderados, alrededor de 15–20°, no virajes pronunciados. El rumbo cambia más rápido cuanto mayor es el banco: por eso comienzas a reducir banco unos pocos grados antes del rumbo objetivo.",
+    "1. Establece 6.500 ft MSL y un rumbo redondo, por ejemplo 360°. 2. Decide el nuevo rumbo: 090°. 3. Mira el horizonte y aplica banco suave a la derecha hasta 15–20°. 4. Centra la bola con presión pequeña de rudder si es necesario. 5. Alterna horizonte, rumbo y altitud. 6. Aproximadamente 10° antes de 090°, comienza a retirar banco. 7. Nivelado en 090°, corrige con movimientos pequeños y confirma altitud. 8. Repite de 090° a 180°.",
+    "No mires solo el indicador de rumbo: si lo haces, puedes perder altitud o exceder banco. No tires fuerte del yoke durante el giro para “sostener” altitud; usa una presión suave y revisa el resultado. Si pasas el rumbo, no hagas un viraje brusco de vuelta; estabiliza y corrige despacio.",
+    "Dos rumbos elegidos",
+    "Desde un rumbo estable, gira a dos rumbos separados 90°. Termina cada uno con alas niveladas, altitud cercana a 6.500 ft MSL y una explicación de cuándo empezaste a salir del giro.",
+    ["Rumbo inicial identificado", "Rumbo objetivo elegido", "Banco moderado usado", "Bola observada", "Salida anticipada aplicada", "Dos virajes terminados estabilizados"],
+  ),
+  "ifr-route-briefing": lessonPlan(
+    "Antes de seguir una ruta IFR debes poder contarla sin tocar botones: de dónde sales, a dónde vas, altitud planificada, qué fuente navega el CDI y qué harás si algo no coincide. En esta práctica usarás la ruta corta SKCL–SKUL en condiciones visuales. No es una ruta IFR publicada ni una autorización real: es un escenario para practicar briefing y verificación.",
+    "1. En Vuelo libre/EFB crea SKCL–SKUL y anota origen, destino, rumbo general y altitud de práctica 7.500 ft MSL. 2. En cabina abre FPL y confirma que aparecen origen y destino. 3. En el PFD revisa que el CDI indique GPS, no VOR. 4. Di en voz alta: “Si el plan, CDI o rumbo no coinciden, mantengo alas niveladas, altitud segura y reviso antes de pulsar NAV”. 5. Solo después, en crucero estable, puedes usar HDG o NAV como práctica de supervisión.",
+    "No copies una altitud de este curso para un vuelo real ni asumas que una línea magenta es una autorización. HDG sigue el bug de rumbo; NAV sigue la fuente del CDI. Si no sabes cuál está activa, no uses el piloto automático.",
+    "Briefing de 30 segundos",
+    "Antes de despegar o desde aire estable, explica en 30 segundos: origen, destino, altitud objetivo, fuente CDI y plan si algo no coincide. Luego comprueba cada dato en la pantalla.",
+    ["Origen y destino definidos", "Altitud de práctica definida", "FPL revisado", "CDI confirmado en GPS", "Diferencia HDG/NAV explicada", "Plan de pausa y revisión declarado"],
+  ),
+  "ifr-approach-briefing": lessonPlan(
+    "Una carta de aproximación no se memoriza; se lee con un orden. Primero identifica aeropuerto, pista y tipo de procedimiento. Luego confirma la frecuencia o fuente de navegación, el curso final, los fixes/puntos importantes, altitudes y el procedimiento de frustrada. Las cartas reales dependen de país, ciclo y aeropuerto: para vuelo real se usan datos vigentes y autorización ATC. Aquí solo aprenderás el orden de lectura.",
+    "1. En el EFB o pantalla de procedimientos del simulador abre una aproximación GPS disponible para tu aeropuerto de práctica. 2. Di el nombre del aeropuerto, pista y tipo de aproximación. 3. Busca el curso final y localiza la altitud inicial o de cada tramo mostrada. 4. Busca el punto de frustrada y lee qué dirección/altitud indica el simulador. 5. Carga la aproximación solo después de haberla explicado. 6. Confirma que el CDI sigue en GPS antes de continuar.",
+    "No inventes altitudes ni uses una carta desactualizada fuera del simulador. No cargues una aproximación durante despegue o mientras el avión no está estabilizado. Una aproximación cargada no garantiza que sea la correcta: siempre revisa aeropuerto, pista, transición y fuente CDI.",
+    "Leer antes de cargar",
+    "Abre una aproximación GPS y señala: aeropuerto/pista, tipo, curso final, primera altitud publicada y el texto de frustrada. Si no encuentras uno, no avances: vuelve al briefing y busca de nuevo.",
+    ["Aeropuerto y pista identificados", "Tipo de aproximación identificado", "Curso final localizado", "Altitudes publicadas observadas", "Frustrada localizada", "CDI GPS confirmado antes de cargar"],
+  ),
+  "ifr-gps-approach": lessonPlan(
+    "La aproximación GPS de esta lección se practica con tiempo bueno para que puedas comparar instrumentos y exterior. Seguir la ruta no basta: debes vigilar actitud, altitud, velocidad, fuente CDI y qué tramo está activo. Si no puedes explicar qué está haciendo el avión, la respuesta segura es nivelar, conservar una altitud segura y pausar.",
+    "1. En crucero estable y con una aproximación GPS ya explicada, carga el procedimiento correcto en el G1000/EFB. 2. Comprueba aeropuerto, pista, transición y CDI=GPS. 3. Vuela o usa AP+HDG para acercarte; usa NAV solo después de verificar que el CDI sigue GPS y estás razonablemente cerca de la ruta. 4. Antes de cada descenso, verifica en la carta/EFB la siguiente altitud; no desciendas porque la línea magenta baje. 5. Mantén velocidad y configuración estable. 6. Si tienes la pista visible y el avión estable, continúa visualmente; si no, ejecuta la frustrada practicada.",
+    "No uses el piloto automático como sustituto de vigilar altitud. No persigas la línea desde un ángulo grande ni desciendas antes de una altitud publicada. No intentes aterrizar si el avión no está estabilizado: frustrar es una maniobra normal.",
+    "Seguir y comprobar",
+    "En clima despejado, carga una aproximación GPS y completa el briefing. Vuela solamente hasta el punto en que puedas explicar qué tramo, fuente CDI y siguiente altitud aparecen. No es obligatorio aterrizar; una pausa controlada también completa el ejercicio.",
+    ["Aproximación correcta cargada", "Aeropuerto y pista revisados", "CDI muestra GPS", "Siguiente tramo identificado", "Siguiente altitud verificada antes de descender", "Decisión visual o frustrada preparada"],
+  ),
+  "ifr-missed-approach": lessonPlan(
+    "La frustrada protege el control cuando no puedes continuar una aproximación de forma segura. La prioridad es siempre: potencia, actitud, velocidad, configuración y navegación. Después de recuperar ascenso estable lees o sigues el procedimiento publicado; no intentas resolver radios, mapa y botones al mismo tiempo.",
+    "1. Antes de iniciar, lee la frustrada de la aproximación elegida y anota la primera dirección o punto y altitud indicados por el simulador. 2. En una altura segura de práctica, simula el punto de frustrada. 3. Aplica potencia de ascenso. 4. Ajusta actitud de ascenso y comprueba que la velocidad se estabiliza en 70–75 KIAS. 5. Retrae flaps por etapas solo cuando el avión ascienda positivamente y según el estado que uses en el simulador. 6. Mantén alas niveladas o sigue el primer rumbo/punto de la frustrada solo cuando ya estés estable. 7. Asciende a la altitud indicada por el procedimiento o, si no estás usando datos válidos, vuelve a 6.500 ft MSL y pausa.",
+    "No bajes el morro ni reduzcas potencia por mirar el GPS. No retraias toda la configuración de golpe si el avión aún no asciende. No inventes una ruta de frustrada para vuelo real: las instrucciones y altitudes publicadas son específicas de cada procedimiento.",
+    "Frustrar con control",
+    "Simula una frustrada en clima bueno. La práctica termina cuando vuelves a ascenso estable, 70–75 KIAS, rumbo controlado y puedes explicar cuál era tu siguiente referencia de procedimiento.",
+    ["Frustrada leída antes de la práctica", "Potencia aplicada primero", "Actitud de ascenso establecida", "70–75 KIAS comprobados", "Configuración cambiada por etapas", "Ascenso y rumbo estabilizados", "Siguiente referencia explicada"],
+  ),
+};
+
+const firstFlightProcedures: Record<string, Partial<Lesson>> = {
+  "first-flight-now": {
+    estimatedTime: "10 min",
+    sections: [
+      {
+        kind: "APRENDE",
+        title: "El objetivo de hoy: sentir el avión, no aprobar un examen",
+        content:
+          "Este es un vuelo de descubrimiento en el simulador. Empiezas ya en el aire para no mezclar taxi, radio, EFB, despegue y aterrizaje en tu primer minuto. Solo observarás tres zonas de la pantalla: velocidad a la izquierda, horizonte artificial al centro y altitud a la derecha. Sus nombres y funcionamiento se explicarán con calma en la siguiente lección.",
+      },
+      {
+        kind: "PROCEDIMIENTO",
+        title: "Configura el vuelo en MSFS 2024",
+        content:
+          "1. En Vuelo libre, elige Cessna 172 Skyhawk G1000.\n2. Elige una posición EN EL AIRE, no plataforma ni pista. Usa clima despejado y sin viento.\n3. Si el mapa permite elegir altura, selecciona 7.500 ft MSL. Si no aparece esa opción, usa cualquier inicio en aire que ofrezca MSFS y no te acerques al suelo.\n4. Inicia el vuelo. No abras EFB, ATC ni piloto automático; eso viene después.",
+      },
+      {
+        kind: "PRUÉBALO EN MSFS",
+        title: "Haz tres movimientos pequeños",
+        content:
+          "1. Mira por fuera y deja el yoke centrado durante 20 segundos.\n2. Gira el yoke apenas a la izquierda durante dos segundos y vuelve al centro; observa que el horizonte se inclina. Repite a la derecha.\n3. Tira apenas del yoke un segundo y vuelve al centro; después empuja apenas un segundo y vuelve al centro.\n4. No busques una cifra perfecta. Si el avión se inclina mucho, centra el yoke, reduce tus movimientos y reinicia el vuelo desde el menú.\n5. Después de diez minutos, pausa y termina la sesión desde el menú. No necesitas aterrizar hoy.",
+      },
+      {
+        kind: "ERRORES COMUNES",
+        title: "Qué no hacer todavía",
+        content:
+          "No pulses B7/B8, no muevas mezcla ni trim, no actives el piloto automático y no intentes aterrizar. Si ves que el avión desciende, no entres en pánico: pausa, vuelve al menú y reinicia el inicio en aire. Reiniciar es la acción correcta en esta práctica.",
+      },
+    ] as Lesson["sections"],
+    checklist: [
+      "C172 iniciado en el aire, con clima despejado",
+      "Velocidad, horizonte y altitud localizados en el G1000",
+      "Un giro pequeño a cada lado hecho y recuperado al centro",
+      "Sesión terminada desde el menú, sin intentar aterrizar",
+    ],
+    exercise: {
+      title: "Misión 1: conoce la sensación de volar",
+      instructions:
+        "Mantén el C172 razonablemente tranquilo durante 10 minutos. Tu meta observable es poder decir: izquierda inclina a la izquierda; derecha inclina a la derecha; tirar sube el morro; empujar lo baja. Termina desde el menú y continúa con la pantalla G1000.",
+    },
+  },
+};
+
+const efbProcedures: Record<string, Partial<Lesson>> = {
+  "efb-first-look": {
+    estimatedTime: "12 min",
+    sections: [
+      {
+        kind: "APRENDE",
+        title: "Qué es la EFB",
+        content:
+          "EFB significa Electronic Flight Bag: es la tablet de MSFS 2024. No es la pantalla G1000 del Cessna ni un menú de Xbox. Sirve para reunir mapa, ruta, clima, peso/combustible, cartas y checklist. Piensa en ella como una mesa de planificación: se usa antes de moverse y cuando el avión está estable, no durante una maniobra difícil.",
+      },
+      {
+        kind: "APRENDE",
+        title: "Las tres partes que usarás primero",
+        content:
+          "MAPA: te muestra dónde está el avión, aeropuertos, pistas y la línea de una ruta.\nRUTA: aquí eliges origen, destino y, más adelante, cargas un plan de vuelo.\nAPPS: son accesos a otras tareas como combustible, peso, checklist o cartas. No tienes que memorizar todos los iconos: el curso te indicará uno por uno cuándo usarlos.",
+      },
+      {
+        kind: "PROCEDIMIENTO",
+        title: "Ábrela sin iniciar un vuelo",
+        content:
+          "1. En el Mapa mundial de Vuelo libre, busca el acceso EFB que aparece en la interfaz.\n2. Ábrela y reconoce la tablet superpuesta sobre el mapa.\n3. Señala el campo de búsqueda, los iconos de aplicaciones y el mapa de fondo. No escribas un aeropuerto todavía.\n4. Ciérrala y vuelve a abrirla una vez. El objetivo es saber dónde está, no crear una ruta.\n5. Si en tu C172 aparece una tablet en cabina, puede verse distinta a la imagen; sigue siendo la misma idea. Si algún control de Xbox no responde, no fuerces botones: usa el panel de EFB en el mapa y detén la práctica.",
+      },
+      {
+        kind: "ENTIENDE",
+        title: "Qué aprenderás después",
+        content:
+          "En la próxima etapa de navegación crearás una ruta VFR corta, la cargarás en la EFB y la enviarás al G1000. Antes de taxi, aprenderás a leer el mapa del aeropuerto y la ruta de rodaje. No necesitas hacer ninguna de esas cosas hoy.",
+      },
+    ] as Lesson["sections"],
+    checklist: [
+      "EFB localizada en el Mapa mundial",
+      "Mapa, Ruta y Apps diferenciados",
+      "EFB abierta y cerrada sin iniciar un vuelo",
+      "Entendido que el plan de vuelo se verá después",
+    ],
+    exercise: {
+      title: "Misión 2: reconoce tu mesa de planificación",
+      instructions:
+        "Abre la EFB en el Mapa mundial, localiza el buscador y los accesos de aplicaciones, y ciérrala. Terminas cuando puedas explicar: la EFB sirve para preparar; el G1000 sirve para volar y seguir la información dentro del avión.",
+    },
+  },
+};
+
+const beginnerGroundCorrections: Record<string, Partial<Lesson>> = {
+  "c172-taxi-basics": {
+    sections: [
+      {
+        kind: "APRENDE",
+        title: "Taxi: mover el avión muy despacio por el suelo",
+        content: "Taxi no es despegar. Hoy no vas a una pista: solo aprenderás el ciclo completo de mover, frenar y detener el C172. En tu VelocityOne de Xbox usa la palanca negra para una cantidad mínima de potencia; LB frena la rueda izquierda, RB la derecha y ambos juntos detienen el avión.",
+      },
+      {
+        kind: "PROCEDIMIENTO",
+        title: "Una vuelta corta en plataforma",
+        content: "1. Comprueba que tienes espacio despejado delante.\n2. Libera el freno de estacionamiento con B4: botón blanco de ABAJO, primera columna del cuadrante.\n3. Empuja la palanca negra apenas hacia delante hasta que el avión comience a moverse.\n4. Vuelve la palanca negra al mínimo; el avión debe seguir rodando lentamente.\n5. Presiona LB y RB juntos con suavidad hasta detenerte.\n6. Con el avión quieto, vuelve a poner B4. Repite solo una vez. No sigas la ruta de taxi todavía.",
+      },
+      {
+        kind: "ERRORES COMUNES",
+        title: "Si algo no sale bien",
+        content: "Si acelera demasiado: palanca negra al mínimo y LB/RB juntos. Si gira: frena, detente y reinicia recto; no intentes corregir aumentando potencia. Si B4, LB o RB no hacen lo que esta lección dice, detente y vuelve a la comprobación visual del VelocityOne: no sigas a la pista con un freno que no reconoces.",
+      },
+    ] as Lesson["sections"],
+    checklist: ["B4 ubicado y liberado", "Palanca negra usada solo un poco", "LB y RB probados juntos", "Avión detenido", "B4 aplicado de nuevo", "Pista no utilizada"],
+    exercise: { title: "Misión de taxi: avanza y detente", instructions: "Avanza solo unos pocos largos de avión en plataforma y detente por completo usando LB/RB. El objetivo observable es quedar quieto y con B4 aplicado, sin acercarte a la pista." },
+  },
+  "c172-taxi-to-hold": {
+    sections: [
+      {
+        kind: "PROCEDIMIENTO",
+        title: "Sigue una ruta que el simulador ya te mostró",
+        content: "1. Antes de soltar B4, abre Comunicaciones y solicita taxi. Si la cinta azul no aparece, no inventes una ruta: reinicia la solicitud o detente.\n2. Sigue la línea amarilla real y la guía azul a velocidad lenta.\n3. Si llegas a una intersección y no sabes hacia dónde ir, palanca negra al mínimo, LB/RB juntos y mira la siguiente flecha.\n4. El destino de hoy son las dos líneas amarillas de espera antes de la pista.\n5. Detente ANTES de las líneas continuas; aplica B4. Termina ahí, aunque veas la pista libre.",
+      },
+      {
+        kind: "ENTIENDE",
+        title: "Qué significa Hold Short",
+        content: "Hold Short significa “detente antes de entrar a la pista”. No es un fallo ni una pausa accidental: es la meta de esta lección. La pista solo se usa en la siguiente etapa, tras una autorización/guía de MSFS y una checklist final.",
+      },
+    ] as Lesson["sections"],
+    checklist: ["Ruta azul o instrucción de taxi visible", "Línea amarilla seguida lentamente", "Intersección resuelta sin adivinar", "Línea de espera reconocida", "Avión detenido antes de la pista", "B4 aplicado"],
+    exercise: { title: "Misión de taxi: llega a Hold Short", instructions: "Sigue la guía de taxi hasta las líneas de espera y detente antes de cruzarlas. No entres a pista. Si te pierdes, vuelve a plataforma desde el menú y repite la práctica." },
+  },
+  "airport-traffic-pattern": {
+    sections: [
+      {
+        kind: "APRENDE",
+        title: "El circuito es una ruta ordenada alrededor de una pista",
+        content: "No necesitas saberlo de memoria. Salida es recto tras despegar; viento cruzado es el primer lado corto; viento en cola es el lado paralelo a la pista pero en sentido contrario; base te lleva de vuelta hacia la pista; final queda alineado con ella. Estos nombres describen POSICIONES del circuito. “Viento cruzado” también puede referirse a viento lateral: son dos usos distintos de la misma expresión.",
+      },
+      {
+        kind: "APRENDE",
+        title: "Cómo leer el viento sin adivinar",
+        content: "MSFS escribe el viento como dirección DESDE la que sopla y velocidad: 360°/8 kt viene desde el norte. Mira primero el número de la pista asignada por MSFS/ATC: una pista 02 apunta aproximadamente 020°, una 20 aproximadamente 200°. Si viento y rumbo de pista son parecidos, es viento de cara; si están enfrentados, es viento de cola; si llegan aproximadamente a 90° de lado, es lateral. Para tu primera práctica fija 0–3 kt: aprenderás la forma del circuito antes de corregir viento.",
+      },
+      {
+        kind: "PROCEDIMIENTO",
+        title: "Primera práctica: solo hasta viento en cola",
+        content: "1. Usa la pista y sentido que te asigne MSFS/ATC; no asumas 01 ni giros a la izquierda.\n2. Tras despegar, sigue recto hasta la altura indicada por el simulador/ATC.\n3. Cuando tengas suficiente altura y el sentido de circuito esté confirmado, haz el primer giro de 90°: viento cruzado.\n4. Haz otro giro de 90°: viento en cola. Ahora vuelas paralelo a la pista, en sentido opuesto al aterrizaje.\n5. Pausa aquí. Base, final, flaps y aterrizaje se practican después en una lección con escenario de reinicio.",
+      },
+    ] as Lesson["sections"],
+    checklist: ["Viento fijado en 0–3 kt", "Pista y sentido confirmados en MSFS/ATC", "Salida identificada", "Viento cruzado identificado", "Viento en cola identificado", "Práctica pausada antes de aproximar"],
+    exercise: { title: "Misión de circuito: llega a viento en cola", instructions: "No aterrices hoy. Identifica salida, viento cruzado y viento en cola con la pista paralela a un lado. Pausa al completar el segundo giro; la aproximación se explicará antes de pedírtela." },
+  },
+};
+
+const departureCorrections: Record<string, Partial<Lesson>> = {
+  "c172-takeoff-roll": {
+    sections: [
+      { kind: "APRENDE", title: "Qué objetivo tiene un despegue", content: "El objetivo no es tirar del yoke para despegar. Es acelerar recto, dejar que las alas produzcan sustentación y subir suavemente. La línea central de la pista te dice si vas recto; la cinta de velocidad del G1000 te dice cuándo el avión tiene energía suficiente." },
+      { kind: "PROCEDIMIENTO", title: "Carrera y despegue, una acción a la vez", content: "1. Con el avión centrado, libera B4 (parking).\n2. Empuja la palanca negra de forma continua hacia potencia máxima.\n3. Mira lejos, al final de la pista, y mantén la línea blanca bajo el morro con movimientos mínimos de LT/RT.\n4. Cerca de 55 KIAS, tira del yoke muy suavemente; no lo jales.\n5. Cuando las ruedas dejen el suelo, mantén un ascenso suave y busca 70–75 KIAS.\n6. A 500 ft AGL (sobre el aeropuerto), mantén el avión estable y pausa. Eso termina esta lección.", },
+      { kind: "ERRORES COMUNES", title: "Cuándo abortar en el simulador", content: "Mientras aún estés en pista, si el avión se desvía mucho o algo no responde: palanca negra al mínimo y LB/RB juntos para frenar. Si ya estás en aire y te desorientas: alas niveladas, movimientos pequeños y pausa/reinicio. 55 KIAS y 70–75 KIAS son referencias del C172 de entrenamiento en MSFS; no sustituyen el POH de otra variante." },
+    ] as Lesson["sections"],
+    checklist: ["Pista y línea central visibles", "B4 liberado", "Palanca negra llevada a máxima potencia", "Rotación suave cerca de 55 KIAS", "70–75 KIAS observados en ascenso", "Pausa a 500 ft AGL"],
+    exercise: { title: "Misión de despegue: llegar a 500 ft AGL", instructions: "Termina al estabilizarte aproximadamente 500 ft sobre el aeropuerto. No abras EFB, radio ni mapas durante la carrera. La siguiente lección no te enviará a una altitud fija insegura: cambiará a un escenario de práctica en aire." },
+  },
+  "c172-climb-out": {
+    sections: [
+      { kind: "APRENDE", title: "Esta lección no continúa una salida real", content: "Para no mandarte a volar sin ruta, terreno ni autorización definidos, esta práctica empieza directamente en aire. No debes seguir ascendiendo desde el aeropuerto hasta una cifra fija. La salida real depende de pista, relieve, clima y ATC." },
+      { kind: "PROCEDIMIENTO", title: "Zona de práctica segura en el simulador", content: "1. Vuelve al Mapa mundial.\n2. Elige C172 G1000 y una posición EN EL AIRE con cielo despejado y sin viento.\n3. Si puedes elegirla, usa 7.500 ft MSL y aléjate de terreno elevado.\n4. Al iniciar, mira la cinta de altitud y el horizonte.\n5. Mantén las alas aproximadamente niveladas durante un minuto y termina desde el menú. La siguiente lección explicará qué mirar y cómo controlar con más detalle." },
+      { kind: "ERRORES COMUNES", title: "No inventes una altitud de salida", content: "No copies 6.500 ft MSL como regla general y no sigas recto desde SKCL sin una salida definida. Para aprender control básico, iniciar en aire es intencionalmente más claro y seguro en simulación." },
+    ] as Lesson["sections"],
+    checklist: ["Nuevo escenario en aire creado", "Cielo despejado y sin viento", "Altitud y horizonte identificados", "Un minuto de vuelo estable intentado", "Práctica terminada desde menú"],
+    exercise: { title: "Misión de ascenso: prepara el lugar para aprender", instructions: "Esta es una transición de escenario, no una salida de aeropuerto. Deja el C172 estable en aire y termina; después continúa con las lecciones de control inicial." },
+  },
+};
+
 const fullC172Procedures: Record<string, Partial<Lesson>> = {
   "c172-fuel-basics": {
     estimatedTime: "25 min",
@@ -2078,6 +2509,22 @@ const fullC172Procedures: Record<string, Partial<Lesson>> = {
 };
 
 const flightSetups: Record<string, NonNullable<Lesson["flightSetup"]>> = {
+  "first-flight-now": setup(
+    "Zona de práctica en aire (elige una posición 'En el aire')",
+    "En el aire; no plataforma ni pista",
+    "7.500 ft MSL si el selector de MSFS lo permite",
+    "Preestablecido: despejado, sin viento",
+    "Día, 10:00",
+    "Esta misión evita tierra y aeropuerto: puedes pausar o reiniciar desde el menú en cualquier momento.",
+  ),
+  "efb-first-look": setup(
+    "Mapa mundial de Vuelo libre",
+    "Antes de iniciar vuelo",
+    "No aplica: es planificación en el menú",
+    "No cambia el clima hoy",
+    "No aplica",
+    "Abre y cierra la EFB; no crees ruta, no cargues combustible y no inicies un vuelo en esta lección.",
+  ),
   "vfr-map-route": setup("SKCL · Alfonso Bonilla Aragón, Cali", "Mapa de Vuelo libre", "Crucero planificado: 7.500 ft MSL", "Preestablecido: despejado, viento ligero", "Día, 09:00", "No inicies todavía: crea la ruta VFR SKCL–SKUL en el EFB y anota tus referencias."),
   "nav-time-fuel": setup("SKCL · Alfonso Bonilla Aragón, Cali", "Mapa de Vuelo libre", "Crucero planificado: 7.500 ft MSL", "Preestablecido: despejado, viento ligero", "Día, 09:00", "Usa la distancia de SKCL–SKUL para calcular tiempo y combustible antes de iniciar."),
   "vor-dme-basics": setup("SKCL · Alfonso Bonilla Aragón, Cali", "En aire, zona segura", "7.500 ft MSL", "Preestablecido: despejado, sin viento", "Día, 10:00", "Empieza estable; busca en el mapa un VOR cercano con frecuencia válida antes de tocar NAV1."),
@@ -2301,12 +2748,12 @@ const flightSetups: Record<string, NonNullable<Lesson["flightSetup"]>> = {
     "Practica virajes suaves con altura suficiente para recuperar con calma.",
   ),
   "airport-traffic-pattern": setup(
-    "SKPE · Matecaña, Pereira",
-    "En pista o plataforma",
-    "Altitud del aeropuerto",
-    "Preestablecido: despejado, viento ligero",
+    "SKCL · Alfonso Bonilla Aragón, Cali",
+    "Plataforma, motor apagado o al ralentí",
+    "Circuito: 1.000 ft AGL (aprox. 4.160 ft MSL en SKCL)",
+    "Preestablecido: despejado, viento 0–3 kt",
     "Día, 09:00",
-    "Completa la cadena de tierra y despegue de Nivel 0; practica el circuito sobre SKCL en clima despejado.",
+    "Completa tierra y despegue de Nivel 0. Esta lección termina en viento en cola, no en un aterrizaje.",
   ),
   "c172-approach-setup": setup(
     "SKCL · Alfonso Bonilla Aragón, Cali",
@@ -2351,6 +2798,16 @@ const flightSetups: Record<string, NonNullable<Lesson["flightSetup"]>> = {
 };
 
 const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
+  "first-flight-now": {
+    start: "Menú de Vuelo libre de MSFS 2024.",
+    finish: "Has volado unos minutos en aire calmo y terminado desde el menú, sin aterrizar.",
+    next: "Ahora abre “Conociendo tu VelocityOne”: identificaremos cada control físico con imágenes antes de volver a usarlo.",
+  },
+  "efb-first-look": {
+    start: "Mapa mundial de Vuelo libre, antes de pulsar Iniciar vuelo.",
+    finish: "Reconoces dónde abrir la EFB y puedes diferenciar mapa, ruta y aplicaciones.",
+    next: "Continúa con “Conociendo tu VelocityOne” para identificar el control físico antes de volver al C172.",
+  },
   "how-training-works": {
     start: "Pantalla principal de Flight Academy; MSFS aún cerrado.",
     finish: "Tienes una rutina breve de práctica preparada.",
@@ -2544,18 +3001,118 @@ const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
   },
 };
 
+Object.assign(flightSetups, {
+  "c172-climb-out": setup(
+    "Zona de práctica en aire (elige una posición 'En el aire')",
+    "En el aire; no continúes la salida desde la pista",
+    "7.500 ft MSL si el mapa lo permite",
+    "Preestablecido: despejado, sin viento",
+    "Día, 10:00",
+    "Esta práctica cambia de escenario a propósito: no fija una ruta ni una altitud de salida real desde SKCL.",
+  ),
+  "ifr-boundaries": setup("Zona de práctica en aire", "En aire, lejos de pista", "7.500 ft MSL", "Despejado, sin viento", "Día, 10:00", "Práctica de instrumentos en VMC: no es un vuelo IFR real ni una autorización ATC."),
+  "ifr-pfd-scan": setup("Zona de práctica en aire", "En aire, recto y nivelado", "7.500 ft MSL", "Despejado, sin viento", "Día, 10:00", "Antes de mover mandos, señala velocidad, horizonte, altitud, rumbo y bola en el PFD."),
+  "ifr-straight-level": setup("Zona de práctica en aire", "En aire, recto y nivelado", "7.500 ft MSL", "Despejado, sin viento", "Día, 10:00", "Meta de simulador: mantén 7.500 ft y rumbo 360° con correcciones pequeñas."),
+  "ifr-climbs-descents": setup("Zona de práctica en aire", "En aire, recto y nivelado", "7.500 ft MSL", "Despejado, sin viento", "Día, 10:00", "Practica tendencia de ascenso y descenso; termina de nuevo nivelado y con el avión estable."),
+  "ifr-standard-turns": setup("Zona de práctica en aire", "En aire, recto y nivelado", "7.500 ft MSL", "Despejado, sin viento", "Día, 10:00", "Son virajes moderados por instrumentos, no un procedimiento IFR real de razón estándar."),
+  "ifr-route-briefing": setup("Mapa mundial / EFB", "Antes de iniciar vuelo", "No aplica", "Despejado", "Día", "Práctica de interfaz: no selecciones una ruta IFR real ni una altitud publicada todavía."),
+  "ifr-approach-briefing": setup("Mapa mundial / EFB", "Antes de iniciar vuelo", "No aplica", "Despejado", "Día", "Reconoce partes de una aproximación; no ejecutes una carta no explicada por el curso."),
+  "ifr-gps-approach": setup("Zona de práctica en aire", "En aire, lejos de pista", "7.500 ft MSL", "Despejado, sin viento", "Día, 10:00", "Práctica de botones y confirmación GPS en VMC; no es una aproximación IFR publicada."),
+  "ifr-missed-approach": setup("Zona de práctica en aire", "En aire, configuración estable", "7.500 ft MSL", "Despejado, sin viento", "Día, 10:00", "Practica la decisión de potencia y ascenso en simulación; una frustrada real sigue siempre la publicada."),
+});
+
+Object.assign(lessonContinuity, {
+  "c172-takeoff-roll": {
+    start: "C172 alineado y detenido al inicio de pista.",
+    finish: "Ascenso estable iniciado cerca de 500 ft AGL; práctica pausada.",
+    next: "Para la siguiente práctica vuelve al Mapa mundial: “Ascenso inicial y zona segura” comienza en aire, no continúa una salida real.",
+  },
+  "c172-climb-out": {
+    start: "Mapa mundial de MSFS 2024, antes de iniciar vuelo.",
+    finish: "C172 iniciado en aire y mantenido estable durante un minuto.",
+    next: "Continúa con las lecciones de control inicial y pantalla G1000.",
+  },
+  "ifr-boundaries": { start: "C172 estable en aire VMC.", finish: "Puedes explicar que esta es práctica de simulador, no operación IFR real.", next: "Abre “El PFD: tu mirada debe tener un orden”." },
+  "ifr-pfd-scan": { start: "C172 estable en aire, sin maniobra pendiente.", finish: "Velocidad, horizonte, altitud, rumbo y bola localizados visualmente.", next: "Continúa con “Recto y nivelado sin mirar afuera”." },
+  "ifr-straight-level": { start: "En aire, 7.500 ft MSL y rumbo 360°.", finish: "Avión mantenido cerca de la meta de simulador y estabilizado antes de terminar.", next: "Abre “Ascender y descender con un objetivo”." },
+  "ifr-climbs-descents": { start: "En aire recto y nivelado.", finish: "Un ascenso, una nivelación y un descenso observados; avión estabilizado de nuevo.", next: "Continúa con “Virajes por instrumentos”." },
+  "ifr-standard-turns": { start: "En aire recto y nivelado.", finish: "Dos virajes moderados completados y alas niveladas al final.", next: "Abre “Antes de IFR: plan y briefing”." },
+  "ifr-route-briefing": { start: "Mapa mundial/EFB antes de iniciar vuelo.", finish: "Sabes qué datos debe tener un plan antes de enviar nada a aviónica.", next: "Continúa con “Cómo leer una aproximación antes de volarla”." },
+  "ifr-approach-briefing": { start: "EFB abierta; ninguna aproximación cargada.", finish: "Reconoces que se necesita procedimiento concreto antes de ejecutar una aproximación.", next: "Abre “Aproximación GPS”." },
+  "ifr-gps-approach": { start: "En aire VMC con GPS revisado.", finish: "Fuente GPS y tramo activo comprobados; práctica detenida antes de cualquier descenso no explicado.", next: "Continúa con “Frustrada IFR”." },
+  "ifr-missed-approach": { start: "En aire VMC y configuración estable.", finish: "Potencia, actitud y ascenso practicados; no se intentó seguir una frustrada publicada sin carta.", next: "Nivel IFR completo: vuelve a las lecciones que quieras reforzar." },
+});
+
+// Secuencia diseñada para quien empieza desde cero: primero contexto y control,
+// después vuelo básico, operación en tierra, navegación e IFR. Los objetos de
+// lección se reutilizan para conservar todos sus detalles, escenarios y visuales.
+const lessonById = new Map(
+  course.flatMap((level) => level.modules.flatMap((module) => module.lessons)).map((lesson) => [lesson.id, lesson]),
+);
+const curriculumModule = (id: string, title: string, description: string, level: number, ids: string[]) => ({
+  id,
+  title,
+  description,
+  lessons: ids.map((lessonId) => {
+    const lesson = lessonById.get(lessonId);
+    if (!lesson) throw new Error(`Missing lesson: ${lessonId}`);
+    lesson.level = level;
+    lesson.moduleTitle = title;
+    return lesson;
+  }),
+});
+
+const reorderedLevelZero = course.find((level) => level.number === 0);
+const reorderedLevelOne = course.find((level) => level.number === 1);
+const reorderedLevelTwo = course.find((level) => level.number === 2);
+const reorderedLevelThree = course.find((level) => level.number === 3);
+if (reorderedLevelZero && reorderedLevelOne && reorderedLevelTwo) {
+  reorderedLevelZero.title = "Primeros pasos";
+  reorderedLevelZero.description = "Entiende el simulador, tu control y la cabina antes de pedirte procedimientos de aeropuerto.";
+  reorderedLevelZero.modules = [
+    curriculumModule("start-here", "Empieza desde cero", "Un inicio breve: qué preparar y cómo empezar a sentir el avión.", 0, ["how-training-works", "prepare-msfs", "know-velocityone", "first-flight-now"]),
+    curriculumModule("cockpit-from-zero", "Tu C172 y su pantalla", "Mira primero; cada control se explica antes de usarlo.", 0, ["c172-instruments-first", "c172-controls-first", "know-c172", "three-axes"]),
+    curriculumModule("efb-and-controls", "Planificación y comprobación", "Conoce la EFB y verifica solo los mandos que necesitas al principio.", 0, ["efb-first-look", "initial-controls-check"]),
+  ];
+  reorderedLevelOne.title = "Control básico en el aire";
+  reorderedLevelOne.description = "Controla el C172 en un escenario en aire antes de mezclarlo con taxi o aterrizaje.";
+  reorderedLevelOne.modules = [
+    curriculumModule("air-control", "Volar estable", "Potencia, trim, recto y nivelado y virajes con metas simples.", 1, ["throttle-power", "what-is-trim", "first-cockpit-exercise", "straight-and-level", "turns-and-coordination", "sensitivity-deadzones"]),
+  ];
+  reorderedLevelTwo.title = "Aeropuerto y primer circuito";
+  reorderedLevelTwo.description = "Planifica, rueda, despega y aprende el circuito paso a paso, con ayudas de MSFS.";
+  reorderedLevelTwo.modules = [
+    curriculumModule("before-engine", "Antes de moverte", "Combustible, tarjeta de despegue y arranque sin prisa.", 2, ["c172-fuel-basics", "c172-takeoff-card", "c172-cold-dark", "c172-before-start", "c172-engine-start", "c172-after-start"]),
+    curriculumModule("airport-ground", "Mapa, radio y taxi", "La EFB y la cinta azul te guían antes de acercarte a una pista.", 2, ["airport-map-basics", "airport-radio-basics", "c172-taxi-basics", "c172-taxi-to-hold", "c172-engine-runup", "c172-before-takeoff"]),
+    curriculumModule("departure-and-return", "Despegue, circuito y aterrizaje", "Cada maniobra aparece después de comprender su objetivo y punto de reinicio.", 2, ["c172-lineup", "c172-takeoff-roll", "c172-climb-out", "airport-traffic-pattern", "c172-approach-setup", "c172-landing", "c172-go-around"]),
+  ];
+}
+if (reorderedLevelThree) {
+  reorderedLevelThree.title = "Navegación VFR, GPS y automatización";
+  reorderedLevelThree.description = "Primero planificas visualmente; después aprendes GPS y piloto automático sin dejar de supervisar.";
+  reorderedLevelThree.modules = [
+    curriculumModule("vfr-planning", "Plan VFR desde la EFB", "Mapa, distancia, tiempo y referencias antes de encender.", 3, ["vfr-map-route", "nav-time-fuel", "first-vfr-navigation", "vfr-consolidation"]),
+    curriculumModule("gps-and-automation", "G1000 y piloto automático", "Usa navegación y automatización solo cuando ya comprendes el plan.", 3, ["vor-dme-basics", "g1000-gps-route", "c172-autopilot-basics", "navigation-consolidation"]),
+  ];
+}
+
 course.forEach((level) =>
   level.modules.forEach((module) =>
     module.lessons.forEach((lesson) =>
       Object.assign(
         lesson,
         lessonDetails[lesson.id],
+        firstFlightProcedures[lesson.id],
+        efbProcedures[lesson.id],
         practicalLevelZeroDetails[lesson.id],
         velocityOneC172Details[lesson.id],
         c172NormalProcedures[lesson.id],
         c172GroundProcedures[lesson.id],
+        beginnerGroundCorrections[lesson.id],
         c172TakeoffProcedures[lesson.id],
+        departureCorrections[lesson.id],
         airAndVfrProcedures[lesson.id],
+        ifrTrainingProcedures[lesson.id],
         fullC172Procedures[lesson.id],
         navigationProcedures[lesson.id],
         {
