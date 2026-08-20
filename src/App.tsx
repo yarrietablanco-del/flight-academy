@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { course, getLesson, lessonOrder } from "./data/course";
 import type { Lesson, LessonStatus } from "./types/course";
 import { Checklist } from "./components/Checklist";
@@ -28,6 +28,7 @@ function statusLabel(status: LessonStatus) {
 function App() {
   const [view, setView] = useState<View>("dashboard");
   const [selectedLessonId, setSelectedLessonId] = useState(lessonOrder[0]);
+  const [returnFocusLessonId, setReturnFocusLessonId] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const {
     statuses,
@@ -158,7 +159,7 @@ function App() {
             />
           )}
           {view === "course" && (
-            <Course statuses={statuses} openLesson={openLesson} />
+            <Course statuses={statuses} openLesson={openLesson} focusLessonId={returnFocusLessonId} onFocused={() => setReturnFocusLessonId(null)} />
           )}
           {view === "velocityone" && <VelocityOne />}
           {view === "hangar" && <Hangar />}
@@ -166,7 +167,11 @@ function App() {
             <LessonView
               lesson={selectedLesson}
               status={statuses[selectedLesson.id]}
-              onComplete={() => completeLesson(selectedLesson.id)}
+              onComplete={() => {
+                completeLesson(selectedLesson.id);
+                setReturnFocusLessonId(selectedLesson.id);
+                navigate("course");
+              }}
               onBack={() => navigate("course")}
             />
           )}
@@ -411,10 +416,23 @@ function Dashboard({
 function Course({
   statuses,
   openLesson,
+  focusLessonId,
+  onFocused,
 }: {
   statuses: Record<string, LessonStatus>;
   openLesson: (lesson: Lesson) => void;
+  focusLessonId: string | null;
+  onFocused: () => void;
 }) {
+  const focusedLesson = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (!focusLessonId || !focusedLesson.current) return;
+    focusedLesson.current.focus({ preventScroll: true });
+    focusedLesson.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    onFocused();
+  }, [focusLessonId, onFocused]);
+
   return (
     <>
       <section className="page-intro compact">
@@ -453,8 +471,9 @@ function Course({
                     return (
                       <button
                         key={lesson.id}
+                        ref={lesson.id === focusLessonId ? focusedLesson : undefined}
                         disabled={status === "locked"}
-                        className={`lesson-row ${status}`}
+                        className={`lesson-row ${status} ${lesson.id === focusLessonId ? "return-focus" : ""}`}
                         onClick={() => openLesson(lesson)}
                       >
                         <span className="lesson-state">
@@ -481,6 +500,47 @@ function Course({
         ))}
       </div>
     </>
+  );
+}
+
+function LessonControls() {
+  return (
+    <section className="lesson-controls" aria-label="Controles VelocityOne para esta lección">
+      <p className="eyebrow">TU VELOCITYONE · C172</p>
+      <h3>Controles rápidos</h3>
+      <dl>
+        <div><dt>Frenar</dt><dd><kbd>LB</kbd> izquierdo + <kbd>RB</kbd> derecho</dd></div>
+        <div><dt>Estacionamiento</dt><dd><kbd>B4</kbd> en el cuadrante</dd></div>
+        <div><dt>Dirección en tierra</dt><dd><kbd>LT</kbd> izquierda · <kbd>RT</kbd> derecha</dd></div>
+        <div><dt>Potencia</dt><dd>Palanca <strong>Throttle</strong></dd></div>
+      </dl>
+      <p className="control-note">Mapa basado en el perfil <strong>Single-Engine Prop</strong>. Si no responde así, revisa que el perfil del control y el de MSFS coincidan.</p>
+    </section>
+  );
+}
+
+function CockpitInstrumentMap() {
+  const instruments = [
+    ["Izquierda", "Velocidad", "Te dice qué tan rápido se mueve el avión. La unidad es nudos (kt)."],
+    ["Centro", "Horizonte artificial", "Cielo arriba y tierra abajo. Si la línea se inclina, las alas también."],
+    ["Derecha", "Altitud", "Te dice a qué altura estás. La unidad es pies (ft)."],
+    ["Abajo", "Rumbo", "La dirección hacia la que apunta el morro, medida en grados."],
+    ["Centro bajo", "Giro y bola", "Muestra si giras y si el giro está coordinado. Solo ubícalo por ahora."],
+  ];
+  return (
+    <section className="cockpit-map" aria-label="Mapa básico de instrumentos del Cessna 172">
+      <p className="eyebrow">MAPA DE CABINA · PRIMERO MIRA, NO TOQUES</p>
+      <h2>Las cinco zonas que verás en pantalla</h2>
+      <div className="instrument-grid">
+        {instruments.map(([position, name, description]) => (
+          <article key={name}>
+            <span>{position}</span>
+            <h3>{name}</h3>
+            <p>{description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -729,6 +789,7 @@ function DetailedLessonView({
               </ul>
             </div>
           </section>
+          {lesson.id === "c172-instruments-first" && <CockpitInstrumentMap />}
           {lesson.flightSetup && (
             <section className="flight-setup">
               <p className="eyebrow">CONFIGURACIÓN EN MSFS 2024</p>
@@ -805,6 +866,7 @@ function DetailedLessonView({
         </article>
         <aside className="lesson-sidebar">
           <Checklist title="Checklist de la lección" items={lesson.checklist} />
+          <LessonControls />
           <button
             className={
               status === "completed"
@@ -955,14 +1017,14 @@ function LessonView({
 
 function VelocityOne() {
   const zones = [
-    "Yoke",
-    "Throttle Quadrant",
-    "Trim Wheel",
-    "Flaps",
-    "Mixture",
-    "Propeller",
-    "Rudder",
-    "Buttons",
+    ["01", "Frenos", "LB = freno izquierdo · RB = freno derecho. Presiona ambos para detener el C172."],
+    ["02", "Freno de estacionamiento", "B4 del cuadrante: activa o libera el parking brake antes y después del taxi."],
+    ["03", "Dirección", "LT gira el timón a la izquierda · RT a la derecha. Úsalos para mantener la calle de rodaje."],
+    ["04", "Potencia", "La palanca Throttle controla la potencia del motor. Empieza suave al rodar."],
+    ["05", "Trim", "La rueda Trim ajusta el compensador de elevador para no sostener fuerza constante."],
+    ["06", "Flaps", "HAT-2 arriba disminuye flaps · abajo los aumenta, en el perfil de monomotor."],
+    ["07", "Piloto automático", "B9 activa o desactiva AP. Úsalo solo estable y a altura segura."],
+    ["08", "Yoke", "Gira para alabeo; tira para subir y empuja para bajar el morro."],
   ];
   return (
     <>
@@ -994,13 +1056,13 @@ function VelocityOne() {
           <p className="eyebrow">PREPARACIÓN DEL CONTROL</p>
           <h2>Un perfil para cada etapa</h2>
           <p>
-            Esta área está preparada para incorporar diagramas, perfiles y
-            valores verificados de sensibilidad más adelante.
+            Referencia práctica para el C172 con el perfil Single-Engine Prop.
+            Consulta este mapa antes de cambiar una asignación en MSFS.
           </p>
           <div className="profile-card">
             <span>PERFIL ACTIVO</span>
-            <strong>C172 — Training</strong>
-            <small>Configuración pendiente de verificación</small>
+            <strong>C172 — Single-Engine Prop</strong>
+            <small>El perfil del simulador debe coincidir con el del control.</small>
           </div>
           <button className="secondary-button">
             Gestionar perfiles <span>→</span>
@@ -1014,11 +1076,11 @@ function VelocityOne() {
         </div>
       </section>
       <div className="control-cards">
-        {zones.map((zone, i) => (
-          <article key={zone}>
-            <span>{String(i + 1).padStart(2, "0")}</span>
-            <h3>{zone}</h3>
-            <p>Disponible para configurar y practicar en próximas lecciones.</p>
+        {zones.map(([number, title, description]) => (
+          <article key={title}>
+            <span>{number}</span>
+            <h3>{title}</h3>
+            <p>{description}</p>
           </article>
         ))}
       </div>

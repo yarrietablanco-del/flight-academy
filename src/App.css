@@ -618,6 +618,44 @@ main {
   font-size: 12px;
   line-height: 1.8;
 }
+.cockpit-map {
+  margin: 0 0 28px;
+  padding: 22px;
+  border: 1px solid #bcd6cc;
+  border-radius: 8px;
+  background: #f5faf7;
+}
+.cockpit-map h2 {
+  margin: 5px 0 17px;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+}
+.instrument-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.instrument-grid article {
+  padding: 14px;
+  border-radius: 6px;
+  background: #fff;
+}
+.instrument-grid span {
+  color: #6d8580;
+  font: 9px "DM Mono", monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.instrument-grid h3 {
+  margin: 6px 0;
+  font-size: 13px;
+}
+.instrument-grid p {
+  margin: 0;
+  color: #53625f;
+  font-size: 11px;
+  line-height: 1.55;
+}
 .lesson-section {
   margin: 0 0 28px;
 }
@@ -701,6 +739,58 @@ main {
 .complete-button.done {
   background: #d9e9e2;
   color: #236259;
+}
+.lesson-controls {
+  margin-top: 12px;
+  padding: 18px;
+  border: 1px solid #bcd6cc;
+  border-radius: 9px;
+  background: #f5faf7;
+}
+.lesson-controls h3 {
+  margin: 4px 0 13px;
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+}
+.lesson-controls dl { margin: 0; }
+.lesson-controls dl div {
+  padding: 9px 0;
+  border-top: 1px solid #dceae4;
+}
+.lesson-controls dt {
+  margin-bottom: 3px;
+  color: #6d8580;
+  font: 9px "DM Mono", monospace;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+.lesson-controls dd {
+  margin: 0;
+  color: #29423c;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.lesson-controls kbd {
+  padding: 2px 4px;
+  border: 1px solid #9dbcb0;
+  border-radius: 3px;
+  background: #fff;
+  color: #173938;
+  font: 10px "DM Mono", monospace;
+}
+.control-note {
+  margin: 13px 0 0;
+  color: #49615a;
+  font-size: 10px;
+  line-height: 1.55;
+}
+.lesson-row.return-focus {
+  outline: 3px solid #7fb5a3;
+  outline-offset: 3px;
+  background: #edf7f1;
+}
+@media (max-width: 560px) {
+  .instrument-grid { grid-template-columns: 1fr; }
 }
 .hardware-panel {
   display: grid;

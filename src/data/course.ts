@@ -152,6 +152,39 @@ export const course: CourseLevel[] = [
     description: "Tus primeros conceptos y prácticas con el Cessna 172.",
     modules: [
       {
+        id: "cockpit-basics",
+        title: "La cabina desde cero",
+        description: "Aprende a leer la pantalla antes de tocar los mandos.",
+        lessons: [
+          makeLesson(
+            "c172-instruments-first",
+            "La pantalla del Cessna: qué estás viendo",
+            "Un recorrido sin vuelo: identifica los instrumentos que te dicen si el avión va rápido, alto, recto o girando.",
+            1,
+            "La cabina desde cero",
+            [
+              "Saber qué instrumento mirar para velocidad, altura y actitud",
+              "Distinguir información esencial de información que puede esperar",
+              "Leer la cabina sin mover el avión",
+            ],
+            "los instrumentos básicos del Cessna 172",
+          ),
+          makeLesson(
+            "c172-controls-first",
+            "Las palancas del Cessna: para qué sirve cada una",
+            "Ubica los mandos principales y aprende qué no debes mover todavía.",
+            1,
+            "La cabina desde cero",
+            [
+              "Reconocer potencia, mezcla, flaps y trim",
+              "Saber qué mando usar en cada situación básica",
+              "Mantener el avión detenido mientras exploras",
+            ],
+            "los mandos básicos del Cessna 172",
+          ),
+        ],
+      },
+      {
         id: "c172-contact",
         title: "Primer contacto con el Cessna 172",
         description: "Primeros pasos en tu aeronave de entrenamiento.",
@@ -792,6 +825,35 @@ const lessonDetails: Record<string, Partial<Lesson>> = {
       "Cambio pequeño aplicado",
       "Misma práctica repetida",
       "Resultado anotado",
+    ],
+  ),
+  "c172-instruments-first": lessonPlan(
+    "No necesitas entender todos los números de la cabina. Para empezar, usa solo cuatro preguntas: ¿voy demasiado lento o rápido?, ¿estoy subiendo o bajando?, ¿las alas están niveladas?, ¿hacia dónde apunta el avión? La pantalla G1000 reúne esa información; no es una prueba que debas memorizar.",
+    "Con el C172 detenido y el freno de estacionamiento aplicado, mira el panel sin tocar palancas. 1. Busca la cinta vertical de la izquierda: es la velocidad en nudos; por ahora solo observa que el número aumenta cuando el avión acelera. 2. Mira el centro: el horizonte artificial muestra cielo arriba y tierra abajo; una línea inclinada significa alas inclinadas. 3. Busca la cinta vertical derecha: es la altitud, en pies. 4. Arriba o abajo del centro encuentra el rumbo: es la dirección hacia la que apunta el morro. 5. Localiza el indicador de giro y la bola: más adelante te ayudará a saber si el giro es ordenado. No hace falta usarlo hoy.",
+    "No intentes leer todos los mensajes, botones o pantallas a la vez. Tampoco confundas velocidad con altitud: la velocidad está a la izquierda y la altitud a la derecha. Si la cabina te abruma, vuelve siempre a estas tres referencias: velocidad, horizonte y altitud.",
+    "Un panel que ya no intimida",
+    "Sin mover el avión, señala en tu pantalla: velocidad a la izquierda, horizonte en el centro y altitud a la derecha. Después di en voz alta qué mirarías para saber si el avión se está inclinando. Solo cuando puedas encontrar esas tres referencias sin buscar, termina la lección.",
+    [
+      "Freno de estacionamiento aplicado",
+      "Velocidad ubicada a la izquierda",
+      "Horizonte artificial ubicado en el centro",
+      "Altitud ubicada a la derecha",
+      "Rumbo identificado",
+      "Sin palancas movidas durante la exploración",
+    ],
+  ),
+  "c172-controls-first": lessonPlan(
+    "Las palancas no son botones que se prueban al azar. La palanca negra, throttle, da potencia al motor. La roja, mezcla, regula la proporción de combustible y aire y se deja en rica para las primeras prácticas. La palanca de flaps baja superficies que ayudan a volar lento; al inicio déjalos arriba. El trim ajusta la presión del yoke, pero solo se usa cuando ya vuelas estable.",
+    "Con el C172 detenido y freno aplicado: 1. Señala la palanca negra de throttle; no la muevas todavía. 2. Señala la roja de mezcla y confirma que está hacia delante/rica. 3. Encuentra el control de flaps y confirma UP/arriba. 4. Localiza la rueda de trim, pero no la gires. 5. En tu VelocityOne identifica la palanca Throttle, la rueda Trim y los controles de flaps. Para esta etapa solo usarás throttle cuando la lección lo indique.",
+    "No muevas mezcla, flaps o trim para ver qué ocurre mientras el motor está encendido. No sueltes el freno de estacionamiento todavía. Si una palanca del simulador se mueve sin que la toques, pausa y revisa el mapeo de tu VelocityOne antes de continuar.",
+    "Señalar antes de usar",
+    "Con el avión inmovilizado, apunta a cada mando y completa la frase: negra = potencia; roja = mezcla; flaps = ayuda a baja velocidad; trim = alivia la fuerza del yoke. No hace falta accionarlos hoy.",
+    [
+      "Throttle negro identificado",
+      "Mezcla roja identificada",
+      "Flaps confirmados arriba",
+      "Rueda de trim localizada",
+      "Freno de estacionamiento mantenido",
     ],
   ),
   "know-c172": lessonPlan(
