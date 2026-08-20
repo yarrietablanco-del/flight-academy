@@ -656,6 +656,62 @@ main {
   font-size: 11px;
   line-height: 1.55;
 }
+.taxi-map {
+  margin: 0 0 28px;
+  padding: 22px;
+  border: 1px solid #bcd6cc;
+  border-radius: 8px;
+  background: #f5faf7;
+}
+.taxi-map h2 {
+  margin: 5px 0 18px;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+}
+.taxi-route { display: grid; gap: 8px; }
+.taxi-stop {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 13px;
+  border-radius: 5px;
+  background: #fff;
+  color: #29423c;
+  font-size: 11px;
+  line-height: 1.45;
+}
+.taxi-stop strong {
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #1d5d55;
+  color: #fff;
+  font: 11px "DM Mono", monospace;
+}
+.taxi-line {
+  width: 3px;
+  height: 18px;
+  margin-left: 23px;
+  background: #e4bb3e;
+}
+.taxi-stop.hold { border: 2px solid #d28a31; }
+.runway-block {
+  padding: 13px;
+  border-radius: 4px;
+  background: #455452;
+  color: #fff;
+  text-align: center;
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 1px;
+}
+.taxi-map-note {
+  margin: 14px 0 0;
+  color: #49615a;
+  font-size: 11px;
+  line-height: 1.55;
+}
 .lesson-section {
   margin: 0 0 28px;
 }

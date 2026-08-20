@@ -544,6 +544,24 @@ function CockpitInstrumentMap() {
   );
 }
 
+function TaxiRouteMap() {
+  return (
+    <section className="taxi-map" aria-label="Ruta básica de taxi en un aeropuerto">
+      <p className="eyebrow">MAPA DE TAXI · USA LA CINTA AZUL DE MSFS</p>
+      <h2>Tu recorrido antes de despegar</h2>
+      <div className="taxi-route" aria-label="Plataforma, calle de rodaje, línea de espera y pista">
+        <div className="taxi-stop parking"><strong>1</strong><span>Plataforma<br />Empiezas aquí</span></div>
+        <div className="taxi-line" aria-hidden="true" />
+        <div className="taxi-stop taxiway"><strong>2</strong><span>Calle de rodaje<br />Sigue cinta azul y línea amarilla</span></div>
+        <div className="taxi-line" aria-hidden="true" />
+        <div className="taxi-stop hold"><strong>3</strong><span>Línea de espera<br />Detente aquí</span></div>
+        <div className="runway-block"><span>PISTA · NO ENTRAR TODAVÍA</span></div>
+      </div>
+      <p className="taxi-map-note">La forma real cambia en cada aeropuerto. No memorices este dibujo: pide taxi y sigue la cinta azul que MSFS dibuja sobre el suelo.</p>
+    </section>
+  );
+}
+
 function LessonIllustration({ lessonId }: { lessonId: string }) {
   const illustrations: Record<
     string,
@@ -790,6 +808,7 @@ function DetailedLessonView({
             </div>
           </section>
           {lesson.id === "c172-instruments-first" && <CockpitInstrumentMap />}
+          {lesson.id === "airport-map-basics" && <TaxiRouteMap />}
           {lesson.flightSetup && (
             <section className="flight-setup">
               <p className="eyebrow">CONFIGURACIÓN EN MSFS 2024</p>

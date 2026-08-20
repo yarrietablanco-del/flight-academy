@@ -1598,7 +1598,7 @@ const c172TakeoffProcedures: Record<string, Partial<Lesson>> = {
         kind: "PROCEDIMIENTO",
         title: "Carrera de despegue del C172",
         content:
-          "1. Con el avión alineado, libera el freno de estacionamiento.\n2. Aplica potencia suavemente hasta el máximo y confirma que el avión sigue recto sobre la línea central.\n3. Mantén la mirada al final de la pista; corrige dirección con entradas pequeñas.\n4. A medida que aumenta la velocidad, el yoke se vuelve más sensible. No tires de él de golpe.\n5. Cerca de 55 nudos, alivia suavemente la presión hacia delante. El avión se separará del suelo cuando esté listo.\n6. Una vez en el aire, mantén una actitud suave de ascenso. No busques girar todavía.",
+          "1. Con el avión alineado, libera el freno de estacionamiento.\n2. Aplica potencia suavemente hasta el máximo y confirma que el avión sigue recto sobre la línea central.\n3. Mantén la mirada al final de la pista; corrige dirección con entradas pequeñas.\n4. A medida que aumenta la velocidad, el yoke se vuelve más sensible. No tires de él de golpe.\n5. Cerca de 55 nudos, alivia suavemente la presión hacia delante. El avión se separará del suelo cuando esté listo.\n6. Ya en el aire, mantén el morro moderadamente arriba y busca 70–75 KIAS en la cinta de velocidad izquierda. Sigue recto sobre la prolongación de la pista hasta 500 ft por encima del aeropuerto. La siguiente lección te lleva desde esos 500 ft hasta la zona de práctica a 6.500 ft MSL.",
       },
       {
         kind: "APRENDE",
@@ -1619,11 +1619,13 @@ const c172TakeoffProcedures: Record<string, Partial<Lesson>> = {
       "Centro de pista mantenido",
       "Rotación suave cerca de 55 nudos",
       "Avión en el aire sin giro brusco",
+      "70–75 KIAS comprobados tras despegar",
+      "Ascenso recto mantenido hasta 500 ft sobre el aeropuerto",
     ],
     exercise: {
       title: "Un despegue, una sola meta",
       instructions:
-        "Despega y mantén la dirección. No intentes tocar botones, radios ni mapa durante la carrera. Cuando las ruedas dejen el suelo, sigue recto y abre inmediatamente la siguiente lección de ascenso.",
+        "Despega y mantén la dirección. No intentes tocar botones, radios ni mapa durante la carrera. Al dejar el suelo, mantén 70–75 KIAS y sigue recto hasta llegar a 500 ft sobre el aeropuerto. Ese es el final exacto de esta lección: abre entonces “Ascenso inicial y zona segura”, donde continuarás hasta 6.500 ft MSL.",
     },
   },
   "c172-climb-out": {
@@ -1633,7 +1635,7 @@ const c172TakeoffProcedures: Record<string, Partial<Lesson>> = {
         kind: "PROCEDIMIENTO",
         title: "Después de dejar la pista",
         content:
-          "1. Mantén el morro en una actitud suave de ascenso y conserva potencia de despegue.\n2. Deja que la velocidad se estabilice cerca de 70–75 nudos; no persigas cada variación pequeña.\n3. Sigue recto hasta tener altura y espacio.\n4. A 500 pies sobre el aeropuerto, si el circuito lo requiere, haz un giro suave siguiendo la ruta de salida.\n5. Al llegar a una zona libre y una altura segura, reduce un poco la potencia, nivela el avión y prepárate para la primera lección de control en el aire.",
+          "1. Desde 500 ft sobre el aeropuerto, mantén el morro en una actitud suave de ascenso y conserva potencia de despegue.\n2. Deja que la velocidad se estabilice cerca de 70–75 KIAS; no persigas cada variación pequeña.\n3. Si Comunicaciones o la cinta azul indican un giro de salida, hazlo suave; si no, sigue recto por el rumbo de pista.\n4. Continúa el ascenso hasta que el altímetro marque 6.500 ft MSL. Esta es tu altitud objetivo de práctica para las primeras lecciones en el aire.\n5. En 6.500 ft MSL, reduce la potencia poco a poco, nivela las alas y el morro, y prepárate para la primera lección de control en el aire.",
       },
       {
         kind: "APRENDE",
@@ -1652,13 +1654,14 @@ const c172TakeoffProcedures: Record<string, Partial<Lesson>> = {
       "Ascenso estable establecido",
       "Velocidad aproximada de 70–75 nudos observada",
       "Pista alejada con seguridad",
-      "Giro suave solo con altura suficiente",
+      "Giro suave solo si la guía o ATC lo indica",
+      "Altímetro en 6.500 ft MSL",
       "Avión nivelado en zona de práctica",
     ],
     exercise: {
       title: "Llegar a la zona de práctica",
       instructions:
-        "Después de despegar, mantén el ascenso y aléjate de la pista hasta una zona amplia. Cuando el indicador marque aproximadamente 6.500 ft MSL, nivela el avión y ajusta potencia con calma. Ahora sí estás en el punto de inicio de la siguiente lección.",
+        "Desde 500 ft sobre el aeropuerto, continúa el ascenso a 70–75 KIAS. Si no tienes una instrucción de giro, sigue recto. Cuando el altímetro marque 6.500 ft MSL, nivela el avión y ajusta potencia con calma. Ahora sí estás en el punto de inicio de la siguiente lección.",
     },
   },
 };
@@ -1677,13 +1680,13 @@ const c172GroundProcedures: Record<string, Partial<Lesson>> = {
         kind: "PROCEDIMIENTO",
         title: "Mira el mapa antes de liberar el freno",
         content:
-          "1. En la pantalla de Vuelo libre, antes de iniciar, observa el punto de salida seleccionado: debe ser una plataforma.\n2. Identifica la pista principal: tiene un número grande, por ejemplo 01 o 19.\n3. Mira el trayecto entre plataforma y pista: las calles de rodaje conectan ambos lugares.\n4. Ya dentro del avión, mira hacia fuera: encuentra la línea amarilla de la calle y la zona amplia de pista.\n5. No memorices letras ni números todavía. Solo debes distinguir “estacionamiento”, “camino amarillo” y “pista”.",
+          "1. Antes de iniciar el vuelo, abre Opciones > Asistencias y activa Taxi Ribbon / Cinta de taxi. Si el nombre cambia en tu versión, busca “taxi” en las asistencias visuales.\n2. Inicia el vuelo en plataforma y deja el freno aplicado.\n3. Abre Comunicaciones, solicita taxi y vuelve a la cabina: aparecerá una cinta o flechas azules sobre el suelo. Esa es tu guía; no necesitas una aplicación externa todavía.\n4. Compárala con el dibujo de esta lección: empiezas en plataforma, sigues la calle de rodaje y terminas en la línea de espera; no entras en la pista.\n5. Ya dentro del avión, encuentra también la línea amarilla real de la calle. No memorices letras ni números todavía.",
       },
       {
         kind: "ERRORES COMUNES",
         title: "La pista no es el primer destino",
         content:
-          "No sigas una carretera de servicio ni cruces una línea de espera solo porque ves mucho espacio. La línea de espera es el punto de pausa: significa “detente aquí hasta saber qué sigue”.",
+          "No sigas una carretera de servicio ni cruces una línea de espera solo porque ves mucho espacio. La línea de espera es el punto de pausa: significa “detente aquí hasta saber qué sigue”. La navegación con mapas, letras de calles, rutas y EFB se explica paso a paso más adelante, en Nivel 3 · Navegación; por ahora usa la cinta azul.",
       },
     ] as Lesson["sections"],
     checklist: [
