@@ -695,7 +695,7 @@ if (levelZero) {
 
   levelZero.modules.splice(
     2,
-    1,
+    0,
     {
       id: "flight-plan-basics",
       title: "SecciÃ³n 2 Â· Plan antes de encender",
