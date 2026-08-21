@@ -1039,6 +1039,55 @@ main {
   object-fit: contain;
 }
 
+.velocityone-overlay {
+  position: absolute;
+  z-index: 3;
+  inset: 42px 20px 20px;
+  pointer-events: none;
+}
+.velocityone-pin {
+  position: absolute;
+  max-width: 9.5rem;
+  padding: .3rem .42rem;
+  border: 1px solid #cceee2;
+  border-radius: 5px;
+  background: rgba(7, 66, 63, .94);
+  box-shadow: 0 2px 9px rgba(0, 0, 0, .45);
+  color: #fff;
+  font: 700 clamp(.48rem, .8vw, .68rem) "DM Mono", monospace;
+  letter-spacing: .02em;
+  line-height: 1.25;
+  text-align: center;
+}
+.velocityone-pin small { color: #b9ded1; font: 500 .92em Manrope, sans-serif; letter-spacing: 0; }
+.velocityone-pin::after {
+  position: absolute;
+  width: 1px;
+  height: var(--arrow-size, 2.5rem);
+  background: #d9aa61;
+  content: "";
+  transform: rotate(var(--arrow-angle, 0deg));
+  transform-origin: top;
+}
+.velocityone-pin::before {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-top-color: #d9aa61;
+  content: "";
+}
+.pin-left-grip { left: 0; top: 19%; --arrow-size: 2.8rem; --arrow-angle: -42deg; }
+.pin-left-grip::after { right: -1.45rem; top: 1.55rem; }.pin-left-grip::before { right: -1.65rem; top: 4rem; transform: rotate(-42deg); }
+.pin-left-face { left: 13%; top: 64%; --arrow-size: 2.4rem; --arrow-angle: 15deg; }.pin-left-face::after { left: 48%; top: -1.55rem; }.pin-left-face::before { left: 40%; top: -2.2rem; transform: rotate(15deg); }
+.pin-yoke { left: 34%; top: 73%; --arrow-size: 2.8rem; --arrow-angle: 9deg; }.pin-yoke::after { left: 48%; top: -1.8rem; }.pin-yoke::before { left: 40%; top: -2.6rem; transform: rotate(9deg); }
+.pin-right-grip { left: 47%; top: 43%; --arrow-size: 2.3rem; --arrow-angle: 150deg; }.pin-right-grip::after { left: -1.3rem; top: 1.25rem; }.pin-right-grip::before { left: -1.55rem; top: 3.35rem; transform: rotate(150deg); }
+.pin-hats { left: 50%; top: 63%; --arrow-size: 2.1rem; --arrow-angle: 160deg; }.pin-hats::after { left: -1rem; top: .7rem; }.pin-hats::before { left: -1.2rem; top: 2.65rem; transform: rotate(160deg); }
+.pin-trim { left: 66%; top: 74%; --arrow-size: 2.6rem; --arrow-angle: -19deg; }.pin-trim::after { left: 53%; top: -1.7rem; }.pin-trim::before { left: 41%; top: -2.4rem; transform: rotate(-19deg); }
+.pin-levers { right: 0; top: 20%; --arrow-size: 2.5rem; --arrow-angle: 136deg; }.pin-levers::after { left: -1.2rem; top: 1.4rem; }.pin-levers::before { left: -1.4rem; top: 3.7rem; transform: rotate(136deg); }
+.pin-buttons { right: 1%; top: 59%; --arrow-size: 2.1rem; --arrow-angle: 139deg; }.pin-buttons::after { left: -1rem; top: 1rem; }.pin-buttons::before { left: -1.2rem; top: 2.95rem; transform: rotate(139deg); }
+.pin-pp { right: 18%; bottom: 0; --arrow-size: 2rem; --arrow-angle: -8deg; }.pin-pp::after { left: 48%; top: -1.25rem; }.pin-pp::before { left: 40%; top: -1.9rem; transform: rotate(-8deg); }
+
 .velocityone-annotated-photo {
   position: relative;
   overflow: hidden;
@@ -1306,6 +1355,38 @@ main {
   color: var(--muted);
   margin: 0;
 }
+.velocityone-defaults {
+  display: grid;
+  grid-template-columns: minmax(230px, .8fr) minmax(0, 1.2fr);
+  gap: 28px;
+  margin-top: 34px;
+  padding: 28px;
+  border: 1px solid #bcd6cc;
+  border-radius: 10px;
+  background: #f5faf7;
+}
+.velocityone-defaults h2 { margin: 5px 0 12px; font-family: "Playfair Display", serif; font-size: 24px; }
+.velocityone-defaults p:not(.eyebrow) { margin: 0; color: #49615a; font-size: 12px; line-height: 1.65; }
+.velocityone-button-map { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; align-content: start; }
+.velocityone-button-map article { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 8px 10px; border: 1px solid #d6e3dd; border-radius: 6px; background: #fff; }
+.velocityone-button-map b { display: grid; flex: 0 0 34px; place-items: center; min-height: 27px; border-radius: 4px; background: #264b47; color: #fff; font: 11px "DM Mono", monospace; }
+.velocityone-button-map span { color: #38534d; font-size: 11px; line-height: 1.3; }
+.velocityone-button-map .is-essential { border-color: #d8ab67; background: #fffaf1; }
+.velocityone-button-map .is-essential b { background: #a65d2f; }
+.lesson-feedback {
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px solid #9ec5b8;
+  border-radius: 8px;
+  background: #edf7f1;
+}
+.lesson-feedback h2 { margin: 5px 0 8px; font: 600 22px "Playfair Display", serif; color: #234841; }
+.lesson-feedback > p:not(.eyebrow) { margin: 0 0 14px; color: #49615a; font-size: 12px; line-height: 1.6; }
+.lesson-feedback textarea { display: block; width: 100%; min-height: 120px; resize: vertical; padding: 12px; border: 1px solid #82aca0; border-radius: 5px; background: #fff; color: #233d37; font: 13px Manrope, Arial, sans-serif; line-height: 1.5; }
+.lesson-feedback textarea:focus { outline: 3px solid #b8decf; border-color: #2f7467; }
+.feedback-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+.feedback-copy { border: 1px solid #376960; border-radius: 5px; padding: 9px 12px; background: transparent; color: #24564d; font-size: 11px; font-weight: 700; }
+.lesson-feedback small { display: block; margin-top: 10px; color: #467168; font-size: 11px; }
 .aircraft-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1491,6 +1572,9 @@ main {
   .control-cards {
     grid-template-columns: 1fr 1fr;
   }
+  .velocityone-defaults { grid-template-columns: 1fr; padding: 20px; }
+  .velocityone-button-map { grid-template-columns: 1fr; }
+  .velocityone-pin { padding: .2rem .25rem; font-size: .42rem; }
   .lesson-hero h1 {
     font-size: 30px;
   }

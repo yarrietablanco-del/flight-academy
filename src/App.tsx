@@ -37,6 +37,8 @@ function App() {
     resetProgress,
     exportProgress,
     importProgress,
+    feedback,
+    saveFeedback,
     completedCount,
     progress,
     sync,
@@ -167,6 +169,8 @@ function App() {
             <LessonView
               lesson={selectedLesson}
               status={statuses[selectedLesson.id]}
+              feedback={feedback[selectedLesson.id] ?? ""}
+              onSaveFeedback={(value) => saveFeedback(selectedLesson.id, value)}
               onComplete={() => {
                 completeLesson(selectedLesson.id);
                 setReturnFocusLessonId(selectedLesson.id);
@@ -629,6 +633,22 @@ function VelocityOneReference() {
   );
 }
 
+function VelocityOneOverlay() {
+  return (
+    <div className="velocityone-overlay" aria-label="Flechas para ubicar todos los grupos de controles del VelocityOne">
+      <span className="velocityone-pin pin-left-grip">LB · LT<br /><small>freno / timón</small></span>
+      <span className="velocityone-pin pin-left-face">A B X Y · B1<br /><small>cámara · ATC</small></span>
+      <span className="velocityone-pin pin-yoke">YOKE<br /><small>alerón / elevador</small></span>
+      <span className="velocityone-pin pin-right-grip">RB · RT<br /><small>freno / timón</small></span>
+      <span className="velocityone-pin pin-hats">POV · HAT 1/2<br /><small>vistas / trim</small></span>
+      <span className="velocityone-pin pin-trim">TRIM<br /><small>elevador</small></span>
+      <span className="velocityone-pin pin-levers">PALANCAS 1–4<br /><small>potencia · prop · mezcla · flaps</small></span>
+      <span className="velocityone-pin pin-buttons">B3–B12<br /><small>panel 2 × 5</small></span>
+      <span className="velocityone-pin pin-pp">PUSH/PULL<br /><small>potencia · prop · mezcla</small></span>
+    </div>
+  );
+}
+
 function TaxiRouteMap() {
   return (
     <section className="taxi-map" aria-label="Ruta básica de taxi en un aeropuerto">
@@ -899,14 +919,58 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
   ) : null;
 }
 
+function LessonFeedback({
+  lesson,
+  value,
+  onSave,
+}: {
+  lesson: Lesson;
+  value: string;
+  onSave: (value: string) => void;
+}) {
+  const [draft, setDraft] = useState(value);
+  const [notice, setNotice] = useState("");
+  useEffect(() => setDraft(value), [value, lesson.id]);
+  const save = () => {
+    onSave(draft.trim());
+    setNotice("Guardado en este dispositivo.");
+  };
+  const copyForReview = async () => {
+    const text = `Feedback · ${lesson.title}\nNivel ${lesson.level} · ${lesson.moduleTitle}\n\n${draft.trim()}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      setNotice("Copiado: pégalo en el chat para que lo revise.");
+    } catch {
+      setNotice("No se pudo copiar automáticamente; selecciona el texto y pégalo en el chat.");
+    }
+  };
+  return (
+    <section className="lesson-feedback" aria-label="Feedback de esta lección">
+      <p className="eyebrow">TU FEEDBACK</p>
+      <h2>¿Qué ajustarías de esta lección?</h2>
+      <p>Escribe lo que fue confuso, faltó, no coincide con tu control o debería cambiar. Se guarda en tu dispositivo y en tu copia de progreso.</p>
+      <textarea value={draft} onChange={(event) => setDraft(event.target.value)} placeholder="Ejemplo: B6 no aparece asignado en mi perfil de MSFS 2024; agrega una explicación o una alternativa." rows={6} />
+      <div className="feedback-actions">
+        <button type="button" className="secondary-button" onClick={save}>Guardar feedback</button>
+        <button type="button" className="feedback-copy" onClick={() => void copyForReview()}>Copiar para revisión</button>
+      </div>
+      {notice && <small>{notice}</small>}
+    </section>
+  );
+}
+
 function DetailedLessonView({
   lesson,
   status,
+  feedback,
+  onSaveFeedback,
   onComplete,
   onBack,
 }: {
   lesson: Lesson;
   status: LessonStatus;
+  feedback: string;
+  onSaveFeedback: (value: string) => void;
   onComplete: () => void;
   onBack: () => void;
 }) {
@@ -1020,6 +1084,7 @@ function DetailedLessonView({
             <h2>{lesson.exercise.title}</h2>
             <p>{lesson.exercise.instructions}</p>
           </section>
+          <LessonFeedback lesson={lesson} value={feedback} onSave={onSaveFeedback} />
         </article>
         <aside className="lesson-sidebar">
           <Checklist title="Checklist de la lección" items={lesson.checklist} />
@@ -1044,11 +1109,15 @@ function DetailedLessonView({
 function LessonView({
   lesson: sourceLesson,
   status,
+  feedback,
+  onSaveFeedback,
   onComplete,
   onBack,
 }: {
   lesson: Lesson;
   status: LessonStatus;
+  feedback: string;
+  onSaveFeedback: (value: string) => void;
   onComplete: () => void;
   onBack: () => void;
 }) {
@@ -1060,6 +1129,8 @@ function LessonView({
       <DetailedLessonView
         lesson={lesson}
         status={status}
+        feedback={feedback}
+        onSaveFeedback={onSaveFeedback}
         onComplete={onComplete}
         onBack={onBack}
       />
@@ -1068,6 +1139,8 @@ function LessonView({
     <DetailedLessonView
       lesson={lesson}
       status={status}
+      feedback={feedback}
+      onSaveFeedback={onSaveFeedback}
       onComplete={onComplete}
       onBack={onBack}
     />
@@ -1173,14 +1246,21 @@ function LessonView({
 
 function VelocityOne() {
   const zones = [
-    ["01", "Frenos", "LB: botón superior del agarre izquierdo. RB: botón superior del agarre derecho. Presiona ambos para detener el C172."],
-    ["02", "Freno de estacionamiento", "B4: botón blanco de ABAJO en la primera columna del cuadrante. Activa o libera el parking brake antes y después del taxi."],
-    ["03", "Dirección", "Xbox · Single-Engine Prop: LT gira el timón a la izquierda · RT a la derecha. Úsalos para mantener la calle de rodaje."],
-    ["04", "Potencia", "La palanca Throttle controla la potencia del motor. Empieza suave al rodar."],
-    ["05", "Trim", "La rueda Trim ajusta el compensador de elevador para no sostener fuerza constante."],
-    ["06", "Flaps", "B7: botón blanco de ARRIBA en la tercera columna del cuadrante; B8: el de ABAJO justo debajo. Se practica en aproximación, más adelante."],
-    ["07", "Piloto automático", "B9 activa o desactiva AP. No lo uses aún: se enseña en Nivel 3, solo en crucero estable."],
-    ["08", "Yoke", "Gira para alabeo; tira para subir y empuja para bajar el morro."],
+    ["01", "Yoke", "Gira: Aileron Axis. Empuja/tira: Elevator Axis. Es el control principal de alabeo y cabeceo."],
+    ["02", "LT / RT", "Gatillos traseros de los agarres: Rudder Axis izquierda/derecha en el perfil Single-Engine Prop."],
+    ["03", "LB / RB", "Hombros superiores: freno izquierdo y freno derecho. Ambos juntos detienen el avión."],
+    ["04", "A · B · X · Y", "A: cámara inteligente. B: sin asignar. X: muestra tramo NAV. Y: abre ATC."],
+    ["05", "B1 / B2", "B1 cambia vista cabina/exterior. B2 restablece la vista exterior."],
+    ["06", "POV y HAT", "POV mueve vistas. HAT 1 cambia instrumentos y trim de alerón; HAT 2 mueve cámara y trim de timón."],
+    ["07", "Palancas 1–4", "Throttle, propeller, mixture y flaps axis. En C172 usarás sobre todo throttle, prop y mezcla."],
+    ["08", "Trim / Push-Pull", "Rueda: elevator trim. Las tres palancas push-pull repiten potencia, propeller y mezcla."],
+  ];
+  const panelButtons = [
+    ["B3", "Auto Start Engine"], ["B4", "Toggle Parking Brake"],
+    ["B5", "Toggle Fuel Pump"], ["B6", "Toggle All Fuel Valves"],
+    ["B7", "Decrease Flaps"], ["B8", "Increase Flaps"],
+    ["B9", "Toggle Autopilot Master"], ["B10", "Toggle Taxi Lights"],
+    ["B11", "Toggle Landing Gear"], ["B12", "Toggle Landing Lights"],
   ];
   return (
     <>
@@ -1199,6 +1279,7 @@ function VelocityOne() {
           <span className="screen-label">DIAGRAMA INTERACTIVO</span>
           <img className="velocityone-product-image" src={`${import.meta.env.BASE_URL}references/turtlebeach-velocityone-official.png`} alt="Turtle Beach VelocityOne Flight" />
           <div className="hardware-grid" />
+          <VelocityOneOverlay />
         </div>
         <div className="hardware-copy">
           <p className="eyebrow">PREPARACIÓN DEL CONTROL</p>
@@ -1232,6 +1313,20 @@ function VelocityOne() {
           </article>
         ))}
       </div>
+      <section className="velocityone-defaults" aria-label="Funciones predeterminadas de botones B3 a B12">
+        <div>
+          <p className="eyebrow">BOTONES BLANCOS DEL CUADRANTE · PERFIL SINGLE-ENGINE PROP</p>
+          <h2>Todos los botones B3–B12, en su posición real</h2>
+          <p>Las flechas de la foto apuntan a este panel de dos filas. Estas son las funciones predeterminadas del perfil oficial; MSFS 2024 o un perfil personalizado pueden cambiarlas, así que compáralas con <strong>Configuración → Controles</strong> antes de volar.</p>
+        </div>
+        <div className="velocityone-button-map">
+          {panelButtons.map(([button, action]) => (
+            <article key={button} className={button === "B4" || button === "B7" || button === "B8" || button === "B9" ? "is-essential" : ""}>
+              <b>{button}</b><span>{action}</span>
+            </article>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
