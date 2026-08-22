@@ -1756,10 +1756,10 @@ const airAndVfrProcedures: Record<string, Partial<Lesson>> = {
   ),
   "first-cockpit-exercise": lessonPlan(
     "Ahora unes las cuatro ideas: mirar fuera, controlar con suavidad, ajustar potencia y usar trim. Esta práctica ocurre en zona segura, lejos de pista y terreno.",
-    "1. Mantén rumbo hacia una referencia exterior. 2. Estabiliza velocidad y altitud. 3. Haz una corrección pequeña de inclinación. 4. Ajusta potencia si cambia la velocidad. 5. Usa trim para soltar presión. 6. Mantén el resultado durante un minuto sin añadir otra maniobra.",
-    "No conviertas este ejercicio en navegación ni aterrizaje. Si te desordenas, nivela alas, conserva una actitud moderada y pausa si lo necesitas.",
+    "1. Empieza en aire calmo, a 7.500 ft MSL y lejos de terreno. Elige una referencia exterior.\n2. Durante 30 segundos mira fuera y verifica velocidad/altitud cada pocos segundos, sin tocar nada salvo que haya una tendencia clara.\n3. Si una ala cae, haz una corrección pequeña y vuelve el yoke al centro. Espera a ver el resultado.\n4. Si la velocidad se aleja de tu valor de crucero, cambia potencia suavemente y espera; no combines potencia y un gran cambio de morro.\n5. Cuando la actitud y potencia ya estén estables, usa trim en toques pequeños para quitar presión de la mano.\n6. Mantén el resultado un minuto sin crear otra maniobra. Si necesitas recuperar, hazlo en el orden alas, actitud, potencia y trim.",
+    "No conviertas este ejercicio en navegación ni aterrizaje. No ajustes trim mientras el avión sigue inclinándose. Si te desordenas, nivela alas, conserva una actitud moderada, pausa si lo necesitas y reinicia la práctica: una recuperación limpia cuenta más que terminar a la fuerza.",
     "Primer minuto estable",
-    "Mantén el C172 estable durante un minuto completo. Al terminar escribe una sola cosa que controlaste bien y una que deseas repetir.",
+    "Mantén el C172 estable durante un minuto completo. Al terminar escribe: una corrección que hiciste, qué instrumento confirmó el resultado y una cosa que deseas repetir. Esa nota será tu punto de partida para recto y nivelado.",
     [
       "Referencia exterior mantenida",
       "Velocidad y altitud comprobadas",
@@ -1770,10 +1770,10 @@ const airAndVfrProcedures: Record<string, Partial<Lesson>> = {
   ),
   "straight-and-level": lessonPlan(
     "Recto y nivelado es la habilidad que sostiene todo lo demás. Combina una referencia exterior, potencia de crucero, actitud suave y trim.",
-    "A 3.500–4.500 ft MSL, elige una referencia lejana. Ajusta potencia cerca de 2.300 RPM, coloca el morro en una actitud moderada y espera. Corrige solo una cosa por vez: alas niveladas, luego altitud, luego velocidad. Finalmente ajusta trim.",
-    "No hagas correcciones grandes ni mires solo el altímetro. Si estás 50–100 pies fuera, espera, observa la tendencia y corrige suavemente.",
+    "1. Inicia en aire calmo, lejos del aeropuerto, a 7.500 ft MSL. Elige una nube, cima o punto lejano justo frente al morro.\n2. Con alas niveladas, ajusta potencia cerca de 2.300 RPM y espera unos segundos. No persigas el primer número que se mueva.\n3. Corrige en este orden: alas niveladas; después actitud para detener una subida o descenso; después velocidad con potencia; por último, trim para quitar presión.\n4. Mira fuera la mayor parte del tiempo. Cada pocos segundos verifica velocidad, altitud y rumbo; vuelve de inmediato a la referencia exterior.\n5. Si una corrección empeora la situación, vuelve yoke al centro, nivela alas, estabiliza actitud y pausa si aún no entiendes la tendencia.",
+    "No hagas correcciones grandes ni mires solo el altímetro. Una variación breve de 50–100 ft no exige un tirón: observa primero si sube, baja o ya vuelve. Recto y nivelado es una tendencia estable, no una captura perfecta de un número.",
     "Tres minutos recto y nivelado",
-    "Mantén tres minutos dentro de una banda aproximada de ±150 ft y con rumbo reconocible. La estabilidad vale más que una perfección momentánea.",
+    "Mantén tres minutos cerca de 7.500 ft, dentro de una banda aproximada de ±150 ft y con una referencia exterior reconocible. Si sales de la banda, recupera de forma ordenada y reinicia el conteo: no intentes compensar con una maniobra grande.",
     [
       "Altura de práctica segura",
       "Referencia exterior elegida",
@@ -1784,10 +1784,10 @@ const airAndVfrProcedures: Record<string, Partial<Lesson>> = {
   ),
   "turns-and-coordination": lessonPlan(
     "Un viraje suave cambia el rumbo sin perder el control. Inclinas las alas, sostienes ligeramente el morro y vuelves a nivel antes del rumbo deseado.",
-    "Desde vuelo recto y nivelado, elige un punto a 90 grados. Inclina el yoke suavemente hasta unos 20 grados de banco. Mantén una presión ligera hacia atrás si la altitud cae. Empieza a nivelar las alas unos 10 grados antes del rumbo objetivo. Repite al otro lado.",
-    "No uses una inclinación grande ni pises dirección a fondo. Si pierdes más de 150 ft, nivela alas, estabiliza y repite con un viraje menor.",
+    "1. Desde recto y nivelado, anota el rumbo actual y escoge uno 90° a la derecha.\n2. Inclina el yoke suavemente hasta aproximadamente 20° de banco. Observa el horizonte: no busques que el avión gire con rudder solo.\n3. Si la nariz baja y la altitud empieza a caer, aplica apenas la presión hacia atrás necesaria para sostener la actitud. Si tu bola/coordinador está visible, observa que no quede desplazada de forma grande; el rudder se usa en toques suaves, no a fondo.\n4. Empieza a nivelar las alas unos 10° antes del rumbo elegido. Cuando las alas estén niveladas, suelta la presión extra y estabiliza.\n5. Vuela recto 20 segundos y repite hacia la izquierda.",
+    "No uses una inclinación grande ni pises dirección a fondo. Si el banco supera lo que puedes reconocer, la altitud cae más de 150 ft o pierdes el rumbo: alas niveladas primero, actitud moderada después, pausa si hace falta y repite con menos banco.",
     "Dos virajes de 90 grados",
-    "Haz un viraje de 90 grados a cada lado, con pausa recta y nivelada entre ambos. Observa altitud al salir.",
+    "Haz un viraje de 90° a cada lado, con 20 segundos recto y nivelado entre ambos. Al salir, anota si estabas alto, bajo o nivelado: el objetivo es reconocer la tendencia y recuperar, no clavar una cifra.",
     [
       "Vuelo estable al inicio",
       "Viraje derecho realizado",
@@ -2828,7 +2828,7 @@ const flightSetups: Record<string, NonNullable<Lesson["flightSetup"]>> = {
   "first-cockpit-exercise": setup(
     "SKCL · Alfonso Bonilla Aragón, Cali",
     "En aire",
-    "6,500 ft MSL",
+    "7,500 ft MSL",
     "Preestablecido: despejado, sin viento",
     "Día, 11:00",
     "Sesión tranquila para unir mandos, instrumentos, potencia y trim.",
@@ -3039,9 +3039,9 @@ const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
     next: "Continúa con “Primer vuelo controlado”.",
   },
   "first-cockpit-exercise": {
-    start: "Zona de práctica, cerca de 6.500 ft MSL.",
+    start: "Zona de práctica, cerca de 7.500 ft MSL.",
     finish: "Mantuviste un minuto estable usando mirada, potencia y trim.",
-    next: "Pasa a Nivel 2: “Vuelo recto y nivelado”.",
+    next: "Continúa con “Vuelo recto y nivelado” para convertir esa estabilidad en una rutina medible.",
   },
   "straight-and-level": {
     start: "Nuevo Vuelo libre: C172 ya en aire a 7.500 ft MSL.",
@@ -3051,7 +3051,12 @@ const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
   "turns-and-coordination": {
     start: "Nuevo Vuelo libre: aire calmo, 7.500 ft MSL y alas niveladas.",
     finish: "Un viraje de 90° a cada lado y salida estabilizada.",
-    next: "Abre “El circuito de tránsito”.",
+    next: "Cierra Nivel 1 con “Sensibilidad y zonas muertas” antes de aumentar la dificultad.",
+  },
+  "sensitivity-deadzones": {
+    start: "C172 en aire calmo, recto y nivelado; ejes ya comprobados en Nivel 0.",
+    finish: "Un solo eje ajustado y repetido en la misma condición, con el resultado anotado.",
+    next: "Nivel 1 terminado. Continúa con Nivel 2: “El circuito de tránsito”.",
   },
   "airport-traffic-pattern": {
     start:

@@ -837,36 +837,6 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
       caption:
         "Haz un movimiento pequeño y observa la referencia exterior antes de hacer otro.",
     },
-    "throttle-power": {
-      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
-      alt: "Ilustración de referencias básicas durante el vuelo",
-      caption:
-        "Potencia es solo una parte: observa siempre la actitud y la velocidad.",
-    },
-    "what-is-trim": {
-      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
-      alt: "Ilustración de referencias básicas durante el vuelo",
-      caption:
-        "El trim se usa después de estabilizar el avión, no para recuperarlo.",
-    },
-    "first-cockpit-exercise": {
-      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
-      alt: "Ilustración de referencias básicas durante el vuelo",
-      caption:
-        "La secuencia es: mirar fuera, comprobar, corregir poco y esperar.",
-    },
-    "straight-and-level": {
-      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
-      alt: "Ilustración de referencias básicas durante el vuelo",
-      caption:
-        "Recto y nivelado empieza por la referencia exterior, no por perseguir números.",
-    },
-    "turns-and-coordination": {
-      src: `${import.meta.env.BASE_URL}flight-basics.svg`,
-      alt: "Ilustración de referencias básicas durante el vuelo",
-      caption:
-        "Después de cada viraje, nivela las alas y vuelve a estabilizar.",
-    },
     "airport-traffic-pattern": {
       src: `${import.meta.env.BASE_URL}vfr-pattern.svg`,
       alt: "Diagrama de circuito VFR alrededor de una pista",
@@ -902,12 +872,6 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
       alt: "Diagrama de circuito VFR alrededor de una pista",
       caption:
         "La consolidación une tierra, despegue, control, navegación y llegada.",
-    },
-    "sensitivity-deadzones": {
-      src: `${import.meta.env.BASE_URL}sensitivity-guide.svg`,
-      alt: "Ilustración de curva de sensibilidad inicial para el Cessna 172",
-      caption:
-        "Valores de partida: ajústalos únicamente después de probar el eje.",
     },
   };
   const illustration = illustrations[lessonId];
@@ -1006,7 +970,14 @@ function DetailedLessonView({
           {lesson.id === "first-flight-now" && <FirstFlightPfdGuide />}
           {lesson.id === "efb-first-look" && <EfbReference />}
           {["ifr-route-briefing", "ifr-approach-briefing", "ifr-gps-approach"].includes(lesson.id) && <EfbReference />}
-          {lesson.id === "c172-instruments-first" && <CockpitInstrumentMap />}
+          {[
+            "c172-instruments-first",
+            "throttle-power",
+            "what-is-trim",
+            "first-cockpit-exercise",
+            "straight-and-level",
+            "turns-and-coordination",
+          ].includes(lesson.id) && <CockpitInstrumentMap />}
           {lesson.id.startsWith("ifr-") && <CockpitInstrumentMap />}
           {["know-velocityone", "initial-controls-check", "c172-controls-first"].includes(lesson.id) && <VelocityOneReference />}
           {["airport-map-basics", "c172-taxi-basics", "c172-taxi-to-hold"].includes(lesson.id) && <TaxiRouteMap />}
