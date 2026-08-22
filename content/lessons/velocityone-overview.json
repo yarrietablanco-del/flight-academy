@@ -1,16 +1,223 @@
 {
-  "metadata": {"id":"velocityone-overview","title":"Conoce tu Turtle Beach VelocityOne Flight","subtitle":"Identifica familias de controles antes de asignar funciones.","objective":"Reconocer qué control físico gobierna cada tipo de movimiento sin adivinar botones.","estimatedTime":"15 min","prerequisites":["welcome-flight-academy"],"level":0,"module":"hardware"},
-  "whyItMatters":"Si conoces la familia de cada control, puedes comprobar una asignación en MSFS sin memorizar etiquetas ni mover algo por accidente.",
-  "concepts":[{"term":"Eje","meaning":"Un control que cambia de forma continua: por ejemplo, mover el yoke hacia delante o atrás."},{"term":"Asignación","meaning":"La función que MSFS da a una entrada física dentro de un perfil."},{"term":"Perfil","meaning":"Conjunto guardado de asignaciones para un avión o una práctica."}],
-  "steps":[
-    {"number":1,"title":"Ubica el yoke","instruction":"Con el simulador cerrado, mueve el yoke suavemente hacia delante, atrás, izquierda y derecha.","explanation":"Esos movimientos se usan para mandar elevador y alerones; no necesitas memorizar botones aún.","expectedResult":"Distingues movimiento adelante/atrás de movimiento izquierda/derecha.","simulatorAction":"No cambies asignaciones todavía.","visual":{"type":"controlHighlight","asset":"public/references/turtlebeach-velocityone-official.png","alt":"Referencia oficial del conjunto VelocityOne Flight","requiresReference":true},"warning":"No asumas que una palanca o botón tiene una función concreta hasta comprobarla en tu perfil."},
-    {"number":2,"title":"Reconoce las entradas de potencia","instruction":"Identifica las palancas destinadas a potencia y observa sus etiquetas físicas sin asignarles una función nueva.","explanation":"En aviación, potencia, mezcla y hélice pueden ser mandos distintos; lo disponible depende del avión y del perfil.","expectedResult":"Sabes que varias palancas no deben intercambiarse por intuición.","simulatorAction":"En MSFS, abre Opciones > Controles y selecciona VelocityOne Flight.","visual":{"type":"annotatedDiagram","requiresReference":true,"alt":"Mapa exacto de palancas para el modelo y perfil del alumno"},"tip":"Usa el buscador de controles de MSFS para verificar una acción, no una lista genérica de internet."},
-    {"number":3,"title":"Encuentra pedales, frenos y trim","instruction":"Sin mover el avión, localiza el control de timón, los frenos y cualquier rueda o mando de trim de tu configuración.","explanation":"Timón, frenado y trim son funciones diferentes aunque todas puedan influir en una trayectoria.","expectedResult":"Puedes nombrar qué elemento comprobarás para timón, freno y trim.","simulatorAction":"Busca cada acción por nombre en la pantalla de controles y usa la función de detección de entrada.","visual":{"type":"controlHighlight","requiresReference":true,"alt":"Controles del puesto que requieren confirmación en el perfil"}}
+  "metadata": {
+    "id": "velocityone-overview",
+    "title": "Conoce tu Turtle Beach VelocityOne Flight",
+    "subtitle": "Identifica familias de controles antes de asignar funciones.",
+    "objective": "Reconocer qué control físico gobierna cada tipo de movimiento sin adivinar botones.",
+    "estimatedTime": "15 min",
+    "prerequisites": [
+      "welcome-flight-academy"
+    ],
+    "level": 0,
+    "module": "hardware",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "Si conoces la familia de cada control, puedes comprobar una asignación en MSFS sin memorizar etiquetas ni mover algo por accidente.",
+  "concepts": [
+    {
+      "term": "Eje",
+      "meaning": "Un control que cambia de forma continua: por ejemplo, mover el yoke hacia delante o atrás."
+    },
+    {
+      "term": "Asignación",
+      "meaning": "La función que MSFS da a una entrada física dentro de un perfil."
+    },
+    {
+      "term": "Perfil",
+      "meaning": "Conjunto guardado de asignaciones para un avión o una práctica."
+    }
   ],
-  "practice":{"title":"Inventario de controles","scenario":"MSFS abierto en Opciones > Controles.","task":"Elige C172 Training si existe. Busca una acción de elevador, una de alerones, una de timón y una de frenos; activa detección y mueve solo el control que crees correspondiente.","successSignal":"Cada entrada detectada coincide con la familia que esperabas o queda anotada para corregirla."},
-  "commonMistakes":[{"mistake":"Copiar una asignación de otro modelo de hardware.","recovery":"Confirma la entrada física con detección en tu propio perfil."},{"mistake":"Cambiar muchas asignaciones a la vez.","recovery":"Verifica un eje y prueba antes de continuar."}],
-  "checklist":["Yoke identificado","Palancas de potencia revisadas","Timón y frenos ubicados","Perfil de MSFS abierto","Ninguna función asumida sin detección"],
-  "quiz":[{"question":"¿Qué confirma qué función recibe una entrada física?","options":["El color del mando","La detección de entrada en el perfil de MSFS","Una foto de otro equipo"],"answer":"La detección de entrada en el perfil de MSFS","explanation":"El perfil activo es quien define la acción en el simulador."}],
-  "completionCriteria":["Puedes separar yoke, potencia, timón, frenos y trim por familia","Has comprobado al menos cuatro entradas en MSFS"],
-  "sources":[{"title":"Turtle Beach VelocityOne Flight","url":"https://www.turtlebeach.com/products/velocity-one-flight","verified":true},{"title":"Microsoft Flight Simulator Support","url":"https://flightsimulator.zendesk.com/","verified":true}]
+  "steps": [
+    {
+      "number": 1,
+      "title": "Ubica el yoke",
+      "instruction": "Con el simulador cerrado, mueve el yoke suavemente hacia delante, atrás, izquierda y derecha.",
+      "explanation": "Esos movimientos se usan para mandar elevador y alerones; no necesitas memorizar botones aún.",
+      "expectedResult": "Distingues movimiento adelante/atrás de movimiento izquierda/derecha.",
+      "simulatorAction": "No cambies asignaciones todavía.",
+      "visual": {
+        "type": "controlHighlight",
+        "asset": "public/references/turtlebeach-velocityone-official.png",
+        "alt": "Imagen oficial real del VelocityOne Flight con el yoke frontal claramente visible.",
+        "purpose": "Mostrar el yoke físico real antes de practicar sus movimientos básicos.",
+        "teaches": "Reconocer el yoke y diferenciar sus movimientos adelante/atrás e izquierda/derecha.",
+        "userQuestionAnswered": [
+          "queControlTocar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "El yoke está al frente del conjunto y tiene dos empuñaduras que se mueven como una sola unidad.",
+        "view": "controlFisico",
+        "visualCategory": "reference",
+        "fidelity": "real",
+        "recognitionGoal": "Reconoce el yoke de tu VelocityOne antes de moverlo con el simulador cerrado.",
+        "recognizedElements": [
+          "yoke VelocityOne",
+          "empuñadura izquierda",
+          "empuñadura derecha"
+        ],
+        "actionAfterViewing": "Mueve el yoke suavemente en las cuatro direcciones, sin cambiar aún ninguna asignación.",
+        "quality": {
+          "sourceWidth": 1106,
+          "sourceHeight": 840,
+          "intendedDisplayWidth": 500,
+          "supportsZoom": true,
+          "detailTarget": "El yoke frontal y sus empuñaduras, visibles con nitidez en la imagen oficial."
+        },
+        "coverage": [
+          "hardware"
+        ]
+      },
+      "warning": "No asumas que una palanca o botón tiene una función concreta hasta comprobarla en tu perfil.",
+      "requiredVisualCoverage": [
+        {
+          "type": "hardware",
+          "status": "required"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Reconoce las entradas de potencia",
+      "instruction": "Identifica las palancas destinadas a potencia y observa sus etiquetas físicas sin asignarles una función nueva.",
+      "explanation": "En aviación, potencia, mezcla y hélice pueden ser mandos distintos; lo disponible depende del avión y del perfil.",
+      "expectedResult": "Sabes que varias palancas no deben intercambiarse por intuición.",
+      "simulatorAction": "En MSFS, abre Opciones > Controles y selecciona VelocityOne Flight.",
+      "visual": {
+        "type": "controlHighlight",
+        "asset": "public/references/turtlebeach-velocityone-official.png",
+        "alt": "Imagen oficial real del VelocityOne Flight con el cuadrante y sus palancas visibles.",
+        "purpose": "Mostrar el cuadrante real para reconocer el grupo de palancas antes de verificar cada función.",
+        "teaches": "Separar el cuadrante de potencia del yoke y evitar asignar funciones por intuición.",
+        "userQuestionAnswered": [
+          "queControlTocar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "El cuadrante agrupa varias palancas a la derecha del yoke; sus funciones se confirman en el perfil.",
+        "view": "controlFisico",
+        "visualCategory": "reference",
+        "fidelity": "real",
+        "recognitionGoal": "Reconoce el cuadrante VelocityOne y sus palancas antes de abrir el perfil de controles.",
+        "recognizedElements": [
+          "cuadrante de potencia",
+          "palancas",
+          "yoke VelocityOne"
+        ],
+        "actionAfterViewing": "Abre Opciones > Controles, selecciona VelocityOne Flight y verifica una acción por nombre.",
+        "quality": {
+          "sourceWidth": 1106,
+          "sourceHeight": 840,
+          "intendedDisplayWidth": 500,
+          "supportsZoom": true,
+          "detailTarget": "El cuadrante de potencia y las palancas visibles a la derecha del yoke."
+        },
+        "coverage": [
+          "hardware"
+        ]
+      },
+      "tip": "Usa el buscador de controles de MSFS para verificar una acción, no una lista genérica de internet.",
+      "requiredVisualCoverage": [
+        {
+          "type": "hardware",
+          "status": "required"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Encuentra pedales, frenos y trim",
+      "instruction": "Sin mover el avión, localiza el control de timón, los frenos y cualquier rueda o mando de trim de tu configuración.",
+      "explanation": "Timón, frenado y trim son funciones diferentes aunque todas puedan influir en una trayectoria.",
+      "expectedResult": "Puedes nombrar qué elemento comprobarás para timón, freno y trim.",
+      "simulatorAction": "Busca cada acción por nombre en la pantalla de controles y usa la función de detección de entrada.",
+      "visual": {
+        "type": "controlHighlight",
+        "asset": "public/references/turtlebeach-velocityone-official.png",
+        "alt": "Referencia real del VelocityOne con pantalla FMD y controles que requieren confirmación de perfil.",
+        "purpose": "Recordar que los mandos visibles no sustituyen la confirmación de la asignación activa.",
+        "teaches": "Reconocer la pantalla FMD y diferenciar el hardware visible de las acciones que deben verificarse.",
+        "userQuestionAnswered": [
+          "queControlTocar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "La pantalla FMD está integrada en el yoke; pedales, frenos y trim se confirman por detección de entrada.",
+        "view": "controlFisico",
+        "visualCategory": "reference",
+        "fidelity": "real",
+        "recognitionGoal": "Reconoce la pantalla FMD y el conjunto VelocityOne antes de identificar timón, frenos y trim en tu perfil.",
+        "recognizedElements": [
+          "pantalla FMD",
+          "yoke VelocityOne",
+          "cuadrante de potencia"
+        ],
+        "actionAfterViewing": "Busca cada acción por nombre y activa detección antes de decidir qué control usarás.",
+        "quality": {
+          "sourceWidth": 1106,
+          "sourceHeight": 840,
+          "intendedDisplayWidth": 500,
+          "supportsZoom": true,
+          "detailTarget": "La pantalla FMD integrada y el conjunto físico que debes comparar con tu perfil."
+        },
+        "coverage": [
+          "hardware"
+        ]
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "hardware",
+          "status": "required"
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "title": "Inventario de controles",
+    "scenario": "MSFS abierto en Opciones > Controles.",
+    "task": "Elige C172 Training si existe. Busca una acción de elevador, una de alerones, una de timón y una de frenos; activa detección y mueve solo el control que crees correspondiente.",
+    "successSignal": "Cada entrada detectada coincide con la familia que esperabas o queda anotada para corregirla."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Copiar una asignación de otro modelo de hardware.",
+      "recovery": "Confirma la entrada física con detección en tu propio perfil."
+    },
+    {
+      "mistake": "Cambiar muchas asignaciones a la vez.",
+      "recovery": "Verifica un eje y prueba antes de continuar."
+    }
+  ],
+  "checklist": [
+    "Yoke identificado",
+    "Palancas de potencia revisadas",
+    "Timón y frenos ubicados",
+    "Perfil de MSFS abierto",
+    "Ninguna función asumida sin detección"
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué confirma qué función recibe una entrada física?",
+      "options": [
+        "El color del mando",
+        "La detección de entrada en el perfil de MSFS",
+        "Una foto de otro equipo"
+      ],
+      "answer": "La detección de entrada en el perfil de MSFS",
+      "explanation": "El perfil activo es quien define la acción en el simulador."
+    }
+  ],
+  "completionCriteria": [
+    "Puedes separar yoke, potencia, timón, frenos y trim por familia",
+    "Has comprobado al menos cuatro entradas en MSFS"
+  ],
+  "sources": [
+    {
+      "title": "Turtle Beach VelocityOne Flight",
+      "url": "https://www.turtlebeach.com/products/velocity-one-flight",
+      "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator Support",
+      "url": "https://flightsimulator.zendesk.com/",
+      "verified": true
+    }
+  ]
 }

@@ -1,16 +1,200 @@
 {
-  "metadata":{"id":"aircraft-three-axes","title":"Los tres ejes de un avión: pitch, roll y yaw","subtitle":"Relaciona cada movimiento con el control que lo ordena.","objective":"Reconocer pitch, roll y yaw y probarlos de forma segura en un Cessna 172.","estimatedTime":"18 min","prerequisites":["velocityone-response-check"],"level":0,"module":"fundamentos"},
-  "whyItMatters":"Cada movimiento tiene una intención distinta. Separarlos evita tirar del yoke cuando realmente necesitas nivelar las alas o mantener la dirección.",
-  "concepts":[{"term":"Pitch (cabeceo)","meaning":"El morro sube o baja alrededor de un eje de ala a ala."},{"term":"Roll (alabeo)","meaning":"Un ala baja y la otra sube alrededor del eje longitudinal."},{"term":"Yaw (guiñada)","meaning":"El morro gira a izquierda o derecha alrededor del eje vertical."}],
-  "steps":[
-    {"number":1,"title":"Observa los tres ejes","instruction":"Mira las tres siluetas y sigue la flecha de cada movimiento antes de tocar el control.","explanation":"Pitch, roll y yaw son rotaciones diferentes; una flecha indica el movimiento, no una ruta de vuelo.","expectedResult":"Puedes señalar cuál dibujo representa cada término.","simulatorAction":"Mantén el avión estacionado por ahora.","visual":{"type":"annotatedDiagram","asset":"content/assets/three-axes.svg","alt":"Diagramas SVG de pitch, roll y yaw con flechas y ejes"}},
-    {"number":2,"title":"Relaciona yoke y pitch/roll","instruction":"En un C172 detenido, mueve el yoke ligeramente adelante/atrás y luego izquierda/derecha; observa las superficies si la vista lo permite.","explanation":"Adelante/atrás ordena principalmente elevador y se relaciona con pitch. Izquierda/derecha ordena alerones y se relaciona con roll.","expectedResult":"Distingues el movimiento que pretendes mandar con cada dirección del yoke.","simulatorAction":"Usa una cámara externa o una vista que muestre superficies; no apliques potencia para esta prueba.","visual":{"type":"controlHighlight","requiresReference":true,"alt":"Yoke y superficies de control del C172"},"warning":"En vuelo, el avión puede responder de manera combinada; esta prueba a baja velocidad separa el concepto."},
-    {"number":3,"title":"Relaciona timón y yaw","instruction":"Con frenos aplicados y potencia baja, aplica una entrada pequeña de timón y observa la dirección o la superficie del timón.","explanation":"El timón manda yaw. No es el control principal para inclinar alas, aunque se coordina con roll en vuelo.","expectedResult":"Puedes describir yaw sin llamarlo giro de las alas.","simulatorAction":"Suelta la entrada y confirma que el avión permanece controlado antes de avanzar.","visual":{"type":"flightPathDiagram","asset":"content/assets/three-axes.svg","alt":"Diagrama de guiñada alrededor del eje vertical"},"tip":"El siguiente nivel explicará cómo se coordinan los tres ejes durante maniobras reales."}
+  "metadata": {
+    "id": "aircraft-three-axes",
+    "title": "Los tres ejes de un avión: pitch, roll y yaw",
+    "subtitle": "Relaciona cada movimiento con el control que lo ordena.",
+    "objective": "Reconocer pitch, roll y yaw y probarlos de forma segura en un Cessna 172.",
+    "estimatedTime": "18 min",
+    "prerequisites": [
+      "velocityone-response-check"
+    ],
+    "level": 0,
+    "module": "fundamentos",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "Cada movimiento tiene una intención distinta. Separarlos evita tirar del yoke cuando realmente necesitas nivelar las alas o mantener la dirección.",
+  "concepts": [
+    {
+      "term": "Pitch (cabeceo)",
+      "meaning": "El morro sube o baja alrededor de un eje de ala a ala."
+    },
+    {
+      "term": "Roll (alabeo)",
+      "meaning": "Un ala baja y la otra sube alrededor del eje longitudinal."
+    },
+    {
+      "term": "Yaw (guiñada)",
+      "meaning": "El morro gira a izquierda o derecha alrededor del eje vertical."
+    }
   ],
-  "practice":{"title":"Nombra antes de mover","scenario":"C172 estacionado en una posición segura.","task":"Di en voz alta “pitch”, “roll” o “yaw” antes de realizar una entrada pequeña correspondiente. Repite tres rondas sin despegar.","successSignal":"El nombre, el control y el efecto esperado coinciden en las tres rondas."},
-  "commonMistakes":[{"mistake":"Llamar yaw al movimiento de inclinar un ala.","recovery":"Vuelve al diagrama: yaw gira el morro alrededor del eje vertical."},{"mistake":"Usar grandes entradas para aprender el eje.","recovery":"Detén el avión y usa movimientos pequeños y observables."}],
-  "checklist":["Pitch identificado","Roll identificado","Yaw identificado","Yoke probado en dos direcciones","Timón probado de forma segura"],
-  "quiz":[{"question":"¿Qué eje controla principalmente el timón?","options":["Pitch","Roll","Yaw"],"answer":"Yaw","explanation":"El timón gira el morro alrededor del eje vertical."}],
-  "completionCriteria":["Puedes definir pitch, roll y yaw","Has relacionado cada eje con una entrada práctica"],
-  "sources":[{"title":"FAA Pilot's Handbook of Aeronautical Knowledge","url":"https://www.faa.gov/regulations_policies/handbook","verified":true}]
+  "steps": [
+    {
+      "number": 1,
+      "title": "Observa los tres ejes",
+      "instruction": "Mira las tres siluetas y sigue la flecha de cada movimiento antes de tocar el control.",
+      "explanation": "Pitch, roll y yaw son rotaciones diferentes; una flecha indica el movimiento, no una ruta de vuelo.",
+      "expectedResult": "Puedes señalar cuál dibujo representa cada término.",
+      "simulatorAction": "Mantén el avión estacionado por ahora.",
+      "visual": {
+        "type": "annotatedDiagram",
+        "asset": "content/assets/three-axes.svg",
+        "alt": "Diagrama conceptual SVG de pitch, roll y yaw con flechas y ejes.",
+        "purpose": "Separar visualmente los tres movimientos antes de relacionarlos con un control físico.",
+        "teaches": "Distinguir cabeceo, alabeo y guiñada como rotaciones diferentes del avión.",
+        "userQuestionAnswered": [
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "Cada silueta tiene una flecha propia: morro arriba/abajo, alas que se inclinan o nariz que gira.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce la diferencia conceptual entre pitch, roll y yaw, no una cabina concreta.",
+        "recognizedElements": [
+          "pitch",
+          "roll",
+          "yaw"
+        ],
+        "actionAfterViewing": "Mantén el avión estacionado y pasa a identificar el movimiento del yoke."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "El paso explica una relación o una decisión y no requiere reconocer una cabina, pantalla, instrumento o control concreto."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Relaciona yoke y pitch/roll",
+      "instruction": "En un C172 detenido, mueve el yoke ligeramente adelante/atrás y luego izquierda/derecha; observa las superficies si la vista lo permite.",
+      "explanation": "Adelante/atrás ordena principalmente elevador y se relaciona con pitch. Izquierda/derecha ordena alerones y se relaciona con roll.",
+      "expectedResult": "Distingues el movimiento que pretendes mandar con cada dirección del yoke.",
+      "simulatorAction": "Usa una cámara externa o una vista que muestre superficies; no apliques potencia para esta prueba.",
+      "visual": {
+        "type": "controlHighlight",
+        "asset": "public/references/turtlebeach-velocityone-official.png",
+        "alt": "Referencia real del VelocityOne con el yoke frontal para probar pitch y roll.",
+        "purpose": "Mostrar el yoke físico reconocible antes de probar sus dos direcciones de movimiento.",
+        "teaches": "Relacionar empujar/tirar y girar el yoke con pitch y roll sin afirmar asignaciones no verificadas.",
+        "userQuestionAnswered": [
+          "queControlTocar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "Reconoces el yoke frontal como la entrada física que moverás suavemente en dos direcciones.",
+        "view": "controlFisico",
+        "visualCategory": "reference",
+        "fidelity": "real",
+        "recognitionGoal": "Reconoce el yoke VelocityOne antes de comprobar la respuesta de elevador y alerones en tu perfil.",
+        "recognizedElements": [
+          "yoke VelocityOne",
+          "mango izquierdo",
+          "mango derecho"
+        ],
+        "actionAfterViewing": "Con el C172 detenido, mueve el yoke muy poco y observa una superficie a la vez.",
+        "quality": {
+          "sourceWidth": 1106,
+          "sourceHeight": 840,
+          "intendedDisplayWidth": 500,
+          "supportsZoom": true,
+          "detailTarget": "El yoke frontal completo y sus dos empuñaduras, visibles en el hardware real."
+        },
+        "coverage": [
+          "hardware"
+        ]
+      },
+      "warning": "En vuelo, el avión puede responder de manera combinada; esta prueba a baja velocidad separa el concepto.",
+      "requiredVisualCoverage": [
+        {
+          "type": "hardware",
+          "status": "required"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Relaciona timón y yaw",
+      "instruction": "Con frenos aplicados y potencia baja, aplica una entrada pequeña de timón y observa la dirección o la superficie del timón.",
+      "explanation": "El timón manda yaw. No es el control principal para inclinar alas, aunque se coordina con roll en vuelo.",
+      "expectedResult": "Puedes describir yaw sin llamarlo giro de las alas.",
+      "simulatorAction": "Suelta la entrada y confirma que el avión permanece controlado antes de avanzar.",
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/three-axes.svg",
+        "alt": "Diagrama conceptual de guiñada alrededor del eje vertical.",
+        "purpose": "Aislar la relación entre el timón y el giro de la nariz sobre el eje vertical.",
+        "teaches": "Distinguir yaw de la inclinación de alas mostrada por roll.",
+        "userQuestionAnswered": [
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "La flecha de yaw gira la nariz a izquierda o derecha sin representar un ala subiendo.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce la guiñada como giro de nariz, no como movimiento de las alas.",
+        "recognizedElements": [
+          "yaw",
+          "eje vertical",
+          "nariz"
+        ],
+        "actionAfterViewing": "Haz una entrada pequeña de timón, suéltala y confirma que el avión sigue controlado."
+      },
+      "tip": "El siguiente nivel explicará cómo se coordinan los tres ejes durante maniobras reales.",
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "El paso explica una relación o una decisión y no requiere reconocer una cabina, pantalla, instrumento o control concreto."
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "title": "Nombra antes de mover",
+    "scenario": "C172 estacionado en una posición segura.",
+    "task": "Di en voz alta “pitch”, “roll” o “yaw” antes de realizar una entrada pequeña correspondiente. Repite tres rondas sin despegar.",
+    "successSignal": "El nombre, el control y el efecto esperado coinciden en las tres rondas."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Llamar yaw al movimiento de inclinar un ala.",
+      "recovery": "Vuelve al diagrama: yaw gira el morro alrededor del eje vertical."
+    },
+    {
+      "mistake": "Usar grandes entradas para aprender el eje.",
+      "recovery": "Detén el avión y usa movimientos pequeños y observables."
+    }
+  ],
+  "checklist": [
+    "Pitch identificado",
+    "Roll identificado",
+    "Yaw identificado",
+    "Yoke probado en dos direcciones",
+    "Timón probado de forma segura"
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué eje controla principalmente el timón?",
+      "options": [
+        "Pitch",
+        "Roll",
+        "Yaw"
+      ],
+      "answer": "Yaw",
+      "explanation": "El timón gira el morro alrededor del eje vertical."
+    }
+  ],
+  "completionCriteria": [
+    "Puedes definir pitch, roll y yaw",
+    "Has relacionado cada eje con una entrada práctica"
+  ],
+  "sources": [
+    {
+      "title": "FAA Pilot's Handbook of Aeronautical Knowledge",
+      "url": "https://www.faa.gov/regulations_policies/handbook",
+      "verified": true
+    }
+  ]
 }

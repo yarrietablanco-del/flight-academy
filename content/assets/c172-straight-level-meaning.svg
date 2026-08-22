@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Referencia de vista desde el piloto Cessna 172 en recto y nivelado</title>
+  <desc id="desc">Recreación fiel y reconocible de una vista de cabina: parabrisas, horizonte exterior, panel G1000, yoke y alas niveladas.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f7c948"/></marker></defs>
+  <rect width="1200" height="675" fill="#18242f"/>
+  <path d="M100 85H1100V407H100Z" fill="#91cff1"/><path d="M100 332H1100V407H100Z" fill="#6c8e4f"/><path d="M100 332H1100" stroke="#f4f2e8" stroke-width="6"/>
+  <path d="M72 50L184 76V430L72 476ZM1128 50L1016 76V430L1128 476Z" fill="#273847"/>
+  <path d="M100 419H1100V675H100Z" fill="#303a42"/><path d="M168 436H1032" stroke="#172027" stroke-width="15"/>
+  <rect x="362" y="442" width="476" height="180" rx="9" fill="#10191f" stroke="#72828c" stroke-width="6"/>
+  <rect x="388" y="461" width="200" height="135" fill="#19547a"/><path d="M388 529H588V596H388Z" fill="#7a583a"/><path d="M398 529H578" stroke="#f4f2e8" stroke-width="4"/><path d="M440 530H536L488 503Z" fill="#f4f2e8"/>
+  <rect x="612" y="461" width="200" height="135" fill="#19547a"/><path d="M612 529H812V596H612Z" fill="#7a583a"/><path d="M622 529H802" stroke="#f4f2e8" stroke-width="4"/><path d="M664 530H760L712 503Z" fill="#f4f2e8"/>
+  <path d="M600 625V525M510 593H690M510 593L550 557M690 593L650 557" fill="none" stroke="#151a1f" stroke-width="25" stroke-linecap="round"/>
+  <text x="600" y="37" text-anchor="middle" font-family="Arial" font-size="29" font-weight="700" fill="#fff">VISTA DEL PILOTO C172: REFERENCIA EXTERIOR RECONOCIBLE</text>
+  <path d="M274 172L426 294" stroke="#f7c948" stroke-width="5" marker-end="url(#arrow)"/><text x="105" y="146" font-family="Arial" font-size="22" font-weight="700" fill="#fff">HORIZONTE</text><text x="105" y="174" font-family="Arial" font-size="18" fill="#e9f0f4">nivel, visible por el parabrisas</text>
+  <path d="M934 170L777 308" stroke="#f7c948" stroke-width="5" marker-end="url(#arrow)"/><text x="874" y="125" font-family="Arial" font-size="22" font-weight="700" fill="#fff">ALAS NIVELADAS</text><text x="874" y="153" font-family="Arial" font-size="18" fill="#e9f0f4">sin una inclinación sostenida</text>
+  <path d="M958 491L836 492" stroke="#f7c948" stroke-width="5" marker-end="url(#arrow)"/><text x="862" y="531" font-family="Arial" font-size="22" font-weight="700" fill="#fff">PANEL / PFD</text>
+  <rect x="198" y="634" width="804" height="28" rx="14" fill="#f7c948"/><text x="600" y="655" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#172027">Mira afuera primero: horizonte estable; después confirma con la PFD.</text>
+</svg>

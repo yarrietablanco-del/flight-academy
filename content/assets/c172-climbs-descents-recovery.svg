@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Recuperación de una oscilación de ascenso y descenso</title>
+  <desc id="desc">Comparación entre entradas continuas que producen oscilaciones y una recuperación mediante una sola corrección seguida de observación.</desc>
+  <defs><style>text{font-family:Arial,sans-serif;fill:#172033}.h{font-size:27px;font-weight:700}.m{font-size:21px}.axis{stroke:#667085;stroke-width:3}.bad{stroke:#d92d20;stroke-width:6;fill:none}.good{stroke:#1976d2;stroke-width:6;fill:none}.ref{stroke:#98a2b3;stroke-dasharray:8 8;stroke-width:3}</style></defs>
+  <rect width="1200" height="675" fill="#f7f9fc"/><text x="600" y="58" text-anchor="middle" class="h">Evita encadenar correcciones: estabiliza, observa y ajusta de nuevo solo si hace falta</text>
+  <line x1="600" y1="110" x2="600" y2="610" stroke="#c7d1df" stroke-width="3"/>
+  <text x="300" y="125" text-anchor="middle" class="h">ENTRADAS CONTINUAS</text><line x1="95" y1="385" x2="510" y2="385" class="ref"/><text x="112" y="370" class="m">referencia</text><path d="M95 385 C135 250 175 250 215 385 S295 520 335 385 S415 250 455 385 S485 505 510 440" class="bad"/><text x="300" y="535" text-anchor="middle" class="m">Cambiar antes de ver el efecto</text><text x="300" y="566" text-anchor="middle" class="m">mantiene la oscilación.</text>
+  <text x="900" y="125" text-anchor="middle" class="h">UNA CORRECCIÓN Y ESPERA</text><line x1="690" y1="385" x2="1105" y2="385" class="ref"/><text x="707" y="370" class="m">referencia</text><path d="M690 500 C750 500 755 410 805 390 C850 374 900 385 1105 385" class="good"/><text x="900" y="535" text-anchor="middle" class="m">Entrada breve, controles neutrales,</text><text x="900" y="566" text-anchor="middle" class="m">barrido y ajuste posterior.</text>
+  <text x="600" y="638" text-anchor="middle" class="m">Las curvas muestran una idea de control, no altitudes, velocidades, ángulos ni tiempos de vuelo reales.</text>
+</svg>

@@ -1,1 +1,189 @@
-{"metadata":{"id":"welcome-flight-academy","title":"Bienvenido a Flight Academy","subtitle":"Aprende una acción concreta antes de sumar la siguiente.","objective":"Preparar una primera sesión de MSFS sin presión ni pasos ocultos.","estimatedTime":"8 min","prerequisites":[],"level":0,"module":"inicio"},"whyItMatters":"Volar mejora cuando sabes qué practicar y cómo comprobarlo. Esta academia separa cada habilidad para que un error sea fácil de identificar y repetir.","concepts":[{"term":"Práctica deliberada","meaning":"Una sesión corta con un objetivo observable, no una vuelta sin plan."},{"term":"Pausa/reinicio","meaning":"Una herramienta válida cuando la situación deja de ser comprensible."}],"steps":[{"number":1,"title":"Abre la academia antes de MSFS","instruction":"Lee el objetivo de la lección que vas a practicar.","explanation":"Así no intentas aprender controles, navegación y aterrizaje al mismo tiempo.","expectedResult":"Puedes decir en una frase qué habilidad practicarás.","simulatorAction":"Aún no inicies un vuelo.","visual":{"type":"diagram","asset":"content/assets/learning-loop.svg","alt":"Ciclo preparar, practicar, comprobar y repetir"}},{"number":2,"title":"Prepara una sesión corta","instruction":"Conecta VelocityOne, abre MSFS 2024 y elige un momento sin interrupciones.","explanation":"La consistencia del equipo evita confundir un problema técnico con uno de pilotaje.","expectedResult":"Control conectado y objetivo visible.","simulatorAction":"Permanece en el menú principal de MSFS.","tip":"Diez minutos conscientes sirven más que una hora sin objetivo.","visual":{"type":"comparisonDiagram","requiresReference":true,"alt":"Puesto de simulación del alumno"}},{"number":3,"title":"Cierra con una observación","instruction":"Al terminar escribe qué funcionó y qué repetirías.","explanation":"La siguiente práctica empieza con una decisión, no desde cero.","expectedResult":"Una nota corta de aprendizaje.","simulatorAction":"Usa el feedback de la lección para registrar la observación.","visual":{"type":"diagram","asset":"content/assets/learning-loop.svg","alt":"Ciclo de práctica repetible"}}],"practice":{"title":"Tu primera rutina","scenario":"MSFS aún en el menú.","task":"Escribe: “Hoy practicaré una sola habilidad y pausaré si no entiendo lo que ocurre”.","successSignal":"Puedes nombrar el objetivo y la acción de salida segura."},"commonMistakes":[{"mistake":"Abrir un vuelo sin saber qué practicar.","recovery":"Vuelve al objetivo y elige una sola acción."}],"checklist":["Objetivo leído","VelocityOne conectado","Sesión corta reservada","Acción de pausa/reinicio entendida"],"quiz":[{"question":"¿Qué haces si una práctica deja de ser comprensible?","options":["Acelerar para terminar","Pausar o reiniciar y aislar la habilidad","Cambiar todos los ajustes"],"answer":"Pausar o reiniciar y aislar la habilidad","explanation":"Reiniciar permite aprender sin acumular errores."}],"completionCriteria":["Puedes describir una práctica corta","Sabes que pausar o reiniciar es válido"],"sources":[{"title":"Flight Academy authoring standard","url":"https://yarrietablanco-del.github.io/flight-academy/","verified":true}]}
+{
+  "metadata": {
+    "id": "welcome-flight-academy",
+    "title": "Bienvenido a Flight Academy",
+    "subtitle": "Aprende una acción concreta antes de sumar la siguiente.",
+    "objective": "Preparar una primera sesión de MSFS sin presión ni pasos ocultos.",
+    "estimatedTime": "8 min",
+    "prerequisites": [],
+    "level": 0,
+    "module": "inicio",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "Volar mejora cuando sabes qué practicar y cómo comprobarlo. Esta academia separa cada habilidad para que un error sea fácil de identificar y repetir.",
+  "concepts": [
+    {
+      "term": "Práctica deliberada",
+      "meaning": "Una sesión corta con un objetivo observable, no una vuelta sin plan."
+    },
+    {
+      "term": "Pausa/reinicio",
+      "meaning": "Una herramienta válida cuando la situación deja de ser comprensible."
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Abre la academia antes de MSFS",
+      "instruction": "Lee el objetivo de la lección que vas a practicar.",
+      "explanation": "Así no intentas aprender controles, navegación y aterrizaje al mismo tiempo.",
+      "expectedResult": "Puedes decir en una frase qué habilidad practicarás.",
+      "simulatorAction": "Aún no inicies un vuelo.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/learning-loop.svg",
+        "alt": "Ciclo conceptual de preparar, practicar, comprobar y repetir.",
+        "purpose": "Mostrar la secuencia que convierte una sesión corta en práctica deliberada.",
+        "teaches": "Elegir un objetivo, practicarlo, comprobar el resultado y repetir solo si hace falta.",
+        "userQuestionAnswered": [
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "El ciclo empieza con preparación y vuelve a ella después de comprobar el resultado.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce el orden de práctica, no una pantalla concreta de MSFS.",
+        "recognizedElements": [
+          "prepara",
+          "practica",
+          "comprueba",
+          "repite"
+        ],
+        "actionAfterViewing": "Lee el objetivo de una sola lección antes de abrir un vuelo."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "El paso explica una relación o una decisión y no requiere reconocer una cabina, pantalla, instrumento o control concreto."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Prepara una sesión corta",
+      "instruction": "Conecta VelocityOne, abre MSFS 2024 y elige un momento sin interrupciones.",
+      "explanation": "La consistencia del equipo evita confundir un problema técnico con uno de pilotaje.",
+      "expectedResult": "Control conectado y objetivo visible.",
+      "simulatorAction": "Permanece en el menú principal de MSFS.",
+      "tip": "Diez minutos conscientes sirven más que una hora sin objetivo.",
+      "visual": {
+        "type": "controlHighlight",
+        "asset": "public/references/turtlebeach-velocityone-official.png",
+        "alt": "Imagen oficial real del Turtle Beach VelocityOne Flight listo para una sesión de simulación.",
+        "purpose": "Mostrar el hardware real que debe estar conectado antes de iniciar una práctica en MSFS.",
+        "teaches": "Reconocer el conjunto VelocityOne y comprobar que está disponible antes de cargar un vuelo.",
+        "userQuestionAnswered": [
+          "queControlTocar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "Ves el yoke, el cuadrante y la pantalla FMD como partes del conjunto de hardware.",
+        "view": "controlFisico",
+        "visualCategory": "reference",
+        "fidelity": "real",
+        "recognitionGoal": "Reconoce el conjunto VelocityOne que debes conectar antes de empezar la sesión.",
+        "recognizedElements": [
+          "yoke VelocityOne",
+          "cuadrante de potencia",
+          "pantalla FMD"
+        ],
+        "actionAfterViewing": "Conecta el VelocityOne y permanece en el menú principal hasta elegir la práctica.",
+        "quality": {
+          "sourceWidth": 1106,
+          "sourceHeight": 840,
+          "intendedDisplayWidth": 500,
+          "supportsZoom": true,
+          "detailTarget": "El yoke y el cuadrante del conjunto VelocityOne mostrado en la imagen oficial."
+        },
+        "coverage": [
+          "hardware"
+        ]
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "hardware",
+          "status": "required"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Cierra con una observación",
+      "instruction": "Al terminar escribe qué funcionó y qué repetirías.",
+      "explanation": "La siguiente práctica empieza con una decisión, no desde cero.",
+      "expectedResult": "Una nota corta de aprendizaje.",
+      "simulatorAction": "Usa el feedback de la lección para registrar la observación.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/learning-loop.svg",
+        "alt": "Ciclo conceptual de práctica repetible con comprobación final.",
+        "purpose": "Relacionar la observación final con la siguiente preparación de práctica.",
+        "teaches": "Cerrar una sesión con una decisión concreta en vez de repetir sin objetivo.",
+        "userQuestionAnswered": [
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "El ciclo incluye una comprobación antes de volver a preparar la siguiente sesión.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce el ciclo de aprendizaje que conecta una práctica con la siguiente.",
+        "recognizedElements": [
+          "comprueba",
+          "repite",
+          "prepara"
+        ],
+        "actionAfterViewing": "Escribe qué funcionó y qué repetirías usando el feedback de la lección."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "El paso explica una relación o una decisión y no requiere reconocer una cabina, pantalla, instrumento o control concreto."
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "title": "Tu primera rutina",
+    "scenario": "MSFS aún en el menú.",
+    "task": "Escribe: “Hoy practicaré una sola habilidad y pausaré si no entiendo lo que ocurre”.",
+    "successSignal": "Puedes nombrar el objetivo y la acción de salida segura."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Abrir un vuelo sin saber qué practicar.",
+      "recovery": "Vuelve al objetivo y elige una sola acción."
+    }
+  ],
+  "checklist": [
+    "Objetivo leído",
+    "VelocityOne conectado",
+    "Sesión corta reservada",
+    "Acción de pausa/reinicio entendida"
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué haces si una práctica deja de ser comprensible?",
+      "options": [
+        "Acelerar para terminar",
+        "Pausar o reiniciar y aislar la habilidad",
+        "Cambiar todos los ajustes"
+      ],
+      "answer": "Pausar o reiniciar y aislar la habilidad",
+      "explanation": "Reiniciar permite aprender sin acumular errores."
+    }
+  ],
+  "completionCriteria": [
+    "Puedes describir una práctica corta",
+    "Sabes que pausar o reiniciar es válido"
+  ],
+  "sources": [
+    {
+      "title": "Flight Academy authoring standard",
+      "url": "https://yarrietablanco-del.github.io/flight-academy/",
+      "verified": true
+    }
+  ]
+}

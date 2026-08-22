@@ -2,89 +2,386 @@
   "metadata": {
     "id": "c172-straight-level",
     "title": "Recto y nivelado",
-    "subtitle": "Estabiliza el C172 con actitud, rumbo y altitud como referencias.",
-    "objective": "Mantener actitud, rumbo y altitud de práctica.",
+    "subtitle": "Mira, corrige poco y espera para estabilizar el C172.",
+    "objective": "Mantener el C172 estable usando una secuencia clara de mirada, yoke, trim y potencia.",
     "estimatedTime": "20 min",
-    "prerequisites": ["c172-overview"],
+    "prerequisites": [
+      "c172-overview"
+    ],
     "level": 1,
-    "module": "control"
+    "module": "control",
+    "visualStandardVersion": 3
   },
-  "whyItMatters": "El vuelo recto y nivelado es el punto de partida para cada cambio posterior. Si estabilizas primero la actitud y observas las tendencias, evitarás perseguir la altitud o el rumbo con correcciones grandes.",
+  "whyItMatters": "Antes de girar, subir o seguir una ruta, necesitas una imagen estable. Recto y nivelado no significa que cada número quede inmóvil: significa alas aproximadamente niveladas, morro estable y sin una tendencia sostenida no deseada de altitud, velocidad o rumbo.",
   "concepts": [
-    {"term": "Recto y nivelado", "meaning": "Estado de práctica en el que el avión mantiene aproximadamente la misma dirección y altitud, sin subir, bajar ni virar de forma intencional."},
-    {"term": "Actitud", "meaning": "Orientación del morro y las alas respecto al horizonte. Es la referencia inicial que produces con el yoke antes de comprobar el resultado en los instrumentos."},
-    {"term": "Tendencia", "meaning": "Dirección en la que cambia una indicación. Detectar que la altitud o el rumbo empiezan a alejarse permite corregir pronto y con poca entrada."}
+    {
+      "term": "Recto y nivelado",
+      "meaning": "Una condición de práctica: alas aproximadamente niveladas, morro estable y sin ascenso, descenso ni viraje intencional."
+    },
+    {
+      "term": "Actitud",
+      "meaning": "La posición de las alas y del morro respecto al horizonte. La produces con el yoke y luego compruebas su resultado."
+    },
+    {
+      "term": "Tendencia",
+      "meaning": "Un cambio que continúa en la misma dirección durante varias miradas. Un valor que cambia una vez no basta para corregir."
+    },
+    {
+      "term": "Trim",
+      "meaning": "Ajuste que quita la presión continua que sostendrías en el yoke. Se usa después de estabilizar la actitud."
+    }
   ],
   "steps": [
     {
       "number": 1,
-      "title": "Empieza desde una situación de práctica estable",
-      "instruction": "En MSFS, carga el C172 ya en vuelo libre y en condiciones visuales tranquilas. Pausa si hace falta para confirmar que tienes altura sobre el terreno y espacio sin obstáculos antes de practicar.",
-      "explanation": "Aquí aprendes control manual, no despegue ni navegación. Una situación sin presión permite observar causa y efecto sin añadir una ruta, tráfico o una configuración compleja.",
-      "expectedResult": "El avión está en el aire, con margen visual sobre el terreno y sin una maniobra urgente. Si no tienes ese margen, reinicia en una situación más alta y despejada.",
-      "simulatorAction": "Activa la pausa activa o normal si necesitas preparar la vista. Reanuda solo cuando puedas ver el horizonte y las indicaciones de altitud y rumbo.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/c172-straight-level-attitude.svg", "alt": "Relación entre una actitud estable, la tendencia de altitud y correcciones pequeñas"},
-      "warning": "Esto es una práctica de simulación. No sustituye instrucción de vuelo ni autoriza maniobras reales."
+      "title": "Prepara una práctica que te deje mirar",
+      "instruction": "En MSFS 2024 abre Vuelo libre, elige el C172 y usa clima despejado y hora diurna. Empieza ya en el aire, con horizonte visible y margen amplio sobre el terreno. Antes de mover el yoke, mira afuera e identifica la línea donde cielo y tierra se encuentran.",
+      "explanation": "La práctica empieza con una referencia exterior fácil de ver. No necesitas una altitud o potencia universal: cambian según la situación. Necesitas tiempo y espacio para notar el efecto de una entrada pequeña.",
+      "expectedResult": "Ves el horizonte, no tienes terreno cerca ni una maniobra urgente y puedes soltar los controles unos instantes. Si el avión está bajo, cerca de montañas o con mal tiempo, reinicia una situación más tranquila.",
+      "simulatorAction": "Usa pausa si necesitas ordenar la vista. Reanuda cuando puedas alternar entre vista exterior e instrumentos sin buscar menús.",
+      "visual": {
+        "type": "annotatedDiagram",
+        "asset": "content/assets/c172-straight-level-meaning.svg",
+        "alt": "Recreación fiel de la vista del piloto C172: parabrisas, horizonte, panel y alas niveladas.",
+        "purpose": "Dar una referencia exterior reconocible de la condición que buscarás dentro de la cabina de MSFS.",
+        "teaches": "Reconocer el horizonte a través del parabrisas, las alas niveladas y un morro que no cambia bruscamente.",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "El horizonte queda aproximadamente paralelo al panel y las alas no se inclinan; no asciende ni desciende con rapidez.",
+        "view": "vistaExterior",
+        "visualCategory": "reference",
+        "fidelity": "recreated-faithful",
+        "recognitionGoal": "Reconoce la línea real de horizonte por el parabrisas y la referencia de alas niveladas desde el asiento del piloto.",
+        "recognizedElements": [
+          "parabrisas del C172",
+          "línea del horizonte",
+          "alas niveladas",
+          "panel de instrumentos"
+        ],
+        "actionAfterViewing": "Busca esa misma línea de horizonte en MSFS, nivela las alas con suavidad y luego pasa al barrido de instrumentos.",
+        "quality": {
+          "sourceWidth": 1200,
+          "sourceHeight": 675,
+          "intendedDisplayWidth": 760,
+          "supportsZoom": true,
+          "detailTarget": "La línea de horizonte visible por el parabrisas y la relación horizontal de las alas."
+        },
+        "coverage": [
+          "cockpit",
+          "exteriorView"
+        ]
+      },
+      "warning": "Es una práctica de simulación; no sustituye instrucción de vuelo real ni decisiones de seguridad reales.",
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "required"
+        },
+        {
+          "type": "exteriorView",
+          "status": "required"
+        }
+      ]
     },
     {
       "number": 2,
-      "title": "Fija una actitud de referencia",
-      "instruction": "Mira fuera y al indicador de actitud o PFD disponible. Con movimientos pequeños del yoke, lleva las alas a nivel y busca una posición de morro que deje de aumentar o disminuir claramente la altitud.",
-      "explanation": "La actitud es la causa que controlas. No copies una posición universal del morro: cambia con peso, potencia, viento y variante. Busca una imagen estable en tu propio vuelo.",
-      "expectedResult": "Las alas permanecen aproximadamente horizontales y la altitud deja de alejarse rápidamente. Si sigues subiendo o bajando, cambia la actitud apenas un poco y espera a observar el efecto.",
-      "simulatorAction": "Haz una entrada breve, centra el yoke y espera. Evita mantener una presión continua mientras miras solo una indicación.",
-      "visual": {"type": "instrumentDiagram", "asset": "content/assets/c172-straight-level-attitude.svg", "alt": "Horizonte artificial simplificado con alas niveladas y actitud de referencia"},
-      "tip": "Una corrección pequeña que se evalúa suele ser más útil que varias correcciones seguidas."
+      "title": "Mira siempre en el mismo orden",
+      "instruction": "Haz este ciclo, sin fijarte demasiado tiempo en una sola cifra: 1) actitud/horizonte, 2) altímetro, 3) velocidad, 4) rumbo, 5) vuelve a actitud. En cada instrumento pregúntate solo si se mantiene o si sigue cambiando en una dirección.",
+      "explanation": "El indicador de actitud te dice qué está haciendo el avión ahora. Altitud, velocidad y rumbo confirman el resultado unos segundos después. Volver a la actitud evita perseguir un número con movimientos continuos.",
+      "expectedResult": "Puedes nombrar qué instrumento miras y qué tendencia viste: “altitud subiendo dos veces; vuelvo a actitud”. Si te pierdes, vuelve al horizonte/actitud y reinicia el ciclo despacio.",
+      "simulatorAction": "Mantén una vista de cabina donde estén visibles actitud, altitud, velocidad y rumbo. Si tu C172 muestra PFD, usa esas mismas zonas del PFD; no memorices una posición de morro fija.",
+      "visual": {
+        "type": "instrumentDiagram",
+        "asset": "content/assets/c172-straight-level-pfd-attitude.svg",
+        "alt": "Recreación fiel SVG de PFD G1000: pantalla completa, actitud resaltada y ampliación nítida de horizonte, pitch y bank.",
+        "purpose": "Mostrar una PFD legible con el contexto completo y la zona de actitud ampliada sin ampliar un raster pequeño.",
+        "teaches": "Localizar actitud, horizonte artificial, referencias de pitch, indicador de bank, velocidad, altitud y rumbo en una PFD reconocible.",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "Ves la PFD completa a la izquierda y, a la derecha, la actitud ampliada con horizonte, marcas de pitch y escala de bank.",
+        "view": "instrumento",
+        "visualCategory": "reference",
+        "fidelity": "recreated-faithful",
+        "recognitionGoal": "Reconoce el indicador de actitud central y sus referencias de pitch y bank antes de continuar al altímetro, velocidad y rumbo.",
+        "recognizedElements": [
+          "PFD G1000 completa",
+          "horizonte artificial",
+          "marcas de pitch",
+          "escala de bank",
+          "cinta de velocidad",
+          "cinta de altitud",
+          "rumbo"
+        ],
+        "actionAfterViewing": "Localiza primero la actitud en tu PFD de MSFS; después completa el ciclo altitud, velocidad, rumbo y vuelve a actitud.",
+        "quality": {
+          "sourceWidth": 1600,
+          "sourceHeight": 900,
+          "intendedDisplayWidth": 760,
+          "supportsZoom": true,
+          "detailTarget": "El indicador de actitud ampliado: horizonte artificial, marcas de pitch, escala de bank y alas de referencia."
+        },
+        "coverage": [
+          "instrument"
+        ]
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ]
     },
     {
       "number": 3,
-      "title": "Haz un barrido, no una mirada fija",
-      "instruction": "Alterna la vista entre actitud, altitud y rumbo, y vuelve a la actitud. En cada pasada, busca si una indicación se mantiene o comienza a derivar; no intentes corregir cada desviación a la vez.",
-      "explanation": "El barrido compara resultados con la actitud que elegiste. La altitud confirma si el avión sostiene el nivel; el rumbo revela si una inclinación leve o una guiñada lo están apartando.",
-      "expectedResult": "Puedes decir cuál valor se aleja primero y volver a mirar la actitud. Si solo ves números cambiando, reduce la carga: vuelve a alas niveladas y repite el ciclo más despacio.",
-      "simulatorAction": "Mantén la vista de cabina donde puedas consultar los instrumentos. Usa la vista exterior solo si necesitas recuperar una referencia clara de horizonte.",
-      "visual": {"type": "comparisonDiagram", "asset": "content/assets/c172-straight-level-scan.svg", "alt": "Ciclo visual entre actitud, altitud, rumbo y regreso a la actitud"}
+      "title": "Toca un control, luego deja que el avión responda",
+      "instruction": "Si la actitud no se parece a tu referencia, mueve el yoke apenas un poco y vuelve al centro. Para una leve inclinación, nivela las alas con el yoke antes de juzgar el rumbo. Cuando la actitud ya sea estable pero debas sostener presión, ajusta trim poco a poco. Deja throttle estable salvo que la velocidad muestre una tendencia clara.",
+      "explanation": "Yoke cambia la actitud; trim elimina la presión necesaria para mantenerla; throttle influye sobre energía y velocidad. No hay una asignación universal del VelocityOne: confirma en Controles o FMD que tu perfil reconoce cada acción antes de depender de ella.",
+      "expectedResult": "Tras una entrada breve, el yoke vuelve al centro y puedes observar. Con trim bien ajustado, no necesitas empujar o tirar continuamente. Si el ajuste empeora la tendencia, deshazlo poco a poco y vuelve a observar.",
+      "simulatorAction": "En MSFS abre Opciones > Controles si no conoces tu trim o throttle. Verifica la entrada en el perfil activo del VelocityOne; usa su FMD para localizar el control que tu perfil asigne a trim.",
+      "visual": {
+        "type": "controlHighlight",
+        "asset": "public/references/turtlebeach-velocityone-official.png",
+        "alt": "Imagen oficial real del Turtle Beach VelocityOne Flight: yoke frontal, palancas del cuadrante y mandos de ajuste.",
+        "purpose": "Mostrar el hardware real que debes reconocer antes de probar una entrada de yoke, throttle o trim.",
+        "teaches": "Distinguir el yoke de las palancas del cuadrante y comprobar la acción de trim en el perfil activo, sin asumir un botón.",
+        "userQuestionAnswered": [
+          "queControlTocar",
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "Reconoces el yoke que cambia actitud y el cuadrante de potencia; la asignación de trim se confirma en FMD o Controles.",
+        "view": "controlFisico",
+        "visualCategory": "reference",
+        "fidelity": "real",
+        "recognitionGoal": "Reconoce tu yoke y el cuadrante de potencia VelocityOne antes de usar la asignación de trim verificada en tu perfil.",
+        "recognizedElements": [
+          "yoke VelocityOne",
+          "cuadrante de potencia",
+          "palanca de throttle",
+          "pantalla FMD"
+        ],
+        "actionAfterViewing": "Confirma en FMD o Controles qué mando activa trim; después haz una sola entrada pequeña al yoke y vuelve al centro.",
+        "quality": {
+          "sourceWidth": 1106,
+          "sourceHeight": 840,
+          "intendedDisplayWidth": 500,
+          "supportsZoom": true,
+          "detailTarget": "El yoke frontal y las palancas del cuadrante de potencia, visibles juntos en el hardware real."
+        },
+        "coverage": [
+          "hardware"
+        ]
+      },
+      "tip": "“Pequeño, suave, esperar”: entrada breve, manos ligeras y una pasada completa de instrumentos antes de decidir otra corrección.",
+      "requiredVisualCoverage": [
+        {
+          "type": "hardware",
+          "status": "required"
+        }
+      ]
     },
     {
       "number": 4,
-      "title": "Corrige una tendencia y vuelve a comprobar",
-      "instruction": "Cuando detectes una desviación, corrige primero la actitud con una entrada pequeña y suelta el yoke hacia el centro. Si el rumbo se separa, nivela las alas y vuelve a comprobar antes de añadir otra corrección.",
-      "explanation": "Una corrección cambia la tendencia, pero necesita tiempo para verse. Centrarse de nuevo y observar evita la sobrecorrección, que convierte una desviación pequeña en oscilaciones de altitud y rumbo.",
-      "expectedResult": "La desviación deja de crecer y el avión vuelve hacia una condición estable. Si la oscilación aumenta, deja de encadenar entradas, recupera alas niveladas y reinicia el barrido.",
-      "simulatorAction": "Realiza una sola corrección a la vez y espera su resultado. Si pierdes orientación o margen sobre el terreno, pausa o reinicia la situación de práctica.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/c172-straight-level-attitude.svg", "alt": "Secuencia de mirar actitud, confirmar tendencia y corregir con una entrada pequeña"}
+      "title": "Confirma la tendencia y evita la sobrecorrección",
+      "instruction": "Después de una corrección, espera mientras completas otra pasada de actitud, altitud, velocidad y rumbo. Si la desviación deja de crecer, mantén la nueva actitud y usa trim solo si queda presión. Si sigues corrigiendo arriba, abajo, izquierda y derecha sin esperar, detente: alas niveladas, referencia de actitud y barrido otra vez.",
+      "explanation": "Confirmar tendencia significa ver el mismo cambio en más de una mirada, no reaccionar a un instante. Una corrección pequeña puede tardar en reflejarse en altitud o velocidad. Encadenar entradas quita la oportunidad de saber cuál funcionó.",
+      "expectedResult": "La desviación se estabiliza o vuelve gradualmente hacia tu referencia sin oscilaciones grandes. Si el avión alterna ascenso y descenso o vira de un lado al otro, reduce las entradas, nivela alas y espera una pasada completa.",
+      "simulatorAction": "No cambies yoke, trim y throttle al mismo tiempo. Pausa o reinicia si pierdes margen sobre el terreno; el objetivo es observar una respuesta, no rescatar una situación difícil.",
+      "visual": {
+        "type": "comparisonDiagram",
+        "asset": "content/assets/c172-straight-level-correction.svg",
+        "alt": "Comparación conceptual: corrección pequeña seguida de espera frente a correcciones constantes que producen oscilaciones.",
+        "purpose": "Mostrar el error de perseguir cada cambio y la secuencia concreta que lo evita.",
+        "teaches": "Corregir una vez, observar una pasada completa y ajustar trim únicamente tras estabilizar.",
+        "userQuestionAnswered": [
+          "queErrorEvitar",
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 4,
+        "expectedObservation": "La línea de la corrección pequeña se aplana; la de entradas continuas cruza repetidamente la referencia y se vuelve inestable.",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce la diferencia entre una tendencia que se estabiliza y una oscilación causada por entradas continuas.",
+        "recognizedElements": [
+          "línea de referencia",
+          "corrección pequeña",
+          "oscilaciones"
+        ],
+        "actionAfterViewing": "Elige la columna izquierda: una entrada pequeña, yoke centrado, espera y una nueva comprobación."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "hardware",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/c172-straight-level-pfd-attitude.svg",
+          "alt": "Recreación fiel de PFD G1000 para volver a actitud, altitud y velocidad antes de corregir.",
+          "purpose": "Dar la referencia operativa que permite comprobar una tendencia antes de tocar de nuevo los controles.",
+          "teaches": "Reconocer actitud, cinta de altitud y cinta de velocidad durante una comprobación de estabilización.",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queCambioEsperar"
+          ],
+          "tiedToStep": 4,
+          "expectedObservation": "La actitud permanece estable y las cintas muestran si la tendencia persiste o se detiene.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce las zonas de PFD que confirman una tendencia antes de otra corrección.",
+          "recognizedElements": [
+            "horizonte artificial",
+            "cinta de velocidad",
+            "cinta de altitud"
+          ],
+          "actionAfterViewing": "Completa el barrido antes de mover de nuevo un control.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Indicador de actitud y cintas de velocidad y altitud en la PFD."
+          }
+        },
+        {
+          "type": "controlHighlight",
+          "asset": "public/references/turtlebeach-velocityone-official.png",
+          "alt": "Imagen oficial del VelocityOne con yoke, cuadrante y rueda de trim visibles.",
+          "purpose": "Mostrar los controles que deben permanecer separados mientras confirmas la tendencia.",
+          "teaches": "Reconocer yoke, throttle y trim sin asumir su asignación en el perfil activo.",
+          "userQuestionAnswered": [
+            "queControlTocar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 4,
+          "expectedObservation": "Yoke, palancas del cuadrante y rueda de trim se distinguen como controles separados.",
+          "view": "controlFisico",
+          "visualCategory": "reference",
+          "fidelity": "real",
+          "recognitionGoal": "Reconoce los tres controles antes de evitar movimientos simultáneos.",
+          "recognizedElements": [
+            "yoke VelocityOne",
+            "palanca de throttle",
+            "rueda de trim"
+          ],
+          "actionAfterViewing": "Haz una sola corrección y vuelve al barrido antes de usar otro control.",
+          "coverage": [
+            "hardware"
+          ],
+          "quality": {
+            "sourceWidth": 1106,
+            "sourceHeight": 840,
+            "intendedDisplayWidth": 500,
+            "supportsZoom": true,
+            "detailTarget": "Yoke, palancas del cuadrante y rueda de trim en el hardware real."
+          }
+        }
+      ]
     }
   ],
   "practice": {
-    "title": "Tres minutos de estabilidad observada",
-    "scenario": "C172 en vuelo libre, con horizonte visible, espacio sobre el terreno y sin una ruta o aproximación que seguir.",
-    "task": "Elige una dirección visual y una altitud de práctica ya establecida por tu situación. Durante tres minutos, repite el barrido de actitud, altitud y rumbo; corrige solo una tendencia cada vez con entradas pequeñas.",
-    "successSignal": "Mantienes una imagen de vuelo estable la mayor parte del ejercicio y puedes explicar qué tendencia viste antes de cada corrección."
+    "title": "Dos minutos de mirada, respuesta y espera",
+    "scenario": "C172 en Vuelo libre, de día, con clima despejado, horizonte visible y margen amplio sobre el terreno.",
+    "task": "Elige una imagen exterior de alas niveladas. Durante dos minutos repite el barrido actitud, altitud, velocidad, rumbo y actitud. Solo después de ver una tendencia en más de una pasada, usa una corrección pequeña, centra el yoke y espera otra pasada. Ajusta trim solo si queda presión continua.",
+    "successSignal": "Puedes decir qué tendencia viste, qué control tocaste y qué observaste después. Mantienes el avión estable sin una cadena continua de correcciones."
   },
   "commonMistakes": [
-    {"mistake": "Mirar fijamente la altitud y corregir cada cambio instantáneo.", "recovery": "Vuelve a la actitud, observa si existe una tendencia sostenida y realiza una entrada pequeña antes de comprobar de nuevo."},
-    {"mistake": "Usar el yoke para corregir altitud y rumbo a la vez con movimientos grandes.", "recovery": "Nivela las alas, estabiliza la actitud y atiende una desviación por vez."},
-    {"mistake": "Copiar una actitud exacta vista en otra variante o condiciones.", "recovery": "Usa esa imagen solo como concepto; ajusta por observación hasta que tu avión deje de ganar o perder altitud."}
+    {
+      "mistake": "Mirar solo el altímetro y mover el yoke cada vez que cambia.",
+      "recovery": "Vuelve a actitud/horizonte. Mira altitud en dos pasadas; si sigue la tendencia, haz una entrada pequeña y espera."
+    },
+    {
+      "mistake": "Usar trim para buscar una altitud mientras el yoke sigue cambiando la actitud.",
+      "recovery": "Primero estabiliza con yoke y céntralo. Solo entonces ajusta trim poco a poco para quitar presión."
+    },
+    {
+      "mistake": "Asumir que un botón concreto del VelocityOne activa trim o throttle.",
+      "recovery": "Abre el perfil activo en Controles o revisa FMD y confirma la acción antes de utilizarla durante el vuelo."
+    },
+    {
+      "mistake": "Corregir rumbo antes de nivelar alas.",
+      "recovery": "Nivela alas con una entrada suave, centra el yoke y vuelve al barrido."
+    }
   ],
   "checklist": [
-    "Situación de práctica con margen sobre el terreno confirmada",
-    "Horizonte y fuente de actitud visibles",
-    "Alas niveladas antes de evaluar el rumbo",
-    "Barrido repetido entre actitud, altitud y rumbo",
-    "Una sola corrección pequeña aplicada y comprobada",
-    "Oscilación detenida antes de continuar"
+    "Clima diurno despejado, horizonte visible y margen sobre el terreno",
+    "Imagen exterior de alas niveladas identificada",
+    "Barrido: actitud, altitud, velocidad, rumbo, actitud",
+    "Tendencia confirmada en más de una pasada antes de corregir",
+    "Una entrada pequeña al yoke y regreso al centro",
+    "Trim usado solo para quitar presión tras estabilizar",
+    "Asignaciones de VelocityOne verificadas en el perfil activo"
   ],
   "quiz": [
-    {"question": "¿Qué debes usar como referencia inicial antes de perseguir una altitud que cambia?", "options": ["La actitud y las alas niveladas", "Solo el número de altitud", "Una posición universal de potencia"], "answer": "La actitud y las alas niveladas", "explanation": "La actitud es la causa que controlas; altitud y rumbo te muestran después la tendencia."},
-    {"question": "Si una corrección hace que la desviación aumente, ¿qué haces primero?", "options": ["Encadeno más correcciones", "Recupero alas niveladas y reinicio el barrido", "Ignoro los instrumentos"], "answer": "Recupero alas niveladas y reinicio el barrido", "explanation": "Detener la cadena de entradas permite recuperar una referencia estable y observar antes de volver a corregir."}
+    {
+      "question": "¿Qué haces justo después de una entrada pequeña al yoke?",
+      "options": [
+        "Centro el yoke y completo otra pasada de instrumentos",
+        "Añado trim, throttle y otro movimiento al mismo tiempo",
+        "Miro solo el altímetro hasta que deje de cambiar"
+      ],
+      "answer": "Centro el yoke y completo otra pasada de instrumentos",
+      "explanation": "Esperar una pasada permite ver el efecto de una causa y evita la sobrecorrección."
+    },
+    {
+      "question": "¿Cuándo usas trim en esta práctica?",
+      "options": [
+        "Después de estabilizar la actitud, para quitar presión del yoke",
+        "Antes de mirar la actitud, para elegir una altitud",
+        "Cada vez que cambia una cifra del altímetro"
+      ],
+      "answer": "Después de estabilizar la actitud, para quitar presión del yoke",
+      "explanation": "El trim no reemplaza la corrección inicial con yoke; ayuda a mantenerla sin fuerza continua."
+    },
+    {
+      "question": "¿Qué confirma una tendencia?",
+      "options": [
+        "El mismo cambio continúa en más de una pasada",
+        "Una lectura aislada cambia una vez",
+        "Una posición fija del morro usada en otro vuelo"
+      ],
+      "answer": "El mismo cambio continúa en más de una pasada",
+      "explanation": "La tendencia es un cambio sostenido; observarla reduce reacciones innecesarias."
+    }
   ],
   "completionCriteria": [
-    "Puedes explicar el ciclo actitud, altitud, rumbo y vuelta a la actitud.",
-    "Has mantenido una condición de práctica estable durante tres minutos sin encadenar correcciones grandes.",
-    "Puedes reconocer una tendencia de altitud o rumbo y describir la corrección pequeña que intentaste."
+    "Preparaste un vuelo libre con horizonte visible y margen sobre el terreno.",
+    "Hiciste el barrido actitud, altitud, velocidad, rumbo y actitud.",
+    "Explicaste una tendencia observada y aplicaste una corrección pequeña antes de volver a mirar.",
+    "Usaste trim únicamente después de estabilizar y verificaste las acciones necesarias de tu perfil VelocityOne."
   ],
   "sources": [
-    {"title": "FAA Airplane Flying Handbook", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
-    {"title": "FAA Pilot's Handbook of Aeronautical Knowledge", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true}
+    {
+      "title": "FAA Airplane Flying Handbook",
+      "url": "https://www.faa.gov/regulations_policies/handbook",
+      "verified": true
+    },
+    {
+      "title": "FAA Pilot's Handbook of Aeronautical Knowledge",
+      "url": "https://www.faa.gov/regulations_policies/handbook",
+      "verified": true
+    },
+    {
+      "title": "Turtle Beach VelocityOne Flight: soporte y guía de configuración",
+      "url": "https://support.turtlebeach.com/",
+      "verified": true
+    }
   ]
 }

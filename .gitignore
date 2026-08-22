@@ -11,6 +11,23 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+!.env.example
+
+# Credentials and local agent state
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+.codex/
+.agents/
+
+# Local temporary files
+tmp/
+temp/
 
 # Editor directories and files
 .vscode/*

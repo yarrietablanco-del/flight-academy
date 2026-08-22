@@ -2,8 +2,18 @@
 
 1. Lee `AGENTS.md`, el schema y el registro de currículo antes de generar.
 2. Genera un solo JSON por lección en `content/lessons/<id>.json` y recursos SVG en `content/assets/` cuando sean pedagógicamente exactos.
-3. Cada paso contiene una acción MSFS, resultado esperado y visual. Para hardware/cockpit/cartas sin referencia fiable usa `requiresReference: true`; no inventes.
-4. Máximo 420 caracteres por bloque de texto editorial; divide instrucciones complejas en pasos.
-5. Antes de marcar validada ejecuta `node authoring/validate-content.mjs --lesson <id>`.
-6. No cambies la UI ni el currículo salvo los archivos de lección/asset requeridos para la lección solicitada.
-7. Tras pasar validación, actualiza el estado editorial en `curriculum/curriculum.json` a `validated`. Solo el mantenedor publica a `published`.
+3. Cada paso contiene una acción MSFS, resultado esperado y un visual ligado exclusivamente a ese paso. Para hardware/cockpit/cartas sin referencia fiable usa `requiresReference: true`; no inventes.
+4. Todo documento nuevo o revisado debe declarar `metadata.visualStandardVersion: 2`. Un visual no es decoración: debe responder de forma explícita al menos una pregunta del alumno: `dondeMirar`, `queControlTocar`, `queCambioEsperar` o `queErrorEvitar`.
+5. Clasifica obligatoriamente cada visual como `visualCategory: conceptual` o `visualCategory: reference`. Un `conceptual` enseña una relación, comparación o secuencia que no requiere reconocer un objeto real; puede tener `fidelity: conceptual`.
+6. Usa `visualCategory: reference` cuando el alumno necesite reconocer algo dentro de MSFS o del hardware: instrumento, panel, cockpit, control físico, vista exterior operativa, taxi, carta o pantalla. Debe ser una imagen real (`fidelity: real`) o una recreación fiel y reconocible (`fidelity: recreated-faithful`), nunca una representación ambigua.
+7. Todo visual debe declarar `purpose`, `teaches`, `userQuestionAnswered`, `tiedToStep`, `expectedObservation`, `view`, `recognitionGoal`, `recognizedElements`, `actionAfterViewing` y `fidelity`. En una referencia, `recognizedElements` nombra exactamente qué debe localizar el alumno y `actionAfterViewing` indica la acción inmediata tras reconocerlo.
+8. `view` debe decir qué representa el visual: `vistaExterior`, `instrumento`, `controlFisico`, `flujo` o `comparacion`. No clasifiques como conceptual un instrumento, cockpit, control físico o vista exterior que se use para ejecutar una acción. Una recreación fiel debe conservar los rasgos que permiten reconocer el elemento, con etiquetas y contexto de uso.
+9. Antes de dibujar, escribe el contrato didáctico: qué ve (`view`), por qué (`purpose`), qué reconoce (`recognitionGoal`), qué observa (`expectedObservation`) y qué hace después (`actionAfterViewing`). Si falta cualquiera, el visual es insuficiente.
+10. En una representación de VelocityOne, cabina real o carta, confirma fuente, perfil y acción. Si no existe referencia suficiente para una referencia operativa, no inventes una disposición: marca `requiresReference: true`.
+11. Estándar Visual Quality V3: cada `referenceVisual` declara `quality` con dimensiones fuente, ancho normal de render, soporte de zoom y objetivo del detalle. Un raster debe tener al menos 2× el ancho normal de render, conservar proporción y usar PNG para interfaces, instrumentos, texto y diagramas. Si una recreación fiel puede ser SVG, prefiérela para conservar la legibilidad.
+12. Si una referencia contiene muchos detalles, enseña primero el contexto completo, resalta la zona relevante y ofrece un zoom nítido de esa zona. Nunca obligues al alumno a descifrar una captura pequeña ni amplíes un raster más allá de su resolución natural.
+13. Máximo 420 caracteres por bloque de texto editorial; divide instrucciones complejas en pasos.
+14. Estándar V3 Required Visual Coverage: cada paso V3 declara `requiredVisualCoverage`. Para cada tipo que el paso exige reconocer o manipular (`cockpit`, `instrument`, `hardware`, `chart`, `exteriorView` o `airport`), usa `status: required` y aporta en `referenceVisuals` una referencia fiel, con asset y `coverage` que incluya el mismo tipo. Un visual conceptual nunca cubre este requisito. Usa `status: notRequired` solo con una razón concreta de por qué esa referencia no añade valor didáctico.
+15. Antes de marcar validada ejecuta `node authoring/validate-content.mjs --lesson <id>`.
+15. No cambies la UI ni el currículo salvo los archivos de lección/asset requeridos para la lección solicitada.
+16. Tras pasar validación, actualiza el estado editorial en `curriculum/curriculum.json` a `validated`. Solo el mantenedor publica a `published`.

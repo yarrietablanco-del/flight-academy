@@ -1,16 +1,206 @@
 {
-  "metadata":{"id":"sensitivity-curves-deadzone","title":"Qué son sensibilidad, curva de respuesta y dead zone","subtitle":"Ajusta solo después de observar un problema real.","objective":"Distinguir tres ajustes de entrada y decidir cuándo no tocarlos.","estimatedTime":"14 min","prerequisites":["velocityone-response-check"],"level":0,"module":"hardware"},
-  "whyItMatters":"Un ajuste sin diagnóstico puede ocultar un problema de calibración o crear un avión impredecible. Primero se observa; después se cambia una sola cosa.",
-  "concepts":[{"term":"Sensibilidad","meaning":"Qué tanto cambia la salida del simulador ante un movimiento del control."},{"term":"Curva de respuesta","meaning":"La relación entre cuánto mueves un eje y la respuesta enviada a MSFS."},{"term":"Dead zone","meaning":"Zona cercana al centro que ignora movimientos pequeños."}],
-  "steps":[
-    {"number":1,"title":"Lee el gráfico antes de ajustar","instruction":"Compara la línea recta, la zona muerta y la curva suave en el diagrama.","explanation":"No son mejoras universales: cada una cambia cómo se traduce el mismo movimiento físico.","expectedResult":"Puedes explicar qué ocurre cerca del centro de cada gráfico.","simulatorAction":"No modifiques valores aún.","visual":{"type":"comparisonDiagram","asset":"content/assets/sensitivity-deadzone.svg","alt":"Comparación visual de respuesta lineal, dead zone y curva suave"}},
-    {"number":2,"title":"Busca un síntoma concreto","instruction":"Con el avión inmovilizado, suelta el yoke y observa si una entrada cambia sin tocarla.","explanation":"Una dead zone solo tiene sentido si hay ruido o deriva real alrededor del centro.","expectedResult":"Has observado si existe o no un movimiento no deseado.","simulatorAction":"En el perfil activo, abre los ajustes del eje que estás observando.","visual":{"type":"controlHighlight","requiresReference":true,"alt":"Ajustes de sensibilidad del eje en la versión actual de MSFS"},"warning":"No uses una dead zone grande para compensar falta de práctica."},
-    {"number":3,"title":"Cambia una variable y vuelve a probar","instruction":"Si confirmaste un síntoma, aplica un cambio pequeño y verificable a un único eje; después repite la prueba.","explanation":"La comparación antes/después muestra si el cambio resolvió el problema o solo lo desplazó.","expectedResult":"Puedes decir qué ajuste cambiaste y qué efecto observaste.","simulatorAction":"Guarda el perfil solo si la respuesta es consistente.","visual":{"type":"diagram","asset":"content/assets/learning-loop.svg","alt":"Ciclo de ajustar, probar, observar y repetir"},"tip":"Los valores dependen de tu unidad, calibración y preferencia; no copies números sin verificarlos."}
+  "metadata": {
+    "id": "sensitivity-curves-deadzone",
+    "title": "Qué son sensibilidad, curva de respuesta y dead zone",
+    "subtitle": "Ajusta solo después de observar un problema real.",
+    "objective": "Distinguir tres ajustes de entrada y decidir cuándo no tocarlos.",
+    "estimatedTime": "14 min",
+    "prerequisites": [
+      "velocityone-response-check"
+    ],
+    "level": 0,
+    "module": "hardware",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "Un ajuste sin diagnóstico puede ocultar un problema de calibración o crear un avión impredecible. Primero se observa; después se cambia una sola cosa.",
+  "concepts": [
+    {
+      "term": "Sensibilidad",
+      "meaning": "Qué tanto cambia la salida del simulador ante un movimiento del control."
+    },
+    {
+      "term": "Curva de respuesta",
+      "meaning": "La relación entre cuánto mueves un eje y la respuesta enviada a MSFS."
+    },
+    {
+      "term": "Dead zone",
+      "meaning": "Zona cercana al centro que ignora movimientos pequeños."
+    }
   ],
-  "practice":{"title":"Diagnóstico de un eje","scenario":"C172 estacionado y perfil C172 Training activo.","task":"Elige solo elevador o alerones. Observa el centro, anota el síntoma si existe y realiza como máximo un ajuste antes de volver a probar.","successSignal":"Tienes una observación antes/después, incluso si decides dejar el ajuste por defecto."},
-  "commonMistakes":[{"mistake":"Cambiar curvas, sensibilidad y dead zone a la vez.","recovery":"Restablece el eje y cambia una variable por prueba."},{"mistake":"Copiar valores de otra persona.","recovery":"Parte de tu síntoma y de tu propio hardware calibrado."}],
-  "checklist":["Conceptos diferenciados","Síntoma observado","Un eje elegido","Una variable como máximo cambiada","Prueba repetida"],
-  "quiz":[{"question":"¿Cuándo tiene sentido añadir dead zone?","options":["Cuando existe ruido o deriva cerca del centro","Siempre antes del primer vuelo","Para hacer el avión más rápido"],"answer":"Cuando existe ruido o deriva cerca del centro","explanation":"La zona muerta ignora movimiento pequeño; no sustituye un diagnóstico."}],
-  "completionCriteria":["Puedes diferenciar sensibilidad, curva y dead zone","Has tomado una decisión basada en una prueba"],
-  "sources":[{"title":"Microsoft Flight Simulator Support","url":"https://flightsimulator.zendesk.com/","verified":true},{"title":"Turtle Beach VelocityOne Flight","url":"https://www.turtlebeach.com/products/velocity-one-flight","verified":true}]
+  "steps": [
+    {
+      "number": 1,
+      "title": "Lee el gráfico antes de ajustar",
+      "instruction": "Compara la línea recta, la zona muerta y la curva suave en el diagrama.",
+      "explanation": "No son mejoras universales: cada una cambia cómo se traduce el mismo movimiento físico.",
+      "expectedResult": "Puedes explicar qué ocurre cerca del centro de cada gráfico.",
+      "simulatorAction": "No modifiques valores aún.",
+      "visual": {
+        "type": "comparisonDiagram",
+        "asset": "content/assets/sensitivity-deadzone.svg",
+        "alt": "Comparación conceptual de respuesta lineal, dead zone y curva suave.",
+        "purpose": "Comparar tres relaciones entre movimiento físico y respuesta antes de tocar ajustes.",
+        "teaches": "Reconocer el centro sin respuesta y el cambio gradual de una curva frente a una línea recta.",
+        "userQuestionAnswered": [
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "La dead zone ignora parte del centro y la curva suave cambia la respuesta cerca de ese centro.",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce relaciones de entrada y salida, no controles ni pantallas exactas de MSFS.",
+        "recognizedElements": [
+          "línea recta",
+          "dead zone central",
+          "curva suave"
+        ],
+        "actionAfterViewing": "No modifiques valores todavía; observa primero un síntoma concreto en el eje elegido."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "El paso explica una relación o una decisión y no requiere reconocer una cabina, pantalla, instrumento o control concreto."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Busca un síntoma concreto",
+      "instruction": "Con el avión inmovilizado, suelta el yoke y observa si una entrada cambia sin tocarla.",
+      "explanation": "Una dead zone solo tiene sentido si hay ruido o deriva real alrededor del centro.",
+      "expectedResult": "Has observado si existe o no un movimiento no deseado.",
+      "simulatorAction": "En el perfil activo, abre los ajustes del eje que estás observando.",
+      "visual": {
+        "type": "controlHighlight",
+        "asset": "public/control-menu-guide.svg",
+        "alt": "Recreación fiel de la ruta de MSFS hasta Controles para abrir el perfil del eje.",
+        "purpose": "Dar una referencia reconocible de la ruta de menú antes de buscar los ajustes del eje activo.",
+        "teaches": "Llegar a Controles y seleccionar el dispositivo antes de cambiar cualquier ajuste.",
+        "userQuestionAnswered": [
+          "dondeMirar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "La ruta termina en Controles, donde puedes seleccionar el dispositivo y el eje que estás observando.",
+        "view": "flujo",
+        "visualCategory": "reference",
+        "fidelity": "recreated-faithful",
+        "recognitionGoal": "Reconoce la ruta hacia Configuración y Controles de MSFS para abrir el perfil activo.",
+        "recognizedElements": [
+          "Pausa",
+          "Configuración",
+          "Controles"
+        ],
+        "actionAfterViewing": "Abre los ajustes del eje observado solo después de confirmar un síntoma alrededor del centro.",
+        "quality": {
+          "sourceWidth": 1200,
+          "sourceHeight": 640,
+          "intendedDisplayWidth": 760,
+          "supportsZoom": true,
+          "detailTarget": "La tarjeta Controles y la ruta de acceso que debes seguir antes de editar el perfil."
+        },
+        "coverage": [
+          "cockpit"
+        ]
+      },
+      "warning": "No uses una dead zone grande para compensar falta de práctica.",
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "required"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Cambia una variable y vuelve a probar",
+      "instruction": "Si confirmaste un síntoma, aplica un cambio pequeño y verificable a un único eje; después repite la prueba.",
+      "explanation": "La comparación antes/después muestra si el cambio resolvió el problema o solo lo desplazó.",
+      "expectedResult": "Puedes decir qué ajuste cambiaste y qué efecto observaste.",
+      "simulatorAction": "Guarda el perfil solo si la respuesta es consistente.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/learning-loop.svg",
+        "alt": "Ciclo conceptual de ajustar, probar, observar y repetir.",
+        "purpose": "Recordar que se cambia una variable y se comprueba su efecto antes de guardar.",
+        "teaches": "Separar el ajuste de una sola prueba y de la observación posterior.",
+        "userQuestionAnswered": [
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "Cada vuelta del ciclo incluye una prueba y una observación antes de un nuevo ajuste.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce el ciclo de diagnóstico, no un valor técnico que debas copiar.",
+        "recognizedElements": [
+          "ajustar",
+          "probar",
+          "observar",
+          "repetir"
+        ],
+        "actionAfterViewing": "Cambia una sola variable y repite la misma prueba antes de guardar el perfil."
+      },
+      "tip": "Los valores dependen de tu unidad, calibración y preferencia; no copies números sin verificarlos.",
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "El paso explica una relación o una decisión y no requiere reconocer una cabina, pantalla, instrumento o control concreto."
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "title": "Diagnóstico de un eje",
+    "scenario": "C172 estacionado y perfil C172 Training activo.",
+    "task": "Elige solo elevador o alerones. Observa el centro, anota el síntoma si existe y realiza como máximo un ajuste antes de volver a probar.",
+    "successSignal": "Tienes una observación antes/después, incluso si decides dejar el ajuste por defecto."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Cambiar curvas, sensibilidad y dead zone a la vez.",
+      "recovery": "Restablece el eje y cambia una variable por prueba."
+    },
+    {
+      "mistake": "Copiar valores de otra persona.",
+      "recovery": "Parte de tu síntoma y de tu propio hardware calibrado."
+    }
+  ],
+  "checklist": [
+    "Conceptos diferenciados",
+    "Síntoma observado",
+    "Un eje elegido",
+    "Una variable como máximo cambiada",
+    "Prueba repetida"
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuándo tiene sentido añadir dead zone?",
+      "options": [
+        "Cuando existe ruido o deriva cerca del centro",
+        "Siempre antes del primer vuelo",
+        "Para hacer el avión más rápido"
+      ],
+      "answer": "Cuando existe ruido o deriva cerca del centro",
+      "explanation": "La zona muerta ignora movimiento pequeño; no sustituye un diagnóstico."
+    }
+  ],
+  "completionCriteria": [
+    "Puedes diferenciar sensibilidad, curva y dead zone",
+    "Has tomado una decisión basada en una prueba"
+  ],
+  "sources": [
+    {
+      "title": "Microsoft Flight Simulator Support",
+      "url": "https://flightsimulator.zendesk.com/",
+      "verified": true
+    },
+    {
+      "title": "Turtle Beach VelocityOne Flight",
+      "url": "https://www.turtlebeach.com/products/velocity-one-flight",
+      "verified": true
+    }
+  ]
 }

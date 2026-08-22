@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">PFD G1000: contexto completo y actitud ampliada</title>
+  <desc id="desc">Recreación fiel de una PFD Garmin G1000. La pantalla completa sitúa la actitud, velocidad, altitud y rumbo; un recuadro resalta y amplía el indicador de actitud con pitch y bank.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f7c948"/></marker>
+    <style>.label{font-family:Arial,sans-serif;fill:#eaf4f8}.small{font-family:Arial,sans-serif;fill:#dbe8ef;font-size:21px}.tick{stroke:#eef7fa;stroke-width:4}.minor{stroke:#dbe8ef;stroke-width:2}.box{fill:#17242c;stroke:#aebfc8;stroke-width:3}</style>
+  </defs>
+  <rect width="1600" height="900" fill="#f4f7f8"/>
+  <text x="800" y="55" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#17364a">PFD G1000: CONTEXTO COMPLETO + ACTITUD AMPLIADA</text>
+  <text x="800" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#466174">Primero reconoce la pantalla completa; después mira el detalle amarillo.</text>
+  <g transform="translate(70 135)">
+    <rect width="690" height="600" rx="15" fill="#111a20" stroke="#526975" stroke-width="9"/>
+    <text x="345" y="35" text-anchor="middle" class="small">PFD COMPLETA · C172 G1000</text>
+    <rect x="22" y="55" width="646" height="34" fill="#23333d"/><text x="35" y="79" class="small">NAV 1 108.00</text><text x="490" y="79" class="small">COM 1 118.00</text>
+    <rect x="55" y="112" width="82" height="375" class="box"/><text x="96" y="140" text-anchor="middle" class="small">IAS</text><text x="96" y="185" text-anchor="middle" font-family="Arial" font-size="30" fill="#fff">110</text><path d="M122 160V455" stroke="#2de172" stroke-width="8"/><g class="small" text-anchor="middle"><text x="94" y="230">100</text><text x="94" y="300">90</text><text x="94" y="370">80</text><text x="94" y="440">70</text></g>
+    <clipPath id="attitudeClip"><rect x="155" y="112" width="380" height="375"/></clipPath><g clip-path="url(#attitudeClip)"><rect x="155" y="112" width="380" height="188" fill="#1971aa"/><rect x="155" y="300" width="380" height="187" fill="#895a32"/><path d="M155 300H535" stroke="#fff" stroke-width="5"/><g class="tick"><path d="M320 160H370M330 200H360M300 240H390M330 360H360M300 400H390M320 440H370"/></g><g class="small" text-anchor="middle"><text x="278" y="245">10</text><text x="420" y="245">10</text><text x="278" y="405">10</text><text x="420" y="405">10</text></g></g>
+    <path d="M205 305H300L345 278L390 305H485L420 330H270Z" fill="#f7c948" stroke="#111a20" stroke-width="4"/><path d="M345 112V142" stroke="#fff" stroke-width="6"/><path d="M265 145A95 95 0 0 1 425 145" fill="none" stroke="#eaf4f8" stroke-width="4"/><path d="M345 124L332 150H358Z" fill="#fff"/>
+    <rect x="553" y="112" width="82" height="375" class="box"/><text x="594" y="140" text-anchor="middle" class="small">ALT</text><text x="594" y="185" text-anchor="middle" font-family="Arial" font-size="28" fill="#fff">5 000</text><path d="M565 160V455" stroke="#48b7ff" stroke-width="8"/><g class="small" text-anchor="middle"><text x="595" y="230">5 100</text><text x="595" y="300">5 000</text><text x="595" y="370">4 900</text><text x="595" y="440">4 800</text></g>
+    <rect x="155" y="510" width="380" height="84" class="box"/><path d="M185 566A160 160 0 0 1 505 566" fill="none" stroke="#eaf4f8" stroke-width="4"/><text x="345" y="574" text-anchor="middle" font-family="Arial" font-size="33" fill="#fff">108°</text><text x="210" y="548" class="small">N</text><text x="340" y="532" class="small">E</text><text x="480" y="548" class="small">S</text>
+    <rect x="150" y="107" width="390" height="385" fill="none" stroke="#f7c948" stroke-width="8" rx="4"/><rect x="215" y="94" width="260" height="36" rx="18" fill="#f7c948"/><text x="345" y="119" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="#17242c">MIRA ESTA ZONA</text>
+    <text x="96" y="635" text-anchor="middle" font-family="Arial" font-size="18" fill="#17364a">VELOCIDAD</text><text x="345" y="635" text-anchor="middle" font-family="Arial" font-size="18" fill="#17364a">ACTITUD</text><text x="594" y="635" text-anchor="middle" font-family="Arial" font-size="18" fill="#17364a">ALTITUD</text>
+  </g>
+  <path d="M775 430C865 410 880 370 930 360" fill="none" stroke="#f7c948" stroke-width="8" marker-end="url(#arrow)"/>
+  <g transform="translate(925 130)">
+    <rect width="605" height="605" rx="18" fill="#17242c" stroke="#f7c948" stroke-width="8"/><text x="302" y="47" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#f7c948">ZOOM: INDICADOR DE ACTITUD</text>
+    <rect x="35" y="85" width="535" height="255" fill="#1971aa"/><rect x="35" y="340" width="535" height="220" fill="#895a32"/><path d="M35 340H570" stroke="#fff" stroke-width="8"/>
+    <g class="tick"><path d="M245 150H360M260 205H345M210 260H395M260 420H345M210 480H395M245 535H360" stroke-width="7"/></g><g font-family="Arial" font-size="27" fill="#fff"><text x="180" y="268">10</text><text x="410" y="268">10</text><text x="180" y="490">10</text><text x="410" y="490">10</text></g>
+    <path d="M105 349H245L302 310L359 349H499L417 382H187Z" fill="#f7c948" stroke="#111a20" stroke-width="5"/><text x="302" y="407" text-anchor="middle" font-family="Arial" font-size="22" fill="#fff">ALAS DE REFERENCIA</text>
+    <path d="M195 118A135 135 0 0 1 409 118" fill="none" stroke="#eaf4f8" stroke-width="7"/><path d="M302 90L284 125H320Z" fill="#fff"/><text x="302" y="155" text-anchor="middle" font-family="Arial" font-size="21" fill="#fff">BANK: inclinación de alas</text>
+    <path d="M470 215L405 245" stroke="#f7c948" stroke-width="5" marker-end="url(#arrow)"/><text x="478" y="198" font-family="Arial" font-size="21" fill="#f7c948">PITCH: marcas</text><text x="478" y="223" font-family="Arial" font-size="21" fill="#f7c948">arriba / abajo</text>
+    <rect x="55" y="575" width="495" height="18" rx="9" fill="#f7c948"/>
+  </g>
+  <text x="800" y="820" text-anchor="middle" font-family="Arial" font-size="24" fill="#17364a">Después: actitud primero; luego altitud, velocidad, rumbo y vuelta a actitud.</text>
+</svg>

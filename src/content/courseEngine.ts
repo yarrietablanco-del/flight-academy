@@ -6,13 +6,26 @@ export type LessonVisual = {
   alt: string;
   asset?: string;
   requiresReference?: boolean;
+  purpose: string;
+  teaches: string;
+  userQuestionAnswered: ("dondeMirar" | "queControlTocar" | "queCambioEsperar" | "queErrorEvitar")[];
+  tiedToStep: number;
+  expectedObservation: string;
+  view: "vistaExterior" | "instrumento" | "controlFisico" | "flujo" | "comparacion";
+  visualCategory: "conceptual" | "reference";
+  fidelity: "conceptual" | "recreated-faithful" | "real";
+  recognitionGoal: string;
+  recognizedElements: string[];
+  actionAfterViewing: string;
+  coverage?: ("cockpit" | "instrument" | "hardware" | "chart" | "exteriorView" | "airport")[];
+  quality?: { sourceWidth: number; sourceHeight: number; intendedDisplayWidth: number; supportsZoom: boolean; detailTarget: string };
 };
 
 export type LessonDocument = {
-  metadata: { id: string; title: string; subtitle: string; objective: string; estimatedTime: string; prerequisites: string[]; level: number; module: string };
+  metadata: { id: string; title: string; subtitle: string; objective: string; estimatedTime: string; prerequisites: string[]; level: number; module: string; visualStandardVersion?: 2 | 3 };
   whyItMatters: string;
   concepts: { term: string; meaning: string }[];
-  steps: { number: number; title: string; instruction: string; explanation: string; expectedResult: string; simulatorAction: string; visual: LessonVisual; warning?: string; tip?: string }[];
+  steps: { number: number; title: string; instruction: string; explanation: string; expectedResult: string; simulatorAction: string; visual: LessonVisual; referenceVisuals?: LessonVisual[]; warning?: string; tip?: string }[];
   practice: { title: string; scenario: string; task: string; successSignal: string };
   commonMistakes: { mistake: string; recovery: string }[];
   checklist: string[];
