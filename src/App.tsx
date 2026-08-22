@@ -1298,6 +1298,19 @@ function VelocityOne() {
           </button>
         </div>
       </section>
+      <section className="velocityone-verify" aria-label="Comprobación de perfil VelocityOne">
+        <div>
+          <p className="eyebrow">ANTES DE CONFIAR EN EL MAPA</p>
+          <h2>Comprueba tu perfil real en 90 segundos</h2>
+          <p>La función impresa en esta guía corresponde al perfil <strong>Single-Engine Prop</strong> del VelocityOne. MSFS 2024 puede conservar, cambiar o dejar sin asignar una acción; por eso confirmas primero lo que tu simulador recibió.</p>
+        </div>
+        <ol>
+          <li><b>1</b><span>En la pantalla FMD del VelocityOne, mira la esquina superior izquierda: debe decir <strong>Single-Engine Prop</strong>. Si no coincide, entra a <strong>PROFILE</strong> y selecciónalo.</span></li>
+          <li><b>2</b><span>En el mismo FMD entra a <strong>TRAINING</strong>. Pulsa un control físico y confirma que la pantalla nombra la entrada que estás tocando.</span></li>
+          <li><b>3</b><span>En MSFS 2024 abre <strong>Configuración → Controles → Turtle Beach VelocityOne Flight</strong>. Comprueba el nombre del perfil activo antes de editar nada.</span></li>
+          <li><b>4</b><span>Busca una acción, pulsa <strong>Buscar entrada</strong> y toca el control. Si lo que ve MSFS no coincide con este mapa, manda esa diferencia mediante el feedback de la lección.</span></li>
+        </ol>
+      </section>
       <section className="section-head">
         <div>
           <p className="eyebrow">ÁREAS DEL CONTROL</p>
@@ -1326,6 +1339,7 @@ function VelocityOne() {
             </article>
           ))}
         </div>
+        <p className="velocityone-source-note">Referencia: perfil oficial <strong>Single-Engine Prop</strong>. Si tu FMD o MSFS 2024 muestra otra acción, tu perfil activo tiene prioridad: no reasignes por memoria.</p>
       </section>
     </>
   );

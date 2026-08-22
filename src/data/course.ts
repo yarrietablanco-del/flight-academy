@@ -1489,7 +1489,7 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
         kind: "APRENDE",
         title: "Mapa de asignaciones: QUAD",
         content:
-          "PALANCA NEGRA → “Throttle 1 Axis” o “Throttle Axis”: potencia del motor.\nEn los diez botones blancos del cuadrante: B4 es el botón de ABAJO en la primera columna y activa o libera el freno de estacionamiento.\nB7 es el botón de ARRIBA en la tercera columna; B8 es el de ABAJO justo debajo. B7 disminuye flaps y B8 aumenta flaps: no los usarás hasta la lección de aproximación.\nPALANCA AZUL y PALANCA ROJA: Propeller y Mixture se explican más adelante; no las configures todavía.\nRUEDA TRIM → “Elevator Trim”: sirve para quitar presión del yoke cuando ya estás en vuelo estable. No la muevas al azar en esta primera configuración.",
+          "PALANCA NEGRA → “Throttle 1 Axis” o “Throttle Axis”: potencia del motor.\nEn los diez botones blancos del cuadrante, B4 está ABAJO en la primera columna; B7 está ARRIBA en la tercera y B8 justo debajo. En el perfil Single-Engine Prop suelen corresponder a parking brake y flaps, pero no los des por hechos: confirma cada acción con TRAINING en el FMD y con Buscar entrada en MSFS.\nPALANCA AZUL y PALANCA ROJA: Propeller y Mixture se explican más adelante; no las configures todavía.\nRUEDA TRIM → “Elevator Trim”: sirve para quitar presión del yoke cuando ya estás en vuelo estable. No la muevas al azar en esta primera configuración.",
       },
       {
         kind: "ERRORES COMUNES",
@@ -1502,7 +1502,7 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
       "Perfil Single-Engine Prop seleccionado en el control y en MSFS",
       "VelocityOne Flight identificado en MSFS",
       "Volante, LT/RT, LB/RB ubicados",
-      "Palanca negra, B4, B7/B8 y rueda Trim ubicados",
+      "Palanca negra, B4, B7/B8 y rueda Trim ubicados y comprobados",
     ],
     exercise: {
       title: "No asignes todavía: verifica el mapa",
@@ -1517,7 +1517,7 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
         kind: "PROCEDIMIENTO",
         title: "Comprueba y asigna solo si falta algo",
         content:
-        "Hazlo con el avión detenido y freno de estacionamiento aplicado.\n1. En VelocityOne Flight, busca “Aileron Axis”. Gira el volante: si la barra no se mueve, pulsa buscar entrada y gira el volante; confirma.\n2. Busca “Elevator Axis”. Empuja/tira: si no se mueve, asigna ese movimiento.\n3. Busca “Left Brake” y “Right Brake”. Pulsa los botones superiores de los agarres izquierdo (LB) y derecho (RB), respectivamente; después prueba ambos juntos.\n4. Busca “Parking Brake”. Pulsa B4: botón blanco de ABAJO en la primera columna del cuadrante.\n5. Busca “Increase Flaps” y “Decrease Flaps”. B8 es el botón blanco de ABAJO en la tercera columna y B7 está justo arriba; todavía no los necesitas para rodar.\n6. Busca “Throttle 1 Axis”. Mueve únicamente la palanca negra.\n7. Comprueba “Rudder Axis” con LT y RT en el yoke. No necesitas pedales para este curso inicial.",
+        "Hazlo con el avión detenido y freno de estacionamiento aplicado.\n1. En VelocityOne Flight, busca “Aileron Axis”. Gira el volante: si la barra no se mueve, pulsa buscar entrada y gira el volante; confirma.\n2. Busca “Elevator Axis”. Empuja/tira: si no se mueve, asigna ese movimiento.\n3. Busca “Left Brake” y “Right Brake”. Pulsa los botones superiores de los agarres izquierdo (LB) y derecho (RB), respectivamente; después prueba ambos juntos.\n4. Busca “Parking Brake” y pulsa Buscar entrada. Presiona B4 (abajo, primera columna) solo para confirmar si tu perfil lo reconoce; si no lo hace, no continúes taxi hasta decidir una asignación de entrenamiento.\n5. Repite la comprobación con “Increase Flaps” y “Decrease Flaps”: B8 está abajo y B7 arriba en la tercera columna. Todavía no los necesitas para rodar.\n6. Busca “Throttle 1 Axis”. Mueve únicamente la palanca negra.\n7. Comprueba “Rudder Axis” con LT y RT en el yoke. No necesitas pedales para este curso inicial.",
       },
       {
         kind: "APRENDE",
@@ -1536,15 +1536,15 @@ const velocityOneC172Details: Record<string, Partial<Lesson>> = {
       "Aileron Axis comprobado",
       "Elevator Axis comprobado",
       "LB/RB frenos comprobados",
-      "B4 para freno de estacionamiento comprobado",
-      "B7/B8 para flaps comprobados",
+      "Acción de B4 para parking brake comprobada",
+      "Acciones de B7/B8 para flaps comprobadas",
       "Palanca negra para Throttle Axis comprobada",
       "Rudder comprobado con pedales o LT/RT",
     ],
     exercise: {
       title: "Las siete asignaciones de principiante",
       instructions:
-        "Tu único objetivo es que estas siete funciones respondan: Aileron Axis, Elevator Axis, Rudder Axis con LT/RT, Left/Right Brake con LB/RB, Parking Brake con B4, Increase/Decrease Flaps con B8/B7 y Throttle 1 Axis con la palanca negra. Termina solo cuando sepas qué pieza física corresponde a cada nombre.",
+        "Tu único objetivo es que estas siete funciones respondan: Aileron Axis, Elevator Axis, Rudder Axis con LT/RT, Left/Right Brake con LB/RB, Parking Brake, Increase/Decrease Flaps y Throttle 1 Axis con la palanca negra. Escribe junto a cada función qué botón reconoce TU perfil. Termina solo cuando sepas qué pieza física corresponde a cada nombre.",
     },
   },
 };
@@ -2353,12 +2353,12 @@ const beginnerGroundCorrections: Record<string, Partial<Lesson>> = {
       {
         kind: "PROCEDIMIENTO",
         title: "Una vuelta corta en plataforma",
-        content: "1. Comprueba que tienes espacio despejado delante.\n2. Libera el freno de estacionamiento con B4: botón blanco de ABAJO, primera columna del cuadrante.\n3. Empuja la palanca negra apenas hacia delante hasta que el avión comience a moverse.\n4. Vuelve la palanca negra al mínimo; el avión debe seguir rodando lentamente.\n5. Presiona LB y RB juntos con suavidad hasta detenerte.\n6. Con el avión quieto, vuelve a poner B4. Repite solo una vez. No sigas la ruta de taxi todavía.",
+        content: "1. Comprueba que tienes espacio despejado delante.\n2. Libera el freno de estacionamiento con el botón que confirmaste en la lección de controles (B4 solo si tu perfil lo reconoció como Parking Brake).\n3. Empuja la palanca negra apenas hacia delante hasta que el avión comience a moverse.\n4. Vuelve la palanca negra al mínimo; el avión debe seguir rodando lentamente.\n5. Presiona LB y RB juntos con suavidad hasta detenerte.\n6. Con el avión quieto, vuelve a aplicar el freno de estacionamiento. Repite solo una vez. No sigas la ruta de taxi todavía.",
       },
       {
         kind: "ERRORES COMUNES",
         title: "Si algo no sale bien",
-        content: "Si acelera demasiado: palanca negra al mínimo y LB/RB juntos. Si gira: frena, detente y reinicia recto; no intentes corregir aumentando potencia. Si B4, LB o RB no hacen lo que esta lección dice, detente y vuelve a la comprobación visual del VelocityOne: no sigas a la pista con un freno que no reconoces.",
+        content: "Si acelera demasiado: palanca negra al mínimo y LB/RB juntos. Si gira: frena, detente y reinicia recto; no intentes corregir aumentando potencia. Si el botón de parking, LB o RB no hacen lo que esta lección dice, detente y vuelve a la comprobación visual del VelocityOne: no sigas a la pista con un freno que no reconoces.",
       },
     ] as Lesson["sections"],
     checklist: ["B4 ubicado y liberado", "Palanca negra usada solo un poco", "LB y RB probados juntos", "Avión detenido", "B4 aplicado de nuevo", "Pista no utilizada"],
