@@ -1403,6 +1403,23 @@ main {
 .feedback-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
 .feedback-copy { border: 1px solid #376960; border-radius: 5px; padding: 9px 12px; background: transparent; color: #24564d; font-size: 11px; font-weight: 700; }
 .lesson-feedback small { display: block; margin-top: 10px; color: #467168; font-size: 11px; }
+.feedback-inbox { max-width: 980px; margin: 0 auto; padding: 54px 58px; }
+.feedback-inbox h1 { margin: 5px 0 10px; color: #173b35; font: 600 clamp(34px, 5vw, 52px) "Playfair Display", serif; }
+.feedback-inbox-intro { max-width: 650px; margin: 0; color: #556a64; line-height: 1.65; }
+.feedback-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 28px 0 16px; padding: 15px 17px; border: 1px solid #b7d4ca; border-radius: 8px; background: #eff8f3; color: #31564d; }
+.feedback-summary strong { color: #1d443c; }
+.feedback-summary span { margin-right: auto; font-size: 12px; }
+.feedback-list { display: grid; gap: 14px; }
+.feedback-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; padding: 21px; border: 1px solid #d2dfda; border-radius: 8px; background: #fff; }
+.feedback-entry.is-resolved { border-color: #a5cdbd; background: #f4fbf7; }
+.feedback-entry h2 { margin: 4px 0 8px; color: #22473f; font: 600 23px "Playfair Display", serif; }
+.feedback-entry > div > p:not(.eyebrow) { margin: 0; color: #52645f; font-size: 13px; line-height: 1.65; white-space: pre-wrap; }
+.feedback-entry-actions { display: grid; align-content: start; justify-items: end; gap: 12px; min-width: 132px; }
+.feedback-resolved { display: inline-flex; align-items: center; gap: 7px; color: #315d52; font-size: 12px; font-weight: 700; cursor: pointer; }
+.feedback-resolved input { width: 17px; height: 17px; accent-color: #267563; }
+.feedback-empty { margin-top: 26px; padding: 24px; border: 1px dashed #a6c3b8; border-radius: 8px; background: #f5faf7; }
+.feedback-empty h2 { margin: 0 0 7px; color: #294d45; font: 600 24px "Playfair Display", serif; }
+.feedback-empty p { margin: 0; color: #5b7069; font-size: 13px; }
 .aircraft-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1541,6 +1558,9 @@ main {
   .lesson-sidebar {
     position: static;
   }
+  .feedback-inbox { padding: 34px 23px; }
+  .feedback-entry { grid-template-columns: 1fr; gap: 16px; }
+  .feedback-entry-actions { justify-items: start; grid-template-columns: auto auto; align-items: center; }
   .control-cards {
     grid-template-columns: repeat(2, 1fr);
   }

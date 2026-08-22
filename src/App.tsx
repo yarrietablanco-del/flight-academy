@@ -6,12 +6,13 @@ import { ProgressRing } from "./components/ProgressRing";
 import { useProgress } from "./hooks/useProgress";
 import "./App.css";
 
-type View = "dashboard" | "course" | "velocityone" | "hangar" | "lesson";
+type View = "dashboard" | "course" | "feedback" | "velocityone" | "hangar" | "lesson";
 
 const navItems: { id: Exclude<View, "lesson">; label: string; icon: string }[] =
   [
     { id: "dashboard", label: "Panel de vuelo", icon: "⌂" },
     { id: "course", label: "Mi entrenamiento", icon: "◫" },
+    { id: "feedback", label: "Mis comentarios", icon: "✎" },
     { id: "velocityone", label: "Mi VelocityOne", icon: "⌘" },
     { id: "hangar", label: "Hangar", icon: "◇" },
   ];
@@ -39,6 +40,8 @@ function App() {
     importProgress,
     feedback,
     saveFeedback,
+    feedbackResolved,
+    toggleFeedbackResolved,
     completedCount,
     progress,
     sync,
@@ -163,6 +166,14 @@ function App() {
           {view === "course" && (
             <Course statuses={statuses} openLesson={openLesson} focusLessonId={returnFocusLessonId} onFocused={() => setReturnFocusLessonId(null)} />
           )}
+          {view === "feedback" && (
+            <FeedbackInbox
+              feedback={feedback}
+              resolved={feedbackResolved}
+              onToggleResolved={toggleFeedbackResolved}
+              openLesson={openLesson}
+            />
+          )}
           {view === "velocityone" && <VelocityOne />}
           {view === "hangar" && <Hangar />}
           {view === "lesson" && selectedLesson && (
@@ -189,6 +200,75 @@ function App() {
         />
       )}
     </div>
+  );
+}
+
+function FeedbackInbox({
+  feedback,
+  resolved,
+  onToggleResolved,
+  openLesson,
+}: {
+  feedback: Record<string, string>;
+  resolved: Record<string, boolean>;
+  onToggleResolved: (id: string) => void;
+  openLesson: (lesson: Lesson) => void;
+}) {
+  const entries = Object.entries(feedback)
+    .filter(([, note]) => note.trim())
+    .map(([id, note]) => ({ lesson: getLesson(id), note }))
+    .filter((entry): entry is { lesson: Lesson; note: string } => Boolean(entry.lesson));
+  const pending = entries.filter(({ lesson }) => !resolved[lesson.id]).length;
+  const copyAll = async () => {
+    const text = entries
+      .map(({ lesson, note }) => `Feedback · ${lesson.title}\nNivel ${lesson.level} · ${lesson.moduleTitle}\nEstado: ${resolved[lesson.id] ? "Ajustado" : "Pendiente"}\n\n${note.trim()}`)
+      .join("\n\n──────────\n\n");
+    try {
+      await navigator.clipboard.writeText(text);
+      window.alert("Comentarios copiados. Pégalos en el chat para revisarlos.");
+    } catch {
+      window.alert("No se pudieron copiar automáticamente. Abre cada comentario y cópialo de forma individual.");
+    }
+  };
+
+  return (
+    <section className="feedback-inbox">
+      <p className="eyebrow">FEEDBACK GUARDADO</p>
+      <h1>Mis comentarios</h1>
+      <p className="feedback-inbox-intro">Aquí aparecen únicamente las lecciones en las que escribiste feedback desde este dispositivo o desde tu cuenta sincronizada.</p>
+      {entries.length === 0 ? (
+        <article className="feedback-empty">
+          <h2>Aún no hay comentarios guardados</h2>
+          <p>Al guardar feedback dentro de una lección, volverá aquí con su nombre y nivel.</p>
+        </article>
+      ) : (
+        <>
+          <div className="feedback-summary">
+            <strong>{entries.length} comentario{entries.length === 1 ? "" : "s"}</strong>
+            <span>{pending} pendiente{pending === 1 ? "" : "s"} de ajustar</span>
+            <button type="button" className="feedback-copy" onClick={() => void copyAll}>Copiar todos para revisión</button>
+          </div>
+          <div className="feedback-list">
+            {entries.map(({ lesson, note }) => (
+              <article className={`feedback-entry ${resolved[lesson.id] ? "is-resolved" : ""}`} key={lesson.id}>
+                <div>
+                  <p className="eyebrow">NIVEL {lesson.level} · {lesson.moduleTitle}</p>
+                  <h2>{lesson.title}</h2>
+                  <p>{note}</p>
+                </div>
+                <div className="feedback-entry-actions">
+                  <label className="feedback-resolved">
+                    <input type="checkbox" checked={Boolean(resolved[lesson.id])} onChange={() => onToggleResolved(lesson.id)} />
+                    <span>Ajustado</span>
+                  </label>
+                  <button type="button" className="secondary-button" onClick={() => openLesson(lesson)}>Abrir lección</button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </>
+      )}
+    </section>
   );
 }
 

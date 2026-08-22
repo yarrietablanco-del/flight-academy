@@ -6,8 +6,9 @@ import { supabase } from '../lib/supabase'
 // anterior, que podía desbloquear una lección avanzada antes de sus bases.
 const STORAGE_KEY = 'flight-academy-progress-v2'
 const FEEDBACK_KEY = 'flight-academy-lesson-feedback-v1'
+const FEEDBACK_RESOLVED_KEY = 'flight-academy-lesson-feedback-resolved-v1'
 const CURRICULUM_VERSION = '3'
-type SyncedStatuses = Record<string, LessonStatus | string | Record<string, string>>
+type SyncedStatuses = Record<string, LessonStatus | string | Record<string, string> | Record<string, boolean>>
 const initialStatuses = (ids: string[]): Record<string, LessonStatus> => Object.fromEntries(ids.map((id) => [id, 'available']))
 const statusRank: Record<LessonStatus, number> = { locked: 0, available: 1, 'in-progress': 2, completed: 3 }
 const unlockNextLesson = (ids: string[], statuses: Record<string, LessonStatus>) => {
@@ -33,12 +34,14 @@ const mergeStatuses = (ids: string[], local: Record<string, LessonStatus>, cloud
 export function useProgress(ids: string[]) {
   const [statuses, setStatuses] = useState<Record<string, LessonStatus>>(() => { try { const stored = localStorage.getItem(STORAGE_KEY); const parsed = stored ? JSON.parse(stored) as Record<string, LessonStatus> : {}; return Object.fromEntries(ids.map((id) => [id, parsed[id] === 'completed' || parsed[id] === 'in-progress' ? parsed[id] : 'available'])) as Record<string, LessonStatus> } catch { return initialStatuses(ids) } })
   const [feedback, setFeedback] = useState<Record<string, string>>(() => { try { const stored = localStorage.getItem(FEEDBACK_KEY); return stored ? JSON.parse(stored) as Record<string, string> : {} } catch { return {} } })
+  const [feedbackResolved, setFeedbackResolved] = useState<Record<string, boolean>>(() => { try { const stored = localStorage.getItem(FEEDBACK_RESOLVED_KEY); return stored ? JSON.parse(stored) as Record<string, boolean> : {} } catch { return {} } })
   const [email, setEmail] = useState<string | null>(null)
   const [syncReady, setSyncReady] = useState(false)
   const [syncMessage, setSyncMessage] = useState(supabase ? 'Sincronización lista para iniciar sesión.' : 'Falta configurar Supabase.')
 
   useEffect(() => { localStorage.setItem(STORAGE_KEY, JSON.stringify(statuses)) }, [statuses])
   useEffect(() => { localStorage.setItem(FEEDBACK_KEY, JSON.stringify(feedback)) }, [feedback])
+  useEffect(() => { localStorage.setItem(FEEDBACK_RESOLVED_KEY, JSON.stringify(feedbackResolved)) }, [feedbackResolved])
 
   useEffect(() => {
     if (!supabase) return
@@ -59,6 +62,10 @@ export function useProgress(ids: string[]) {
       if (cloudFeedback && typeof cloudFeedback === 'object' && !Array.isArray(cloudFeedback)) {
         setFeedback((current) => ({ ...current, ...cloudFeedback as Record<string, string> }))
       }
+      const cloudResolved = cloud?.__curriculumVersion === CURRICULUM_VERSION ? cloud.__lessonFeedbackResolved : undefined
+      if (cloudResolved && typeof cloudResolved === 'object' && !Array.isArray(cloudResolved)) {
+        setFeedbackResolved((current) => ({ ...current, ...cloudResolved as Record<string, boolean> }))
+      }
       setSyncReady(true)
       setSyncMessage('Progreso sincronizado.')
     }
@@ -75,18 +82,18 @@ export function useProgress(ids: string[]) {
     const save = async () => {
       const { data: { user } } = await client.auth.getUser()
       if (!user) return
-      const syncedStatuses: SyncedStatuses = { ...statuses, __curriculumVersion: CURRICULUM_VERSION, __lessonFeedback: feedback }
+      const syncedStatuses: SyncedStatuses = { ...statuses, __curriculumVersion: CURRICULUM_VERSION, __lessonFeedback: feedback, __lessonFeedbackResolved: feedbackResolved }
       const { error } = await client.from('user_progress').upsert({ user_id: user.id, statuses: syncedStatuses, updated_at: new Date().toISOString() })
       if (error) setSyncMessage('El progreso quedó guardado localmente; reintentaremos sincronizarlo.')
     }
     void save()
-  }, [email, statuses, feedback, syncReady])
+  }, [email, statuses, feedback, feedbackResolved, syncReady])
 
   const startLesson = (id: string) => setStatuses((current) => current[id] === 'available' ? { ...current, [id]: 'in-progress' } : current)
   const completeLesson = (id: string) => setStatuses((current) => { const next = { ...current, [id]: 'completed' as LessonStatus }; const index = ids.indexOf(id); if (index !== -1 && ids[index + 1] && next[ids[index + 1]] === 'locked') next[ids[index + 1]] = 'available'; return next })
   const resetProgress = () => { if (window.confirm('¿Quieres reiniciar todo tu progreso local y sincronizado?')) setStatuses(initialStatuses(ids)) }
   const exportProgress = () => {
-    const backup = JSON.stringify({ version: 2, exportedAt: new Date().toISOString(), statuses, feedback }, null, 2)
+    const backup = JSON.stringify({ version: 2, exportedAt: new Date().toISOString(), statuses, feedback, feedbackResolved }, null, 2)
     const url = URL.createObjectURL(new Blob([backup], { type: 'application/json' }))
     const link = document.createElement('a')
     link.href = url
@@ -96,12 +103,13 @@ export function useProgress(ids: string[]) {
   }
   const importProgress = async (file: File) => {
     try {
-      const parsed = JSON.parse(await file.text()) as { statuses?: Record<string, LessonStatus>; feedback?: Record<string, string> }
+      const parsed = JSON.parse(await file.text()) as { statuses?: Record<string, LessonStatus>; feedback?: Record<string, string>; feedbackResolved?: Record<string, boolean> }
       if (!parsed.statuses || typeof parsed.statuses !== 'object') throw new Error('invalid')
       const valid: LessonStatus[] = ['locked', 'available', 'in-progress', 'completed']
       const fallback = initialStatuses(ids)
       setStatuses(Object.fromEntries(ids.map((id) => { const candidate = parsed.statuses?.[id]; return [id, candidate && valid.includes(candidate) ? candidate : fallback[id]] })) as Record<string, LessonStatus>)
       if (parsed.feedback && typeof parsed.feedback === 'object') setFeedback(Object.fromEntries(Object.entries(parsed.feedback).filter(([, value]) => typeof value === 'string')))
+      if (parsed.feedbackResolved && typeof parsed.feedbackResolved === 'object') setFeedbackResolved(Object.fromEntries(Object.entries(parsed.feedbackResolved).filter(([, value]) => typeof value === 'boolean')))
       return true
     } catch { return false }
   }
@@ -120,5 +128,6 @@ export function useProgress(ids: string[]) {
   const signOut = async () => { if (supabase) await supabase.auth.signOut(); setSyncMessage('Sesión cerrada. El progreso sigue guardado en este dispositivo.') }
   const completedCount = Object.values(statuses).filter((status) => status === 'completed').length
   const saveFeedback = (id: string, value: string) => setFeedback((current) => ({ ...current, [id]: value }))
-  return { statuses, startLesson, completeLesson, resetProgress, exportProgress, importProgress, feedback, saveFeedback, completedCount, progress: Math.round((completedCount / ids.length) * 100), sync: { email, message: syncMessage, signUp, signIn, signOut } }
+  const toggleFeedbackResolved = (id: string) => setFeedbackResolved((current) => ({ ...current, [id]: !current[id] }))
+  return { statuses, startLesson, completeLesson, resetProgress, exportProgress, importProgress, feedback, saveFeedback, feedbackResolved, toggleFeedbackResolved, completedCount, progress: Math.round((completedCount / ids.length) * 100), sync: { email, message: syncMessage, signUp, signIn, signOut } }
 }
