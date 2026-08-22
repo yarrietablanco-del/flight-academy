@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Relación entre actitud, altitud y corrección en vuelo recto y nivelado</title>
+  <desc id="desc">Un horizonte artificial simplificado muestra alas niveladas y una actitud constante. Las flechas señalan que un pequeño cambio de actitud modifica la tendencia de altitud y debe volver a una referencia estable.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16324f"/></marker>
+  </defs>
+  <rect width="960" height="540" fill="#f7fafc"/>
+  <text x="480" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#16324f">Recto y nivelado: una referencia estable, correcciones pequeñas</text>
+  <circle cx="330" cy="295" r="170" fill="#cfe9f7" stroke="#16324f" stroke-width="6"/>
+  <path d="M176 295 H484 A170 170 0 0 1 176 295" fill="#b98a58"/>
+  <path d="M160 295 H500" stroke="#ffffff" stroke-width="8"/>
+  <path d="M330 120 V150 M330 440 V470 M155 295 H185 M475 295 H505" stroke="#16324f" stroke-width="6"/>
+  <path d="M224 300 H290 L330 270 L370 300 H436 L400 320 H260 Z" fill="#16324f"/>
+  <path d="M330 206 V252" stroke="#f9c74f" stroke-width="8"/>
+  <text x="330" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#16324f">alas niveladas · morro en referencia</text>
+  <path d="M517 230 C603 194 661 183 747 183" fill="none" stroke="#16324f" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="760" y="160" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#16324f">Mira la actitud</text>
+  <text x="760" y="188" font-family="Arial, sans-serif" font-size="18" fill="#314e68">Referencia visual o indicador</text>
+  <path d="M517 313 C606 327 663 337 747 337" fill="none" stroke="#16324f" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="760" y="317" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#16324f">Confirma tendencia</text>
+  <text x="760" y="345" font-family="Arial, sans-serif" font-size="18" fill="#314e68">Altitud y rumbo no se alejan</text>
+  <path d="M517 393 C598 428 663 445 747 445" fill="none" stroke="#16324f" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="760" y="425" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#16324f">Corrige y espera</text>
+  <text x="760" y="453" font-family="Arial, sans-serif" font-size="18" fill="#314e68">Vuelve a la referencia; no persigas agujas</text>
+  <rect x="90" y="494" width="780" height="30" rx="15" fill="#e6eef5"/>
+  <text x="480" y="516" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#16324f">La altitud se comprueba como tendencia: un cambio pequeño necesita tiempo para mostrar su efecto.</text>
+</svg>

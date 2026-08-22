@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "id": "c172-straight-level",
+    "title": "Recto y nivelado",
+    "subtitle": "Estabiliza el C172 con actitud, rumbo y altitud como referencias.",
+    "objective": "Mantener actitud, rumbo y altitud de práctica.",
+    "estimatedTime": "20 min",
+    "prerequisites": ["c172-overview"],
+    "level": 1,
+    "module": "control"
+  },
+  "whyItMatters": "El vuelo recto y nivelado es el punto de partida para cada cambio posterior. Si estabilizas primero la actitud y observas las tendencias, evitarás perseguir la altitud o el rumbo con correcciones grandes.",
+  "concepts": [
+    {"term": "Recto y nivelado", "meaning": "Estado de práctica en el que el avión mantiene aproximadamente la misma dirección y altitud, sin subir, bajar ni virar de forma intencional."},
+    {"term": "Actitud", "meaning": "Orientación del morro y las alas respecto al horizonte. Es la referencia inicial que produces con el yoke antes de comprobar el resultado en los instrumentos."},
+    {"term": "Tendencia", "meaning": "Dirección en la que cambia una indicación. Detectar que la altitud o el rumbo empiezan a alejarse permite corregir pronto y con poca entrada."}
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Empieza desde una situación de práctica estable",
+      "instruction": "En MSFS, carga el C172 ya en vuelo libre y en condiciones visuales tranquilas. Pausa si hace falta para confirmar que tienes altura sobre el terreno y espacio sin obstáculos antes de practicar.",
+      "explanation": "Aquí aprendes control manual, no despegue ni navegación. Una situación sin presión permite observar causa y efecto sin añadir una ruta, tráfico o una configuración compleja.",
+      "expectedResult": "El avión está en el aire, con margen visual sobre el terreno y sin una maniobra urgente. Si no tienes ese margen, reinicia en una situación más alta y despejada.",
+      "simulatorAction": "Activa la pausa activa o normal si necesitas preparar la vista. Reanuda solo cuando puedas ver el horizonte y las indicaciones de altitud y rumbo.",
+      "visual": {"type": "flightPathDiagram", "asset": "content/assets/c172-straight-level-attitude.svg", "alt": "Relación entre una actitud estable, la tendencia de altitud y correcciones pequeñas"},
+      "warning": "Esto es una práctica de simulación. No sustituye instrucción de vuelo ni autoriza maniobras reales."
+    },
+    {
+      "number": 2,
+      "title": "Fija una actitud de referencia",
+      "instruction": "Mira fuera y al indicador de actitud o PFD disponible. Con movimientos pequeños del yoke, lleva las alas a nivel y busca una posición de morro que deje de aumentar o disminuir claramente la altitud.",
+      "explanation": "La actitud es la causa que controlas. No copies una posición universal del morro: cambia con peso, potencia, viento y variante. Busca una imagen estable en tu propio vuelo.",
+      "expectedResult": "Las alas permanecen aproximadamente horizontales y la altitud deja de alejarse rápidamente. Si sigues subiendo o bajando, cambia la actitud apenas un poco y espera a observar el efecto.",
+      "simulatorAction": "Haz una entrada breve, centra el yoke y espera. Evita mantener una presión continua mientras miras solo una indicación.",
+      "visual": {"type": "instrumentDiagram", "asset": "content/assets/c172-straight-level-attitude.svg", "alt": "Horizonte artificial simplificado con alas niveladas y actitud de referencia"},
+      "tip": "Una corrección pequeña que se evalúa suele ser más útil que varias correcciones seguidas."
+    },
+    {
+      "number": 3,
+      "title": "Haz un barrido, no una mirada fija",
+      "instruction": "Alterna la vista entre actitud, altitud y rumbo, y vuelve a la actitud. En cada pasada, busca si una indicación se mantiene o comienza a derivar; no intentes corregir cada desviación a la vez.",
+      "explanation": "El barrido compara resultados con la actitud que elegiste. La altitud confirma si el avión sostiene el nivel; el rumbo revela si una inclinación leve o una guiñada lo están apartando.",
+      "expectedResult": "Puedes decir cuál valor se aleja primero y volver a mirar la actitud. Si solo ves números cambiando, reduce la carga: vuelve a alas niveladas y repite el ciclo más despacio.",
+      "simulatorAction": "Mantén la vista de cabina donde puedas consultar los instrumentos. Usa la vista exterior solo si necesitas recuperar una referencia clara de horizonte.",
+      "visual": {"type": "comparisonDiagram", "asset": "content/assets/c172-straight-level-scan.svg", "alt": "Ciclo visual entre actitud, altitud, rumbo y regreso a la actitud"}
+    },
+    {
+      "number": 4,
+      "title": "Corrige una tendencia y vuelve a comprobar",
+      "instruction": "Cuando detectes una desviación, corrige primero la actitud con una entrada pequeña y suelta el yoke hacia el centro. Si el rumbo se separa, nivela las alas y vuelve a comprobar antes de añadir otra corrección.",
+      "explanation": "Una corrección cambia la tendencia, pero necesita tiempo para verse. Centrarse de nuevo y observar evita la sobrecorrección, que convierte una desviación pequeña en oscilaciones de altitud y rumbo.",
+      "expectedResult": "La desviación deja de crecer y el avión vuelve hacia una condición estable. Si la oscilación aumenta, deja de encadenar entradas, recupera alas niveladas y reinicia el barrido.",
+      "simulatorAction": "Realiza una sola corrección a la vez y espera su resultado. Si pierdes orientación o margen sobre el terreno, pausa o reinicia la situación de práctica.",
+      "visual": {"type": "flightPathDiagram", "asset": "content/assets/c172-straight-level-attitude.svg", "alt": "Secuencia de mirar actitud, confirmar tendencia y corregir con una entrada pequeña"}
+    }
+  ],
+  "practice": {
+    "title": "Tres minutos de estabilidad observada",
+    "scenario": "C172 en vuelo libre, con horizonte visible, espacio sobre el terreno y sin una ruta o aproximación que seguir.",
+    "task": "Elige una dirección visual y una altitud de práctica ya establecida por tu situación. Durante tres minutos, repite el barrido de actitud, altitud y rumbo; corrige solo una tendencia cada vez con entradas pequeñas.",
+    "successSignal": "Mantienes una imagen de vuelo estable la mayor parte del ejercicio y puedes explicar qué tendencia viste antes de cada corrección."
+  },
+  "commonMistakes": [
+    {"mistake": "Mirar fijamente la altitud y corregir cada cambio instantáneo.", "recovery": "Vuelve a la actitud, observa si existe una tendencia sostenida y realiza una entrada pequeña antes de comprobar de nuevo."},
+    {"mistake": "Usar el yoke para corregir altitud y rumbo a la vez con movimientos grandes.", "recovery": "Nivela las alas, estabiliza la actitud y atiende una desviación por vez."},
+    {"mistake": "Copiar una actitud exacta vista en otra variante o condiciones.", "recovery": "Usa esa imagen solo como concepto; ajusta por observación hasta que tu avión deje de ganar o perder altitud."}
+  ],
+  "checklist": [
+    "Situación de práctica con margen sobre el terreno confirmada",
+    "Horizonte y fuente de actitud visibles",
+    "Alas niveladas antes de evaluar el rumbo",
+    "Barrido repetido entre actitud, altitud y rumbo",
+    "Una sola corrección pequeña aplicada y comprobada",
+    "Oscilación detenida antes de continuar"
+  ],
+  "quiz": [
+    {"question": "¿Qué debes usar como referencia inicial antes de perseguir una altitud que cambia?", "options": ["La actitud y las alas niveladas", "Solo el número de altitud", "Una posición universal de potencia"], "answer": "La actitud y las alas niveladas", "explanation": "La actitud es la causa que controlas; altitud y rumbo te muestran después la tendencia."},
+    {"question": "Si una corrección hace que la desviación aumente, ¿qué haces primero?", "options": ["Encadeno más correcciones", "Recupero alas niveladas y reinicio el barrido", "Ignoro los instrumentos"], "answer": "Recupero alas niveladas y reinicio el barrido", "explanation": "Detener la cadena de entradas permite recuperar una referencia estable y observar antes de volver a corregir."}
+  ],
+  "completionCriteria": [
+    "Puedes explicar el ciclo actitud, altitud, rumbo y vuelta a la actitud.",
+    "Has mantenido una condición de práctica estable durante tres minutos sin encadenar correcciones grandes.",
+    "Puedes reconocer una tendencia de altitud o rumbo y describir la corrección pequeña que intentaste."
+  ],
+  "sources": [
+    {"title": "FAA Airplane Flying Handbook", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
+    {"title": "FAA Pilot's Handbook of Aeronautical Knowledge", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true}
+  ]
+}

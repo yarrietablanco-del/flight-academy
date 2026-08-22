@@ -15,7 +15,7 @@
     ] },
     { "level": 1, "title": "Vuelo manual C172", "modules": [
       { "module": "control", "lessons": [
-        { "id": "c172-straight-level", "order": 10, "title": "Recto y nivelado", "objective": "Mantener actitud, rumbo y altitud de práctica.", "prerequisites": ["c172-overview"], "status": "planned" },
+        { "id": "c172-straight-level", "order": 10, "title": "Recto y nivelado", "objective": "Mantener actitud, rumbo y altitud de práctica.", "prerequisites": ["c172-overview"], "status": "validated" },
         { "id": "c172-climbs-descents", "order": 11, "title": "Ascensos y descensos", "objective": "Cambiar altitud con actitud y potencia.", "prerequisites": ["c172-straight-level"], "status": "planned" },
         { "id": "c172-turns", "order": 12, "title": "Virajes coordinados", "objective": "Girar sin perder control de altitud.", "prerequisites": ["c172-straight-level"], "status": "planned" },
         { "id": "c172-trim", "order": 13, "title": "Trim", "objective": "Reducir presión del yoke después de estabilizar.", "prerequisites": ["c172-straight-level"], "status": "planned" }
