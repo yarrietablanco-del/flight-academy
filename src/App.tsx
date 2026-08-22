@@ -214,6 +214,8 @@ function FeedbackInbox({
   onToggleResolved: (id: string) => void;
   openLesson: (lesson: Lesson) => void;
 }) {
+  const [copyNotice, setCopyNotice] = useState("");
+  const [copyFallback, setCopyFallback] = useState("");
   const entries = Object.entries(feedback)
     .filter(([, note]) => note.trim())
     .map(([id, note]) => ({ lesson: getLesson(id), note }))
@@ -221,13 +223,35 @@ function FeedbackInbox({
   const pending = entries.filter(({ lesson }) => !resolved[lesson.id]).length;
   const copyAll = async () => {
     const text = entries
-      .map(({ lesson, note }) => `Feedback · ${lesson.title}\nNivel ${lesson.level} · ${lesson.moduleTitle}\nEstado: ${resolved[lesson.id] ? "Ajustado" : "Pendiente"}\n\n${note.trim()}`)
+      .filter(({ lesson }) => !resolved[lesson.id])
+      .map(({ lesson, note }) => `Feedback · ${lesson.title}\nNivel ${lesson.level} · ${lesson.moduleTitle}\n\n${note.trim()}`)
       .join("\n\n──────────\n\n");
+    if (!text) {
+      setCopyFallback("");
+      setCopyNotice("No hay comentarios pendientes por copiar.");
+      return;
+    }
     try {
+      if (!navigator.clipboard?.writeText) throw new Error("Clipboard no disponible");
       await navigator.clipboard.writeText(text);
-      window.alert("Comentarios copiados. Pégalos en el chat para revisarlos.");
+      setCopyFallback("");
+      setCopyNotice(`${pending} comentario${pending === 1 ? "" : "s"} pendiente${pending === 1 ? "" : "s"} copiado${pending === 1 ? "" : "s"}. Pégalo${pending === 1 ? "" : "s"} en el chat.`);
     } catch {
-      window.alert("No se pudieron copiar automáticamente. Abre cada comentario y cópialo de forma individual.");
+      const helper = document.createElement("textarea");
+      helper.value = text;
+      helper.setAttribute("readonly", "");
+      helper.style.cssText = "position:fixed;top:-1000px;left:-1000px";
+      document.body.appendChild(helper);
+      helper.select();
+      const copied = document.execCommand("copy");
+      document.body.removeChild(helper);
+      if (copied) {
+        setCopyFallback("");
+        setCopyNotice(`${pending} comentario${pending === 1 ? "" : "s"} pendiente${pending === 1 ? "" : "s"} copiado${pending === 1 ? "" : "s"}. Pégalo${pending === 1 ? "" : "s"} en el chat.`);
+      } else {
+        setCopyFallback(text);
+        setCopyNotice("Tu navegador bloqueó el copiado: selecciona el texto de abajo y usa Copiar.");
+      }
     }
   };
 
@@ -246,8 +270,10 @@ function FeedbackInbox({
           <div className="feedback-summary">
             <strong>{entries.length} comentario{entries.length === 1 ? "" : "s"}</strong>
             <span>{pending} pendiente{pending === 1 ? "" : "s"} de ajustar</span>
-            <button type="button" className="feedback-copy" onClick={() => void copyAll}>Copiar todos para revisión</button>
+            <button type="button" className="feedback-copy" onClick={() => void copyAll} disabled={pending === 0}>Copiar pendientes para revisión</button>
           </div>
+          {copyNotice && <p className="feedback-copy-notice">{copyNotice}</p>}
+          {copyFallback && <textarea className="feedback-copy-fallback" readOnly value={copyFallback} aria-label="Texto de comentarios pendiente por copiar" />}
           <div className="feedback-list">
             {entries.map(({ lesson, note }) => (
               <article className={`feedback-entry ${resolved[lesson.id] ? "is-resolved" : ""}`} key={lesson.id}>
