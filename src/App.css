@@ -1403,6 +1403,16 @@ main {
 .feedback-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
 .feedback-copy { border: 1px solid #376960; border-radius: 5px; padding: 9px 12px; background: transparent; color: #24564d; font-size: 11px; font-weight: 700; }
 .lesson-feedback small { display: block; margin-top: 10px; color: #467168; font-size: 11px; }
+.approach-profile { margin: 26px 0; padding: 25px; border: 1px solid #b8d0c8; border-radius: 9px; background: linear-gradient(135deg, #eff8f4, #f9fbf8); }
+.approach-profile h2 { margin: 5px 0 7px; color: #234840; font: 600 27px "Playfair Display", serif; }
+.approach-profile > p:not(.eyebrow) { max-width: 700px; margin: 0; color: #4d665e; font-size: 13px; line-height: 1.6; }
+.approach-gates { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+.approach-gates article { display: grid; gap: 5px; min-height: 144px; padding: 14px; border: 1px solid #afcec2; border-radius: 7px; background: #fff; }
+.approach-gates span { color: #5e8175; font: 10px "DM Mono", monospace; letter-spacing: .6px; }
+.approach-gates strong { color: #1f574a; font-size: 18px; }
+.approach-gates b { color: #405e55; font: 12px "DM Mono", monospace; }
+.approach-gates small { color: #5a6d66; font-size: 11px; line-height: 1.5; }
+.approach-note { margin-top: 15px !important; padding-top: 13px; border-top: 1px solid #c8ddd5; }
 .feedback-inbox { max-width: 980px; margin: 0 auto; padding: 54px 58px; }
 .feedback-inbox h1 { margin: 5px 0 10px; color: #173b35; font: 600 clamp(34px, 5vw, 52px) "Playfair Display", serif; }
 .feedback-inbox-intro { max-width: 650px; margin: 0; color: #556a64; line-height: 1.65; }
@@ -1565,6 +1575,7 @@ main {
     position: static;
   }
   .feedback-inbox { padding: 34px 23px; }
+  .approach-gates { grid-template-columns: 1fr 1fr; }
   .feedback-entry { grid-template-columns: 1fr; gap: 16px; }
   .feedback-entry-actions { justify-items: start; grid-template-columns: auto auto; align-items: center; }
   .control-cards {

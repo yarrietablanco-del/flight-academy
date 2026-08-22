@@ -3222,6 +3222,41 @@ if (reorderedLevelThree) {
   ];
 }
 
+const feedbackDrivenLessonDetails: Record<string, Partial<Lesson>> = {
+  "c172-approach-setup": lessonPlan(
+    "Esta práctica usa SKCL en MSFS, no una carta real. La elevación del aeropuerto es aproximadamente 3.160 ft MSL. Por eso el circuito a 1.000 ft AGL se verá alrededor de 4.160 ft MSL en el altímetro. AGL es altura sobre el aeropuerto; MSL es altitud sobre el nivel medio del mar. La senda baja de forma continua: viento en cola 1.000 ft AGL, base cerca de 700 ft AGL y final estable a 500 ft AGL.",
+    "1. En VIENTO EN COLA mantén 1.000 ft AGL: en SKCL, aproximadamente 4.160 ft MSL.\n2. Cuando pases a la altura del umbral, reduce hacia 1.500–1.700 RPM y espera a que la velocidad baje.\n3. Bajo 110 KIAS selecciona flaps 10°.\n4. Gira a BASE cuando el umbral quede aproximadamente 45° detrás de tu hombro. Deja que la altitud baje hacia 700 ft AGL: en SKCL, ~3.860 ft MSL.\n5. Bajo 85 KIAS selecciona flaps 20°. Si la pista está claramente al alcance, puedes llevar flaps 30° al acercarte a final; si no, no añadas flaps.\n6. En FINAL, alinea con el centro. A 500 ft AGL (~3.660 ft MSL en SKCL) busca ~65 KIAS y una pista alcanzable.\n7. Si a 500 ft AGL estás alto, rápido, desalineado o corto de pista, aplica frustrada. No intentes arreglar cuatro problemas a la vez.",
+    "No copies estas alturas para un aeropuerto distinto: cambia la elevación MSL del aeropuerto, pero el circuito de práctica sigue siendo aproximadamente 1.000 ft AGL. No extiendas flaps como freno de emergencia ni apuntes el morro bruscamente a la pista.",
+    "Senda de aproximación por etapas",
+    "Vuela una aproximación en SKCL y pausa a 500 ft AGL. Di en voz alta: altitud MSL actual, altura AGL aproximada, flaps, velocidad y si la pista está al alcance. Si una respuesta no es clara, aplica frustrada y repite.",
+    ["Viento en cola a ~1.000 ft AGL / ~4.160 ft MSL", "Base cerca de 700 ft AGL / ~3.860 ft MSL", "Flaps 10° bajo 110 KIAS", "Flaps 20°/30° solo bajo 85 KIAS y con pista al alcance", "Final estable a 500 ft AGL / ~3.660 ft MSL", "Decisión de aterrizar o frustrar tomada"],
+  ),
+  "c172-landing": lessonPlan(
+    "El punto de mira de la pista te dice la senda. Si se queda casi fijo en el parabrisas, tu trayectoria llega a él. Si sube, quedarás corto: añade un poco de potencia. Si baja, quedarás largo: reduce un poco. Esta lección empieza ya estable a 500 ft AGL; no inventa una senda nueva a baja altura.",
+    "1. A 500 ft AGL: confirma pista al alcance, centro de pista alineado, ~65 KIAS y punto de mira estable. Si uno falla, frustrada.\n2. A 300 ft AGL: no cambies flaps. Ajusta potencia en movimientos pequeños según el punto de mira; mantén el centro con correcciones pequeñas.\n3. Entre 50 y 20 ft AGL: mira lejos hacia el final de pista, reduce potencia suavemente a ralentí y levanta apenas el morro.\n4. Deja que las ruedas principales toquen. Mantén el morro arriba suavemente mientras pierde velocidad.\n5. Ya lento: baja el morro, frena suave, mantén el centro y sal por una calle cuando MSFS lo indique.",
+    "Si rebota, estás alto, rápido, desalineado o la pista deja de ser alcanzable: potencia y frustrada. No empujes el morro para obligar al avión a tocar ni cambies radio, mapa o configuraciones mientras aún controlas la pista.",
+    "Aterrizaje con puertas de decisión",
+    "Haz tres circuitos. En cada uno pausa o decide a 500 ft AGL; solo continúas si cumples las cuatro condiciones de final estable. Un intento frustrado cuenta como una decisión correcta.",
+    ["500 ft AGL: alineado, ~65 KIAS, punto de mira estable, pista al alcance", "300 ft AGL: sin cambios de flaps", "50–20 ft AGL: mirada al final de pista y potencia a ralentí suave", "Ruedas principales tocan sin forzar", "Frenado solo a baja velocidad", "Frustrada aplicada si la aproximación deja de estar estable"],
+  ),
+  "vfr-map-route": lessonPlan(
+    "La EFB se usa antes de volar. En su mapa, el buscador encuentra aeropuertos por ICAO (por ejemplo SKCL o SKUL); el marcador de salida indica dónde empezarás; el marcador de destino indica dónde terminarás; la línea entre ambos representa el plan; y los iconos de Apps abren tareas como ruta, combustible o peso. Los nombres e iconos pueden moverse entre actualizaciones, pero la secuencia no cambia: buscar, elegir, confirmar en el mapa y revisar la ruta.",
+    "1. En Mapa mundial abre la EFB y toca BUSCAR. Escribe SKCL; elige Alfonso Bonilla Aragón y confirma que queda como origen.\n2. Vuelve a BUSCAR, escribe SKUL; elige La Florida y confirma que queda como destino.\n3. Abre RUTA o el icono de plan de vuelo. Selecciona VFR, día y clima despejado; verifica que en el mapa aparezcan ambos aeropuertos y una línea entre ellos.\n4. Toca cada extremo de la línea: el origen es SKCL, el destino SKUL. Lee rumbo general, distancia y tiempo estimado si la EFB lo muestra.\n5. Antes de iniciar, identifica dos referencias grandes fuera del mapa: valle, carretera, río o población. La EFB prepara el vuelo; no se programa durante taxi, despegue o final.",
+    "No pulses Enviar a aviónica ni cambies la ruta mientras haces una maniobra. Si al buscar aparece más de un resultado, confirma siempre el código ICAO y el nombre antes de elegir. Si no ves línea de ruta, vuelve a comprobar origen, destino y el modo de ruta antes de seguir.",
+    "Crear y comprobar SKCL–SKUL",
+    "Sin encender el motor, deja visibles SKCL, SKUL y la línea de ruta. Di qué representa cada uno: salida, destino y trayecto. Después anota rumbo general, distancia y dos referencias visuales.",
+    ["Buscador usado para SKCL", "Origen SKCL confirmado", "Buscador usado para SKUL", "Destino SKUL confirmado", "Modo VFR y clima diurno seleccionados", "Línea de ruta visible", "Dos referencias visuales anotadas"],
+  ),
+  "nav-time-fuel": lessonPlan(
+    "Para esta primera planificación no adivinas la velocidad de crucero: el curso fija 100 kt de velocidad sobre el terreno como valor de cálculo. Es una referencia de planificación, no una orden de volar exactamente a 100. La altitud de crucero de este escenario es 7.500 ft MSL: MSL se lee en el altímetro y significa altitud sobre nivel medio del mar. La elevación del aeropuerto es otra cifra: en SKCL ~3.160 ft MSL. Si estás a 7.500 ft MSL, estás unos 4.340 ft por encima de SKCL; esa diferencia es AGL aproximada.",
+    "1. En la EFB toma la distancia SKCL–SKUL.\n2. Usa 100 kt como velocidad sobre el terreno planificada. Tiempo en horas = distancia ÷ 100; multiplica por 60 para minutos.\n3. Planea crucero a 7.500 ft MSL. En el G1000, la cinta vertical DERECHA muestra la altitud MSL; en el mapa/EFB, la ficha del aeropuerto muestra su elevación. No son el mismo número.\n4. Añade 15 minutos de taxi y 45 minutos de reserva. Para combustible, multiplica el tiempo total por 8 gal/h para esta práctica de C172.\n5. En vuelo, cada 15 minutos compara tiempo transcurrido, combustible indicado y posición en mapa. Si no coinciden, avía primero: alas niveladas, altitud segura, potencia estable; después revisa el plan.",
+    "No confundas IAS (velocidad indicada en la cinta izquierda del G1000) con velocidad sobre el terreno: el viento puede cambiar el tiempo real. No uses una altitud MSL como si fuera altura sobre el aeropuerto: siempre resta la elevación del aeropuerto para estimar AGL.",
+    "Plan de crucero con números entendibles",
+    "Escribe distancia, 100 kt de planificación, tiempo previsto, 7.500 ft MSL y elevación de SKCL. Luego calcula: 7.500 − 3.160 = ~4.340 ft AGL sobre SKCL. Si puedes explicar la diferencia entre esos dos valores, el plan está listo.",
+    ["Distancia tomada de la EFB", "100 kt usado como velocidad de planificación", "Tiempo convertido a minutos", "Crucero de 7.500 ft MSL anotado", "Elevación de SKCL (~3.160 ft MSL) anotada", "AGL aproximada calculada", "Taxi, reserva y combustible incluidos"],
+  ),
+};
+
 course.forEach((level) =>
   level.modules.forEach((module) =>
     module.lessons.forEach((lesson) =>
@@ -3241,6 +3276,7 @@ course.forEach((level) =>
         ifrTrainingProcedures[lesson.id],
         fullC172Procedures[lesson.id],
         navigationProcedures[lesson.id],
+        feedbackDrivenLessonDetails[lesson.id],
         {
           flightSetup: flightSetups[lesson.id],
           continuity: lessonContinuity[lesson.id],

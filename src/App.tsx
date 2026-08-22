@@ -725,6 +725,45 @@ function EfbReference() {
   );
 }
 
+function EfbRouteGuide() {
+  return (
+    <section className="cockpit-map efb-route-guide" aria-label="Guía visual para crear una ruta en la EFB de MSFS 2024">
+      <p className="eyebrow">EFB · RUTA VFR</p>
+      <h2>Busca, elige y confirma la línea</h2>
+      <p className="instrument-intro">Captura oficial de MSFS 2024. Úsala como referencia visual; los iconos pueden moverse con una actualización, pero la secuencia se mantiene.</p>
+      <figure className="reference-figure efb-figure">
+        <img src={`${import.meta.env.BASE_URL}references/msfs2024-efb-world-map.png`} alt="EFB de Microsoft Flight Simulator 2024 sobre el mapa mundial" />
+        <span className="efb-callout efb-search">1 · buscar ICAO</span>
+        <span className="efb-callout efb-apps">2 · ruta / apps</span>
+        <span className="efb-callout efb-map">3 · confirmar mapa</span>
+        <figcaption>Primero busca SKCL; después SKUL. Solo cuando ambos estén elegidos debe aparecer la línea que los une.</figcaption>
+      </figure>
+      <div className="instrument-grid">
+        <article><span>1</span><h3>Buscar</h3><p>Escribe el código ICAO: SKCL como origen y SKUL como destino. Confirma el nombre antes de elegirlo.</p></article>
+        <article><span>2</span><h3>Ruta</h3><p>Elige VFR, día y clima despejado. No envíes nada a la aviónica todavía.</p></article>
+        <article><span>3</span><h3>Mapa</h3><p>Verifica tres cosas: marcador de salida, marcador de destino y línea de ruta entre ambos.</p></article>
+      </div>
+    </section>
+  );
+}
+
+function ApproachProfileGuide() {
+  return (
+    <section className="approach-profile" aria-label="Senda de aproximación de práctica para SKCL">
+      <p className="eyebrow">SENDA DE PRÁCTICA · SKCL EN MSFS</p>
+      <h2>Qué altura buscar en cada tramo</h2>
+      <p>Referencia del curso para una práctica visual, no una carta ni procedimiento real. SKCL está aproximadamente a 3.160 ft MSL.</p>
+      <div className="approach-gates">
+        <article><span>VIENTO EN COLA</span><strong>1.000 ft AGL</strong><b>~4.160 ft MSL</b><small>Flaps arriba; reduce potencia al pasar el umbral.</small></article>
+        <article><span>BASE</span><strong>~700 ft AGL</strong><b>~3.860 ft MSL</b><small>Flaps 10° bajo 110 KIAS; 20° bajo 85 KIAS.</small></article>
+        <article><span>FINAL ESTABLE</span><strong>500 ft AGL</strong><b>~3.660 ft MSL</b><small>~65 KIAS, alineado y pista al alcance; si no, frustrada.</small></article>
+        <article><span>PISTA</span><strong>0 ft AGL</strong><b>~3.160 ft MSL</b><small>Mirada al final de pista, ralentí suave y redondeo.</small></article>
+      </div>
+      <p className="approach-note"><b>Lectura rápida:</b> AGL = sobre el aeropuerto. MSL = la cifra que lees en el altímetro. En otro aeropuerto cambia la elevación MSL, no la idea de bajar por etapas.</p>
+    </section>
+  );
+}
+
 function VelocityOneReference() {
   return (
     <section className="velocityone-reference" aria-label="Referencia visual del Turtle Beach VelocityOne Flight">
@@ -851,8 +890,6 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
     string,
     { src: string; alt: string; caption: string }
   > = {
-    "vfr-map-route": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "Primero entiendes la ruta en el mapa; después eliges qué instrumento usar." },
-    "nav-time-fuel": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "La planificación conecta distancia, tiempo y combustible antes de entrar a cabina." },
     "vor-dme-basics": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "VOR entrega dirección y DME distancia; verifica siempre señal y fuente CDI." },
     "g1000-gps-route": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "Antes de seguir la línea magenta, confirma que el CDI muestra GPS." },
     "c172-autopilot-basics": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "HDG, ALT y NAV son modos diferentes: confirma el PFD y supervisa el resultado." },
@@ -975,18 +1012,6 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
       caption:
         "El circuito organiza la llegada; no tienes que inventar una ruta al azar.",
     },
-    "c172-approach-setup": {
-      src: `${import.meta.env.BASE_URL}c172-landing-flow.svg`,
-      alt: "Flujo visual de aproximación y aterrizaje del Cessna 172",
-      caption:
-        "Flaps y velocidad se incorporan por etapas desde viento en cola; no de golpe en final.",
-    },
-    "c172-landing": {
-      src: `${import.meta.env.BASE_URL}c172-landing-flow.svg`,
-      alt: "Flujo visual de aproximación y aterrizaje del Cessna 172",
-      caption:
-        "La pista debe ser alcanzable y el avión estar estable; si no, aplica frustrada.",
-    },
     "c172-go-around": {
       src: `${import.meta.env.BASE_URL}c172-landing-flow.svg`,
       alt: "Flujo visual de aproximación y aterrizaje del Cessna 172",
@@ -1101,6 +1126,7 @@ function DetailedLessonView({
           </section>
           {lesson.id === "first-flight-now" && <FirstFlightPfdGuide />}
           {lesson.id === "efb-first-look" && <EfbReference />}
+          {["vfr-map-route", "nav-time-fuel"].includes(lesson.id) && <EfbRouteGuide />}
           {["ifr-route-briefing", "ifr-approach-briefing", "ifr-gps-approach"].includes(lesson.id) && <EfbReference />}
           {[
             "c172-instruments-first",
@@ -1114,6 +1140,7 @@ function DetailedLessonView({
           {["know-velocityone", "initial-controls-check", "c172-controls-first"].includes(lesson.id) && <VelocityOneReference />}
           {["airport-map-basics", "c172-taxi-basics", "c172-taxi-to-hold"].includes(lesson.id) && <TaxiRouteMap />}
           {lesson.id === "airport-traffic-pattern" && <TrafficPatternGuide />}
+          {["c172-approach-setup", "c172-landing"].includes(lesson.id) && <ApproachProfileGuide />}
           {lesson.flightSetup && (
             <section className="flight-setup">
               <p className="eyebrow">CONFIGURACIÓN EN MSFS 2024</p>
