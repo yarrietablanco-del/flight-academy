@@ -2908,7 +2908,7 @@ const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
   "efb-first-look": {
     start: "Mapa mundial de Vuelo libre, antes de pulsar Iniciar vuelo.",
     finish: "Reconoces dónde abrir la EFB y puedes diferenciar mapa, ruta y aplicaciones.",
-    next: "Continúa con “Conociendo tu VelocityOne” para identificar el control físico antes de volver al C172.",
+    next: "Continúa con “Comprobación de controles” para validar los mandos que usarás en tierra.",
   },
   "how-training-works": {
     start: "Pantalla principal de Flight Academy; MSFS aún cerrado.",
@@ -2918,7 +2918,37 @@ const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
   "prepare-msfs": {
     start: "Pantalla principal de MSFS 2024.",
     finish: "C172 quieto en plataforma, de día y con clima despejado.",
-    next: "Continúa con “Combustible: cuánto cargar y dónde hacerlo”.",
+    next: "Continúa con “Conociendo tu VelocityOne” y comprueba el perfil antes de mover un mando.",
+  },
+  "know-velocityone": {
+    start: "C172 quieto en plataforma; perfil de MSFS aún por confirmar.",
+    finish: "Perfil Single-Engine Prop comprobado y mandos físicos esenciales ubicados.",
+    next: "Abre “Tu G1000: cuatro referencias” antes de volver a volar.",
+  },
+  "c172-instruments-first": {
+    start: "C172 detenido en plataforma, freno de estacionamiento aplicado.",
+    finish: "Ubicas velocidad, horizonte, altitud y rumbo en el G1000 sin mover el avión.",
+    next: "Continúa con “Mandos del C172: qué NO mover todavía”.",
+  },
+  "c172-controls-first": {
+    start: "Mismo C172 detenido, con el freno aplicado.",
+    finish: "Reconoces throttle, mezcla, flaps y trim; ninguno fue probado al azar.",
+    next: "Abre “Conociendo el C172” para unir los mandos con la cabina.",
+  },
+  "know-c172": {
+    start: "C172 detenido en plataforma, vista de cabina abierta.",
+    finish: "Puedes señalar los instrumentos y mandos que usarás al principio.",
+    next: "Continúa con “Los tres ejes del avión”.",
+  },
+  "three-axes": {
+    start: "C172 detenido y freno aplicado; superficies visibles desde cabina o vista exterior.",
+    finish: "Distingues alabeo, cabeceo y guiñada, y sabes qué mando genera cada uno.",
+    next: "Abre “La EFB: mapa, ruta y apps” antes de crear ninguna ruta.",
+  },
+  "initial-controls-check": {
+    start: "C172 quieto en plataforma y perfil Single-Engine Prop ya comprobado.",
+    finish: "Los ejes y frenos básicos responden en el sentido correcto; sabes cuál botón reconoce tu perfil.",
+    next: "Nivel 0 terminado. Para continuar, abre Nivel 1: “Potencia: acelerar, subir y bajar”.",
   },
   "c172-fuel-basics": {
     start: "C172 apagado en plataforma; Vuelo libre ya configurado.",
@@ -2995,17 +3025,6 @@ const lessonContinuity: Record<string, NonNullable<Lesson["continuity"]>> = {
     start: "Justo después del despegue, en ascenso recto.",
     finish: "Avión nivelado cerca de 6.500 ft MSL en zona amplia.",
     next: "Empieza Nivel 1 con “Tus tres referencias en vuelo”.",
-  },
-  "know-c172": {
-    start: "En aire, nivelado cerca de 6.500 ft MSL.",
-    finish:
-      "Puedes alternar referencia exterior, velocidad y altitud sin tocar mandos.",
-    next: "Continúa con “Mover el avión con suavidad”.",
-  },
-  "three-axes": {
-    start: "Vuelo recto y nivelado en zona segura.",
-    finish: "Probaste un movimiento pequeño de alabeo y cabeceo por separado.",
-    next: "Continúa con “Potencia: acelerar, subir y bajar”.",
   },
   "throttle-power": {
     start: "Avión otra vez estable y nivelado.",
