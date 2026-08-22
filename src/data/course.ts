@@ -1303,41 +1303,42 @@ const practicalLevelZeroDetails: Record<string, Partial<Lesson>> = {
   "prepare-msfs": {
     estimatedTime: "25 min",
     objectives: [
-      "Abrir y reconocer el menú correcto de configuración",
-      "Crear una base de práctica estable",
-      "Dejar listos avión, clima y ayudas antes de tocar los mandos",
+      "Abrir Vuelo libre y dejar una situación repetible",
+      "Comprobar que el C172 queda inmovilizado antes de tocar ejes",
+      "Saber cuándo detenerse en vez de arreglarlo en la cabina",
     ],
     sections: [
       {
         kind: "PROCEDIMIENTO",
         title: "Ruta exacta para preparar el simulador",
         content:
-          "1. Desde la pantalla principal entra en VUELO LIBRE. No uses Modo Carrera para estas lecciones.\n2. En el mapa mundial selecciona Cessna 172 y el aeropuerto indicado arriba.\n3. Elige una plataforma (no una pista) para las lecciones de control; así el avión no se moverá mientras pruebas ejes.\n4. Abre CLIMA y selecciona un preajuste despejado. Pon hora de día, idealmente 10:00.\n5. Antes de iniciar, revisa que el viento sea calmo o muy ligero.\n6. Inicia el vuelo y aplica freno de estacionamiento. Solo entonces pasa a Configuración de controles.",
+          "1. Desde la pantalla principal entra en VUELO LIBRE. No uses Modo Carrera: sus objetivos y ayudas cambian el escenario.\n2. En el mapa mundial selecciona Cessna 172 Skyhawk G1000 y SKBO. Si SKBO no te resulta cómodo, usa otro aeropuerto conocido, pero conserva siempre el mismo durante estas cuatro lecciones.\n3. Abre la posición de salida y elige una puerta o plataforma; NO una pista. La prueba de mandos empieza quieto.\n4. Abre CLIMA: elige Despejado y fija hora de día (10:00 es una referencia, no una obligación). Si el selector muestra viento, déjalo en calma o muy ligero.\n5. Inicia el vuelo. Comprueba visualmente que estás en plataforma, con espacio delante y sin moverte.\n6. Aplica el freno de estacionamiento usando la acción que tu perfil reconoce. Si no sabes cuál es, no pruebes al azar: pasa a “Conociendo tu VelocityOne” y vuelve aquí después.",
       },
       {
         kind: "APRENDE",
-        title: "Configuración inicial que sí conviene usar",
+        title: "Una sola base para poder comparar",
         content:
-          "Para aprender, deja activadas las ayudas que eviten frustración: etiquetas o indicaciones de navegación si las necesitas, pausa disponible y daño/desgaste desactivado al principio. No hay premio por desactivar ayudas demasiado pronto. La meta del Nivel 0 es que cada movimiento del control produzca una respuesta comprensible.",
+          "Deja activadas las ayudas que eviten frustración: pausa disponible, indicaciones de navegación si las necesitas y daño/desgaste desactivado al principio. No hay premio por quitar ayudas antes de entender el avión. En las próximas prácticas no cambies simultáneamente aeronave, clima, aeropuerto y perfil del control: si cambias cuatro cosas, no sabrás qué causó el resultado.",
       },
       {
         kind: "ERRORES COMUNES",
-        title: "No ajustes dentro de un vuelo complicado",
+        title: "Tres señales para detenerte",
         content:
-          "No pruebes sensibilidad con viento fuerte, tormenta, noche, tráfico o una aproximación. Si cambias un eje, vuelve a esta misma situación: C172, día, despejado, avión detenido o vuelo recto. Así sabrás qué cambió realmente.",
+          "Detente y reinicia esta base si: el avión se mueve sin que toques potencia; una asignación no coincide con la acción que buscas; o hay tormenta, noche, tráfico intenso o viento fuerte. No intentes corregir sensibilidad, frenos y clima dentro de un vuelo. Vuelve a C172, día, despejado y plataforma: esa es tu situación de diagnóstico.",
       },
     ] as Lesson["sections"],
     checklist: [
       "Entré en Vuelo libre",
-      "Elegí Cessna 172 y una plataforma",
-      "Puse día, cielo despejado y viento ligero",
-      "Apliqué freno de estacionamiento",
-      "Dejé las ayudas de principiante activas",
+      "Elegí Cessna 172 Skyhawk G1000 y una plataforma",
+      "Puse día, cielo despejado y viento calmo o ligero",
+      "Comprobé que el avión está quieto antes de probar controles",
+      "Apliqué el freno de estacionamiento que reconoce mi perfil",
+      "Dejé disponibles pausa y ayudas de principiante",
     ],
     exercise: {
       title: "Escenario base de entrenamiento",
       instructions:
-        "Crea el escenario indicado y no despegues todavía. Pausa si lo necesitas. Tu resultado correcto es ver el C172 quieto en plataforma, de día y sin clima que complique las pruebas.",
+        "Crea el escenario y no despegues todavía. El resultado correcto no es “estar en MSFS”: es poder decir las cinco comprobaciones de la lista y ver el C172 quieto en plataforma, de día y sin clima que complique las pruebas.",
     },
   },
   "know-velocityone": {
@@ -2258,7 +2259,7 @@ const ifrTrainingProcedures: Record<string, Partial<Lesson>> = {
 
 const firstFlightProcedures: Record<string, Partial<Lesson>> = {
   "first-flight-now": {
-    estimatedTime: "10 min",
+    estimatedTime: "12 min",
     sections: [
       {
         kind: "APRENDE",
@@ -2270,31 +2271,33 @@ const firstFlightProcedures: Record<string, Partial<Lesson>> = {
         kind: "PROCEDIMIENTO",
         title: "Configura el vuelo en MSFS 2024",
         content:
-          "1. En Vuelo libre, elige Cessna 172 Skyhawk G1000.\n2. Elige una posición EN EL AIRE, no plataforma ni pista. Usa clima despejado y sin viento.\n3. Si el mapa permite elegir altura, selecciona 7.500 ft MSL. Si no aparece esa opción, usa cualquier inicio en aire que ofrezca MSFS y no te acerques al suelo.\n4. Inicia el vuelo. No abras EFB, ATC ni piloto automático; eso viene después.",
+          "1. En Vuelo libre selecciona Cessna 172 Skyhawk G1000.\n2. En la posición de salida elige una opción que indique EN EL AIRE; no uses plataforma ni pista. Si tu interfaz no ofrece ese inicio, vuelve al mapa y prueba otra ubicación: esta misión no se convierte en un despegue improvisado.\n3. Usa clima Despejado, sin viento, de día. Si puedes escoger altura, usa 7.500 ft MSL; si no, acepta la altura del inicio EN EL AIRE y mantente lejos del suelo.\n4. Antes de mover el yoke, mira la pantalla: localiza velocidad a la izquierda, horizonte en el centro y altitud a la derecha.\n5. Inicia. No abras EFB, ATC, GPS ni piloto automático; vienen en lecciones separadas.",
       },
       {
         kind: "PRUÉBALO EN MSFS",
-        title: "Haz tres movimientos pequeños",
+        title: "Haz tres movimientos y recupera",
         content:
-          "1. Mira por fuera y deja el yoke centrado durante 20 segundos.\n2. Gira el yoke apenas a la izquierda durante dos segundos y vuelve al centro; observa que el horizonte se inclina. Repite a la derecha.\n3. Tira apenas del yoke un segundo y vuelve al centro; después empuja apenas un segundo y vuelve al centro.\n4. No busques una cifra perfecta. Si el avión se inclina mucho, centra el yoke, reduce tus movimientos y reinicia el vuelo desde el menú.\n5. Después de diez minutos, pausa y termina la sesión desde el menú. No necesitas aterrizar hoy.",
+          "1. Deja el yoke centrado durante 20 segundos y observa si el avión se mantiene razonablemente estable.\n2. Gíralo apenas a la izquierda dos segundos y vuelve al centro. Espera a que el horizonte deje de aumentar su inclinación. Repite a la derecha.\n3. Tira apenas un segundo y vuelve al centro; luego empuja apenas un segundo y vuelve al centro. Observa el morro, no persigas una altitud exacta.\n4. Recuperar hoy significa: yoke centrado, alas cerca de horizontales y movimientos cada vez más pequeños.\n5. Si supera una inclinación que te asusta, el suelo empieza a acercarse o no sabes qué hiciste: pausa, termina y reinicia la misión. Reiniciar es el procedimiento correcto.\n6. Tras diez minutos, pausa y termina desde el menú. No intentes aterrizar.",
       },
       {
         kind: "ERRORES COMUNES",
         title: "Qué no hacer todavía",
         content:
-          "No pulses B7/B8, no muevas mezcla ni trim, no actives el piloto automático y no intentes aterrizar. Si ves que el avión desciende, no entres en pánico: pausa, vuelve al menú y reinicia el inicio en aire. Reiniciar es la acción correcta en esta práctica.",
+          "No pulses botones de flaps, no muevas mezcla ni trim, no actives el piloto automático y no intentes aterrizar. Tampoco aceleres o reduzcas potencia para corregir cada pequeña desviación: hoy se aprende la relación entre yoke y actitud. Si el avión desciende o te desorientas, pausa, vuelve al menú y reinicia el inicio en aire.",
       },
     ] as Lesson["sections"],
     checklist: [
       "C172 iniciado en el aire, con clima despejado",
       "Velocidad, horizonte y altitud localizados en el G1000",
       "Un giro pequeño a cada lado hecho y recuperado al centro",
+      "Un movimiento de subir y bajar morro hecho y recuperado al centro",
+      "Pausa/reinicio usado si la situación dejó de ser cómoda",
       "Sesión terminada desde el menú, sin intentar aterrizar",
     ],
     exercise: {
       title: "Misión 1: conoce la sensación de volar",
       instructions:
-        "Mantén el C172 razonablemente tranquilo durante 10 minutos. Tu meta observable es poder decir: izquierda inclina a la izquierda; derecha inclina a la derecha; tirar sube el morro; empujar lo baja. Termina desde el menú y continúa con la pantalla G1000.",
+        "Mantén el C172 razonablemente tranquilo durante 10 minutos. Tu meta observable es poder decir: izquierda inclina a la izquierda; derecha inclina a la derecha; tirar sube el morro; empujar lo baja; y si pierdo la referencia, pauso y reinicio. Termina desde el menú y continúa con la pantalla G1000.",
     },
   },
 };
