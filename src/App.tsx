@@ -231,11 +231,11 @@ function FeedbackInbox({
       setCopyNotice("No hay comentarios pendientes por copiar.");
       return;
     }
+    setCopyFallback(text);
     try {
       if (!navigator.clipboard?.writeText) throw new Error("Clipboard no disponible");
       await navigator.clipboard.writeText(text);
-      setCopyFallback("");
-      setCopyNotice(`${pending} comentario${pending === 1 ? "" : "s"} pendiente${pending === 1 ? "" : "s"} copiado${pending === 1 ? "" : "s"}. Pégalo${pending === 1 ? "" : "s"} en el chat.`);
+      setCopyNotice(`${pending} comentario${pending === 1 ? "" : "s"} pendiente${pending === 1 ? "" : "s"} copiado${pending === 1 ? "" : "s"}. También queda visible abajo por si quieres comprobarlo.`);
     } catch {
       const helper = document.createElement("textarea");
       helper.value = text;
@@ -246,12 +246,23 @@ function FeedbackInbox({
       const copied = document.execCommand("copy");
       document.body.removeChild(helper);
       if (copied) {
-        setCopyFallback("");
-        setCopyNotice(`${pending} comentario${pending === 1 ? "" : "s"} pendiente${pending === 1 ? "" : "s"} copiado${pending === 1 ? "" : "s"}. Pégalo${pending === 1 ? "" : "s"} en el chat.`);
+        setCopyNotice(`${pending} comentario${pending === 1 ? "" : "s"} pendiente${pending === 1 ? "" : "s"} copiado${pending === 1 ? "" : "s"}. También queda visible abajo por si quieres comprobarlo.`);
       } else {
-        setCopyFallback(text);
-        setCopyNotice("Tu navegador bloqueó el copiado: selecciona el texto de abajo y usa Copiar.");
+        setCopyNotice("Tu navegador bloqueó el copiado: selecciona el texto de abajo o usa Compartir.");
       }
+    }
+  };
+  const sharePending = async () => {
+    if (!copyFallback) return;
+    if (!navigator.share) {
+      setCopyNotice("Tu navegador no permite Compartir. Mantén pulsado el texto de abajo y selecciona Copiar.");
+      return;
+    }
+    try {
+      await navigator.share({ title: "Feedback de Flight Academy", text: copyFallback });
+      setCopyNotice("Elige ChatGPT en el menú de compartir para enviarme los comentarios.");
+    } catch {
+      setCopyNotice("No se compartió. El texto sigue visible abajo para copiarlo manualmente.");
     }
   };
 
@@ -273,7 +284,11 @@ function FeedbackInbox({
             <button type="button" className="feedback-copy" onClick={() => void copyAll} disabled={pending === 0}>Copiar pendientes para revisión</button>
           </div>
           {copyNotice && <p className="feedback-copy-notice">{copyNotice}</p>}
-          {copyFallback && <textarea className="feedback-copy-fallback" readOnly value={copyFallback} aria-label="Texto de comentarios pendiente por copiar" />}
+          {copyFallback && <section className="feedback-export">
+            <p>El texto queda disponible aunque el navegador bloquee Copiar. Mantén pulsado para seleccionarlo, o usa Compartir.</p>
+            <button type="button" className="secondary-button" onClick={() => void sharePending}>Compartir pendientes</button>
+            <textarea className="feedback-copy-fallback" readOnly value={copyFallback} aria-label="Texto de comentarios pendiente por copiar" />
+          </section>}
           <div className="feedback-list">
             {entries.map(({ lesson, note }) => (
               <article className={`feedback-entry ${resolved[lesson.id] ? "is-resolved" : ""}`} key={lesson.id}>
