@@ -764,6 +764,25 @@ function ApproachProfileGuide() {
   );
 }
 
+function NavigationReference() {
+  return (
+    <section className="cockpit-map navigation-reference" aria-label="Referencia real del G1000 para navegación">
+      <p className="eyebrow">G1000 · CONFIRMA ANTES DE SEGUIR</p>
+      <h2>La pantalla que debes supervisar</h2>
+      <p className="instrument-intro">Referencia real del PFD Garmin G1000. En navegación no basta ver una línea: confirma fuente CDI, rumbo, altitud y el siguiente punto antes de usar GPS o piloto automático.</p>
+      <figure className="reference-figure">
+        <img src={`${import.meta.env.BASE_URL}references/g1000-pfd-reference.png`} alt="Pantalla primaria Garmin G1000 usada como referencia de navegación" />
+        <figcaption>Usa esta imagen para ubicar rumbo, altitud y velocidad. Las acciones de FPL, CDI, Direct-To y modos AP se describen abajo, una por una.</figcaption>
+      </figure>
+      <div className="instrument-grid">
+        <article><span>1</span><h3>Antes de GPS o NAV</h3><p>En el PFD confirma que la fuente CDI dice <b>GPS</b>. Si dice VOR o NAV1, no armes NAV todavía.</p></article>
+        <article><span>2</span><h3>Antes de un VOR</h3><p>Confirma frecuencia activa, señal válida y CDI en <b>NAV1/VOR</b>. Sin esas tres cosas, no sigas la aguja.</p></article>
+        <article><span>3</span><h3>Antes de AP</h3><p>Avión estable, altitud y bug de rumbo preparados. Luego activa un modo y verifica en el PFD qué capturó.</p></article>
+      </div>
+    </section>
+  );
+}
+
 function VelocityOneReference() {
   return (
     <section className="velocityone-reference" aria-label="Referencia visual del Turtle Beach VelocityOne Flight">
@@ -890,10 +909,6 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
     string,
     { src: string; alt: string; caption: string }
   > = {
-    "vor-dme-basics": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "VOR entrega dirección y DME distancia; verifica siempre señal y fuente CDI." },
-    "g1000-gps-route": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "Antes de seguir la línea magenta, confirma que el CDI muestra GPS." },
-    "c172-autopilot-basics": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "HDG, ALT y NAV son modos diferentes: confirma el PFD y supervisa el resultado." },
-    "navigation-consolidation": { src: `${import.meta.env.BASE_URL}navigation-flow.svg`, alt: "Flujo visual de mapa, VOR, GPS y piloto automático", caption: "La secuencia completa es planificar, volar estable, confirmar navegación y supervisar automatización." },
     "c172-fuel-basics": {
       src: `${import.meta.env.BASE_URL}c172-performance-card.svg`,
       alt: "Tarjeta visual de combustible y despegue del Cessna 172",
@@ -1018,18 +1033,6 @@ function LessonIllustration({ lessonId }: { lessonId: string }) {
       caption:
         "La línea naranja recuerda la alternativa: potencia, actitud, velocidad y flaps por etapas.",
     },
-    "first-vfr-navigation": {
-      src: `${import.meta.env.BASE_URL}vfr-pattern.svg`,
-      alt: "Diagrama de circuito VFR alrededor de una pista",
-      caption:
-        "La navegación visual combina referencias en tierra y mapa como respaldo.",
-    },
-    "vfr-consolidation": {
-      src: `${import.meta.env.BASE_URL}vfr-pattern.svg`,
-      alt: "Diagrama de circuito VFR alrededor de una pista",
-      caption:
-        "La consolidación une tierra, despegue, control, navegación y llegada.",
-    },
   };
   const illustration = illustrations[lessonId];
   return illustration ? (
@@ -1126,7 +1129,8 @@ function DetailedLessonView({
           </section>
           {lesson.id === "first-flight-now" && <FirstFlightPfdGuide />}
           {lesson.id === "efb-first-look" && <EfbReference />}
-          {["vfr-map-route", "nav-time-fuel"].includes(lesson.id) && <EfbRouteGuide />}
+          {["vfr-map-route", "nav-time-fuel", "first-vfr-navigation"].includes(lesson.id) && <EfbRouteGuide />}
+          {["vor-dme-basics", "g1000-gps-route", "c172-autopilot-basics", "navigation-consolidation", "vfr-consolidation"].includes(lesson.id) && <NavigationReference />}
           {["ifr-route-briefing", "ifr-approach-briefing", "ifr-gps-approach"].includes(lesson.id) && <EfbReference />}
           {[
             "c172-instruments-first",
