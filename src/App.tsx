@@ -783,6 +783,23 @@ function NavigationReference() {
   );
 }
 
+function AutopilotModeGuide() {
+  return (
+    <section className="approach-profile autopilot-mode-guide" aria-label="Guía operativa de autopiloto G1000">
+      <p className="eyebrow">AUTOPILOTO · CONFIGURA → ACTIVA → CONFIRMA</p>
+      <h2>No pulses AP hasta preparar los objetivos</h2>
+      <p>Los botones reales del panel se llaman AP, HDG, NAV y ALT. La confirmación no es que el avión se mueva: es el anuncio del modo activo en la parte superior del PFD.</p>
+      <div className="approach-gates">
+        <article><span>PASO 1 · CONFIGURA</span><strong>Bug y altitud</strong><b>Antes de AP</b><small>Mueve el bug al rumbo deseado; decide qué altitud quieres mantener. Avión recto y nivelado.</small></article>
+        <article><span>PASO 2 · HDG</span><strong>AP → HDG</strong><b>Confirma HDG</b><small>El avión sigue el bug de rumbo. Si gira inesperadamente, desconecta AP y revisa el bug.</small></article>
+        <article><span>PASO 3 · ALT</span><strong>ALT</strong><b>Confirma ALT</b><small>Mantiene la altitud actual. No inicia un ascenso o descenso por sí solo.</small></article>
+        <article><span>PASO 4 · NAV</span><strong>CDI = GPS → NAV</strong><b>Espera captura</b><small>Solo cerca de la línea magenta y con FPL correcto. NAV puede armarse antes de activarse.</small></article>
+      </div>
+      <p className="approach-note"><b>Salida segura:</b> pulsa AP para desconectar, toma el yoke y nivela alas. Si el anuncio del PFD no coincide con el botón que pulsaste, desconecta y vuelve al paso 1.</p>
+    </section>
+  );
+}
+
 function VelocityOneReference() {
   return (
     <section className="velocityone-reference" aria-label="Referencia visual del Turtle Beach VelocityOne Flight">
@@ -1131,6 +1148,7 @@ function DetailedLessonView({
           {lesson.id === "efb-first-look" && <EfbReference />}
           {["vfr-map-route", "nav-time-fuel", "first-vfr-navigation"].includes(lesson.id) && <EfbRouteGuide />}
           {["vor-dme-basics", "g1000-gps-route", "c172-autopilot-basics", "navigation-consolidation", "vfr-consolidation"].includes(lesson.id) && <NavigationReference />}
+          {lesson.id === "c172-autopilot-basics" && <AutopilotModeGuide />}
           {["ifr-route-briefing", "ifr-approach-briefing", "ifr-gps-approach"].includes(lesson.id) && <EfbReference />}
           {[
             "c172-instruments-first",
