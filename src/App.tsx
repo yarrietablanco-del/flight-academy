@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { course, getLesson, lessonOrder } from "./data/course";
+import { course, getLesson, lessonOrder } from "./content/courseEngine";
 import type { Lesson, LessonStatus } from "./types/course";
+import type { LessonDocument } from "./content/courseEngine";
+import { LessonRenderer } from "./components/LessonRenderer";
 import { Checklist } from "./components/Checklist";
 import { ProgressRing } from "./components/ProgressRing";
 import { useProgress } from "./hooks/useProgress";
@@ -770,9 +772,13 @@ function NavigationReference() {
       <p className="eyebrow">G1000 · CONFIRMA ANTES DE SEGUIR</p>
       <h2>La pantalla que debes supervisar</h2>
       <p className="instrument-intro">Referencia real del PFD Garmin G1000. En navegación no basta ver una línea: confirma fuente CDI, rumbo, altitud y el siguiente punto antes de usar GPS o piloto automático.</p>
-      <figure className="reference-figure">
+      <figure className="reference-figure navigation-pfd-annotated">
         <img src={`${import.meta.env.BASE_URL}references/g1000-pfd-reference.png`} alt="Pantalla primaria Garmin G1000 usada como referencia de navegación" />
-        <figcaption>Usa esta imagen para ubicar rumbo, altitud y velocidad. Las acciones de FPL, CDI, Direct-To y modos AP se describen abajo, una por una.</figcaption>
+        <span className="nav-callout nav-nav1">NAV1 activa<br /><small>frecuencia VOR</small></span>
+        <span className="nav-callout nav-cdi">CDI / fuente<br /><small>GPS o NAV1</small></span>
+        <span className="nav-callout nav-hdg">bug de rumbo<br /><small>HDG sigue esto</small></span>
+        <span className="nav-callout nav-alt">bug de altitud<br /><small>ALT mantiene esto</small></span>
+        <figcaption>Flechas sobre una referencia real del G1000: antes de usar VOR, GPS o AP, comprueba exactamente estas cuatro zonas.</figcaption>
       </figure>
       <div className="instrument-grid">
         <article><span>1</span><h3>Antes de GPS o NAV</h3><p>En el PFD confirma que la fuente CDI dice <b>GPS</b>. Si dice VOR o NAV1, no armes NAV todavía.</p></article>
@@ -1273,6 +1279,18 @@ function LessonView({
   onComplete: () => void;
   onBack: () => void;
 }) {
+  if (sourceLesson.document || sourceLesson.editorialStatus === "planned") {
+    return (
+      <LessonRenderer
+        lesson={sourceLesson}
+        document={sourceLesson.document as LessonDocument | undefined}
+        status={status}
+        onBack={onBack}
+        onComplete={onComplete}
+        feedback={<LessonFeedback lesson={sourceLesson} value={feedback} onSave={onSaveFeedback} />}
+      />
+    );
+  }
   const lesson = sourceLesson as Lesson & {
     flightSetup: NonNullable<Lesson["flightSetup"]>;
   };

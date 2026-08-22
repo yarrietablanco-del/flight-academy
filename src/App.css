@@ -736,11 +736,25 @@ main {
 .efb-apps { left: 46%; top: 70%; }
 .efb-map { left: 57%; top: 42%; }
 
+.navigation-pfd-annotated { position: relative; overflow: hidden; }
+.nav-callout { position: absolute; z-index: 1; padding: .38rem .5rem; border: 2px solid #fff; border-radius: 7px; background: #0b6f88; box-shadow: 0 2px 7px rgba(0,0,0,.38); color: #fff; font-size: clamp(.54rem, 1.3vw, .76rem); font-weight: 800; line-height: 1.05; white-space: nowrap; }
+.nav-callout small { display: block; margin-top: 2px; color: #d8f5ff; font-size: .88em; font-weight: 600; }
+.nav-callout::after { position: absolute; color: #0b6f88; font-size: clamp(1.25rem, 3vw, 2rem); line-height: 1; text-shadow: 0 1px 2px #fff; }
+.nav-nav1 { left: 3%; top: 19%; }
+.nav-nav1::after { content: "↗"; right: -1.4rem; top: -1.55rem; }
+.nav-cdi { left: 5%; top: 61%; }
+.nav-cdi::after { content: "↗"; right: -1.5rem; top: -1.2rem; }
+.nav-hdg { left: 58%; top: 61%; }
+.nav-hdg::after { content: "↙"; left: -1.35rem; top: -1.25rem; }
+.nav-alt { right: 3%; top: 18%; }
+.nav-alt::after { content: "↙"; left: -1.35rem; top: -1.45rem; }
+
 @media (max-width: 520px) {
   .pfd-callout {
     padding: 0.2rem 0.3rem;
     border-width: 1px;
   }
+  .nav-callout { padding: .2rem .3rem; border-width: 1px; }
 }
 .velocityone-reference {
   margin: 0 0 28px;

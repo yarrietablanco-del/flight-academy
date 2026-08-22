@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Flight Academy lesson",
+  "type": "object",
+  "required": ["metadata", "whyItMatters", "concepts", "steps", "practice", "commonMistakes", "checklist", "quiz", "completionCriteria", "sources"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["id", "title", "subtitle", "objective", "estimatedTime", "prerequisites", "level", "module"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "title": { "type": "string", "minLength": 8 },
+        "subtitle": { "type": "string", "minLength": 12 },
+        "objective": { "type": "string", "minLength": 12 },
+        "estimatedTime": { "type": "string" },
+        "prerequisites": { "type": "array", "items": { "type": "string" } },
+        "level": { "type": "integer", "minimum": 0 },
+        "module": { "type": "string" }
+      }
+    },
+    "whyItMatters": { "type": "string", "minLength": 30 },
+    "concepts": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["term", "meaning"], "properties": { "term": { "type": "string" }, "meaning": { "type": "string" } } } },
+    "steps": { "type": "array", "minItems": 3, "items": { "type": "object", "required": ["number", "title", "instruction", "explanation", "expectedResult", "visual", "simulatorAction"], "properties": { "number": { "type": "integer", "minimum": 1 }, "title": { "type": "string" }, "instruction": { "type": "string" }, "explanation": { "type": "string" }, "expectedResult": { "type": "string" }, "simulatorAction": { "type": "string" }, "warning": { "type": "string" }, "tip": { "type": "string" }, "visual": { "type": "object", "required": ["type"], "properties": { "type": { "enum": ["diagram", "annotatedDiagram", "controlHighlight", "instrumentDiagram", "flightPathDiagram", "comparisonDiagram", "airportDiagram", "chartExplanation"] }, "asset": { "type": "string" }, "alt": { "type": "string" }, "requiresReference": { "type": "boolean" } } } } } },
+    "practice": { "type": "object", "required": ["title", "scenario", "task", "successSignal"], "properties": { "title": { "type": "string" }, "scenario": { "type": "string" }, "task": { "type": "string" }, "successSignal": { "type": "string" } } },
+    "commonMistakes": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["mistake", "recovery"], "properties": { "mistake": { "type": "string" }, "recovery": { "type": "string" } } } },
+    "checklist": { "type": "array", "minItems": 3, "items": { "type": "string" } },
+    "quiz": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["question", "options", "answer"], "properties": { "question": { "type": "string" }, "options": { "type": "array", "minItems": 2, "items": { "type": "string" } }, "answer": { "type": "string" }, "explanation": { "type": "string" } } } },
+    "completionCriteria": { "type": "array", "minItems": 2, "items": { "type": "string" } },
+    "sources": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["title", "url"], "properties": { "title": { "type": "string" }, "url": { "type": "string" }, "verified": { "type": "boolean" } } } }
+  }
+}

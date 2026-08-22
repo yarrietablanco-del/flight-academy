@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Dead zone y curvas de respuesta</title><desc id="desc">Tres gráficos comparan entrada física y respuesta del simulador.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#38bdf8"/></marker></defs>
+  <rect width="960" height="420" rx="28" fill="#071321"/>
+  <text x="54" y="58" fill="#f8fafc" font-family="Arial" font-size="29" font-weight="700">Cómo cambia una entrada del mando</text>
+  <text x="54" y="87" fill="#a9bbcf" font-family="Arial" font-size="17">Eje horizontal: movimiento físico · Eje vertical: respuesta que recibe MSFS</text>
+  <g font-family="Arial" transform="translate(52,125)">
+    <g><rect width="250" height="238" rx="16" fill="#10243a"/><text x="18" y="32" fill="#f8fafc" font-size="19" font-weight="700">1. Sin dead zone</text><path d="M34 202H222M128 218V54" stroke="#7590ad" stroke-width="2"/><path d="M39 198 L217 59" stroke="#38bdf8" stroke-width="6" marker-end="url(#arrow)"/><text x="20" y="226" fill="#a9bbcf" font-size="14">Todo movimiento cuenta</text></g>
+    <g transform="translate(300,0)"><rect width="250" height="238" rx="16" fill="#10243a"/><text x="18" y="32" fill="#f8fafc" font-size="19" font-weight="700">2. Dead zone central</text><path d="M34 202H222M128 218V54" stroke="#7590ad" stroke-width="2"/><path d="M39 198 L93 158 L161 158 L217 59" fill="none" stroke="#fbbf24" stroke-width="6" marker-end="url(#arrow)"/><path d="M93 174V142M161 174V142" stroke="#fbbf24" stroke-width="2"/><text x="52" y="133" fill="#fde68a" font-size="13">pequeño movimiento ignorado</text><text x="20" y="226" fill="#a9bbcf" font-size="14">Útil solo si hay ruido real</text></g>
+    <g transform="translate(600,0)"><rect width="250" height="238" rx="16" fill="#10243a"/><text x="18" y="32" fill="#f8fafc" font-size="19" font-weight="700">3. Curva suave</text><path d="M34 202H222M128 218V54" stroke="#7590ad" stroke-width="2"/><path d="M39 198 C90 191,113 175,128 151 C147 121,174 85,217 59" fill="none" stroke="#a78bfa" stroke-width="6" marker-end="url(#arrow)"/><text x="20" y="226" fill="#a9bbcf" font-size="14">Menos sensible cerca del centro</text></g>
+  </g>
+</svg>

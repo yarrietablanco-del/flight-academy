@@ -7,6 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "test": "node authoring/test-content-engine.mjs && node authoring/validate-content.mjs",
+    "validate:content": "node authoring/validate-content.mjs",
+    "author:next": "node authoring/author-next.mjs",
+    "author:batch": "node authoring/author-batch.mjs",
     "generate-pwa-assets": "pwa-assets-generator --preset minimal-2023 public/flight-academy-icon.svg",
     "preview": "vite preview"
   },

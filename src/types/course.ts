@@ -34,6 +34,8 @@ export type Lesson = {
   prerequisites: string[];
   flightSetup?: FlightSetup;
   continuity?: LessonContinuity;
+  editorialStatus?: "planned" | "generated" | "validated" | "published";
+  document?: unknown;
 };
 export type CourseModule = {
   id: string;
