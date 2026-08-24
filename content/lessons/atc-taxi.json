@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "id": "atc-taxi",
+    "title": "ATC y fraseología de taxi",
+    "subtitle": "Pide taxi, interpreta la ruta y detente si algo no coincide.",
+    "objective": "Solicitar y seguir una instrucción de taxi en MSFS.",
+    "estimatedTime": "20 min",
+    "prerequisites": ["airport-diagram-basics"],
+    "level": 2,
+    "module": "ground-and-pattern",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "Una instrucción de taxi une una solicitud con una ruta y un límite. En MSFS, leerla antes de mover el avión evita que el rodaje se convierta en adivinanza. Practicarás el flujo de la simulación; no sustituye una autorización, una frecuencia ni una fraseología aplicable a una operación real.",
+  "concepts": [
+    {"term": "ATC", "meaning": "Air Traffic Control, o control de tránsito aéreo. En esta lección es el menú y las respuestas de MSFS que usarás para practicar una secuencia, no un servicio real."},
+    {"term": "Instrucción de taxi", "meaning": "Indicación de desplazamiento en tierra. Para esta práctica la separarás en destino, ruta y límite antes de mover el avión."},
+    {"term": "Readback", "meaning": "Repetición de una autorización o instrucción. En MSFS puedes decir la ruta en voz alta para comprobar que la entendiste; no estás transmitiendo por radio real."},
+    {"term": "Límite", "meaning": "Punto hasta el que puedes avanzar en la instrucción de la práctica. Si no puedes identificarlo, el resultado correcto es detenerte y volver a comprobar."}
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Prepara una solicitud sin mover el avión",
+      "instruction": "En MSFS 2024, carga el C172 en una rampa de día, con el freno aplicado. Abre el panel o menú de ATC disponible en tu sesión y localiza una opción relacionada con solicitud de taxi o salida en tierra. Mira también el mapa y confirma tu rampa. Si no aparece esa opción, no ruedes: revisa el estado de tu vuelo o reinicia en una posición de rampa.",
+      "explanation": "La solicitud tiene sentido solo si sabes desde dónde sales. Mantener el avión detenido te permite comprobar que el menú de simulación, tu posición y la ruta que leerás se refieren al mismo aeropuerto.",
+      "expectedResult": "Puedes identificar tu rampa y una opción de ATC para pedir taxi, sin mover el avión. Si el menú cambia o no ofrece esa acción, conserva el freno y usa únicamente las opciones disponibles en esa sesión.",
+      "simulatorAction": "La ubicación, el nombre del panel y las opciones de ATC dependen de la versión y configuración de MSFS. No se prescribe un botón ni una asignación de VelocityOne sin confirmar tu perfil activo.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/atc-taxi-instruction-flow.svg",
+        "alt": "Flujo conceptual que comienza con una solicitud de taxi en el menú de ATC de una sesión de simulación.",
+        "purpose": "Mostrar que la solicitud inicia un flujo de comprobación y no una orden de movimiento inmediato.",
+        "teaches": "Pedir taxi con el avión detenido y la posición identificada.",
+        "primaryTeachingObjective": "Preparar la solicitud",
+        "perspective": "Flujo conceptual de izquierda a derecha",
+        "movingElement": "Secuencia de la instrucción",
+        "axisOfMovement": "Flujo de decisión",
+        "directionOfMovement": "De solicitud a lectura",
+        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "tiedToStep": 1,
+        "expectedObservation": "La primera tarjeta pide localizar la acción de taxi disponible antes de interpretar una ruta.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que pedir taxi ocurre antes del rodaje y desde una posición conocida.",
+        "recognizedElements": ["solicitud", "ATC", "menú activo"],
+        "actionAfterViewing": "Con el freno aplicado, localiza en tu sesión la opción de solicitud de taxi y confirma tu rampa."
+      },
+      "requiredVisualCoverage": [
+        {"type": "cockpit", "status": "notRequired", "reason": "El paso no enseña un mando ni un elemento de cabina específico; el panel de ATC depende de la interfaz disponible."},
+        {"type": "hardware", "status": "notRequired", "reason": "No se afirma ninguna asignación de VelocityOne y el freno se verifica con el perfil individual del alumno."},
+        {"type": "airport", "status": "notRequired", "reason": "La rampa y la geometría corresponden al aeropuerto elegido por el alumno, sin una referencia fiel proporcionada."}
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Solicita taxi y separa la respuesta",
+      "instruction": "Selecciona la solicitud de taxi que ofrezca el ATC de tu sesión. Lee o escucha la respuesta completa sin acelerar. Antes de mover potencia, anota o di tres partes: el destino, la ruta o calles indicadas y el límite donde debes detenerte. Si una parte no aparece o no la entiendes, mantén el avión parado y vuelve a leer la respuesta o el mapa.",
+      "explanation": "Separar el mensaje reduce la carga de memoria. El destino responde adónde vas, la ruta por dónde vas y el límite dónde termina la instrucción. Esa estructura te permite detectar una duda antes de llegar a una intersección.",
+      "expectedResult": "Puedes repetir una versión breve de la instrucción con destino, ruta y límite. Si no puedes decir las tres partes, todavía no tienes una ruta que ejecutar en esta práctica.",
+      "simulatorAction": "Las palabras y el formato que muestre el ATC de MSFS son parte de la simulación. No los copies como fraseología completa para radiotelefonía real; consulta la normativa y el servicio aplicable antes de volar fuera del simulador.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/atc-taxi-instruction-flow.svg",
+        "alt": "Diagrama conceptual que divide una instrucción recibida en destino, ruta y límite antes de rodar.",
+        "purpose": "Hacer visible la estructura mínima que el alumno debe comprobar dentro del mensaje de ATC.",
+        "teaches": "Descomponer una instrucción de taxi en tres datos accionables.",
+        "primaryTeachingObjective": "Interpretar la instrucción",
+        "perspective": "Flujo conceptual de izquierda a derecha",
+        "movingElement": "Información de la instrucción",
+        "axisOfMovement": "Flujo de decisión",
+        "directionOfMovement": "Hacia destino ruta límite",
+        "userQuestionAnswered": ["dondeMirar", "queCambioEsperar"],
+        "tiedToStep": 2,
+        "expectedObservation": "La tarjeta central agrupa una instrucción en destino, ruta y límite, que deben localizarse antes de continuar.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce las tres partes que debe verificar en la respuesta de ATC de la simulación.",
+        "recognizedElements": ["destino", "ruta", "límite"],
+        "actionAfterViewing": "Repite en voz alta el destino, la ruta y el límite de la respuesta que recibiste en MSFS."
+      },
+      "requiredVisualCoverage": [
+        {"type": "airport", "status": "notRequired", "reason": "Las calles y límites que aparezcan dependen del aeropuerto y la instrucción generados en la sesión del alumno."},
+        {"type": "chart", "status": "notRequired", "reason": "La lección no presenta una carta aeronáutica ni usa datos de una carta real; retoma el mapa de simulación del prerrequisito."}
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Convierte la instrucción en una ruta visible",
+      "instruction": "Con el mapa de MSFS abierto, localiza tu posición, el destino y cada tramo nombrado en la respuesta. Señala la última ubicación antes del límite y di la ruta completa en el mismo orden. Si el mapa no permite confirmar un tramo o aparece una intersección que no puedes relacionar, no inventes una salida: detente y elige reiniciar la práctica en un aeropuerto más sencillo.",
+      "explanation": "La instrucción se vuelve útil cuando cada palabra tiene una ubicación en el mapa. Verla como tramos consecutivos evita seguir una calle solo porque parece continuar o porque conduce hacia la pista.",
+      "expectedResult": "Tienes una ruta corta que coincide con la respuesta de ATC y termina en un límite identificable. Si no hay coincidencia visual, el resultado correcto es seguir detenido y volver a empezar, no elegir una calle por apariencia.",
+      "simulatorAction": "El mapa de MSFS es una ayuda para esta sesión. No equivale a una carta vigente ni confirma que una ruta, señal o límite sea válido fuera del simulador.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/atc-taxi-instruction-flow.svg",
+        "alt": "Flujo conceptual que lleva los datos de destino, ruta y límite a una comprobación antes de avanzar.",
+        "purpose": "Relacionar la lectura de la instrucción con la comprobación espacial que precede al rodaje.",
+        "teaches": "Confirmar la ruta en el mapa antes de aplicar potencia.",
+        "primaryTeachingObjective": "Verificar la ruta",
+        "perspective": "Flujo conceptual de izquierda a derecha",
+        "movingElement": "Secuencia de la instrucción",
+        "axisOfMovement": "Flujo de decisión",
+        "directionOfMovement": "De lectura a comprobación",
+        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "tiedToStep": 3,
+        "expectedObservation": "La secuencia exige comprobar el mapa después de leer el mensaje y antes de la acción de taxi.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que una instrucción solo se ejecuta cuando su destino, ruta y límite pueden ubicarse.",
+        "recognizedElements": ["mapa", "ruta", "límite"],
+        "actionAfterViewing": "Ubica cada tramo de la instrucción en el mapa y mantén el avión detenido si falta uno."
+      },
+      "requiredVisualCoverage": [
+        {"type": "airport", "status": "notRequired", "reason": "El paso usa la topología variable del aeropuerto seleccionado por el alumno y no dispone de una referencia fiel para ese escenario."},
+        {"type": "chart", "status": "notRequired", "reason": "No se solicita interpretar una carta real, sino contrastar una instrucción de simulación con el mapa disponible en la sesión."}
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Rueda, confirma y detente ante la duda",
+      "instruction": "Quita el freno y rueda despacio solo por el primer tramo que verificaste. En cada cruce, compara la vista con el siguiente tramo del mapa antes de continuar. Detente al límite indicado y aplica el freno. Si una calle, cruce o límite no coincide con tu lectura, detente de inmediato; no cruces una pista ni completes la ruta por intuición.",
+      "explanation": "Rodar por segmentos convierte la instrucción en comprobaciones pequeñas. La pausa en cada duda protege la relación entre el mensaje y el recorrido, y hace repetible la práctica incluso si el aeropuerto o el menú de ATC cambian.",
+      "expectedResult": "Llegas al límite de la instrucción sin improvisar un cruce y puedes explicar qué tramo seguiste. Si te detuviste por una duda, también completaste la decisión correcta de seguridad para esta práctica.",
+      "simulatorAction": "Comprueba en Controles que tienes freno y potencia funcionales antes de rodar. No se indica qué eje, botón o vista usar: esas asignaciones dependen de tu perfil de MSFS y del VelocityOne configurado.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/atc-taxi-instruction-flow.svg",
+        "alt": "Flujo conceptual que muestra rodar solo cuando mapa y ruta coinciden, y detenerse para comprobar si aparece una duda.",
+        "purpose": "Mostrar la decisión observable que separa seguir una ruta confirmada de detenerse ante una discrepancia.",
+        "teaches": "Detener el rodaje cuando la ruta deja de estar confirmada.",
+        "primaryTeachingObjective": "Decidir detenerse",
+        "perspective": "Flujo conceptual de izquierda a derecha",
+        "movingElement": "Decisión de continuar o detenerse",
+        "axisOfMovement": "Flujo de decisión",
+        "directionOfMovement": "De comprobación a acción",
+        "userQuestionAnswered": ["queControlTocar", "queCambioEsperar", "queErrorEvitar"],
+        "tiedToStep": 4,
+        "expectedObservation": "La última tarjeta permite rodar solo tras una coincidencia; el retorno rojo representa detenerse y volver a comprobar.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que una discrepancia exige detenerse y no una decisión improvisada de ruta.",
+        "recognizedElements": ["comprobación", "ruta confirmada", "detenerse"],
+        "actionAfterViewing": "Rueda solo el tramo confirmado y aplica el freno de inmediato cuando no puedas relacionar vista, mapa e instrucción."
+      },
+      "requiredVisualCoverage": [
+        {"type": "hardware", "status": "notRequired", "reason": "Los mandos de freno y potencia dependen del perfil activo y no hay una referencia confirmada de VelocityOne para esta sesión."},
+        {"type": "airport", "status": "notRequired", "reason": "El recorrido y los cruces dependen del aeropuerto elegido y de la instrucción dinámica de la simulación."},
+        {"type": "exteriorView", "status": "notRequired", "reason": "La apariencia de calles, señales y clima varía según el escenario, sin una vista exterior fiel aportada."}
+      ]
+    }
+  ],
+  "practice": {
+    "title": "Solicitud y ruta de taxi confirmada",
+    "scenario": "C172 estacionado en una rampa de MSFS 2024, de día y con freno aplicado. Elige un aeropuerto sencillo, abre el ATC disponible y usa el mapa de esa misma sesión. Esta es una práctica de simulación, no una comunicación de tránsito aéreo real.",
+    "task": "Solicita taxi con el ATC disponible. Separa la respuesta en destino, ruta y límite; ubica cada parte en el mapa. Rueda despacio por los tramos confirmados y detente en el límite. Si aparece una discrepancia, detente, vuelve al mapa y explica qué dato no pudiste confirmar.",
+    "successSignal": "Solicitas taxi sin mover el avión, repites destino, ruta y límite, y completas solo los tramos que pudiste comprobar. Llegas al límite o te detienes antes cuando surge una duda, sin improvisar un cruce ni entrar en pista.",
+    "conceptDemonstrated": "Interpretación de una instrucción de taxi",
+    "possibleConfounders": ["Elegir un aeropuerto con una red de calles demasiado compleja para una primera práctica.", "Confundir la respuesta de ATC de la simulación con una autorización o fraseología aplicable al mundo real.", "Rodar antes de identificar el límite o tratar una calle que parece continuar como parte de la ruta."],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica obliga a convertir la respuesta de ATC en tres datos comprobables y a contrastarlos con el mapa antes de cada movimiento. El límite da un final observable y la opción de detenerse aísla la comprensión de la instrucción sin añadir decisiones de pista o de despegue."
+  },
+  "commonMistakes": [
+    {"mistake": "Mover el avión apenas aparece una respuesta de ATC.", "recovery": "Detente, aplica el freno y vuelve a separar la respuesta en destino, ruta y límite antes de reiniciar el rodaje."},
+    {"mistake": "Recordar solo el destino y olvidar por dónde ir o dónde parar.", "recovery": "Vuelve al mapa y di la instrucción en tres partes. Si una no se puede ubicar, reinicia la práctica o elige un aeropuerto más sencillo."},
+    {"mistake": "Seguir una calle porque parece una continuación natural.", "recovery": "Detente en el cruce, compara el siguiente tramo con el mapa y no continúes hasta que coincidan la instrucción y la posición."},
+    {"mistake": "Usar una respuesta de MSFS como guion de radio real.", "recovery": "Trátala solo como entrada de simulación. Para operación real, consulta la normativa vigente, las publicaciones y el servicio de control aplicable."}
+  ],
+  "checklist": [
+    "C172 detenido en rampa, con freno aplicado y posición identificada en el mapa de MSFS.",
+    "Opción de solicitud de taxi localizada en el ATC disponible en la sesión.",
+    "Respuesta separada en destino, ruta y límite antes de aplicar potencia.",
+    "Cada tramo de la ruta contrastado con el mapa antes de recorrerlo.",
+    "Rodaje detenido en el límite o inmediatamente ante una discrepancia.",
+    "Sin afirmar que la interfaz, fraseología o mapa de MSFS sustituyen una operación real."
+  ],
+  "quiz": [
+    {"question": "Antes de mover el avión después de una respuesta de ATC en MSFS, ¿qué tres partes debes poder identificar?", "options": ["Destino, ruta y límite.", "Velocidad, altitud y frecuencia.", "Solo la pista más cercana."], "answer": "Destino, ruta y límite.", "explanation": "El destino indica hacia dónde ir, la ruta por dónde y el límite dónde debe terminar el avance de esta práctica."},
+    {"question": "¿Qué haces si al llegar a un cruce la vista y tu ruta leída ya no coinciden?", "options": ["Me detengo y vuelvo a comprobar el mapa y la instrucción.", "Elijo la calle que parece más directa.", "Cruzo rápido para despejar la zona."], "answer": "Me detengo y vuelvo a comprobar el mapa y la instrucción.", "explanation": "Detenerse conserva la relación entre la instrucción y la posición; una apariencia plausible no confirma que el tramo sea correcto."},
+    {"question": "¿La fraseología que muestra MSFS se debe usar sin cambios en una radio real?", "options": ["No; sirve para practicar el flujo de la simulación y la operación real requiere fuentes y servicio aplicables.", "Sí; toda respuesta de MSFS es una transmisión realista completa.", "Sí, siempre que el aeropuerto tenga una sola pista."], "answer": "No; sirve para practicar el flujo de la simulación y la operación real requiere fuentes y servicio aplicables.", "explanation": "La lección diferencia una interacción de simulación de una comunicación aeronáutica real, que depende de normas, publicaciones y contexto operativo vigente."}
+  ],
+  "completionCriteria": [
+    "Localizaste la solicitud de taxi disponible sin mover el avión y con tu rampa identificada.",
+    "Explicaste la respuesta de ATC de MSFS como destino, ruta y límite.",
+    "Contrastaste cada tramo con el mapa antes de rodar y te detuviste en el límite indicado.",
+    "Ante una discrepancia, te detuviste y volviste a comprobar en lugar de improvisar una calle o una entrada a pista.",
+    "Puedes explicar por qué esta práctica de MSFS no sustituye una autorización ni fraseología de operación real."
+  ],
+  "sources": [
+    {"title": "FAA Aeronautical Information Manual, Chapter 4: Air Traffic Control", "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap4_section_3.html", "verified": true},
+    {"title": "FAA Pilot's Handbook of Aeronautical Knowledge", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
+    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
+  ]
+}

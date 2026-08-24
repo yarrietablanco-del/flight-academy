@@ -24,10 +24,15 @@ credentials.json
 service-account*.json
 .codex/
 .agents/
+CODEX_HOME/
+*token*
+*secret*
 
 # Local temporary files
 tmp/
 temp/
+*.tmp
+*.temp
 
 # Editor directories and files
 .vscode/*

@@ -1,29 +1,98 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { basename, extname, join } from 'node:path';
-const root=process.cwd(), lessonsDir=join(root,'content','lessons'), assetsDir=join(root,'content','assets'), maxBlock=420;
-const required=['metadata','whyItMatters','concepts','steps','practice','commonMistakes','checklist','quiz','completionCriteria','sources'], stepRequired=['number','title','instruction','explanation','expectedResult','visual','simulatorAction'], visualRequired=['type','alt','purpose','teaches','userQuestionAnswered','tiedToStep','expectedObservation','view','visualCategory','fidelity','recognitionGoal','recognizedElements','actionAfterViewing'];
-const questions=new Set(['dondeMirar','queControlTocar','queCambioEsperar','queErrorEvitar']), views=new Set(['vistaExterior','instrumento','controlFisico','flujo','comparacion']), categories=new Set(['conceptual','reference']), fidelities=new Set(['conceptual','recreated-faithful','real']), coverageTypes=new Set(['cockpit','instrument','hardware','chart','exteriorView','airport']), rasters=new Set(['.png','.jpg','.jpeg','.webp']);
-const issue=(file,message)=>`${basename(file)}: ${message}`;
 
-function validateVisual(file,step,visual,label){
- const errors=[]; if(!visual)return[issue(file,`${label} del paso ${step.number} falta`)];
- for(const key of visualRequired)if(visual[key]===undefined||visual[key]===''||(Array.isArray(visual[key])&&!visual[key].length))errors.push(issue(file,`${label} del paso ${step.number} sin ${key}`));
- if(!visual.requiresReference&&!visual.asset)errors.push(issue(file,`${label} del paso ${step.number} requiere asset visual o requiresReference:true`));
- if(visual.asset&&!existsSync(join(root,visual.asset)))errors.push(issue(file,`asset visual inexistente: ${visual.asset}`));
- if(visual.tiedToStep!==step.number)errors.push(issue(file,`${label} del paso ${step.number} no está vinculado a ese paso (tiedToStep)`));
- if(!Array.isArray(visual.userQuestionAnswered)||visual.userQuestionAnswered.some(x=>!questions.has(x)))errors.push(issue(file,`${label} del paso ${step.number} no declara una pregunta pedagógica válida`));
- if(!views.has(visual.view))errors.push(issue(file,`${label} del paso ${step.number} no aclara la vista`)); if(!categories.has(visual.visualCategory))errors.push(issue(file,`${label} del paso ${step.number} debe ser conceptual o reference`)); if(!fidelities.has(visual.fidelity))errors.push(issue(file,`${label} del paso ${step.number} tiene fidelity inválida`));
- for(const key of ['alt','purpose','teaches','expectedObservation','recognitionGoal','actionAfterViewing'])if(typeof visual[key]!=='string'||visual[key].trim().length<20)errors.push(issue(file,`${label} del paso ${step.number} tiene ${key} insuficiente para un principiante`));
- if(!Array.isArray(visual.recognizedElements)||visual.recognizedElements.some(x=>typeof x!=='string'||x.trim().length<3))errors.push(issue(file,`${label} del paso ${step.number} no nombra con claridad los elementos que se reconocen`));
- if(visual.visualCategory==='conceptual'&&visual.fidelity!=='conceptual')errors.push(issue(file,`visual conceptual del paso ${step.number} debe declarar fidelity conceptual`));
- if(visual.visualCategory==='conceptual'&&['vistaExterior','instrumento','controlFisico'].includes(visual.view))errors.push(issue(file,`visual conceptual del paso ${step.number} no puede sustituir una referencia operativa`));
- if(visual.visualCategory==='reference'&&!['recreated-faithful','real'].includes(visual.fidelity))errors.push(issue(file,`referenceVisual del paso ${step.number} debe ser real o recreated-faithful`));
- if(visual.visualCategory==='reference'&&!visual.asset&&!visual.requiresReference)errors.push(issue(file,`referenceVisual del paso ${step.number} necesita un asset reconocible o requiresReference:true`));
- if(visual.visualCategory==='reference'&&visual.fidelity==='real'&&visual.asset&&extname(visual.asset).toLowerCase()==='.svg')errors.push(issue(file,`referenceVisual real del paso ${step.number} no puede usar un SVG`));
- if(visual.visualCategory==='reference'&&/abstract|decorativ|conceptual|placeholder/i.test(JSON.stringify(visual)))errors.push(issue(file,`referenceVisual del paso ${step.number} declara contenido ambiguo o no operativo`));
- if(visual.visualCategory==='reference'){const q=visual.quality;if(!q||!Number.isInteger(q.sourceWidth)||!Number.isInteger(q.sourceHeight)||!Number.isInteger(q.intendedDisplayWidth))errors.push(issue(file,`referenceVisual del paso ${step.number} debe registrar dimensiones fuente y ancho de render`));if(q&&(q.sourceWidth<1||q.sourceHeight<1||q.intendedDisplayWidth<1))errors.push(issue(file,`referenceVisual del paso ${step.number} tiene dimensiones de calidad inválidas`));if(q&&q.supportsZoom!==true)errors.push(issue(file,`referenceVisual del paso ${step.number} requiere zoom para inspección operativa`));if(!q||typeof q.detailTarget!=='string'||q.detailTarget.trim().length<20)errors.push(issue(file,`referenceVisual del paso ${step.number} no identifica el detalle que debe inspeccionarse`));if(q&&visual.asset&&rasters.has(extname(visual.asset).toLowerCase())&&q.sourceWidth<q.intendedDisplayWidth*2)errors.push(issue(file,`referenceVisual raster del paso ${step.number} no alcanza 2× el ancho de render declarado`));}
- return errors;
+const root = process.cwd();
+const lessonsDir = join(root, 'content', 'lessons');
+const assetsDir = join(root, 'content', 'assets');
+const required = ['metadata', 'whyItMatters', 'concepts', 'steps', 'practice', 'commonMistakes', 'checklist', 'quiz', 'completionCriteria', 'sources'];
+const stepRequired = ['number', 'title', 'instruction', 'explanation', 'expectedResult', 'simulatorAction', 'visual'];
+const visualRequired = ['type', 'alt', 'purpose', 'teaches', 'primaryTeachingObjective', 'userQuestionAnswered', 'tiedToStep', 'expectedObservation', 'view', 'visualCategory', 'fidelity', 'recognitionGoal', 'recognizedElements', 'actionAfterViewing'];
+const coverageTypes = new Set(['cockpit', 'instrument', 'hardware', 'chart', 'exteriorView', 'airport']);
+const validViews = new Set(['vistaExterior', 'instrumento', 'controlFisico', 'flujo', 'comparacion']);
+const validQuestions = new Set(['dondeMirar', 'queControlTocar', 'queCambioEsperar', 'queErrorEvitar']);
+const rasterExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp']);
+const issue = (file, message) => `${basename(file)}: ${message}`;
+const isText = (value, min = 20) => typeof value === 'string' && value.trim().length >= min;
+
+function validateVisual(file, step, visual, label) {
+  const errors = [];
+  if (!visual) return [issue(file, `${label} del paso ${step.number} falta`)];
+  for (const key of visualRequired) if (visual[key] === undefined || visual[key] === '' || (Array.isArray(visual[key]) && visual[key].length === 0)) errors.push(issue(file, `${label} del paso ${step.number} sin ${key}`));
+  if (!visual.asset && !visual.requiresReference) errors.push(issue(file, `${label} del paso ${step.number} requiere asset o requiresReference:true`));
+  if (visual.asset && !existsSync(join(root, visual.asset))) errors.push(issue(file, `asset inexistente: ${visual.asset}`));
+  if (visual.tiedToStep !== step.number) errors.push(issue(file, `${label} del paso ${step.number} no coincide con tiedToStep`));
+  if (!validViews.has(visual.view)) errors.push(issue(file, `${label} del paso ${step.number} tiene view inválido`));
+  if (!['conceptual', 'reference'].includes(visual.visualCategory)) errors.push(issue(file, `${label} del paso ${step.number} debe ser conceptual o reference`));
+  if (!Array.isArray(visual.userQuestionAnswered) || visual.userQuestionAnswered.some((question) => !validQuestions.has(question))) errors.push(issue(file, `${label} del paso ${step.number} no declara pregunta pedagógica válida`));
+  for (const key of ['alt', 'purpose', 'teaches', 'expectedObservation', 'recognitionGoal', 'actionAfterViewing']) if (!isText(visual[key])) errors.push(issue(file, `${label} del paso ${step.number} tiene ${key} insuficiente`));
+  if (!isText(visual.primaryTeachingObjective, 12)) errors.push(issue(file, `${label} del paso ${step.number} sin primaryTeachingObjective claro`));
+  if (/[,;]|\by\b|\bo\b/i.test(visual.primaryTeachingObjective ?? '')) errors.push(issue(file, `${label} del paso ${step.number} mezcla varios objetivos principales`));
+  if (!Array.isArray(visual.recognizedElements) || visual.recognizedElements.length === 0) errors.push(issue(file, `${label} del paso ${step.number} sin elementos reconocibles`));
+  if (visual.visualCategory === 'conceptual') {
+    if (visual.fidelity !== 'conceptual') errors.push(issue(file, `visual conceptual del paso ${step.number} debe usar fidelity conceptual`));
+    if (['vistaExterior', 'instrumento', 'controlFisico'].includes(visual.view)) errors.push(issue(file, `visual conceptual del paso ${step.number} no cubre reconocimiento operativo`));
+    for (const key of ['perspective', 'movingElement', 'axisOfMovement', 'directionOfMovement']) if (!isText(visual[key], 3)) errors.push(issue(file, `visual conceptual del paso ${step.number} sin ${key}`));
+    if (visual.type === 'comparisonDiagram' && !isText(visual.comparisonJustification)) errors.push(issue(file, `comparisonDiagram del paso ${step.number} sin justificación`));
+  }
+  if (visual.visualCategory === 'reference') {
+    if (!['real', 'recreated-faithful'].includes(visual.fidelity)) errors.push(issue(file, `referenceVisual del paso ${step.number} no es real ni recreated-faithful`));
+    if (visual.fidelity === 'real' && visual.asset && extname(visual.asset).toLowerCase() === '.svg') errors.push(issue(file, `referenceVisual real del paso ${step.number} no puede usar SVG`));
+    const quality = visual.quality;
+    if (!quality || !Number.isInteger(quality.sourceWidth) || !Number.isInteger(quality.sourceHeight) || !Number.isInteger(quality.intendedDisplayWidth) || quality.supportsZoom !== true || !isText(quality.detailTarget)) errors.push(issue(file, `referenceVisual del paso ${step.number} sin calidad o zoom operativo`));
+    if (quality && visual.asset && rasterExtensions.has(extname(visual.asset).toLowerCase()) && quality.sourceWidth < quality.intendedDisplayWidth * 2) errors.push(issue(file, `referenceVisual raster del paso ${step.number} no alcanza 2×`));
+  }
+  return errors;
 }
-function validateCoverage(file,step){const errors=[];if(!Array.isArray(step.requiredVisualCoverage)||!step.requiredVisualCoverage.length)return[issue(file,`paso ${step.number} V3 debe declarar requiredVisualCoverage`)];const needed=new Set();for(const x of step.requiredVisualCoverage){if(!coverageTypes.has(x?.type)){errors.push(issue(file,`paso ${step.number} declara un tipo de cobertura visual inválido`));continue}if(!['required','notRequired'].includes(x.status))errors.push(issue(file,`paso ${step.number} debe declarar required o notRequired para ${x.type}`));if(x.status==='notRequired'&&(typeof x.reason!=='string'||x.reason.trim().length<20))errors.push(issue(file,`paso ${step.number} debe justificar por qué ${x.type} no aporta valor real`));if(x.status==='required')needed.add(x.type)}const refs=[step.visual,...(step.referenceVisuals??[])], inferred={controlFisico:['hardware'],instrumento:['instrument'],vistaExterior:['cockpit','exteriorView'],flujo:['cockpit'],comparacion:[]}, covered=new Set(refs.filter(v=>v?.visualCategory==='reference'&&v.asset&&!v.requiresReference).flatMap(v=>v.coverage??inferred[v.view]??[]));for(const v of step.referenceVisuals??[])if(!Array.isArray(v.coverage)||!v.coverage.length||v.coverage.some(x=>!coverageTypes.has(x)))errors.push(issue(file,`referenceVisual del paso ${step.number} debe declarar coverage válido`));for(const x of needed)if(!covered.has(x))errors.push(issue(file,`paso ${step.number} requiere cobertura visual de ${x}, pero no tiene referenceVisual fiel que la cubra`));return errors}
-function validate(file){const errors=[];let lesson;try{lesson=JSON.parse(readFileSync(file,'utf8'))}catch{return[issue(file,'JSON inválido')]};for(const k of required)if(!lesson[k]||(Array.isArray(lesson[k])&&!lesson[k].length))errors.push(issue(file,`falta ${k}`));for(const k of ['id','title','subtitle','objective','estimatedTime','prerequisites','level','module'])if(lesson.metadata?.[k]===undefined||lesson.metadata?.[k]==='')errors.push(issue(file,`metadata.${k} falta`));const blocks=[lesson.whyItMatters,...(lesson.concepts??[]).map(x=>x.meaning),...(lesson.steps??[]).flatMap(x=>[x.instruction,x.explanation,x.expectedResult,x.warning,x.tip]),lesson.practice?.scenario,lesson.practice?.task,lesson.practice?.successSignal];for(const b of blocks.filter(Boolean))if(b.length>maxBlock)errors.push(issue(file,`bloque de texto excede ${maxBlock} caracteres`));for(const step of lesson.steps??[]){for(const k of stepRequired)if(step[k]===undefined||step[k]==='')errors.push(issue(file,`paso ${step.number??'?'} sin ${k}`));if(lesson.metadata?.visualStandardVersion>=2){errors.push(...validateVisual(file,step,step.visual,'visual'));for(const v of step.referenceVisuals??[])errors.push(...validateVisual(file,step,v,'referenceVisual'))}if(lesson.metadata?.visualStandardVersion===3)errors.push(...validateCoverage(file,step))}if(lesson.metadata?.visualStandardVersion!==undefined&&![2,3].includes(lesson.metadata.visualStandardVersion))errors.push(issue(file,'metadata.visualStandardVersion debe ser 2 o 3 cuando se declara'));const text=JSON.stringify(lesson).toLowerCase();for(const [m,re] of [['TODO',/(^|[^a-záéíóúñ])todo([^a-záéíóúñ]|$)/i],['imagen aquí',/imagen\s+aqu[ií]/i],['placeholder',/placeholder/i]])if(re.test(text))errors.push(issue(file,`contiene placeholder prohibido: ${m}`));if(text.includes('no verificado')&&!text.includes('requiresreference'))errors.push(issue(file,'dato no verificado sin requiresReference:true'));return errors}
-const i=process.argv.indexOf('--lesson'), target=i>=0?`${process.argv[i+1]}.json`:null, files=target?[join(lessonsDir,target)]:readdirSync(lessonsDir).filter(x=>x.endsWith('.json')).map(x=>join(lessonsDir,x)), errors=files.flatMap(file=>existsSync(file)?validate(file):[issue(file,'archivo no existe')]);if(errors.length){console.error(`VALIDACIÓN FALLÓ (${errors.length})\n${errors.map(x=>`- ${x}`).join('\n')}`);process.exit(1)}console.log(`VALIDACIÓN OK: ${files.length} lección(es), assets en ${assetsDir}`);
+
+function validateCoverage(file, step) {
+  const errors = [];
+  if (!Array.isArray(step.requiredVisualCoverage) || step.requiredVisualCoverage.length === 0) return [issue(file, `paso ${step.number} V3 sin requiredVisualCoverage`)];
+  const needed = new Set();
+  for (const declaration of step.requiredVisualCoverage) {
+    if (!coverageTypes.has(declaration?.type)) errors.push(issue(file, `paso ${step.number} declara coverage inválido`));
+    if (!['required', 'notRequired'].includes(declaration?.status)) errors.push(issue(file, `paso ${step.number} declara estado de coverage inválido`));
+    if (declaration?.status === 'notRequired' && !isText(declaration.reason)) errors.push(issue(file, `paso ${step.number} debe justificar notRequired`));
+    if (declaration?.status === 'required') needed.add(declaration.type);
+  }
+  const inferred = { controlFisico: ['hardware'], instrumento: ['instrument'], vistaExterior: ['cockpit', 'exteriorView'], flujo: ['cockpit'], comparacion: [] };
+  const references = [step.visual, ...(step.referenceVisuals ?? [])].filter((visual) => visual?.visualCategory === 'reference' && visual.asset && !visual.requiresReference);
+  const covered = new Set(references.flatMap((visual) => visual.coverage ?? inferred[visual.view] ?? []));
+  for (const type of needed) if (!covered.has(type)) errors.push(issue(file, `paso ${step.number} requiere ${type} sin referencia fiel`));
+  return errors;
+}
+
+function validatePractice(file, practice) {
+  const errors = [];
+  for (const key of ['title', 'scenario', 'task', 'successSignal', 'conceptDemonstrated']) if (!isText(practice?.[key], key === 'conceptDemonstrated' ? 12 : 1)) errors.push(issue(file, `práctica sin ${key}`));
+  if (!Array.isArray(practice?.possibleConfounders)) errors.push(issue(file, 'práctica debe declarar possibleConfounders'));
+  if (!isText(practice?.whyThisExerciseDemonstratesTheConcept, 30)) errors.push(issue(file, 'práctica sin whyThisExerciseDemonstratesTheConcept suficiente'));
+  if (/yaw/i.test(practice?.conceptDemonstrated ?? '') && /estacionado|detenido|tierra/i.test(practice?.scenario ?? '')) errors.push(issue(file, 'práctica de yaw no puede usar una situación detenida en tierra'));
+  return errors;
+}
+
+function validate(file) {
+  let lesson;
+  try { lesson = JSON.parse(readFileSync(file, 'utf8')); } catch { return [issue(file, 'JSON inválido')]; }
+  const errors = [];
+  for (const key of required) if (!lesson[key] || (Array.isArray(lesson[key]) && lesson[key].length === 0)) errors.push(issue(file, `falta ${key}`));
+  for (const key of ['id', 'title', 'subtitle', 'objective', 'estimatedTime', 'prerequisites', 'level', 'module']) if (lesson.metadata?.[key] === undefined || lesson.metadata[key] === '') errors.push(issue(file, `metadata.${key} falta`));
+  if (lesson.metadata?.visualStandardVersion !== 3) errors.push(issue(file, 'requiere metadata.visualStandardVersion: 3 (Authoring Standard 1.0)'));
+  errors.push(...validatePractice(file, lesson.practice));
+  for (const step of lesson.steps ?? []) {
+    for (const key of stepRequired) if (step[key] === undefined || step[key] === '') errors.push(issue(file, `paso ${step.number ?? '?'} sin ${key}`));
+    errors.push(...validateVisual(file, step, step.visual, 'visual'));
+    for (const visual of step.referenceVisuals ?? []) errors.push(...validateVisual(file, step, visual, 'referenceVisual'));
+    errors.push(...validateCoverage(file, step));
+  }
+  const blocks = [lesson.whyItMatters, ...(lesson.concepts ?? []).map((item) => item.meaning), ...(lesson.steps ?? []).flatMap((step) => [step.instruction, step.explanation, step.expectedResult, step.warning, step.tip]), lesson.practice?.scenario, lesson.practice?.task, lesson.practice?.successSignal];
+  for (const block of blocks.filter(Boolean)) if (block.length > 420) errors.push(issue(file, 'bloque de texto excede 420 caracteres'));
+  if (/placeholder|imagen\s+aqu[ií]/i.test(JSON.stringify(lesson))) errors.push(issue(file, 'contiene placeholder prohibido'));
+  return errors;
+}
+
+const index = process.argv.indexOf('--lesson');
+const target = index >= 0 ? `${process.argv[index + 1]}.json` : null;
+const files = target ? [join(lessonsDir, target)] : readdirSync(lessonsDir).filter((file) => file.endsWith('.json')).map((file) => join(lessonsDir, file));
+const errors = files.flatMap((file) => existsSync(file) ? validate(file) : [issue(file, 'archivo no existe')]);
+if (errors.length) { console.error(`VALIDACIÓN FALLÓ (${errors.length})\n${errors.map((error) => `- ${error}`).join('\n')}`); process.exit(1); }
+console.log(`VALIDACIÓN OK: ${files.length} lección(es), assets en ${assetsDir}`);

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Trayectoria alineada y trayectoria que se desvía de la línea central</title>
+  <desc id="desc">Comparación conceptual desde arriba: una trayectoria mantiene la línea central de pista; la otra se separa y exige detener la práctica para corregir con calma.</desc>
+  <defs>
+    <marker id="arrow-teal" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0L11 5.5L0 11Z" fill="#1fb6a6"/></marker>
+    <marker id="arrow-red" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0L11 5.5L0 11Z" fill="#e65b52"/></marker>
+    <style>
+      .bg{fill:#f5f8fa}.panel{fill:#fff;stroke:#d9e2e8;stroke-width:3}.runway{fill:#485661}.edge{stroke:#f9fbfc;stroke-width:7}.center{stroke:#f5d65e;stroke-width:7;stroke-dasharray:34 28}.label{font-family:Arial,sans-serif;fill:#16232d}.small{font-family:Arial,sans-serif;fill:#425563;font-size:26px}.heading{font-family:Arial,sans-serif;fill:#16232d;font-size:38px;font-weight:700}.pathgood{fill:none;stroke:#1fb6a6;stroke-width:14;stroke-linecap:round;marker-end:url(#arrow-teal)}.pathbad{fill:none;stroke:#e65b52;stroke-width:14;stroke-linecap:round;marker-end:url(#arrow-red)}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text x="800" y="74" text-anchor="middle" class="heading">Durante la carrera: observa la trayectoria, no solo la velocidad</text>
+  <rect class="panel" x="70" y="132" width="700" height="680" rx="22"/>
+  <rect class="panel" x="830" y="132" width="700" height="680" rx="22"/>
+  <text x="420" y="194" text-anchor="middle" class="heading" fill="#137d73">ALINEADO</text>
+  <text x="1180" y="194" text-anchor="middle" class="heading" fill="#b53d37">DESVIACIÓN</text>
+  <rect class="runway" x="265" y="240" width="310" height="470" rx="5"/>
+  <line class="edge" x1="282" y1="255" x2="282" y2="695"/><line class="edge" x1="558" y1="255" x2="558" y2="695"/>
+  <line class="center" x1="420" y1="270" x2="420" y2="685"/>
+  <path class="pathgood" d="M420 650 C420 555 420 435 420 305"/>
+  <circle cx="420" cy="665" r="17" fill="#1fb6a6"/><text x="420" y="758" text-anchor="middle" class="small">Pequeñas correcciones y nueva comprobación</text>
+  <rect class="runway" x="1025" y="240" width="310" height="470" rx="5"/>
+  <line class="edge" x1="1042" y1="255" x2="1042" y2="695"/><line class="edge" x1="1318" y1="255" x2="1318" y2="695"/>
+  <line class="center" x1="1180" y1="270" x2="1180" y2="685"/>
+  <path class="pathbad" d="M1180 650 C1175 565 1210 480 1280 355"/>
+  <circle cx="1180" cy="665" r="17" fill="#e65b52"/><text x="1180" y="758" text-anchor="middle" class="small">No persigas la línea: reduce la carga y corrige con calma</text>
+  <text x="800" y="858" text-anchor="middle" class="small">Relación conceptual: posición respecto a la línea central → decisión de corregir o interrumpir la práctica.</text>
+</svg>

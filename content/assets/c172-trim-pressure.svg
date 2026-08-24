@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">La misma actitud con presión sostenida y presión reducida</title>
+  <desc id="desc">Comparación conceptual: después de estabilizar, el trim puede reducir la fuerza continua necesaria en el yoke; luego se confirma que la tendencia sigue estable.</desc>
+  <defs>
+    <marker id="force" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b33b2e"/></marker>
+    <marker id="smallforce" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#28733c"/></marker>
+  </defs>
+  <rect width="1200" height="620" fill="#f6fafc"/>
+  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#17324d">TRIM: MENOS FUERZA PARA MANTENER UNA CONDICIÓN ESTABILIZADA</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="105" width="505" height="435" rx="20" fill="#fff0ee" stroke="#b33b2e" stroke-width="4"/>
+    <text x="307" y="151" text-anchor="middle" font-size="26" font-weight="700" fill="#962f24">ANTES: presión sostenida</text>
+    <path d="M108 292 H510" stroke="#527287" stroke-width="4" stroke-dasharray="10 9"/>
+    <text x="108" y="276" font-size="17" fill="#36566b">misma línea de actitud</text>
+    <path d="M148 320 L354 320 L422 292 L354 264 Z" fill="#c9dce6" stroke="#17324d" stroke-width="4"/>
+    <path d="M422 292 L472 292" stroke="#17324d" stroke-width="5"/>
+    <path d="M250 390 H382" stroke="#17324d" stroke-width="12" stroke-linecap="round"/>
+    <path d="M316 350 V430" stroke="#17324d" stroke-width="12" stroke-linecap="round"/>
+    <text x="316" y="468" text-anchor="middle" font-size="19" fill="#17324d">YOKE</text>
+    <path d="M120 390 H232" stroke="#b33b2e" stroke-width="12" marker-end="url(#force)"/>
+    <text x="176" y="368" text-anchor="middle" font-size="19" font-weight="700" fill="#962f24">empujar o tirar</text>
+    <text x="307" y="510" text-anchor="middle" font-size="20" fill="#17324d">La actitud está estable,</text>
+    <text x="307" y="535" text-anchor="middle" font-size="20" fill="#17324d">pero exige fuerza continua.</text>
+    <rect x="640" y="105" width="505" height="435" rx="20" fill="#ecf7ee" stroke="#28733c" stroke-width="4"/>
+    <text x="892" y="151" text-anchor="middle" font-size="26" font-weight="700" fill="#246535">DESPUÉS: presión reducida</text>
+    <path d="M693 292 H1095" stroke="#527287" stroke-width="4" stroke-dasharray="10 9"/>
+    <text x="693" y="276" font-size="17" fill="#36566b">misma línea de actitud</text>
+    <path d="M733 320 L939 320 L1007 292 L939 264 Z" fill="#c9dce6" stroke="#17324d" stroke-width="4"/>
+    <path d="M1007 292 L1057 292" stroke="#17324d" stroke-width="5"/>
+    <path d="M835 390 H967" stroke="#17324d" stroke-width="12" stroke-linecap="round"/>
+    <path d="M901 350 V430" stroke="#17324d" stroke-width="12" stroke-linecap="round"/>
+    <text x="901" y="468" text-anchor="middle" font-size="19" fill="#17324d">YOKE</text>
+    <path d="M757 390 H800" stroke="#28733c" stroke-width="7" marker-end="url(#smallforce)"/>
+    <text x="779" y="368" text-anchor="middle" font-size="19" font-weight="700" fill="#246535">menos fuerza</text>
+    <text x="892" y="510" text-anchor="middle" font-size="20" fill="#17324d">Confirma que la condición sigue estable</text>
+    <text x="892" y="535" text-anchor="middle" font-size="20" fill="#17324d">con menos presión en el yoke.</text>
+    <path d="M561 292 H639" stroke="#176b87" stroke-width="6"/>
+    <rect x="565" y="249" width="70" height="32" rx="16" fill="#176b87"/>
+    <text x="600" y="272" text-anchor="middle" font-size="17" font-weight="700" fill="white">TRIM</text>
+  </g>
+</svg>

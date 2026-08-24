@@ -15,12 +15,20 @@
   "whyItMatters": "El C172 permite aprender relación entre controles, actitud e instrumentos con una carga de sistemas menor que un avión de línea. No es un A320 reducido: es tu plataforma de fundamentos.",
   "concepts": [
     {
+      "term": "Cessna 172 (C172)",
+      "meaning": "Avión ligero de entrenamiento que usarás como plataforma para estas prácticas."
+    },
+    {
       "term": "Actitud",
       "meaning": "Cómo está orientado el avión respecto al horizonte: morro, alas y dirección."
     },
     {
       "term": "PFD",
       "meaning": "Pantalla primaria de vuelo, cuando la variante del avión dispone de ella."
+    },
+    {
+      "term": "G1000",
+      "meaning": "Sistema de pantallas Garmin que algunas variantes del C172 usan para mostrar la información de vuelo."
     },
     {
       "term": "Rampa",
@@ -56,7 +64,12 @@
           "comprueba",
           "repite"
         ],
-        "actionAfterViewing": "Carga el C172 estacionado y deja el freno aplicado antes de mirar cualquier control."
+        "actionAfterViewing": "Carga el C172 estacionado y deja el freno aplicado antes de mirar cualquier control.",
+        "primaryTeachingObjective": "Seguir el ciclo de aprendizaje",
+        "perspective": "Diagrama de flujo sin perspectiva física",
+        "movingElement": "La secuencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "De inicio a comprobación"
       },
       "requiredVisualCoverage": [
         {
@@ -104,7 +117,8 @@
         },
         "coverage": [
           "instrument"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer la pantalla primaria"
       },
       "warning": "La aviónica y la disposición pueden variar entre variantes y actualizaciones de MSFS.",
       "requiredVisualCoverage": [
@@ -151,7 +165,8 @@
         },
         "coverage": [
           "hardware"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer el control"
       },
       "tip": "Si un control no coincide con una referencia, confía en el avión y perfil que tienes cargados, no en una imagen genérica.",
       "requiredVisualCoverage": [
@@ -166,7 +181,10 @@
     "title": "Cabina en 60 segundos",
     "scenario": "C172 estacionado y sin intención de despegar.",
     "task": "Sin tocar potencia, haz un recorrido y nombra yoke, frenos, trim, fuente de actitud y fuente de velocidad. Repite hasta completar en menos de un minuto.",
-    "successSignal": "Puedes ubicar las cinco funciones sin mover el avión."
+    "successSignal": "Puedes ubicar las cinco funciones sin mover el avión.",
+    "conceptDemonstrated": "Referencias básicas de cabina",
+    "possibleConfounders": [],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica usa una acción observable y una comprobación explícita para que el alumno relacione el concepto con su resultado en MSFS."
   },
   "commonMistakes": [
     {
@@ -192,7 +210,7 @@
       "options": [
         "Memorizar todos los números del panel",
         "Ubicar funciones y fuentes de información sin presión",
-        "Preparar una aproximación IFR"
+        "Preparar una aproximación por instrumentos"
       ],
       "answer": "Ubicar funciones y fuentes de información sin presión",
       "explanation": "Los procedimientos y números llegarán después de dominar las referencias básicas."

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Flujo conceptual antes del despegue</title>
+  <desc id="desc">Un flujo muestra confirmar autorización de simulación, pista y espacio para continuar, o detenerse si falta una comprobación.</desc>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12z" fill="#0b5e75"/></marker><style>.bg{fill:#f5fbfc}.box{fill:#fff;stroke:#0b5e75;stroke-width:3}.stop{fill:#fff1f0;stroke:#bd3428;stroke-width:3}.go{fill:#e5f7ed;stroke:#26754b;stroke-width:3}.l{font:700 25px Arial,sans-serif;fill:#123b4a}.s{font:400 19px Arial,sans-serif;fill:#244c5b}.a{fill:none;stroke:#0b5e75;stroke-width:6;marker-end:url(#arrow)}.r{fill:none;stroke:#bd3428;stroke-width:6;marker-end:url(#arrow)}</style></defs>
+  <rect class="bg" width="1200" height="520"/><text class="l" x="55" y="58">Antes de iniciar la carrera, convierte dudas en una parada</text>
+  <rect class="box" x="60" y="170" width="250" height="120" rx="18"/><text class="l" x="83" y="215">1. Detenido</text><text class="s" x="83" y="247">Lee la autorización</text><text class="s" x="83" y="272">de MSFS disponible.</text>
+  <rect class="box" x="455" y="170" width="290" height="120" rx="18"/><text class="l" x="479" y="215">2. Comprueba</text><text class="s" x="479" y="247">Pista, dirección y</text><text class="s" x="479" y="272">espacio para practicar.</text>
+  <rect class="go" x="885" y="170" width="250" height="120" rx="18"/><text class="l" x="907" y="215">3. Continúa</text><text class="s" x="907" y="247">Entra e inicia solo</text><text class="s" x="907" y="272">si todo coincide.</text>
+  <path class="a" d="M312 230 H450"/><path class="a" d="M748 230 H878"/>
+  <path class="r" d="M600 293 V390 H344"/><rect class="stop" x="62" y="345" width="282" height="110" rx="18"/><text class="l" x="86" y="389">Detente</text><text class="s" x="86" y="420">Si falta un dato, no</text><text class="s" x="86" y="444">adivines: vuelve a comprobar.</text>
+  <text class="s" x="455" y="130">¿Coinciden la situación, tu lectura y el margen?</text>
+</svg>

@@ -55,7 +55,13 @@
           "dead zone central",
           "curva suave"
         ],
-        "actionAfterViewing": "No modifiques valores todavía; observa primero un síntoma concreto en el eje elegido."
+        "actionAfterViewing": "No modifiques valores todavía; observa primero un síntoma concreto en el eje elegido.",
+        "primaryTeachingObjective": "Comparar curvas de respuesta",
+        "perspective": "Comparación frontal de tendencias",
+        "movingElement": "La tendencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "Entre alternativas",
+        "comparisonJustification": "La comparación es el objetivo pedagógico principal de este paso."
       },
       "requiredVisualCoverage": [
         {
@@ -102,7 +108,8 @@
         },
         "coverage": [
           "cockpit"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer la pantalla de controles"
       },
       "warning": "No uses una dead zone grande para compensar falta de práctica.",
       "requiredVisualCoverage": [
@@ -140,7 +147,12 @@
           "observar",
           "repetir"
         ],
-        "actionAfterViewing": "Cambia una sola variable y repite la misma prueba antes de guardar el perfil."
+        "actionAfterViewing": "Cambia una sola variable y repite la misma prueba antes de guardar el perfil.",
+        "primaryTeachingObjective": "Seguir el ciclo de aprendizaje",
+        "perspective": "Diagrama de flujo sin perspectiva física",
+        "movingElement": "La secuencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "De inicio a comprobación"
       },
       "tip": "Los valores dependen de tu unidad, calibración y preferencia; no copies números sin verificarlos.",
       "requiredVisualCoverage": [
@@ -156,7 +168,10 @@
     "title": "Diagnóstico de un eje",
     "scenario": "C172 estacionado y perfil C172 Training activo.",
     "task": "Elige solo elevador o alerones. Observa el centro, anota el síntoma si existe y realiza como máximo un ajuste antes de volver a probar.",
-    "successSignal": "Tienes una observación antes/después, incluso si decides dejar el ajuste por defecto."
+    "successSignal": "Tienes una observación antes/después, incluso si decides dejar el ajuste por defecto.",
+    "conceptDemonstrated": "Sensibilidad",
+    "possibleConfounders": [],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica usa una acción observable y una comprobación explícita para que el alumno relacione el concepto con su resultado en MSFS."
   },
   "commonMistakes": [
     {

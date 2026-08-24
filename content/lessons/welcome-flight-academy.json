@@ -13,6 +13,14 @@
   "whyItMatters": "Volar mejora cuando sabes qué practicar y cómo comprobarlo. Esta academia separa cada habilidad para que un error sea fácil de identificar y repetir.",
   "concepts": [
     {
+      "term": "MSFS 2024",
+      "meaning": "Microsoft Flight Simulator 2024, el simulador en el que harás estas prácticas."
+    },
+    {
+      "term": "FMD",
+      "meaning": "Flight Management Display: la pantalla del VelocityOne que muestra el perfil activo y ayuda a identificar entradas del control."
+    },
+    {
       "term": "Práctica deliberada",
       "meaning": "Una sesión corta con un objetivo observable, no una vuelta sin plan."
     },
@@ -50,7 +58,12 @@
           "comprueba",
           "repite"
         ],
-        "actionAfterViewing": "Lee el objetivo de una sola lección antes de abrir un vuelo."
+        "actionAfterViewing": "Lee el objetivo de una sola lección antes de abrir un vuelo.",
+        "primaryTeachingObjective": "Seguir el ciclo de aprendizaje",
+        "perspective": "Diagrama de flujo sin perspectiva física",
+        "movingElement": "La secuencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "De inicio a comprobación"
       },
       "requiredVisualCoverage": [
         {
@@ -63,7 +76,7 @@
     {
       "number": 2,
       "title": "Prepara una sesión corta",
-      "instruction": "Conecta VelocityOne, abre MSFS 2024 y elige un momento sin interrupciones.",
+      "instruction": "Conecta VelocityOne, abre Microsoft Flight Simulator 2024 (MSFS 2024) y elige un momento sin interrupciones.",
       "explanation": "La consistencia del equipo evita confundir un problema técnico con uno de pilotaje.",
       "expectedResult": "Control conectado y objetivo visible.",
       "simulatorAction": "Permanece en el menú principal de MSFS.",
@@ -98,7 +111,8 @@
         },
         "coverage": [
           "hardware"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer el control"
       },
       "requiredVisualCoverage": [
         {
@@ -134,7 +148,12 @@
           "repite",
           "prepara"
         ],
-        "actionAfterViewing": "Escribe qué funcionó y qué repetirías usando el feedback de la lección."
+        "actionAfterViewing": "Escribe qué funcionó y qué repetirías usando el feedback de la lección.",
+        "primaryTeachingObjective": "Seguir el ciclo de aprendizaje",
+        "perspective": "Diagrama de flujo sin perspectiva física",
+        "movingElement": "La secuencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "De inicio a comprobación"
       },
       "requiredVisualCoverage": [
         {
@@ -149,7 +168,10 @@
     "title": "Tu primera rutina",
     "scenario": "MSFS aún en el menú.",
     "task": "Escribe: “Hoy practicaré una sola habilidad y pausaré si no entiendo lo que ocurre”.",
-    "successSignal": "Puedes nombrar el objetivo y la acción de salida segura."
+    "successSignal": "Puedes nombrar el objetivo y la acción de salida segura.",
+    "conceptDemonstrated": "Práctica deliberada",
+    "possibleConfounders": [],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica usa una acción observable y una comprobación explícita para que el alumno relacione el concepto con su resultado en MSFS."
   },
   "commonMistakes": [
     {

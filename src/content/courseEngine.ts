@@ -8,6 +8,12 @@ export type LessonVisual = {
   requiresReference?: boolean;
   purpose: string;
   teaches: string;
+  primaryTeachingObjective: string;
+  perspective?: string;
+  movingElement?: string;
+  axisOfMovement?: string;
+  directionOfMovement?: string;
+  comparisonJustification?: string;
   userQuestionAnswered: ("dondeMirar" | "queControlTocar" | "queCambioEsperar" | "queErrorEvitar")[];
   tiedToStep: number;
   expectedObservation: string;
@@ -26,7 +32,7 @@ export type LessonDocument = {
   whyItMatters: string;
   concepts: { term: string; meaning: string }[];
   steps: { number: number; title: string; instruction: string; explanation: string; expectedResult: string; simulatorAction: string; visual: LessonVisual; referenceVisuals?: LessonVisual[]; warning?: string; tip?: string }[];
-  practice: { title: string; scenario: string; task: string; successSignal: string };
+  practice: { title: string; scenario: string; task: string; successSignal: string; conceptDemonstrated: string; possibleConfounders: string[]; whyThisExerciseDemonstratesTheConcept: string };
   commonMistakes: { mistake: string; recovery: string }[];
   checklist: string[];
   quiz: { question: string; options: string[]; answer: string; explanation: string }[];

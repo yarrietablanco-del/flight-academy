@@ -15,6 +15,22 @@
   "whyItMatters": "Si conoces la familia de cada control, puedes comprobar una asignación en MSFS sin memorizar etiquetas ni mover algo por accidente.",
   "concepts": [
     {
+      "term": "Yoke",
+      "meaning": "El volante de control del avión: al moverlo hacia delante, atrás o a los lados envías órdenes de vuelo."
+    },
+    {
+      "term": "Cessna 172 (C172)",
+      "meaning": "Avión ligero de entrenamiento que usarás en las primeras prácticas."
+    },
+    {
+      "term": "Trim",
+      "meaning": "Ajuste que ayuda a reducir la fuerza continua necesaria en el yoke después de estabilizar el avión."
+    },
+    {
+      "term": "Timón (rudder)",
+      "meaning": "Superficie que gira el morro a izquierda o derecha; rudder es su nombre en inglés en algunas pantallas."
+    },
+    {
       "term": "Eje",
       "meaning": "Un control que cambia de forma continua: por ejemplo, mover el yoke hacia delante o atrás."
     },
@@ -32,7 +48,7 @@
       "number": 1,
       "title": "Ubica el yoke",
       "instruction": "Con el simulador cerrado, mueve el yoke suavemente hacia delante, atrás, izquierda y derecha.",
-      "explanation": "Esos movimientos se usan para mandar elevador y alerones; no necesitas memorizar botones aún.",
+      "explanation": "Esos movimientos se usan para mandar las superficies que suben o bajan el morro y las que inclinan las alas; no necesitas memorizar botones aún.",
       "expectedResult": "Distingues movimiento adelante/atrás de movimiento izquierda/derecha.",
       "simulatorAction": "No cambies asignaciones todavía.",
       "visual": {
@@ -65,7 +81,8 @@
         },
         "coverage": [
           "hardware"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer el control"
       },
       "warning": "No asumas que una palanca o botón tiene una función concreta hasta comprobarla en tu perfil.",
       "requiredVisualCoverage": [
@@ -112,7 +129,8 @@
         },
         "coverage": [
           "hardware"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer el control"
       },
       "tip": "Usa el buscador de controles de MSFS para verificar una acción, no una lista genérica de internet.",
       "requiredVisualCoverage": [
@@ -159,7 +177,8 @@
         },
         "coverage": [
           "hardware"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer el control"
       },
       "requiredVisualCoverage": [
         {
@@ -173,7 +192,10 @@
     "title": "Inventario de controles",
     "scenario": "MSFS abierto en Opciones > Controles.",
     "task": "Elige C172 Training si existe. Busca una acción de elevador, una de alerones, una de timón y una de frenos; activa detección y mueve solo el control que crees correspondiente.",
-    "successSignal": "Cada entrada detectada coincide con la familia que esperabas o queda anotada para corregirla."
+    "successSignal": "Cada entrada detectada coincide con la familia que esperabas o queda anotada para corregirla.",
+    "conceptDemonstrated": "Familias de controles VelocityOne",
+    "possibleConfounders": [],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica usa una acción observable y una comprobación explícita para que el alumno relacione el concepto con su resultado en MSFS."
   },
   "commonMistakes": [
     {

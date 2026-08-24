@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Salida observada de un viraje</title>
+  <desc id="desc">Diagrama conceptual que muestra una trayectoria curva seguida de alas niveladas y trayectoria recta, con una línea de rumbo elegida como referencia.</desc>
+  <defs><style>.bg{fill:#071a2d}.panel{fill:#0d2b47;stroke:#2e637f;stroke-width:2}.t{fill:#e9f5ff;font:600 25px Arial,sans-serif}.s{fill:#b7d5e8;font:19px Arial,sans-serif}.a{fill:#39d6c2;font:700 22px Arial,sans-serif}.curve{fill:none;stroke:#39d6c2;stroke-width:7;stroke-linecap:round}.dash{fill:none;stroke:#f5bd4f;stroke-width:4;stroke-dasharray:12 10}</style><marker id="ar" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#39d6c2"/></marker></defs>
+  <rect class="bg" width="1200" height="675" rx="24"/><text x="70" y="70" class="t">Salir es volver a alas niveladas y comprobar la tendencia</text><text x="70" y="104" class="s">Secuencia conceptual; el punto para iniciar la salida se observa en tu vuelo, no es un valor fijo.</text>
+  <rect x="62" y="150" width="1076" height="450" rx="22" class="panel"/>
+  <path d="M150 495 C165 285 390 225 595 340 C690 394 725 415 1012 415" class="curve" marker-end="url(#ar)"/>
+  <path d="M720 415 H1050" class="dash"/><text x="826" y="385" class="a">rumbo elegido</text>
+  <circle cx="595" cy="340" r="13" fill="#f5bd4f"/><text x="116" y="252" class="t">1. Viraje estable</text><text x="116" y="284" class="s">Observa altitud, rumbo y coordinación.</text>
+  <text x="465" y="245" class="t">2. Nivela las alas</text><text x="465" y="277" class="s">Haz una entrada suave y vuelve a observar.</text>
+  <text x="795" y="492" class="t">3. Confirma</text><text x="795" y="524" class="s">La trayectoria se endereza y la altitud deja de desviarse.</text>
+</svg>

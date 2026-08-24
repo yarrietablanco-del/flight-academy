@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "id": "airport-diagram-basics",
+    "title": "Diagramas de aeropuerto y taxi",
+    "subtitle": "Lee rampa, calles y pista antes de mover el avión.",
+    "objective": "Leer plataforma, calles y pista antes de rodar.",
+    "estimatedTime": "18 min",
+    "prerequisites": ["c172-overview"],
+    "level": 2,
+    "module": "ground-and-pattern",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "En tierra, la velocidad es baja pero las zonas se parecen entre sí. Leer primero dónde está tu avión, qué calle conecta con la pista y dónde debes detenerte evita que ruedes por intuición. En MSFS practicarás esa lectura; no sustituye una carta vigente, autorización ni instrucción real.",
+  "concepts": [
+    {"term": "Plataforma o rampa", "meaning": "Área de estacionamiento y servicio del avión. Es el origen de esta práctica, no una pista ni una calle de rodaje."},
+    {"term": "Calle de rodaje", "meaning": "Superficie destinada al desplazamiento en tierra entre rampa, pista y otras áreas. En un diagrama se sigue como una ruta, no como una dirección de despegue."},
+    {"term": "Pista", "meaning": "Superficie destinada principalmente a despegues y aterrizajes. Reconocerla no autoriza entrar en ella."},
+    {"term": "Punto de espera", "meaning": "Límite antes de una pista o zona protegida. En esta simulación es el lugar para detenerse y comprobar que no cruzas por error."}
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Ubica el origen antes de tocar potencia",
+      "instruction": "En MSFS 2024 carga el C172 estacionado en una rampa, de día y con el freno aplicado. Abre la información de mapa disponible en tu sesión y busca el símbolo del avión o tu posición. Di en voz alta: «estoy en la rampa». No muevas el avión todavía.",
+      "explanation": "Saber el origen convierte el plano en una herramienta de orientación. Si empiezas a rodar antes de identificarlo, cualquier calle puede parecer la correcta y pierdes la relación entre el mapa y la vista de cabina.",
+      "expectedResult": "Puedes señalar tu posición y distinguirla de la pista cercana. Si no ves tu posición o no sabes qué mapa abrió tu versión, pausa, conserva el freno y usa la ayuda de navegación disponible antes de continuar.",
+      "simulatorAction": "Esta es una práctica de simulación. No copies una carta mostrada por MSFS como si fuera información aeronáutica vigente para un vuelo real.",
+      "visual": {
+        "type": "airportDiagram",
+        "asset": "content/assets/airport-diagram-basics-route.svg",
+        "alt": "Esquema conceptual superior que separa la rampa, la calle de rodaje, el punto de espera y la pista.",
+        "purpose": "Dar una secuencia visual simple para relacionar la posición estacionada con las áreas que aparecerán en el mapa de MSFS.",
+        "teaches": "Distinguir la rampa como origen de la ruta antes de identificar calles y pista.",
+        "primaryTeachingObjective": "Identificar el origen",
+        "perspective": "Vista conceptual superior",
+        "movingElement": "Ruta del avión",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Desde rampa hacia pista",
+        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "tiedToStep": 1,
+        "expectedObservation": "El avión parte en la rampa y la ruta azul comienza allí, separada visualmente de la pista.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que la posición inicial está en plataforma y que debe leerse antes de iniciar el rodaje.",
+        "recognizedElements": ["rampa", "avión estacionado", "ruta azul"],
+        "actionAfterViewing": "Ubica tu avión en el mapa de MSFS y confirma verbalmente que estás en la rampa."
+      },
+      "requiredVisualCoverage": [{"type": "airport", "status": "notRequired", "reason": "El paso enseña una relación conceptual y el aeropuerto elegido por el alumno no cuenta con una carta o captura fiel aportada."}, {"type": "cockpit", "status": "notRequired", "reason": "La acción requiere conservar el avión detenido, pero no identificar un elemento específico de cabina mediante una referencia."}]
+    },
+    {
+      "number": 2,
+      "title": "Traza una ruta corta hasta el límite",
+      "instruction": "En el mapa, sigue desde tu rampa una calle de rodaje que lleve hacia una pista y localiza el último cruce o punto de espera antes de ella. Recorre con el dedo o la vista: rampa, calle, límite. No elijas una pista por su número ni intentes memorizar un aeropuerto.",
+      "explanation": "La ruta se entiende como conexiones entre áreas: sales de la plataforma, recorres una calle y te detienes antes de la pista. Leer esa secuencia reduce la tentación de cruzar una línea o una intersección solo porque parecen continuar.",
+      "expectedResult": "Puedes describir una ruta continua y nombrar el límite previo a la pista. Si hay varias calles o no reconoces un límite, elige una ruta más corta o vuelve a un aeropuerto sencillo para practicar la relación, no para adivinar.",
+      "simulatorAction": "Mantén el avión inmóvil mientras lees. La ruta elegida sirve solo para tu sesión de MSFS y no equivale a una autorización de control de tránsito aéreo.",
+      "visual": {
+        "type": "airportDiagram",
+        "asset": "content/assets/airport-diagram-basics-route.svg",
+        "alt": "Diagrama conceptual con una ruta azul que conecta rampa y calle de rodaje y termina antes de una línea roja previa a pista.",
+        "purpose": "Mostrar que una ruta de rodaje se lee como una conexión entre origen, calle y límite antes de la pista.",
+        "teaches": "Seguir una calle de rodaje hasta el punto de espera sin convertir la pista en parte automática de la ruta.",
+        "primaryTeachingObjective": "Trazar la ruta",
+        "perspective": "Vista conceptual superior",
+        "movingElement": "Ruta del avión",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Desde rampa hacia límite",
+        "userQuestionAnswered": ["dondeMirar", "queCambioEsperar"],
+        "tiedToStep": 2,
+        "expectedObservation": "La ruta azul utiliza la calle de rodaje y termina en el punto de espera, antes de la línea roja y de la pista.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce una secuencia de ruta con origen, conexión y límite, sin asumir que la pista se cruza.",
+        "recognizedElements": ["calle de rodaje", "ruta azul", "punto de espera", "pista"],
+        "actionAfterViewing": "Traza una ruta corta en tu mapa y nombra el punto donde debes detenerte antes de la pista."
+      },
+      "requiredVisualCoverage": [{"type": "chart", "status": "notRequired", "reason": "No se proporcionó una carta vigente del aeropuerto seleccionado; el visual solo enseña la relación conceptual de las áreas."}, {"type": "airport", "status": "notRequired", "reason": "El diseño, nombres y límites del aeropuerto del alumno varían, por lo que no se presenta una referencia fiel genérica."}]
+    },
+    {
+      "number": 3,
+      "title": "Reconoce la pista como zona distinta",
+      "instruction": "Vuelve a mirar el mapa y después la vista exterior o de cabina. Identifica cuál superficie es la pista y cuál es la calle de rodaje que la alcanza. Antes de mover potencia, di: «la ruta termina antes de la pista». Si algo no coincide, no ruedes: vuelve al mapa y reubica tu avión.",
+      "explanation": "La pista puede verse como una superficie larga y continua, pero la confirmación importante es espacial: la calle llega a un límite y la pista queda al otro lado. Esa pausa separa reconocer una zona de decidir entrar en ella.",
+      "expectedResult": "Puedes diferenciar la calle que usarías de la pista que no cruzarás en este ejercicio. Si la vista no confirma el mapa, detén la práctica y escoge una posición con mejor visibilidad o un aeropuerto menos complejo.",
+      "simulatorAction": "No afirmes que una marca, señal o línea concreta de MSFS coincide con una carta real. Para vuelo real se usa información vigente y la autorización correspondiente.",
+      "visual": {
+        "type": "airportDiagram",
+        "asset": "content/assets/airport-diagram-basics-route.svg",
+        "alt": "Esquema conceptual que contrasta una calle de rodaje gris con una pista oscura separada por un punto de espera y una línea roja.",
+        "purpose": "Hacer visible la separación entre calle de rodaje, límite de espera y pista antes de comprobarla en MSFS.",
+        "teaches": "Reconocer que la pista es una zona distinta y que la ruta de este ejercicio no la cruza.",
+        "primaryTeachingObjective": "Diferenciar superficies",
+        "perspective": "Vista conceptual superior",
+        "movingElement": "Ruta del avión",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Hacia el punto de espera",
+        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "tiedToStep": 3,
+        "expectedObservation": "La calle se conecta con el punto de espera, mientras la pista permanece al otro lado de un límite resaltado.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que la pista no es una continuación automática de la calle de rodaje en esta práctica.",
+        "recognizedElements": ["calle de rodaje", "línea de espera", "pista"],
+        "actionAfterViewing": "Compara el mapa con tu vista de MSFS y confirma que la ruta acaba antes de la pista."
+      },
+      "requiredVisualCoverage": [{"type": "airport", "status": "notRequired", "reason": "La comprobación se realiza en el aeropuerto elegido por el alumno y no existe una referencia fiel de ese escenario."}, {"type": "exteriorView", "status": "notRequired", "reason": "La vista exterior depende de la posición, clima y aeropuerto cargados, sin una referencia verificable proporcionada."}]
+    },
+    {
+      "number": 4,
+      "title": "Rueda solo la ruta que leíste",
+      "instruction": "Con una ruta corta ya identificada, quita el freno y desplázate despacio por la calle de rodaje hasta el punto de espera que elegiste. Detente antes de la pista y aplica el freno. Si pierdes la relación con el mapa o dudas de un cruce, detente de inmediato y vuelve a leer la ruta.",
+      "explanation": "El movimiento confirma la lectura: cada tramo de la vista debe corresponder a una parte de la ruta. Detenerte antes de la pista da un resultado claro y permite repetir sin convertir el ejercicio en una práctica de entrada o despegue.",
+      "expectedResult": "Llegas al punto de espera sin entrar en la pista y puedes señalar en el mapa el trayecto recorrido. Si cruzas un límite por error, detente, reinicia en una rampa y repite con una ruta más corta.",
+      "simulatorAction": "Verifica en Controles que dispones de freno y potencia antes de rodar. No se prescribe un botón ni una asignación de VelocityOne porque dependen de tu perfil activo.",
+      "visual": {
+        "type": "airportDiagram",
+        "asset": "content/assets/airport-diagram-basics-route.svg",
+        "alt": "Ruta conceptual azul que sale de rampa y se detiene en un punto de espera antes de una pista, marcada por una línea roja.",
+        "purpose": "Representar el resultado observable de la práctica: rodar por una calle y detenerse antes de la pista.",
+        "teaches": "Confirmar que la lectura correcta de la ruta termina con una detención antes del límite de pista.",
+        "primaryTeachingObjective": "Detenerse en el límite",
+        "perspective": "Vista conceptual superior",
+        "movingElement": "Ruta del avión",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Hasta el punto de espera",
+        "userQuestionAnswered": ["queControlTocar", "queCambioEsperar", "queErrorEvitar"],
+        "tiedToStep": 4,
+        "expectedObservation": "La flecha azul termina antes de la línea roja; la pista queda sin cruzar al otro lado del punto de espera.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que completar la práctica significa detenerse antes de la pista y poder explicar la ruta recorrida.",
+        "recognizedElements": ["ruta azul", "punto de espera", "línea roja", "pista"],
+        "actionAfterViewing": "Rueda despacio solo hasta el punto de espera elegido, detente y compáralo con el mapa."
+      },
+      "requiredVisualCoverage": [{"type": "hardware", "status": "notRequired", "reason": "Los frenos y la potencia dependen del perfil activo de cada usuario y no se aportó una referencia de asignación confirmada."}, {"type": "airport", "status": "notRequired", "reason": "La ruta se practica en un aeropuerto seleccionado por el alumno y no se proporciona una referencia fiel de su geometría."}]
+    }
+  ],
+  "practice": {
+    "title": "Ruta de rampa al punto de espera",
+    "scenario": "C172 estacionado en una rampa de MSFS 2024, de día, con freno aplicado. Elige un aeropuerto sencillo y utiliza solo la información de mapa disponible en esa sesión; es una práctica de simulación.",
+    "task": "Identifica tu rampa, traza una calle de rodaje corta hasta el punto de espera anterior a una pista y verbaliza la secuencia. Después rueda despacio por esa ruta, detente antes de la pista y señala en el mapa el recorrido que acabas de hacer.",
+    "successSignal": "Llegas al punto de espera sin entrar en la pista y explicas la ruta como rampa, calle de rodaje y límite. Puedes detenerte y volver al mapa si una vista deja de coincidir.",
+    "conceptDemonstrated": "Lectura espacial de rodaje",
+    "possibleConfounders": ["Elegir un aeropuerto con demasiadas calles o una posición inicial difícil de identificar.", "Confundir una superficie de pista con una calle de rodaje solo por su aspecto visual.", "Mover el avión antes de terminar de leer origen, ruta y punto de espera."],
+    "whyThisExerciseDemonstratesTheConcept": "El alumno debe convertir el esquema de áreas en una ruta visible y comprobar cada tramo mientras se mueve. Terminar antes de la pista aísla la lectura de plataforma, calle y límite sin añadir decisiones de despegue, ATC o navegación real."
+  },
+  "commonMistakes": [
+    {"mistake": "Empezar a rodar sin saber desde qué rampa se inicia.", "recovery": "Detente, aplica el freno, abre el mapa y vuelve a identificar tu posición antes de escoger una calle."},
+    {"mistake": "Tratar la pista como continuación automática de la ruta.", "recovery": "Vuelve al punto de espera y repite la secuencia verbal: rampa, calle de rodaje, límite; la práctica termina allí."},
+    {"mistake": "Seguir avanzando cuando la vista y el mapa ya no coinciden.", "recovery": "Detente de inmediato, reubica el avión en el mapa y simplifica la ruta o reinicia desde la rampa."}
+  ],
+  "checklist": [
+    "C172 estacionado en una rampa con freno aplicado.",
+    "Posición inicial identificada en el mapa de MSFS.",
+    "Ruta corta leída como rampa, calle de rodaje y punto de espera.",
+    "Pista diferenciada de la calle de rodaje antes de mover potencia.",
+    "Rodaje detenido antes de la pista y recorrido comprobado en el mapa."
+  ],
+  "quiz": [
+    {"question": "¿Qué debes identificar antes de empezar a rodar?", "options": ["Tu rampa, una calle de rodaje y el punto de espera antes de la pista.", "Solo el número de pista más cercano.", "Una velocidad universal de rodaje."], "answer": "Tu rampa, una calle de rodaje y el punto de espera antes de la pista.", "explanation": "La lectura empieza en la posición propia y conecta una ruta hasta un límite; la pista no se añade automáticamente."},
+    {"question": "¿Qué haces si el mapa y la vista de MSFS ya no coinciden?", "options": ["Me detengo y vuelvo a ubicar el avión antes de continuar.", "Sigo la superficie que parece más ancha.", "Acelero para despejar el cruce."], "answer": "Me detengo y vuelvo a ubicar el avión antes de continuar.", "explanation": "Detenerse evita convertir una duda de orientación en un cruce accidental de una zona no prevista."}
+  ],
+  "completionCriteria": [
+    "Identificaste tu posición de rampa y una ruta corta en el mapa de MSFS.",
+    "Explicaste la diferencia entre plataforma, calle de rodaje, punto de espera y pista.",
+    "Rodaste hasta el punto de espera elegido y te detuviste antes de la pista.",
+    "Volviste a consultar el mapa cuando la posición o la ruta dejaron de estar claras."
+  ],
+  "sources": [
+    {"title": "FAA Aeronautical Information Manual, Chapter 2: Aeronautical Lighting and Other Airport Visual Aids", "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap2_section_3.html", "verified": true},
+    {"title": "FAA Pilot's Handbook of Aeronautical Knowledge", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
+    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
+  ]
+}

@@ -28,6 +28,10 @@ function statusLabel(status: LessonStatus) {
   }[status];
 }
 
+function isEditoriallyAvailable(lesson: Lesson) {
+  return lesson.editorialStatus === "published" || lesson.editorialStatus === "validated";
+}
+
 function App() {
   const [view, setView] = useState<View>("dashboard");
   const [selectedLessonId, setSelectedLessonId] = useState(lessonOrder[0]);
@@ -59,7 +63,7 @@ function App() {
   );
 
   const openLesson = (lesson: Lesson) => {
-    if (statuses[lesson.id] === "locked") return;
+    if (statuses[lesson.id] === "locked" || !isEditoriallyAvailable(lesson)) return;
     setSelectedLessonId(lesson.id);
     setView("lesson");
     setMenuOpen(false);
@@ -610,12 +614,14 @@ function Course({
                       <button
                         key={lesson.id}
                         ref={lesson.id === focusLessonId ? focusedLesson : undefined}
-                        disabled={status === "locked"}
-                        className={`lesson-row ${status} ${lesson.id === focusLessonId ? "return-focus" : ""}`}
+                        disabled={status === "locked" || !isEditoriallyAvailable(lesson)}
+                        className={`lesson-row ${status} ${!isEditoriallyAvailable(lesson) ? "upcoming" : ""} ${lesson.id === focusLessonId ? "return-focus" : ""}`}
                         onClick={() => openLesson(lesson)}
                       >
                         <span className="lesson-state">
-                          {status === "completed"
+                          {!isEditoriallyAvailable(lesson)
+                            ? "…"
+                            : status === "completed"
                             ? "✓"
                             : status === "locked"
                               ? "⌕"
@@ -624,7 +630,7 @@ function Course({
                         <div>
                           <strong>{lesson.title}</strong>
                           <small>
-                            {lesson.estimatedTime} · {statusLabel(status)}
+                            {!isEditoriallyAvailable(lesson) ? "Próximamente · contenido todavía no publicado" : `${lesson.estimatedTime} · ${statusLabel(status)}`}
                           </small>
                         </div>
                         <span className="row-arrow">→</span>
@@ -1279,7 +1285,19 @@ function LessonView({
   onComplete: () => void;
   onBack: () => void;
 }) {
-  if (sourceLesson.document || sourceLesson.editorialStatus === "planned") {
+  if (!isEditoriallyAvailable(sourceLesson)) {
+    return <>
+      <button className="back-button" onClick={onBack}>← Volver al mapa</button>
+      <section className="lesson-hero upcoming-lesson">
+        <p className="eyebrow">PRÓXIMAMENTE · NIVEL {sourceLesson.level}</p>
+        <h1>Lección todavía no publicada</h1>
+        <p><strong>{sourceLesson.title}</strong> · {sourceLesson.moduleTitle}</p>
+        <p>Esta lección está planificada en la ruta, pero aún no está disponible para practicar. El curso continúa con las lecciones publicadas.</p>
+        <button className="primary-button" onClick={onBack}>Regresar al mapa de entrenamiento</button>
+      </section>
+    </>;
+  }
+  if (sourceLesson.document) {
     return (
       <LessonRenderer
         lesson={sourceLesson}

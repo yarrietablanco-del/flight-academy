@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "id": "c172-turns",
+    "title": "Virajes coordinados",
+    "subtitle": "Inclina, observa y sal del giro sin perder la referencia de altitud.",
+    "objective": "Girar sin perder control de altitud.",
+    "estimatedTime": "25 min",
+    "prerequisites": ["c172-straight-level"],
+    "level": 1,
+    "module": "control",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "Un viraje no es solo cambiar de rumbo. Al inclinar las alas cambia la trayectoria y puede cambiar la altitud. Aprender a observar la inclinación de las alas, rumbo, altitud y coordinación te permite saber qué está haciendo el C172 antes de corregir de más.",
+  "concepts": [
+    {"term": "Viraje", "meaning": "Cambio intencional de rumbo mediante una trayectoria curva. En esta práctica se inicia con una inclinación suave de las alas y se confirma observando."},
+    {"term": "Alabeo", "meaning": "Inclinación de una ala respecto a la otra. Es el movimiento que inicia la curva de un viraje; no es todavía la confirmación de que el rumbo ya cambió."},
+    {"term": "Banco", "meaning": "La inclinación de las alas respecto al horizonte durante un viraje."},
+    {"term": "Coordinación", "meaning": "Condición en la que el viraje no muestra una tendencia lateral no deseada. En MSFS se comprueba con la indicación de coordinación disponible en tu instrumento."},
+    {"term": "Salida del viraje", "meaning": "Regreso gradual a alas aproximadamente niveladas para dejar de curvar la trayectoria y comprobar de nuevo rumbo y altitud."}
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Estabiliza antes de pedir un giro",
+      "instruction": "En MSFS 2024 carga el C172 ya en el aire, de día, con clima despejado, horizonte visible y amplio margen sobre el terreno. Repite el barrido de recto y nivelado hasta que no veas una tendencia sostenida de altitud o rumbo. Elige un rumbo visual como referencia, no una cifra obligatoria.",
+      "explanation": "Un inicio estable separa el efecto del viraje de una desviación anterior. El rumbo elegido te da una referencia para reconocer el cambio; la altitud muestra si necesitas ajustar la actitud durante el giro.",
+      "expectedResult": "Puedes decir cuál es tu rumbo de partida y si la altitud se mantiene o sigue cambiando. Si aún asciende, desciende o vira, vuelve a la lección de recto y nivelado y estabiliza antes de continuar.",
+      "simulatorAction": "Usa pausa si necesitas ordenar la vista. No copies una altitud, potencia ni posición de morro de otra situación: observa la respuesta de este vuelo.",
+      "visual": {
+        "type": "flightPathDiagram", "asset": "content/assets/c172-turns-bank-path.svg", "alt": "Diagrama conceptual visto desde arriba que muestra una trayectoria recta que se transforma en un arco hacia la izquierda.", "purpose": "Relacionar una inclinación de alas con el cambio gradual de la trayectoria antes de practicarlo en MSFS.", "teaches": "Distinguir la trayectoria recta inicial del arco que aparece después de inclinar las alas.", "primaryTeachingObjective": "Relacionar alabeo mediante trayectoria", "perspective": "Vista conceptual desde arriba", "movingElement": "Trayectoria del avión", "axisOfMovement": "Eje vertical", "directionOfMovement": "Hacia la izquierda", "userQuestionAnswered": ["queCambioEsperar"], "tiedToStep": 1, "expectedObservation": "La línea recta se convierte en un arco; el cambio de rumbo se observa a medida que avanza por la curva.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que la inclinación inicia una trayectoria curva y que el rumbo necesita tiempo para cambiar.", "recognizedElements": ["trayectoria recta", "arco de viraje", "avión inclinado"], "actionAfterViewing": "Estabiliza el avión y elige una referencia de rumbo antes de iniciar una entrada pequeña."
+      },
+      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "La acción usa la cabina de MSFS, pero no se aportó una referencia fiel de su configuración para esta lección."}, {"type": "instrument", "status": "notRequired", "reason": "El barrido se hace en el instrumento instalado; no se aportó una captura o referencia fiel verificable."}, {"type": "exteriorView", "status": "notRequired", "reason": "El horizonte se observa en el simulador, pero no se dispone de una referencia exterior fiel para ilustrarlo."}]
+    },
+    {
+      "number": 2,
+      "title": "Inicia una inclinación pequeña y observa",
+      "instruction": "Desde tu condición estable, mueve el yoke suavemente hacia el lado del giro y vuelve al centro. Mira afuera y luego repite el barrido: actitud, altitud, rumbo y coordinación. No mantengas una entrada continua solo para acelerar el cambio.",
+      "explanation": "El yoke inicia el alabeo. Centrarlo te deja comprobar si el banco se sostiene y cómo responde la trayectoria. Altitud y rumbo no son mandos: son resultados que debes leer antes de decidir la siguiente entrada.",
+      "expectedResult": "Las alas muestran una inclinación visible, el rumbo empieza a cambiar y puedes seguir el arco sin entradas repetidas. Si el banco aumenta sin que lo busques, nivela suavemente las alas, centra el yoke y vuelve a observar.",
+      "simulatorAction": "Confirma en Opciones > Controles que el perfil activo reconoce el eje del yoke. Si usas VelocityOne, verifica en Controles o FMD la acción asignada antes de depender de un mando.",
+      "visual": {
+        "type": "flightPathDiagram", "asset": "content/assets/c172-turns-bank-path.svg", "alt": "Diagrama conceptual de un avión inclinado que sigue un arco de trayectoria después de una línea recta.", "purpose": "Mostrar por qué una entrada breve debe ir seguida de observación de la trayectoria.", "teaches": "Reconocer que el alabeo produce un cambio gradual de rumbo y no exige una entrada continua.", "primaryTeachingObjective": "Observar el cambio de rumbo", "perspective": "Vista conceptual desde arriba", "movingElement": "Trayectoria del avión", "axisOfMovement": "Eje vertical", "directionOfMovement": "Hacia la izquierda", "userQuestionAnswered": ["queControlTocar", "queCambioEsperar"], "tiedToStep": 2, "expectedObservation": "El avión aparece inclinado mientras la trayectoria sigue un arco, en vez de cambiar de rumbo de forma instantánea.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce la secuencia entrada breve, yoke centrado y cambio observado de rumbo.", "recognizedElements": ["avión inclinado", "arco de viraje", "trayectoria inicial"], "actionAfterViewing": "Haz una entrada pequeña, centra el yoke y completa un barrido antes de corregir otra vez."
+      },
+      "requiredVisualCoverage": [{"type": "hardware", "status": "notRequired", "reason": "La asignación del VelocityOne depende del perfil activo y no se aportó una referencia de hardware verificable."}, {"type": "instrument", "status": "notRequired", "reason": "La lectura se hace en el instrumento real de MSFS, cuya variante no fue documentada con una referencia fiel."}, {"type": "exteriorView", "status": "notRequired", "reason": "La actitud exterior se observa durante la práctica, pero no existe una referencia visual fiel proporcionada."}]
+    },
+    {
+      "number": 3,
+      "title": "Comprueba coordinación sin adivinar",
+      "instruction": "Durante el arco, localiza en tu instrumento la indicación de coordinación y observa si permanece centrada. Si no coincide, no supongas qué botón o pedal lo corrige: primero verifica las asignaciones de rudder o pedales del perfil activo y realiza una corrección pequeña, seguida de otra comprobación.",
+      "explanation": "La coordinación describe si el giro se mantiene sin una tendencia lateral no deseada. La indicación te permite comprobar el resultado. El control disponible cambia según tu perfil, por eso una asignación debe verificarse antes de usarla.",
+      "expectedResult": "Puedes identificar la indicación de coordinación de tu C172 y explicar si está centrada o muestra una desviación. Si no la encuentras o no sabes qué entrada la afecta, pausa y revisa Controles o FMD antes de seguir.",
+      "simulatorAction": "Esta es práctica de simulación. No la uses como sustituto de instrucción de vuelo real ni asumas que una asignación concreta del VelocityOne funciona en todos los perfiles.",
+      "visual": {
+        "type": "comparisonDiagram", "asset": "content/assets/c172-turns-coordination.svg", "alt": "Comparación conceptual entre una trayectoria que sigue un arco y otra con una flecha lateral que señala descoordinación.", "purpose": "Separar visualmente el resultado coordinado de una tendencia lateral que necesita ser comprobada en el instrumento.", "teaches": "Comprender que la coordinación se confirma por una indicación y no por una suposición sobre el control.", "primaryTeachingObjective": "Reconocer coordinación", "perspective": "Comparación conceptual desde arriba", "movingElement": "Dirección lateral representada", "axisOfMovement": "Eje lateral", "directionOfMovement": "Dentro o fuera del arco", "comparisonJustification": "La diferencia entre trayectoria coordinada y tendencia lateral es el objetivo principal del paso.", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 3, "expectedObservation": "La alternativa coordinada sigue el arco; la otra muestra una flecha lateral que representa una tendencia que se debe comprobar.", "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que una indicación centrada representa el resultado deseado y una desviación exige verificar antes de corregir.", "recognizedElements": ["arco de viraje", "trayectoria coordinada", "flecha lateral"], "actionAfterViewing": "Busca la indicación de coordinación de tu avión y confirma las asignaciones antes de hacer una corrección pequeña."
+      },
+      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "El indicador exacto depende de la aviónica del C172 cargado y no se facilitó una referencia fiel de esa pantalla."}, {"type": "hardware", "status": "notRequired", "reason": "El control de rudder depende del perfil activo de VelocityOne u otro hardware y no hay fuente de asignación confirmada."}]
+    },
+    {
+      "number": 4,
+      "title": "Sal del viraje y vuelve al barrido",
+      "instruction": "Cuando quieras dejar de cambiar de rumbo, lleva las alas gradualmente hacia nivelado con una entrada suave y vuelve al centro. Luego mira actitud, altitud, rumbo y coordinación. Si la altitud sigue desviándose, corrige una sola vez y espera otra pasada completa.",
+      "explanation": "Alas aproximadamente niveladas dejan de sostener la trayectoria curva. La salida no termina al mover el yoke: termina cuando el barrido confirma que el rumbo se estabiliza y que la altitud no adquiere una tendencia nueva.",
+      "expectedResult": "El arco se endereza, el rumbo deja de cambiar de forma sostenida y puedes describir la tendencia de altitud. Si continúas girando o aparecen oscilaciones, reduce la entrada, vuelve a alas niveladas y reinicia el barrido.",
+      "simulatorAction": "No busques un punto universal para iniciar la salida ni una cantidad fija de yoke. En cada intento observa cuánto tarda tu avión en responder y conserva margen sobre el terreno.",
+      "visual": {
+        "type": "flightPathDiagram", "asset": "content/assets/c172-turns-rollout.svg", "alt": "Diagrama conceptual de una trayectoria curva que se transforma en una línea recta después de nivelar las alas.", "purpose": "Mostrar la relación entre nivelar las alas, enderezar la trayectoria y comprobar después la altitud.", "teaches": "Reconocer que la salida exige observación posterior y no solo una entrada opuesta al yoke.", "primaryTeachingObjective": "Confirmar la salida", "perspective": "Vista conceptual desde arriba", "movingElement": "Trayectoria del avión", "axisOfMovement": "Eje vertical", "directionOfMovement": "Del arco a recto", "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"], "tiedToStep": 4, "expectedObservation": "El arco termina en una línea recta junto a un rumbo de referencia; el diagrama pide confirmar el resultado después.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que una trayectoria recta posterior se confirma observando rumbo y altitud tras nivelar las alas.", "recognizedElements": ["arco de viraje", "alas niveladas", "trayectoria recta", "rumbo elegido"], "actionAfterViewing": "Nivela las alas suavemente y completa otro barrido antes de hacer una nueva corrección."
+      },
+      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "El barrido final se hace en la aviónica de MSFS, pero no se proporcionó una referencia fiel de instrumento."}, {"type": "cockpit", "status": "notRequired", "reason": "La vista de cabina se usa para el horizonte, pero no se cuenta con una referencia real o recreada fielmente."}, {"type": "exteriorView", "status": "notRequired", "reason": "La trayectoria se observa en simulación; no se suministró una imagen exterior fiel para esta configuración."}]
+    }
+  ],
+  "practice": {
+    "title": "Cuatro arcos observados",
+    "scenario": "C172 en Vuelo libre, de día, clima despejado, horizonte visible y margen amplio sobre el terreno. Inicia cada intento desde recto y nivelado; es una práctica de simulación.",
+    "task": "Haz dos virajes suaves a cada lado. En cada uno, inicia una inclinación pequeña, centra el yoke, observa actitud, altitud, rumbo y coordinación, y vuelve a alas niveladas cuando elijas salir. Entre intentos estabiliza y explica qué tendencia viste antes de tocar otro control.",
+    "successSignal": "Puedes describir una entrada, el cambio gradual de rumbo, la indicación de coordinación y la salida. Completas los arcos sin una secuencia continua de correcciones ni una tendencia de altitud que no hayas reconocido.",
+    "conceptDemonstrated": "Viraje coordinado observado",
+    "possibleConfounders": ["Iniciar el viraje con una tendencia previa de ascenso o descenso.", "Confundir una asignación no verificada de rudder con una corrección de coordinación.", "Mantener entradas continuas al yoke y no poder identificar cuál produjo cada cambio."],
+    "whyThisExerciseDemonstratesTheConcept": "Cada arco parte de una condición estable y exige leer rumbo, altitud y coordinación antes de otra entrada. Repetir ambos lados permite comparar la respuesta sin depender de una cifra universal, una carta o una asignación de hardware supuesta."
+  },
+  "commonMistakes": [
+    {"mistake": "Iniciar el giro mientras el avión ya asciende, desciende o vira.", "recovery": "Vuelve a recto y nivelado, confirma la tendencia en más de una pasada y reinicia desde una condición estable."},
+    {"mistake": "Mantener el yoke desplazado durante todo el viraje sin observar.", "recovery": "Haz una entrada pequeña, vuelve al centro y mira banco, altitud, rumbo y coordinación antes de otra corrección."},
+    {"mistake": "Corregir coordinación con un mando cuya asignación no está confirmada.", "recovery": "Pausa y verifica en Controles o FMD qué entrada reconoce tu perfil activo; después prueba una corrección pequeña."},
+    {"mistake": "Salir del giro y dejar de mirar en cuanto las alas parecen niveladas.", "recovery": "Completa otra pasada de actitud, altitud, rumbo y coordinación para comprobar que la trayectoria ya se estabilizó."}
+  ],
+  "checklist": ["C172 en aire, de día, con horizonte visible y margen sobre el terreno.", "Recto y nivelado confirmado antes de cada intento.", "Entrada suave de yoke seguida de regreso al centro.", "Barrido repetido de actitud, altitud, rumbo y coordinación.", "Asignación de rudder o pedales verificada en el perfil activo.", "Salida suave a alas aproximadamente niveladas y barrido final."],
+  "quiz": [
+    {"question": "¿Qué haces después de iniciar una inclinación pequeña para un viraje?", "options": ["Centro el yoke y observo actitud, altitud, rumbo y coordinación.", "Mantengo el yoke desplazado hasta que el rumbo cambie mucho.", "Miro solo la altitud y corrijo cada cambio."], "answer": "Centro el yoke y observo actitud, altitud, rumbo y coordinación.", "explanation": "Separar entrada y observación permite reconocer la respuesta del avión antes de añadir otra corrección."},
+    {"question": "¿Cómo confirmas la coordinación durante esta práctica?", "options": ["Con la indicación de coordinación de mi instrumento y asignaciones verificadas.", "Suponiendo que cualquier botón de hardware controla el rudder.", "Mirando únicamente el rumbo."], "answer": "Con la indicación de coordinación de mi instrumento y asignaciones verificadas.", "explanation": "La indicación confirma el resultado; la acción de hardware debe verificarse en el perfil activo."},
+    {"question": "¿Cuándo termina la salida de un viraje?", "options": ["Cuando el barrido confirma rumbo estabilizado y altitud sin tendencia nueva.", "En el momento en que muevo el yoke al lado contrario.", "Cuando desaparece el arco en la vista exterior, sin mirar instrumentos."], "answer": "Cuando el barrido confirma rumbo estabilizado y altitud sin tendencia nueva.", "explanation": "Nivelar las alas inicia la salida; el resultado se confirma observando después la trayectoria y la altitud."}
+  ],
+  "completionCriteria": ["Preparaste un escenario de simulación con horizonte visible y margen suficiente.", "Iniciaste virajes suaves desde una condición de recto y nivelado observada.", "Identificaste el cambio de rumbo y comprobaste altitud y coordinación durante cada arco.", "Verificaste la asignación de control de coordinación antes de usarla.", "Saliste de cada viraje nivelando las alas y completando un barrido final."],
+  "sources": [
+    {"title": "FAA Airplane Flying Handbook", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
+    {"title": "FAA Pilot's Handbook of Aeronautical Knowledge", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
+    {"title": "Cessna 172S Pilot's Operating Handbook", "url": "https://support.cessna.com/custsupt/csupport/newlogin.jsp", "verified": false}
+  ]
+}

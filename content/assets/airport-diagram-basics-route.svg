@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ruta conceptual desde rampa hasta punto de espera de pista</title>
+  <desc id="desc">Vista superior conceptual de una rampa conectada por una calle de rodaje a un punto de espera antes de una pista. La ruta azul se detiene antes de la línea roja de espera.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="5" orient="auto"><path d="M0,0 L11,5 L0,10 Z" fill="#35bff0"/></marker>
+    <style>
+      .label { font-family: Arial, sans-serif; fill: #f6fbff; font-weight: 700; }
+      .small { font-family: Arial, sans-serif; fill: #c9dae5; font-size: 25px; }
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#102431"/>
+  <text x="80" y="85" class="label" font-size="43">Antes de rodar: identifica el recorrido y el límite</text>
+  <text x="80" y="125" class="small">Esquema conceptual; no representa un aeropuerto ni una carta real.</text>
+
+  <rect x="85" y="250" width="420" height="370" rx="28" fill="#536a74" stroke="#aebdc2" stroke-width="5"/>
+  <path d="M150 330 H440 M150 420 H440 M150 510 H440" stroke="#c9d5d7" stroke-width="9" stroke-linecap="round"/>
+  <path d="M220 285 V570 M350 285 V570" stroke="#c9d5d7" stroke-width="9" stroke-linecap="round"/>
+  <text x="220" y="665" class="label" font-size="34">RAMPA / PLATAFORMA</text>
+  <text x="180" y="710" class="small">Aquí empieza el movimiento.</text>
+  <path d="M270 470 l40 0 l20 25 l-20 25 l-40 0 l-20-25 z" fill="#fff" transform="rotate(-90 290 495)"/>
+  <text x="235" y="565" class="small">avión estacionado</text>
+
+  <path d="M505 440 H1040" fill="none" stroke="#667c82" stroke-width="150"/>
+  <path d="M505 440 H1040" fill="none" stroke="#e5d33d" stroke-width="8" stroke-dasharray="28 23"/>
+  <text x="645" y="350" class="label" font-size="34">CALLE DE RODAJE</text>
+  <text x="610" y="555" class="small">Sigue la ruta autorizada; no improvises atajos.</text>
+
+  <rect x="1080" y="170" width="320" height="610" rx="8" fill="#303941" stroke="#85939c" stroke-width="5"/>
+  <path d="M1240 205 V745" stroke="#f5f6f2" stroke-width="12" stroke-dasharray="55 35"/>
+  <text x="1120" y="150" class="label" font-size="34">PISTA</text>
+  <text x="1110" y="835" class="small">Área reservada para despegues y aterrizajes.</text>
+
+  <path d="M1015 290 V590" stroke="#f2f2f2" stroke-width="14"/>
+  <path d="M1043 290 V590" stroke="#f2f2f2" stroke-width="14" stroke-dasharray="28 18"/>
+  <path d="M1068 290 V590" stroke="#f2f2f2" stroke-width="14"/>
+  <path d="M1000 305 H1085 M1000 575 H1085" stroke="#f2f2f2" stroke-width="6"/>
+  <path d="M995 440 H1090" stroke="#ef5b57" stroke-width="14"/>
+  <text x="790" y="255" class="label" font-size="30">PUNTO DE ESPERA</text>
+  <path d="M965 270 L1040 350" stroke="#f6fbff" stroke-width="4" fill="none"/>
+  <text x="755" y="305" class="small">Detente aquí hasta tener autorización o reiniciar la práctica.</text>
+
+  <path d="M290 495 C450 495, 500 440, 650 440 S840 440, 965 440" fill="none" stroke="#35bff0" stroke-width="13" marker-end="url(#arrow)"/>
+  <circle cx="965" cy="440" r="16" fill="#35bff0"/>
+  <rect x="80" y="770" width="720" height="76" rx="16" fill="#173d50"/>
+  <text x="110" y="818" class="label" font-size="28">Lectura: origen → ruta → límite. La pista se reconoce, no se cruza.</text>
+</svg>

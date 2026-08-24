@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Transición conceptual de carrera a trayectoria de ascenso</title>
+  <desc id="desc">Diagrama lateral que muestra que una entrada suave cambia la actitud y que la trayectoria de ascenso se confirma después observando separación del suelo y espacio por delante.</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0 0L11 5.5L0 11Z" fill="#2d79c7"/></marker>
+    <style>
+      .bg{fill:#f5f8fa}.ground{fill:#78866b}.runway{fill:#4b5560}.line{stroke:#f4d65f;stroke-width:7;stroke-dasharray:34 28}.plane{fill:#243746}.path{fill:none;stroke:#2d79c7;stroke-width:14;stroke-linecap:round;marker-end:url(#arrow-blue)}.call{fill:#fff;stroke:#cdd9e1;stroke-width:3}.heading{font-family:Arial,sans-serif;fill:#16232d;font-size:40px;font-weight:700}.text{font-family:Arial,sans-serif;fill:#263946;font-size:28px}.small{font-family:Arial,sans-serif;fill:#425563;font-size:24px}
+    </style>
+  </defs>
+  <rect class="bg" width="1600" height="900"/>
+  <text x="800" y="75" text-anchor="middle" class="heading">Una entrada suave inicia la transición; la observación confirma el ascenso</text>
+  <path class="ground" d="M0 700H1600V900H0Z"/><rect class="runway" x="0" y="680" width="1600" height="60"/><line class="line" x1="40" y1="710" x2="1540" y2="710"/>
+  <path class="plane" d="M335 654 L485 680 L335 706 L365 684 Z"/><circle cx="350" cy="690" r="13" fill="#16232d"/><circle cx="448" cy="690" r="13" fill="#16232d"/>
+  <path class="plane" d="M755 591 L912 636 L750 643 L783 623 Z" transform="rotate(-10 820 620)"/>
+  <path class="plane" d="M1180 400 L1344 473 L1170 463 L1208 439 Z" transform="rotate(-18 1250 440)"/>
+  <path class="path" d="M520 670 C720 665 885 615 1060 515 C1190 440 1290 350 1405 250"/>
+  <rect class="call" x="115" y="210" width="345" height="130" rx="18"/><text x="287" y="263" text-anchor="middle" class="text">1. Carrera estable</text><text x="287" y="304" text-anchor="middle" class="small">Mantén la trayectoria observable.</text>
+  <rect class="call" x="590" y="180" width="400" height="130" rx="18"/><text x="790" y="233" text-anchor="middle" class="text">2. Entrada suave</text><text x="790" y="274" text-anchor="middle" class="small">La actitud cambia; no la fijes por una imagen.</text>
+  <rect class="call" x="1090" y="115" width="410" height="130" rx="18"/><text x="1295" y="168" text-anchor="middle" class="text">3. Confirma la trayectoria</text><text x="1295" y="209" text-anchor="middle" class="small">Separación del suelo y espacio seguro por delante.</text>
+  <text x="800" y="840" text-anchor="middle" class="small">Diagrama conceptual: no proporciona una velocidad, potencia ni ángulo de morro para el C172.</text>
+</svg>

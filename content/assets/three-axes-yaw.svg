@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Yaw: giro de la nariz visto desde arriba</title>
+  <desc id="desc">Vista superior de un avión. Una flecha curva muestra que la nariz gira a un lado alrededor del eje vertical; las alas permanecen como referencia lateral.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f7c948"/></marker></defs>
+  <rect width="1200" height="675" fill="#f4f7f8"/>
+  <text x="600" y="58" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#17364a">YAW · VISTA DESDE ARRIBA</text>
+  <text x="600" y="91" text-anchor="middle" font-family="Arial" font-size="20" fill="#466174">La nariz gira a izquierda o derecha alrededor del eje vertical.</text>
+  <circle cx="600" cy="365" r="220" fill="#e8f0f3" stroke="#b7c8d0" stroke-width="3"/>
+  <path d="M600 160 L655 330 L805 365 L655 400 L600 570 L545 400 L395 365 L545 330 Z" fill="#31596d" stroke="#17364a" stroke-width="8"/>
+  <path d="M600 160V570" stroke="#f7c948" stroke-width="8" stroke-dasharray="15 12"/>
+  <text x="620" y="240" font-family="Arial" font-size="22" font-weight="700" fill="#17364a">EJE VERTICAL</text>
+  <path d="M340 505 C220 365 260 185 475 150" fill="none" stroke="#e27d3f" stroke-width="16" marker-end="url(#arrow)"/>
+  <text x="235" y="365" text-anchor="middle" font-family="Arial" font-size="25" font-weight="700" fill="#a94a18">DIRECCIÓN DEL GIRO</text>
+  <path d="M840 180L685 275" stroke="#17364a" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="925" y="170" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#17364a">LA NARIZ CAMBIA</text>
+  <text x="600" y="630" text-anchor="middle" font-family="Arial" font-size="24" fill="#17364a">Observa la dirección de la nariz; no es una vista lateral ni una inclinación de alas.</text>
+</svg>

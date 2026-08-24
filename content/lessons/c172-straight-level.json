@@ -72,7 +72,8 @@
         "coverage": [
           "cockpit",
           "exteriorView"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer la referencia"
       },
       "warning": "Es una práctica de simulación; no sustituye instrucción de vuelo real ni decisiones de seguridad reales.",
       "requiredVisualCoverage": [
@@ -128,7 +129,8 @@
         },
         "coverage": [
           "instrument"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer la pantalla primaria"
       },
       "requiredVisualCoverage": [
         {
@@ -141,7 +143,7 @@
       "number": 3,
       "title": "Toca un control, luego deja que el avión responda",
       "instruction": "Si la actitud no se parece a tu referencia, mueve el yoke apenas un poco y vuelve al centro. Para una leve inclinación, nivela las alas con el yoke antes de juzgar el rumbo. Cuando la actitud ya sea estable pero debas sostener presión, ajusta trim poco a poco. Deja throttle estable salvo que la velocidad muestre una tendencia clara.",
-      "explanation": "Yoke cambia la actitud; trim elimina la presión necesaria para mantenerla; throttle influye sobre energía y velocidad. No hay una asignación universal del VelocityOne: confirma en Controles o FMD que tu perfil reconoce cada acción antes de depender de ella.",
+      "explanation": "El yoke se usa primero para establecer o corregir la actitud. Una vez estabilizada, el trim reduce la fuerza necesaria para mantener esa condición; throttle influye sobre energía y velocidad. No hay una asignación universal del VelocityOne: confirma en Controles o FMD que tu perfil reconoce cada acción antes de depender de ella.",
       "expectedResult": "Tras una entrada breve, el yoke vuelve al centro y puedes observar. Con trim bien ajustado, no necesitas empujar o tirar continuamente. Si el ajuste empeora la tendencia, deshazlo poco a poco y vuelve a observar.",
       "simulatorAction": "En MSFS abre Opciones > Controles si no conoces tu trim o throttle. Verifica la entrada en el perfil activo del VelocityOne; usa su FMD para localizar el control que tu perfil asigne a trim.",
       "visual": {
@@ -176,7 +178,8 @@
         },
         "coverage": [
           "hardware"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer el control"
       },
       "tip": "“Pequeño, suave, esperar”: entrada breve, manos ligeras y una pasada completa de instrumentos antes de decidir otra corrección.",
       "requiredVisualCoverage": [
@@ -214,7 +217,13 @@
           "corrección pequeña",
           "oscilaciones"
         ],
-        "actionAfterViewing": "Elige la columna izquierda: una entrada pequeña, yoke centrado, espera y una nueva comprobación."
+        "actionAfterViewing": "Elige la columna izquierda: una entrada pequeña, yoke centrado, espera y una nueva comprobación.",
+        "primaryTeachingObjective": "Evitar la sobrecorrección",
+        "perspective": "Comparación frontal de tendencias",
+        "movingElement": "La tendencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "Entre alternativas",
+        "comparisonJustification": "La comparación es el objetivo pedagógico principal de este paso."
       },
       "requiredVisualCoverage": [
         {
@@ -258,7 +267,8 @@
             "intendedDisplayWidth": 760,
             "supportsZoom": true,
             "detailTarget": "Indicador de actitud y cintas de velocidad y altitud en la PFD."
-          }
+          },
+          "primaryTeachingObjective": "Reconocer la pantalla primaria"
         },
         {
           "type": "controlHighlight",
@@ -291,7 +301,8 @@
             "intendedDisplayWidth": 500,
             "supportsZoom": true,
             "detailTarget": "Yoke, palancas del cuadrante y rueda de trim en el hardware real."
-          }
+          },
+          "primaryTeachingObjective": "Reconocer el control"
         }
       ]
     }
@@ -300,7 +311,10 @@
     "title": "Dos minutos de mirada, respuesta y espera",
     "scenario": "C172 en Vuelo libre, de día, con clima despejado, horizonte visible y margen amplio sobre el terreno.",
     "task": "Elige una imagen exterior de alas niveladas. Durante dos minutos repite el barrido actitud, altitud, velocidad, rumbo y actitud. Solo después de ver una tendencia en más de una pasada, usa una corrección pequeña, centra el yoke y espera otra pasada. Ajusta trim solo si queda presión continua.",
-    "successSignal": "Puedes decir qué tendencia viste, qué control tocaste y qué observaste después. Mantienes el avión estable sin una cadena continua de correcciones."
+    "successSignal": "Puedes decir qué tendencia viste, qué control tocaste y qué observaste después. Mantienes el avión estable sin una cadena continua de correcciones.",
+    "conceptDemonstrated": "Recto y nivelado",
+    "possibleConfounders": [],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica usa una acción observable y una comprobación explícita para que el alumno relacione el concepto con su resultado en MSFS."
   },
   "commonMistakes": [
     {
@@ -348,7 +362,7 @@
         "Cada vez que cambia una cifra del altímetro"
       ],
       "answer": "Después de estabilizar la actitud, para quitar presión del yoke",
-      "explanation": "El trim no reemplaza la corrección inicial con yoke; ayuda a mantenerla sin fuerza continua."
+      "explanation": "El trim no reemplaza la corrección inicial con yoke; después de estabilizar, ayuda a reducir la fuerza necesaria para mantener la condición."
     },
     {
       "question": "¿Qué confirma una tendencia?",

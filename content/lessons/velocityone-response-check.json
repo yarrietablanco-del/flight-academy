@@ -15,6 +15,18 @@
   "whyItMatters": "Un eje invertido o una asignación duplicada puede parecer un problema de pilotaje. Confirmarlo en tierra evita una sorpresa durante el despegue.",
   "concepts": [
     {
+      "term": "PFD",
+      "meaning": "Pantalla primaria de vuelo: reúne información como actitud, velocidad, altitud y rumbo cuando la variante del avión dispone de ella."
+    },
+    {
+      "term": "G1000",
+      "meaning": "Sistema de pantallas Garmin que algunas variantes del Cessna 172 usan para mostrar la información de vuelo."
+    },
+    {
+      "term": "Elevador y alerones",
+      "meaning": "Superficies de control: el elevador cambia principalmente el morro arriba o abajo, y los alerones inclinan las alas."
+    },
+    {
       "term": "Invertido",
       "meaning": "El simulador recibe la dirección contraria a la esperada."
     },
@@ -51,7 +63,12 @@
           "probar",
           "corregir"
         ],
-        "actionAfterViewing": "Selecciona el perfil activo y usa el campo de búsqueda antes de probar un eje."
+        "actionAfterViewing": "Selecciona el perfil activo y usa el campo de búsqueda antes de probar un eje.",
+        "primaryTeachingObjective": "Seguir el ciclo de aprendizaje",
+        "perspective": "Diagrama de flujo sin perspectiva física",
+        "movingElement": "La secuencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "De inicio a comprobación"
       },
       "requiredVisualCoverage": [
         {
@@ -64,7 +81,7 @@
     {
       "number": 2,
       "title": "Prueba un eje cada vez",
-      "instruction": "Busca una acción de elevador. Activa detección y mueve el yoke hacia delante y atrás de forma lenta.",
+      "instruction": "Busca una acción de elevador, la superficie que cambia principalmente el morro arriba o abajo. Activa detección y mueve el yoke hacia delante y atrás de forma lenta.",
       "explanation": "Una sola entrada permite notar si hay inversión o una detección inesperada.",
       "expectedResult": "La pantalla identifica la entrada que acabas de mover.",
       "simulatorAction": "Repite por separado para alerones, timón, frenos y potencia.",
@@ -99,7 +116,8 @@
         },
         "coverage": [
           "cockpit"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer la pantalla de controles"
       },
       "warning": "No aceptes un cambio automático sin revisar el nombre de la acción detectada.",
       "requiredVisualCoverage": [
@@ -148,7 +166,8 @@
         },
         "coverage": [
           "instrument"
-        ]
+        ],
+        "primaryTeachingObjective": "Reconocer la pantalla primaria"
       },
       "tip": "Si algo no coincide, vuelve a controles y corrige solo esa acción.",
       "requiredVisualCoverage": [
@@ -163,7 +182,10 @@
     "title": "Prueba de cinco entradas",
     "scenario": "C172 inmovilizado en una posición segura.",
     "task": "Comprueba elevador, alerones, timón, frenos y potencia uno por uno. Anota cualquier eje invertido o entrada no detectada.",
-    "successSignal": "Los cinco controles tienen una respuesta entendida o un problema documentado."
+    "successSignal": "Los cinco controles tienen una respuesta entendida o un problema documentado.",
+    "conceptDemonstrated": "Respuesta de controles en MSFS",
+    "possibleConfounders": [],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica usa una acción observable y una comprobación explícita para que el alumno relacione el concepto con su resultado en MSFS."
   },
   "commonMistakes": [
     {

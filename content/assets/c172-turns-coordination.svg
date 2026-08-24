@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Relación conceptual de coordinación en un viraje</title>
+  <desc id="desc">Comparación conceptual de una trayectoria que se mantiene en el arco frente a derrape o resbale representados por una flecha lateral fuera del arco.</desc>
+  <defs><style>.bg{fill:#071a2d}.card{fill:#0d2b47;stroke:#2e637f;stroke-width:2}.ok{fill:#39d6c2}.warn{fill:#f5bd4f}.bad{fill:#ff7f7f}.t{fill:#e9f5ff;font:600 24px Arial,sans-serif}.s{fill:#b7d5e8;font:18px Arial,sans-serif}.path{fill:none;stroke:#b7d5e8;stroke-width:6;stroke-linecap:round}.arr{fill:none;stroke-width:6;stroke-linecap:round}</style><marker id="a" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="context-stroke"/></marker></defs>
+  <rect class="bg" width="1200" height="675" rx="24"/><text x="70" y="70" class="t">Coordinar es mantener el movimiento lateral bajo control</text><text x="70" y="104" class="s">Comparación conceptual: confirma la coordinación en el instrumento real de tu simulador.</text>
+  <rect x="62" y="145" width="510" height="450" rx="22" class="card"/><rect x="628" y="145" width="510" height="450" rx="22" class="card"/>
+  <text x="105" y="198" class="ok t">Coordinado</text><text x="671" y="198" class="warn t">Descoordinado</text>
+  <path d="M170 485 C170 270 405 245 470 380" class="path"/><circle cx="277" cy="301" r="13" class="ok"/><path d="M277 301 C322 286 352 305 377 334" class="arr ok" marker-end="url(#a)"/><text x="105" y="540" class="s">El movimiento sigue el arco del viraje.</text>
+  <path d="M736 485 C736 270 971 245 1036 380" class="path"/><circle cx="843" cy="301" r="13" class="warn"/><path d="M843 301 L900 245" class="arr bad" marker-end="url(#a)"/><text x="671" y="540" class="s">Una tendencia lateral pide comprobar coordinación.</text>
+  <text x="105" y="240" class="s">Resultado que buscas: indicación centrada, sin asumir un control concreto.</text><text x="671" y="240" class="s">No adivines la corrección: mira la indicación y verifica tus asignaciones.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Cómo convertir una instrucción de taxi en una ruta de simulación</title>
+  <desc id="desc">Diagrama conceptual que muestra una solicitud, una instrucción de taxi, su lectura en destino, ruta y límite, y la acción de rodar o detenerse si hay duda.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#37c4f0"/></marker>
+    <style>.heading{font:700 43px Arial,sans-serif;fill:#f7fbff}.sub{font:25px Arial,sans-serif;fill:#c9dbe6}.cardtitle{font:700 30px Arial,sans-serif;fill:#f7fbff}.body{font:25px Arial,sans-serif;fill:#d9e7ed}.tag{font:700 22px Arial,sans-serif;fill:#102431}</style>
+  </defs>
+  <rect width="1600" height="900" fill="#102431"/>
+  <text x="80" y="82" class="heading">Convierte el mensaje de ATC en una decisión verificable</text>
+  <text x="80" y="122" class="sub">Esquema conceptual para MSFS; no reproduce una interfaz, aeropuerto ni fraseología de una operación real.</text>
+
+  <rect x="80" y="235" width="285" height="360" rx="24" fill="#1d4659" stroke="#70d1eb" stroke-width="4"/>
+  <rect x="108" y="260" width="135" height="38" rx="19" fill="#70d1eb"/><text x="131" y="287" class="tag">1 · PIDE</text>
+  <text x="112" y="350" class="cardtitle">Solicitud</text>
+  <text x="112" y="398" class="body">Selecciona en ATC</text><text x="112" y="432" class="body">la opción de taxi</text><text x="112" y="466" class="body">disponible en</text><text x="112" y="500" class="body">tu sesión.</text>
+  <text x="112" y="558" class="sub">No memorices botones:</text><text x="112" y="585" class="sub">confirma tu menú activo.</text>
+
+  <path d="M382 415 H507" stroke="#37c4f0" stroke-width="10" marker-end="url(#arrow)"/>
+  <rect x="525" y="235" width="550" height="360" rx="24" fill="#254456" stroke="#f2cd62" stroke-width="4"/>
+  <rect x="553" y="260" width="170" height="38" rx="19" fill="#f2cd62"/><text x="576" y="287" class="tag">2 · LEE</text>
+  <text x="557" y="350" class="cardtitle">Instrucción recibida</text>
+  <rect x="557" y="390" width="150" height="110" rx="14" fill="#345d6c"/><text x="580" y="432" class="cardtitle">DESTINO</text><text x="580" y="470" class="body">hacia dónde</text>
+  <rect x="725" y="390" width="150" height="110" rx="14" fill="#345d6c"/><text x="765" y="432" class="cardtitle">RUTA</text><text x="756" y="470" class="body">por dónde</text>
+  <rect x="893" y="390" width="150" height="110" rx="14" fill="#345d6c"/><text x="928" y="432" class="cardtitle">LÍMITE</text><text x="924" y="470" class="body">dónde parar</text>
+  <text x="557" y="558" class="sub">Localiza las tres partes en el mapa antes de mover el avión.</text>
+
+  <path d="M1092 415 H1217" stroke="#37c4f0" stroke-width="10" marker-end="url(#arrow)"/>
+  <rect x="1235" y="235" width="285" height="360" rx="24" fill="#1d4659" stroke="#70d1eb" stroke-width="4"/>
+  <rect x="1263" y="260" width="145" height="38" rx="19" fill="#70d1eb"/><text x="1285" y="287" class="tag">3 · ACTÚA</text>
+  <text x="1267" y="350" class="cardtitle">Comprueba</text>
+  <text x="1267" y="398" class="body">¿El mapa y la</text><text x="1267" y="432" class="body">ruta coinciden?</text>
+  <path d="M1280 490 H1465" stroke="#8ee0a0" stroke-width="6"/><text x="1280" y="530" class="body">Sí: rueda por</text><text x="1280" y="564" class="body">la ruta indicada.</text>
+
+  <path d="M1378 615 V700 H790 V615" fill="none" stroke="#f27872" stroke-width="9" marker-end="url(#arrow)"/>
+  <rect x="460" y="705" width="660" height="115" rx="22" fill="#61363b" stroke="#f27872" stroke-width="4"/>
+  <text x="500" y="752" class="cardtitle">Si hay duda, detente y vuelve al mapa o al menú ATC.</text>
+  <text x="500" y="792" class="body">No completes un cruce ni entres en pista por suposición.</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">Secuencia para usar trim después de estabilizar</title>
+  <desc id="desc">Diagrama de flujo: estabilizar actitud con yoke, notar presión continua, ajustar trim poco a poco y comprobar la tendencia.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#176b87"/></marker>
+  </defs>
+  <rect width="1200" height="540" fill="#f6fafc"/>
+  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="700" fill="#17324d">EL TRIM VA DESPUÉS DE ESTABILIZAR</text>
+  <text x="600" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#456176">Una acción cada vez: controla la actitud, reduce presión y vuelve a comprobar.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="166" width="235" height="212" rx="18" fill="#e5f2f8" stroke="#176b87" stroke-width="4"/>
+    <circle cx="172" cy="208" r="28" fill="#176b87"/><text x="172" y="217" text-anchor="middle" font-size="27" font-weight="700" fill="white">1</text>
+    <text x="172" y="278" text-anchor="middle" font-size="24" font-weight="700" fill="#17324d">YOKE</text>
+    <text x="172" y="312" text-anchor="middle" font-size="18" fill="#17324d">Estabiliza la actitud</text>
+    <text x="172" y="340" text-anchor="middle" font-size="18" fill="#17324d">y centra las alas.</text>
+    <path d="M305 272 H385" stroke="#176b87" stroke-width="7" marker-end="url(#arrow)"/>
+    <rect x="405" y="166" width="235" height="212" rx="18" fill="#fff2d9" stroke="#b36c00" stroke-width="4"/>
+    <circle cx="522" cy="208" r="28" fill="#b36c00"/><text x="522" y="217" text-anchor="middle" font-size="27" font-weight="700" fill="white">2</text>
+    <text x="522" y="278" text-anchor="middle" font-size="24" font-weight="700" fill="#17324d">NOTA LA PRESIÓN</text>
+    <text x="522" y="312" text-anchor="middle" font-size="18" fill="#17324d">¿Sigues empujando</text>
+    <text x="522" y="340" text-anchor="middle" font-size="18" fill="#17324d">o tirando continuamente?</text>
+    <path d="M655 272 H735" stroke="#176b87" stroke-width="7" marker-end="url(#arrow)"/>
+    <rect x="755" y="166" width="235" height="212" rx="18" fill="#e8f4e9" stroke="#28733c" stroke-width="4"/>
+    <circle cx="872" cy="208" r="28" fill="#28733c"/><text x="872" y="217" text-anchor="middle" font-size="27" font-weight="700" fill="white">3</text>
+    <text x="872" y="278" text-anchor="middle" font-size="24" font-weight="700" fill="#17324d">TRIM</text>
+    <text x="872" y="312" text-anchor="middle" font-size="18" fill="#17324d">Ajusta poco a poco</text>
+    <text x="872" y="340" text-anchor="middle" font-size="18" fill="#17324d">para bajar esa fuerza.</text>
+    <path d="M1005 272 H1080 V423 H167" fill="none" stroke="#176b87" stroke-width="7" marker-end="url(#arrow)"/>
+    <rect x="255" y="410" width="650" height="89" rx="18" fill="#dfeaf1" stroke="#456176" stroke-width="3"/>
+    <text x="580" y="447" text-anchor="middle" font-size="22" font-weight="700" fill="#17324d">4. ALIGERA LA MANO Y COMPLETA EL BARRIDO</text>
+    <text x="580" y="476" text-anchor="middle" font-size="18" fill="#17324d">Si la tendencia continúa, vuelve al yoke; no añadas trim automáticamente.</text>
+  </g>
+</svg>

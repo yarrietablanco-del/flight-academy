@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "id": "c172-trim",
+    "title": "Trim",
+    "subtitle": "Quita la presión del yoke sin cambiar la actitud que ya estabilizaste.",
+    "objective": "Reducir presión del yoke después de estabilizar el C172.",
+    "estimatedTime": "15 min",
+    "prerequisites": [
+      "c172-straight-level"
+    ],
+    "level": 1,
+    "module": "control",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "El trim no se usa para dirigir el avión hacia una altitud elegida. Después de establecer una condición estable con el yoke, puede reducir la fuerza que tendrías que mantener. Sigue observando el horizonte y los instrumentos, porque un ajuste de trim y las condiciones de vuelo pueden modificar la tendencia.",
+  "concepts": [
+    {
+      "term": "Trim",
+      "meaning": "Un ajuste que, después de estabilizar, reduce la fuerza sostenida que aplicas al yoke para mantener una condición. No sustituye al yoke para iniciar o corregir una maniobra."
+    },
+    {
+      "term": "Presión del yoke",
+      "meaning": "La fuerza continua de empujar o tirar que notas para mantener el morro donde está. Es una sensación de control, no una cifra de instrumento."
+    },
+    {
+      "term": "Estabilizar",
+      "meaning": "Mantener una actitud y una tendencia observables durante varias miradas antes de hacer otro ajuste."
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Estabiliza antes de compensar",
+      "instruction": "En MSFS 2024 inicia el C172 ya en el aire, de día, con horizonte visible y margen sobre el terreno. Usa el yoke para volver a una actitud de recto y nivelado practicada en la lección anterior. Centra las alas y completa dos pasadas de actitud, altitud, velocidad y rumbo.",
+      "explanation": "El yoke cambia primero la actitud. El trim viene después: solo tiene sentido compensar una fuerza cuando ya sabes qué actitud estás sosteniendo. Si usas trim mientras aún persigues el horizonte, no podrás distinguir entre una corrección de actitud y una reducción de presión.",
+      "expectedResult": "La actitud deja de cambiar bruscamente y puedes identificar una presión continua de empujar o tirar. Si altitud, velocidad o rumbo aún muestran una tendencia que crece, vuelve al yoke, haz una entrada pequeña y observa otra pasada antes de trimar.",
+      "simulatorAction": "No busques una posición fija de yoke, potencia ni trim. La meta es una imagen estable en tu vuelo actual; pausa o reinicia si pierdes margen sobre el terreno.",
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/c172-trim-sequence.svg",
+        "alt": "Diagrama conceptual de la secuencia: estabilizar la actitud con yoke, notar presión, ajustar trim y comprobar otra vez.",
+        "purpose": "Mostrar el orden que separa el control de actitud de la compensación de la presión sostenida.",
+        "teaches": "Primero se estabiliza con el yoke; después se usa trim para reducir presión y se vuelve a observar.",
+        "primaryTeachingObjective": "Ordenar la secuencia",
+        "perspective": "Diagrama de flujo sin perspectiva física",
+        "movingElement": "La secuencia de acciones",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "De estabilizar a comprobar",
+        "userQuestionAnswered": [
+          "queControlTocar",
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "El trim aparece después de estabilizar y antes de la comprobación, nunca como el primer control de una corrección.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que una actitud estable es la condición previa para usar trim durante esta práctica.",
+        "recognizedElements": [
+          "yoke",
+          "actitud estable",
+          "presión continua",
+          "trim",
+          "comprobación"
+        ],
+        "actionAfterViewing": "Estabiliza primero con el yoke y completa dos pasadas antes de buscar la presión que vas a compensar."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La acción depende de la actitud observable en el vuelo actual, no de una cabina concreta."
+        },
+        {
+          "type": "instrument",
+          "status": "notRequired",
+          "reason": "La práctica usa el barrido ya aprendido y no requiere reconocer un instrumento nuevo."
+        }
+      ],
+      "warning": "Esta es una práctica de simulación. En una aeronave real, aprende los procedimientos y límites aplicables con instrucción autorizada."
+    },
+    {
+      "number": 2,
+      "title": "Ajusta trim para quitar fuerza",
+      "instruction": "Con la actitud estable, identifica si mantienes una presión constante de empujar o tirar. Verifica en el perfil activo de MSFS o en el FMD qué control acciona trim en tu VelocityOne. Haz entradas pequeñas de trim en el sentido que reduzca esa presión y detente entre entradas para sentir el cambio.",
+      "explanation": "El objetivo no es usar trim para forzar el morro ni alcanzar una posición concreta del control. Es reducir la fuerza en el yoke mientras confirmas que la condición permanece estable. Si la presión aumenta o aparece una nueva tendencia, deshaz una parte del último ajuste, corrige con yoke y vuelve a observar antes de tocar otra vez.",
+      "expectedResult": "La presión que sostenías disminuye y el yoke puede permanecer cerca del centro sin que debas empujar o tirar continuamente. Si debes aplicar cada vez más fuerza, invierte una entrada pequeña, estabiliza con yoke y repite más despacio.",
+      "simulatorAction": "En Opciones > Controles, busca la acción de trim en el perfil activo y confirma que responde antes de usarla en vuelo. No asumas un botón o una rueda: la asignación depende de tu perfil.",
+      "visual": {
+        "type": "comparisonDiagram",
+        "asset": "content/assets/c172-trim-pressure.svg",
+        "alt": "Comparación conceptual de la misma actitud estable antes y después de trim: presión sostenida en el yoke frente a presión reducida.",
+        "purpose": "Mostrar que, después de estabilizar, el trim busca reducir la fuerza requerida para mantener una condición mientras se sigue comprobando la tendencia.",
+        "teaches": "Reconocer la presión continua antes del trim y buscar su reducción después de un ajuste pequeño.",
+        "primaryTeachingObjective": "Reducir presión continua",
+        "perspective": "Comparación lateral conceptual",
+        "movingElement": "La fuerza aplicada al yoke",
+        "axisOfMovement": "Eje longitudinal",
+        "directionOfMovement": "De presión sostenida a presión reducida",
+        "comparisonJustification": "La comparación de la misma actitud con distinta presión es exactamente el objetivo de este paso.",
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "El diagrama parte de la misma actitud como referencia; después del trim, la flecha de fuerza sobre el yoke es menor. En el simulador debes confirmar que la tendencia sigue estable.",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Distingue una reducción de presión sostenida de un cambio intencional de actitud.",
+        "recognizedElements": [
+          "actitud estable",
+          "yoke",
+          "flecha de presión",
+          "ajuste de trim"
+        ],
+        "actionAfterViewing": "Haz una entrada pequeña de trim y conserva la actitud con el yoke solo mientras verificas si la presión disminuyó."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "La asignación física de trim varía por perfil y debe verificarse en MSFS o FMD."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Suelta presión y confirma la tendencia",
+      "instruction": "Después de cada ajuste, aligera la mano del yoke sin abandonar el control y completa otra pasada de actitud, altitud, velocidad y rumbo. Si el avión conserva la actitud con poca presión, deja el trim donde está. Si aparece una tendencia sostenida, corrige primero con yoke, estabiliza y luego reajusta trim.",
+      "explanation": "Trim no elimina la necesidad de vigilar el avión. Las condiciones cambian y una compensación que era cómoda puede dejar de serlo. Separar yoke, observación y trim evita usar el ajuste de compensación como una corrección continua de trayectoria.",
+      "expectedResult": "Puedes decir si bajó la presión y si la tendencia se mantiene estable en más de una pasada. Si el morro sube, baja o las alas se inclinan al soltar presión, retoma el yoke, recupera una actitud segura y empieza otra vez desde la estabilización.",
+      "simulatorAction": "Repite el ciclo con calma: estabiliza, nota la presión, ajusta poco, aligera la mano y comprueba. Pausa o reinicia si la situación deja de ofrecer margen suficiente para observar.",
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/c172-trim-sequence.svg",
+        "alt": "Diagrama conceptual de la secuencia de trim que termina con una comprobación de actitud y tendencia.",
+        "purpose": "Recordar que el ajuste de trim termina con una observación y una decisión, no con otra entrada automática.",
+        "teaches": "Comprobar si la presión disminuyó y corregir con yoke antes de volver a ajustar trim cuando la tendencia continúa.",
+        "primaryTeachingObjective": "Comprobar la tendencia",
+        "perspective": "Diagrama de flujo sin perspectiva física",
+        "movingElement": "La secuencia de comprobación",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "De ajuste a decisión",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "La comprobación posterior decide si se conserva el trim o si se vuelve a estabilizar con yoke.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que el trim se conserva solo cuando la presión disminuye y la tendencia sigue estable.",
+        "recognizedElements": [
+          "trim ajustado",
+          "presión reducida",
+          "barrido",
+          "decisión"
+        ],
+        "actionAfterViewing": "Aligera la mano, completa el barrido y vuelve al yoke si la tendencia no permanece estable."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "notRequired",
+          "reason": "La comprobación reutiliza el barrido de instrumentos ya practicado sin nuevo reconocimiento visual."
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "El mando de trim depende del perfil activo y debe confirmarse antes de la práctica."
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "title": "Compensar una actitud ya estable",
+    "scenario": "C172 en Vuelo libre, ya en el aire, de día, con clima despejado, horizonte visible y margen amplio sobre el terreno.",
+    "task": "Estabiliza recto y nivelado con el yoke y confirma dos pasadas de instrumentos. Identifica la presión continua. Tras verificar tu acción de trim en el perfil activo, haz entradas pequeñas hasta reducir esa presión. Después de cada una, aligera la mano y completa otro barrido antes de decidir si repetir.",
+    "successSignal": "Mantienes una actitud estable con menos presión continua en el yoke y puedes explicar que corregiste la actitud con yoke antes de compensarla con trim.",
+    "conceptDemonstrated": "Compensación de presión",
+    "possibleConfounders": [
+      "Cambiar potencia mientras se evalúa la presión puede introducir una nueva tendencia.",
+      "Usar trim antes de estabilizar mezcla el ajuste de fuerza con una corrección de actitud.",
+      "Una asignación de hardware sin verificar puede accionar otra función en el perfil activo."
+    ],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica mantiene una misma actitud como referencia, separa el yoke del trim y pide observar la fuerza antes y después. Así, la señal buscada es la reducción de presión sostenida, no un valor fijo ni una maniobra diferente."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Usar trim para iniciar un ascenso, descenso o recuperación de una desviación.",
+      "recovery": "Vuelve al yoke, establece una actitud estable y comprueba la tendencia. Solo entonces usa trim para quitar la presión que queda."
+    },
+    {
+      "mistake": "Hacer muchas entradas de trim sin detenerse a sentir el resultado.",
+      "recovery": "Deshaz una parte del último ajuste si la presión aumentó, espera una pasada completa y usa una sola entrada pequeña después."
+    },
+    {
+      "mistake": "Asumir que un control concreto del VelocityOne es trim.",
+      "recovery": "Confirma la acción en Controles de MSFS o en el FMD para el perfil activo antes de practicar en vuelo."
+    },
+    {
+      "mistake": "Soltar el yoke por completo para comprobar el trim.",
+      "recovery": "Aligera la mano sin abandonar el control. Si aparece una tendencia, retoma el yoke y recupera una actitud segura."
+    }
+  ],
+  "checklist": [
+    "C172 en el aire, de día, con horizonte visible y margen sobre el terreno",
+    "Actitud de recto y nivelado estabilizada antes de ajustar trim",
+    "Dos pasadas de actitud, altitud, velocidad y rumbo completadas",
+    "Acción de trim confirmada en el perfil activo de MSFS o FMD",
+    "Entradas de trim pequeñas, separadas por observación",
+    "Presión del yoke reducida sin usar trim para iniciar la corrección",
+    "Barrido repetido después de aligerar la mano"
+  ],
+  "quiz": [
+    {
+      "question": "¿Cuándo usas trim en esta práctica?",
+      "options": [
+        "Después de estabilizar la actitud con yoke y notar presión continua",
+        "Antes de decidir qué actitud necesita el avión",
+        "Cada vez que el altímetro cambia una cifra"
+      ],
+      "answer": "Después de estabilizar la actitud con yoke y notar presión continua",
+      "explanation": "El yoke establece o corrige la actitud; el trim reduce la fuerza necesaria para sostenerla."
+    },
+    {
+      "question": "¿Qué señal indica que un ajuste de trim fue útil?",
+      "options": [
+        "Necesitas menos presión continua para mantener la misma actitud",
+        "El morro cambia de inmediato a una actitud nueva",
+        "Puedes dejar de observar los instrumentos"
+      ],
+      "answer": "Necesitas menos presión continua para mantener la misma actitud",
+      "explanation": "La señal buscada es una fuerza menor en el yoke mientras continúas vigilando la tendencia."
+    },
+    {
+      "question": "Si al aligerar la mano aparece una tendencia sostenida, ¿qué haces primero?",
+      "options": [
+        "Corrijo con yoke, estabilizo y luego reconsidero trim",
+        "Añado varias entradas rápidas de trim",
+        "Mantengo la presión sin mirar fuera ni a instrumentos"
+      ],
+      "answer": "Corrijo con yoke, estabilizo y luego reconsidero trim",
+      "explanation": "Primero recuperas la actitud deseada; el trim vuelve a servir solo cuando esa actitud ya está estabilizada."
+    }
+  ],
+  "completionCriteria": [
+    "Preparaste una práctica de simulación con horizonte visible y margen suficiente sobre el terreno.",
+    "Estabilizaste una actitud de recto y nivelado con yoke antes de ajustar trim.",
+    "Verificaste la acción de trim en tu perfil activo sin asumir una asignación del VelocityOne.",
+    "Reduciste la presión continua del yoke con entradas pequeñas separadas por observación.",
+    "Explicaste que trim compensa presión después de estabilizar y no sustituye al yoke para corregir una trayectoria."
+  ],
+  "sources": [
+    {
+      "title": "FAA Airplane Flying Handbook",
+      "url": "https://www.faa.gov/regulations_policies/handbook",
+      "verified": true
+    },
+    {
+      "title": "FAA Pilot's Handbook of Aeronautical Knowledge",
+      "url": "https://www.faa.gov/regulations_policies/handbook",
+      "verified": true
+    },
+    {
+      "title": "Cessna 172S Pilot's Operating Handbook",
+      "url": "https://support.cessna.com/custsupt/csupport/newlogin.jsp",
+      "verified": false
+    }
+  ]
+}

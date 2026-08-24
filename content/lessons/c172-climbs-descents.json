@@ -5,22 +5,50 @@
     "subtitle": "Cambia altitud con actitud, potencia y una comprobación paciente.",
     "objective": "Cambiar altitud con actitud y potencia.",
     "estimatedTime": "25 min",
-    "prerequisites": ["c172-straight-level"],
+    "prerequisites": [
+      "c172-straight-level"
+    ],
     "level": 1,
     "module": "control",
     "visualStandardVersion": 3
   },
   "whyItMatters": "Un ascenso o un descenso no empieza persiguiendo el altímetro. Empieza al elegir una actitud y una potencia, y después comprobar si altitud y velocidad siguen la tendencia deseada. Esta secuencia te permite cambiar de altura sin convertir una corrección en una oscilación.",
   "concepts": [
-    {"term": "Trayectoria", "meaning": "El camino que sigue el avión: asciende, permanece nivelado o desciende. La confirmas observando la tendencia de altitud, no una lectura aislada."},
-    {"term": "Actitud", "meaning": "La posición del morro y las alas respecto al horizonte. Con el yoke eliges una actitud y luego esperas a ver su efecto."},
-    {"term": "Potencia", "meaning": "La energía que entrega el motor. Ajustarla influye en la velocidad y ayuda a sostener la trayectoria, pero no sustituye vigilar la actitud."},
-    {"term": "Nivelar", "meaning": "Salir de una trayectoria de ascenso o descenso para estabilizar la altitud deseada. Empieza antes de la altitud objetivo porque el avión responde con demora."}
+    {
+      "term": "Trayectoria",
+      "meaning": "El camino que sigue el avión: asciende, permanece nivelado o desciende. La confirmas observando la tendencia de altitud, no una lectura aislada."
+    },
+    {
+      "term": "Actitud",
+      "meaning": "La posición del morro y las alas respecto al horizonte. Con el yoke eliges una actitud y luego esperas a ver su efecto."
+    },
+    {
+      "term": "Potencia",
+      "meaning": "La energía que entrega el motor. Ajustarla influye en la velocidad y ayuda a sostener la trayectoria, pero no sustituye vigilar la actitud."
+    },
+    {
+      "term": "Nivelar",
+      "meaning": "Salir de una trayectoria de ascenso o descenso para estabilizar la altitud deseada. Empieza antes de la altitud objetivo porque el avión responde con demora."
+    },
+    {
+      "term": "VSI",
+      "meaning": "Indicador de velocidad vertical: muestra si la altitud sube o baja y con qué rapidez aproximada."
+    },
+    {
+      "term": "POH",
+      "meaning": "Manual de operación del avión; en vuelo real contiene procedimientos, límites y datos de la variante concreta."
+    }
   ],
   "steps": [
     {
       "number": 1,
-      "requiredVisualCoverage": [{"type":"exteriorView","status":"notRequired","reason":"El horizonte solo se prepara aquí; la comparación fiel de cabina se usa al cambiar trayectoria."}],
+      "requiredVisualCoverage": [
+        {
+          "type": "exteriorView",
+          "status": "notRequired",
+          "reason": "El horizonte solo se prepara aquí; la comparación fiel de cabina se usa al cambiar trayectoria."
+        }
+      ],
       "title": "Prepara espacio para observar la respuesta",
       "instruction": "En MSFS 2024 abre Vuelo libre con el C172, clima despejado y hora diurna. Comienza en el aire, lejos del terreno y con horizonte visible. Estabiliza recto y nivelado usando la práctica anterior antes de intentar cambiar altitud.",
       "explanation": "Necesitas margen para mirar afuera y hacer un barrido sin una maniobra urgente. En un avión real, altitudes, velocidades, potencia y límites se determinan con el POH, la instrucción y las condiciones; esta es solo una práctica de simulación.",
@@ -32,21 +60,46 @@
         "alt": "Diagrama conceptual de ascenso, nivelado y descenso que relaciona actitud, dirección de potencia y tendencia de altitud.",
         "purpose": "Explicar la relación que vas a observar entre actitud, potencia y trayectoria antes de hacer entradas en MSFS.",
         "teaches": "Distinguir una trayectoria de ascenso, nivelado o descenso sin convertir el diagrama en una posición de morro o ajuste universal.",
-        "userQuestionAnswered": ["queCambioEsperar"],
+        "userQuestionAnswered": [
+          "queCambioEsperar"
+        ],
         "tiedToStep": 1,
         "expectedObservation": "Cada trayectoria combina una actitud, una dirección de cambio de potencia y una tendencia de altitud que se debe confirmar después.",
         "view": "flujo",
         "visualCategory": "conceptual",
         "fidelity": "conceptual",
         "recognitionGoal": "Reconoce que actitud y potencia son entradas, mientras que la trayectoria y la altitud son resultados que se observan.",
-        "recognizedElements": ["ascenso", "nivelado", "descenso", "tendencia de altitud"],
-        "actionAfterViewing": "Estabiliza el C172 recto y nivelado con margen sobre el terreno antes de seleccionar una trayectoria nueva."
+        "recognizedElements": [
+          "ascenso",
+          "nivelado",
+          "descenso",
+          "tendencia de altitud"
+        ],
+        "actionAfterViewing": "Estabiliza el C172 recto y nivelado con margen sobre el terreno antes de seleccionar una trayectoria nueva.",
+        "primaryTeachingObjective": "Relacionar actitud con trayectoria",
+        "perspective": "Diagrama de flujo sin perspectiva física",
+        "movingElement": "La secuencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "De inicio a comprobación"
       },
       "warning": "No uses esta práctica para sustituir instrucción de vuelo real, procedimientos del POH ni márgenes de seguridad reales."
     },
     {
       "number": 2,
-      "requiredVisualCoverage": [{"type":"instrument","status":"required"},{"type":"hardware","status":"required"},{"type":"exteriorView","status":"required"}],
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "hardware",
+          "status": "required"
+        },
+        {
+          "type": "exteriorView",
+          "status": "required"
+        }
+      ],
       "title": "Inicia un ascenso y confirma que está ocurriendo",
       "instruction": "Desde recto y nivelado, aplica una entrada pequeña y suave al yoke para escoger una actitud de ascenso; después ajusta potencia según la respuesta. Centra el yoke y alterna horizonte o actitud, altitud y velocidad. Mantén las alas aproximadamente niveladas.",
       "explanation": "La actitud inicia el cambio de trayectoria. La potencia ayuda a sostener la energía, y la velocidad te indica si la situación evoluciona como esperabas. No copies una posición de morro, una potencia o una velocidad de otro vuelo: cambian con el avión, carga, configuración y condiciones.",
@@ -57,58 +110,316 @@
         "alt": "Referencia pendiente de la cabina C172 de MSFS para localizar actitud, altitud y velocidad durante un ascenso.",
         "purpose": "Indicar que la localización operativa de instrumentos exige una referencia fiel de la variante de C172 usada en MSFS.",
         "teaches": "Localizar la actitud, la altitud y la velocidad en la cabina concreta antes de interpretar la respuesta del ascenso.",
-        "userQuestionAnswered": ["dondeMirar", "queCambioEsperar"],
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queCambioEsperar"
+        ],
         "tiedToStep": 2,
         "expectedObservation": "En una referencia fiel verías la actitud, la indicación de altitud y la indicación de velocidad de la variante seleccionada.",
         "view": "instrumento",
         "visualCategory": "reference",
         "fidelity": "recreated-faithful",
         "recognitionGoal": "Reconoce los instrumentos de actitud, altitud y velocidad de tu variante C172 sin asumir una disposición de cabina.",
-        "recognizedElements": ["indicador de actitud", "indicador de altitud", "indicador de velocidad"],
+        "recognizedElements": [
+          "indicador de actitud",
+          "indicador de altitud",
+          "indicador de velocidad"
+        ],
         "actionAfterViewing": "Con una referencia fiel disponible, localiza esos tres instrumentos en MSFS y realiza un barrido tras la entrada de ascenso.",
         "requiresReference": true,
-        "quality": {"sourceWidth": 1600, "sourceHeight": 900, "intendedDisplayWidth": 760, "supportsZoom": true, "detailTarget": "La ubicación legible de actitud, altitud y velocidad en la cabina concreta del C172."}
+        "quality": {
+          "sourceWidth": 1600,
+          "sourceHeight": 900,
+          "intendedDisplayWidth": 760,
+          "supportsZoom": true,
+          "detailTarget": "La ubicación legible de actitud, altitud y velocidad en la cabina concreta del C172."
+        },
+        "primaryTeachingObjective": "Reconocer la referencia"
       },
       "referenceVisuals": [
-        {"type":"instrumentDiagram","asset":"content/assets/c172-climbs-descents-pfd-states.svg","alt":"Recreación fiel comparable de PFD G1000 durante ascenso, nivelado y descenso, con actitud, velocidad, altitud y VSI.","purpose":"Mostrar la PFD completa en tres estados para reconocer qué cambia durante el ascenso sin copiar valores.","teaches":"Localizar actitud central, cinta de velocidad, cinta de altitud y VSI positivo en el estado de ascenso.","userQuestionAnswered":["dondeMirar","queCambioEsperar"],"tiedToStep":2,"expectedObservation":"En ascenso el morro queda arriba respecto al horizonte artificial, la altitud tiene tendencia ascendente y el VSI es positivo.","view":"instrumento","visualCategory":"reference","fidelity":"recreated-faithful","recognitionGoal":"Reconoce el estado de ascenso de la PFD G1000 y las zonas que debes barrer después de una entrada pequeña.","recognizedElements":["actitud de ascenso","cinta de velocidad","cinta de altitud","VSI positivo"],"actionAfterViewing":"En MSFS localiza esas cuatro zonas, centra el yoke y confirma la tendencia en otra pasada.","coverage":["instrument"],"quality":{"sourceWidth":1600,"sourceHeight":900,"intendedDisplayWidth":760,"supportsZoom":true,"detailTarget":"Las tres PFD comparables, especialmente actitud, cinta de altitud, cinta de velocidad y VSI."}},
-        {"type":"annotatedDiagram","asset":"content/assets/c172-climbs-descents-cockpit-states.svg","alt":"Recreación fiel de la vista de cabina C172 al ascender, nivelar y descender con la posición del horizonte señalada.","purpose":"Dar una referencia exterior reconocible para relacionar la posición del horizonte con la actitud de ascenso.","teaches":"Reconocer el horizonte más bajo en el parabrisas durante una actitud de ascenso y volver después a los instrumentos.","userQuestionAnswered":["dondeMirar","queCambioEsperar"],"tiedToStep":2,"expectedObservation":"En el ascenso el horizonte aparece más bajo respecto al panel que en la vista nivelada.","view":"vistaExterior","visualCategory":"reference","fidelity":"recreated-faithful","recognitionGoal":"Reconoce el cambio exterior de horizonte de un ascenso sin tratarlo como una posición universal del morro.","recognizedElements":["parabrisas C172","horizonte","panel","vista de ascenso"],"actionAfterViewing":"Mira fuera, identifica el horizonte y vuelve a la PFD para confirmar altitud, velocidad y VSI.","coverage":["cockpit","exteriorView"],"quality":{"sourceWidth":1600,"sourceHeight":900,"intendedDisplayWidth":760,"supportsZoom":true,"detailTarget":"La altura relativa del horizonte frente al panel en las tres vistas de cabina."}},
-        {"type":"controlHighlight","asset":"public/references/turtlebeach-velocityone-official.png","alt":"Imagen oficial real del Turtle Beach VelocityOne Flight con yoke y cuadrante de potencia reconocibles.","purpose":"Mostrar los controles físicos que intervienen al iniciar un ascenso antes de confirmar sus asignaciones activas.","teaches":"Distinguir el yoke para actitud y el cuadrante de potencia, sin asumir una asignación de trim.","userQuestionAnswered":["queControlTocar"],"tiedToStep":2,"expectedObservation":"Reconoces el yoke frontal y las palancas del cuadrante que debes comprobar en tu perfil de MSFS.","view":"controlFisico","visualCategory":"reference","fidelity":"real","recognitionGoal":"Reconoce yoke y throttle VelocityOne antes de usarlos con una entrada pequeña y verificable.","recognizedElements":["yoke VelocityOne","cuadrante de potencia","palanca de throttle"],"actionAfterViewing":"Verifica el perfil activo y aplica una entrada pequeña al yoke; ajusta potencia solo según la respuesta observada.","coverage":["hardware"],"quality":{"sourceWidth":1106,"sourceHeight":840,"intendedDisplayWidth":500,"supportsZoom":true,"detailTarget":"El yoke frontal y las palancas del cuadrante de potencia del hardware real."}}
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/c172-climbs-descents-pfd-states.svg",
+          "alt": "Recreación fiel comparable de PFD G1000 durante ascenso, nivelado y descenso, con actitud, velocidad, altitud y VSI.",
+          "purpose": "Mostrar la PFD completa en tres estados para reconocer qué cambia durante el ascenso sin copiar valores.",
+          "teaches": "Localizar actitud central, cinta de velocidad, cinta de altitud y VSI positivo en el estado de ascenso.",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queCambioEsperar"
+          ],
+          "tiedToStep": 2,
+          "expectedObservation": "En ascenso el morro queda arriba respecto al horizonte artificial, la altitud tiene tendencia ascendente y el VSI es positivo.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce el estado de ascenso de la PFD G1000 y las zonas que debes barrer después de una entrada pequeña.",
+          "recognizedElements": [
+            "actitud de ascenso",
+            "cinta de velocidad",
+            "cinta de altitud",
+            "VSI positivo"
+          ],
+          "actionAfterViewing": "En MSFS localiza esas cuatro zonas, centra el yoke y confirma la tendencia en otra pasada.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Las tres PFD comparables, especialmente actitud, cinta de altitud, cinta de velocidad y VSI."
+          },
+          "primaryTeachingObjective": "Reconocer la pantalla primaria"
+        },
+        {
+          "type": "annotatedDiagram",
+          "asset": "content/assets/c172-climbs-descents-cockpit-states.svg",
+          "alt": "Recreación fiel de la vista de cabina C172 al ascender, nivelar y descender con la posición del horizonte señalada.",
+          "purpose": "Dar una referencia exterior reconocible para relacionar la posición del horizonte con la actitud de ascenso.",
+          "teaches": "Reconocer el horizonte más bajo en el parabrisas durante una actitud de ascenso y volver después a los instrumentos.",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queCambioEsperar"
+          ],
+          "tiedToStep": 2,
+          "expectedObservation": "En el ascenso el horizonte aparece más bajo respecto al panel que en la vista nivelada.",
+          "view": "vistaExterior",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce el cambio exterior de horizonte de un ascenso sin tratarlo como una posición universal del morro.",
+          "recognizedElements": [
+            "parabrisas C172",
+            "horizonte",
+            "panel",
+            "vista de ascenso"
+          ],
+          "actionAfterViewing": "Mira fuera, identifica el horizonte y vuelve a la PFD para confirmar altitud, velocidad y VSI.",
+          "coverage": [
+            "cockpit",
+            "exteriorView"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "La altura relativa del horizonte frente al panel en las tres vistas de cabina."
+          },
+          "primaryTeachingObjective": "Reconocer la referencia"
+        },
+        {
+          "type": "controlHighlight",
+          "asset": "public/references/turtlebeach-velocityone-official.png",
+          "alt": "Imagen oficial real del Turtle Beach VelocityOne Flight con yoke y cuadrante de potencia reconocibles.",
+          "purpose": "Mostrar los controles físicos que intervienen al iniciar un ascenso antes de confirmar sus asignaciones activas.",
+          "teaches": "Distinguir el yoke para actitud y el cuadrante de potencia, sin asumir una asignación de trim.",
+          "userQuestionAnswered": [
+            "queControlTocar"
+          ],
+          "tiedToStep": 2,
+          "expectedObservation": "Reconoces el yoke frontal y las palancas del cuadrante que debes comprobar en tu perfil de MSFS.",
+          "view": "controlFisico",
+          "visualCategory": "reference",
+          "fidelity": "real",
+          "recognitionGoal": "Reconoce yoke y throttle VelocityOne antes de usarlos con una entrada pequeña y verificable.",
+          "recognizedElements": [
+            "yoke VelocityOne",
+            "cuadrante de potencia",
+            "palanca de throttle"
+          ],
+          "actionAfterViewing": "Verifica el perfil activo y aplica una entrada pequeña al yoke; ajusta potencia solo según la respuesta observada.",
+          "coverage": [
+            "hardware"
+          ],
+          "quality": {
+            "sourceWidth": 1106,
+            "sourceHeight": 840,
+            "intendedDisplayWidth": 500,
+            "supportsZoom": true,
+            "detailTarget": "El yoke frontal y las palancas del cuadrante de potencia del hardware real."
+          },
+          "primaryTeachingObjective": "Reconocer el control"
+        }
       ],
       "tip": "Di en voz alta la tendencia que ves: “actitud estable, altitud subiendo, velocidad la compruebo de nuevo”. Nombrarla evita tocar controles sin observar."
     },
     {
       "number": 3,
-      "requiredVisualCoverage": [{"type":"instrument","status":"required"},{"type":"hardware","status":"required"},{"type":"exteriorView","status":"required"}],
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "hardware",
+          "status": "required"
+        },
+        {
+          "type": "exteriorView",
+          "status": "required"
+        }
+      ],
       "title": "Nivela antes de la altitud objetivo",
       "instruction": "Elige una altitud de práctica que tengas margen para alcanzar. Cuando se aproxime, reduce poco a poco la actitud de ascenso hacia una actitud de nivelado y ajusta potencia según responda el avión. Después centra el yoke y vuelve al barrido.",
       "explanation": "El avión no deja de subir en el mismo instante en que ves la cifra objetivo. Nivelar antes te deja tiempo para que la trayectoria se estabilice. La distancia necesaria cambia con la situación; aprende a observarla en tu vuelo en lugar de memorizar un número.",
       "expectedResult": "La tendencia de ascenso disminuye y la altitud se estabiliza cerca de tu objetivo sin una corrección brusca opuesta. Si la sobrepasas, no empujes y tires repetidamente: elige una actitud estable, espera y corrige una vez más si persiste la tendencia.",
-      "simulatorAction": "No cambies yoke, trim y throttle simultáneamente. Si queda presión continua después de estabilizar, usa trim solo después de confirmar la actitud; verifica antes su asignación en el perfil activo.",
+      "simulatorAction": "No cambies yoke, trim y throttle simultáneamente. Si queda presión continua después de estabilizar, usa trim para reducir la fuerza necesaria para mantener esa condición; verifica antes su asignación en el perfil activo.",
       "visual": {
         "type": "comparisonDiagram",
         "asset": "content/assets/c172-climbs-descents-recovery.svg",
         "alt": "Comparación conceptual entre oscilaciones causadas por entradas continuas y recuperación con una corrección seguida de observación.",
         "purpose": "Mostrar por qué una secuencia de correcciones opuestas empeora el control de altitud al nivelar.",
         "teaches": "Diferenciar una estabilización gradual de una oscilación causada por volver a tocar los controles antes de observar el resultado.",
-        "userQuestionAnswered": ["queErrorEvitar", "queCambioEsperar"],
+        "userQuestionAnswered": [
+          "queErrorEvitar",
+          "queCambioEsperar"
+        ],
         "tiedToStep": 3,
         "expectedObservation": "La curva de entradas continuas cruza repetidamente la referencia; la de una corrección se aproxima y se estabiliza.",
         "view": "comparacion",
         "visualCategory": "conceptual",
         "fidelity": "conceptual",
         "recognitionGoal": "Reconoce la oscilación como señal de que estás corrigiendo antes de haber comprobado el efecto anterior.",
-        "recognizedElements": ["línea de referencia", "oscilación", "corrección única", "estabilización"],
-        "actionAfterViewing": "Al aproximarte a la altitud objetivo, reduce la actitud de ascenso una vez, centra el yoke y completa otro barrido."
+        "recognizedElements": [
+          "línea de referencia",
+          "oscilación",
+          "corrección única",
+          "estabilización"
+        ],
+        "actionAfterViewing": "Al aproximarte a la altitud objetivo, reduce la actitud de ascenso una vez, centra el yoke y completa otro barrido.",
+        "primaryTeachingObjective": "Evitar la sobrecorrección",
+        "perspective": "Comparación frontal de tendencias",
+        "movingElement": "La tendencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "Entre alternativas",
+        "comparisonJustification": "La comparación es el objetivo pedagógico principal de este paso."
       },
       "referenceVisuals": [
-        {"type":"instrumentDiagram","asset":"content/assets/c172-climbs-descents-pfd-states.svg","alt":"Recreación fiel comparable de PFD G1000 durante ascenso, nivelado y descenso para identificar el estado nivelado.","purpose":"Comparar el estado nivelado con el ascenso antes de decidir si una corrección debe esperar.","teaches":"Reconocer actitud estable, altitud estable y VSI cerca de cero en la PFD G1000.","userQuestionAnswered":["dondeMirar","queCambioEsperar"],"tiedToStep":3,"expectedObservation":"El horizonte artificial está estable, la cinta de altitud deja de tender y el VSI queda cerca de cero.","view":"instrumento","visualCategory":"reference","fidelity":"recreated-faithful","recognitionGoal":"Reconoce una PFD nivelada para comparar visualmente la estabilización con el ascenso previo.","recognizedElements":["actitud nivelada","cinta de altitud estable","VSI cerca de cero","cinta de velocidad"],"actionAfterViewing":"Reduce la actitud una vez, centra el yoke y completa otro barrido antes de hacer otra corrección.","coverage":["instrument"],"quality":{"sourceWidth":1600,"sourceHeight":900,"intendedDisplayWidth":760,"supportsZoom":true,"detailTarget":"El panel central NIVELADO: horizonte artificial, cinta de altitud y VSI."}},
-        {"type":"annotatedDiagram","asset":"content/assets/c172-climbs-descents-cockpit-states.svg","alt":"Recreación fiel de cabina C172 que compara horizonte de ascenso, nivelado y descenso.","purpose":"Mostrar el horizonte exterior estable que se busca al nivelar cerca de la altitud de práctica.","teaches":"Comparar la posición exterior del horizonte nivelado con el ascenso sin copiar una actitud fija.","userQuestionAnswered":["dondeMirar"],"tiedToStep":3,"expectedObservation":"La vista nivelada mantiene el horizonte estable respecto al panel antes de confirmar la tendencia en la PFD.","view":"vistaExterior","visualCategory":"reference","fidelity":"recreated-faithful","recognitionGoal":"Reconoce la referencia exterior de nivelado antes de comprobar que la altitud deja de cambiar.","recognizedElements":["parabrisas C172","horizonte estable","panel","vista nivelada"],"actionAfterViewing":"Mira fuera, vuelve a la PFD y espera una pasada completa antes de corregir otra vez.","coverage":["cockpit","exteriorView"],"quality":{"sourceWidth":1600,"sourceHeight":900,"intendedDisplayWidth":760,"supportsZoom":true,"detailTarget":"El panel NIVELADO y el horizonte estable respecto al panel."}},
-        {"type":"controlHighlight","asset":"public/references/turtlebeach-velocityone-official.png","alt":"Imagen oficial real del Turtle Beach VelocityOne Flight con yoke, throttle y rueda de trim reconocibles.","purpose":"Recordar los controles que se usan al nivelar sin inventar una asignación de trim.","teaches":"Reconocer yoke, throttle y rueda de trim; trim se usa solo después de confirmar su acción en el perfil activo.","userQuestionAnswered":["queControlTocar","queErrorEvitar"],"tiedToStep":3,"expectedObservation":"Yoke, cuadrante y rueda de trim están visibles como controles distintos; la asignación de trim no se presupone.","view":"controlFisico","visualCategory":"reference","fidelity":"real","recognitionGoal":"Reconoce los controles físicos antes de hacer una sola corrección y comprobarla.","recognizedElements":["yoke VelocityOne","cuadrante de potencia","palanca de throttle","rueda de trim"],"actionAfterViewing":"No muevas yoke, trim y throttle a la vez; confirma trim en tu perfil antes de usarlo tras estabilizar.","coverage":["hardware"],"quality":{"sourceWidth":1106,"sourceHeight":840,"intendedDisplayWidth":500,"supportsZoom":true,"detailTarget":"Yoke, palancas del cuadrante de potencia y rueda de trim en el hardware real."}}
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/c172-climbs-descents-pfd-states.svg",
+          "alt": "Recreación fiel comparable de PFD G1000 durante ascenso, nivelado y descenso para identificar el estado nivelado.",
+          "purpose": "Comparar el estado nivelado con el ascenso antes de decidir si una corrección debe esperar.",
+          "teaches": "Reconocer actitud estable, altitud estable y VSI cerca de cero en la PFD G1000.",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queCambioEsperar"
+          ],
+          "tiedToStep": 3,
+          "expectedObservation": "El horizonte artificial está estable, la cinta de altitud deja de tender y el VSI queda cerca de cero.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce una PFD nivelada para comparar visualmente la estabilización con el ascenso previo.",
+          "recognizedElements": [
+            "actitud nivelada",
+            "cinta de altitud estable",
+            "VSI cerca de cero",
+            "cinta de velocidad"
+          ],
+          "actionAfterViewing": "Reduce la actitud una vez, centra el yoke y completa otro barrido antes de hacer otra corrección.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "El panel central NIVELADO: horizonte artificial, cinta de altitud y VSI."
+          },
+          "primaryTeachingObjective": "Reconocer la pantalla primaria"
+        },
+        {
+          "type": "annotatedDiagram",
+          "asset": "content/assets/c172-climbs-descents-cockpit-states.svg",
+          "alt": "Recreación fiel de cabina C172 que compara horizonte de ascenso, nivelado y descenso.",
+          "purpose": "Mostrar el horizonte exterior estable que se busca al nivelar cerca de la altitud de práctica.",
+          "teaches": "Comparar la posición exterior del horizonte nivelado con el ascenso sin copiar una actitud fija.",
+          "userQuestionAnswered": [
+            "dondeMirar"
+          ],
+          "tiedToStep": 3,
+          "expectedObservation": "La vista nivelada mantiene el horizonte estable respecto al panel antes de confirmar la tendencia en la PFD.",
+          "view": "vistaExterior",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce la referencia exterior de nivelado antes de comprobar que la altitud deja de cambiar.",
+          "recognizedElements": [
+            "parabrisas C172",
+            "horizonte estable",
+            "panel",
+            "vista nivelada"
+          ],
+          "actionAfterViewing": "Mira fuera, vuelve a la PFD y espera una pasada completa antes de corregir otra vez.",
+          "coverage": [
+            "cockpit",
+            "exteriorView"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "El panel NIVELADO y el horizonte estable respecto al panel."
+          },
+          "primaryTeachingObjective": "Reconocer la referencia"
+        },
+        {
+          "type": "controlHighlight",
+          "asset": "public/references/turtlebeach-velocityone-official.png",
+          "alt": "Imagen oficial real del Turtle Beach VelocityOne Flight con yoke, throttle y rueda de trim reconocibles.",
+          "purpose": "Recordar los controles que se usan al nivelar sin inventar una asignación de trim.",
+          "teaches": "Reconocer yoke, throttle y rueda de trim; trim se usa solo después de confirmar su acción en el perfil activo.",
+          "userQuestionAnswered": [
+            "queControlTocar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 3,
+          "expectedObservation": "Yoke, cuadrante y rueda de trim están visibles como controles distintos; la asignación de trim no se presupone.",
+          "view": "controlFisico",
+          "visualCategory": "reference",
+          "fidelity": "real",
+          "recognitionGoal": "Reconoce los controles físicos antes de hacer una sola corrección y comprobarla.",
+          "recognizedElements": [
+            "yoke VelocityOne",
+            "cuadrante de potencia",
+            "palanca de throttle",
+            "rueda de trim"
+          ],
+          "actionAfterViewing": "No muevas yoke, trim y throttle a la vez; confirma trim en tu perfil antes de usarlo tras estabilizar.",
+          "coverage": [
+            "hardware"
+          ],
+          "quality": {
+            "sourceWidth": 1106,
+            "sourceHeight": 840,
+            "intendedDisplayWidth": 500,
+            "supportsZoom": true,
+            "detailTarget": "Yoke, palancas del cuadrante de potencia y rueda de trim en el hardware real."
+          },
+          "primaryTeachingObjective": "Reconocer el control"
+        }
       ]
     },
     {
       "number": 4,
-      "requiredVisualCoverage": [{"type":"instrument","status":"required"},{"type":"exteriorView","status":"required"},{"type":"hardware","status":"notRequired","reason":"Este paso consolida la observación del descenso; no introduce ni requiere reconocer otro control físico."}],
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "exteriorView",
+          "status": "required"
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "Este paso consolida la observación del descenso; no introduce ni requiere reconocer otro control físico."
+        }
+      ],
       "title": "Inicia y detén un descenso con la misma lógica",
       "instruction": "Desde nivelado, escoge una actitud de descenso con una entrada pequeña y ajusta potencia según la respuesta. Observa actitud, altitud y velocidad en más de una pasada. Al acercarte a la altitud de práctica elegida, vuelve gradualmente a una actitud de nivelado y ajusta potencia según responda.",
       "explanation": "El descenso no consiste solo en bajar potencia ni el ascenso solo en subir el morro. En ambos casos eliges una actitud, administras potencia y verificas la trayectoria. Repetir la misma secuencia hace que los dos cambios de altitud sean comparables y controlables.",
@@ -120,19 +431,103 @@
         "alt": "Flujo conceptual para comprobar actitud, altitud y velocidad antes de decidir una corrección de ascenso o descenso.",
         "purpose": "Convertir el barrido de instrumentos en una decisión observable antes de volver a tocar yoke o potencia.",
         "teaches": "Volver desde la decisión a actitud, altitud y velocidad para confirmar una tendencia tras cada cambio de trayectoria.",
-        "userQuestionAnswered": ["dondeMirar", "queControlTocar", "queErrorEvitar"],
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queControlTocar",
+          "queErrorEvitar"
+        ],
         "tiedToStep": 4,
         "expectedObservation": "El flujo termina en una decisión y regresa al barrido, dejando claro que una corrección debe ir seguida de observación.",
         "view": "flujo",
         "visualCategory": "conceptual",
         "fidelity": "conceptual",
         "recognitionGoal": "Reconoce el orden actitud, altitud y velocidad y la condición de esperar una tendencia antes de hacer otra corrección.",
-        "recognizedElements": ["actitud", "altitud", "velocidad", "decisión", "barrido repetido"],
-        "actionAfterViewing": "Después de iniciar o nivelar el descenso, completa el barrido y corrige únicamente si la tendencia se repite."
+        "recognizedElements": [
+          "actitud",
+          "altitud",
+          "velocidad",
+          "decisión",
+          "barrido repetido"
+        ],
+        "actionAfterViewing": "Después de iniciar o nivelar el descenso, completa el barrido y corrige únicamente si la tendencia se repite.",
+        "primaryTeachingObjective": "Completar el barrido",
+        "perspective": "Diagrama de flujo sin perspectiva física",
+        "movingElement": "La secuencia",
+        "axisOfMovement": "No aplica",
+        "directionOfMovement": "De inicio a comprobación"
       },
       "referenceVisuals": [
-        {"type":"instrumentDiagram","asset":"content/assets/c172-climbs-descents-pfd-states.svg","alt":"Recreación fiel comparable de PFD G1000 para reconocer el estado de descenso.","purpose":"Mostrar dónde confirmar un descenso con actitud, altitud, velocidad y VSI visibles en una sola pantalla.","teaches":"Reconocer morro abajo, cinta de altitud descendente y VSI negativo sin copiar valores.","userQuestionAnswered":["dondeMirar","queCambioEsperar"],"tiedToStep":4,"expectedObservation":"En descenso la altitud tiende a bajar y el VSI es negativo; al nivelar ambos vuelven hacia estable.","view":"instrumento","visualCategory":"reference","fidelity":"recreated-faithful","recognitionGoal":"Reconoce el estado de descenso de PFD y lo compara con los estados de ascenso y nivelado.","recognizedElements":["actitud de descenso","cinta de altitud","cinta de velocidad","VSI negativo"],"actionAfterViewing":"Completa dos pasadas de instrumentos y nivela gradualmente cerca de tu altitud de práctica.","coverage":["instrument"],"quality":{"sourceWidth":1600,"sourceHeight":900,"intendedDisplayWidth":760,"supportsZoom":true,"detailTarget":"El panel DESCENSO: actitud abajo, altitud con tendencia descendente y VSI negativo."}},
-        {"type":"annotatedDiagram","asset":"content/assets/c172-climbs-descents-cockpit-states.svg","alt":"Recreación fiel de cabina C172 que muestra el horizonte más alto durante una actitud de descenso.","purpose":"Dar una referencia exterior para reconocer el cambio visual de descenso desde la cabina.","teaches":"Comparar el horizonte más alto del descenso con las vistas de ascenso y nivelado.","userQuestionAnswered":["dondeMirar","queCambioEsperar"],"tiedToStep":4,"expectedObservation":"En descenso el horizonte queda más alto respecto al panel que en la vista nivelada.","view":"vistaExterior","visualCategory":"reference","fidelity":"recreated-faithful","recognitionGoal":"Reconoce la posición exterior del horizonte durante el descenso antes de confirmar la trayectoria en la PFD.","recognizedElements":["parabrisas C172","horizonte","panel","vista de descenso"],"actionAfterViewing":"Mira fuera, vuelve a la PFD y confirma la tendencia de altitud antes de ajustar otra vez.","coverage":["cockpit","exteriorView"],"quality":{"sourceWidth":1600,"sourceHeight":900,"intendedDisplayWidth":760,"supportsZoom":true,"detailTarget":"La altura relativa del horizonte en la vista DESCENSO comparada con NIVELADO."}}
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/c172-climbs-descents-pfd-states.svg",
+          "alt": "Recreación fiel comparable de PFD G1000 para reconocer el estado de descenso.",
+          "purpose": "Mostrar dónde confirmar un descenso con actitud, altitud, velocidad y VSI visibles en una sola pantalla.",
+          "teaches": "Reconocer morro abajo, cinta de altitud descendente y VSI negativo sin copiar valores.",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queCambioEsperar"
+          ],
+          "tiedToStep": 4,
+          "expectedObservation": "En descenso la altitud tiende a bajar y el VSI es negativo; al nivelar ambos vuelven hacia estable.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce el estado de descenso de PFD y lo compara con los estados de ascenso y nivelado.",
+          "recognizedElements": [
+            "actitud de descenso",
+            "cinta de altitud",
+            "cinta de velocidad",
+            "VSI negativo"
+          ],
+          "actionAfterViewing": "Completa dos pasadas de instrumentos y nivela gradualmente cerca de tu altitud de práctica.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "El panel DESCENSO: actitud abajo, altitud con tendencia descendente y VSI negativo."
+          },
+          "primaryTeachingObjective": "Reconocer la pantalla primaria"
+        },
+        {
+          "type": "annotatedDiagram",
+          "asset": "content/assets/c172-climbs-descents-cockpit-states.svg",
+          "alt": "Recreación fiel de cabina C172 que muestra el horizonte más alto durante una actitud de descenso.",
+          "purpose": "Dar una referencia exterior para reconocer el cambio visual de descenso desde la cabina.",
+          "teaches": "Comparar el horizonte más alto del descenso con las vistas de ascenso y nivelado.",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queCambioEsperar"
+          ],
+          "tiedToStep": 4,
+          "expectedObservation": "En descenso el horizonte queda más alto respecto al panel que en la vista nivelada.",
+          "view": "vistaExterior",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce la posición exterior del horizonte durante el descenso antes de confirmar la trayectoria en la PFD.",
+          "recognizedElements": [
+            "parabrisas C172",
+            "horizonte",
+            "panel",
+            "vista de descenso"
+          ],
+          "actionAfterViewing": "Mira fuera, vuelve a la PFD y confirma la tendencia de altitud antes de ajustar otra vez.",
+          "coverage": [
+            "cockpit",
+            "exteriorView"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "La altura relativa del horizonte en la vista DESCENSO comparada con NIVELADO."
+          },
+          "primaryTeachingObjective": "Reconocer la referencia"
+        }
       ]
     }
   ],
@@ -140,13 +535,28 @@
     "title": "Escalera de altitud observada",
     "scenario": "C172 en Vuelo libre, de día, con clima despejado, horizonte visible y amplio margen sobre el terreno.",
     "task": "Desde recto y nivelado elige una altitud de práctica por encima de la actual. Asciende, nivela cerca de ella y estabiliza. Luego elige otra altitud de práctica por debajo con margen suficiente; desciende, nivela y estabiliza. En cada tramo, di la tendencia de actitud, altitud y velocidad antes de una nueva entrada.",
-    "successSignal": "Completas un ascenso y un descenso sin una cadena de correcciones. Puedes explicar qué cambiaste, qué tendencia viste y cómo supiste que era momento de nivelar."
+    "successSignal": "Completas un ascenso y un descenso sin una cadena de correcciones. Puedes explicar qué cambiaste, qué tendencia viste y cómo supiste que era momento de nivelar.",
+    "conceptDemonstrated": "Cambio de altitud controlado",
+    "possibleConfounders": [],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica usa una acción observable y una comprobación explícita para que el alumno relacione el concepto con su resultado en MSFS."
   },
   "commonMistakes": [
-    {"mistake": "Tirar del yoke para ascender sin comprobar después velocidad y altitud.", "recovery": "Centra el yoke, vuelve a actitud, altitud y velocidad. Si la tendencia no es controlable, recupera una actitud de nivelado con margen y reinicia con una entrada menor."},
-    {"mistake": "Esperar a la cifra exacta de altitud para empezar a nivelar.", "recovery": "En el siguiente intento inicia el nivelado al aproximarte y observa cuánto tarda el avión en estabilizarse. No memorices un margen fijo de otro vuelo."},
-    {"mistake": "Corregir alternativamente arriba y abajo antes de terminar un barrido.", "recovery": "Elige una actitud estable, centra los controles y completa otra pasada. Haz una sola corrección posterior si la tendencia continúa."},
-    {"mistake": "Usar trim para iniciar el ascenso o descenso, o asumir una asignación del VelocityOne.", "recovery": "Inicia con yoke y potencia. Tras estabilizar, usa trim solo para quitar presión y solo después de verificar la acción en tu perfil activo."}
+    {
+      "mistake": "Tirar del yoke para ascender sin comprobar después velocidad y altitud.",
+      "recovery": "Centra el yoke, vuelve a actitud, altitud y velocidad. Si la tendencia no es controlable, recupera una actitud de nivelado con margen y reinicia con una entrada menor."
+    },
+    {
+      "mistake": "Esperar a la cifra exacta de altitud para empezar a nivelar.",
+      "recovery": "En el siguiente intento inicia el nivelado al aproximarte y observa cuánto tarda el avión en estabilizarse. No memorices un margen fijo de otro vuelo."
+    },
+    {
+      "mistake": "Corregir alternativamente arriba y abajo antes de terminar un barrido.",
+      "recovery": "Elige una actitud estable, centra los controles y completa otra pasada. Haz una sola corrección posterior si la tendencia continúa."
+    },
+    {
+      "mistake": "Usar trim para iniciar el ascenso o descenso, o asumir una asignación del VelocityOne.",
+      "recovery": "Inicia con yoke y potencia. Tras estabilizar, usa trim para reducir la fuerza necesaria para mantener esa condición y solo después de verificar la acción en tu perfil activo."
+    }
   ],
   "checklist": [
     "C172 en aire, de día, con horizonte visible y amplio margen sobre el terreno",
@@ -158,9 +568,36 @@
     "Trim usado solo después de estabilizar y con asignación verificada"
   ],
   "quiz": [
-    {"question": "¿Qué debes comprobar después de iniciar un ascenso con una entrada pequeña?", "options": ["Actitud, tendencia de altitud y velocidad antes de otra corrección", "Solo el altímetro hasta alcanzar una cifra", "El trim antes de observar la respuesta"], "answer": "Actitud, tendencia de altitud y velocidad antes de otra corrección", "explanation": "La actitud inicia la trayectoria; altitud y velocidad confirman cómo está respondiendo el avión."},
-    {"question": "¿Por qué se empieza a nivelar al aproximarse a la altitud objetivo?", "options": ["Porque el avión responde con demora y necesita estabilizar su trayectoria", "Porque una cifra exacta elimina toda necesidad de observar", "Porque el trim sustituye al yoke al final del ascenso"], "answer": "Porque el avión responde con demora y necesita estabilizar su trayectoria", "explanation": "Nivelar antes evita esperar una respuesta instantánea y reduce la necesidad de una corrección brusca opuesta."},
-    {"question": "¿Cuál es la respuesta adecuada ante oscilaciones de ascenso y descenso?", "options": ["Estabilizar una actitud, centrar controles, observar y corregir una vez si la tendencia continúa", "Mover yoke y potencia varias veces hasta que el altímetro se detenga", "Usar trim de inmediato sin mirar la actitud"], "answer": "Estabilizar una actitud, centrar controles, observar y corregir una vez si la tendencia continúa", "explanation": "Separar corrección y observación permite identificar el efecto de cada entrada y evita perseguir el instrumento."}
+    {
+      "question": "¿Qué debes comprobar después de iniciar un ascenso con una entrada pequeña?",
+      "options": [
+        "Actitud, tendencia de altitud y velocidad antes de otra corrección",
+        "Solo el altímetro hasta alcanzar una cifra",
+        "El trim antes de observar la respuesta"
+      ],
+      "answer": "Actitud, tendencia de altitud y velocidad antes de otra corrección",
+      "explanation": "La actitud inicia la trayectoria; altitud y velocidad confirman cómo está respondiendo el avión."
+    },
+    {
+      "question": "¿Por qué se empieza a nivelar al aproximarse a la altitud objetivo?",
+      "options": [
+        "Porque el avión responde con demora y necesita estabilizar su trayectoria",
+        "Porque una cifra exacta elimina toda necesidad de observar",
+        "Porque el trim sustituye al yoke al final del ascenso"
+      ],
+      "answer": "Porque el avión responde con demora y necesita estabilizar su trayectoria",
+      "explanation": "Nivelar antes evita esperar una respuesta instantánea y reduce la necesidad de una corrección brusca opuesta."
+    },
+    {
+      "question": "¿Cuál es la respuesta adecuada ante oscilaciones de ascenso y descenso?",
+      "options": [
+        "Estabilizar una actitud, centrar controles, observar y corregir una vez si la tendencia continúa",
+        "Mover yoke y potencia varias veces hasta que el altímetro se detenga",
+        "Usar trim de inmediato sin mirar la actitud"
+      ],
+      "answer": "Estabilizar una actitud, centrar controles, observar y corregir una vez si la tendencia continúa",
+      "explanation": "Separar corrección y observación permite identificar el efecto de cada entrada y evita perseguir el instrumento."
+    }
   ],
   "completionCriteria": [
     "Preparaste una práctica con horizonte visible y margen suficiente sobre el terreno.",
@@ -170,8 +607,20 @@
     "Explicaste que los valores reales se obtienen del POH, la instrucción y las condiciones, no de esta simulación."
   ],
   "sources": [
-    {"title": "FAA Airplane Flying Handbook", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
-    {"title": "FAA Pilot's Handbook of Aeronautical Knowledge", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
-    {"title": "Cessna 172S Pilot's Operating Handbook", "url": "https://support.cessna.com/custsupt/csupport/newlogin.jsp", "verified": false}
+    {
+      "title": "FAA Airplane Flying Handbook",
+      "url": "https://www.faa.gov/regulations_policies/handbook",
+      "verified": true
+    },
+    {
+      "title": "FAA Pilot's Handbook of Aeronautical Knowledge",
+      "url": "https://www.faa.gov/regulations_policies/handbook",
+      "verified": true
+    },
+    {
+      "title": "Cessna 172S Pilot's Operating Handbook",
+      "url": "https://support.cessna.com/custsupt/csupport/newlogin.jsp",
+      "verified": false
+    }
   ]
 }

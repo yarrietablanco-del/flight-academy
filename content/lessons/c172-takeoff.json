@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "id": "c172-takeoff",
+    "title": "Despegue y ascenso inicial",
+    "subtitle": "Convierte una salida de pista en una trayectoria que puedes observar y detener a tiempo.",
+    "objective": "Despegar y llegar a una zona segura.",
+    "estimatedTime": "25 min",
+    "prerequisites": ["atc-taxi"],
+    "level": 2,
+    "module": "ground-and-pattern",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "El despegue concentra decisiones en pocos segundos: seguir alineado, comprobar que el avión responde y continuar solo si el espacio por delante sigue siendo seguro. En MSFS practicarás esa secuencia observable. No sustituye entrenamiento, datos de performance, POH, inspección ni decisiones de una operación real.",
+  "concepts": [
+    {"term": "Carrera de despegue", "meaning": "Recorrido por la pista mientras el avión acelera antes de quedar en el aire. En esta práctica observas la trayectoria y la respuesta del simulador; no memorices una velocidad universal."},
+    {"term": "Línea central", "meaning": "Referencia pintada que ayuda a comprobar si el avión sigue la dirección de la pista. Si se aleja de forma que no puedes corregir con calma, la señal es interrumpir la práctica."},
+    {"term": "Rotación", "meaning": "Cambio suave de actitud que inicia la transición desde la carrera a una trayectoria de ascenso. El momento y la técnica reales dependen de la variante, el POH, la masa, el viento y las condiciones."},
+    {"term": "Ascenso inicial", "meaning": "Tramo inmediatamente posterior a separarse del suelo. El objetivo de esta lección es reconocer una trayectoria controlada con espacio seguro, no alcanzar una cifra de velocidad ni altitud predefinida."},
+    {"term": "Abortar", "meaning": "Decidir no continuar una práctica de despegue cuando la trayectoria, la respuesta o el margen dejan de ser claros. En simulación, reducir la carga y reiniciar es una decisión de aprendizaje válida."}
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Alinea la práctica antes de acelerar",
+      "instruction": "En MSFS 2024, usa el C172 de día, con buena visibilidad y una pista amplia para principiantes. Tras completar el taxi, entra en pista solo cuando tu sesión lo permita y detente alineado con la línea central. Mira hacia el extremo de la pista. Si no puedes identificar una dirección clara o hay tráfico simulado que te distrae, pausa y reinicia el escenario.",
+      "explanation": "Antes de mover potencia necesitas una referencia que permita detectar una desviación temprano. Mirar lejos reduce la tentación de perseguir marcas cercanas. Esta configuración aísla la trayectoria; no enseña a operar una pista real ni sustituye una autorización o comprobaciones reales.",
+      "expectedResult": "El avión está detenido y apunta aproximadamente a lo largo de la línea central, con una pista visible por delante. Si queda cruzado, corrige a baja velocidad o reinicia: no comiences la carrera desde una posición que ya exige corrección intensa.",
+      "simulatorAction": "Comprueba que freno, dirección y potencia responden en el perfil activo de MSFS antes de empezar. No se prescribe un botón ni un eje de VelocityOne porque las asignaciones dependen de tu perfil configurado.",
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/c172-takeoff-runway-alignment.svg",
+        "alt": "Diagrama conceptual desde arriba que contrasta una trayectoria centrada en la pista con una desviación que exige detener y corregir.",
+        "purpose": "Mostrar la relación entre la posición respecto a la línea central y la decisión de continuar o detener una práctica.",
+        "teaches": "Reconocer una desviación de trayectoria antes de que obligue a una corrección brusca durante la carrera.",
+        "primaryTeachingObjective": "Reconocer la alineación",
+        "perspective": "Vista superior conceptual de pista",
+        "movingElement": "Trayectoria del avión",
+        "axisOfMovement": "Desplazamiento lateral",
+        "directionOfMovement": "Hacia el extremo de pista",
+        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "tiedToStep": 1,
+        "expectedObservation": "La trayectoria centrada permanece sobre la línea central; la trayectoria divergente se separa y pide detener o corregir con calma.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que la línea central es una referencia de trayectoria y que una desviación no debe perseguirse con movimientos grandes.",
+        "recognizedElements": ["línea central", "trayectoria centrada", "desviación lateral"],
+        "actionAfterViewing": "Detén el C172 alineado y elige una referencia lejana en el extremo de la pista antes de aplicar potencia."
+      },
+      "requiredVisualCoverage": [
+        {"type": "airport", "status": "notRequired", "reason": "La geometría, señalización y dimensiones pertenecen al aeropuerto seleccionado por el alumno y no hay una referencia fiel de ese escenario."},
+        {"type": "hardware", "status": "notRequired", "reason": "La lección no afirma una asignación de freno, dirección o potencia del VelocityOne sin confirmar el perfil activo."}
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Inicia la carrera y vigila la trayectoria",
+      "instruction": "Suelta el freno y aumenta la potencia de forma continua según responda tu C172 en MSFS. Mantén la mirada alternando entre una referencia lejana de pista y la línea central; realiza solo correcciones pequeñas y deja que surtan efecto. Si el avión se desvía, no responde como esperabas o te obliga a correcciones cada vez mayores, reduce la carga, detente y reinicia.",
+      "explanation": "La carrera no es un momento para buscar una cifra aislada. La prioridad de esta práctica es comprobar que el avión permanece controlable y dirigido por la pista. Una respuesta irregular, una vista insuficiente o una desviación creciente son motivos para no seguir acumulando velocidad en el simulador.",
+      "expectedResult": "El C172 acelera por la pista manteniendo una trayectoria aproximadamente centrada con correcciones suaves. Si tienes que girar el yoke o el control de dirección de forma exagerada, o no puedes explicar hacia dónde se desplaza, interrumpe y vuelve al paso anterior.",
+      "simulatorAction": "Usa los controles que ya verificaste en tu perfil de MSFS. No cambies sensibilidad ni asignaciones durante la carrera: pausa, ajusta una variable y vuelve a comprobarla antes de reiniciar.",
+      "visual": {
+        "type": "comparisonDiagram",
+        "asset": "content/assets/c172-takeoff-runway-alignment.svg",
+        "alt": "Comparación conceptual de una trayectoria de carrera centrada con otra que se desvía de la línea central de pista.",
+        "purpose": "Hacer visible la diferencia entre una corrección pequeña que conserva la trayectoria y una desviación que exige interrumpir la práctica.",
+        "teaches": "Elegir la observación de la trayectoria como señal principal para continuar o detener la carrera de simulación.",
+        "primaryTeachingObjective": "Decidir continuar centrado",
+        "perspective": "Vista superior conceptual comparativa",
+        "movingElement": "Trayectoria del avión",
+        "axisOfMovement": "Desplazamiento lateral",
+        "directionOfMovement": "Hacia el extremo de pista",
+        "comparisonJustification": "Comparar las dos trayectorias es necesario para distinguir una corrección estable de una desviación creciente.",
+        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "tiedToStep": 2,
+        "expectedObservation": "Un recorrido centrado requiere pocas correcciones; un recorrido que se aleja de la línea central revela una condición que debes resolver antes de continuar.",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce una desviación creciente como señal para detener la práctica en lugar de aumentar el tamaño de las correcciones.",
+        "recognizedElements": ["pista", "línea central", "trayectoria estable", "trayectoria divergente"],
+        "actionAfterViewing": "Durante la carrera, mira una referencia lejana y la línea central; si la desviación crece, reduce la carga y reinicia."
+      },
+      "requiredVisualCoverage": [
+        {"type": "exteriorView", "status": "notRequired", "reason": "La vista de pista cambia con aeropuerto, clima, cámara y configuración del alumno; el diagrama conceptual explica solo la relación de trayectoria."},
+        {"type": "hardware", "status": "notRequired", "reason": "No hay una referencia confirmada que permita identificar los controles activos del perfil VelocityOne del alumno."}
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Deja que el C172 transicione al ascenso",
+      "instruction": "Cuando tu variante y las condiciones de la práctica indiquen que corresponde despegar, aplica una entrada suave para iniciar la transición, sin fijar un ángulo de morro de memoria. Después observa que el avión se separa del suelo y conserva una trayectoria clara por delante. Si la actitud, la dirección o el margen se vuelven difíciles de controlar, abandona esta repetición y reinicia desde una situación más simple.",
+      "explanation": "La entrada no es el resultado: lo importante es observar la trayectoria que aparece después. Una transición suave te permite detectar si el avión sigue controlado sin perseguir la imagen del morro. Para un vuelo real, la velocidad, configuración y técnica se obtienen del POH de la aeronave y de instrucción cualificada.",
+      "expectedResult": "El avión deja la pista de forma controlada y comienza una trayectoria ascendente con la dirección de salida todavía clara. Si solo ves el panel, pierdes la referencia exterior o entras en correcciones rápidas, vuelve a una situación de práctica con más margen.",
+      "simulatorAction": "Consulta en MSFS el manual o la lista de comprobación correspondiente a la variante elegida para los datos de esa sesión. Esta lección no aporta valores de rotación, potencia ni posición de controles.",
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/c172-takeoff-rotation-path.svg",
+        "alt": "Diagrama lateral conceptual que relaciona carrera estable, entrada suave y trayectoria ascendente confirmada por separación del suelo.",
+        "purpose": "Explicar que la transición al ascenso se confirma observando la trayectoria resultante y no copiando una imagen fija de actitud.",
+        "teaches": "Distinguir la entrada de rotación de la trayectoria ascendente que debe observarse inmediatamente después.",
+        "primaryTeachingObjective": "Confirmar la transición",
+        "perspective": "Vista lateral conceptual de trayectoria",
+        "movingElement": "Actitud del avión",
+        "axisOfMovement": "Pitch longitudinal",
+        "directionOfMovement": "Morro hacia arriba",
+        "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"],
+        "tiedToStep": 3,
+        "expectedObservation": "La secuencia pasa de carrera a una actitud que cambia suavemente y luego a una trayectoria que gana separación del suelo.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que la separación del suelo y una trayectoria clara confirman la transición, sin usar el diagrama como dato de performance.",
+        "recognizedElements": ["carrera", "entrada suave", "separación del suelo", "trayectoria ascendente"],
+        "actionAfterViewing": "Haz una entrada suave solo cuando corresponda a tu variante y observa primero la separación del suelo y la trayectoria por delante."
+      },
+      "requiredVisualCoverage": [
+        {"type": "cockpit", "status": "notRequired", "reason": "Las cabinas C172 y sus instrumentos dependen de la variante seleccionada y no se aporta una referencia fiel de la cabina usada."},
+        {"type": "exteriorView", "status": "notRequired", "reason": "Una captura fiel de salida depende de aeropuerto, cámara y condiciones variables; el visual enseña únicamente la relación conceptual de trayectoria."},
+        {"type": "hardware", "status": "notRequired", "reason": "No se prescribe una posición o asignación de yoke, freno o potencia sin comprobar el perfil activo de VelocityOne."}
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Alcanza una zona de práctica segura",
+      "instruction": "Después de separarte del suelo, mantén una trayectoria de ascenso observable y revisa la dirección y el terreno visible. Continúa hasta tener margen claro para estabilizar el avión. Si pierdes la orientación, el terreno ocupa demasiado tu atención o no puedes mantener la trayectoria con calma, pausa o reinicia: no intentes arreglarlo acumulando maniobras.",
+      "explanation": "La meta no es una altitud fija: es un estado desde el que puedes volver a observar y decidir sin urgencia. Separar el despegue de la práctica posterior evita que un problema de trayectoria se convierta en una cadena de correcciones, virajes o ajustes simultáneos.",
+      "expectedResult": "Llegas a una trayectoria estable con espacio visible por delante y margen para nivelar o continuar la sesión. Si no logras ese estado, tu resultado útil es identificar qué señal se perdió —dirección, trayectoria o margen— y reiniciar con el escenario simplificado.",
+      "simulatorAction": "Cuando llegues a una condición estable, pausa si necesitas preparar la siguiente práctica. Los criterios de altitud, ruta, ruido, obstáculos y emergencia de un vuelo real requieren planificación, publicaciones vigentes y formación; no se sustituyen con este ejercicio.",
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/c172-takeoff-rotation-path.svg",
+        "alt": "Diagrama conceptual lateral de una trayectoria que gana separación del suelo y continúa hacia un espacio de práctica por delante.",
+        "purpose": "Mostrar que el ascenso inicial termina para esta lección cuando existe margen observable para estabilizar y decidir.",
+        "teaches": "Buscar una condición de práctica estable con espacio por delante en lugar de perseguir una altitud universal.",
+        "primaryTeachingObjective": "Reconocer el margen",
+        "perspective": "Vista lateral conceptual de trayectoria",
+        "movingElement": "Trayectoria del avión",
+        "axisOfMovement": "Ascenso vertical",
+        "directionOfMovement": "Alejándose del suelo",
+        "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"],
+        "tiedToStep": 4,
+        "expectedObservation": "La trayectoria se aleja del suelo y deja espacio por delante para estabilizar antes de iniciar otra tarea de simulación.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce el margen como una condición observable de trayectoria y espacio, no como un número fijo aplicable a todos los vuelos.",
+        "recognizedElements": ["suelo", "trayectoria ascendente", "espacio por delante", "zona estable"],
+        "actionAfterViewing": "Continúa solo hasta que puedas estabilizar el avión y observar el entorno con calma; si no, pausa o reinicia la práctica."
+      },
+      "requiredVisualCoverage": [
+        {"type": "exteriorView", "status": "notRequired", "reason": "El terreno, la visibilidad y la cámara dependen de la sesión elegida; una vista exterior no sería fiel para todos los escenarios."},
+        {"type": "instrument", "status": "notRequired", "reason": "El paso define una condición visual de margen sin enseñar una lectura específica de instrumentos de una variante concreta."},
+        {"type": "chart", "status": "notRequired", "reason": "La práctica no presenta rutas, obstáculos ni mínimos de una carta real; esos datos exigen publicaciones vigentes y escenario definido."}
+      ]
+    }
+  ],
+  "practice": {
+    "title": "Salida controlada hacia una zona estable",
+    "scenario": "En MSFS 2024, usa un C172 de día, con buena visibilidad y una pista amplia. Comienza después de completar el taxi del prerrequisito. Elige un escenario con poco tráfico y terreno fácil de observar. Esta es una práctica de simulación, no un procedimiento ni una autorización de vuelo real.",
+    "task": "Alinea el avión, inicia una carrera manteniendo una referencia lejana y la línea central, y detén la repetición si la desviación crece. Cuando corresponda a tu variante, realiza una transición suave al ascenso. Continúa solo hasta tener espacio claro para estabilizar el avión; luego pausa y explica qué señales observaste.",
+    "successSignal": "Mantienes una trayectoria aproximadamente centrada durante la carrera, decides detenerte si no puedes controlarla con calma y, tras la transición, alcanzas una trayectoria ascendente con espacio observable por delante para estabilizar. Puedes nombrar la señal que te hizo continuar o reiniciar.",
+    "conceptDemonstrated": "Trayectoria observable durante el despegue",
+    "possibleConfounders": ["Practicar con viento, visibilidad o tráfico que añade una carga de trabajo innecesaria para el primer intento.", "Copiar una velocidad, potencia o actitud de otra variante del C172 en lugar de revisar la documentación de la sesión.", "Cambiar asignaciones o sensibilidad de controles durante la carrera y confundir el ajuste con la respuesta del avión.", "Fijarse solo en un instrumento y dejar de observar la dirección y el espacio disponible por delante."],
+    "whyThisExerciseDemonstratesTheConcept": "La repetición empieza desde una alineación verificable y exige una decisión visible ante una desviación creciente. Después separa la entrada suave de la observación de la trayectoria resultante. Al terminar en una zona estable, demuestra control y evaluación de margen sin convertir la práctica en una memorización de valores de performance."
+  },
+  "commonMistakes": [
+    {"mistake": "Comenzar la carrera mientras el avión ya está cruzado respecto a la línea central.", "recovery": "Reduce la carga, detente y vuelve a alinear a baja velocidad o reinicia el escenario. No intentes compensar una mala posición inicial con correcciones grandes."},
+    {"mistake": "Mirar cerca del morro y perseguir cada marca de pista.", "recovery": "Vuelve la mirada a una referencia lejana y alterna con la línea central. Haz una corrección pequeña y espera a comprobar su efecto antes de añadir otra."},
+    {"mistake": "Continuar aunque la desviación o la respuesta de controles ya no es clara.", "recovery": "Interrumpe la repetición, identifica si se perdió la dirección, la visibilidad o la configuración, y simplifica el escenario antes de reiniciar."},
+    {"mistake": "Usar el diagrama como una velocidad, potencia o ángulo de rotación del C172.", "recovery": "Trátalo solo como relación entre entrada y trayectoria. Para datos de la variante real o simulada, consulta el POH o la documentación correspondiente."},
+    {"mistake": "Considerar que una salida de MSFS equivale a un procedimiento real completo.", "recovery": "Diferencia la práctica de simulación de la operación real, que requiere instrucción, planificación, datos de performance, publicaciones y condiciones verificadas."}
+  ],
+  "checklist": [
+    "Escenario de MSFS configurado de día, con buena visibilidad, poco tráfico y una pista que puedas observar con claridad.",
+    "Avión alineado aproximadamente con la línea central y referencia lejana elegida antes de acelerar.",
+    "Controles de dirección, freno y potencia comprobados en el perfil activo antes de la carrera.",
+    "Trayectoria vigilada durante la carrera; desviación creciente = reducir carga, detener y reiniciar.",
+    "Transición al ascenso observada como trayectoria y separación del suelo, sin copiar valores universales.",
+    "Zona de práctica estable alcanzada con espacio por delante antes de comenzar otra tarea.",
+    "Sin tratar esta práctica de MSFS como sustituto de un procedimiento, autorización o instrucción de vuelo real."
+  ],
+  "quiz": [
+    {"question": "¿Qué señal observas primero durante la carrera de esta práctica?", "options": ["La trayectoria respecto a una referencia lejana y la línea central.", "Una velocidad universal memorizada para todo C172.", "Solo la posición del morro en la cabina."], "answer": "La trayectoria respecto a una referencia lejana y la línea central.", "explanation": "La lección usa la trayectoria como señal observable de control; las velocidades y técnicas dependen de la variante y de las condiciones."},
+    {"question": "¿Qué haces si la desviación de la línea central crece y necesitas correcciones cada vez mayores?", "options": ["Reduzco la carga, me detengo y reinicio la práctica.", "Sigo acelerando para que los controles respondan más fuerte.", "Cambio varias asignaciones del hardware durante la carrera."], "answer": "Reduzco la carga, me detengo y reinicio la práctica.", "explanation": "Interrumpir evita convertir una desviación creciente en una secuencia de correcciones bruscas y permite aislar el problema."},
+    {"question": "¿Cómo confirma esta lección que la transición al ascenso funcionó?", "options": ["Observando separación del suelo y una trayectoria clara por delante.", "Copiando un ángulo de morro del diagrama.", "Al alcanzar una cifra fija aplicable a todos los vuelos."], "answer": "Observando separación del suelo y una trayectoria clara por delante.", "explanation": "El diagrama enseña una relación conceptual. Los valores concretos se obtienen de la variante, sus datos y las condiciones de la sesión."}
+  ],
+  "completionCriteria": [
+    "Alineaste el C172 aproximadamente con la línea central y elegiste una referencia lejana antes de iniciar la carrera.",
+    "Mantuviste o recuperaste una trayectoria controlada con correcciones pequeñas, y decidiste detener la práctica si la desviación creció.",
+    "Explicaste que la transición al ascenso se confirma por la trayectoria y la separación del suelo, no por un valor universal.",
+    "Llegaste a una zona de práctica con margen visual para estabilizar el avión antes de continuar con otra maniobra.",
+    "Puedes distinguir este ejercicio de simulación de los datos, procedimientos y decisiones requeridos para una operación real."
+  ],
+  "sources": [
+    {"title": "FAA Pilot's Handbook of Aeronautical Knowledge", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
+    {"title": "FAA Airplane Flying Handbook", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
+    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
+  ]
+}

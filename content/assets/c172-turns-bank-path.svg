@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Alabeo y trayectoria de un viraje</title>
+  <desc id="desc">Diagrama conceptual visto desde arriba: un avión inclinado a la izquierda cambia de una trayectoria recta a un arco de viraje a la izquierda.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#39d6c2"/></marker>
+    <style>.bg{fill:#071a2d}.panel{fill:#0d2b47;stroke:#2e637f;stroke-width:2}.label{fill:#e9f5ff;font:600 25px Arial,sans-serif}.small{fill:#b7d5e8;font:19px Arial,sans-serif}.accent{fill:#39d6c2;font:700 23px Arial,sans-serif}.line{fill:none;stroke:#39d6c2;stroke-width:7;stroke-linecap:round}.dash{fill:none;stroke:#79a9c4;stroke-width:4;stroke-dasharray:12 12}</style>
+  </defs>
+  <rect class="bg" width="1200" height="675" rx="24"/>
+  <text x="70" y="72" class="label">Un alabeo sostenido curva la trayectoria</text>
+  <text x="70" y="106" class="small">Vista conceptual desde arriba · no representa una cabina ni una posición de control real</text>
+  <rect x="62" y="150" width="1076" height="450" rx="22" class="panel"/>
+  <path d="M150 420 H475" class="dash"/>
+  <text x="152" y="465" class="small">trayectoria antes de iniciar</text>
+  <path d="M150 420 C430 420 530 410 612 320 C710 213 815 210 980 230" class="line" marker-end="url(#arrow)"/>
+  <text x="741" y="174" class="accent">trayectoria que gira a la izquierda</text>
+  <g transform="translate(510 387) rotate(-24)">
+    <path d="M0 -83 L22 -10 L105 14 L105 35 L22 25 L13 77 L-13 77 L-22 25 L-105 35 L-105 14 L-22 -10 L0 -83Z" fill="#f4fbff" stroke="#39d6c2" stroke-width="5"/>
+    <path d="M0 -59 V41" stroke="#0d2b47" stroke-width="5"/>
+  </g>
+  <path d="M513 300 A106 106 0 0 0 424 335" fill="none" stroke="#f5bd4f" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="263" y="280" class="label">1. Inclina las alas</text>
+  <text x="263" y="312" class="small">El yoke inicia el alabeo; luego se centra para observar.</text>
+  <text x="720" y="514" class="label">2. Observa el rumbo cambiar</text>
+  <text x="720" y="546" class="small">La curva aparece con el tiempo, no en un instante.</text>
+</svg>
