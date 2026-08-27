@@ -21,13 +21,9 @@ for (const id of kabqLessons) {
   assert.deepEqual(validateOperationalCompetency(lesson, { readAsset }), [], `${id} debe cumplir Operational Competency 1.1 y conservar hechos de fuente`);
 }
 
-const brokenAside = JSON.parse(readFileSync(join(root, 'content', 'lessons', 'sid-star.json'), 'utf8'));
-brokenAside.steps[2].instruction = brokenAside.steps[2].instruction.replaceAll('ASIDE', '');
-brokenAside.steps[2].visual.recognizedElements = brokenAside.steps[2].visual.recognizedElements.filter((item) => item !== 'ASIDE');
-brokenAside.operationalCompetency.competencyEvidence = brokenAside.operationalCompetency.competencyEvidence.filter((item) => !item.includes('ASIDE'));
-brokenAside.commonMistakes = brokenAside.commonMistakes.filter((item) => !item.mistake.includes('ASIDE'));
-brokenAside.quiz = brokenAside.quiz.filter((item) => !item.question.includes('fix no puede omitirse'));
-assert.ok(validateOperationalCompetency(brokenAside, { readAsset }).some((error) => error.includes('aside')), 'el auditor debe detectar ASIDE ausente del contenido');
+const sidSource = readFileSync(join(root, 'content', 'lessons', 'sid-star.json'), 'utf8');
+const brokenAside = JSON.parse(sidSource.replaceAll('ASIDE', 'OMITTED_FIX'));
+assert.ok(validateOperationalCompetency(brokenAside, { readAsset }).some((error) => error.toLowerCase().includes('aside')), 'el auditor debe detectar ASIDE ausente del contenido');
 
 const brokenVda = JSON.parse(readFileSync(join(root, 'content', 'lessons', 'ils-rnav.json'), 'utf8'));
 brokenVda.steps[1].instruction = brokenVda.steps[1].instruction.replace('VDA advisory', 'glidepath aprobado');
