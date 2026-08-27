@@ -5,7 +5,9 @@
     "subtitle": "Reconoce la lógica de control y supervisión antes de buscar procedimientos.",
     "objective": "Reconocer filosofía y cockpit Airbus.",
     "estimatedTime": "20 min",
-    "prerequisites": ["ifr-atc"],
+    "prerequisites": [
+      "ifr-atc"
+    ],
     "level": 5,
     "module": "a320-transition",
     "visualStandardVersion": 3
@@ -48,27 +50,37 @@
         "movingElement": "Orden de vuelo",
         "axisOfMovement": "Flujo de información",
         "directionOfMovement": "De la orden al resultado observado",
-        "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"],
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
         "tiedToStep": 1,
         "expectedObservation": "La orden recorre un ciclo que termina en una comprobación de la tripulación, no en una acción automática sin vigilancia.",
         "view": "flujo",
         "visualCategory": "conceptual",
         "fidelity": "conceptual",
         "recognitionGoal": "Reconoce que la supervisión forma parte del control digital del A320.",
-        "recognizedElements": ["orden de vuelo", "ordenadores", "respuesta", "supervisión"],
+        "recognizedElements": [
+          "orden de vuelo",
+          "ordenadores",
+          "respuesta",
+          "supervisión"
+        ],
         "actionAfterViewing": "Deja el avión inmóvil y nombra el ciclo antes de explorar la cabina.",
-        "coverage": ["cockpit"]
+        "coverage": [
+          "cockpit"
+        ]
       },
       "requiredVisualCoverage": [
         {
           "type": "cockpit",
           "status": "notRequired",
-          "reason": "No se aportó una referencia fiel de la variante A320 y la disposición puede variar en MSFS; un diagrama conceptual no pretende sustituirla."
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
         },
         {
           "type": "hardware",
           "status": "notRequired",
-          "reason": "El paso no pide accionar un mando ni afirma una asignación del VelocityOne Flight."
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
         }
       ]
     },
@@ -78,42 +90,61 @@
       "instruction": "Con el avión aún inmóvil, usa la vista de cabina para localizar únicamente zonas de información y de mando que puedas identificar con certeza. Señálalas sin accionarlas. Si una pantalla, mando o etiqueta no coincide con lo que esperabas, no le asignes una función: anota la diferencia para comprobarla en la variante concreta.",
       "explanation": "La commonality Airbus describe una lógica compartida, no una licencia para memorizar una cabina genérica. Reconocer con certeza y detenerse ante una diferencia protege contra el error más común de transición: aplicar una imagen o vídeo de otra variante a tu aeronave de MSFS.",
       "expectedResult": "Has separado lo que puedes reconocer visualmente de lo que todavía necesitas verificar. El avión sigue inmóvil y no has usado una imagen genérica para decidir qué control tocar. Si aparece una diferencia, la conservas como duda, no como supuesto.",
-      "simulatorAction": "La referencia visual fiel de cabina para esta acción depende de la variante instalada y no está disponible en el material de la lección. Usa la ayuda interactiva o la documentación específica de tu aeronave para verificarla, sin asumir posiciones ni nombres.",
+      "simulatorAction": "La referencia visual fiel de cabina para esta acción depende de la variante instalada y está incluida en el material de la lección. Usa la ayuda interactiva o la documentación específica de tu aeronave para verificarla, sin asumir posiciones ni nombres.",
       "visual": {
-        "type": "annotatedDiagram",
-        "alt": "Referencia pendiente de una cabina A320 de la misma variante de MSFS que permita distinguir zonas de información y de mando sin inventar posiciones.",
-        "purpose": "Indicar que el reconocimiento físico requiere una referencia fiel de la variante cargada.",
-        "teaches": "Evitar atribuir funciones a una cabina no verificada.",
-        "primaryTeachingObjective": "Verificar la variante",
-        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "type": "controlHighlight",
+        "asset": "content/assets/a320-v2-cockpit-zones-reference.svg",
+        "alt": "Reconocer zonas del cockpit A320neo V2. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+        "purpose": "Dar una referencia fiel y ampliable para ubicar overhead, fcu, pfd, nd, ecam, mcdu, pedestal y sidestick por función sin inventar valores del vuelo.",
+        "teaches": "Ubicar overhead, FCU, PFD, ND, ECAM, MCDU, pedestal y sidestick por función",
+        "primaryTeachingObjective": "Reconocer zonas del cockpit A320neo V2",
+        "perspective": "Referencia frontal recreada de la variante objetivo",
+        "movingElement": "No aplica: referencia estática",
+        "axisOfMovement": "No aplica: referencia estática",
+        "directionOfMovement": "No aplica: referencia estática",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queControlTocar",
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
         "tiedToStep": 2,
-        "expectedObservation": "La cabina observada puede diferir de cualquier referencia externa y solo se identifica lo que coincide con la variante cargada.",
-        "view": "instrumento",
+        "expectedObservation": "Puedes localizar OVERHEAD, FCU, PFD, ND, ECAM, MCDU, PEDESTAL, SIDESTICK y separar la selección de la comprobación del resultado.",
+        "view": "controlFisico",
         "visualCategory": "reference",
         "fidelity": "recreated-faithful",
-        "recognitionGoal": "Reconoce que necesita una referencia de la misma variante A320 para identificar zonas de cabina con seguridad.",
-        "recognizedElements": ["variante A320", "zona de información", "zona de mando"],
-        "actionAfterViewing": "No asignes funciones por apariencia; verifica la documentación o ayuda de la variante antes de usar un control.",
+        "recognitionGoal": "Reconoce OVERHEAD, FCU, PFD, ND, ECAM, MCDU, PEDESTAL, SIDESTICK en la variante objetivo antes de continuar la práctica.",
+        "recognizedElements": [
+          "OVERHEAD",
+          "FCU",
+          "PFD",
+          "ND",
+          "ECAM",
+          "MCDU",
+          "PEDESTAL",
+          "SIDESTICK"
+        ],
+        "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+        "coverage": [
+          "cockpit",
+          "instrument"
+        ],
         "quality": {
-          "sourceWidth": 1920,
-          "sourceHeight": 1080,
+          "sourceWidth": 1600,
+          "sourceHeight": 900,
           "intendedDisplayWidth": 760,
           "supportsZoom": true,
-          "detailTarget": "Zonas de información y mando de la cabina de la misma variante A320 cargada en MSFS."
-        },
-        "coverage": ["cockpit", "instrument"],
-        "requiresReference": true
+          "detailTarget": "Ubicación y relación funcional de OVERHEAD, FCU, PFD, ND, ECAM, MCDU, PEDESTAL, SIDESTICK sin números operacionales inventados."
+        }
       },
       "requiredVisualCoverage": [
         {
           "type": "cockpit",
-          "status": "notRequired",
-          "reason": "Falta una referencia fiel de la variante A320 instalada; la lección la declara pendiente en lugar de recrear la cabina."
+          "status": "required"
         },
         {
           "type": "instrument",
-          "status": "notRequired",
-          "reason": "Este paso no enseña lectura de instrumentos y no debe usar una pantalla de otra variante como referencia operativa."
+          "status": "required"
         }
       ]
     },
@@ -135,27 +166,38 @@
         "movingElement": "Información observada",
         "axisOfMovement": "Flujo de decisión",
         "directionOfMovement": "De observar a comprobar",
-        "userQuestionAnswered": ["dondeMirar", "queCambioEsperar", "queErrorEvitar"],
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
         "tiedToStep": 3,
         "expectedObservation": "El flujo obliga a detener la práctica cuando no se puede identificar o comprobar un resultado con certeza.",
         "view": "flujo",
         "visualCategory": "conceptual",
         "fidelity": "conceptual",
         "recognitionGoal": "Reconoce que observar, identificar y comprobar preceden a la siguiente acción.",
-        "recognizedElements": ["estado", "intención", "comprobación", "duda"],
+        "recognizedElements": [
+          "estado",
+          "intención",
+          "comprobación",
+          "duda"
+        ],
         "actionAfterViewing": "Formula una comprobación concreta o detén la práctica para verificar la variante.",
-        "coverage": ["cockpit"]
+        "coverage": [
+          "cockpit"
+        ]
       },
       "requiredVisualCoverage": [
         {
           "type": "cockpit",
           "status": "notRequired",
-          "reason": "La secuencia enseña una relación de decisión y no pretende reconocer una posición física concreta de cabina."
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
         },
         {
           "type": "hardware",
           "status": "notRequired",
-          "reason": "La práctica no pide mover hardware ni declara una asignación para el VelocityOne Flight."
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
         }
       ]
     }
@@ -236,6 +278,36 @@
       "title": "Airbus: Safety innovation #1, fly-by-wire",
       "url": "https://www.airbus.com/en/newsroom/stories/2022-06-safety-innovation-1-fly-by-wire-fbw",
       "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator — Airbus A320neo V2 Manual (iniBuilds)",
+      "url": "https://www.flightsimulator.com/aircraft-manuals/",
+      "verified": true
+    },
+    {
+      "title": "Microsoft/iniBuilds A320neo V2 Quick Reference Card",
+      "url": "https://flightsimulator.azureedge.net/wp-content/uploads/2024/05/A320-QRC.pdf",
+      "verified": true
     }
-  ]
+  ],
+  "operationalCompetency": {
+    "competencyObjective": "Reconocer las zonas funcionales del cockpit Microsoft/iniBuilds A320neo V2 y aplicar el ciclo intención, acción, respuesta y supervisión sin mezclar variantes.",
+    "competencyEvidence": [
+      "Ubica overhead, FCU, PFD, ND, ECAM, MCDU, pedestal y sidestick en la referencia de la variante objetivo.",
+      "Explica que fly-by-wire no elimina la supervisión del resultado.",
+      "Detiene la práctica cuando una etiqueta o estado no coincide con la referencia A320neo V2."
+    ],
+    "transferExercise": {
+      "scenario": "Reinicia el A320neo V2 en otra situación estacionada y comienza la observación desde una vista distinta.",
+      "task": "Localiza cinco zonas funcionales sin usar memoria espacial y explica qué tipo de información o acción buscarías en cada una.",
+      "expectedCompetency": "Transfiere el mapa funcional a otra vista de cabina manteniendo la identificación de variante.",
+      "successCriteria": "Localiza las zonas por etiqueta y función, no por parecido con otro A320, y verbaliza cómo comprobaría el resultado de una acción.",
+      "hints": [
+        "Reconoce primero, interpreta después y solo entonces actúa."
+      ]
+    },
+    "futureLearningTargets": [
+      "a320-displays-fcu"
+    ]
+  }
 }

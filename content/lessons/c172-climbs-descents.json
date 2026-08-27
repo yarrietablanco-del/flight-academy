@@ -107,7 +107,7 @@
       "simulatorAction": "Usa la vista de cabina que muestre actitud, altitud y velocidad. Si no reconoces esos instrumentos en tu variante de C172, marca esta referencia para revisarla con una captura fiable de tu propia cabina.",
       "visual": {
         "type": "instrumentDiagram",
-        "alt": "Referencia pendiente de la cabina C172 de MSFS para localizar actitud, altitud y velocidad durante un ascenso.",
+        "alt": "Recreación fiel del PFD G1000 en ascenso, nivelado y descenso para localizar actitud, velocidad, altitud y VSI.",
         "purpose": "Indicar que la localización operativa de instrumentos exige una referencia fiel de la variante de C172 usada en MSFS.",
         "teaches": "Localizar la actitud, la altitud y la velocidad en la cabina concreta antes de interpretar la respuesta del ascenso.",
         "userQuestionAnswered": [
@@ -115,7 +115,7 @@
           "queCambioEsperar"
         ],
         "tiedToStep": 2,
-        "expectedObservation": "En una referencia fiel verías la actitud, la indicación de altitud y la indicación de velocidad de la variante seleccionada.",
+        "expectedObservation": "El estado de ascenso muestra actitud positiva, tendencia de altitud ascendente y VSI positivo; la comprobación se hace sin copiar valores.",
         "view": "instrumento",
         "visualCategory": "reference",
         "fidelity": "recreated-faithful",
@@ -125,8 +125,7 @@
           "indicador de altitud",
           "indicador de velocidad"
         ],
-        "actionAfterViewing": "Con una referencia fiel disponible, localiza esos tres instrumentos en MSFS y realiza un barrido tras la entrada de ascenso.",
-        "requiresReference": true,
+        "actionAfterViewing": "Localiza actitud, velocidad, altitud y VSI en MSFS, aplica una entrada pequeña y confirma la tendencia antes de corregir otra vez.",
         "quality": {
           "sourceWidth": 1600,
           "sourceHeight": 900,
@@ -134,7 +133,11 @@
           "supportsZoom": true,
           "detailTarget": "La ubicación legible de actitud, altitud y velocidad en la cabina concreta del C172."
         },
-        "primaryTeachingObjective": "Reconocer la referencia"
+        "primaryTeachingObjective": "Reconocer la referencia",
+        "asset": "content/assets/c172-climbs-descents-pfd-states.svg",
+        "coverage": [
+          "instrument"
+        ]
       },
       "referenceVisuals": [
         {
