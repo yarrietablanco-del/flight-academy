@@ -1,2 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Lectura educativa ILS OR LOC RWY 08 KABQ">
-<rect width="1600" height="900" fill="#071826"/><g font-family="Arial"><text x="70" y="76" fill="#eaf5ff" font-size="40" font-weight="700">KABQ · ILS OR LOC RWY 08 · cómo leer la carta</text><text x="70" y="118" fill="#9dc2db" font-size="24">FAA d-TPP 2608 · I-SPT 111.9 · curso final 079°</text><rect x="70" y="170" width="450" height="560" rx="22" fill="#102b3e"/><text x="105" y="230" fill="#63d7ff" font-size="30" font-weight="700">1 · IDENTIFICA</text><text x="105" y="290" fill="white" font-size="27">KABQ</text><text x="105" y="335" fill="white" font-size="27">ILS OR LOC RWY 08</text><text x="105" y="390" fill="#ffe890" font-size="30">LOC/DME I-SPT 111.9</text><text x="105" y="440" fill="#ffe890" font-size="30">APP CRS 079°</text><rect x="570" y="170" width="450" height="560" rx="22" fill="#102b3e"/><text x="605" y="230" fill="#63d7ff" font-size="30" font-weight="700">2 · PLAN VIEW</text><path d="M650 620 L900 300" stroke="#4fd9ff" stroke-width="11"/><circle cx="710" cy="545" r="15" fill="#ffe890"/><circle cx="790" cy="440" r="15" fill="#ffe890"/><circle cx="860" cy="350" r="15" fill="#ffe890"/><text x="620" y="535" fill="white" font-size="25">CRSTN / CMSTR</text><text x="748" y="425" fill="white" font-size="25">JILAB (IF)</text><text x="865" y="335" fill="white" font-size="25">GZELL (FAF)</text><text x="890" y="650" fill="white" font-size="24">RWY 08</text><rect x="1070" y="170" width="460" height="560" rx="22" fill="#102b3e"/><text x="1105" y="230" fill="#63d7ff" font-size="30" font-weight="700">3 · PERFIL Y DECISIÓN</text><path d="M1130 560 L1420 360" stroke="#4fd9ff" stroke-width="12"/><text x="1140" y="620" fill="white" font-size="25">perfil / altitudes / GS 3.00°</text><text x="1105" y="675" fill="#ffaaa4" font-size="24">mínimos: lee la fila aplicable</text><text x="1105" y="715" fill="#ffaaa4" font-size="24">frustrada: localízala antes de iniciar</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Lectura educativa ILS OR LOC RWY 08 KABQ con FAF y PFAF">
+<rect width="1600" height="900" fill="#071826"/>
+<g font-family="Arial">
+<text x="70" y="72" fill="#eaf5ff" font-size="39" font-weight="700">KABQ · ILS OR LOC RWY 08 · lectura correcta del final</text>
+<text x="70" y="112" fill="#9dc2db" font-size="23">FAA d-TPP 2608 · I-SPT 111.9 · APP CRS 079° · carta combinada ILS / LOC</text>
+
+<rect x="65" y="160" width="460" height="610" rx="22" fill="#102b3e"/>
+<text x="100" y="220" fill="#63d7ff" font-size="30" font-weight="700">1 · IDENTIFICA</text>
+<text x="100" y="280" fill="white" font-size="27">KABQ</text>
+<text x="100" y="325" fill="white" font-size="27">ILS OR LOC RWY 08</text>
+<text x="100" y="385" fill="#ffe890" font-size="29">LOC/DME I-SPT 111.9</text>
+<text x="100" y="435" fill="#ffe890" font-size="29">APP CRS 079°</text>
+<text x="100" y="505" fill="#c7e3f5" font-size="23">Primero decide qué modalidad lees:</text>
+<text x="125" y="548" fill="#63d7ff" font-size="24">ILS = precisión</text>
+<text x="125" y="588" fill="#ffbd69" font-size="24">LOC = no precisión</text>
+
+<rect x="570" y="160" width="460" height="610" rx="22" fill="#102b3e"/>
+<text x="605" y="220" fill="#63d7ff" font-size="30" font-weight="700">2 · PLAN VIEW / LOC</text>
+<path d="M650 650 L940 300" stroke="#4fd9ff" stroke-width="10"/>
+<circle cx="745" cy="535" r="13" fill="#ffe890"/>
+<circle cx="850" cy="405" r="13" fill="#ffe890"/>
+<text x="685" y="520" fill="white" font-size="23">JILAB (IF)</text>
+<text x="865" y="390" fill="white" font-size="23">GZELL</text>
+<path d="M820 455 l18 -18 l18 18 l18 -18 l18 18" fill="none" stroke="#ffbd69" stroke-width="7"/>
+<text x="620" y="715" fill="#ffbd69" font-size="22">✦ Cruz de Malta = FAF de la modalidad LOC/no precisión</text>
+
+<rect x="1075" y="160" width="460" height="610" rx="22" fill="#102b3e"/>
+<text x="1110" y="220" fill="#63d7ff" font-size="30" font-weight="700">3 · PERFIL / ILS</text>
+<path d="M1140 570 L1435 355" stroke="#4fd9ff" stroke-width="11"/>
+<text x="1150" y="625" fill="white" font-size="24">GS 3.00°</text>
+<path d="M1290 430 l18 -30 l14 22 l18 -30 l14 22" fill="none" stroke="#ffe890" stroke-width="8"/>
+<text x="1120" y="685" fill="#ffe890" font-size="22">⚡ Rayo = PFAF de precisión / interceptación publicada del GS</text>
+<text x="1120" y="725" fill="#ffaaa4" font-size="22">S-ILS 8 ≠ S-LOC 8 · lee la fila correcta</text>
+</g>
+<text x="80" y="840" fill="#9dc2db" font-family="Arial" font-size="22">Regla: el símbolo define la función; no conviertas “GZELL” en FAF universal para toda la carta.</text>
+</svg>
