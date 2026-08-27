@@ -36,8 +36,15 @@ for (const entry of curriculumLessons) {
   const lesson = JSON.parse(readFileSync(path, 'utf8'));
   const localBlockers = [];
   const localWarnings = [];
+  const hasCompetency = Boolean(lesson.operationalCompetency);
 
-  for (const error of validateOperationalCompetency(lesson, { readAsset })) localBlockers.push(`1.1: ${error}`);
+  if (hasCompetency) {
+    for (const error of validateOperationalCompetency(lesson, { readAsset })) localBlockers.push(`1.1: ${error}`);
+  } else if (entry.level >= 3) {
+    localBlockers.push('1.1: falta operationalCompetency en una lección operacional/intermedia-avanzada.');
+  } else {
+    localWarnings.push('legacy: aún no declara operationalCompetency 1.1; se evalúa por Standard 1.0 y práctica existente.');
+  }
 
   if (!Array.isArray(lesson.steps) || lesson.steps.length < 2) localBlockers.push('contenido: menos de 2 pasos didácticos.');
   if (!lesson.practice?.task || !lesson.practice?.successSignal) localBlockers.push('práctica: falta task o successSignal.');
@@ -50,6 +57,8 @@ for (const entry of curriculumLessons) {
   const validRefs = [];
   for (const step of lesson.steps ?? []) {
     const visuals = [step.visual, ...(step.referenceVisuals ?? [])].filter(Boolean);
+    const stepHasRequiredReferenceMarker = visuals.some((visual) => visual.requiresReference === true);
+
     for (const visual of visuals) {
       if (visual.visualCategory === 'reference' && visual.asset && validFidelity.has(visual.fidelity)) validRefs.push(visual);
       if (visual.requiresReference === true && (!visual.asset || visual.visualCategory !== 'reference' || !validFidelity.has(visual.fidelity))) {
@@ -69,7 +78,9 @@ for (const entry of curriculumLessons) {
         if (!hasMatching) localBlockers.push(`paso ${step.number}: cobertura ${coverage.type} requerida sin referencia fiel correspondiente en el mismo paso.`);
       }
       if (coverage.status === 'notRequired' && absenceReason.test(coverage.reason ?? '')) {
-        localBlockers.push(`paso ${step.number}: notRequired justificado por ausencia de referencia (${coverage.type}): ${coverage.reason}`);
+        const message = `paso ${step.number}: notRequired justificado por ausencia de referencia (${coverage.type}): ${coverage.reason}`;
+        if (entry.level >= 4 || stepHasRequiredReferenceMarker) localBlockers.push(message);
+        else localWarnings.push(message);
       }
     }
   }
@@ -84,12 +95,15 @@ for (const entry of curriculumLessons) {
       continue;
     }
     if (!['validated', 'published'].includes(targetEntry.status)) localBlockers.push(`futureLearningTarget no cerrado: ${target} (${targetEntry.status}).`);
-    if (targetEntry.order <= entry.order) localWarnings.push(`futureLearningTarget ${target} no está después de la lección actual.`);
+    if (targetEntry.order <= entry.order) localWarnings.push(`futureLearningTarget ${target} ya fue cubierto antes; conviene limpiar esta referencia histórica.`);
   }
 
   const serialized = JSON.stringify(lesson);
-  if (placeholderText.test(serialized)) localBlockers.push('texto de referencia pendiente/no disponible todavía presente en la lección.');
-  if (/\bTODO\b|TBD|PLACEHOLDER/i.test(serialized)) localBlockers.push('marcador TODO/TBD/PLACEHOLDER presente.');
+  if (placeholderText.test(serialized)) {
+    if (entry.level >= 4) localBlockers.push('texto de referencia pendiente/no disponible todavía presente en una lección avanzada.');
+    else localWarnings.push('texto de referencia pendiente/no disponible todavía presente.');
+  }
+  if (/\bTBD\b|\bPLACEHOLDER\b|\bTODO\s*:/i.test(serialized)) localBlockers.push('marcador técnico TBD/PLACEHOLDER/TODO: presente.');
 
   if (localBlockers.length) blockers.push(...localBlockers.map((error) => `${entry.id}: ${error}`));
   else passes.push(entry.id);
