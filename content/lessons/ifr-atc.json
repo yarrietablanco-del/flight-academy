@@ -5,17 +5,31 @@
     "subtitle": "Lee el alcance de una autorización de simulación antes de responder o actuar.",
     "objective": "Comprender autorizaciones de simulación y sus límites.",
     "estimatedTime": "25 min",
-    "prerequisites": ["approach-charts"],
+    "prerequisites": [
+      "approach-charts"
+    ],
     "level": 4,
     "module": "instrument-and-procedures",
     "visualStandardVersion": 3
   },
   "whyItMatters": "Una autorización IFR organiza qué parte del vuelo está autorizada y bajo qué condiciones. En MSFS, el ATC sirve para ensayar cómo leer y comprobar un mensaje; no es una autorización aeronáutica real ni confirma que una ruta, carta, frecuencia o altitud sea aplicable fuera del simulador.",
   "concepts": [
-    {"term": "Autorización ATC", "meaning": "En operación real, es una autorización de control para proceder bajo condiciones especificadas. En esta lección, el mensaje de ATC de MSFS es material de práctica: no sustituye al controlador, la normativa, una carta vigente ni la responsabilidad del piloto."},
-    {"term": "Límite de autorización", "meaning": "Es el punto, lugar o aeropuerto hasta el cual llega una autorización. Identificarlo evita asumir que una instrucción permite continuar más allá de lo que el mensaje indica."},
-    {"term": "Readback", "meaning": "Es la repetición de elementos de una autorización para confirmar que se entendieron. En MSFS puedes leerlos en voz alta o anotarlos como método de estudio; no estás realizando una transmisión real."},
-    {"term": "Enmienda", "meaning": "Es un cambio a una autorización previa. Si el mensaje de simulación cambia ruta, altitud u otra condición, vuelve a separar y comprobar los elementos en lugar de combinarlo con lo que recordabas."}
+    {
+      "term": "Autorización ATC",
+      "meaning": "En operación real, es una autorización de control para proceder bajo condiciones especificadas. En esta lección, el mensaje de ATC de MSFS es material de práctica: no sustituye al controlador, la normativa, una carta vigente ni la responsabilidad del piloto."
+    },
+    {
+      "term": "Límite de autorización",
+      "meaning": "Es el punto, lugar o aeropuerto hasta el cual llega una autorización. Identificarlo evita asumir que una instrucción permite continuar más allá de lo que el mensaje indica."
+    },
+    {
+      "term": "Readback",
+      "meaning": "Es la repetición de elementos de una autorización para confirmar que se entendieron. En MSFS puedes leerlos en voz alta o anotarlos como método de estudio; no estás realizando una transmisión real."
+    },
+    {
+      "term": "Enmienda",
+      "meaning": "Es un cambio a una autorización previa. Si el mensaje de simulación cambia ruta, altitud u otra condición, vuelve a separar y comprobar los elementos en lugar de combinarlo con lo que recordabas."
+    }
   ],
   "steps": [
     {
@@ -36,20 +50,84 @@
         "movingElement": "Mensaje de ATC",
         "axisOfMovement": "Flujo de decisión",
         "directionOfMovement": "Del mensaje a la comprobación",
-        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
         "tiedToStep": 1,
         "expectedObservation": "El primer bloque nombra el mensaje como parte de la sesión y no como servicio real.",
         "view": "flujo",
         "visualCategory": "conceptual",
         "fidelity": "conceptual",
         "recognitionGoal": "Reconoce que el ATC de MSFS permite practicar lectura, pero no autoriza un vuelo real.",
-        "recognizedElements": ["mensaje ATC", "sesión", "comprobación"],
+        "recognizedElements": [
+          "mensaje ATC",
+          "sesión",
+          "comprobación"
+        ],
         "actionAfterViewing": "Confirma el contexto de simulación antes de leer o seleccionar una respuesta disponible.",
-        "coverage": ["cockpit"]
+        "coverage": [
+          "cockpit"
+        ]
       },
       "requiredVisualCoverage": [
-        {"type": "cockpit", "status": "notRequired", "reason": "La interfaz de ATC y la cabina dependen de la aeronave, modo y configuración del alumno; no existe una referencia fiel aportada."},
-        {"type": "hardware", "status": "notRequired", "reason": "El paso no afirma una asignación de VelocityOne ni exige un mando físico específico."}
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "chart",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "chartExplanation",
+          "asset": "content/assets/kabq-sid-star-reading.svg",
+          "alt": "Cruzar autorización con procedimiento publicado. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para reconocer el nombre y continuidad del procedimiento kabq antes de aceptar una lectura o readback sin inventar valores del vuelo.",
+          "teaches": "Reconocer el nombre y continuidad del procedimiento KABQ antes de aceptar una lectura o readback",
+          "primaryTeachingObjective": "Cruzar autorización con procedimiento publicado",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 1,
+          "expectedObservation": "Puedes localizar ADYOS THREE, SNDIA FOUR, fixes, restricciones y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce ADYOS THREE, SNDIA FOUR, fixes, restricciones en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "ADYOS THREE",
+            "SNDIA FOUR",
+            "fixes",
+            "restricciones"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "chart"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de ADYOS THREE, SNDIA FOUR, fixes, restricciones sin números operacionales inventados."
+          }
+        }
       ]
     },
     {
@@ -70,20 +148,38 @@
         "movingElement": "Información de autorización",
         "axisOfMovement": "Flujo de lectura",
         "directionOfMovement": "Del mensaje a sus partes",
-        "userQuestionAnswered": ["dondeMirar", "queCambioEsperar"],
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queCambioEsperar"
+        ],
         "tiedToStep": 2,
         "expectedObservation": "El bloque central convierte un mensaje en límite, ruta, altitud y otros datos que solo se usan si aparecen.",
         "view": "flujo",
         "visualCategory": "conceptual",
         "fidelity": "conceptual",
         "recognitionGoal": "Reconoce qué datos buscar sin completar de memoria los que no aparezcan.",
-        "recognizedElements": ["límite", "ruta", "altitud", "otros"],
+        "recognizedElements": [
+          "límite",
+          "ruta",
+          "altitud",
+          "otros"
+        ],
         "actionAfterViewing": "Anota cada elemento presente y marca como duda cualquier elemento ausente o no comprendido.",
-        "coverage": ["chart"]
+        "coverage": [
+          "chart"
+        ]
       },
       "requiredVisualCoverage": [
-        {"type": "chart", "status": "notRequired", "reason": "El paso no interpreta una carta concreta; cualquier carta aplicable debe ser vigente y corresponde al vuelo elegido por el alumno."},
-        {"type": "instrument", "status": "notRequired", "reason": "No se enseña el uso de una aviónica específica ni se dispone de una referencia fiel de su interfaz."}
+        {
+          "type": "chart",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "instrument",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
       ]
     },
     {
@@ -104,20 +200,38 @@
         "movingElement": "Resultado de la comprobación",
         "axisOfMovement": "Flujo de decisión",
         "directionOfMovement": "Hacia continuar o detenerse",
-        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
         "tiedToStep": 3,
         "expectedObservation": "Las flechas juntan los elementos del mensaje y la comprobación antes de permitir una práctica en MSFS.",
         "view": "flujo",
         "visualCategory": "conceptual",
         "fidelity": "conceptual",
         "recognitionGoal": "Reconoce una discrepancia como motivo para verificar, no como un dato que se pueda adivinar.",
-        "recognizedElements": ["plan", "carta", "avión", "comprobación"],
+        "recognizedElements": [
+          "plan",
+          "carta",
+          "avión",
+          "comprobación"
+        ],
         "actionAfterViewing": "Continúa solo con una respuesta de simulación que puedas explicar y deja anotada toda discrepancia.",
-        "coverage": ["chart"]
+        "coverage": [
+          "chart"
+        ]
       },
       "requiredVisualCoverage": [
-        {"type": "chart", "status": "notRequired", "reason": "No se proporcionó una carta concreta y una recreación sin vigencia ni aeropuerto verificables sería engañosa."},
-        {"type": "cockpit", "status": "notRequired", "reason": "La comprobación de capacidad depende de la aeronave y configuración seleccionadas por el alumno."}
+        {
+          "type": "chart",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
       ]
     },
     {
@@ -139,20 +253,38 @@
         "movingElement": "Decisión de práctica",
         "axisOfMovement": "Flujo de decisión",
         "directionOfMovement": "Hacia práctica o detención",
-        "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"],
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
         "tiedToStep": 4,
         "expectedObservation": "La rama roja termina en detener y verificar, mientras la rama verde permite practicar solo tras una coincidencia clara.",
         "view": "flujo",
         "visualCategory": "conceptual",
         "fidelity": "conceptual",
         "recognitionGoal": "Reconoce que una duda o enmienda obliga a releer antes de usar otra respuesta de simulación.",
-        "recognizedElements": ["coincidencia", "práctica", "duda", "detener"],
+        "recognizedElements": [
+          "coincidencia",
+          "práctica",
+          "duda",
+          "detener"
+        ],
         "actionAfterViewing": "Selecciona una respuesta únicamente si puedes justificarla; de lo contrario, detén la práctica y verifica.",
-        "coverage": ["cockpit"]
+        "coverage": [
+          "cockpit"
+        ]
       },
       "requiredVisualCoverage": [
-        {"type": "cockpit", "status": "notRequired", "reason": "El paso trata una decisión de lectura, no un control concreto de cabina; la interfaz ATC varía según la sesión."},
-        {"type": "hardware", "status": "notRequired", "reason": "No se usa ni se asigna un control físico específico durante la respuesta de menú."}
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
       ]
     }
   ],
@@ -162,14 +294,31 @@
     "task": "Obtén un mensaje de autorización disponible. Escribe sus elementos presentes como límite, ruta, altitud y otros. Compáralos con el plan y las fuentes que tengas; marca toda duda. Solo si la relación es clara, usa la respuesta ofrecida por MSFS y vuelve a leer cualquier enmienda desde el inicio.",
     "successSignal": "Explicas qué parte del mensaje estaba presente, qué verificaste y por qué seleccionaste o no una respuesta en MSFS. Ante una discrepancia, conservas el avión detenido o la práctica pausada y registras la duda sin inventar datos.",
     "conceptDemonstrated": "Interpretación limitada de autorizaciones",
-    "possibleConfounders": ["Confundir una opción de menú con una transmisión real.", "Suponer que el destino autoriza toda la ruta o aproximación.", "Completar un dato ausente con valores recordados.", "Mantener una condición anterior después de recibir una enmienda."],
+    "possibleConfounders": [
+      "Confundir una opción de menú con una transmisión real.",
+      "Suponer que el destino autoriza toda la ruta o aproximación.",
+      "Completar un dato ausente con valores recordados.",
+      "Mantener una condición anterior después de recibir una enmienda."
+    ],
     "whyThisExerciseDemonstratesTheConcept": "La práctica aísla la lectura y decisión antes de mover el avión. Al separar los elementos de un mensaje, compararlos y detenerse ante una duda, el alumno demuestra que entiende el alcance limitado de una autorización de simulación sin depender de una frase memorizada ni ejecutar un procedimiento real."
   },
   "commonMistakes": [
-    {"mistake": "Tratar el ATC de MSFS como una autorización aplicable fuera del simulador.", "recovery": "Declara el mensaje como práctica y vuelve a fuentes, normativa, servicio ATC y formación aplicables antes de cualquier operación real."},
-    {"mistake": "Ver el aeropuerto de destino y asumir que toda la ruta quedó aprobada.", "recovery": "Busca el límite, la ruta y las condiciones que el mensaje realmente contiene. Si una parte no aparece, no la añadas por memoria."},
-    {"mistake": "Responder una enmienda como si fuera un mensaje independiente.", "recovery": "Vuelve a separar el mensaje nuevo y comprueba qué cambia antes de seleccionar otra respuesta en la simulación."},
-    {"mistake": "Corregir una discrepancia cambiando datos hasta que parezcan coincidir.", "recovery": "Detén la práctica, conserva la discrepancia anotada y verifica cada fuente por separado antes de continuar."}
+    {
+      "mistake": "Tratar el ATC de MSFS como una autorización aplicable fuera del simulador.",
+      "recovery": "Declara el mensaje como práctica y vuelve a fuentes, normativa, servicio ATC y formación aplicables antes de cualquier operación real."
+    },
+    {
+      "mistake": "Ver el aeropuerto de destino y asumir que toda la ruta quedó aprobada.",
+      "recovery": "Busca el límite, la ruta y las condiciones que el mensaje realmente contiene. Si una parte no aparece, no la añadas por memoria."
+    },
+    {
+      "mistake": "Responder una enmienda como si fuera un mensaje independiente.",
+      "recovery": "Vuelve a separar el mensaje nuevo y comprueba qué cambia antes de seleccionar otra respuesta en la simulación."
+    },
+    {
+      "mistake": "Corregir una discrepancia cambiando datos hasta que parezcan coincidir.",
+      "recovery": "Detén la práctica, conserva la discrepancia anotada y verifica cada fuente por separado antes de continuar."
+    }
   ],
   "checklist": [
     "Identifiqué el ATC de MSFS como una herramienta de práctica, no como un servicio real.",
@@ -180,10 +329,46 @@
     "Detuve la práctica cuando no pude explicar el alcance de una respuesta disponible."
   ],
   "quiz": [
-    {"question": "¿Qué representa el ATC de MSFS en esta lección?", "options": ["Una herramienta para practicar lectura y decisiones dentro de la simulación.", "Una autorización válida para un vuelo real.", "Una fuente que sustituye las cartas vigentes."], "answer": "Una herramienta para practicar lectura y decisiones dentro de la simulación.", "explanation": "La interfaz permite ensayar una secuencia, pero no proporciona autorización, comunicaciones ni datos aplicables a una operación real."},
-    {"question": "¿Qué describe mejor un límite de autorización?", "options": ["El punto, lugar o aeropuerto hasta el cual llega la autorización.", "La velocidad que debes usar siempre.", "El nombre de cualquier pista del destino."], "answer": "El punto, lugar o aeropuerto hasta el cual llega la autorización.", "explanation": "El límite define el alcance; no autoriza por sí mismo continuar más allá ni añade condiciones que el mensaje no contiene."},
-    {"question": "¿Qué haces si un elemento del mensaje no coincide con el plan o no lo entiendes?", "options": ["Detengo o pauso la práctica y vuelvo a verificar las fuentes.", "Completo el dato con lo que recuerdo.", "Selecciono la respuesta y lo resuelvo durante el vuelo."], "answer": "Detengo o pauso la práctica y vuelvo a verificar las fuentes.", "explanation": "Una discrepancia es una señal de comprobación; no se resuelve suponiendo datos o combinando mensajes."},
-    {"question": "¿Cómo tratas una enmienda del ATC de simulación?", "options": ["La leo de nuevo y compruebo qué cambia antes de responder.", "Mantengo todo lo anterior sin revisarlo.", "La uso como fraseología real sin contexto."], "answer": "La leo de nuevo y compruebo qué cambia antes de responder.", "explanation": "Una enmienda puede alterar el alcance de la secuencia y requiere una comprobación nueva."}
+    {
+      "question": "¿Qué representa el ATC de MSFS en esta lección?",
+      "options": [
+        "Una herramienta para practicar lectura y decisiones dentro de la simulación.",
+        "Una autorización válida para un vuelo real.",
+        "Una fuente que sustituye las cartas vigentes."
+      ],
+      "answer": "Una herramienta para practicar lectura y decisiones dentro de la simulación.",
+      "explanation": "La interfaz permite ensayar una secuencia, pero no proporciona autorización, comunicaciones ni datos aplicables a una operación real."
+    },
+    {
+      "question": "¿Qué describe mejor un límite de autorización?",
+      "options": [
+        "El punto, lugar o aeropuerto hasta el cual llega la autorización.",
+        "La velocidad que debes usar siempre.",
+        "El nombre de cualquier pista del destino."
+      ],
+      "answer": "El punto, lugar o aeropuerto hasta el cual llega la autorización.",
+      "explanation": "El límite define el alcance; no autoriza por sí mismo continuar más allá ni añade condiciones que el mensaje no contiene."
+    },
+    {
+      "question": "¿Qué haces si un elemento del mensaje no coincide con el plan o no lo entiendes?",
+      "options": [
+        "Detengo o pauso la práctica y vuelvo a verificar las fuentes.",
+        "Completo el dato con lo que recuerdo.",
+        "Selecciono la respuesta y lo resuelvo durante el vuelo."
+      ],
+      "answer": "Detengo o pauso la práctica y vuelvo a verificar las fuentes.",
+      "explanation": "Una discrepancia es una señal de comprobación; no se resuelve suponiendo datos o combinando mensajes."
+    },
+    {
+      "question": "¿Cómo tratas una enmienda del ATC de simulación?",
+      "options": [
+        "La leo de nuevo y compruebo qué cambia antes de responder.",
+        "Mantengo todo lo anterior sin revisarlo.",
+        "La uso como fraseología real sin contexto."
+      ],
+      "answer": "La leo de nuevo y compruebo qué cambia antes de responder.",
+      "explanation": "Una enmienda puede alterar el alcance de la secuencia y requiere una comprobación nueva."
+    }
   ],
   "completionCriteria": [
     "Explicas la diferencia entre una práctica de ATC en MSFS y una autorización IFR real.",
@@ -192,8 +377,45 @@
     "Relees una enmienda y justificas cualquier respuesta seleccionada dentro de la simulación."
   ],
   "sources": [
-    {"title": "FAA, Aeronautical Information Manual, Section 4: ATC Clearances and Aircraft Separation", "url": "https://www.faa.gov/air_traffic/publications/aim_html/chap4_section_4.html", "verified": true},
-    {"title": "FAA, Pilot/Controller Glossary: Clearance Limit", "url": "https://www.faa.gov/air_traffic/publications/atpubs/pcg_html/glossary-c.html", "verified": true},
-    {"title": "FAA, Pilot/Controller Glossary", "url": "https://www.faa.gov/air_traffic/publications/atpubs/pcg_html/", "verified": true}
-  ]
+    {
+      "title": "FAA, Aeronautical Information Manual, Section 4: ATC Clearances and Aircraft Separation",
+      "url": "https://www.faa.gov/air_traffic/publications/aim_html/chap4_section_4.html",
+      "verified": true
+    },
+    {
+      "title": "FAA, Pilot/Controller Glossary: Clearance Limit",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/pcg_html/glossary-c.html",
+      "verified": true
+    },
+    {
+      "title": "FAA, Pilot/Controller Glossary",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/pcg_html/",
+      "verified": true
+    },
+    {
+      "title": "FAA KABQ procedures — d-TPP cycle 2608 training set",
+      "url": "https://aeronav.faa.gov/d-tpp/2608/00012ADYOS.PDF",
+      "verified": true
+    }
+  ],
+  "operationalCompetency": {
+    "competencyObjective": "Interpretar una autorización IFR de práctica, separar sus componentes y cruzar cualquier procedimiento nombrado con la referencia publicada antes del readback.",
+    "competencyEvidence": [
+      "Separa límite de autorización, ruta o procedimiento, altitud y frecuencia cuando estén presentes.",
+      "Cruza un nombre de SID o STAR con la carta correspondiente en lugar de completarlo de memoria.",
+      "Realiza un readback de simulación y detecta una discrepancia antes de continuar."
+    ],
+    "transferExercise": {
+      "scenario": "Recibe una segunda autorización de práctica con un procedimiento o dato distinto al ejemplo guiado.",
+      "task": "Anota sus componentes, cruza el procedimiento con la carta KABQ y realiza un readback sin inventar lo que no fue autorizado.",
+      "expectedCompetency": "Transfiere el método escuchar, separar, verificar y responder a otra autorización.",
+      "successCriteria": "El readback conserva los elementos recibidos, la carta coincide con el procedimiento nombrado y cualquier duda se aclara antes de actuar.",
+      "hints": [
+        "Reconoce primero, interpreta después y solo entonces actúa."
+      ]
+    },
+    "futureLearningTargets": [
+      "a320-push-start-taxi"
+    ]
+  }
 }

@@ -5,17 +5,31 @@
     "subtitle": "Comprueba FPL, CDI y Direct-To en una ruta de simulación.",
     "objective": "Comprobar FPL, CDI y Direct-To.",
     "estimatedTime": "20 min",
-    "prerequisites": ["efb-route-planning"],
+    "prerequisites": [
+      "efb-route-planning"
+    ],
     "level": 3,
     "module": "vfr",
     "visualStandardVersion": 3
   },
   "whyItMatters": "Una ruta cargada no basta: antes de seguirla debes comprobar qué tramo está activo y qué fuente alimenta la guía lateral. Direct-To cambia esa guía hacia un punto elegido. En MSFS, estas comprobaciones evitan seguir una indicación que no corresponde a tu intención. No sustituye una preparación, base de datos o procedimiento vigente del mundo real.",
   "concepts": [
-    {"term": "FPL", "meaning": "Flight Plan: la lista ordenada de puntos y tramos que el GPS tiene cargada. El punto activo indica qué parte de esa lista usa ahora para la guía."},
-    {"term": "CDI", "meaning": "Course Deviation Indicator: indicación lateral que muestra la desviación respecto de una guía. Antes de interpretarla, identifica la fuente que la está alimentando."},
-    {"term": "Fuente GPS", "meaning": "Selección que hace que la guía lateral se base en el GPS. No presupongas su posición, color ni método de selección: varían entre variantes de G1000 y aeronaves de MSFS."},
-    {"term": "Direct-To", "meaning": "Función que crea una guía directa desde la posición actual hasta un punto seleccionado. Puede cambiar el tramo activo; no confirma que el punto elegido sea apropiado para una operación real."}
+    {
+      "term": "FPL",
+      "meaning": "Flight Plan: la lista ordenada de puntos y tramos que el GPS tiene cargada. El punto activo indica qué parte de esa lista usa ahora para la guía."
+    },
+    {
+      "term": "CDI",
+      "meaning": "Course Deviation Indicator: indicación lateral que muestra la desviación respecto de una guía. Antes de interpretarla, identifica la fuente que la está alimentando."
+    },
+    {
+      "term": "Fuente GPS",
+      "meaning": "Selección que hace que la guía lateral se base en el GPS. No presupongas su posición, color ni método de selección: varían entre variantes de G1000 y aeronaves de MSFS."
+    },
+    {
+      "term": "Direct-To",
+      "meaning": "Función que crea una guía directa desde la posición actual hasta un punto seleccionado. Puede cambiar el tramo activo; no confirma que el punto elegido sea apropiado para una operación real."
+    }
   ],
   "steps": [
     {
@@ -25,8 +39,83 @@
       "explanation": "FPL solo puede comprobarse contra una intención previa. Una ruta corta y conocida reduce la carga de pilotaje y te permite comparar origen, siguiente punto y destino sin usar una carta ni valores de navegación reales.",
       "expectedResult": "Puedes reconocer una secuencia de puntos de la ruta, o confirmas que el GPS no recibió ninguna. Si la lista no coincide con tu plan o no hay ruta, corrígelo antes de usar guía GPS.",
       "simulatorAction": "Esto es una práctica de simulación. La disponibilidad de transferencia entre planificador, EFB y avión depende de la aeronave y configuración; verifica el resultado dentro de tu sesión.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/g1000-gps-fpl-sequence.svg", "alt": "Diagrama conceptual de una ruta FPL con origen, punto activo, destino y el tramo activo resaltado.", "purpose": "Mostrar qué relación comparar dentro de una lista de plan de vuelo sin recrear una pantalla G1000.", "teaches": "Distinguir el punto activo del destino final en una secuencia de ruta.", "primaryTeachingObjective": "Identificar tramo activo", "perspective": "Mapa conceptual superior", "movingElement": "Tramo azul continuo", "axisOfMovement": "Plano horizontal", "directionOfMovement": "Del origen al punto activo", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 1, "expectedObservation": "El tramo azul termina en el punto activo, mientras el destino queda más adelante en la ruta.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que el destino y el tramo que guía ahora pueden ser elementos distintos.", "recognizedElements": ["origen", "punto activo", "destino", "tramo azul"], "actionAfterViewing": "Abre FPL en tu avión y compara su punto activo con la ruta que preparaste."},
-      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "No se proporcionó una referencia fiel de la página FPL de la variante G1000 instalada."}]
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/g1000-gps-fpl-sequence.svg",
+        "alt": "Diagrama conceptual de una ruta FPL con origen, punto activo, destino y el tramo activo resaltado.",
+        "purpose": "Mostrar qué relación comparar dentro de una lista de plan de vuelo sin recrear una pantalla G1000.",
+        "teaches": "Distinguir el punto activo del destino final en una secuencia de ruta.",
+        "primaryTeachingObjective": "Identificar tramo activo",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Tramo azul continuo",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Del origen al punto activo",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "El tramo azul termina en el punto activo, mientras el destino queda más adelante en la ruta.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que el destino y el tramo que guía ahora pueden ser elementos distintos.",
+        "recognizedElements": [
+          "origen",
+          "punto activo",
+          "destino",
+          "tramo azul"
+        ],
+        "actionAfterViewing": "Abre FPL en tu avión y compara su punto activo con la ruta que preparaste."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/g1000-nxi-c172-controls-reference.svg",
+          "alt": "Reconocer FPL y fuente CDI. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para localizar fpl y la fuente cdi dentro de la organización g1000 nxi sin inventar valores del vuelo.",
+          "teaches": "Localizar FPL y la fuente CDI dentro de la organización G1000 NXi",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 1,
+          "expectedObservation": "Puedes localizar FPL, CDI SOURCE, GPS y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce FPL, CDI SOURCE, GPS en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "FPL",
+            "CDI SOURCE",
+            "GPS"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de FPL, CDI SOURCE, GPS sin números operacionales inventados."
+          }
+        }
+      ]
     },
     {
       "number": 2,
@@ -35,8 +124,82 @@
       "explanation": "El GPS guía el tramo activo, no una idea general de la ruta. Confirmarlo separa mirar una lista de usarla para orientarte. Esta lección no enseña a editar el plan ni a reactivar tramos, porque esos mandos dependen de la variante y contexto.",
       "expectedResult": "El punto y tramo activos tienen sentido dentro de tu ruta de práctica. Si aparece un punto desconocido, una discontinuidad o una secuencia distinta, declaras fallida la comprobación y no usas esa guía.",
       "simulatorAction": "No hay una secuencia de botones universal para FPL en MSFS. Usa únicamente los controles que tu pantalla muestre y consulta la documentación específica de la aeronave si necesitas modificar el plan.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/g1000-gps-fpl-sequence.svg", "alt": "Diagrama conceptual que separa el tramo activo resaltado de los puntos restantes del plan de vuelo.", "purpose": "Vincular la comprobación de FPL con el tramo que el GPS puede usar como guía actual.", "teaches": "Verificar que la guía activa corresponde a la secuencia prevista.", "primaryTeachingObjective": "Validar guía activa", "perspective": "Mapa conceptual superior", "movingElement": "Tramo azul continuo", "axisOfMovement": "Plano horizontal", "directionOfMovement": "Hacia el punto activo", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 2, "expectedObservation": "El tramo resaltado conecta la posición de ruta anterior con el punto activo y no con un destino supuesto.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que una discrepancia de punto activo invalida usar la guía sin revisión.", "recognizedElements": ["punto activo", "tramo resaltado", "destino"], "actionAfterViewing": "Compara el punto activo mostrado en FPL con tu ruta prevista antes de mirar el CDI."},
-      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "La lección enseña una verificación de relación y no dispone de una captura fiel de la lista FPL."}]
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/g1000-gps-fpl-sequence.svg",
+        "alt": "Diagrama conceptual que separa el tramo activo resaltado de los puntos restantes del plan de vuelo.",
+        "purpose": "Vincular la comprobación de FPL con el tramo que el GPS puede usar como guía actual.",
+        "teaches": "Verificar que la guía activa corresponde a la secuencia prevista.",
+        "primaryTeachingObjective": "Validar guía activa",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Tramo azul continuo",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Hacia el punto activo",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "El tramo resaltado conecta la posición de ruta anterior con el punto activo y no con un destino supuesto.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que una discrepancia de punto activo invalida usar la guía sin revisión.",
+        "recognizedElements": [
+          "punto activo",
+          "tramo resaltado",
+          "destino"
+        ],
+        "actionAfterViewing": "Compara el punto activo mostrado en FPL con tu ruta prevista antes de mirar el CDI."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/g1000-nxi-c172-controls-reference.svg",
+          "alt": "Reconocer FPL y fuente CDI. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para localizar fpl y la fuente cdi dentro de la organización g1000 nxi sin inventar valores del vuelo.",
+          "teaches": "Localizar FPL y la fuente CDI dentro de la organización G1000 NXi",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 2,
+          "expectedObservation": "Puedes localizar FPL, CDI SOURCE, GPS y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce FPL, CDI SOURCE, GPS en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "FPL",
+            "CDI SOURCE",
+            "GPS"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de FPL, CDI SOURCE, GPS sin números operacionales inventados."
+          }
+        }
+      ]
     },
     {
       "number": 3,
@@ -45,9 +208,120 @@
       "explanation": "La barra CDI solo tiene significado junto con su fuente: una desviación respecto de GPS no es la misma que una desviación respecto de otra radioayuda. Nombrar la fuente primero evita corregir el avión hacia una guía que no elegiste.",
       "expectedResult": "Puedes decir qué fuente alimenta el CDI y confirmar GPS cuando tu intención es seguir la ruta GPS. Si la indicación no coincide, trátala como una discrepancia, no como un error de pilotaje.",
       "simulatorAction": "La ubicación, etiqueta y cambio de fuente dependen de la variante de G1000 y aeronave de MSFS. No se confirma aquí un softkey, mando físico ni asignación del VelocityOne.",
-      "visual": {"type": "instrumentDiagram", "asset": "content/assets/g1000-gps-cdi-source.svg", "alt": "Diagrama conceptual que muestra fuente GPS alimentando un CDI con barra lateral desplazada.", "purpose": "Explicar que la fuente seleccionada debe identificarse antes de leer una desviación lateral.", "teaches": "Relacionar la etiqueta de fuente GPS con la interpretación del CDI.", "primaryTeachingObjective": "Identificar fuente CDI", "perspective": "Flujo conceptual de instrumento", "movingElement": "Barra CDI desplazada", "axisOfMovement": "Eje lateral conceptual", "directionOfMovement": "A izquierda o derecha de guía", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 3, "expectedObservation": "La fuente GPS aparece antes del indicador; la barra por sí sola no identifica el origen de la guía.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que debe leer la fuente de navegación antes de corregir una desviación CDI.", "recognizedElements": ["fuente GPS", "barra CDI", "línea central"], "actionAfterViewing": "Lee la fuente visible de tu G1000 y confirma GPS antes de interpretar la barra."},
-      "referenceVisuals": [{"type": "instrumentDiagram", "asset": "public/references/g1000-pfd-reference.png", "alt": "Referencia real de una pantalla G1000 para localizar una indicación de navegación antes de interpretar una barra CDI.", "purpose": "Complementar el diagrama conceptual con una pantalla fiel que el alumno puede ampliar y comparar con su variante de G1000.", "teaches": "Reconocer una indicación de navegación", "primaryTeachingObjective": "Localizar la fuente CDI", "perspective": "Captura real de instrumento G1000", "movingElement": "No aplica: referencia estática", "axisOfMovement": "No aplica: referencia estática", "directionOfMovement": "No aplica: referencia estática", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 3, "expectedObservation": "Puedes ampliar la pantalla y separar la etiqueta de fuente de la barra de desviación; la posición exacta depende de tu variante.", "view": "instrumento", "visualCategory": "reference", "fidelity": "real", "recognitionGoal": "Reconoce que la fuente se lee en la pantalla antes de obedecer una desviación lateral.", "recognizedElements": ["pantalla G1000", "zona de navegación", "indicación lateral"], "actionAfterViewing": "En tu aeronave, localiza la fuente visible y confirma GPS antes de seguir el CDI.", "coverage": ["instrument"], "quality": {"sourceWidth": 1920, "sourceHeight": 1080, "intendedDisplayWidth": 720, "supportsZoom": true, "detailTarget": "La zona de navegación de la pantalla; no presupone el mismo diseño ni el mismo control de selección en todas las variantes."}}],
-      "requiredVisualCoverage": [{"type": "instrument", "status": "required"}]
+      "visual": {
+        "type": "instrumentDiagram",
+        "asset": "content/assets/g1000-gps-cdi-source.svg",
+        "alt": "Diagrama conceptual que muestra fuente GPS alimentando un CDI con barra lateral desplazada.",
+        "purpose": "Explicar que la fuente seleccionada debe identificarse antes de leer una desviación lateral.",
+        "teaches": "Relacionar la etiqueta de fuente GPS con la interpretación del CDI.",
+        "primaryTeachingObjective": "Identificar fuente CDI",
+        "perspective": "Flujo conceptual de instrumento",
+        "movingElement": "Barra CDI desplazada",
+        "axisOfMovement": "Eje lateral conceptual",
+        "directionOfMovement": "A izquierda o derecha de guía",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "La fuente GPS aparece antes del indicador; la barra por sí sola no identifica el origen de la guía.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que debe leer la fuente de navegación antes de corregir una desviación CDI.",
+        "recognizedElements": [
+          "fuente GPS",
+          "barra CDI",
+          "línea central"
+        ],
+        "actionAfterViewing": "Lee la fuente visible de tu G1000 y confirma GPS antes de interpretar la barra."
+      },
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "public/references/g1000-pfd-reference.png",
+          "alt": "Referencia real de una pantalla G1000 para localizar una indicación de navegación antes de interpretar una barra CDI.",
+          "purpose": "Complementar el diagrama conceptual con una pantalla fiel que el alumno puede ampliar y comparar con su variante de G1000.",
+          "teaches": "Reconocer una indicación de navegación",
+          "primaryTeachingObjective": "Localizar la fuente CDI",
+          "perspective": "Captura real de instrumento G1000",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 3,
+          "expectedObservation": "Puedes ampliar la pantalla y separar la etiqueta de fuente de la barra de desviación; la posición exacta depende de tu variante.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "real",
+          "recognitionGoal": "Reconoce que la fuente se lee en la pantalla antes de obedecer una desviación lateral.",
+          "recognizedElements": [
+            "pantalla G1000",
+            "zona de navegación",
+            "indicación lateral"
+          ],
+          "actionAfterViewing": "En tu aeronave, localiza la fuente visible y confirma GPS antes de seguir el CDI.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1920,
+            "sourceHeight": 1080,
+            "intendedDisplayWidth": 720,
+            "supportsZoom": true,
+            "detailTarget": "La zona de navegación de la pantalla; no presupone el mismo diseño ni el mismo control de selección en todas las variantes."
+          }
+        },
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/g1000-nxi-c172-controls-reference.svg",
+          "alt": "Reconocer FPL y fuente CDI. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para localizar fpl y la fuente cdi dentro de la organización g1000 nxi sin inventar valores del vuelo.",
+          "teaches": "Localizar FPL y la fuente CDI dentro de la organización G1000 NXi",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 3,
+          "expectedObservation": "Puedes localizar FPL, CDI SOURCE, GPS y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce FPL, CDI SOURCE, GPS en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "FPL",
+            "CDI SOURCE",
+            "GPS"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de FPL, CDI SOURCE, GPS sin números operacionales inventados."
+          }
+        }
+      ],
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ]
     },
     {
       "number": 4,
@@ -56,8 +330,83 @@
       "explanation": "Direct-To crea guía desde tu posición actual al punto seleccionado y puede reemplazar el tramo activo. La comprobación del identificador antes y el resultado después muestran que no es solo una pantalla de consulta, sino un cambio de guía.",
       "expectedResult": "El punto seleccionado coincide con el que nombraste y la guía activa refleja una relación directa hacia él. Si el identificador o resultado no coinciden, no intentes compensarlo con el CDI: detén el ensayo y revisa FPL.",
       "simulatorAction": "Este ensayo observa el comportamiento de MSFS. En operación real, Direct-To debe usarse con datos vigentes y el procedimiento aplicable; no sustituye una autorización, una carta ni una evaluación de navegación.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/g1000-gps-direct-to.svg", "alt": "Diagrama conceptual de Direct-To que traza una línea azul desde la posición actual hacia un punto elegido.", "purpose": "Mostrar el cambio de relación de ruta que debes verificar tras activar Direct-To.", "teaches": "Reconocer que Direct-To reemplaza el tramo activo por una guía al punto seleccionado.", "primaryTeachingObjective": "Verificar Direct-To", "perspective": "Mapa conceptual superior", "movingElement": "Línea directa azul", "axisOfMovement": "Plano horizontal", "directionOfMovement": "Desde posición actual al punto elegido", "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"], "tiedToStep": 4, "expectedObservation": "La línea azul sale de la posición actual y termina en el punto elegido, distinta del plan discontinuo gris.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que debe verificar tanto el identificador seleccionado como la nueva guía activa.", "recognizedElements": ["posición actual", "punto elegido", "línea directa", "plan original"], "actionAfterViewing": "Compara el identificador antes de activar y comprueba el nuevo tramo activo después."},
-      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "No se proporcionó una referencia fiel de la ventana Direct-To de la variante instalada."}]
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/g1000-gps-direct-to.svg",
+        "alt": "Diagrama conceptual de Direct-To que traza una línea azul desde la posición actual hacia un punto elegido.",
+        "purpose": "Mostrar el cambio de relación de ruta que debes verificar tras activar Direct-To.",
+        "teaches": "Reconocer que Direct-To reemplaza el tramo activo por una guía al punto seleccionado.",
+        "primaryTeachingObjective": "Verificar Direct-To",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Línea directa azul",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Desde posición actual al punto elegido",
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 4,
+        "expectedObservation": "La línea azul sale de la posición actual y termina en el punto elegido, distinta del plan discontinuo gris.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que debe verificar tanto el identificador seleccionado como la nueva guía activa.",
+        "recognizedElements": [
+          "posición actual",
+          "punto elegido",
+          "línea directa",
+          "plan original"
+        ],
+        "actionAfterViewing": "Compara el identificador antes de activar y comprueba el nuevo tramo activo después."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/g1000-nxi-c172-controls-reference.svg",
+          "alt": "Reconocer Direct-To. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para localizar direct-to y verificar el destino antes y después de activarlo sin inventar valores del vuelo.",
+          "teaches": "Localizar Direct-To y verificar el destino antes y después de activarlo",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 4,
+          "expectedObservation": "Puedes localizar Direct-To, FPL, destino activo y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce Direct-To, FPL, destino activo en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "Direct-To",
+            "FPL",
+            "destino activo"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de Direct-To, FPL, destino activo sin números operacionales inventados."
+          }
+        }
+      ]
     }
   ],
   "practice": {
@@ -66,14 +415,31 @@
     "task": "Comprueba en FPL el punto activo y su secuencia. Lee la fuente del CDI y confirma GPS antes de observar la desviación. Luego selecciona mediante Direct-To un punto ya conocido, verifica su identificador antes de activar y confirma el cambio de guía después.",
     "successSignal": "Explicas qué punto guiaba FPL, qué fuente alimentaba el CDI y qué punto quedó activo después de Direct-To. Si cualquiera no coincide con tu intención, suspendes la guía y vuelves a revisar en vez de seguir la barra CDI.",
     "conceptDemonstrated": "Verificación de guía GPS",
-    "possibleConfounders": ["Confundir el destino final con el punto activo que guía el tramo actual.", "Interpretar la barra CDI sin leer primero la fuente de navegación.", "Activar Direct-To hacia un identificador parecido sin comprobarlo.", "Suponer que la pantalla o los controles son idénticos entre variantes de G1000."],
+    "possibleConfounders": [
+      "Confundir el destino final con el punto activo que guía el tramo actual.",
+      "Interpretar la barra CDI sin leer primero la fuente de navegación.",
+      "Activar Direct-To hacia un identificador parecido sin comprobarlo.",
+      "Suponer que la pantalla o los controles son idénticos entre variantes de G1000."
+    ],
     "whyThisExerciseDemonstratesTheConcept": "La práctica une tres observaciones que se pueden contrastar en pantalla: secuencia activa de FPL, fuente del CDI y cambio de guía tras Direct-To. Al usar una ruta corta y un punto ya conocido, aísla la verificación de la guía sin requerir carta, procedimiento publicado ni una asignación de hardware."
   },
   "commonMistakes": [
-    {"mistake": "Mirar el destino final y asumir que es el punto que guía ahora.", "recovery": "Vuelve a FPL, identifica el punto activo y compáralo con el tramo de tu ruta antes de usar cualquier indicación lateral."},
-    {"mistake": "Corregir según el CDI sin leer su fuente.", "recovery": "Estabiliza el vuelo, lee la fuente anunciada y usa el CDI solo cuando esa fuente coincida con tu intención."},
-    {"mistake": "Activar Direct-To sin verificar el identificador.", "recovery": "Detén el ensayo, revisa FPL y repítelo únicamente con un punto que puedas nombrar y reconocer en la ruta."},
-    {"mistake": "Buscar un botón descrito para otra variante de G1000.", "recovery": "Usa las etiquetas visibles en tu instalación y consulta la documentación de esa aeronave; no adivines equivalencias de mandos."}
+    {
+      "mistake": "Mirar el destino final y asumir que es el punto que guía ahora.",
+      "recovery": "Vuelve a FPL, identifica el punto activo y compáralo con el tramo de tu ruta antes de usar cualquier indicación lateral."
+    },
+    {
+      "mistake": "Corregir según el CDI sin leer su fuente.",
+      "recovery": "Estabiliza el vuelo, lee la fuente anunciada y usa el CDI solo cuando esa fuente coincida con tu intención."
+    },
+    {
+      "mistake": "Activar Direct-To sin verificar el identificador.",
+      "recovery": "Detén el ensayo, revisa FPL y repítelo únicamente con un punto que puedas nombrar y reconocer en la ruta."
+    },
+    {
+      "mistake": "Buscar un botón descrito para otra variante de G1000.",
+      "recovery": "Usa las etiquetas visibles en tu instalación y consulta la documentación de esa aeronave; no adivines equivalencias de mandos."
+    }
   ],
   "checklist": [
     "Ruta corta de simulación creada y reconocible antes de abrir FPL.",
@@ -84,9 +450,36 @@
     "Cualquier discrepancia tratada como motivo para detener y revisar, no para seguir la indicación."
   ],
   "quiz": [
-    {"question": "¿Qué debes confirmar en FPL antes de seguir la guía GPS?", "options": ["El punto activo y su relación con la ruta prevista.", "Solo el aeropuerto de destino final.", "La posición de un botón del controlador."], "answer": "El punto activo y su relación con la ruta prevista.", "explanation": "El GPS guía el tramo activo; el destino final puede estar más adelante en la secuencia."},
-    {"question": "¿Qué se lee antes de interpretar una barra CDI?", "options": ["La fuente de navegación que alimenta el CDI.", "La velocidad máxima del avión.", "El nombre de cualquier punto cercano."], "answer": "La fuente de navegación que alimenta el CDI.", "explanation": "La barra solo puede interpretarse respecto de la fuente que la está guiando."},
-    {"question": "¿Qué comprobación es esencial antes de activar Direct-To?", "options": ["Que el identificador del punto seleccionado coincide con tu intención.", "Que el destino final desaparezca de FPL.", "Que todos los G1000 tengan los mismos controles."], "answer": "Que el identificador del punto seleccionado coincide con tu intención.", "explanation": "Direct-To cambia la guía hacia el punto seleccionado; por eso debes verificarlo antes de activarlo."}
+    {
+      "question": "¿Qué debes confirmar en FPL antes de seguir la guía GPS?",
+      "options": [
+        "El punto activo y su relación con la ruta prevista.",
+        "Solo el aeropuerto de destino final.",
+        "La posición de un botón del controlador."
+      ],
+      "answer": "El punto activo y su relación con la ruta prevista.",
+      "explanation": "El GPS guía el tramo activo; el destino final puede estar más adelante en la secuencia."
+    },
+    {
+      "question": "¿Qué se lee antes de interpretar una barra CDI?",
+      "options": [
+        "La fuente de navegación que alimenta el CDI.",
+        "La velocidad máxima del avión.",
+        "El nombre de cualquier punto cercano."
+      ],
+      "answer": "La fuente de navegación que alimenta el CDI.",
+      "explanation": "La barra solo puede interpretarse respecto de la fuente que la está guiando."
+    },
+    {
+      "question": "¿Qué comprobación es esencial antes de activar Direct-To?",
+      "options": [
+        "Que el identificador del punto seleccionado coincide con tu intención.",
+        "Que el destino final desaparezca de FPL.",
+        "Que todos los G1000 tengan los mismos controles."
+      ],
+      "answer": "Que el identificador del punto seleccionado coincide con tu intención.",
+      "explanation": "Direct-To cambia la guía hacia el punto seleccionado; por eso debes verificarlo antes de activarlo."
+    }
   ],
   "completionCriteria": [
     "Reconociste en FPL una secuencia de ruta y comprobaste cuál era el punto activo.",
@@ -96,8 +489,50 @@
     "Explicaste que esta práctica en MSFS no reemplaza datos, cartas, autorización ni procedimiento vigente reales."
   ],
   "sources": [
-    {"title": "Garmin G1000 NXi Pilot's Guide for the Cessna Caravan", "url": "https://static.garmin.com/pumac/190-02138-01_c.pdf", "verified": true},
-    {"title": "Garmin G1000 NXi Support", "url": "https://support.garmin.com/en-US/?partNumber=NXi-G1000-00", "verified": true},
-    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
-  ]
+    {
+      "title": "Garmin G1000 NXi Pilot's Guide for the Cessna Caravan",
+      "url": "https://static.garmin.com/pumac/190-02138-01_c.pdf",
+      "verified": true
+    },
+    {
+      "title": "Garmin G1000 NXi Support",
+      "url": "https://support.garmin.com/en-US/?partNumber=NXi-G1000-00",
+      "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator Support",
+      "url": "https://flightsimulator.zendesk.com/hc/en-us",
+      "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator 2024 — Garmin G1000 NXi V2 instruments and Cessna 172 attachments",
+      "url": "https://docs.flightsimulator.com/msfs2024/html/5_Content_Configuration/Modular_SimObjects/SimAttachments/Included_Attachments/Instrument_Attachments.htm",
+      "verified": true
+    },
+    {
+      "title": "Garmin G1000 NXi Pilot’s Guide — Cessna NAV III",
+      "url": "https://static.garmin.com/pumac/190-02177-03_b.pdf",
+      "verified": true
+    }
+  ],
+  "operationalCompetency": {
+    "competencyObjective": "Comprobar FPL, fuente CDI y Direct-To en el G1000 NXi del C172 de MSFS 2024 antes de seguir una guía lateral.",
+    "competencyEvidence": [
+      "Identifica el punto o tramo activo dentro de FPL.",
+      "Lee la fuente CDI antes de interpretar una desviación lateral.",
+      "Verifica el identificador antes de Direct-To y comprueba el nuevo destino después."
+    ],
+    "transferExercise": {
+      "scenario": "Carga una segunda ruta corta y elige otro punto conocido para un ensayo Direct-To.",
+      "task": "Demuestra FPL, fuente CDI y Direct-To con la nueva ruta sin repetir el punto del ejemplo anterior.",
+      "expectedCompetency": "Transfiere la verificación de guía GPS a una secuencia diferente.",
+      "successCriteria": "Puede nombrar tramo activo, fuente y nuevo destino; una discrepancia detiene la guía y obliga a revisar.",
+      "hints": [
+        "Reconoce primero, interpreta después y solo entonces actúa."
+      ]
+    },
+    "futureLearningTargets": [
+      "g1000-autopilot"
+    ]
+  }
 }

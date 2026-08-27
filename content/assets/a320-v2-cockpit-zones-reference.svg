@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Microsoft/iniBuilds A320neo V2 — zonas de cabina</title>
+<desc id="desc">Recreación educativa de la organización funcional de la cabina A320neo V2: overhead, FCU, PFD, ND, ECAM, MCDU, pedestal y sidesticks. No representa una lista de acciones.</desc>
+<rect width="1600" height="900" fill="#12171b"/>
+<text x="70" y="70" fill="#fff" font-family="Arial" font-size="34" font-weight="700">A320neo V2 · mapa funcional de cabina</text>
+<text x="70" y="108" fill="#aab7be" font-family="Arial" font-size="18">Reconoce la zona por su función antes de tocar un control</text>
+<rect x="500" y="145" width="600" height="120" rx="18" fill="#252f35" stroke="#778890" stroke-width="3"/>
+<text x="800" y="192" text-anchor="middle" fill="#f5f7f8" font-family="Arial" font-size="24" font-weight="700">OVERHEAD</text>
+<text x="800" y="228" text-anchor="middle" fill="#c8d2d7" font-family="Arial" font-size="17">energía · luces · sistemas · ADIRS</text>
+<rect x="430" y="300" width="740" height="90" rx="14" fill="#2c363c" stroke="#7f929b" stroke-width="3"/>
+<text x="800" y="340" text-anchor="middle" fill="#fff" font-family="Arial" font-size="24" font-weight="700">FCU</text>
+<text x="800" y="370" text-anchor="middle" fill="#c8d2d7" font-family="Arial" font-size="16">objetivos de velocidad · rumbo/trayectoria · altitud · vertical</text>
+<g font-family="Arial" text-anchor="middle">
+<rect x="160" y="430" width="270" height="170" rx="14" fill="#203947" stroke="#57a3c7" stroke-width="3"/><text x="295" y="480" fill="#fff" font-size="24" font-weight="700">PFD</text><text x="295" y="520" fill="#dbe9ef" font-size="16">estado de vuelo</text><text x="295" y="550" fill="#dbe9ef" font-size="16">FMA / modos</text>
+<rect x="455" y="430" width="270" height="170" rx="14" fill="#253b49" stroke="#57a3c7" stroke-width="3"/><text x="590" y="480" fill="#fff" font-size="24" font-weight="700">ND</text><text x="590" y="520" fill="#dbe9ef" font-size="16">ruta · fixes</text><text x="590" y="550" fill="#dbe9ef" font-size="16">trayectoria</text>
+<rect x="750" y="430" width="270" height="170" rx="14" fill="#33382c" stroke="#a8b563" stroke-width="3"/><text x="885" y="480" fill="#fff" font-size="24" font-weight="700">ECAM</text><text x="885" y="520" fill="#e8edcf" font-size="16">motores · sistemas</text><text x="885" y="550" fill="#e8edcf" font-size="16">mensajes/estado</text>
+<rect x="1045" y="430" width="270" height="170" rx="14" fill="#3a3028" stroke="#c49a71" stroke-width="3"/><text x="1180" y="480" fill="#fff" font-size="24" font-weight="700">MCDU</text><text x="1180" y="520" fill="#f0dfcf" font-size="16">INIT · F-PLN</text><text x="1180" y="550" fill="#f0dfcf" font-size="16">PERF · datos</text>
+</g>
+<rect x="515" y="635" width="570" height="115" rx="16" fill="#242b2f" stroke="#778890" stroke-width="3"/>
+<text x="800" y="680" text-anchor="middle" fill="#fff" font-family="Arial" font-size="23" font-weight="700">PEDESTAL</text>
+<text x="800" y="716" text-anchor="middle" fill="#c8d2d7" font-family="Arial" font-size="17">thrust levers · engine masters · radios / controles centrales</text>
+<rect x="175" y="655" width="240" height="95" rx="45" fill="#1d252a" stroke="#75858d" stroke-width="3"/>
+<text x="295" y="700" text-anchor="middle" fill="#fff" font-family="Arial" font-size="20" font-weight="700">SIDESTICK</text><text x="295" y="730" text-anchor="middle" fill="#c8d2d7" font-family="Arial" font-size="15">mando lateral</text>
+<rect x="1185" y="655" width="240" height="95" rx="45" fill="#1d252a" stroke="#75858d" stroke-width="3"/>
+<text x="1305" y="700" text-anchor="middle" fill="#fff" font-family="Arial" font-size="20" font-weight="700">SIDESTICK</text><text x="1305" y="730" text-anchor="middle" fill="#c8d2d7" font-family="Arial" font-size="15">mando lateral</text>
+<path d="M800 265v35M800 390v28" stroke="#f5c45a" stroke-width="5" marker-end="url(#a)"/>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f5c45a"/></marker></defs>
+<rect x="70" y="790" width="1460" height="65" rx="12" fill="#1b2328"/>
+<text x="100" y="829" fill="#dbe4e8" font-family="Arial" font-size="17">Secuencia de búsqueda: zona → etiqueta → función → indicación esperada. Esta lámina enseña ubicación funcional; el manual/QRC de la variante manda sobre cualquier recreación.</text>
+</svg>

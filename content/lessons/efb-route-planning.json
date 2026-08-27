@@ -5,18 +5,35 @@
     "subtitle": "Crea y revisa una ruta de simulación antes de arrancar.",
     "objective": "Crear y revisar una ruta antes del arranque.",
     "estimatedTime": "20 min",
-    "prerequisites": ["c172-landing"],
+    "prerequisites": [
+      "c172-landing"
+    ],
     "level": 3,
     "module": "vfr",
     "visualStandardVersion": 3
   },
   "whyItMatters": "Una ruta preparada antes de arrancar reduce decisiones improvisadas cuando ya debes controlar el avión. En esta práctica usarás la EFB o el planificador que esté disponible en tu sesión de MSFS para leer una secuencia simple: origen, referencia y destino. No equivale a planificación aeronáutica real ni a información vigente.",
   "concepts": [
-    {"term": "EFB", "meaning": "Electronic Flight Bag: una herramienta digital para consultar o preparar información de vuelo. Sus pantallas y funciones cambian según la aeronave, el complemento y la versión; por eso esta lección no presupone botones ni menús."},
-    {"term": "Ruta VFR", "meaning": "Secuencia visual de lugares o puntos que usarás para orientarte. En esta práctica es una ruta dentro de MSFS, no una autorización, una carta vigente ni un plan válido para volar en el mundo real."},
-    {"term": "Origen", "meaning": "Aeródromo o posición desde la que inicia la sesión. Confirmarlo evita que una ruta aparente ser correcta mientras comienza en otro lugar."},
-    {"term": "Punto de referencia", "meaning": "Lugar intermedio que sirve para dividir una ruta en tramos observables. No necesita ser una radioayuda ni una posición publicada para esta práctica de simulación."},
-    {"term": "Revisión de ruta", "meaning": "Comprobación final de que cada tramo enlaza el origen, las referencias elegidas y el destino previsto antes de cargar o iniciar el vuelo."}
+    {
+      "term": "EFB",
+      "meaning": "Electronic Flight Bag: una herramienta digital para consultar o preparar información de vuelo. Sus pantallas y funciones cambian según la aeronave, el complemento y la versión; por eso esta lección no presupone botones ni menús."
+    },
+    {
+      "term": "Ruta VFR",
+      "meaning": "Secuencia visual de lugares o puntos que usarás para orientarte. En esta práctica es una ruta dentro de MSFS, no una autorización, una carta vigente ni un plan válido para volar en el mundo real."
+    },
+    {
+      "term": "Origen",
+      "meaning": "Aeródromo o posición desde la que inicia la sesión. Confirmarlo evita que una ruta aparente ser correcta mientras comienza en otro lugar."
+    },
+    {
+      "term": "Punto de referencia",
+      "meaning": "Lugar intermedio que sirve para dividir una ruta en tramos observables. No necesita ser una radioayuda ni una posición publicada para esta práctica de simulación."
+    },
+    {
+      "term": "Revisión de ruta",
+      "meaning": "Comprobación final de que cada tramo enlaza el origen, las referencias elegidas y el destino previsto antes de cargar o iniciar el vuelo."
+    }
   ],
   "steps": [
     {
@@ -26,8 +43,46 @@
       "explanation": "La ruta solo puede revisarse si el origen y el destino están claros. Empezar con dos lugares reconocibles te permite comprobar la relación del plan sin depender de distancias, altitudes, cartas o valores que esta práctica no pretende enseñar.",
       "expectedResult": "Tienes un origen y un destino expresados con claridad. Si el mapa muestra varios lugares parecidos o no sabes cuál está seleccionado, no construyas la ruta: vuelve a elegir y confirma la pareja antes de continuar.",
       "simulatorAction": "Esto configura una práctica en MSFS. Para un vuelo real se requieren fuentes vigentes, evaluación meteorológica, rendimiento, requisitos normativos y, cuando corresponda, autorizaciones.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/efb-route-planning-route.svg", "alt": "Mapa conceptual que separa visualmente el origen, un punto de referencia y el destino de una ruta VFR.", "purpose": "Mostrar la secuencia mínima que debe quedar definida antes de crear una ruta en la herramienta disponible.", "teaches": "Distinguir el origen del destino antes de añadir tramos intermedios.", "primaryTeachingObjective": "Definir extremos", "perspective": "Mapa conceptual superior", "movingElement": "Línea de ruta azul", "axisOfMovement": "Plano horizontal", "directionOfMovement": "Del origen al destino", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 1, "expectedObservation": "Los extremos de la línea azul están etiquetados como origen y destino, con una referencia entre ambos.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que la selección de origen y destino precede a cualquier detalle del trazado.", "recognizedElements": ["origen", "destino", "línea azul"], "actionAfterViewing": "Elige y nombra el aeropuerto de salida y el de llegada en tu sesión de MSFS."},
-      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "El paso sucede antes del arranque y no requiere reconocer una cabina concreta."}, {"type": "airport", "status": "notRequired", "reason": "Se enseña la relación conceptual entre extremos de ruta, no un aeropuerto específico."}]
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/efb-route-planning-route.svg",
+        "alt": "Mapa conceptual que separa visualmente el origen, un punto de referencia y el destino de una ruta VFR.",
+        "purpose": "Mostrar la secuencia mínima que debe quedar definida antes de crear una ruta en la herramienta disponible.",
+        "teaches": "Distinguir el origen del destino antes de añadir tramos intermedios.",
+        "primaryTeachingObjective": "Definir extremos",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Línea de ruta azul",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Del origen al destino",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "Los extremos de la línea azul están etiquetados como origen y destino, con una referencia entre ambos.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que la selección de origen y destino precede a cualquier detalle del trazado.",
+        "recognizedElements": [
+          "origen",
+          "destino",
+          "línea azul"
+        ],
+        "actionAfterViewing": "Elige y nombra el aeropuerto de salida y el de llegada en tu sesión de MSFS."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "airport",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ]
     },
     {
       "number": 2,
@@ -36,9 +91,85 @@
       "explanation": "Introducir los extremos primero permite comprobar que la herramienta dibuja una relación completa. La ubicación de controles cambia entre EFB, avión y versión; el resultado que importa es ver una ruta entre los lugares elegidos, no pulsar una secuencia fija.",
       "expectedResult": "La herramienta muestra una conexión entre el origen y el destino, o deja claro que falta un dato. Si aparece otra ubicación, cancela o edita el plan y corrige el extremo equivocado antes de añadir referencias.",
       "simulatorAction": "La interfaz de la EFB o del planificador es una referencia operativa que depende de tu instalación. Verifica su función en pantalla; esta lección no confirma botones, menús ni transferencia automática al avión.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/efb-route-planning-route.svg", "alt": "Diagrama conceptual con una línea azul que une el origen y el destino y pasa por un punto de referencia.", "purpose": "Explicar el resultado visible de crear una ruta sin representar una interfaz real de EFB.", "teaches": "Comprobar que la línea de ruta conecta los extremos elegidos.", "primaryTeachingObjective": "Verificar conexión", "perspective": "Mapa conceptual superior", "movingElement": "Línea de ruta azul", "axisOfMovement": "Plano horizontal", "directionOfMovement": "Del origen al destino", "userQuestionAnswered": ["dondeMirar", "queCambioEsperar"], "tiedToStep": 2, "expectedObservation": "La línea azul conecta de forma continua los extremos identificados de la ruta.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce una conexión completa entre los extremos sin confundirla con una carta o una ruta publicada.", "recognizedElements": ["origen", "destino", "ruta azul"], "actionAfterViewing": "Confirma en tu herramienta que la ruta parte del origen elegido y termina en el destino elegido."},
-      "referenceVisuals": [{"type": "annotatedDiagram", "asset": "public/references/msfs2024-efb-world-map.png", "alt": "Captura de referencia de la EFB y el mapa mundial de MSFS 2024 para reconocer la zona donde se revisa el plan, no una ruta que deba copiarse.", "purpose": "Dar una referencia fiel de la superficie de planificación antes de que el alumno busque en su propia instalación el modo de crear o editar ruta.", "teaches": "Reconocer una interfaz de planificación", "primaryTeachingObjective": "Ubicar el área de ruta", "perspective": "Captura real de interfaz MSFS", "movingElement": "No aplica: referencia estática", "axisOfMovement": "No aplica: referencia estática", "directionOfMovement": "No aplica: referencia estática", "userQuestionAnswered": ["dondeMirar", "queCambioEsperar"], "tiedToStep": 2, "expectedObservation": "Reconoces una superficie de mapa y planificación; en tu sesión debes ver un modo equivalente antes de seleccionar origen y destino.", "view": "instrumento", "visualCategory": "reference", "fidelity": "real", "recognitionGoal": "Reconoce el área de planificación sin asumir que todos los botones o versiones son idénticos.", "recognizedElements": ["mapa", "área de planificación", "controles de interfaz"], "actionAfterViewing": "Busca el modo equivalente en tu instalación, selecciona origen y destino y confirma una línea de ruta.", "coverage": ["instrument"], "quality": {"sourceWidth": 1920, "sourceHeight": 1080, "intendedDisplayWidth": 720, "supportsZoom": true, "detailTarget": "La zona de mapa y los controles visibles de planificación; no copies una ruta ni una posición de esta captura."}}],
-      "requiredVisualCoverage": [{"type": "instrument", "status": "required"}, {"type": "chart", "status": "notRequired", "reason": "No se utiliza una carta publicada ni hay una carta vigente aportada para este escenario."}]
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/efb-route-planning-route.svg",
+        "alt": "Diagrama conceptual con una línea azul que une el origen y el destino y pasa por un punto de referencia.",
+        "purpose": "Explicar el resultado visible de crear una ruta sin representar una interfaz real de EFB.",
+        "teaches": "Comprobar que la línea de ruta conecta los extremos elegidos.",
+        "primaryTeachingObjective": "Verificar conexión",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Línea de ruta azul",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Del origen al destino",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "La línea azul conecta de forma continua los extremos identificados de la ruta.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce una conexión completa entre los extremos sin confundirla con una carta o una ruta publicada.",
+        "recognizedElements": [
+          "origen",
+          "destino",
+          "ruta azul"
+        ],
+        "actionAfterViewing": "Confirma en tu herramienta que la ruta parte del origen elegido y termina en el destino elegido."
+      },
+      "referenceVisuals": [
+        {
+          "type": "annotatedDiagram",
+          "asset": "public/references/msfs2024-efb-world-map.png",
+          "alt": "Captura de referencia de la EFB y el mapa mundial de MSFS 2024 para reconocer la zona donde se revisa el plan, no una ruta que deba copiarse.",
+          "purpose": "Dar una referencia fiel de la superficie de planificación antes de que el alumno busque en su propia instalación el modo de crear o editar ruta.",
+          "teaches": "Reconocer una interfaz de planificación",
+          "primaryTeachingObjective": "Ubicar el área de ruta",
+          "perspective": "Captura real de interfaz MSFS",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queCambioEsperar"
+          ],
+          "tiedToStep": 2,
+          "expectedObservation": "Reconoces una superficie de mapa y planificación; en tu sesión debes ver un modo equivalente antes de seleccionar origen y destino.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "real",
+          "recognitionGoal": "Reconoce el área de planificación sin asumir que todos los botones o versiones son idénticos.",
+          "recognizedElements": [
+            "mapa",
+            "área de planificación",
+            "controles de interfaz"
+          ],
+          "actionAfterViewing": "Busca el modo equivalente en tu instalación, selecciona origen y destino y confirma una línea de ruta.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1920,
+            "sourceHeight": 1080,
+            "intendedDisplayWidth": 720,
+            "supportsZoom": true,
+            "detailTarget": "La zona de mapa y los controles visibles de planificación; no copies una ruta ni una posición de esta captura."
+          }
+        }
+      ],
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "chart",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ]
     },
     {
       "number": 3,
@@ -47,8 +178,47 @@
       "explanation": "Un único punto intermedio convierte una línea larga en dos tramos que puedes revisar por separado. El objetivo no es navegar con una técnica real ni seguir un dato publicado: es aprender a detectar si un cambio creó una ruta comprensible antes de cargar el vuelo.",
       "expectedResult": "Puedes señalar el orden origen, referencia y destino, y ver dos tramos continuos. Si el punto queda fuera de la secuencia o genera una desviación inesperada, corrígelo antes de continuar; esa diferencia es precisamente la señal que buscas aprender a leer.",
       "simulatorAction": "Usa nombres y puntos que tu instalación muestre, sin asumir que son datos aeronáuticos vigentes. Para navegación real, verifica información oficial aplicable, cartas y requisitos del espacio aéreo.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/efb-route-planning-route.svg", "alt": "Ruta conceptual azul dividida en dos tramos mediante un punto de referencia central claramente etiquetado.", "purpose": "Mostrar cómo una referencia intermedia hace verificable el orden de los tramos de una ruta.", "teaches": "Leer la posición de una referencia dentro de la secuencia de ruta.", "primaryTeachingObjective": "Ordenar tramos", "perspective": "Mapa conceptual superior", "movingElement": "Línea de ruta azul", "axisOfMovement": "Plano horizontal", "directionOfMovement": "Origen, referencia, destino", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 3, "expectedObservation": "La referencia está entre los extremos y divide la línea azul en dos tramos consecutivos.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que un punto intermedio debe ocupar una posición legible entre origen y destino.", "recognizedElements": ["origen", "referencia", "destino", "dos tramos"], "actionAfterViewing": "Añade una referencia comprobable y nombra en orden los tres elementos de tu ruta."},
-      "requiredVisualCoverage": [{"type": "chart", "status": "notRequired", "reason": "El punto es una referencia conceptual de simulación y no requiere una carta aeronáutica específica."}, {"type": "airport", "status": "notRequired", "reason": "La acción no requiere identificar rasgos de un aeropuerto real o recreado fielmente."}]
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/efb-route-planning-route.svg",
+        "alt": "Ruta conceptual azul dividida en dos tramos mediante un punto de referencia central claramente etiquetado.",
+        "purpose": "Mostrar cómo una referencia intermedia hace verificable el orden de los tramos de una ruta.",
+        "teaches": "Leer la posición de una referencia dentro de la secuencia de ruta.",
+        "primaryTeachingObjective": "Ordenar tramos",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Línea de ruta azul",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Origen, referencia, destino",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "La referencia está entre los extremos y divide la línea azul en dos tramos consecutivos.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que un punto intermedio debe ocupar una posición legible entre origen y destino.",
+        "recognizedElements": [
+          "origen",
+          "referencia",
+          "destino",
+          "dos tramos"
+        ],
+        "actionAfterViewing": "Añade una referencia comprobable y nombra en orden los tres elementos de tu ruta."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "chart",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "airport",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ]
     },
     {
       "number": 4,
@@ -57,8 +227,48 @@
       "explanation": "La revisión final separa crear una ruta de confiar en ella. Una línea puede existir en pantalla y aun así contener un extremo equivocado o un tramo que no puedes explicar. Detenerte ahora mantiene el ejercicio centrado en orientación, cuando todavía no hay carga de pilotaje.",
       "expectedResult": "Explicas cada tramo en el orden correcto y reconoces el destino final. Si no puedes explicar una parte, el plan queda sin revisar: edítalo hasta que la secuencia vuelva a ser clara o reduce la ruta a origen y destino.",
       "simulatorAction": "No asumas que revisar o guardar una ruta la transfiere al GPS, a la aviónica o a ATC. Confirma en tu propia sesión cualquier función de carga y trata este plan únicamente como preparación de simulación.",
-      "visual": {"type": "comparisonDiagram", "asset": "content/assets/efb-route-planning-review.svg", "alt": "Comparación conceptual entre una ruta con un tramo sin confirmar y otra con origen, referencia y destino revisados.", "purpose": "Contrastar una línea incompleta con una secuencia que puede explicarse antes del arranque.", "teaches": "Decidir si una ruta está lista para la sesión según la continuidad de sus tramos.", "primaryTeachingObjective": "Revisar continuidad", "perspective": "Comparación conceptual en dos paneles", "movingElement": "Secuencia de ruta", "axisOfMovement": "No aplica: comparación conceptual", "directionOfMovement": "De duda a revisión", "comparisonJustification": "La comparación hace visible que una ruta dibujada no está lista si un tramo o el destino siguen sin confirmar.", "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"], "tiedToStep": 4, "expectedObservation": "El panel revisado muestra una línea continua y el otro destaca un tramo pendiente de confirmar.", "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que la condición de salida es poder explicar cada tramo y el destino final.", "recognizedElements": ["tramo discontinuo", "ruta continua", "origen", "destino"], "actionAfterViewing": "Recorre tu ruta completa y corrige cualquier tramo cuyo origen, orden o destino no puedas explicar."},
-      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "La revisión ocurre en la herramienta de planificación, sin identificación de cabina necesaria."}, {"type": "instrument", "status": "notRequired", "reason": "No se verifica todavía la carga de ruta en un instrumento de aviónica."}]
+      "visual": {
+        "type": "comparisonDiagram",
+        "asset": "content/assets/efb-route-planning-review.svg",
+        "alt": "Comparación conceptual entre una ruta con un tramo sin confirmar y otra con origen, referencia y destino revisados.",
+        "purpose": "Contrastar una línea incompleta con una secuencia que puede explicarse antes del arranque.",
+        "teaches": "Decidir si una ruta está lista para la sesión según la continuidad de sus tramos.",
+        "primaryTeachingObjective": "Revisar continuidad",
+        "perspective": "Comparación conceptual en dos paneles",
+        "movingElement": "Secuencia de ruta",
+        "axisOfMovement": "No aplica: comparación conceptual",
+        "directionOfMovement": "De duda a revisión",
+        "comparisonJustification": "La comparación hace visible que una ruta dibujada no está lista si un tramo o el destino siguen sin confirmar.",
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 4,
+        "expectedObservation": "El panel revisado muestra una línea continua y el otro destaca un tramo pendiente de confirmar.",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que la condición de salida es poder explicar cada tramo y el destino final.",
+        "recognizedElements": [
+          "tramo discontinuo",
+          "ruta continua",
+          "origen",
+          "destino"
+        ],
+        "actionAfterViewing": "Recorre tu ruta completa y corrige cualquier tramo cuyo origen, orden o destino no puedas explicar."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "instrument",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ]
     },
     {
       "number": 5,
@@ -67,8 +277,47 @@
       "explanation": "La ruta sirve como una intención que podrás volver a comparar con la sesión, no como una promesa de que todos los sistemas comparten datos. Nombrar la secuencia antes de arrancar revela si dependes de un botón o si realmente puedes describir el plan que acabas de revisar.",
       "expectedResult": "Puedes repetir la secuencia completa sin mirar y sabes dónde comprobarás el plan tras cargar. Si no recuerdas una parte o no sabes si se guardó, vuelve al paso anterior y revisa en vez de iniciar el vuelo con incertidumbre.",
       "simulatorAction": "La disponibilidad de guardado, carga y sincronización depende de la EFB, aeronave y configuración. Compruébala visualmente en MSFS; no la extrapoles a una operación real.",
-      "visual": {"type": "comparisonDiagram", "asset": "content/assets/efb-route-planning-review.svg", "alt": "Diagrama conceptual que muestra que solo una ruta revisada conduce a preparar la sesión de simulación.", "purpose": "Relacionar la revisión completa con la decisión de preparar el arranque en simulación.", "teaches": "Usar la ruta revisada como intención verificable, no como una transferencia asumida.", "primaryTeachingObjective": "Confirmar intención", "perspective": "Comparación conceptual en dos paneles", "movingElement": "Estado de revisión", "axisOfMovement": "No aplica: comparación conceptual", "directionOfMovement": "De revisión a preparación", "comparisonJustification": "Los dos estados distinguen una ruta que aún exige corrección de otra que puede guiar la preparación de la sesión.", "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"], "tiedToStep": 5, "expectedObservation": "Solo el panel de ruta revisada indica continuar hacia la preparación de la sesión.", "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que guardar o iniciar depende de haber confirmado la intención de ruta, no solo de ver una línea.", "recognizedElements": ["ruta revisada", "corrección", "preparación"], "actionAfterViewing": "Nombra tu ruta y comprueba visualmente qué opción de guardado o carga ofrece tu propia herramienta."},
-      "requiredVisualCoverage": [{"type": "hardware", "status": "notRequired", "reason": "No se enseña ninguna asignación de VelocityOne ni se requiere tocar hardware específico."}, {"type": "cockpit", "status": "notRequired", "reason": "El paso prepara el arranque sin pedir reconocimiento de un control de cabina concreto."}]
+      "visual": {
+        "type": "comparisonDiagram",
+        "asset": "content/assets/efb-route-planning-review.svg",
+        "alt": "Diagrama conceptual que muestra que solo una ruta revisada conduce a preparar la sesión de simulación.",
+        "purpose": "Relacionar la revisión completa con la decisión de preparar el arranque en simulación.",
+        "teaches": "Usar la ruta revisada como intención verificable, no como una transferencia asumida.",
+        "primaryTeachingObjective": "Confirmar intención",
+        "perspective": "Comparación conceptual en dos paneles",
+        "movingElement": "Estado de revisión",
+        "axisOfMovement": "No aplica: comparación conceptual",
+        "directionOfMovement": "De revisión a preparación",
+        "comparisonJustification": "Los dos estados distinguen una ruta que aún exige corrección de otra que puede guiar la preparación de la sesión.",
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 5,
+        "expectedObservation": "Solo el panel de ruta revisada indica continuar hacia la preparación de la sesión.",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que guardar o iniciar depende de haber confirmado la intención de ruta, no solo de ver una línea.",
+        "recognizedElements": [
+          "ruta revisada",
+          "corrección",
+          "preparación"
+        ],
+        "actionAfterViewing": "Nombra tu ruta y comprueba visualmente qué opción de guardado o carga ofrece tu propia herramienta."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ]
     }
   ],
   "practice": {
@@ -77,15 +326,35 @@
     "task": "Crea la ruta, nombra sus tres elementos en orden y recorre los dos tramos en pantalla. Introduce deliberadamente una referencia que no puedas explicar, detecta la desviación y corrígela. Solo después guarda o deja visible el plan y carga la sesión según lo permita tu herramienta.",
     "successSignal": "Antes de arrancar puedes nombrar origen, referencia y destino, explicar por qué la línea es continua y detectar un tramo que no corresponde a tu intención. También sabes si tu propia herramienta confirmó o no el guardado o la carga.",
     "conceptDemonstrated": "Revisión consciente de ruta",
-    "possibleConfounders": ["Confundir la interfaz particular de una EFB con una función universal de MSFS.", "Elegir aeropuertos o puntos que no puedes reconocer en el mapa.", "Tomar una línea dibujada como prueba de que la ruta se cargó en la aviónica.", "Usar este ejercicio de simulación como sustituto de planificación, cartas o requisitos reales."],
+    "possibleConfounders": [
+      "Confundir la interfaz particular de una EFB con una función universal de MSFS.",
+      "Elegir aeropuertos o puntos que no puedes reconocer en el mapa.",
+      "Tomar una línea dibujada como prueba de que la ruta se cargó en la aviónica.",
+      "Usar este ejercicio de simulación como sustituto de planificación, cartas o requisitos reales."
+    ],
     "whyThisExerciseDemonstratesTheConcept": "La modificación deliberada crea un tramo que debe detectarse mediante la revisión, no mediante pilotaje posterior. Corregirlo antes de cargar la sesión demuestra que el alumno entiende la ruta como una secuencia verificable y no como una línea que se acepta automáticamente."
   },
   "commonMistakes": [
-    {"mistake": "Elegir una ruta sin poder nombrar con certeza el origen o el destino.", "recovery": "Detén la planificación, vuelve al mapa y confirma ambos extremos antes de añadir un punto intermedio."},
-    {"mistake": "Añadir varios puntos y perder el orden de los tramos.", "recovery": "Reduce el ejercicio a una sola referencia visible y verifica primero la secuencia origen, referencia y destino."},
-    {"mistake": "Suponer que una ruta dibujada se guardó o se transfirió al avión.", "recovery": "Busca una confirmación visible en tu herramienta y comprueba por separado cualquier carga que tu sesión permita."},
-    {"mistake": "Memorizar botones de otra EFB, versión o aeronave.", "recovery": "Busca la función por su resultado en tu pantalla y consulta la ayuda de tu instalación cuando la interfaz no coincida."},
-    {"mistake": "Tratar la práctica como una planificación VFR aplicable al mundo real.", "recovery": "Usa fuentes oficiales vigentes, instrucción y los requisitos operativos correspondientes antes de cualquier vuelo real."}
+    {
+      "mistake": "Elegir una ruta sin poder nombrar con certeza el origen o el destino.",
+      "recovery": "Detén la planificación, vuelve al mapa y confirma ambos extremos antes de añadir un punto intermedio."
+    },
+    {
+      "mistake": "Añadir varios puntos y perder el orden de los tramos.",
+      "recovery": "Reduce el ejercicio a una sola referencia visible y verifica primero la secuencia origen, referencia y destino."
+    },
+    {
+      "mistake": "Suponer que una ruta dibujada se guardó o se transfirió al avión.",
+      "recovery": "Busca una confirmación visible en tu herramienta y comprueba por separado cualquier carga que tu sesión permita."
+    },
+    {
+      "mistake": "Memorizar botones de otra EFB, versión o aeronave.",
+      "recovery": "Busca la función por su resultado en tu pantalla y consulta la ayuda de tu instalación cuando la interfaz no coincida."
+    },
+    {
+      "mistake": "Tratar la práctica como una planificación VFR aplicable al mundo real.",
+      "recovery": "Usa fuentes oficiales vigentes, instrucción y los requisitos operativos correspondientes antes de cualquier vuelo real."
+    }
   ],
   "checklist": [
     "Origen y destino de MSFS elegidos y nombrados antes de crear la ruta.",
@@ -97,9 +366,36 @@
     "Práctica reconocida como simulación y no como planificación aeronáutica real."
   ],
   "quiz": [
-    {"question": "¿Qué debes confirmar antes de añadir una referencia a la ruta?", "options": ["Que el origen y el destino elegidos son los que reconoces.", "Que la EFB tenga exactamente los mismos botones que otra aeronave.", "Que la ruta se haya transferido automáticamente al GPS."], "answer": "Que el origen y el destino elegidos son los que reconoces.", "explanation": "Los extremos claros permiten comprobar el trazado antes de añadir detalles."},
-    {"question": "¿Qué significa que un tramo no puedas explicar al revisar el plan?", "options": ["Que debes detenerte y corregirlo antes de arrancar.", "Que puedes ignorarlo si la línea se ve en el mapa.", "Que debes añadir más puntos hasta que deje de notarse."], "answer": "Que debes detenerte y corregirlo antes de arrancar.", "explanation": "La revisión exige reconocer el orden y el destino de todos los tramos."},
-    {"question": "¿Por qué la lección no indica una secuencia de botones para la EFB?", "options": ["Porque la interfaz y sus funciones dependen de la aeronave, versión y configuración.", "Porque una EFB no puede mostrar rutas.", "Porque los botones sustituyen la revisión de la ruta."], "answer": "Porque la interfaz y sus funciones dependen de la aeronave, versión y configuración.", "explanation": "La lección enseña el resultado que debes comprobar sin inventar una interfaz no aportada."}
+    {
+      "question": "¿Qué debes confirmar antes de añadir una referencia a la ruta?",
+      "options": [
+        "Que el origen y el destino elegidos son los que reconoces.",
+        "Que la EFB tenga exactamente los mismos botones que otra aeronave.",
+        "Que la ruta se haya transferido automáticamente al GPS."
+      ],
+      "answer": "Que el origen y el destino elegidos son los que reconoces.",
+      "explanation": "Los extremos claros permiten comprobar el trazado antes de añadir detalles."
+    },
+    {
+      "question": "¿Qué significa que un tramo no puedas explicar al revisar el plan?",
+      "options": [
+        "Que debes detenerte y corregirlo antes de arrancar.",
+        "Que puedes ignorarlo si la línea se ve en el mapa.",
+        "Que debes añadir más puntos hasta que deje de notarse."
+      ],
+      "answer": "Que debes detenerte y corregirlo antes de arrancar.",
+      "explanation": "La revisión exige reconocer el orden y el destino de todos los tramos."
+    },
+    {
+      "question": "¿Por qué la lección no indica una secuencia de botones para la EFB?",
+      "options": [
+        "Porque la interfaz y sus funciones dependen de la aeronave, versión y configuración.",
+        "Porque una EFB no puede mostrar rutas.",
+        "Porque los botones sustituyen la revisión de la ruta."
+      ],
+      "answer": "Porque la interfaz y sus funciones dependen de la aeronave, versión y configuración.",
+      "explanation": "La lección enseña el resultado que debes comprobar sin inventar una interfaz no aportada."
+    }
   ],
   "completionCriteria": [
     "Creaste una ruta de simulación con un origen, una referencia comprobable y un destino.",
@@ -109,8 +405,40 @@
     "Distingues esta práctica de planificación VFR real, que requiere fuentes y procedimientos vigentes."
   ],
   "sources": [
-    {"title": "FAA Pilot's Handbook of Aeronautical Knowledge", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
-    {"title": "FAA Aeronautical Information Manual", "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/", "verified": true},
-    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
-  ]
+    {
+      "title": "FAA Pilot's Handbook of Aeronautical Knowledge",
+      "url": "https://www.faa.gov/regulations_policies/handbook",
+      "verified": true
+    },
+    {
+      "title": "FAA Aeronautical Information Manual",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/",
+      "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator Support",
+      "url": "https://flightsimulator.zendesk.com/hc/en-us",
+      "verified": true
+    }
+  ],
+  "operationalCompetency": {
+    "competencyObjective": "Crear y verificar en la EFB de MSFS 2024 una ruta simple, confirmando origen, destino, continuidad y un punto intermedio antes del arranque.",
+    "competencyEvidence": [
+      "Reconoce el área de planificación de la EFB usando la referencia real incluida.",
+      "Confirma origen y destino antes de añadir un punto intermedio.",
+      "Detecta un tramo incoherente y lo corrige antes de considerar la ruta lista."
+    ],
+    "transferExercise": {
+      "scenario": "Crea una segunda ruta corta entre otros dos aeropuertos visibles en el mapa de MSFS 2024.",
+      "task": "Construye la ruta con un punto intermedio distinto y demuestra la revisión completa sin copiar la primera secuencia.",
+      "expectedCompetency": "Transfiere el método de origen, continuidad y destino a una ruta nueva dentro de la EFB.",
+      "successCriteria": "La nueva ruta puede explicarse tramo por tramo y cualquier discontinuidad se corrige antes de salir.",
+      "hints": [
+        "Reconoce primero, interpreta después y solo entonces actúa."
+      ]
+    },
+    "futureLearningTargets": [
+      "g1000-gps"
+    ]
+  }
 }

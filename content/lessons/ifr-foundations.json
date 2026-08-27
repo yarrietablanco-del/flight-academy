@@ -5,17 +5,31 @@
     "subtitle": "Distingue una práctica en MSFS de una operación IFR real.",
     "objective": "Diferenciar práctica de simulación y operación IFR real.",
     "estimatedTime": "20 min",
-    "prerequisites": ["g1000-autopilot"],
+    "prerequisites": [
+      "g1000-autopilot"
+    ],
     "level": 4,
     "module": "instrument-and-procedures",
     "visualStandardVersion": 3
   },
   "whyItMatters": "IFR, reglas de vuelo por instrumentos, es un sistema real de entrenamiento, habilitación, aeronave, información meteorológica, autorizaciones y procedimientos publicados. MSFS permite practicar una parte segura y valiosa: interpretar instrumentos, planificar una respuesta y supervisar el avión. No convierte una ruta cargada, un ajuste meteorológico ni el ATC del simulador en una operación IFR autorizada.",
   "concepts": [
-    {"term": "IFR", "meaning": "Instrument Flight Rules: reglas para operar dentro de un sistema aeronáutico real. No es un botón ni una vista sin referencias exteriores; implica requisitos y servicios que dependen del país, la aeronave, el piloto y el vuelo."},
-    {"term": "IMC", "meaning": "Instrument Meteorological Conditions: condiciones meteorológicas en las que las referencias visuales pueden no bastar para controlar y navegar. IMC describe condiciones; IFR describe reglas y procedimientos. No son sinónimos."},
-    {"term": "Briefing meteorológico", "meaning": "Revisión organizada de observaciones, pronósticos, avisos y su vigencia para una decisión de vuelo real. Una configuración de tiempo en MSFS sirve para crear un escenario, pero no sustituye información operacional."},
-    {"term": "Conciencia situacional", "meaning": "Saber dónde está el avión, qué hace, qué esperas después y qué puede cambiar. En práctica IFR se construye comparando instrumentos, trayectoria simulada y escenario, no suponiendo que la automatización está bien."}
+    {
+      "term": "IFR",
+      "meaning": "Instrument Flight Rules: reglas para operar dentro de un sistema aeronáutico real. No es un botón ni una vista sin referencias exteriores; implica requisitos y servicios que dependen del país, la aeronave, el piloto y el vuelo."
+    },
+    {
+      "term": "IMC",
+      "meaning": "Instrument Meteorological Conditions: condiciones meteorológicas en las que las referencias visuales pueden no bastar para controlar y navegar. IMC describe condiciones; IFR describe reglas y procedimientos. No son sinónimos."
+    },
+    {
+      "term": "Briefing meteorológico",
+      "meaning": "Revisión organizada de observaciones, pronósticos, avisos y su vigencia para una decisión de vuelo real. Una configuración de tiempo en MSFS sirve para crear un escenario, pero no sustituye información operacional."
+    },
+    {
+      "term": "Conciencia situacional",
+      "meaning": "Saber dónde está el avión, qué hace, qué esperas después y qué puede cambiar. En práctica IFR se construye comparando instrumentos, trayectoria simulada y escenario, no suponiendo que la automatización está bien."
+    }
   ],
   "steps": [
     {
@@ -30,16 +44,40 @@
         "asset": "content/assets/ifr-foundations-contexts.svg",
         "alt": "Comparación conceptual entre un escenario de práctica en simulador y una operación IFR real con sus responsabilidades separadas.",
         "purpose": "Delimitar visualmente qué se puede ensayar en MSFS y qué requiere fuentes, requisitos y servicios de una operación real.",
-        "teaches": "Separar el alcance del simulador", "primaryTeachingObjective": "Distinguir los contextos", "perspective": "Comparación conceptual frontal", "movingElement": "Flujo de decisión", "axisOfMovement": "No aplica: flujo informativo", "directionOfMovement": "De contexto a decisión", "comparisonJustification": "La comparación es necesaria porque el objetivo es distinguir responsabilidades que parecen similares pero no son intercambiables.",
-        "userQuestionAnswered": ["queErrorEvitar"], "tiedToStep": 1,
+        "teaches": "Separar el alcance del simulador",
+        "primaryTeachingObjective": "Distinguir los contextos",
+        "perspective": "Comparación conceptual frontal",
+        "movingElement": "Flujo de decisión",
+        "axisOfMovement": "No aplica: flujo informativo",
+        "directionOfMovement": "De contexto a decisión",
+        "comparisonJustification": "La comparación es necesaria porque el objetivo es distinguir responsabilidades que parecen similares pero no son intercambiables.",
+        "userQuestionAnswered": [
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 1,
         "expectedObservation": "El escenario de simulación conduce a práctica y observación; la operación real añade información vigente, requisitos y autorización aplicables.",
-        "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
         "recognitionGoal": "Reconoce que una acción practicable en MSFS no acredita ni autoriza una operación IFR real.",
-        "recognizedElements": ["escenario MSFS", "práctica", "operación IFR real", "fuentes vigentes"],
+        "recognizedElements": [
+          "escenario MSFS",
+          "práctica",
+          "operación IFR real",
+          "fuentes vigentes"
+        ],
         "actionAfterViewing": "Etiqueta cada tarea de la sesión como práctica de simulación antes de continuar.",
-        "coverage": ["cockpit"]
+        "coverage": [
+          "cockpit"
+        ]
       },
-      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "El paso establece un límite conceptual y no enseña a reconocer un mando o pantalla concreta."}]
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ]
     },
     {
       "number": 2,
@@ -53,14 +91,81 @@
         "asset": "content/assets/ifr-foundations-weather-loop.svg",
         "alt": "Flujo conceptual que muestra cómo una condición configurada en MSFS se observa, se practica y se limita a una decisión de simulación.",
         "purpose": "Relacionar una condición meteorológica del simulador con la observación y decisión que sí puede entrenarse.",
-        "teaches": "Usar el tiempo como escenario", "primaryTeachingObjective": "Limitar la práctica meteorológica", "perspective": "Flujo conceptual horizontal", "movingElement": "Flujo de información", "axisOfMovement": "No aplica: flujo informativo", "directionOfMovement": "De condición a práctica", "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"], "tiedToStep": 2,
+        "teaches": "Usar el tiempo como escenario",
+        "primaryTeachingObjective": "Limitar la práctica meteorológica",
+        "perspective": "Flujo conceptual horizontal",
+        "movingElement": "Flujo de información",
+        "axisOfMovement": "No aplica: flujo informativo",
+        "directionOfMovement": "De condición a práctica",
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 2,
         "expectedObservation": "La condición elegida afecta las referencias disponibles en la simulación, pero el flujo se detiene antes de una decisión operacional real.",
-        "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
         "recognitionGoal": "Reconoce que observar instrumentos bajo un escenario meteorológico no equivale a obtener información operacional vigente.",
-        "recognizedElements": ["condición MSFS", "referencias", "instrumentos", "práctica"],
+        "recognizedElements": [
+          "condición MSFS",
+          "referencias",
+          "instrumentos",
+          "práctica"
+        ],
         "actionAfterViewing": "Describe el escenario y limita la meta a la respuesta que puedas observar en MSFS."
       },
-      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "El paso no identifica instrumentos concretos y no existe una referencia fiel de la aeronave elegida."}, {"type": "exteriorView", "status": "notRequired", "reason": "El objetivo es la relación entre condición y práctica, no reconocer una vista exterior específica."}]
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "exteriorView",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "public/references/g1000-pfd-reference.png",
+          "alt": "Referencia real de G1000 PFD para localizar actitud, rumbo o guía y altitud durante un barrido IFR de simulación.",
+          "purpose": "Dar una pantalla real para practicar el orden de observación sin convertir el ejercicio en una aproximación publicada.",
+          "teaches": "Localizar las zonas primarias que participan en un barrido de actitud, guía y altitud.",
+          "primaryTeachingObjective": "Reconocer zonas del barrido",
+          "perspective": "Captura real frontal de PFD G1000",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 2,
+          "expectedObservation": "La actitud ocupa el centro y las referencias de navegación y altitud se leen en zonas separadas, por lo que ninguna indicación se interpreta aislada.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "real",
+          "recognitionGoal": "Reconoce las zonas de actitud, navegación y altitud antes de practicar un barrido con referencias exteriores reducidas.",
+          "recognizedElements": [
+            "actitud",
+            "navegación",
+            "altitud"
+          ],
+          "actionAfterViewing": "Realiza el barrido en tu C172 G1000 y vuelve a vuelo estable ante cualquier discrepancia que no puedas explicar.",
+          "coverage": [
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1920,
+            "sourceHeight": 1080,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Zonas de actitud, navegación y altitud legibles en PFD."
+          }
+        }
+      ]
     },
     {
       "number": 3,
@@ -74,14 +179,42 @@
         "asset": "content/assets/ifr-foundations-weather-loop.svg",
         "alt": "Flujo conceptual de observación que enlaza referencias disponibles, instrumentos, expectativa y recuperación manual en una práctica IFR.",
         "purpose": "Mostrar que el barrido compara información y termina en una recuperación manual si aparece una discrepancia.",
-        "teaches": "Supervisar una respuesta simulada", "primaryTeachingObjective": "Detectar una discrepancia", "perspective": "Flujo conceptual horizontal", "movingElement": "Flujo de observación", "axisOfMovement": "No aplica: flujo informativo", "directionOfMovement": "Hacia verificación o recuperación", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 3,
+        "teaches": "Supervisar una respuesta simulada",
+        "primaryTeachingObjective": "Detectar una discrepancia",
+        "perspective": "Flujo conceptual horizontal",
+        "movingElement": "Flujo de observación",
+        "axisOfMovement": "No aplica: flujo informativo",
+        "directionOfMovement": "Hacia verificación o recuperación",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 3,
         "expectedObservation": "Los datos observados se comparan con una expectativa; una diferencia conduce a recuperar control antes de añadir tareas.",
-        "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
         "recognitionGoal": "Reconoce que una discrepancia requiere detener la secuencia y recuperar control, no seguir con más automatización.",
-        "recognizedElements": ["referencias", "instrumentos", "expectativa", "recuperación manual"],
+        "recognizedElements": [
+          "referencias",
+          "instrumentos",
+          "expectativa",
+          "recuperación manual"
+        ],
         "actionAfterViewing": "Haz un barrido completo y recupera manualmente ante el primer resultado no explicable."
       },
-      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "No se dispone de una referencia fiel de cabina para la aeronave o variante que elegirá el estudiante."}, {"type": "hardware", "status": "notRequired", "reason": "No se confirmó un perfil de VelocityOne ni una asignación de desconexión para esta sesión."}]
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ]
     },
     {
       "number": 4,
@@ -95,15 +228,37 @@
         "asset": "content/assets/ifr-foundations-contexts.svg",
         "alt": "Comparación conceptual que termina en una nota de práctica separada de los elementos que deben confirmarse para una operación IFR real.",
         "purpose": "Guiar el cierre de la sesión sin convertir evidencia de simulación en una conclusión operacional.",
-        "teaches": "Documentar límites de la práctica", "primaryTeachingObjective": "Separar las conclusiones", "perspective": "Comparación conceptual frontal", "movingElement": "Flujo de decisión", "axisOfMovement": "No aplica: flujo informativo", "directionOfMovement": "Hacia conclusión separada", "comparisonJustification": "La comparación permite contrastar una conclusión de práctica con los elementos que siguen pendientes en una operación real.",
-        "userQuestionAnswered": ["queErrorEvitar"], "tiedToStep": 4,
+        "teaches": "Documentar límites de la práctica",
+        "primaryTeachingObjective": "Separar las conclusiones",
+        "perspective": "Comparación conceptual frontal",
+        "movingElement": "Flujo de decisión",
+        "axisOfMovement": "No aplica: flujo informativo",
+        "directionOfMovement": "Hacia conclusión separada",
+        "comparisonJustification": "La comparación permite contrastar una conclusión de práctica con los elementos que siguen pendientes en una operación real.",
+        "userQuestionAnswered": [
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 4,
         "expectedObservation": "La nota de práctica solo registra una respuesta observada; los requisitos reales permanecen en una columna distinta para verificar externamente.",
-        "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
         "recognitionGoal": "Reconoce que una conclusión sobre MSFS no sustituye una evaluación operacional real.",
-        "recognizedElements": ["resultado observado", "nota de práctica", "verificación externa", "operación real"],
+        "recognizedElements": [
+          "resultado observado",
+          "nota de práctica",
+          "verificación externa",
+          "operación real"
+        ],
         "actionAfterViewing": "Redacta la conclusión de simulación y enumera por separado lo que no verificaste."
       },
-      "requiredVisualCoverage": [{"type": "chart", "status": "notRequired", "reason": "El cierre no interpreta cartas ni datos publicados; solo delimita qué requeriría verificación externa."}]
+      "requiredVisualCoverage": [
+        {
+          "type": "chart",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ]
     }
   ],
   "practice": {
@@ -112,14 +267,31 @@
     "task": "Clasifica el ejercicio como práctica, describe la condición seleccionada y realiza tres barridos de actitud, rumbo o guía, altitud y vista exterior disponible. Tras cada barrido, declara la tendencia esperada. Si detectas una discrepancia, desconecta automatización si la usabas y estabiliza manualmente.",
     "successSignal": "Mantienes una trayectoria estable o recuperas control manual al detectar una diferencia. Al cerrar, distingues la señal observada en MSFS de los datos, requisitos, autorización y evaluación que no comprobaste para un vuelo IFR real.",
     "conceptDemonstrated": "Límite de la práctica IFR",
-    "possibleConfounders": ["Confundir meteorología configurada con un briefing operacional vigente.", "Suponer que una ruta cargada equivale a una autorización IFR real.", "Tomar una anunciación automática como prueba suficiente sin observar la trayectoria.", "Intentar interpretar cartas o mínimos sin una fuente publicada y vigente."],
+    "possibleConfounders": [
+      "Confundir meteorología configurada con un briefing operacional vigente.",
+      "Suponer que una ruta cargada equivale a una autorización IFR real.",
+      "Tomar una anunciación automática como prueba suficiente sin observar la trayectoria.",
+      "Intentar interpretar cartas o mínimos sin una fuente publicada y vigente."
+    ],
     "whyThisExerciseDemonstratesTheConcept": "El escenario permite experimentar una reducción de referencias y practicar un barrido con una respuesta recuperable. La tarea exige describir lo observado y separar explícitamente lo no verificado. Así demuestra supervisión y límites del simulador sin afirmar que reproduce los requisitos de una operación IFR real."
   },
   "commonMistakes": [
-    {"mistake": "Llamar IFR a cualquier vuelo con nubes o baja visibilidad en MSFS.", "recovery": "Separa condición visual de reglas: describe el escenario que configuraste y recuerda que IFR real incluye requisitos, procedimientos y servicios aplicables."},
-    {"mistake": "Usar el tiempo en directo como si fuera un briefing completo.", "recovery": "Úsalo solo para ambientar la práctica. Para una operación real, consulta fuentes meteorológicas vigentes y la orientación aplicable."},
-    {"mistake": "Seguir automatización sin comparar instrumentos y trayectoria.", "recovery": "Vuelve al ciclo de actitud, guía, altitud y vista exterior. Ante una discrepancia, desconecta y estabiliza antes de continuar."},
-    {"mistake": "Inferir mínimos o procedimientos desde una ruta de simulador.", "recovery": "No inventes valores. Conserva esas preguntas para cartas, publicaciones y formación posterior con referencias vigentes."}
+    {
+      "mistake": "Llamar IFR a cualquier vuelo con nubes o baja visibilidad en MSFS.",
+      "recovery": "Separa condición visual de reglas: describe el escenario que configuraste y recuerda que IFR real incluye requisitos, procedimientos y servicios aplicables."
+    },
+    {
+      "mistake": "Usar el tiempo en directo como si fuera un briefing completo.",
+      "recovery": "Úsalo solo para ambientar la práctica. Para una operación real, consulta fuentes meteorológicas vigentes y la orientación aplicable."
+    },
+    {
+      "mistake": "Seguir automatización sin comparar instrumentos y trayectoria.",
+      "recovery": "Vuelve al ciclo de actitud, guía, altitud y vista exterior. Ante una discrepancia, desconecta y estabiliza antes de continuar."
+    },
+    {
+      "mistake": "Inferir mínimos o procedimientos desde una ruta de simulador.",
+      "recovery": "No inventes valores. Conserva esas preguntas para cartas, publicaciones y formación posterior con referencias vigentes."
+    }
   ],
   "checklist": [
     "La sesión está identificada como práctica de simulación, no como operación IFR real.",
@@ -130,10 +302,46 @@
     "La nota final separa lo observado en MSFS de lo que requiere fuentes y verificación real."
   ],
   "quiz": [
-    {"question": "¿Qué describe IFR?", "options": ["Reglas y procedimientos de una operación real.", "Cualquier vuelo con nubes en el simulador.", "Un modo del piloto automático."], "answer": "Reglas y procedimientos de una operación real.", "explanation": "IFR no es una condición visual ni una función del simulador; es un marco operacional real."},
-    {"question": "¿Para qué sirve el tiempo configurado en esta práctica?", "options": ["Para crear un escenario y observar una respuesta.", "Para reemplazar un briefing meteorológico.", "Para confirmar mínimos de aproximación."], "answer": "Para crear un escenario y observar una respuesta.", "explanation": "El ajuste de MSFS ayuda a practicar, pero no sustituye información meteorológica operacional vigente."},
-    {"question": "¿Qué haces si la trayectoria no coincide con tu expectativa?", "options": ["Recupero control manual y estabilizo.", "Activo más modos automáticos.", "Asumo que la anunciación es suficiente."], "answer": "Recupero control manual y estabilizo.", "explanation": "La discrepancia se resuelve primero recuperando una situación entendible y controlada."},
-    {"question": "¿Qué debe contener la conclusión de la práctica?", "options": ["Lo observado y lo que no se verificó para una operación real.", "Una autorización IFR simulada.", "Mínimos inferidos sin carta publicada."], "answer": "Lo observado y lo que no se verificó para una operación real.", "explanation": "Separar evidencia de simulación de verificación operacional es el objetivo central de la lección."}
+    {
+      "question": "¿Qué describe IFR?",
+      "options": [
+        "Reglas y procedimientos de una operación real.",
+        "Cualquier vuelo con nubes en el simulador.",
+        "Un modo del piloto automático."
+      ],
+      "answer": "Reglas y procedimientos de una operación real.",
+      "explanation": "IFR no es una condición visual ni una función del simulador; es un marco operacional real."
+    },
+    {
+      "question": "¿Para qué sirve el tiempo configurado en esta práctica?",
+      "options": [
+        "Para crear un escenario y observar una respuesta.",
+        "Para reemplazar un briefing meteorológico.",
+        "Para confirmar mínimos de aproximación."
+      ],
+      "answer": "Para crear un escenario y observar una respuesta.",
+      "explanation": "El ajuste de MSFS ayuda a practicar, pero no sustituye información meteorológica operacional vigente."
+    },
+    {
+      "question": "¿Qué haces si la trayectoria no coincide con tu expectativa?",
+      "options": [
+        "Recupero control manual y estabilizo.",
+        "Activo más modos automáticos.",
+        "Asumo que la anunciación es suficiente."
+      ],
+      "answer": "Recupero control manual y estabilizo.",
+      "explanation": "La discrepancia se resuelve primero recuperando una situación entendible y controlada."
+    },
+    {
+      "question": "¿Qué debe contener la conclusión de la práctica?",
+      "options": [
+        "Lo observado y lo que no se verificó para una operación real.",
+        "Una autorización IFR simulada.",
+        "Mínimos inferidos sin carta publicada."
+      ],
+      "answer": "Lo observado y lo que no se verificó para una operación real.",
+      "explanation": "Separar evidencia de simulación de verificación operacional es el objetivo central de la lección."
+    }
   ],
   "completionCriteria": [
     "Clasificas sin ayuda qué partes de la sesión son práctica de MSFS y cuáles requerirían verificación para una operación IFR real.",
@@ -141,8 +349,45 @@
     "Documentas un escenario meteorológico de simulación sin convertirlo en briefing, autorización o decisión operacional."
   ],
   "sources": [
-    {"title": "FAA, Instrument Flying Handbook (FAA-H-8083-15B)", "url": "https://www.faa.gov/sites/faa.gov/files/pilots/FAA-H-8083-15B.pdf", "verified": true},
-    {"title": "FAA, Aviation Weather Handbook (FAA-H-8083-28B)", "url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/faa-h-8083-28b-aviation-weather-handbook", "verified": true},
-    {"title": "FAA, Instrument Procedures Handbook", "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/instrument_procedures_handbook", "verified": true}
-  ]
+    {
+      "title": "FAA, Instrument Flying Handbook (FAA-H-8083-15B)",
+      "url": "https://www.faa.gov/sites/faa.gov/files/pilots/FAA-H-8083-15B.pdf",
+      "verified": true
+    },
+    {
+      "title": "FAA, Aviation Weather Handbook (FAA-H-8083-28B)",
+      "url": "https://www.faa.gov/regulationspolicies/handbooksmanuals/aviation/faa-h-8083-28b-aviation-weather-handbook",
+      "verified": true
+    },
+    {
+      "title": "FAA, Instrument Procedures Handbook",
+      "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/instrument_procedures_handbook",
+      "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator 2024 — Garmin G1000 NXi V2 instruments and Cessna 172 attachments",
+      "url": "https://docs.flightsimulator.com/msfs2024/html/5_Content_Configuration/Modular_SimObjects/SimAttachments/Included_Attachments/Instrument_Attachments.htm",
+      "verified": true
+    }
+  ],
+  "operationalCompetency": {
+    "competencyObjective": "Realizar un barrido IFR básico de simulación y distinguir qué evidencia de MSFS puede practicarse de lo que exige una operación IFR real.",
+    "competencyEvidence": [
+      "Distingue IFR de IMC y separa escenario de simulación de autorización real.",
+      "Usa una referencia G1000 para barrer actitud, guía y altitud sin fijarse en una sola indicación.",
+      "Recupera una condición estable ante una discrepancia no explicable."
+    ],
+    "transferExercise": {
+      "scenario": "Configura un segundo escenario de visibilidad reducida distinto al usado en la práctica guiada.",
+      "task": "Realiza tres barridos, verbaliza la tendencia esperada y documenta qué aprendiste en simulación y qué no verificaste para vuelo real.",
+      "expectedCompetency": "Transfiere el hábito de barrido y límites de la simulación a otra condición meteorológica.",
+      "successCriteria": "Mantiene o recupera control estable y no presenta el escenario como briefing, autorización o entrenamiento real.",
+      "hints": [
+        "Reconoce primero, interpreta después y solo entonces actúa."
+      ]
+    },
+    "futureLearningTargets": [
+      "sid-star"
+    ]
+  }
 }

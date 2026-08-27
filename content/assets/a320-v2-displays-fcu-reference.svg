@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">A320neo V2 — PFD, ND, ECAM y FCU</title>
+<desc id="desc">Recreación educativa fiel de la relación funcional entre FCU, PFD con FMA, ND y ECAM en el Microsoft/iniBuilds A320neo V2. Enseña qué comprobar después de una selección sin fijar valores de vuelo.</desc>
+<rect width="1600" height="900" fill="#101519"/>
+<text x="65" y="65" fill="#fff" font-family="Arial" font-size="34" font-weight="700">A320neo V2 · seleccionar no es confirmar</text>
+<rect x="300" y="105" width="1000" height="145" rx="18" fill="#2b3338" stroke="#89979d" stroke-width="3"/>
+<text x="800" y="145" text-anchor="middle" fill="#fff" font-family="Arial" font-size="24" font-weight="700">FCU · intención seleccionada</text>
+<g font-family="Arial" text-anchor="middle" font-size="16">
+<rect x="350" y="175" width="190" height="48" rx="8" fill="#161c20" stroke="#c4cdd1"/><text x="445" y="205" fill="#fff">SPEED</text>
+<rect x="570" y="175" width="190" height="48" rx="8" fill="#161c20" stroke="#c4cdd1"/><text x="665" y="205" fill="#fff">HDG / TRK</text>
+<rect x="790" y="175" width="190" height="48" rx="8" fill="#161c20" stroke="#c4cdd1"/><text x="885" y="205" fill="#fff">ALT</text>
+<rect x="1010" y="175" width="240" height="48" rx="8" fill="#161c20" stroke="#c4cdd1"/><text x="1130" y="205" fill="#fff">V/S · FPA</text>
+</g>
+<path d="M800 250v70" stroke="#f2c24e" stroke-width="6" marker-end="url(#arr)"/>
+<g font-family="Arial">
+<rect x="90" y="350" width="445" height="330" rx="16" fill="#203341" stroke="#5b9dc1" stroke-width="3"/>
+<text x="115" y="390" fill="#fff" font-size="23" font-weight="700">PFD</text>
+<rect x="125" y="420" width="375" height="65" fill="#0c1419"/>
+<text x="150" y="448" fill="#7cff90" font-family="monospace" font-size="17">FMA / MODOS ACTIVOS</text>
+<text x="150" y="472" fill="#b5f3bf" font-family="Arial" font-size="15">¿qué está haciendo la automatización?</text>
+<rect x="160" y="515" width="300" height="125" rx="62" fill="#244f6e"/>
+<path d="M160 578h300" stroke="#fff" stroke-width="4"/>
+<text x="115" y="660" fill="#dfeaf0" font-size="16">estado de vuelo + modos</text>
+<rect x="580" y="350" width="445" height="330" rx="16" fill="#203341" stroke="#5b9dc1" stroke-width="3"/>
+<text x="605" y="390" fill="#fff" font-size="23" font-weight="700">ND</text>
+<circle cx="802" cy="530" r="115" fill="#172730" stroke="#788a93" stroke-width="2"/>
+<path d="M690 575 Q790 430 920 500" fill="none" stroke="#dc54ff" stroke-width="7"/>
+<circle cx="800" cy="485" r="8" fill="#fff"/><circle cx="880" cy="495" r="8" fill="#fff"/>
+<text x="605" y="660" fill="#dfeaf0" font-size="16">trayectoria · ruta · orientación</text>
+<rect x="1070" y="350" width="440" height="330" rx="16" fill="#32362a" stroke="#9eaa62" stroke-width="3"/>
+<text x="1095" y="390" fill="#fff" font-size="23" font-weight="700">ECAM</text>
+<rect x="1110" y="425" width="360" height="205" rx="8" fill="#101510"/>
+<text x="1140" y="465" fill="#76ff8d" font-family="monospace" font-size="18">SYSTEM STATUS</text>
+<text x="1140" y="505" fill="#e5ead2" font-family="Arial" font-size="16">motores / sistemas</text>
+<text x="1140" y="540" fill="#e5ead2" font-family="Arial" font-size="16">mensajes a comprender</text>
+<text x="1140" y="585" fill="#ffd85a" font-family="Arial" font-size="16">si no entiendes un aviso → detente</text>
+<text x="1095" y="660" fill="#e8edcf" font-size="16">estado de sistemas</text>
+</g>
+<path d="M450 710h700" stroke="#f2c24e" stroke-width="5" marker-end="url(#arr)"/>
+<text x="800" y="755" text-anchor="middle" fill="#ffd866" font-family="Arial" font-size="20" font-weight="700">INTENCIÓN → FMA/MODO → RESPUESTA → COMPROBACIÓN</text>
+<text x="800" y="795" text-anchor="middle" fill="#ccd7dc" font-family="Arial" font-size="17">FCU pide. PFD/FMA confirma el modo. ND ayuda a ver la trayectoria. ECAM confirma que el estado de sistemas permite continuar.</text>
+<text x="800" y="835" text-anchor="middle" fill="#89979d" font-family="Arial" font-size="14">Referencia educativa basada en el manual Microsoft/iniBuilds A320neo V2; no contiene valores ni modos inventados para un vuelo concreto.</text>
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#f2c24e"/></marker></defs>
+</svg>

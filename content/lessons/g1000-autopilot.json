@@ -5,18 +5,35 @@
     "subtitle": "Configura un modo, confirma su resultado y conserva el control.",
     "objective": "Configurar, activar y supervisar automatización.",
     "estimatedTime": "25 min",
-    "prerequisites": ["g1000-gps"],
+    "prerequisites": [
+      "g1000-gps"
+    ],
     "level": 3,
     "module": "vfr",
     "visualStandardVersion": 3
   },
   "whyItMatters": "El piloto automático reduce trabajo, pero no decide tu intención ni comprueba si el avión hace lo esperado. HDG sigue un rumbo seleccionado, ALT mantiene una altitud y NAV sigue una fuente lateral. En MSFS, configurar un objetivo, confirmar el modo anunciado y vigilar la trayectoria evita delegar el vuelo a una automatización mal configurada.",
   "concepts": [
-    {"term": "Piloto automático", "meaning": "Sistema que mueve los controles de vuelo para seguir modos seleccionados. Tú eliges los objetivos, lees el estado y puedes desconectarlo; no sustituye vigilar el avión."},
-    {"term": "HDG", "meaning": "Heading Select: modo lateral que intenta mantener el rumbo seleccionado. No sigue por sí solo el plan GPS, aunque la ruta esté cargada."},
-    {"term": "ALT", "meaning": "Altitude Hold: modo vertical que intenta mantener la altitud en la que se activa. Una altitud seleccionada puede ser un objetivo de captura, pero ALT por sí solo no ordena subir ni bajar hacia ella."},
-    {"term": "NAV", "meaning": "Modo lateral que sigue la fuente de navegación seleccionada cuando el sistema la acepta. Antes de usarlo, confirma la fuente GPS y el tramo activo practicados en la lección anterior."},
-    {"term": "Anunciación de modo", "meaning": "Etiqueta visible que indica qué modo está armado o activo. La apariencia cambia entre variantes; úsala junto con rumbo, altitud y trayectoria para confirmar el resultado."}
+    {
+      "term": "Piloto automático",
+      "meaning": "Sistema que mueve los controles de vuelo para seguir modos seleccionados. Tú eliges los objetivos, lees el estado y puedes desconectarlo; no sustituye vigilar el avión."
+    },
+    {
+      "term": "HDG",
+      "meaning": "Heading Select: modo lateral que intenta mantener el rumbo seleccionado. No sigue por sí solo el plan GPS, aunque la ruta esté cargada."
+    },
+    {
+      "term": "ALT",
+      "meaning": "Altitude Hold: modo vertical que intenta mantener la altitud en la que se activa. Una altitud seleccionada puede ser un objetivo de captura, pero ALT por sí solo no ordena subir ni bajar hacia ella."
+    },
+    {
+      "term": "NAV",
+      "meaning": "Modo lateral que sigue la fuente de navegación seleccionada cuando el sistema la acepta. Antes de usarlo, confirma la fuente GPS y el tramo activo practicados en la lección anterior."
+    },
+    {
+      "term": "Anunciación de modo",
+      "meaning": "Etiqueta visible que indica qué modo está armado o activo. La apariencia cambia entre variantes; úsala junto con rumbo, altitud y trayectoria para confirmar el resultado."
+    }
   ],
   "steps": [
     {
@@ -26,8 +43,90 @@
       "explanation": "La primera prueba debe separar el funcionamiento del modo de otras tareas. Un avión estable te deja detectar si la automatización cambia rumbo o altitud, y te permite recuperar sin depender de ella.",
       "expectedResult": "Puedes mantener una trayectoria predecible y reconoces la ruta GPS activa de la sesión. Si necesitas correcciones continuas, la práctica aún no está lista para introducir un modo automático.",
       "simulatorAction": "Esto es una práctica de simulación. No enseña un procedimiento de despegue, una altitud real ni una autorización; elige condiciones tranquilas dentro de MSFS y conserva una forma inmediata de recuperar control manual.",
-      "visual": {"type": "diagram", "asset": "content/assets/g1000-autopilot-hdg.svg", "alt": "Diagrama conceptual superior de un avión que converge hacia un rumbo seleccionado y una trayectoria estabilizada.", "purpose": "Mostrar que el resultado de HDG debe observarse como una tendencia de trayectoria, no suponerse al pulsar un control.", "teaches": "Preparar una supervisión lateral", "primaryTeachingObjective": "Estabilizar antes de automatizar", "perspective": "Mapa conceptual superior", "movingElement": "Trayectoria blanca del avión", "axisOfMovement": "Plano horizontal", "directionOfMovement": "Hacia el rumbo seleccionado", "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"], "tiedToStep": 1, "expectedObservation": "La trayectoria solo puede compararse con un rumbo objetivo cuando el avión parte de una situación estable.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que el vuelo estable crea margen para detectar una respuesta automática inesperada.", "recognizedElements": ["trayectoria inicial", "rumbo seleccionado", "trayectoria estabilizada"], "actionAfterViewing": "Estabiliza el avión manualmente antes de configurar cualquier modo automático."},
-      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "El paso prepara una condición de vuelo y no requiere reconocer una cabina o un control concreto."}]
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/g1000-autopilot-hdg.svg",
+        "alt": "Diagrama conceptual superior de un avión que converge hacia un rumbo seleccionado y una trayectoria estabilizada.",
+        "purpose": "Mostrar que el resultado de HDG debe observarse como una tendencia de trayectoria, no suponerse al pulsar un control.",
+        "teaches": "Preparar una supervisión lateral",
+        "primaryTeachingObjective": "Estabilizar antes de automatizar",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Trayectoria blanca del avión",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Hacia el rumbo seleccionado",
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "La trayectoria solo puede compararse con un rumbo objetivo cuando el avión parte de una situación estable.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que el vuelo estable crea margen para detectar una respuesta automática inesperada.",
+        "recognizedElements": [
+          "trayectoria inicial",
+          "rumbo seleccionado",
+          "trayectoria estabilizada"
+        ],
+        "actionAfterViewing": "Estabiliza el avión manualmente antes de configurar cualquier modo automático."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/g1000-nxi-c172-controls-reference.svg",
+          "alt": "Supervisar piloto automático G1000 NXi. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para reconocer ap, hdg, nav y alt y comprobar el modo antes de confiar en la respuesta sin inventar valores del vuelo.",
+          "teaches": "Reconocer AP, HDG, NAV y ALT y comprobar el modo antes de confiar en la respuesta",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 1,
+          "expectedObservation": "Puedes localizar AP, HDG, NAV, ALT, PFD y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce AP, HDG, NAV, ALT, PFD en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "AP",
+            "HDG",
+            "NAV",
+            "ALT",
+            "PFD"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "cockpit",
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de AP, HDG, NAV, ALT, PFD sin números operacionales inventados."
+          }
+        }
+      ]
     },
     {
       "number": 2,
@@ -36,8 +135,90 @@
       "explanation": "HDG es una guía lateral hacia un rumbo seleccionado. Configurar el objetivo antes de activar evita que el sistema conserve un rumbo no intencionado; comprobar la anunciación y la tendencia confirma que el modo que pediste es el que actúa.",
       "expectedResult": "La anunciación identifica HDG o el equivalente de tu instalación y el rumbo comienza a cambiar hacia el objetivo. Si se mantiene otro modo, el rumbo gira al lado inesperado o no puedes identificar el estado, interrumpe el ejercicio.",
       "simulatorAction": "Los controles, etiquetas y comportamiento exactos dependen de la aeronave y variante G1000 de MSFS. No se afirma una posición de botón ni una asignación del VelocityOne; usa solo lo que muestra tu cabina virtual.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/g1000-autopilot-hdg.svg", "alt": "Diagrama conceptual que compara una desviación inicial con la convergencia hacia un rumbo seleccionado bajo HDG.", "purpose": "Relacionar el rumbo seleccionado con el cambio lateral que debes vigilar después de activar HDG.", "teaches": "Confirmar respuesta HDG", "primaryTeachingObjective": "Verificar seguimiento de rumbo", "perspective": "Mapa conceptual superior", "movingElement": "Trayectoria blanca del avión", "axisOfMovement": "Plano horizontal", "directionOfMovement": "Hacia la línea de rumbo", "userQuestionAnswered": ["dondeMirar", "queCambioEsperar"], "tiedToStep": 2, "expectedObservation": "La trayectoria converge hacia la línea de rumbo seleccionada; no representa una guía GPS.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Distingue seguir un rumbo seleccionado de seguir una ruta GPS.", "recognizedElements": ["rumbo seleccionado", "desvío inicial", "convergencia"], "actionAfterViewing": "Lee el modo y compara el rumbo observado con el rumbo que seleccionaste."},
-      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "No hay referencia fiel de la anunciación ni del selector de rumbo de la variante instalada."}, {"type": "hardware", "status": "notRequired", "reason": "No se confirmó un perfil ni una asignación de VelocityOne para este modo."}]
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/g1000-autopilot-hdg.svg",
+        "alt": "Diagrama conceptual que compara una desviación inicial con la convergencia hacia un rumbo seleccionado bajo HDG.",
+        "purpose": "Relacionar el rumbo seleccionado con el cambio lateral que debes vigilar después de activar HDG.",
+        "teaches": "Confirmar respuesta HDG",
+        "primaryTeachingObjective": "Verificar seguimiento de rumbo",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Trayectoria blanca del avión",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Hacia la línea de rumbo",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "La trayectoria converge hacia la línea de rumbo seleccionada; no representa una guía GPS.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Distingue seguir un rumbo seleccionado de seguir una ruta GPS.",
+        "recognizedElements": [
+          "rumbo seleccionado",
+          "desvío inicial",
+          "convergencia"
+        ],
+        "actionAfterViewing": "Lee el modo y compara el rumbo observado con el rumbo que seleccionaste."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/g1000-nxi-c172-controls-reference.svg",
+          "alt": "Supervisar piloto automático G1000 NXi. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para reconocer ap, hdg, nav y alt y comprobar el modo antes de confiar en la respuesta sin inventar valores del vuelo.",
+          "teaches": "Reconocer AP, HDG, NAV y ALT y comprobar el modo antes de confiar en la respuesta",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 2,
+          "expectedObservation": "Puedes localizar AP, HDG, NAV, ALT, PFD y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce AP, HDG, NAV, ALT, PFD en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "AP",
+            "HDG",
+            "NAV",
+            "ALT",
+            "PFD"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "cockpit",
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de AP, HDG, NAV, ALT, PFD sin números operacionales inventados."
+          }
+        }
+      ]
     },
     {
       "number": 3,
@@ -46,8 +227,85 @@
       "explanation": "ALT mantiene la altitud que tenía el avión al activarlo. Cambiar una selección de altitud no produce por sí mismo un ascenso o descenso: para eso hace falta otro modo vertical apropiado, que no se practica aquí.",
       "expectedResult": "El avión conserva aproximadamente la altitud de activación y puedes identificar el modo ALT o equivalente. Una altitud seleccionada distinta puede permanecer visible sin que el avión cambie de nivel; eso no es una orden automática de ascenso o descenso.",
       "simulatorAction": "Esta práctica observa una función de simulación. Los límites, modos verticales disponibles y secuencias reales dependen del POH, la instrucción y la aeronave concreta; no uses esta lección como procedimiento de operación real.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/g1000-autopilot-alt.svg", "alt": "Diagrama lateral conceptual que separa la altitud mantenida por ALT de una altitud seleccionada como objetivo futuro.", "purpose": "Evitar confundir ALT activo con una orden automática de ir a la altitud seleccionada.", "teaches": "Interpretar ALT activo", "primaryTeachingObjective": "Distinguir mantenimiento de captura", "perspective": "Perfil conceptual lateral", "movingElement": "Trayectoria blanca nivelada", "axisOfMovement": "Eje vertical conceptual", "directionOfMovement": "Sin cambio de altitud", "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"], "tiedToStep": 3, "expectedObservation": "La línea de altitud mantenida permanece nivelada mientras el objetivo seleccionado queda separado arriba.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que ALT mantiene el nivel vigente y que un objetivo seleccionado no crea movimiento por sí solo.", "recognizedElements": ["ALT activo", "altitud mantenida", "altitud seleccionada"], "actionAfterViewing": "Comprueba el modo activo y la tendencia de altitud antes de esperar un cambio vertical."},
-      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "No se dispone de una referencia fiel del panel de modos verticales de la aeronave instalada."}]
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/g1000-autopilot-alt.svg",
+        "alt": "Diagrama lateral conceptual que separa la altitud mantenida por ALT de una altitud seleccionada como objetivo futuro.",
+        "purpose": "Evitar confundir ALT activo con una orden automática de ir a la altitud seleccionada.",
+        "teaches": "Interpretar ALT activo",
+        "primaryTeachingObjective": "Distinguir mantenimiento de captura",
+        "perspective": "Perfil conceptual lateral",
+        "movingElement": "Trayectoria blanca nivelada",
+        "axisOfMovement": "Eje vertical conceptual",
+        "directionOfMovement": "Sin cambio de altitud",
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "La línea de altitud mantenida permanece nivelada mientras el objetivo seleccionado queda separado arriba.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que ALT mantiene el nivel vigente y que un objetivo seleccionado no crea movimiento por sí solo.",
+        "recognizedElements": [
+          "ALT activo",
+          "altitud mantenida",
+          "altitud seleccionada"
+        ],
+        "actionAfterViewing": "Comprueba el modo activo y la tendencia de altitud antes de esperar un cambio vertical."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/g1000-nxi-c172-controls-reference.svg",
+          "alt": "Supervisar piloto automático G1000 NXi. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para reconocer ap, hdg, nav y alt y comprobar el modo antes de confiar en la respuesta sin inventar valores del vuelo.",
+          "teaches": "Reconocer AP, HDG, NAV y ALT y comprobar el modo antes de confiar en la respuesta",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 3,
+          "expectedObservation": "Puedes localizar AP, HDG, NAV, ALT, PFD y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce AP, HDG, NAV, ALT, PFD en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "AP",
+            "HDG",
+            "NAV",
+            "ALT",
+            "PFD"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "cockpit",
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de AP, HDG, NAV, ALT, PFD sin números operacionales inventados."
+          }
+        }
+      ]
     },
     {
       "number": 4,
@@ -56,8 +314,85 @@
       "explanation": "NAV no sabe qué ruta querías: sigue la fuente seleccionada. La verificación de GPS y tramo activo de la lección anterior convierte el cambio de modo en una decisión comprobable, no en una suposición basada en que el plan aparece cargado.",
       "expectedResult": "La fuente GPS y el tramo activo coinciden con tu intención; después, la trayectoria tiende a la guía o la sigue y la anunciación refleja el modo. Si no hay captura o el avión toma una guía inesperada, no la corrijas con más automatización.",
       "simulatorAction": "La captura, el armado y la presentación de NAV varían entre implementaciones. Esta lección no enseña a interceptar procedimientos, usar cartas ni seleccionar una radioayuda; limita el ensayo a la ruta GPS corta ya verificada.",
-      "visual": {"type": "flightPathDiagram", "asset": "content/assets/g1000-autopilot-nav.svg", "alt": "Diagrama conceptual superior de una aeronave que captura y sigue una guía lateral GPS ya comprobada.", "purpose": "Mostrar la diferencia observable entre aproximarse a una guía GPS y seguirla después de NAV.", "teaches": "Supervisar captura NAV", "primaryTeachingObjective": "Confirmar captura de navegación", "perspective": "Mapa conceptual superior", "movingElement": "Trayectoria blanca del avión", "axisOfMovement": "Plano horizontal", "directionOfMovement": "Hacia la guía GPS", "userQuestionAnswered": ["dondeMirar", "queCambioEsperar"], "tiedToStep": 4, "expectedObservation": "La trayectoria converge con la guía GPS y continúa sobre ella solo tras confirmar fuente y tramo activos.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que NAV requiere verificar tanto la fuente como el resultado lateral.", "recognizedElements": ["guía GPS", "captura", "seguimiento"], "actionAfterViewing": "Comprueba fuente y tramo; después vigila la anunciación y la trayectoria resultante."},
-      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "No se proporcionó una captura fiel de fuente CDI y anunciaciones para la variante G1000 instalada."}]
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/g1000-autopilot-nav.svg",
+        "alt": "Diagrama conceptual superior de una aeronave que captura y sigue una guía lateral GPS ya comprobada.",
+        "purpose": "Mostrar la diferencia observable entre aproximarse a una guía GPS y seguirla después de NAV.",
+        "teaches": "Supervisar captura NAV",
+        "primaryTeachingObjective": "Confirmar captura de navegación",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Trayectoria blanca del avión",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Hacia la guía GPS",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 4,
+        "expectedObservation": "La trayectoria converge con la guía GPS y continúa sobre ella solo tras confirmar fuente y tramo activos.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que NAV requiere verificar tanto la fuente como el resultado lateral.",
+        "recognizedElements": [
+          "guía GPS",
+          "captura",
+          "seguimiento"
+        ],
+        "actionAfterViewing": "Comprueba fuente y tramo; después vigila la anunciación y la trayectoria resultante."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/g1000-nxi-c172-controls-reference.svg",
+          "alt": "Supervisar piloto automático G1000 NXi. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para reconocer ap, hdg, nav y alt y comprobar el modo antes de confiar en la respuesta sin inventar valores del vuelo.",
+          "teaches": "Reconocer AP, HDG, NAV y ALT y comprobar el modo antes de confiar en la respuesta",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 4,
+          "expectedObservation": "Puedes localizar AP, HDG, NAV, ALT, PFD y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce AP, HDG, NAV, ALT, PFD en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "AP",
+            "HDG",
+            "NAV",
+            "ALT",
+            "PFD"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "cockpit",
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de AP, HDG, NAV, ALT, PFD sin números operacionales inventados."
+          }
+        }
+      ]
     },
     {
       "number": 5,
@@ -66,8 +401,95 @@
       "explanation": "Activar el sistema no termina la tarea: la supervisión compara intención, modo anunciado y avión real. Desconectar es una recuperación, no un fracaso; devuelve la autoridad al piloto cuando falta una coincidencia verificable.",
       "expectedResult": "Puedes explicar qué modo lateral y vertical están activos, qué objetivo siguen y cuándo desconectarías. Ante una discrepancia, el avión queda bajo control manual estable antes de reintentar cualquier modo.",
       "simulatorAction": "La señal sonora, botón o combinación de desconexión no se universaliza aquí. Confirma el método en la cabina virtual y la documentación de tu aeronave; no se presupone una asignación del mando físico.",
-      "visual": {"type": "diagram", "asset": "content/assets/g1000-autopilot-nav.svg", "alt": "Diagrama conceptual de seguimiento NAV que recuerda comparar la guía con la trayectoria observada y desconectar ante discrepancia.", "purpose": "Reforzar que la trayectoria observada valida o invalida el modo de navegación que aparece anunciado.", "teaches": "Decidir una desconexión", "primaryTeachingObjective": "Detectar discrepancias de seguimiento", "perspective": "Mapa conceptual superior", "movingElement": "Trayectoria blanca del avión", "axisOfMovement": "Plano horizontal", "directionOfMovement": "A lo largo de la guía GPS", "userQuestionAnswered": ["queErrorEvitar", "queCambioEsperar"], "tiedToStep": 5, "expectedObservation": "Una trayectoria que no coincide con la guía prevista exige recuperar control manual, aunque exista una anunciación de modo.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que la anunciación nunca reemplaza comprobar la respuesta del avión.", "recognizedElements": ["guía prevista", "trayectoria observada", "punto de captura"], "actionAfterViewing": "Si objetivo, modo y respuesta no coinciden, desconecta y estabiliza manualmente."},
-      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "No hay una referencia fiel del método de desconexión de la aeronave y configuración instaladas."}, {"type": "hardware", "status": "notRequired", "reason": "No se confirmó una asignación de desconexión en el perfil VelocityOne del usuario."}]
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/g1000-autopilot-nav.svg",
+        "alt": "Diagrama conceptual de seguimiento NAV que recuerda comparar la guía con la trayectoria observada y desconectar ante discrepancia.",
+        "purpose": "Reforzar que la trayectoria observada valida o invalida el modo de navegación que aparece anunciado.",
+        "teaches": "Decidir una desconexión",
+        "primaryTeachingObjective": "Detectar discrepancias de seguimiento",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Trayectoria blanca del avión",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "A lo largo de la guía GPS",
+        "userQuestionAnswered": [
+          "queErrorEvitar",
+          "queCambioEsperar"
+        ],
+        "tiedToStep": 5,
+        "expectedObservation": "Una trayectoria que no coincide con la guía prevista exige recuperar control manual, aunque exista una anunciación de modo.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que la anunciación nunca reemplaza comprobar la respuesta del avión.",
+        "recognizedElements": [
+          "guía prevista",
+          "trayectoria observada",
+          "punto de captura"
+        ],
+        "actionAfterViewing": "Si objetivo, modo y respuesta no coinciden, desconecta y estabiliza manualmente."
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/g1000-nxi-c172-controls-reference.svg",
+          "alt": "Supervisar piloto automático G1000 NXi. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para reconocer ap, hdg, nav y alt y comprobar el modo antes de confiar en la respuesta sin inventar valores del vuelo.",
+          "teaches": "Reconocer AP, HDG, NAV y ALT y comprobar el modo antes de confiar en la respuesta",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 5,
+          "expectedObservation": "Puedes localizar AP, HDG, NAV, ALT, PFD y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce AP, HDG, NAV, ALT, PFD en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "AP",
+            "HDG",
+            "NAV",
+            "ALT",
+            "PFD"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "cockpit",
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de AP, HDG, NAV, ALT, PFD sin números operacionales inventados."
+          }
+        }
+      ]
     }
   ],
   "practice": {
@@ -76,14 +498,32 @@
     "task": "Configura un rumbo y prueba HDG; nivelado, prueba ALT; confirma FPL y fuente GPS, luego prueba NAV. Después de cada activación, di el objetivo, el modo anunciado y la tendencia observada. Ante cualquier discrepancia, desconecta y estabiliza manualmente.",
     "successSignal": "Demuestras HDG siguiendo el rumbo seleccionado, ALT manteniendo el nivel de entrada y NAV siguiendo la guía GPS verificada. También recuperas manualmente sin demora cuando no puedes identificar un modo, una fuente o una respuesta esperada.",
     "conceptDemonstrated": "Supervisión de automatización",
-    "possibleConfounders": ["Confundir un rumbo HDG con la ruta GPS cargada.", "Esperar que ALT ascienda o descienda hacia una altitud seleccionada.", "Activar NAV sin confirmar fuente CDI y tramo GPS activos.", "Tomar una anunciación como prueba suficiente sin observar rumbo, altitud y trayectoria.", "Suponer que un botón o asignación de hardware es igual en todas las variantes."],
+    "possibleConfounders": [
+      "Confundir un rumbo HDG con la ruta GPS cargada.",
+      "Esperar que ALT ascienda o descienda hacia una altitud seleccionada.",
+      "Activar NAV sin confirmar fuente CDI y tramo GPS activos.",
+      "Tomar una anunciación como prueba suficiente sin observar rumbo, altitud y trayectoria.",
+      "Suponer que un botón o asignación de hardware es igual en todas las variantes."
+    ],
     "whyThisExerciseDemonstratesTheConcept": "La práctica cambia un modo lateral, mantiene un modo vertical y después usa una guía GPS ya verificada. Cada cambio tiene un objetivo y una respuesta observable, por lo que separa configurar del acto esencial de supervisar. La recuperación manual ante discrepancia muestra que el piloto conserva la autoridad sobre el resultado."
   },
   "commonMistakes": [
-    {"mistake": "Activar HDG esperando que siga el plan GPS.", "recovery": "Vuelve a manual, identifica el rumbo seleccionado y recuerda que HDG sigue ese rumbo; para una guía GPS, confirma primero fuente y tramo antes de considerar NAV."},
-    {"mistake": "Cambiar la altitud seleccionada y esperar que ALT mueva el avión hacia ella.", "recovery": "Mantén control manual o ALT a nivel estable. Reconoce que la selección es un objetivo; aprende el modo vertical aplicable solo con la documentación de tu aeronave y entrenamiento adecuado."},
-    {"mistake": "Usar NAV sin comprobar el GPS y el tramo activo.", "recovery": "Desconecta, estabiliza, revisa FPL y la fuente CDI. Reintenta NAV únicamente cuando ambos coincidan con la ruta de práctica."},
-    {"mistake": "Seguir la anunciación sin mirar el avión.", "recovery": "Haz un barrido de modo, rumbo o guía, tendencia de altitud y vista exterior. Si uno no confirma la intención, desconecta y recupera manualmente."}
+    {
+      "mistake": "Activar HDG esperando que siga el plan GPS.",
+      "recovery": "Vuelve a manual, identifica el rumbo seleccionado y recuerda que HDG sigue ese rumbo; para una guía GPS, confirma primero fuente y tramo antes de considerar NAV."
+    },
+    {
+      "mistake": "Cambiar la altitud seleccionada y esperar que ALT mueva el avión hacia ella.",
+      "recovery": "Mantén control manual o ALT a nivel estable. Reconoce que la selección es un objetivo; aprende el modo vertical aplicable solo con la documentación de tu aeronave y entrenamiento adecuado."
+    },
+    {
+      "mistake": "Usar NAV sin comprobar el GPS y el tramo activo.",
+      "recovery": "Desconecta, estabiliza, revisa FPL y la fuente CDI. Reintenta NAV únicamente cuando ambos coincidan con la ruta de práctica."
+    },
+    {
+      "mistake": "Seguir la anunciación sin mirar el avión.",
+      "recovery": "Haz un barrido de modo, rumbo o guía, tendencia de altitud y vista exterior. Si uno no confirma la intención, desconecta y recupera manualmente."
+    }
   ],
   "checklist": [
     "Vuelo de simulación estable, diurno y con margen para recuperar control manual.",
@@ -95,10 +535,46 @@
     "Toda discrepancia resuelta desconectando y estabilizando manualmente."
   ],
   "quiz": [
-    {"question": "¿Qué guía HDG?", "options": ["El rumbo seleccionado.", "El destino final de FPL.", "Cualquier fuente que muestre el CDI."], "answer": "El rumbo seleccionado.", "explanation": "HDG es un modo de selección de rumbo; no sigue por sí mismo el plan GPS."},
-    {"question": "¿Qué hace ALT al activarse en vuelo nivelado?", "options": ["Intenta mantener la altitud de activación.", "Asciende automáticamente a cualquier altitud seleccionada.", "Sigue la guía lateral GPS."], "answer": "Intenta mantener la altitud de activación.", "explanation": "ALT mantiene la altitud vigente; una selección de altitud no crea por sí sola una trayectoria vertical."},
-    {"question": "Antes de activar NAV para una ruta GPS, ¿qué debes confirmar?", "options": ["La fuente CDI GPS y el tramo activo esperado.", "Solo que exista un aeropuerto de destino.", "La misma posición de botones en todos los G1000."], "answer": "La fuente CDI GPS y el tramo activo esperado.", "explanation": "NAV sigue la fuente seleccionada; verificarla evita que siga una guía distinta de tu intención."},
-    {"question": "¿Qué haces si modo anunciado, objetivo y trayectoria no coinciden?", "options": ["Desconecto y estabilizo manualmente.", "Activo más modos para corregirlo.", "Sigo esperando sin mirar afuera."], "answer": "Desconecto y estabilizo manualmente.", "explanation": "La discrepancia elimina la base para confiar en la automatización; recuperar control es la respuesta segura de la práctica."}
+    {
+      "question": "¿Qué guía HDG?",
+      "options": [
+        "El rumbo seleccionado.",
+        "El destino final de FPL.",
+        "Cualquier fuente que muestre el CDI."
+      ],
+      "answer": "El rumbo seleccionado.",
+      "explanation": "HDG es un modo de selección de rumbo; no sigue por sí mismo el plan GPS."
+    },
+    {
+      "question": "¿Qué hace ALT al activarse en vuelo nivelado?",
+      "options": [
+        "Intenta mantener la altitud de activación.",
+        "Asciende automáticamente a cualquier altitud seleccionada.",
+        "Sigue la guía lateral GPS."
+      ],
+      "answer": "Intenta mantener la altitud de activación.",
+      "explanation": "ALT mantiene la altitud vigente; una selección de altitud no crea por sí sola una trayectoria vertical."
+    },
+    {
+      "question": "Antes de activar NAV para una ruta GPS, ¿qué debes confirmar?",
+      "options": [
+        "La fuente CDI GPS y el tramo activo esperado.",
+        "Solo que exista un aeropuerto de destino.",
+        "La misma posición de botones en todos los G1000."
+      ],
+      "answer": "La fuente CDI GPS y el tramo activo esperado.",
+      "explanation": "NAV sigue la fuente seleccionada; verificarla evita que siga una guía distinta de tu intención."
+    },
+    {
+      "question": "¿Qué haces si modo anunciado, objetivo y trayectoria no coinciden?",
+      "options": [
+        "Desconecto y estabilizo manualmente.",
+        "Activo más modos para corregirlo.",
+        "Sigo esperando sin mirar afuera."
+      ],
+      "answer": "Desconecto y estabilizo manualmente.",
+      "explanation": "La discrepancia elimina la base para confiar en la automatización; recuperar control es la respuesta segura de la práctica."
+    }
   ],
   "completionCriteria": [
     "Configuraste un rumbo y confirmaste visualmente que HDG tendía hacia él.",
@@ -109,8 +585,45 @@
     "Explicaste que esta práctica de MSFS no sustituye POH, instrucción, datos vigentes, procedimientos ni autorizaciones reales."
   ],
   "sources": [
-    {"title": "Garmin G1000 NXi Pilot's Guide for the Cessna NAV III", "url": "https://static.garmin.com/pumac/190-02177-03_b.pdf", "verified": true},
-    {"title": "Garmin G1000 NXi AFCS Pilot's Guide", "url": "https://static.garmin.com/pumac/190-02177-00_A.pdf", "verified": true},
-    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
-  ]
+    {
+      "title": "Garmin G1000 NXi Pilot's Guide for the Cessna NAV III",
+      "url": "https://static.garmin.com/pumac/190-02177-03_b.pdf",
+      "verified": true
+    },
+    {
+      "title": "Garmin G1000 NXi AFCS Pilot's Guide",
+      "url": "https://static.garmin.com/pumac/190-02177-00_A.pdf",
+      "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator Support",
+      "url": "https://flightsimulator.zendesk.com/hc/en-us",
+      "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator 2024 — Garmin G1000 NXi V2 instruments and Cessna 172 attachments",
+      "url": "https://docs.flightsimulator.com/msfs2024/html/5_Content_Configuration/Modular_SimObjects/SimAttachments/Included_Attachments/Instrument_Attachments.htm",
+      "verified": true
+    }
+  ],
+  "operationalCompetency": {
+    "competencyObjective": "Seleccionar y supervisar HDG, NAV y ALT en el piloto automático G1000 NXi del C172, verificando modo y respuesta después de cada cambio.",
+    "competencyEvidence": [
+      "Reconoce AP, HDG, NAV y ALT en la referencia de la variante objetivo.",
+      "Comprueba la anunciación o estado de modo después de una selección.",
+      "Desconecta o recupera control estable cuando la respuesta no coincide con la intención."
+    ],
+    "transferExercise": {
+      "scenario": "Repite la práctica con un rumbo y tramo GPS diferentes, manteniendo una condición estable antes de cada selección.",
+      "task": "Usa primero HDG, después NAV y finalmente ALT, verbalizando selección, modo observado y respuesta sin encadenar cambios.",
+      "expectedCompetency": "Supervisa modos en una situación nueva en vez de memorizar una secuencia de botones.",
+      "successCriteria": "Cada modo se confirma antes del siguiente y cualquier discrepancia termina en recuperación estable.",
+      "hints": [
+        "Reconoce primero, interpreta después y solo entonces actúa."
+      ]
+    },
+    "futureLearningTargets": [
+      "ifr-foundations"
+    ]
+  }
 }

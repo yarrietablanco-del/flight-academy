@@ -7,7 +7,13 @@
     "icao": "KABQ",
     "chartCycle": "2026-08-06 to 2026-09-03",
     "effectiveDate": "2026-08-06",
-    "procedures": ["Airport Diagram", "ADYOS THREE (RNAV) Departure", "SNDIA FOUR (RNAV) Arrival", "ILS OR LOC RWY 08", "RNAV (GPS) Y RWY 08"],
+    "procedures": [
+      "Airport Diagram",
+      "ADYOS THREE (RNAV) Departure",
+      "SNDIA FOUR (RNAV) Arrival",
+      "ILS OR LOC RWY 08",
+      "RNAV (GPS) Y RWY 08"
+    ],
     "reason": "The FAA d-TPP 2608 metafile and the cached official PDFs confirm one coherent KABQ training set."
   },
   "references": [
@@ -19,7 +25,13 @@
       "sourceLocation": "https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/dtpp/",
       "effectiveDate": "2026-08-06 to 2026-09-03",
       "purpose": "Authoritative search and download source for U.S. airport diagrams, SIDs, STARs and IAPs.",
-      "supportsLessons": ["airport-diagram-basics", "atc-taxi", "sid-star", "approach-charts", "ils-rnav"],
+      "supportsLessons": [
+        "airport-diagram-basics",
+        "atc-taxi",
+        "sid-star",
+        "approach-charts",
+        "ils-rnav"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "LINK_ONLY",
       "localSource": null,
@@ -32,7 +44,14 @@
       "sourceTitle": "Aeronautical Chart Users' Guide",
       "sourceLocation": "https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/aero_guide/",
       "purpose": "Chart symbol and publication interpretation reference.",
-      "supportsLessons": ["airport-diagram-basics", "atc-taxi", "vor-dme", "sid-star", "approach-charts", "ils-rnav"],
+      "supportsLessons": [
+        "airport-diagram-basics",
+        "atc-taxi",
+        "vor-dme",
+        "sid-star",
+        "approach-charts",
+        "ils-rnav"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "LINK_ONLY",
       "localSource": null,
@@ -46,11 +65,17 @@
       "sourceLocation": "https://docs.flightsimulator.com/msfs2024/html/6_Programming_APIs/EFB/Electronic_Flight_Bag_API.htm",
       "simulatorVersion": "Microsoft Flight Simulator 2024",
       "purpose": "Verifies that MSFS 2024 EFB can be a physical cockpit device or on-screen panel and documents supported EFB scope.",
-      "supportsLessons": ["efb-route-planning", "a320-cockpit", "a320-mcdu-performance"],
+      "supportsLessons": [
+        "efb-route-planning",
+        "a320-cockpit",
+        "a320-mcdu-performance"
+      ],
       "verificationStatus": "PARTIAL",
       "redistributionStatus": "LINK_ONLY",
       "localSource": null,
-      "derivedAssets": ["public/references/msfs2024-efb-world-map.png"]
+      "derivedAssets": [
+        "public/references/msfs2024-efb-world-map.png"
+      ]
     },
     {
       "id": "msfs-aircraft-manuals-a320v2",
@@ -61,11 +86,24 @@
       "aircraftVariant": "Microsoft / iniBuilds Airbus A320neo V2",
       "simulatorVersion": "Microsoft Flight Simulator 2024 on Xbox Series X",
       "purpose": "Authoritative manual entry point for cockpit, systems, MCDU, EFB and future gate-to-gate coverage.",
-      "supportsLessons": ["a320-cockpit", "a320-displays-fcu", "a320-mcdu-performance", "a320-cold-dark", "a320-push-start-taxi", "a320-sid-climb-cruise", "a320-star-approach", "a320-landing-gate-shutdown"],
+      "supportsLessons": [
+        "a320-cockpit",
+        "a320-displays-fcu",
+        "a320-mcdu-performance",
+        "a320-cold-dark",
+        "a320-push-start-taxi",
+        "a320-sid-climb-cruise",
+        "a320-star-approach",
+        "a320-landing-gate-shutdown"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "LINK_ONLY",
       "localSource": null,
-      "derivedAssets": []
+      "derivedAssets": [
+        "content/assets/a320-v2-cockpit-zones-reference.svg",
+        "content/assets/a320-v2-displays-fcu-reference.svg",
+        "content/assets/a320-v2-mcdu-perf-reference.svg"
+      ]
     },
     {
       "id": "msfs2024-a320v2-announcement",
@@ -75,7 +113,11 @@
       "sourceLocation": "https://www.flightsimulator.com/may-23rd-2024-development-update/",
       "aircraftVariant": "Airbus A320neo V2",
       "purpose": "Confirms Microsoft Flight Simulator's A320neo V2 identity; prevents mixing Fenix, FBW or other variants.",
-      "supportsLessons": ["a320-cockpit", "a320-displays-fcu", "a320-mcdu-performance"],
+      "supportsLessons": [
+        "a320-cockpit",
+        "a320-displays-fcu",
+        "a320-mcdu-performance"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "LINK_ONLY",
       "localSource": null,
@@ -87,13 +129,20 @@
       "sourceAuthority": "Garmin",
       "sourceTitle": "G1000 NXi Pilot's Guide for the Cessna Nav III, 190-02177-02 Rev. A",
       "sourceLocation": "https://static.garmin.com/pumac/190-02177-02_a.pdf",
-      "aircraftVariant": "Cessna Nav III (exact MSFS 2024 C172 avionics fit still unverified)",
+      "aircraftVariant": "Cessna 172 Skyhawk (G1000) training target in MSFS 2024; G1000 NXi V2 package and C172 G1000 attachment verified in Microsoft documentation",
       "purpose": "Reference for PFD, MFD, FPL, CDI source, Direct-To and autopilot concepts only after matching the in-sim variant.",
-      "supportsLessons": ["g1000-gps", "g1000-autopilot", "vor-dme"],
-      "verificationStatus": "PARTIAL",
+      "supportsLessons": [
+        "g1000-gps",
+        "g1000-autopilot",
+        "vor-dme"
+      ],
+      "verificationStatus": "VERIFIED",
       "redistributionStatus": "LINK_ONLY",
       "localSource": null,
-      "derivedAssets": ["public/references/g1000-pfd-reference.png"]
+      "derivedAssets": [
+        "public/references/g1000-pfd-reference.png",
+        "content/assets/g1000-nxi-c172-controls-reference.svg"
+      ]
     },
     {
       "id": "turtlebeach-velocityone-controls",
@@ -104,11 +153,16 @@
       "aircraftVariant": "Not aircraft-specific",
       "simulatorVersion": "Xbox profile-dependent",
       "purpose": "Verifies hardware groups and requires matching the selected MSFS profile with the FMD profile before asserting controls.",
-      "supportsLessons": ["velocityone-overview", "velocityone-response-check"],
+      "supportsLessons": [
+        "velocityone-overview",
+        "velocityone-response-check"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "LINK_ONLY",
       "localSource": null,
-      "derivedAssets": ["public/references/turtlebeach-velocityone-official.png"]
+      "derivedAssets": [
+        "public/references/turtlebeach-velocityone-official.png"
+      ]
     },
     {
       "id": "faa-kabq-airport-diagram-2608",
@@ -121,7 +175,10 @@
       "icao": "KABQ",
       "procedureType": "APD",
       "purpose": "Teach runway, taxiway, intersection, apron, frequency, hotspot and hold-short reading from one official chart.",
-      "supportsLessons": ["airport-diagram-basics", "atc-taxi"],
+      "supportsLessons": [
+        "airport-diagram-basics",
+        "atc-taxi"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "RESEARCH_CACHE_ONLY",
       "localSource": "reference-library/source-cache/00012AD.PDF",
@@ -139,7 +196,9 @@
       "procedureType": "DP",
       "procedureName": "ADYOS THREE (RNAV)",
       "purpose": "Guided reading of runway-specific routing, transitions, fixes, tracks, altitude/speed constraints and notes.",
-      "supportsLessons": ["sid-star"],
+      "supportsLessons": [
+        "sid-star"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "RESEARCH_CACHE_ONLY",
       "localSource": "reference-library/source-cache/00012ADYOS.PDF",
@@ -157,7 +216,11 @@
       "procedureType": "STAR",
       "procedureName": "SNDIA FOUR (RNAV)",
       "purpose": "Guided reading of transitions, fixes, tracks, altitude/speed restrictions, runway-8 continuity and notes.",
-      "supportsLessons": ["sid-star", "approach-charts", "ils-rnav"],
+      "supportsLessons": [
+        "sid-star",
+        "approach-charts",
+        "ils-rnav"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "RESEARCH_CACHE_ONLY",
       "localSource": "reference-library/source-cache/00012SNDIA.PDF",
@@ -175,7 +238,10 @@
       "procedureType": "IAP",
       "procedureName": "ILS OR LOC RWY 08",
       "purpose": "Teach frequency, final course, plan/profile views, IAF/IF/FAF, glide slope, minimums and missed approach.",
-      "supportsLessons": ["approach-charts", "ils-rnav"],
+      "supportsLessons": [
+        "approach-charts",
+        "ils-rnav"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "RESEARCH_CACHE_ONLY",
       "localSource": "reference-library/source-cache/00012IL8.PDF",
@@ -193,11 +259,36 @@
       "procedureType": "IAP",
       "procedureName": "RNAV (GPS) Y RWY 08",
       "purpose": "Compare same-runway RNAV structure, fixes, final course, profile, glidepath/minimums and missed approach with ILS.",
-      "supportsLessons": ["approach-charts", "ils-rnav"],
+      "supportsLessons": [
+        "approach-charts",
+        "ils-rnav"
+      ],
       "verificationStatus": "VERIFIED",
       "redistributionStatus": "RESEARCH_CACHE_ONLY",
       "localSource": "reference-library/source-cache/00012RY8.PDF",
       "derivedAssets": []
+    },
+    {
+      "id": "msfs2024-c172-g1000nxi",
+      "category": "simulator-avionics-fit",
+      "sourceAuthority": "Microsoft Flight Simulator",
+      "sourceTitle": "MSFS 2024 Instruments and Instrument Attachments — G1000 NXi V2 / Cessna 172 Skyhawk",
+      "sourceLocation": "https://docs.flightsimulator.com/msfs2024/html/5_Content_Configuration/Modular_SimObjects/SimAttachments/Included_Attachments/Instrument_Attachments.htm",
+      "simulatorVersion": "Microsoft Flight Simulator 2024",
+      "aircraftVariant": "Cessna 172 Skyhawk (G1000)",
+      "purpose": "Locks the course G1000 training target to the MSFS 2024 C172 G1000 fit and supports FPL, CDI, NAV and autopilot recognition.",
+      "supportsLessons": [
+        "vor-dme",
+        "g1000-gps",
+        "g1000-autopilot",
+        "ifr-foundations"
+      ],
+      "verificationStatus": "VERIFIED",
+      "redistributionStatus": "LINK_ONLY",
+      "localSource": null,
+      "derivedAssets": [
+        "content/assets/g1000-nxi-c172-controls-reference.svg"
+      ]
     }
   ]
 }

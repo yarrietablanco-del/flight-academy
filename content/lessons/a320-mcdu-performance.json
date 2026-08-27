@@ -5,17 +5,35 @@
     "subtitle": "Verifica el origen de cada dato antes de introducirlo en la simulación.",
     "objective": "Preparar datos verificados de simulación.",
     "estimatedTime": "25 min",
-    "prerequisites": ["a320-displays-fcu"],
+    "prerequisites": [
+      "a320-displays-fcu"
+    ],
     "level": 5,
     "module": "a320-transition",
     "visualStandardVersion": 3
   },
   "whyItMatters": "La MCDU concentra datos que la variante puede usar para navegación y performance, es decir, cálculos de despegue o vuelo. Un número no se vuelve válido al escribirlo: debe corresponder al escenario que cargaste y a la ayuda de esa variante. En MSFS practicarás la trazabilidad del dato y la comprobación del resultado, no un procedimiento de despacho ni de operación real.",
   "concepts": [
-    {"term": "MCDU", "meaning": "Multipurpose Control and Display Unit: interfaz para consultar o introducir información en una variante Airbus. Sus páginas, campos y comportamiento pueden variar; por eso primero identifica la ayuda de la aeronave que tienes cargada."},
-    {"term": "Performance", "meaning": "En este contexto, son cálculos o resultados de la variante relacionados con una fase de vuelo. No se deben inventar, trasladar desde otro avión ni tratar como datos operativos reales sin las fuentes y procedimientos aplicables."},
-    {"term": "Dato de origen", "meaning": "Es un dato acompañado por su procedencia comprobable: el escenario de MSFS, la EFB o la documentación de la misma variante. Si no puedes explicar su origen, no es una entrada verificable para esta práctica."},
-    {"term": "Comprobación cruzada", "meaning": "Es comparar una entrada y su resultado con la fuente que la justifica. Sirve para detectar una discrepancia antes de añadir otra entrada, no para sustituir la documentación de operación real."}
+    {
+      "term": "MCDU",
+      "meaning": "Multipurpose Control and Display Unit: interfaz para consultar o introducir información en una variante Airbus. Sus páginas, campos y comportamiento pueden variar; por eso primero identifica la ayuda de la aeronave que tienes cargada."
+    },
+    {
+      "term": "Performance",
+      "meaning": "En este contexto, son cálculos o resultados de la variante relacionados con una fase de vuelo. No se deben inventar, trasladar desde otro avión ni tratar como datos operativos reales sin las fuentes y procedimientos aplicables."
+    },
+    {
+      "term": "Dato de origen",
+      "meaning": "Es un dato acompañado por su procedencia comprobable: el escenario de MSFS, la EFB o la documentación de la misma variante. Si no puedes explicar su origen, no es una entrada verificable para esta práctica."
+    },
+    {
+      "term": "Comprobación cruzada",
+      "meaning": "Es comparar una entrada y su resultado con la fuente que la justifica. Sirve para detectar una discrepancia antes de añadir otra entrada, no para sustituir la documentación de operación real."
+    },
+    {
+      "term": "V1 / VR / V2",
+      "meaning": "V1 es velocidad de decisión, VR de rotación y V2 de seguridad de despegue. Los valores pertenecen al cálculo de performance del escenario cargado y no son números universales."
+    }
   ],
   "steps": [
     {
@@ -25,9 +43,99 @@
       "explanation": "Los cálculos dependen del contexto que usa la variante. Fijar el escenario primero evita copiar un dato cuyo origen, fecha, aeropuerto o configuración no coincide con lo que has cargado.",
       "expectedResult": "Puedes nombrar la variante y el escenario de simulación, y sabes dónde consultar su ayuda o EFB. Si una de esas piezas falta, reconoces que todavía no hay una base verificable para introducir datos.",
       "simulatorAction": "Esta es una práctica de simulación. No se indican aeropuertos, pistas, meteorología, masas, valores ni una página concreta de MCDU, porque deben provenir del escenario y de la variante cargada.",
-      "visual": {"type": "diagram", "asset": "content/assets/a320-mcdu-performance-data-chain.svg", "alt": "Diagrama conceptual que enlaza escenario de MSFS, fuente de la variante, dato observado, entrada y revisión de coherencia.", "purpose": "Mostrar que la verificación comienza definiendo el escenario y una fuente de la misma variante.", "teaches": "Conservar el origen de un dato antes de considerarlo apto para una entrada de simulación.", "primaryTeachingObjective": "Fijar el origen", "perspective": "Flujo conceptual horizontal", "movingElement": "Dato de simulación", "axisOfMovement": "Flujo de información", "directionOfMovement": "Del escenario a la revisión", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 1, "expectedObservation": "El escenario aparece antes de la fuente y de la entrada; el gráfico no reproduce una cabina ni una página real.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que variante y escenario deben estar identificados antes de buscar datos de performance.", "recognizedElements": ["escenario", "fuente", "dato"], "actionAfterViewing": "Anota la variante y el escenario; si no puedes consultar una fuente coincidente, detén la práctica.", "coverage": ["cockpit"]},
-      "referenceVisuals": [{"type": "instrumentDiagram", "requiresReference": true, "alt": "Referencia pendiente de la MCDU de la variante A320 instalada para reconocer su página de performance sin inventar campos, teclas o resultados.", "purpose": "Impedir que el alumno traslade el diagrama de datos a una página MCDU que no se ha verificado en su variante.", "teaches": "Verificar una interfaz MCDU", "primaryTeachingObjective": "Confirmar la página MCDU", "perspective": "MCDU de la variante instalada", "movingElement": "No aplica: referencia estática", "axisOfMovement": "No aplica: referencia estática", "directionOfMovement": "No aplica: referencia estática", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 1, "expectedObservation": "La fuente de la variante identifica qué página de performance existe y qué campos se pueden observar en la práctica.", "view": "instrumento", "visualCategory": "reference", "fidelity": "recreated-faithful", "recognitionGoal": "Reconoce que datos y campos deben pertenecer a la misma variante de MCDU.", "recognizedElements": ["MCDU", "página de performance", "campos de entrada"], "actionAfterViewing": "Comprueba la referencia de tu variante antes de buscar un campo o introducir cualquier dato.", "coverage": ["cockpit", "instrument"], "quality": {"sourceWidth": 1600, "sourceHeight": 900, "intendedDisplayWidth": 720, "supportsZoom": true, "detailTarget": "La página y los campos de performance de la variante específica, no una recreación genérica."}}],
-      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "La referencia de MCDU queda explícitamente pendiente hasta contar con una fuente fiel de la variante usada por el alumno."}, {"type": "airport", "status": "notRequired", "reason": "El paso no requiere reconocer un aeropuerto concreto ni seguir una referencia aeroportuaria o una carta vigente."}]
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/a320-mcdu-performance-data-chain.svg",
+        "alt": "Diagrama conceptual que enlaza escenario de MSFS, fuente de la variante, dato observado, entrada y revisión de coherencia.",
+        "purpose": "Mostrar que la verificación comienza definiendo el escenario y una fuente de la misma variante.",
+        "teaches": "Conservar el origen de un dato antes de considerarlo apto para una entrada de simulación.",
+        "primaryTeachingObjective": "Fijar el origen",
+        "perspective": "Flujo conceptual horizontal",
+        "movingElement": "Dato de simulación",
+        "axisOfMovement": "Flujo de información",
+        "directionOfMovement": "Del escenario a la revisión",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 1,
+        "expectedObservation": "El escenario aparece antes de la fuente y de la entrada; el gráfico no reproduce una cabina ni una página real.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que variante y escenario deben estar identificados antes de buscar datos de performance.",
+        "recognizedElements": [
+          "escenario",
+          "fuente",
+          "dato"
+        ],
+        "actionAfterViewing": "Anota la variante y el escenario; si no puedes consultar una fuente coincidente, detén la práctica.",
+        "coverage": [
+          "cockpit"
+        ]
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "airport",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "instrument",
+          "status": "required"
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/a320-v2-mcdu-perf-reference.svg",
+          "alt": "Reconocer MCDU PERF TAKEOFF. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para relacionar escenario, fuente de performance, campos mcdu y comprobación posterior sin inventar v-speeds sin inventar valores del vuelo.",
+          "teaches": "Relacionar escenario, fuente de performance, campos MCDU y comprobación posterior sin inventar V-speeds",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 1,
+          "expectedObservation": "Puedes localizar PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "PERF TO",
+            "V1",
+            "VR",
+            "V2",
+            "FLAPS/THS",
+            "T/O DATA"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "cockpit",
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA sin números operacionales inventados."
+          }
+        }
+      ]
     },
     {
       "number": 2,
@@ -36,8 +144,95 @@
       "explanation": "Anotar el origen limita la práctica a información que puedes volver a comprobar. Así una diferencia posterior se investiga en vez de corregirse introduciendo números al azar.",
       "expectedResult": "Tienes un único dato de simulación con una fuente identificada, o has descartado correctamente un dato no verificable. Todavía no has supuesto que un campo MCDU acepta el valor ni que el resultado será igual en todas las variantes.",
       "simulatorAction": "Consulta exclusivamente la ayuda, EFB o documentación de la variante cargada. No se usan tablas de performance, cartas ni datos operativos reales; esos recursos deben ser vigentes y aplicables fuera de esta práctica.",
-      "visual": {"type": "diagram", "asset": "content/assets/a320-mcdu-performance-data-chain.svg", "alt": "Diagrama conceptual que muestra un dato observado acompañado por su fuente antes de una entrada en la simulación.", "purpose": "Distinguir un dato verificable de una suposición sin procedencia comprobable.", "teaches": "Registrar el origen de cada dato antes de transferirlo a una interfaz de la variante.", "primaryTeachingObjective": "Conservar la procedencia", "perspective": "Flujo conceptual horizontal", "movingElement": "Dato de simulación", "axisOfMovement": "Flujo de información", "directionOfMovement": "De fuente hacia entrada", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 2, "expectedObservation": "El dato observado se sitúa entre su fuente y la entrada, por lo que no aparece como un número aislado.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que un valor sin fuente coincidente no está listo para usar en la práctica.", "recognizedElements": ["fuente", "dato observado", "entrada"], "actionAfterViewing": "Conserva solo un dato cuya procedencia puedas mostrar y descarta los demás hasta verificarlos.", "coverage": ["instrument"]},
-      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "No existe una captura verificable de la página y campos de performance de la variante A320 del alumno."}, {"type": "chart", "status": "notRequired", "reason": "La lección no enseña a leer ni aplicar una carta o tabla de performance operacional real."}]
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/a320-mcdu-performance-data-chain.svg",
+        "alt": "Diagrama conceptual que muestra un dato observado acompañado por su fuente antes de una entrada en la simulación.",
+        "purpose": "Distinguir un dato verificable de una suposición sin procedencia comprobable.",
+        "teaches": "Registrar el origen de cada dato antes de transferirlo a una interfaz de la variante.",
+        "primaryTeachingObjective": "Conservar la procedencia",
+        "perspective": "Flujo conceptual horizontal",
+        "movingElement": "Dato de simulación",
+        "axisOfMovement": "Flujo de información",
+        "directionOfMovement": "De fuente hacia entrada",
+        "userQuestionAnswered": [
+          "dondeMirar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 2,
+        "expectedObservation": "El dato observado se sitúa entre su fuente y la entrada, por lo que no aparece como un número aislado.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que un valor sin fuente coincidente no está listo para usar en la práctica.",
+        "recognizedElements": [
+          "fuente",
+          "dato observado",
+          "entrada"
+        ],
+        "actionAfterViewing": "Conserva solo un dato cuya procedencia puedas mostrar y descarta los demás hasta verificarlos.",
+        "coverage": [
+          "instrument"
+        ]
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "chart",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/a320-v2-mcdu-perf-reference.svg",
+          "alt": "Reconocer MCDU PERF TAKEOFF. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para relacionar escenario, fuente de performance, campos mcdu y comprobación posterior sin inventar v-speeds sin inventar valores del vuelo.",
+          "teaches": "Relacionar escenario, fuente de performance, campos MCDU y comprobación posterior sin inventar V-speeds",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 2,
+          "expectedObservation": "Puedes localizar PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "PERF TO",
+            "V1",
+            "VR",
+            "V2",
+            "FLAPS/THS",
+            "T/O DATA"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "cockpit",
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA sin números operacionales inventados."
+          }
+        }
+      ],
+      "tip": "V1, VR y V2 se verifican desde la fuente de performance del mismo escenario; no se reutilizan valores de otro vuelo."
     },
     {
       "number": 3,
@@ -46,8 +241,101 @@
       "explanation": "Una entrada aislada hace visible la relación entre dato y resultado. Varias entradas a la vez ocultan cuál causó una diferencia y favorecen que un error de contexto pase inadvertido.",
       "expectedResult": "Puedes señalar el dato que introdujiste, su fuente y el cambio que observaste, o interrumpes correctamente porque no existe una coincidencia verificable. No interpretas un resultado mostrado como autorización ni como cálculo válido para una operación real.",
       "simulatorAction": "Confirma la acción exacta en la ayuda de tu variante antes de tocar MCDU. No se afirman teclas, páginas, unidades, valores, V-speeds, perfiles de hardware ni procedimientos reales, porque son dependientes de la aeronave y del contexto.",
-      "visual": {"type": "comparisonDiagram", "asset": "content/assets/a320-mcdu-performance-crosscheck.svg", "alt": "Comparación conceptual entre una entrada con fuente que permite revisar el resultado y otra sin fuente que obliga a detener la práctica.", "purpose": "Mostrar la decisión entre continuar con una entrada trazable o detenerse ante una entrada no verificable.", "teaches": "Introducir un solo dato y comparar su resultado antes de realizar otra acción.", "primaryTeachingObjective": "Comprobar una entrada", "perspective": "Comparación conceptual en dos rutas", "movingElement": "Dato de simulación", "axisOfMovement": "Flujo de decisión", "directionOfMovement": "De origen a decisión", "comparisonJustification": "La comparación es necesaria para distinguir visualmente la ruta verificable de la ruta que debe detenerse por falta de procedencia.", "userQuestionAnswered": ["queControlTocar", "queCambioEsperar", "queErrorEvitar"], "tiedToStep": 3, "expectedObservation": "La ruta verde conserva un origen y revisa el resultado; la roja se detiene antes de introducir o continuar.", "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que un resultado solo puede revisarse cuando el dato y su origen son conocidos.", "recognizedElements": ["origen identificado", "entrada limitada", "detener y verificar"], "actionAfterViewing": "Haz una sola entrada verificable o detén el ejercicio si no puedes demostrar su procedencia.", "coverage": ["instrument"]},
-      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "La ubicación, teclas y presentación de la MCDU cambian entre variantes y no se suministró una referencia fiel."}, {"type": "instrument", "status": "notRequired", "reason": "Sin una referencia real o recreada fiel de la variante, un instrumento genérico podría enseñar campos inexistentes o comportamientos incorrectos."}, {"type": "hardware", "status": "notRequired", "reason": "No se confirmó una asignación de VelocityOne ni se necesita hardware específico para el concepto de trazabilidad."}]
+      "visual": {
+        "type": "comparisonDiagram",
+        "asset": "content/assets/a320-mcdu-performance-crosscheck.svg",
+        "alt": "Comparación conceptual entre una entrada con fuente que permite revisar el resultado y otra sin fuente que obliga a detener la práctica.",
+        "purpose": "Mostrar la decisión entre continuar con una entrada trazable o detenerse ante una entrada no verificable.",
+        "teaches": "Introducir un solo dato y comparar su resultado antes de realizar otra acción.",
+        "primaryTeachingObjective": "Comprobar una entrada",
+        "perspective": "Comparación conceptual en dos rutas",
+        "movingElement": "Dato de simulación",
+        "axisOfMovement": "Flujo de decisión",
+        "directionOfMovement": "De origen a decisión",
+        "comparisonJustification": "La comparación es necesaria para distinguir visualmente la ruta verificable de la ruta que debe detenerse por falta de procedencia.",
+        "userQuestionAnswered": [
+          "queControlTocar",
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 3,
+        "expectedObservation": "La ruta verde conserva un origen y revisa el resultado; la roja se detiene antes de introducir o continuar.",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que un resultado solo puede revisarse cuando el dato y su origen son conocidos.",
+        "recognizedElements": [
+          "origen identificado",
+          "entrada limitada",
+          "detener y verificar"
+        ],
+        "actionAfterViewing": "Haz una sola entrada verificable o detén el ejercicio si no puedes demostrar su procedencia.",
+        "coverage": [
+          "instrument"
+        ]
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        },
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/a320-v2-mcdu-perf-reference.svg",
+          "alt": "Reconocer MCDU PERF TAKEOFF. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para relacionar escenario, fuente de performance, campos mcdu y comprobación posterior sin inventar v-speeds sin inventar valores del vuelo.",
+          "teaches": "Relacionar escenario, fuente de performance, campos MCDU y comprobación posterior sin inventar V-speeds",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 3,
+          "expectedObservation": "Puedes localizar PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "PERF TO",
+            "V1",
+            "VR",
+            "V2",
+            "FLAPS/THS",
+            "T/O DATA"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "cockpit",
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA sin números operacionales inventados."
+          }
+        }
+      ]
     },
     {
       "number": 4,
@@ -56,8 +344,95 @@
       "explanation": "La comprobación final convierte la entrada en una observación verificable. También evita confundir una interfaz que acepta un valor con una conclusión correcta sobre performance.",
       "expectedResult": "Puedes explicar la cadena escenario, fuente, dato y resultado. Cuando encuentras una discrepancia, sabes detenerte y revisarla sin encadenar intentos ni extrapolar el resultado a otra variante o a un vuelo real.",
       "simulatorAction": "Registra esta revisión como resultado de una práctica en MSFS. No utilices el dato ni el resultado para planificar una operación real: se requieren fuentes actuales, cálculos aprobados y procedimientos aplicables.",
-      "visual": {"type": "comparisonDiagram", "asset": "content/assets/a320-mcdu-performance-crosscheck.svg", "alt": "Comparación conceptual de un resultado coherente con su fuente frente a una discrepancia que requiere detenerse y verificar.", "purpose": "Hacer visible que la revisión final puede confirmar la práctica o exigir una pausa.", "teaches": "Comparar escenario, fuente, entrada y resultado sin corregir una discrepancia por tanteo.", "primaryTeachingObjective": "Cerrar la comprobación", "perspective": "Comparación conceptual en dos rutas", "movingElement": "Resultado observado", "axisOfMovement": "Flujo de decisión", "directionOfMovement": "De comparación a decisión", "comparisonJustification": "Las dos salidas posibles, continuar documentando o detenerse para verificar, son el único contraste necesario para el objetivo del paso.", "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"], "tiedToStep": 4, "expectedObservation": "La comparación separa una coincidencia documentable de una discrepancia que no debe corregirse con más entradas.", "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que una discrepancia obliga a revisar el contexto antes de continuar.", "recognizedElements": ["resultado comparable", "discrepancia", "detener y verificar"], "actionAfterViewing": "Documenta la coincidencia o detén la práctica y vuelve al escenario y a la fuente.", "coverage": ["instrument"]},
-      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "El objetivo es verificar relaciones entre datos y no reconocer símbolos, páginas o resultados de una variante no referenciada."}, {"type": "chart", "status": "notRequired", "reason": "No se interpreta una carta ni una tabla real; cualquier documento operacional debe ser vigente y específico del vuelo."}]
+      "visual": {
+        "type": "comparisonDiagram",
+        "asset": "content/assets/a320-mcdu-performance-crosscheck.svg",
+        "alt": "Comparación conceptual de un resultado coherente con su fuente frente a una discrepancia que requiere detenerse y verificar.",
+        "purpose": "Hacer visible que la revisión final puede confirmar la práctica o exigir una pausa.",
+        "teaches": "Comparar escenario, fuente, entrada y resultado sin corregir una discrepancia por tanteo.",
+        "primaryTeachingObjective": "Cerrar la comprobación",
+        "perspective": "Comparación conceptual en dos rutas",
+        "movingElement": "Resultado observado",
+        "axisOfMovement": "Flujo de decisión",
+        "directionOfMovement": "De comparación a decisión",
+        "comparisonJustification": "Las dos salidas posibles, continuar documentando o detenerse para verificar, son el único contraste necesario para el objetivo del paso.",
+        "userQuestionAnswered": [
+          "queCambioEsperar",
+          "queErrorEvitar"
+        ],
+        "tiedToStep": 4,
+        "expectedObservation": "La comparación separa una coincidencia documentable de una discrepancia que no debe corregirse con más entradas.",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que una discrepancia obliga a revisar el contexto antes de continuar.",
+        "recognizedElements": [
+          "resultado comparable",
+          "discrepancia",
+          "detener y verificar"
+        ],
+        "actionAfterViewing": "Documenta la coincidencia o detén la práctica y vuelve al escenario y a la fuente.",
+        "coverage": [
+          "instrument"
+        ]
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "instrument",
+          "status": "required"
+        },
+        {
+          "type": "chart",
+          "status": "notRequired",
+          "reason": "La habilidad evaluada en este paso no depende de una referencia física adicional; se demuestra por el resultado observable de la tarea."
+        }
+      ],
+      "referenceVisuals": [
+        {
+          "type": "instrumentDiagram",
+          "asset": "content/assets/a320-v2-mcdu-perf-reference.svg",
+          "alt": "Reconocer MCDU PERF TAKEOFF. Referencia educativa fiel para reconocer los elementos antes de actuar en MSFS 2024.",
+          "purpose": "Dar una referencia fiel y ampliable para relacionar escenario, fuente de performance, campos mcdu y comprobación posterior sin inventar v-speeds sin inventar valores del vuelo.",
+          "teaches": "Relacionar escenario, fuente de performance, campos MCDU y comprobación posterior sin inventar V-speeds",
+          "primaryTeachingObjective": "Reconocer referencia",
+          "perspective": "Referencia frontal recreada de la variante objetivo",
+          "movingElement": "No aplica: referencia estática",
+          "axisOfMovement": "No aplica: referencia estática",
+          "directionOfMovement": "No aplica: referencia estática",
+          "userQuestionAnswered": [
+            "dondeMirar",
+            "queControlTocar",
+            "queCambioEsperar",
+            "queErrorEvitar"
+          ],
+          "tiedToStep": 4,
+          "expectedObservation": "Puedes localizar PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA y separar la selección de la comprobación del resultado.",
+          "view": "instrumento",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA en la variante objetivo antes de continuar la práctica.",
+          "recognizedElements": [
+            "PERF TO",
+            "V1",
+            "VR",
+            "V2",
+            "FLAPS/THS",
+            "T/O DATA"
+          ],
+          "actionAfterViewing": "Localiza los mismos elementos en tu sesión y confirma el estado o la indicación antes de realizar la siguiente acción.",
+          "coverage": [
+            "cockpit",
+            "instrument"
+          ],
+          "quality": {
+            "sourceWidth": 1600,
+            "sourceHeight": 900,
+            "intendedDisplayWidth": 760,
+            "supportsZoom": true,
+            "detailTarget": "Ubicación y relación funcional de PERF TO, V1, VR, V2, FLAPS/THS, T/O DATA sin números operacionales inventados."
+          }
+        }
+      ]
     }
   ],
   "practice": {
@@ -66,14 +441,31 @@
     "task": "Identifica un dato vinculado al escenario y conserva su fuente. Solo si reconoces la interfaz mediante la ayuda de la variante, realiza una entrada. Compara después escenario, fuente, dato y resultado; detente ante cualquier discrepancia.",
     "successSignal": "Puedes mostrar la cadena escenario, fuente, dato, entrada y resultado, o has decidido correctamente no introducir nada porque no se pudo verificar uno de esos elementos.",
     "conceptDemonstrated": "Trazabilidad de datos de simulación",
-    "possibleConfounders": ["La MCDU, EFB y páginas de performance pueden variar entre aeronaves base y complementos.", "Un dato de otro escenario, aeropuerto o configuración puede parecer válido aunque no corresponda al vuelo cargado.", "Una interfaz puede aceptar una entrada sin que ello pruebe que el dato o resultado sea aplicable.", "Una tabla, carta o captura externa puede estar desactualizada o pertenecer a una operación distinta."],
+    "possibleConfounders": [
+      "La MCDU, EFB y páginas de performance pueden variar entre aeronaves base y complementos.",
+      "Un dato de otro escenario, aeropuerto o configuración puede parecer válido aunque no corresponda al vuelo cargado.",
+      "Una interfaz puede aceptar una entrada sin que ello pruebe que el dato o resultado sea aplicable.",
+      "Una tabla, carta o captura externa puede estar desactualizada o pertenecer a una operación distinta."
+    ],
     "whyThisExerciseDemonstratesTheConcept": "El ejercicio limita la actividad a un dato y exige conservar su fuente antes de tocar la interfaz. Al comparar después el escenario, la entrada y el resultado, una discrepancia se puede atribuir y revisar sin ocultarla con más cambios. Detenerse ante falta de procedencia demuestra verificación de datos, no memorización de una página MCDU."
   },
   "commonMistakes": [
-    {"mistake": "Copiar un valor de una captura, vídeo u otro A320 sin confirmar su escenario y variante.", "recovery": "Descarta el valor hasta identificar su procedencia. Vuelve a la ayuda o EFB de la variante cargada y comprueba que corresponde al escenario actual."},
-    {"mistake": "Introducir varios datos para conseguir que aparezca un resultado.", "recovery": "Detén las entradas y recupera una condición conocida. Repite la práctica con un solo dato cuyo origen puedas comprobar."},
-    {"mistake": "Interpretar que un campo aceptó un número como prueba de que el cálculo es correcto.", "recovery": "Haz la comprobación cruzada con escenario y fuente. Si no puedes explicar la coincidencia, no continúes ni reutilices el resultado."},
-    {"mistake": "Usar la práctica de MSFS como sustituto de cálculos o procedimientos de operación real.", "recovery": "Separa ambos contextos. Para una operación real usa únicamente documentación vigente, fuentes autorizadas y procedimientos aplicables."}
+    {
+      "mistake": "Copiar un valor de una captura, vídeo u otro A320 sin confirmar su escenario y variante.",
+      "recovery": "Descarta el valor hasta identificar su procedencia. Vuelve a la ayuda o EFB de la variante cargada y comprueba que corresponde al escenario actual."
+    },
+    {
+      "mistake": "Introducir varios datos para conseguir que aparezca un resultado.",
+      "recovery": "Detén las entradas y recupera una condición conocida. Repite la práctica con un solo dato cuyo origen puedas comprobar."
+    },
+    {
+      "mistake": "Interpretar que un campo aceptó un número como prueba de que el cálculo es correcto.",
+      "recovery": "Haz la comprobación cruzada con escenario y fuente. Si no puedes explicar la coincidencia, no continúes ni reutilices el resultado."
+    },
+    {
+      "mistake": "Usar la práctica de MSFS como sustituto de cálculos o procedimientos de operación real.",
+      "recovery": "Separa ambos contextos. Para una operación real usa únicamente documentación vigente, fuentes autorizadas y procedimientos aplicables."
+    }
   ],
   "checklist": [
     "He identificado la variante A320 y el escenario de MSFS antes de buscar datos.",
@@ -84,9 +476,36 @@
     "He detenido la práctica ante una discrepancia o ante una referencia no disponible."
   ],
   "quiz": [
-    {"question": "¿Qué hace que un dato sea apto para esta práctica de simulación?", "options": ["Que tenga una fuente verificable que coincida con el escenario y la variante.", "Que aparezca en una captura de cualquier A320.", "Que la MCDU acepte escribirlo."], "answer": "Que tenga una fuente verificable que coincida con el escenario y la variante.", "explanation": "La interfaz no valida por sí sola la procedencia. El dato debe poder relacionarse con el escenario y con la variante cargada."},
-    {"question": "¿Qué debes hacer si el resultado no coincide con el escenario o la fuente?", "options": ["Detener la práctica y revisar el origen antes de otra entrada.", "Añadir valores hasta que cambie el resultado.", "Usar el resultado para un vuelo real si parece razonable."], "answer": "Detener la práctica y revisar el origen antes de otra entrada.", "explanation": "Cambiar más datos oculta la causa de la discrepancia. La respuesta correcta es recuperar una condición conocida y verificar."},
-    {"question": "¿Qué no enseña esta lección?", "options": ["Cálculos de performance para una operación real.", "La trazabilidad de un dato en MSFS.", "La necesidad de comprobar una variante antes de usar su interfaz."], "answer": "Cálculos de performance para una operación real.", "explanation": "La práctica se limita a datos de simulación y no sustituye fuentes actuales, cálculos aprobados ni procedimientos operacionales."}
+    {
+      "question": "¿Qué hace que un dato sea apto para esta práctica de simulación?",
+      "options": [
+        "Que tenga una fuente verificable que coincida con el escenario y la variante.",
+        "Que aparezca en una captura de cualquier A320.",
+        "Que la MCDU acepte escribirlo."
+      ],
+      "answer": "Que tenga una fuente verificable que coincida con el escenario y la variante.",
+      "explanation": "La interfaz no valida por sí sola la procedencia. El dato debe poder relacionarse con el escenario y con la variante cargada."
+    },
+    {
+      "question": "¿Qué debes hacer si el resultado no coincide con el escenario o la fuente?",
+      "options": [
+        "Detener la práctica y revisar el origen antes de otra entrada.",
+        "Añadir valores hasta que cambie el resultado.",
+        "Usar el resultado para un vuelo real si parece razonable."
+      ],
+      "answer": "Detener la práctica y revisar el origen antes de otra entrada.",
+      "explanation": "Cambiar más datos oculta la causa de la discrepancia. La respuesta correcta es recuperar una condición conocida y verificar."
+    },
+    {
+      "question": "¿Qué no enseña esta lección?",
+      "options": [
+        "Cálculos de performance para una operación real.",
+        "La trazabilidad de un dato en MSFS.",
+        "La necesidad de comprobar una variante antes de usar su interfaz."
+      ],
+      "answer": "Cálculos de performance para una operación real.",
+      "explanation": "La práctica se limita a datos de simulación y no sustituye fuentes actuales, cálculos aprobados ni procedimientos operacionales."
+    }
   ],
   "completionCriteria": [
     "Identificas la variante y el escenario antes de considerar una entrada de performance.",
@@ -95,7 +514,45 @@
     "Distingues esta práctica de MSFS de cálculos, datos y procedimientos aplicables a una operación real."
   ],
   "sources": [
-    {"title": "Airbus A320 Family", "url": "https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft/a320-family", "verified": true},
-    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
-  ]
+    {
+      "title": "Airbus A320 Family",
+      "url": "https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft/a320-family",
+      "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator Support",
+      "url": "https://flightsimulator.zendesk.com/hc/en-us",
+      "verified": true
+    },
+    {
+      "title": "Microsoft Flight Simulator — Airbus A320neo V2 Manual (iniBuilds)",
+      "url": "https://www.flightsimulator.com/aircraft-manuals/",
+      "verified": true
+    },
+    {
+      "title": "Microsoft/iniBuilds A320neo V2 Quick Reference Card",
+      "url": "https://flightsimulator.azureedge.net/wp-content/uploads/2024/05/A320-QRC.pdf",
+      "verified": true
+    }
+  ],
+  "operationalCompetency": {
+    "competencyObjective": "Preparar y verificar datos de MCDU PERF en el Microsoft/iniBuilds A320neo V2, demostrando la procedencia de cada entrada y de V1, VR y V2.",
+    "competencyEvidence": [
+      "Reconoce PERF TAKEOFF y los campos V1, VR y V2 en la referencia de la variante objetivo.",
+      "Explica V1, VR y V2 sin asignarles valores universales.",
+      "Puede señalar la fuente del escenario para cada entrada y rechaza un dato de otro vuelo o variante."
+    ],
+    "transferExercise": {
+      "scenario": "Carga un segundo escenario de A320neo V2 con condiciones distintas y vuelve a preparar una entrada de performance.",
+      "task": "Identifica la fuente del dato, localiza el campo correcto, introduce o verifica solo información trazable y explica por qué no reutiliza V1/VR/V2 del primer escenario.",
+      "expectedCompetency": "Transfiere la trazabilidad de datos a otro vuelo sin memorizar números ni mezclar variantes.",
+      "successCriteria": "Cada dato conserva fuente y escenario; V1/VR/V2 no se copian y una discrepancia detiene la secuencia antes de añadir otra entrada.",
+      "hints": [
+        "Reconoce primero, interpreta después y solo entonces actúa."
+      ]
+    },
+    "futureLearningTargets": [
+      "a320-cold-dark"
+    ]
+  }
 }

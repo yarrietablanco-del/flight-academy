@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">G1000 NXi del Cessna 172 Skyhawk — referencia de controles y navegación</title>
+<desc id="desc">Recreación educativa fiel de la organización del G1000 NXi usado por el Cessna 172 Skyhawk en MSFS 2024. Destaca PFD, fuente CDI, FPL, Direct-To y panel de piloto automático con AP, HDG, NAV y ALT.</desc>
+<rect width="1600" height="900" fill="#101418"/>
+<text x="70" y="70" fill="#f2f4f5" font-family="Arial" font-size="34" font-weight="700">C172 Skyhawk · Garmin G1000 NXi</text>
+<text x="70" y="108" fill="#aeb9bf" font-family="Arial" font-size="18">Referencia didáctica MSFS 2024 · identifica la función antes de tocarla</text>
+<rect x="70" y="145" width="690" height="590" rx="18" fill="#252d32" stroke="#85949c" stroke-width="3"/>
+<text x="95" y="185" fill="#ffffff" font-family="Arial" font-size="23" font-weight="700">PFD</text>
+<rect x="130" y="215" width="570" height="380" rx="8" fill="#172532" stroke="#596b75" stroke-width="2"/>
+<rect x="150" y="235" width="530" height="48" fill="#11191f"/>
+<text x="170" y="267" fill="#57d4ff" font-family="monospace" font-size="22">NAV1  111.90</text>
+<text x="485" y="267" fill="#65ff83" font-family="monospace" font-size="22">GPS</text>
+<rect x="335" y="320" width="160" height="160" rx="80" fill="#244d6a"/>
+<path d="M335 400h160" stroke="#fff" stroke-width="4"/>
+<path d="M415 318v164" stroke="#ffd95a" stroke-width="4"/>
+<text x="160" y="555" fill="#f4f5f5" font-family="Arial" font-size="18">Antes de seguir el CDI: lee la fuente</text>
+<rect x="110" y="630" width="610" height="70" rx="10" fill="#151b1f"/>
+<text x="145" y="673" fill="#fff" font-family="Arial" font-size="19">CDI SOURCE</text>
+<rect x="350" y="645" width="115" height="38" rx="6" fill="#24434d" stroke="#57d4ff"/>
+<text x="382" y="671" fill="#57d4ff" font-family="monospace" font-size="20">GPS</text>
+<text x="500" y="673" fill="#b6c2c8" font-family="Arial" font-size="16">GPS / VOR según la fuente activa</text>
+<rect x="820" y="145" width="710" height="590" rx="18" fill="#252d32" stroke="#85949c" stroke-width="3"/>
+<text x="845" y="185" fill="#fff" font-family="Arial" font-size="23" font-weight="700">MFD + controles</text>
+<rect x="860" y="215" width="470" height="300" rx="8" fill="#172532" stroke="#596b75" stroke-width="2"/>
+<path d="M900 430 L1050 315 L1220 390" fill="none" stroke="#d34cff" stroke-width="7"/>
+<circle cx="1050" cy="315" r="10" fill="#fff"/><text x="1015" y="295" fill="#fff" font-family="monospace" font-size="16">ACTIVE</text>
+<rect x="1360" y="225" width="125" height="48" rx="8" fill="#151b1f" stroke="#93a1a8"/><text x="1402" y="256" fill="#fff" font-family="Arial" font-size="17">FPL</text>
+<rect x="1360" y="290" width="125" height="48" rx="8" fill="#151b1f" stroke="#93a1a8"/><text x="1385" y="321" fill="#fff" font-family="Arial" font-size="17">Direct-To</text>
+<rect x="1360" y="355" width="125" height="48" rx="8" fill="#151b1f" stroke="#93a1a8"/><text x="1395" y="386" fill="#fff" font-family="Arial" font-size="17">PROC</text>
+<text x="865" y="552" fill="#fff" font-family="Arial" font-size="19" font-weight="700">Piloto automático integrado</text>
+<g font-family="Arial" font-size="17" text-anchor="middle">
+<rect x="865" y="575" width="90" height="50" rx="8" fill="#151b1f" stroke="#f2f4f5"/><text x="910" y="607" fill="#fff">AP</text>
+<rect x="970" y="575" width="90" height="50" rx="8" fill="#151b1f" stroke="#f2f4f5"/><text x="1015" y="607" fill="#fff">HDG</text>
+<rect x="1075" y="575" width="90" height="50" rx="8" fill="#151b1f" stroke="#f2f4f5"/><text x="1120" y="607" fill="#fff">NAV</text>
+<rect x="1180" y="575" width="90" height="50" rx="8" fill="#151b1f" stroke="#f2f4f5"/><text x="1225" y="607" fill="#fff">APR</text>
+<rect x="1285" y="575" width="90" height="50" rx="8" fill="#151b1f" stroke="#f2f4f5"/><text x="1330" y="607" fill="#fff">ALT</text>
+<rect x="1390" y="575" width="90" height="50" rx="8" fill="#151b1f" stroke="#f2f4f5"/><text x="1435" y="607" fill="#fff">VS</text>
+</g>
+<text x="865" y="665" fill="#ffdc68" font-family="Arial" font-size="18">Regla de supervisión</text>
+<text x="865" y="700" fill="#e7ecef" font-family="Arial" font-size="17">selección → anunciación/mode → respuesta → verificación</text>
+<rect x="70" y="775" width="1460" height="72" rx="12" fill="#192126"/>
+<text x="100" y="807" fill="#9fe6ff" font-family="Arial" font-size="17">FPL y Direct-To cambian la guía. CDI SOURCE dice qué señal estás interpretando. AP/HDG/NAV/ALT son modos: no basta con pulsarlos; confirma la anunciación y la respuesta.</text>
+<text x="100" y="834" fill="#9caab1" font-family="Arial" font-size="14">Basado en MSFS 2024 G1000 NXi V2 + Garmin G1000 NXi Cessna NAV III. No contiene frecuencias ni valores operacionales inventados.</text>
+</svg>
