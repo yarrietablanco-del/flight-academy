@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Relación conceptual de mando y supervisión en un Airbus A320</title>
+  <desc id="desc">Diagrama conceptual: una orden de vuelo del piloto o del piloto automático es procesada por ordenadores de control de vuelo, llega a las superficies y se supervisa mediante la respuesta observada. No representa una cabina ni prescribe un procedimiento.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#155e75"/></marker>
+    <style>
+      .title{font:700 31px Arial,sans-serif;fill:#123047}.label{font:700 22px Arial,sans-serif;fill:#123047}.body{font:18px Arial,sans-serif;fill:#25485d}.small{font:16px Arial,sans-serif;fill:#25485d}.box{stroke-width:3;rx:18}.arrow{stroke:#155e75;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="#f5fafb"/>
+  <text x="600" y="48" text-anchor="middle" class="title">Fly-by-wire: ordenar no elimina la supervisión</text>
+  <rect x="52" y="145" width="218" height="156" class="box" fill="#dff3f6" stroke="#16849b"/>
+  <text x="161" y="190" text-anchor="middle" class="label">Orden de vuelo</text>
+  <text x="161" y="222" text-anchor="middle" class="body">Piloto o automatización</text>
+  <text x="161" y="254" text-anchor="middle" class="small">intención de controlar</text>
+  <path d="M270 223 H350" class="arrow"/>
+  <rect x="360" y="145" width="235" height="156" class="box" fill="#fff2ce" stroke="#bf8610"/>
+  <text x="477" y="190" text-anchor="middle" class="label">Ordenadores</text>
+  <text x="477" y="222" text-anchor="middle" class="body">de control de vuelo</text>
+  <text x="477" y="254" text-anchor="middle" class="small">procesan la orden</text>
+  <path d="M595 223 H674" class="arrow"/>
+  <rect x="684" y="145" width="205" height="156" class="box" fill="#e4f3e8" stroke="#39845a"/>
+  <text x="786" y="190" text-anchor="middle" class="label">Avión</text>
+  <text x="786" y="222" text-anchor="middle" class="body">superficies y respuesta</text>
+  <text x="786" y="254" text-anchor="middle" class="small">resultado observable</text>
+  <path d="M889 223 H968" class="arrow"/>
+  <rect x="978" y="145" width="170" height="156" class="box" fill="#e9e5f6" stroke="#6d5aa6"/>
+  <text x="1063" y="190" text-anchor="middle" class="label">Tripulación</text>
+  <text x="1063" y="222" text-anchor="middle" class="body">observa</text>
+  <text x="1063" y="254" text-anchor="middle" class="small">y comprueba</text>
+  <path d="M1063 301 V390 H161 V312" class="arrow"/>
+  <rect x="268" y="375" width="665" height="103" class="box" fill="#ffffff" stroke="#5c7890"/>
+  <text x="600" y="416" text-anchor="middle" class="label">Ciclo de aprendizaje en MSFS</text>
+  <text x="600" y="449" text-anchor="middle" class="body">Observa el resultado, confirma que coincide con la intención y solo entonces continúa.</text>
+  <text x="600" y="526" text-anchor="middle" class="small">Diagrama conceptual: no representa controles, pantallas, modos ni procedimientos de una variante concreta.</text>
+</svg>

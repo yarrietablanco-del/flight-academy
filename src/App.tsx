@@ -32,9 +32,22 @@ function isEditoriallyAvailable(lesson: Lesson) {
   return lesson.editorialStatus === "published" || lesson.editorialStatus === "validated";
 }
 
+const appBasePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+function lessonIdFromPath(hash = window.location.hash) {
+  const match = hash.match(/^#\/lessons\/([^/]+)\/?$/);
+  if (!match) return undefined;
+  const id = decodeURIComponent(match[1]);
+  return lessonOrder.includes(id) ? id : undefined;
+}
+
+function lessonPath(id: string) {
+  return `${appBasePath}/#/lessons/${encodeURIComponent(id)}`;
+}
+
 function App() {
-  const [view, setView] = useState<View>("dashboard");
-  const [selectedLessonId, setSelectedLessonId] = useState(lessonOrder[0]);
+  const [view, setView] = useState<View>(() => lessonIdFromPath() ? "lesson" : "dashboard");
+  const [selectedLessonId, setSelectedLessonId] = useState(() => lessonIdFromPath() ?? lessonOrder[0]);
   const [returnFocusLessonId, setReturnFocusLessonId] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const {
@@ -66,14 +79,30 @@ function App() {
     if (statuses[lesson.id] === "locked" || !isEditoriallyAvailable(lesson)) return;
     setSelectedLessonId(lesson.id);
     setView("lesson");
+    window.history.pushState({}, "", lessonPath(lesson.id));
     setMenuOpen(false);
     startLesson(lesson.id);
   };
 
   const navigate = (next: Exclude<View, "lesson">) => {
     setView(next);
+    window.history.pushState({}, "", `${appBasePath}/`);
     setMenuOpen(false);
   };
+
+  useEffect(() => {
+    const onPopState = () => {
+      const id = lessonIdFromPath();
+      setSelectedLessonId(id ?? lessonOrder[0]);
+      setView(id ? "lesson" : "dashboard");
+    };
+    window.addEventListener("popstate", onPopState);
+    window.addEventListener("hashchange", onPopState);
+    return () => {
+      window.removeEventListener("popstate", onPopState);
+      window.removeEventListener("hashchange", onPopState);
+    };
+  }, []);
 
   return (
     <div className="app-shell">

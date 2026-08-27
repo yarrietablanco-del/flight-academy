@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">NAV captura y sigue una guía lateral ya comprobada</title>
+  <desc id="desc">Diagrama conceptual superior de una aeronave que intercepta una línea de guía GPS y después la sigue.</desc>
+  <rect width="960" height="440" fill="#071827"/>
+  <text x="54" y="62" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="29" font-weight="700">NAV: primero confirma la fuente; después observa la captura</text>
+  <path d="M125 182 H844" fill="none" stroke="#35c7ff" stroke-width="9" stroke-linecap="round"/>
+  <text x="622" y="155" fill="#35c7ff" font-family="Arial, sans-serif" font-size="22">guía lateral GPS comprobada</text>
+  <path d="M158 318 C294 314 334 289 421 182 H808" fill="none" stroke="#f1f7fb" stroke-width="7" stroke-linecap="round"/>
+  <path d="M411 194 l-29 7 l18 22z" fill="#f1f7fb"/>
+  <circle cx="422" cy="182" r="23" fill="#39d98a" stroke="#d8fff0" stroke-width="3"/>
+  <text x="356" y="238" fill="#d9e8ef" font-family="Arial, sans-serif" font-size="20">captura</text>
+  <text x="102" y="355" fill="#d9e8ef" font-family="Arial, sans-serif" font-size="20">aproximación a la guía</text>
+  <text x="660" y="235" fill="#d9e8ef" font-family="Arial, sans-serif" font-size="20">seguimiento</text>
+  <rect x="55" y="376" width="850" height="42" rx="8" fill="#112b3c"/>
+  <text x="77" y="404" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="20">Si la fuente, el tramo o el resultado no coinciden, desconecta y vuelve a vuelo manual estable.</text>
+</svg>

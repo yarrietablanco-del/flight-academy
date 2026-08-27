@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">De condición de simulación a práctica verificable</title>
+  <desc id="desc">Un flujo explica que una condición de MSFS cambia las referencias disponibles y permite practicar un barrido, pero termina antes de una decisión operacional real.</desc>
+  <defs><style>text{font-family:Arial,sans-serif;fill:#edf5ff}.h{font-size:30px;font-weight:700}.b{font-size:22px;font-weight:700}.s{font-size:18px;fill:#bfd0e3}.box{stroke:#79c5ed;stroke-width:3}.arrow{stroke:#edf5ff;stroke-width:5;fill:none;marker-end:url(#a)}</style><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12z" fill="#edf5ff"/></marker></defs>
+  <rect width="1200" height="500" fill="#102033"/><text x="600" y="58" text-anchor="middle" class="h">La meteorología de MSFS crea un escenario, no un briefing operativo</text>
+  <rect x="55" y="154" width="230" height="126" rx="18" fill="#1e506d" class="box"/><text x="170" y="205" text-anchor="middle" class="b">Condición</text><text x="170" y="237" text-anchor="middle" class="b">en MSFS</text>
+  <path d="M286 217h94" class="arrow"/><rect x="390" y="154" width="230" height="126" rx="18" fill="#285d75" class="box"/><text x="505" y="205" text-anchor="middle" class="b">Referencias</text><text x="505" y="237" text-anchor="middle" class="b">disponibles</text>
+  <path d="M621 217h94" class="arrow"/><rect x="725" y="154" width="230" height="126" rx="18" fill="#327362" class="box"/><text x="840" y="205" text-anchor="middle" class="b">Barrido y</text><text x="840" y="237" text-anchor="middle" class="b">respuesta</text>
+  <path d="M956 217h94" class="arrow"/><rect x="1060" y="154" width="95" height="126" rx="18" fill="#8a4f64" stroke="#f1acc1" stroke-width="3"/><text x="1107" y="201" text-anchor="middle" class="b">Límite</text><text x="1107" y="232" text-anchor="middle" class="b">real</text>
+  <path d="M840 281v70" class="arrow"/><rect x="635" y="365" width="410" height="75" rx="14" fill="#1c3850" stroke="#79c5ed" stroke-width="3"/><text x="840" y="411" text-anchor="middle" class="b">¿Coincide con la expectativa?</text><text x="840" y="476" text-anchor="middle" class="s">No: recuperar control manual antes de añadir otra tarea.</text>
+  <text x="600" y="120" text-anchor="middle" class="s">Flujo de información: no representa un movimiento físico.</text>
+</svg>

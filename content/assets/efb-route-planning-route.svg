@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Ruta VFR conceptual: origen, punto de referencia y destino</title>
+  <desc id="desc">Un mapa esquemático muestra una línea azul que une el aeródromo de salida, un punto de referencia intermedio y el aeródromo de llegada. Una línea discontinua naranja representa una alternativa que debe revisarse antes de iniciar el vuelo.</desc>
+  <defs>
+    <style>
+      .bg{fill:#071b2b}.grid{stroke:#17445d;stroke-width:2}.land{fill:#0c3041;stroke:#2b687b;stroke-width:3}.route{fill:none;stroke:#49c9ff;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}.alt{fill:none;stroke:#f6b74b;stroke-width:6;stroke-dasharray:13 12;stroke-linecap:round}.label{font-family:Arial,sans-serif;fill:#e9f8ff}.small{font-size:24px}.large{font-size:33px;font-weight:700}.muted{fill:#a9cad7}.node{fill:#102c3c;stroke:#e9f8ff;stroke-width:4}.note{fill:#102c3c;stroke:#f6b74b;stroke-width:3}
+    </style>
+    <marker id="arrow-blue" markerWidth="13" markerHeight="13" refX="10" refY="6.5" orient="auto"><path d="M0,0 L13,6.5 L0,13 z" fill="#49c9ff"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="675" rx="28"/>
+  <path class="grid" d="M80 105H1120M80 220H1120M80 335H1120M80 450H1120M80 565H1120M145 55V620M365 55V620M585 55V620M805 55V620M1025 55V620" opacity=".65"/>
+  <path class="land" d="M95 518 C210 420 220 558 358 494 C457 447 473 327 600 351 C732 376 714 493 867 451 C986 418 1012 297 1132 337 L1132 615 L95 615Z"/>
+  <text class="label large" x="80" y="84">Una ruta se lee como una secuencia verificable</text>
+  <text class="label small muted" x="80" y="119">Origen → punto de referencia → destino; después se revisa la línea completa.</text>
+  <path class="route" d="M181 469 C311 421 406 355 544 361 S777 430 970 282" marker-end="url(#arrow-blue)"/>
+  <path class="alt" d="M544 361 C640 257 793 193 970 282"/>
+  <circle class="node" cx="181" cy="469" r="38"/><path d="M164 469h34M181 452v34" stroke="#e9f8ff" stroke-width="4"/>
+  <circle class="node" cx="544" cy="361" r="38"/><circle cx="544" cy="361" r="10" fill="#e9f8ff"/>
+  <circle class="node" cx="970" cy="282" r="38"/><path d="M951 282h38M970 263v38" stroke="#e9f8ff" stroke-width="4"/>
+  <text class="label large" x="116" y="540">ORIGEN</text><text class="label small muted" x="102" y="571">aeródromo de salida</text>
+  <text class="label large" x="463" y="285">REFERENCIA</text><text class="label small muted" x="473" y="316">punto para comprobar</text>
+  <text class="label large" x="909" y="207">DESTINO</text><text class="label small muted" x="883" y="238">aeródromo de llegada</text>
+  <rect class="note" x="744" y="501" width="364" height="82" rx="14"/>
+  <text class="label small" x="772" y="536">Alternativa discontinua:</text><text class="label small muted" x="772" y="566">no es parte de la ruta hasta revisarla.</text>
+  <text class="label small" x="80" y="646">Azul: tramo que el alumno confirma. Naranja: cambio pendiente de revisión.</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Barrido conceptual de información del A320</title>
+  <desc id="desc">Un flujo ordena leer actitud y trayectoria, navegación, estado de sistemas y objetivos seleccionados, y termina comparando intención con resultado.</desc>
+  <rect width="1200" height="560" fill="#07141d"/>
+  <text x="600" y="60" text-anchor="middle" fill="#eef7fb" font-family="Arial, sans-serif" font-size="32" font-weight="700">UN BARRIDO: INFORMACIÓN → INTENCIÓN → COMPROBACIÓN</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(45 150)">
+      <rect width="245" height="210" rx="18" fill="#102b3a" stroke="#53c5e8" stroke-width="4"/>
+      <text x="122" y="57" text-anchor="middle" fill="#67d6f5" font-size="31" font-weight="700">PFD</text>
+      <text x="122" y="105" text-anchor="middle" fill="#eef7fb" font-size="23">¿Qué hace</text><text x="122" y="134" text-anchor="middle" fill="#eef7fb" font-size="23">el avión ahora?</text>
+      <text x="122" y="180" text-anchor="middle" fill="#b9d7e2" font-size="18">actitud · altura · velocidad</text>
+    </g>
+    <g transform="translate(335 150)">
+      <rect width="245" height="210" rx="18" fill="#102b3a" stroke="#55d6ad" stroke-width="4"/>
+      <text x="122" y="57" text-anchor="middle" fill="#69e7bc" font-size="31" font-weight="700">ND</text>
+      <text x="122" y="105" text-anchor="middle" fill="#eef7fb" font-size="23">¿Dónde está</text><text x="122" y="134" text-anchor="middle" fill="#eef7fb" font-size="23">la trayectoria?</text>
+      <text x="122" y="180" text-anchor="middle" fill="#b9d7e2" font-size="18">rumbo · ruta · referencias</text>
+    </g>
+    <g transform="translate(625 150)">
+      <rect width="245" height="210" rx="18" fill="#102b3a" stroke="#ffbc57" stroke-width="4"/>
+      <text x="122" y="57" text-anchor="middle" fill="#ffd080" font-size="31" font-weight="700">ECAM</text>
+      <text x="122" y="105" text-anchor="middle" fill="#eef7fb" font-size="23">¿Qué sistema</text><text x="122" y="134" text-anchor="middle" fill="#eef7fb" font-size="23">requiere atención?</text>
+      <text x="122" y="180" text-anchor="middle" fill="#b9d7e2" font-size="18">estado · avisos · sistemas</text>
+    </g>
+    <g transform="translate(915 150)">
+      <rect width="245" height="210" rx="18" fill="#102b3a" stroke="#ca8cff" stroke-width="4"/>
+      <text x="122" y="57" text-anchor="middle" fill="#d9adff" font-size="31" font-weight="700">FCU</text>
+      <text x="122" y="105" text-anchor="middle" fill="#eef7fb" font-size="23">¿Qué objetivo</text><text x="122" y="134" text-anchor="middle" fill="#eef7fb" font-size="23">seleccioné?</text>
+      <text x="122" y="180" text-anchor="middle" fill="#b9d7e2" font-size="18">objetivo · modo · confirmación</text>
+    </g>
+    <path d="M290 255H325M580 255H615M870 255H905" stroke="#d8eff7" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M1040 385C1000 466 800 493 600 493S200 466 160 385" stroke="#d8eff7" stroke-width="4" fill="none" marker-end="url(#arrow)"/>
+    <text x="600" y="460" text-anchor="middle" fill="#eef7fb" font-size="25" font-weight="700">¿El objetivo, el modo y la respuesta coinciden?</text>
+  </g>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#d8eff7"/></marker></defs>
+</svg>

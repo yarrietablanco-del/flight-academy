@@ -64,6 +64,7 @@ let result = run(prompt);
 if (result.status !== 0 || !existsSync(join(root, 'content', 'lessons', `${next.id}.json`))) process.exit(result.status || 1);
 for (const level of curriculum.levels) for (const module of level.modules) { const lesson = module.lessons.find((item) => item.id === next.id); if (lesson) lesson.status = 'generated'; }
 writeFileSync(curriculumPath, `${JSON.stringify(curriculum, null, 2)}\n`);
+if (process.env.AUTHOR_BATCH_PROGRESS) console.log(`${process.env.AUTHOR_BATCH_PROGRESS} Validando`);
 result = spawnSync(process.execPath, ['authoring/validate-content.mjs', '--lesson', next.id], { cwd: root, stdio: 'inherit' });
 if (result.status !== 0) {
   result = run(`${prompt}\nLa primera validación falló. Corrige exclusivamente la lección y assets; vuelve a ejecutar node authoring/validate-content.mjs --lesson ${next.id}.`);

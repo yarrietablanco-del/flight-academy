@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Secuencia conceptual para supervisar una acción en la cabina Airbus</title>
+  <desc id="desc">Flujo conceptual para una práctica estacionada: primero observar el estado, después identificar una intención y finalmente comprobar el resultado. Ante incertidumbre, detener la práctica y volver a observar.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#155e75"/></marker>
+    <style>
+      .title{font:700 30px Arial,sans-serif;fill:#123047}.label{font:700 22px Arial,sans-serif;fill:#123047}.body{font:18px Arial,sans-serif;fill:#25485d}.small{font:16px Arial,sans-serif;fill:#25485d}.box{stroke-width:3;rx:18}.arrow{stroke:#155e75;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="520" fill="#f5fafb"/>
+  <text x="600" y="48" text-anchor="middle" class="title">Antes de continuar: observar, identificar, comprobar</text>
+  <rect x="55" y="150" width="250" height="148" class="box" fill="#dff3f6" stroke="#16849b"/>
+  <text x="180" y="196" text-anchor="middle" class="label">1. Observa</text>
+  <text x="180" y="229" text-anchor="middle" class="body">Qué muestra ahora</text>
+  <text x="180" y="258" text-anchor="middle" class="small">el avión inmóvil</text>
+  <path d="M305 224 H400" class="arrow"/>
+  <rect x="410" y="150" width="350" height="148" class="box" fill="#fff2ce" stroke="#bf8610"/>
+  <text x="585" y="196" text-anchor="middle" class="label">2. Identifica</text>
+  <text x="585" y="229" text-anchor="middle" class="body">Qué información necesitas entender</text>
+  <text x="585" y="258" text-anchor="middle" class="small">sin adivinar botones ni valores</text>
+  <path d="M760 224 H855" class="arrow"/>
+  <rect x="865" y="150" width="280" height="148" class="box" fill="#e4f3e8" stroke="#39845a"/>
+  <text x="1005" y="196" text-anchor="middle" class="label">3. Comprueba</text>
+  <text x="1005" y="229" text-anchor="middle" class="body">Si el resultado coincide</text>
+  <text x="1005" y="258" text-anchor="middle" class="small">antes de la siguiente acción</text>
+  <path d="M1005 299 V378 H900" class="arrow"/>
+  <rect x="535" y="356" width="356" height="100" class="box" fill="#fde9e8" stroke="#bc4b45"/>
+  <text x="713" y="396" text-anchor="middle" class="label">¿No coincide o hay duda?</text>
+  <text x="713" y="428" text-anchor="middle" class="body">Detén la práctica y vuelve a observar.</text>
+  <path d="M535 405 H180 V310" class="arrow"/>
+  <text x="600" y="494" text-anchor="middle" class="small">Flujo conceptual: sirve para aprender a supervisar; no sustituye un checklist ni un procedimiento real.</text>
+</svg>

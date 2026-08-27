@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Un radial VOR sitúa al avión respecto de la estación</title>
+  <desc id="desc">Diagrama superior conceptual: una estación VOR en el centro, un avión sobre el radial 060 y una línea de rumbo distinta para evitar confundir radial con rumbo.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#1d4ed8"/></marker>
+    <style>text{font-family:Arial,sans-serif;fill:#122033}.title{font-size:34px;font-weight:700}.label{font-size:25px;font-weight:700}.body{font-size:21px}.muted{fill:#526276}</style>
+  </defs>
+  <rect width="1200" height="720" fill="#f7fafc"/>
+  <text x="600" y="58" text-anchor="middle" class="title">El radial sale de la estación VOR</text>
+  <circle cx="560" cy="402" r="238" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="560" cy="402" r="150" fill="none" stroke="#dbe5f0" stroke-width="2" stroke-dasharray="8 9"/>
+  <path d="M560 402 L766 283" fill="none" stroke="#1d4ed8" stroke-width="8" marker-end="url(#arrow)"/>
+  <path d="M560 402 L560 132 M560 402 L794 537 M560 402 L326 537" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 8"/>
+  <circle cx="560" cy="402" r="36" fill="#0f766e"/>
+  <path d="M548 415 L560 373 L572 415 Z" fill="white"/>
+  <text x="560" y="470" text-anchor="middle" class="label">Estación VOR</text>
+  <g transform="translate(790 260) rotate(60)"><path d="M0 -28 L19 25 L0 15 L-19 25 Z" fill="#f97316" stroke="#9a3412" stroke-width="3"/></g>
+  <text x="817" y="245" class="label">Avión</text>
+  <text x="792" y="323" class="label" fill="#1d4ed8">Radial 060°</text>
+  <path d="M850 268 L920 225" stroke="#f97316" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="937" y="220" class="body">Rumbo del avión</text>
+  <text x="937" y="249" class="muted body">puede ser diferente</text>
+  <rect x="82" y="586" width="1036" height="82" rx="14" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="2"/>
+  <text x="600" y="620" text-anchor="middle" class="label">Lee el radial como “desde la estación hacia el avión”.</text>
+  <text x="600" y="650" text-anchor="middle" class="body">No lo uses como si fuera automáticamente el rumbo que está volando el avión.</text>
+</svg>

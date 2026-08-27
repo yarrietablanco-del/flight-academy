@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Lectura de una autorización IFR de simulación</title>
+  <desc id="desc">Flujo que separa el mensaje de ATC en límite, ruta, altitud y elementos adicionales; después conduce a verificar, practicar en MSFS o detenerse ante una duda.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#1f4f73"/></marker>
+    <style>
+      .heading{font:700 30px Arial,sans-serif;fill:#102a43}.label{font:700 21px Arial,sans-serif;fill:#102a43}.body{font:17px Arial,sans-serif;fill:#243b53}.small{font:15px Arial,sans-serif;fill:#243b53}.box{stroke-width:3;rx:18}.line{stroke:#1f4f73;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="520" fill="#f5f9fc"/>
+  <text x="600" y="48" text-anchor="middle" class="heading">Autorización IFR: leer el alcance antes de actuar</text>
+  <rect x="52" y="104" width="210" height="138" class="box" fill="#d9edf7" stroke="#2878a8"/>
+  <text x="157" y="145" text-anchor="middle" class="label">Mensaje ATC</text>
+  <text x="157" y="178" text-anchor="middle" class="body">de la sesión</text>
+  <text x="157" y="205" text-anchor="middle" class="small">No equivale a servicio real</text>
+  <path d="M262 173 H325" class="line"/>
+  <rect x="332" y="78" width="505" height="190" class="box" fill="#fff7d6" stroke="#c28a18"/>
+  <text x="585" y="114" text-anchor="middle" class="label">Separa lo que el mensaje sí indica</text>
+  <rect x="357" y="140" width="102" height="92" class="box" fill="#fff" stroke="#c28a18"/>
+  <text x="408" y="172" text-anchor="middle" class="label">Límite</text><text x="408" y="202" text-anchor="middle" class="small">hasta dónde</text>
+  <rect x="475" y="140" width="102" height="92" class="box" fill="#fff" stroke="#c28a18"/>
+  <text x="526" y="172" text-anchor="middle" class="label">Ruta</text><text x="526" y="202" text-anchor="middle" class="small">por dónde</text>
+  <rect x="593" y="140" width="102" height="92" class="box" fill="#fff" stroke="#c28a18"/>
+  <text x="644" y="172" text-anchor="middle" class="label">Altitud</text><text x="644" y="202" text-anchor="middle" class="small">qué objetivo</text>
+  <rect x="711" y="140" width="102" height="92" class="box" fill="#fff" stroke="#c28a18"/>
+  <text x="762" y="166" text-anchor="middle" class="label">Otros</text><text x="762" y="194" text-anchor="middle" class="small">si aparecen</text>
+  <path d="M837 173 H900" class="line"/>
+  <rect x="907" y="104" width="241" height="138" class="box" fill="#e2f3e8" stroke="#2f855a"/>
+  <text x="1027" y="145" text-anchor="middle" class="label">Comprueba</text>
+  <text x="1027" y="176" text-anchor="middle" class="body">plan, carta y avión</text>
+  <text x="1027" y="205" text-anchor="middle" class="small">solo con fuentes aplicables</text>
+  <path d="M1027 243 V331" class="line"/>
+  <path d="M585 269 V331" class="line"/>
+  <rect x="364" y="344" width="432" height="112" class="box" fill="#e2f3e8" stroke="#2f855a"/>
+  <text x="580" y="383" text-anchor="middle" class="label">¿Todo se entiende y coincide?</text>
+  <text x="580" y="418" text-anchor="middle" class="body">Sí: practica la respuesta disponible en MSFS.</text>
+  <path d="M364 400 H255" class="line"/>
+  <rect x="50" y="344" width="200" height="112" class="box" fill="#fde8e7" stroke="#c53030"/>
+  <text x="150" y="383" text-anchor="middle" class="label">No / duda</text>
+  <text x="150" y="414" text-anchor="middle" class="body">Detén la práctica</text><text x="150" y="438" text-anchor="middle" class="small">y vuelve a verificar</text>
+  <text x="600" y="493" text-anchor="middle" class="small">Diagrama conceptual: no prescribe fraseología, frecuencias, valores ni autorizaciones reales.</text>
+</svg>

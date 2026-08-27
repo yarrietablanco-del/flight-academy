@@ -1,0 +1,103 @@
+{
+  "metadata": {
+    "id": "c172-landing",
+    "title": "Aterrizaje y frustrada",
+    "subtitle": "Decide con calma si una aproximación puede continuar o debe interrumpirse.",
+    "objective": "Decidir aterrizar o frustrar con una aproximación estable.",
+    "estimatedTime": "30 min",
+    "prerequisites": ["traffic-pattern"],
+    "level": 2,
+    "module": "ground-and-pattern",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "Una toma no empieza al tocar la pista: depende de que la aproximación siga siendo comprensible y controlable. En MSFS practicarás observar esa tendencia y elegir temprano entre continuar o frustrar. Esto no sustituye el POH, la instrucción, las autorizaciones ni los procedimientos publicados de una operación real.",
+  "concepts": [
+    {"term": "Aproximación estable", "meaning": "Aproximación en la que la pista, la alineación y la trayectoria se pueden observar y prever sin una cadena de correcciones bruscas. No es una cifra universal aplicable a toda variante, aeropuerto o condición."},
+    {"term": "Toma", "meaning": "Contacto controlado con la pista al final de una aproximación que sigue siendo estable. En esta práctica se reconoce la decisión de continuar; los datos y la técnica específica pertenecen a la variante y a sus fuentes."},
+    {"term": "Frustrada", "meaning": "Interrupción deliberada de una aproximación que deja de ser aceptable. En simulación permite recuperar una trayectoria clara y preparar otro intento; en vuelo real exige el procedimiento aplicable y formación."}
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Prepara un final sencillo de observar",
+      "instruction": "En MSFS 2024 carga un C172 de día, con buena visibilidad, poco tráfico y una pista fácil de reconocer. Vuela el circuito del prerrequisito hasta final. Alterna pista, horizonte y tendencia del avión. Si no puedes ver la pista con claridad o el escenario añade demasiadas variables, pausa y simplifícalo antes de intentar una toma.",
+      "explanation": "La decisión solo es útil cuando puedes reconocer qué está haciendo el avión respecto a una pista concreta. Un entorno simple aísla la relación entre trayectoria y decisión, en vez de confundirla con clima, tráfico, una carta o controles sin verificar.",
+      "expectedResult": "Llegas a final con la pista por delante y una imagen suficiente para explicar si el avión se dirige hacia ella de forma predecible. Si la pista desaparece, la trayectoria cambia sin que puedas explicarla o no tienes margen visual, no continúes: reinicia desde un escenario más simple.",
+      "simulatorAction": "Confirma en el perfil activo de MSFS que dirección, potencia, frenos y la vista elegida responden antes de practicar. No se prescribe una asignación de VelocityOne: depende de tu perfil y debe verificarse allí.",
+      "visual": {"type": "flightPathDiagram", "asset": "content/assets/c172-landing-stability.svg", "alt": "Diagrama lateral conceptual de un C172 que sigue una trayectoria continua hacia una pista visible y alineada.", "purpose": "Mostrar las señales visuales que hacen reconocible una aproximación estable antes de decidir continuar.", "teaches": "Relacionar pista visible, trayectoria continua y alineación sostenible como observaciones previas a una decisión.", "primaryTeachingObjective": "Reconocer estabilidad", "perspective": "Vista lateral conceptual de aproximación", "movingElement": "Trayectoria del C172", "axisOfMovement": "Descenso longitudinal", "directionOfMovement": "Hacia la pista", "userQuestionAnswered": ["dondeMirar", "queCambioEsperar"], "tiedToStep": 1, "expectedObservation": "La trayectoria se mantiene continua hacia una pista por delante y conserva una tendencia que puede describirse.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce una aproximación estable como una relación observable, no como una imagen fija o una cifra universal.", "recognizedElements": ["pista", "trayectoria continua", "alineación", "C172"], "actionAfterViewing": "Configura un final simple y nombra la pista, la trayectoria y la tendencia antes de modificar un control."},
+      "requiredVisualCoverage": [{"type": "exteriorView", "status": "notRequired", "reason": "La vista real depende de aeropuerto, clima, cámara y sesión del alumno; no se dispone de una referencia fiel única."}, {"type": "hardware", "status": "notRequired", "reason": "No hay una referencia confirmada del perfil VelocityOne activo que permita afirmar controles o asignaciones."}]
+    },
+    {
+      "number": 2,
+      "title": "Evalúa antes de perseguir la pista",
+      "instruction": "Durante final, pregunta: ¿la pista sigue por delante?, ¿la alineación se mantiene sin correcciones cada vez mayores?, ¿puedo anticipar la trayectoria? Observa primero y realiza una corrección suave solo si puedes explicar su propósito. Si una corrección genera otra inmediata o la aproximación deja de ser predecible, elige frustrar.",
+      "explanation": "Una aproximación estable no requiere que la imagen sea perfecta; requiere que su tendencia sea legible. Esperar y observar después de una corrección evita perseguir la pista con entradas sucesivas que ocultan la causa del desvío.",
+      "expectedResult": "Puedes nombrar la señal que apoya continuar o la señal que te lleva a frustrar. Si tu respuesta es que no puedes determinarlo, trátala como falta de estabilidad para esta práctica: interrumpe con margen y vuelve a intentarlo.",
+      "simulatorAction": "Mantén la vista que deja ver pista y horizonte. Usa únicamente entradas que ya comprobaste y evita cambiar sensibilidad, asignaciones o cámaras durante la aproximación; pausa y cambia una sola variable entre intentos.",
+      "visual": {"type": "comparisonDiagram", "asset": "content/assets/c172-landing-decision.svg", "alt": "Diagrama conceptual que compara continuar una aproximación estable con frustrar una aproximación cuya trayectoria ya no es comprensible.", "purpose": "Separar visualmente la decisión de continuar de la decisión de frustrar según la estabilidad observada.", "teaches": "Elegir la frustrada cuando pista o trayectoria dejan de ser predecibles, sin esperar a que el problema crezca.", "primaryTeachingObjective": "Decidir frustrar temprano", "perspective": "Flujo conceptual de decisión", "movingElement": "Estado de la aproximación", "axisOfMovement": "No aplica: flujo conceptual", "directionOfMovement": "De evaluación a decisión", "comparisonJustification": "Comparar ambas salidas aclara que la decisión depende de la estabilidad observada y no de forzar una toma.", "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"], "tiedToStep": 2, "expectedObservation": "Una aproximación comprensible continúa a la toma; una que deja de serlo conduce a una frustrada y a otro intento.", "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que frustrar es una decisión activa de recuperación, no un fallo que se deba posponer.", "recognizedElements": ["evaluación", "continuar", "frustrar", "reevaluar"], "actionAfterViewing": "En final, declara en voz alta si la trayectoria sigue siendo comprensible; si no, inicia la frustrada de tu variante."},
+      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "La cabina y la aviònica del C172 varían según la variante elegida y no se aportó una referencia fiel."}, {"type": "instrument", "status": "notRequired", "reason": "El paso evalúa referencias visuales y tendencia, no una lectura concreta de instrumentos de una variante específica."}, {"type": "exteriorView", "status": "notRequired", "reason": "Una captura exterior no sería fiel para todos los aeropuertos, condiciones y cámaras de MSFS."}]
+    },
+    {
+      "number": 3,
+      "title": "Continúa solo si la aproximación sigue estable",
+      "instruction": "Si las señales continúan siendo claras, mantén la observación de pista y horizonte y deja que la aproximación evolucione sin intentar copiar una actitud del diagrama. Completa la toma solo conforme a la lista de comprobación y la documentación de tu variante en MSFS. Si aparece una desviación creciente o pierdes la referencia, abandona la toma y frustra.",
+      "explanation": "Continuar no significa comprometerse a tocar la pista a cualquier precio. La decisión se revisa durante toda la aproximación; así una señal nueva puede llevarte a frustrar antes de añadir maniobras bruscas o asumir que la toma ya está decidida.",
+      "expectedResult": "Si continúas, la pista permanece reconocible y la trayectoria no exige una cadena de correcciones. Si cualquiera de esas señales deja de estar presente, el resultado correcto de este paso es frustrar y recuperar una trayectoria clara, no intentar salvar la toma.",
+      "simulatorAction": "Consulta la checklist y el manual de la variante de C172 cargada para su técnica y configuración. Esta lección no aporta velocidad, potencia, flaps ni actitud: esos datos varían y deben venir de una fuente aplicable.",
+      "visual": {"type": "flightPathDiagram", "asset": "content/assets/c172-landing-stability.svg", "alt": "Diagrama lateral conceptual que muestra una trayectoria estable manteniendo la pista visible hasta la zona de toma.", "purpose": "Recordar que continuar exige conservar una trayectoria visible y predecible hasta que la decisión cambie.", "teaches": "Reevaluar la estabilidad durante la continuación en vez de considerar irreversible la decisión de aterrizar.", "primaryTeachingObjective": "Reevaluar continuidad", "perspective": "Vista lateral conceptual de aproximación", "movingElement": "Trayectoria del C172", "axisOfMovement": "Descenso longitudinal", "directionOfMovement": "Hacia la pista", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 3, "expectedObservation": "La pista queda por delante mientras la trayectoria conserva una tendencia continua que puede volver a evaluarse.", "view": "flujo", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que una decisión de continuar sigue condicionada por la estabilidad que observes en cada momento.", "recognizedElements": ["pista", "trayectoria", "zona de toma", "tendencia"], "actionAfterViewing": "Continúa únicamente mientras puedas describir pista y trayectoria; ante una señal perdida, cambia de inmediato a la frustrada."},
+      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "No se proporcionó una referencia fiel de la cabina de la variante que usará cada alumno."}, {"type": "instrument", "status": "notRequired", "reason": "Las lecturas y pantallas dependen de la aviònica y de la variante seleccionada, sin referencia fiel disponible."}, {"type": "hardware", "status": "notRequired", "reason": "No se puede afirmar la posición ni asignación de los controles VelocityOne sin comprobar el perfil activo."}]
+    },
+    {
+      "number": 4,
+      "title": "Frustra y prepara otro intento",
+      "instruction": "Cuando decidas frustrar, anuncia la decisión y aplica el procedimiento de frustrada de la checklist o manual de tu C172 en MSFS. Mantén la atención en recuperar una trayectoria clara por delante antes de volver a evaluar. Si no puedes identificar el procedimiento aplicable o el avión responde de forma inesperada, pausa, consulta la documentación de esa variante y reinicia en un escenario simple.",
+      "explanation": "La frustrada conserva margen porque transforma una aproximación que ya no es comprensible en otra trayectoria que puedes observar. En esta práctica importa decidirla temprano y ejecutarla con la fuente aplicable, no improvisar una secuencia ni memorizar valores de otro avión.",
+      "expectedResult": "Después de frustrar, interrumpes el intento de toma y recuperas una trayectoria desde la que puedes volver a observar pista, horizonte y tendencia. Si no alcanzas esa condición, termina la repetición y revisa una sola causa antes de reiniciar.",
+      "simulatorAction": "Abre la checklist o documentación de la variante cargada y sigue su procedimiento de frustrada dentro de MSFS. Para vuelo real se requieren POH aplicable, instrucción, condiciones, comunicaciones y procedimientos publicados vigentes.",
+      "visual": {"type": "comparisonDiagram", "asset": "content/assets/c172-landing-decision.svg", "alt": "Diagrama conceptual que muestra la frustrada como una salida desde una aproximación inestable hacia una reevaluación y otro intento.", "purpose": "Mostrar que la frustrada interrumpe una trayectoria no predecible y devuelve el ejercicio a una condición que puede reevaluarse.", "teaches": "Tratar la frustrada como una recuperación deliberada que prepara otro intento, no como una maniobra tardía.", "primaryTeachingObjective": "Recuperar margen", "perspective": "Flujo conceptual de decisión", "movingElement": "Estado de la aproximación", "axisOfMovement": "No aplica: flujo conceptual", "directionOfMovement": "De frustrada a reevaluación", "comparisonJustification": "La comparación permite ver que frustrar cambia el objetivo de tocar la pista por recuperar una condición evaluable.", "userQuestionAnswered": ["queControlTocar", "queCambioEsperar"], "tiedToStep": 4, "expectedObservation": "La rama de frustrada deja la toma y conduce a estabilizar, reevaluar y preparar otro intento.", "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que el resultado buscado tras frustrar es una trayectoria clara y tiempo para decidir de nuevo.", "recognizedElements": ["frustrar", "trayectoria clara", "reevaluar", "otro intento"], "actionAfterViewing": "Consulta la checklist de tu variante, ejecuta la frustrada cuando la decidas y vuelve a evaluar solo después de estabilizar."},
+      "requiredVisualCoverage": [{"type": "cockpit", "status": "notRequired", "reason": "El paso remite a la checklist de la variante y no hay una captura fiel de su cabina concreta."}, {"type": "hardware", "status": "notRequired", "reason": "La acción de cada control depende del perfil activo y de la checklist aplicable; no hay una referencia confirmada."}, {"type": "chart", "status": "notRequired", "reason": "No se utiliza una aproximación ni una frustrada publicada de un aeropuerto específico; esos datos necesitan cartas vigentes."}]
+    }
+  ],
+  "practice": {
+    "title": "Dos decisiones en final",
+    "scenario": "En MSFS 2024, usa un C172 de día con buena visibilidad, poco tráfico y una pista visible. Vuela el circuito del prerrequisito hasta final. Haz una repetición en la que puedas observar una trayectoria predecible y otra en la que interrumpas temprano al perder una señal. Es simulación, no operación real.",
+    "task": "En cada final, di en voz alta dónde está la pista y si la trayectoria sigue siendo predecible. Continúa solo si puedes explicarlo sin una cadena de correcciones. En uno de los intentos, decide frustrar deliberadamente y sigue la checklist de la variante cargada hasta recuperar una condición para reevaluar.",
+    "successSignal": "Distingues una aproximación que puedes continuar de otra que debes frustrar, expresas la señal que motivó cada decisión y, tras la frustrada, recuperas una trayectoria clara antes de preparar otro intento.",
+    "conceptDemonstrated": "Decisión de aproximación estable",
+    "possibleConfounders": ["Usar valores, configuraciones o técnicas de una variante distinta del C172.", "Practicar con viento, visibilidad o tráfico que impiden observar la trayectoria.", "Modificar sensibilidad, vista o asignaciones durante final y confundir el ajuste con la respuesta del avión.", "Tratar la frustrada de simulación como sustituto de un procedimiento real publicado."],
+    "whyThisExerciseDemonstratesTheConcept": "Dos finales comparables obligan a basar la decisión en señales observables, no en el deseo de completar una toma. Ejecutar una frustrada deliberada después de identificar una señal perdida demuestra que interrumpir temprano devuelve el ejercicio a una condición que puede volver a evaluarse con calma."
+  },
+  "commonMistakes": [
+    {"mistake": "Seguir hacia la toma aunque ya no puedes explicar la tendencia de la trayectoria.", "recovery": "Decide frustrar temprano, sigue la checklist de tu variante y vuelve a evaluar solo cuando recuperes una trayectoria clara."},
+    {"mistake": "Perseguir la pista con correcciones cada vez mayores.", "recovery": "Deja de añadir entradas, identifica que la aproximación dejó de ser estable y frustra en vez de intentar salvar la toma."},
+    {"mistake": "Usar el diagrama como una velocidad, actitud, potencia o configuración del C172.", "recovery": "Úsalo solo para observar la relación entre estabilidad y decisión; consulta el manual y checklist de la variante para los datos aplicables."},
+    {"mistake": "Improvisar la frustrada o asumir que un control VelocityOne tiene una asignación concreta.", "recovery": "Pausa, verifica el perfil activo y consulta la checklist de la variante antes de repetir el ejercicio."},
+    {"mistake": "Presentar este ejercicio de MSFS como entrenamiento suficiente para una aproximación real.", "recovery": "Diferencia la simulación de una operación real, que requiere instrucción, POH, cartas vigentes, comunicaciones y evaluación de condiciones."}
+  ],
+  "checklist": [
+    "C172 y escenario de MSFS elegidos con pista visible, buena visibilidad y carga de trabajo reducida.",
+    "Perfil activo, vistas y controles comprobados antes de entrar en final.",
+    "Pista, alineación y tendencia de trayectoria nombradas antes de decidir continuar.",
+    "Desviación creciente, pista perdida o trayectoria incomprensible = frustrar temprano.",
+    "Checklist o manual de la variante consultado para la frustrada en MSFS.",
+    "Trayectoria clara recuperada antes de preparar otro intento.",
+    "Práctica reconocida como simulación y no como sustituto de procedimientos reales."
+  ],
+  "quiz": [
+    {"question": "¿Qué condición permite continuar a la toma en esta práctica?", "options": ["La pista y la trayectoria siguen siendo reconocibles y predecibles.", "Haber decidido aterrizar al entrar en final, aunque la trayectoria cambie.", "Copiar una actitud fija de un diagrama."], "answer": "La pista y la trayectoria siguen siendo reconocibles y predecibles.", "explanation": "La decisión se sostiene en observaciones de estabilidad y puede cambiar durante final."},
+    {"question": "¿Qué haces si necesitas correcciones sucesivas y ya no puedes explicar hacia dónde va el avión?", "options": ["Frustro temprano y recupero una trayectoria clara con la checklist aplicable.", "Sigo hacia la pista y aumento cada corrección.", "Cambio sensibilidad y asignaciones durante el final."], "answer": "Frustro temprano y recupero una trayectoria clara con la checklist aplicable.", "explanation": "Frustrar evita que una aproximación no predecible se convierta en una cadena de correcciones."},
+    {"question": "¿Por qué esta lección no da valores de velocidad, potencia o flaps?", "options": ["Porque dependen de la variante, documentación y condiciones aplicables.", "Porque no importan durante una aproximación.", "Porque el diagrama los reemplaza."], "answer": "Porque dependen de la variante, documentación y condiciones aplicables.", "explanation": "Los diagramas son conceptuales; los datos y procedimientos proceden de fuentes aplicables a la aeronave y operación."}
+  ],
+  "completionCriteria": [
+    "Configuraste un final de MSFS en el que puedes observar pista, horizonte y trayectoria.",
+    "Explicaste qué señales te hicieron continuar o frustrar en cada intento.",
+    "Interrumpiste al menos un intento de forma deliberada cuando la aproximación dejó de ser comprensible.",
+    "Tras la frustrada, recuperaste una trayectoria clara antes de evaluar otro intento.",
+    "Distingues este ejercicio de simulación de los procedimientos, datos y decisiones de una operación real."
+  ],
+  "sources": [
+    {"title": "FAA Airplane Flying Handbook", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
+    {"title": "FAA Pilot's Handbook of Aeronautical Knowledge", "url": "https://www.faa.gov/regulations_policies/handbook", "verified": true},
+    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
+  ]
+}

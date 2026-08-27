@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">Secuencia conceptual de un plan de vuelo GPS</title><desc id="desc">Una ruta une origen, punto activo y destino; el tramo activo está destacado.</desc>
+  <rect width="960" height="440" fill="#071827"/><text x="58" y="64" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="29" font-weight="700">FPL: comprueba la secuencia, no solo el destino</text>
+  <path d="M150 254 L445 154 L790 256" fill="none" stroke="#587185" stroke-width="9" stroke-linecap="round"/><path d="M150 254 L445 154" fill="none" stroke="#35c7ff" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="150" cy="254" r="28" fill="#19394f" stroke="#a8dff5" stroke-width="4"/><circle cx="445" cy="154" r="32" fill="#083b52" stroke="#35c7ff" stroke-width="5"/><circle cx="790" cy="256" r="28" fill="#19394f" stroke="#a8dff5" stroke-width="4"/>
+  <text x="105" y="318" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="24">ORIGEN</text><text x="366" y="105" fill="#35c7ff" font-family="Arial, sans-serif" font-size="24" font-weight="700">PUNTO ACTIVO</text><text x="742" y="320" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="24">DESTINO</text>
+  <path d="M294 240 l18 -10 l-7 20 z" fill="#35c7ff"/><text x="292" y="296" fill="#b7d2df" font-family="Arial, sans-serif" font-size="21">tramo que debes seguir ahora</text>
+  <rect x="58" y="360" width="844" height="46" rx="8" fill="#112b3c"/><text x="82" y="391" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="21">Pregunta clave: ¿el punto activo y el tramo azul coinciden con mi ruta prevista?</text>
+</svg>

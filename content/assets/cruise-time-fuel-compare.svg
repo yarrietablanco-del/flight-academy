@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Comparación entre plan y observación durante el crucero</title>
+  <desc id="desc">Dos columnas muestran los campos que se anotan antes de salir y los que se observan durante el crucero para detectar una diferencia.</desc>
+  <defs><style>.bg{fill:#071725}.panel{fill:#102a3d;stroke-width:3}.plan{stroke:#5eb6e8}.actual{stroke:#f7c948}.heading{fill:#fff;font:700 34px Arial,sans-serif}.text{fill:#d9f2ff;font:600 25px Arial,sans-serif}.small{fill:#b9cad5;font:20px Arial,sans-serif}.line{stroke:#7192a6;stroke-width:2}.arrow{stroke:#9be15d;stroke-width:5;fill:none}</style><marker id="head" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6Z" fill="#9be15d"/></marker></defs>
+  <rect class="bg" width="1200" height="675" rx="28"/>
+  <text x="70" y="75" class="heading">Comprobar, no adivinar</text><text x="70" y="110" class="small">La comparación usa tu propia anotación y lo que ves en la sesión, sin valores universales.</text>
+  <rect class="panel plan" x="90" y="170" width="430" height="360" rx="22"/><text x="130" y="230" class="heading">ANTES: plan</text>
+  <text x="140" y="300" class="text">Tiempo previsto</text><line class="line" x1="140" y1="325" x2="465" y2="325"/><text x="140" y="380" class="text">Combustible previsto</text><line class="line" x1="140" y1="405" x2="465" y2="405"/><text x="140" y="470" class="small">Anota las unidades tal como aparecen.</text>
+  <rect class="panel actual" x="680" y="170" width="430" height="360" rx="22"/><text x="720" y="230" class="heading">EN VUELO: observa</text>
+  <text x="730" y="300" class="text">Tiempo transcurrido</text><line class="line" x1="730" y1="325" x2="1055" y2="325"/><text x="730" y="380" class="text">Combustible restante</text><line class="line" x1="730" y1="405" x2="1055" y2="405"/><text x="730" y="470" class="small">Lee la indicación disponible en tu avión.</text>
+  <path class="arrow" d="M540 350 H655" marker-end="url(#head)"/><text x="548" y="325" class="small">comparar</text>
+  <text x="90" y="605" class="text">Si no coincide: estabiliza el vuelo, vuelve a verificar unidades, ruta y configuración de simulación; no inventes una causa.</text>
+</svg>

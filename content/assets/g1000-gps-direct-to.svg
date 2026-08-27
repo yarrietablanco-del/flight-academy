@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">Efecto conceptual de activar Direct-To</title><desc id="desc">Desde la posición actual, Direct-To crea una guía directa al punto seleccionado y reemplaza el tramo activo.</desc>
+  <rect width="960" height="440" fill="#071827"/><text x="55" y="62" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="29" font-weight="700">Direct-To: sustituye el tramo activo por una guía al punto elegido</text>
+  <path d="M104 292 L350 175 L760 270" fill="none" stroke="#617a8b" stroke-width="7" stroke-dasharray="13 12"/><text x="104" y="334" fill="#9bb7c6" font-family="Arial, sans-serif" font-size="20">plan original</text>
+  <path d="M270 303 L760 270" fill="none" stroke="#35c7ff" stroke-width="12" stroke-linecap="round"/><path d="M530 286 l-23 -14 v28z" fill="#35c7ff"/>
+  <path d="M250 315 l21 -37 l21 37z" fill="#f7c948"/><text x="184" y="360" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="21">posición actual</text>
+  <circle cx="760" cy="270" r="30" fill="#083b52" stroke="#35c7ff" stroke-width="5"/><text x="696" y="225" fill="#35c7ff" font-family="Arial, sans-serif" font-size="22" font-weight="700">PUNTO ELEGIDO</text>
+  <rect x="55" y="385" width="850" height="34" rx="7" fill="#112b3c"/><text x="74" y="408" fill="#e7f5fb" font-family="Arial, sans-serif" font-size="18">Antes de activarlo, verifica que el identificador del punto elegido es el que esperabas.</text>
+</svg>

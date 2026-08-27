@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">ALT mantiene la altitud vigente, no cambia por sí solo a una altitud seleccionada</title>
+  <desc id="desc">Diagrama conceptual lateral que separa una altitud actual mantenida de una altitud seleccionada que solo es un objetivo futuro.</desc>
+  <rect width="960" height="440" fill="#071827"/>
+  <text x="54" y="62" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="29" font-weight="700">ALT: mantener no es subir ni bajar automáticamente</text>
+  <path d="M160 262 H810" fill="none" stroke="#39d98a" stroke-width="10" stroke-linecap="round"/>
+  <path d="M160 154 H810" fill="none" stroke="#f5c451" stroke-width="6" stroke-dasharray="14 14"/>
+  <path d="M472 262 l-28 -16 v32z" fill="#f1f7fb"/>
+  <text x="176" y="241" fill="#39d98a" font-family="Arial, sans-serif" font-size="23" font-weight="700">ALT activo: altitud actual mantenida</text>
+  <text x="176" y="135" fill="#f5c451" font-family="Arial, sans-serif" font-size="23" font-weight="700">altitud seleccionada: objetivo, aún no trayectoria</text>
+  <path d="M842 262 V154" stroke="#b7d2df" stroke-width="4"/><path d="M842 154 l-12 22 h24z" fill="#b7d2df"/>
+  <text x="620" y="321" fill="#d9e8ef" font-family="Arial, sans-serif" font-size="20">Para cambiar altitud hace falta un modo vertical adecuado.</text>
+  <rect x="55" y="376" width="850" height="42" rx="8" fill="#112b3c"/>
+  <text x="77" y="404" fill="#f1f7fb" font-family="Arial, sans-serif" font-size="20">Lee qué modo está activo y compara altitud, tendencia y objetivo antes de confiar en él.</text>
+</svg>

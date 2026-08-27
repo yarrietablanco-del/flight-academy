@@ -168,7 +168,7 @@
               "prerequisites": [
                 "c172-takeoff"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "c172-landing",
@@ -178,7 +178,7 @@
               "prerequisites": [
                 "traffic-pattern"
               ],
-              "status": "planned"
+              "status": "validated"
             }
           ]
         }
@@ -199,7 +199,7 @@
               "prerequisites": [
                 "c172-landing"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "cruise-time-fuel",
@@ -209,7 +209,7 @@
               "prerequisites": [
                 "efb-route-planning"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "vor-dme",
@@ -219,7 +219,7 @@
               "prerequisites": [
                 "efb-route-planning"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "g1000-gps",
@@ -229,7 +229,7 @@
               "prerequisites": [
                 "efb-route-planning"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "g1000-autopilot",
@@ -239,7 +239,7 @@
               "prerequisites": [
                 "g1000-gps"
               ],
-              "status": "planned"
+              "status": "validated"
             }
           ]
         }
@@ -260,7 +260,7 @@
               "prerequisites": [
                 "g1000-autopilot"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "sid-star",
@@ -270,7 +270,7 @@
               "prerequisites": [
                 "ifr-foundations"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "approach-charts",
@@ -280,7 +280,7 @@
               "prerequisites": [
                 "sid-star"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "ils-rnav",
@@ -290,7 +290,7 @@
               "prerequisites": [
                 "approach-charts"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "ifr-atc",
@@ -300,7 +300,7 @@
               "prerequisites": [
                 "approach-charts"
               ],
-              "status": "planned"
+              "status": "validated"
             }
           ]
         }
@@ -321,7 +321,7 @@
               "prerequisites": [
                 "ifr-atc"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "a320-displays-fcu",
@@ -331,7 +331,7 @@
               "prerequisites": [
                 "a320-cockpit"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "a320-mcdu-performance",
@@ -341,7 +341,7 @@
               "prerequisites": [
                 "a320-displays-fcu"
               ],
-              "status": "planned"
+              "status": "validated"
             },
             {
               "id": "a320-cold-dark",

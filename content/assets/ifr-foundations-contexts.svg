@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Práctica de simulación y operación IFR real</title>
+  <desc id="desc">Dos flujos separados comparan lo que puede practicarse en MSFS con los elementos adicionales de una operación IFR real.</desc>
+  <defs><style>text{font-family:Arial,sans-serif;fill:#eaf2ff}.h{font-size:31px;font-weight:700}.b{font-size:22px}.s{font-size:18px;fill:#b9c9dc}.box{stroke-width:3}.arrow{stroke:#eaf2ff;stroke-width:5;fill:none;marker-end:url(#a)}</style><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12z" fill="#eaf2ff"/></marker></defs>
+  <rect width="1200" height="640" fill="#102033"/><text x="600" y="58" text-anchor="middle" class="h">Misma intención de aprender; contextos distintos</text>
+  <rect x="65" y="112" width="480" height="438" rx="22" fill="#173e58" stroke="#57c7e3" class="box"/><text x="305" y="160" text-anchor="middle" class="h">Práctica en MSFS</text>
+  <rect x="115" y="205" width="380" height="72" rx="12" fill="#245d78"/><text x="305" y="250" text-anchor="middle" class="b">Escenario configurado</text><path d="M305 278v52" class="arrow"/>
+  <rect x="115" y="342" width="380" height="72" rx="12" fill="#245d78"/><text x="305" y="387" text-anchor="middle" class="b">Observar y practicar</text><path d="M305 415v52" class="arrow"/>
+  <rect x="115" y="479" width="380" height="48" rx="12" fill="#2a7a70"/><text x="305" y="510" text-anchor="middle" class="b">Resultado observable</text>
+  <rect x="655" y="112" width="480" height="438" rx="22" fill="#4a2d45" stroke="#f0a6bf" class="box"/><text x="895" y="160" text-anchor="middle" class="h">Operación IFR real</text>
+  <rect x="705" y="205" width="380" height="72" rx="12" fill="#70405f"/><text x="895" y="250" text-anchor="middle" class="b">Información vigente y requisitos</text><path d="M895 278v52" class="arrow"/>
+  <rect x="705" y="342" width="380" height="72" rx="12" fill="#70405f"/><text x="895" y="387" text-anchor="middle" class="b">Servicios y autorización aplicables</text><path d="M895 415v52" class="arrow"/>
+  <rect x="705" y="479" width="380" height="48" rx="12" fill="#8b4f67"/><text x="895" y="510" text-anchor="middle" class="b">Decisión operacional</text>
+  <text x="600" y="604" text-anchor="middle" class="s">Una ruta, el tiempo o el ATC de simulación no sustituyen la columna de operación real.</text>
+</svg>

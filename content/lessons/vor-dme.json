@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "id": "vor-dme",
+    "title": "VOR y DME",
+    "subtitle": "Sintoniza una radioayuda de simulación y comprueba qué información entrega.",
+    "objective": "Sintonizar y verificar una radioayuda.",
+    "estimatedTime": "20 min",
+    "prerequisites": ["efb-route-planning"],
+    "level": 3,
+    "module": "vfr",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "Una radioayuda solo es útil si sabes qué estación has seleccionado y qué mide cada indicación. El VOR te sitúa por radial respecto de una estación; el DME muestra su distancia inclinada. En MSFS comprobarás ambas cosas con los datos que la propia sesión ofrezca. No es una preparación ni verificación válida para vuelo real.",
+  "concepts": [
+    {"term": "VOR", "meaning": "VHF Omnidirectional Range: radioayuda terrestre que permite conocer el radial en el que está el avión respecto de la estación. Un radial se nombra desde la estación hacia afuera; no equivale por sí solo al rumbo del avión."},
+    {"term": "Radial", "meaning": "Línea imaginaria que sale de una estación VOR. Si el avión está sobre un radial, ese dato describe su posición angular respecto de la estación, no una instrucción automática de giro."},
+    {"term": "DME", "meaning": "Distance Measuring Equipment: equipo que muestra la distancia inclinada entre el avión y una estación compatible. No debe suponerse que coincide exactamente con la distancia dibujada sobre el suelo."},
+    {"term": "Identificación", "meaning": "Nombre, código o señal que permite comparar la radioayuda seleccionada con la que pretendías usar. En esta práctica se verifica contra la información mostrada por la sesión de MSFS, nunca contra una carta no vigente."}
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Separa radial de rumbo",
+      "instruction": "Antes de tocar una radio, mira el diagrama y localiza la estación en el centro y el avión fuera de ella. Lee el radial como una línea que sale de la estación hasta el avión. Si estabas leyendo el número como el rumbo del avión, detente y vuelve a comparar ambas flechas.",
+      "explanation": "El VOR describe una relación angular con la estación; el rumbo describe hacia dónde apunta o se desplaza el avión. Separarlos evita corregir la navegación con una interpretación invertida antes de que aparezca cualquier indicación de cabina.",
+      "expectedResult": "Puedes explicar con tus palabras que el radial va desde la estación hacia el avión y que el rumbo puede ser distinto. Si no puedes señalar ambos elementos por separado, no continúes a la sintonía.",
+      "simulatorAction": "Es una explicación conceptual aplicable a la simulación. No uses este diagrama como carta, rumbo publicado ni instrucción de navegación real.",
+      "visual": {
+        "type": "flightPathDiagram",
+        "asset": "content/assets/vor-dme-radial.svg",
+        "alt": "Diagrama conceptual superior con una estación VOR, un avión sobre el radial 060 y un rumbo del avión diferente.",
+        "purpose": "Separar visualmente el radial que sale de la estación del rumbo que lleva el avión.",
+        "teaches": "Interpretar el radial como posición angular respecto de la estación VOR.",
+        "primaryTeachingObjective": "Interpretar radial",
+        "perspective": "Vista conceptual superior",
+        "movingElement": "Flecha de rumbo naranja",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "En la dirección del rumbo",
+        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "tiedToStep": 1,
+        "expectedObservation": "La línea azul comienza en la estación y termina en el avión, mientras la flecha naranja indica otra dirección posible.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que un radial no debe confundirse con el rumbo actual del avión.",
+        "recognizedElements": ["estación VOR", "radial 060", "avión", "rumbo"],
+        "actionAfterViewing": "Explica la relación estación-avión antes de seleccionar una radioayuda.",
+        "coverage": ["instrument"]
+      },
+      "requiredVisualCoverage": [
+        {"type": "instrument", "status": "notRequired", "reason": "El paso establece una relación espacial y no requiere reconocer un instrumento de una cabina concreta."}
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Elige una estación verificable",
+      "instruction": "En el mapa o planificador disponible de tu sesión, busca una radioayuda identificada como VOR, VOR/DME o VORTAC que muestre frecuencia e identificación. Anota exactamente esos datos. Si faltan, si la estación aparece fuera de servicio o si no sabes qué dato representa la identificación, elige otra estación visible.",
+      "explanation": "La frecuencia solo selecciona una señal; la identificación te permite comprobar que esa señal corresponde a la estación elegida. Usar datos mostrados por la misma sesión limita el ejercicio a MSFS y evita inventar frecuencias, códigos o disponibilidad real.",
+      "expectedResult": "Tienes una estación elegida con frecuencia e identificación que puedes volver a consultar en la sesión. Si solo tienes una frecuencia sin identidad, no la des por verificada: vuelve al mapa y selecciona una que muestre ambos datos.",
+      "simulatorAction": "Los datos de radioayudas y su disponibilidad pertenecen a la sesión de simulación. Para vuelo real se consultan publicaciones vigentes, NOTAM y procedimientos aplicables.",
+      "visual": {
+        "type": "annotatedDiagram",
+        "asset": "content/assets/vor-dme-radial.svg",
+        "alt": "Relación conceptual entre estación VOR, radial y avión, usada para recordar que primero se identifica la estación elegida.",
+        "purpose": "Vincular los datos que anotas con una estación concreta antes de introducir una frecuencia.",
+        "teaches": "Seleccionar una estación que pueda verificarse mediante frecuencia e identificación.",
+        "primaryTeachingObjective": "Elegir estación",
+        "perspective": "Mapa conceptual superior",
+        "movingElement": "Línea radial azul",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Desde la estación",
+        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "tiedToStep": 2,
+        "expectedObservation": "La estación es el origen de la relación de navegación y debe poder distinguirse de otra estación próxima.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que una frecuencia necesita una identificación asociada para confirmar la estación buscada.",
+        "recognizedElements": ["estación", "radial", "avión"],
+        "actionAfterViewing": "Anota la frecuencia y la identificación que muestra tu propia sesión de MSFS."
+      },
+      "requiredVisualCoverage": [
+        {"type": "chart", "status": "notRequired", "reason": "La práctica usa únicamente los datos mostrados por la sesión y no se proporcionó una carta vigente."}
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Sintoniza sin asumir la cabina",
+      "instruction": "Con el avión en una situación estable de simulación, abre el control de radio NAV de la aeronave que estás usando e introduce la frecuencia anotada en el receptor que alimente su indicador VOR. Confirma en pantalla cuál frecuencia quedó activa. Si no localizas ese control o no puedes confirmar el receptor activo, pausa y consulta la ayuda específica de esa aeronave.",
+      "explanation": "La disposición de radios cambia entre aeronaves, versiones y complementos. El objetivo es verificar un resultado visible —la frecuencia activa—, no memorizar la posición de un mando de una cabina no confirmada.",
+      "expectedResult": "La frecuencia activa coincide carácter por carácter con la anotada. Si no coincide, vuelve a introducirla antes de interpretar agujas, banderas o distancia; una indicación con la estación equivocada no valida el ejercicio.",
+      "simulatorAction": "La ubicación de radios y la asignación de controles dependen de la aeronave y perfil activo. Esta lección no confirma botones de cabina ni asignaciones de VelocityOne sin una referencia fiable.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/vor-dme-radial.svg",
+        "alt": "Diagrama conceptual que mantiene visible la estación seleccionada como destino de la sintonía de navegación.",
+        "purpose": "Recordar que la frecuencia introducida debe apuntar a la estación que acabas de identificar.",
+        "teaches": "Comprobar coincidencia entre estación elegida y frecuencia activa.",
+        "primaryTeachingObjective": "Confirmar frecuencia",
+        "perspective": "Relación conceptual superior",
+        "movingElement": "Línea radial azul",
+        "axisOfMovement": "Plano horizontal",
+        "directionOfMovement": "Desde la estación",
+        "userQuestionAnswered": ["queControlTocar", "queCambioEsperar", "queErrorEvitar"],
+        "tiedToStep": 3,
+        "expectedObservation": "El avión solo obtiene una relación útil cuando la estación seleccionada es la misma que se pretendía sintonizar.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que primero se confirma la frecuencia activa y después se interpreta la indicación.",
+        "recognizedElements": ["estación", "avión", "radial"],
+        "actionAfterViewing": "Compara la frecuencia activa con la anotación de la estación seleccionada."
+      },
+      "referenceVisuals": [
+        {
+          "type": "controlHighlight",
+          "alt": "Referencia pendiente de la radio NAV de la aeronave elegida para confirmar el control y la lectura de frecuencia activa.",
+          "purpose": "Permitir reconocer el control NAV real solo cuando exista una referencia fiel de esa cabina.",
+          "teaches": "Localizar la frecuencia NAV activa en la aeronave concreta.",
+          "primaryTeachingObjective": "Localizar radio NAV",
+          "userQuestionAnswered": ["queControlTocar", "queCambioEsperar"],
+          "tiedToStep": 3,
+          "expectedObservation": "La referencia debe mostrar el control usado y la lectura que confirma la frecuencia activa.",
+          "view": "controlFisico",
+          "visualCategory": "reference",
+          "fidelity": "recreated-faithful",
+          "recognitionGoal": "Reconoce el control NAV de la aeronave realmente seleccionada sin extrapolar otra cabina.",
+          "recognizedElements": ["radio NAV", "frecuencia activa"],
+          "actionAfterViewing": "Usa únicamente la referencia correspondiente a tu aeronave y confirma la frecuencia activa.",
+          "quality": {"sourceWidth": 1920, "sourceHeight": 1080, "intendedDisplayWidth": 720, "supportsZoom": true, "detailTarget": "Control NAV y lectura de frecuencia activa"},
+          "requiresReference": true
+        }
+      ],
+      "requiredVisualCoverage": [
+        {"type": "cockpit", "status": "notRequired", "reason": "No se proporcionó una referencia fiel de la cabina y el control cambia según la aeronave elegida."},
+        {"type": "hardware", "status": "notRequired", "reason": "No se confirmó una asignación de hardware o perfil de VelocityOne para operar la radio NAV."}
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Verifica señal y distancia",
+      "instruction": "Compara la identificación recibida o mostrada por la radio con la que anotaste en el mapa de la sesión. Si tu avión y la estación ofrecen DME, observa la distancia mientras vuelas un tramo corto y estable. Si la identificación no coincide, no uses la indicación; vuelve al paso 2. Si no hay DME, registra que esta estación o avión no lo ofrece.",
+      "explanation": "La identificación confirma la estación; el DME añade su distancia inclinada. Observar una distancia que cambia durante un tramo separa una lectura viva de un número aislado. No uses esa distancia como sustituto automático de la distancia horizontal del mapa.",
+      "expectedResult": "La identificación coincide con la anotada y, cuando existe DME, la distancia cambia de manera coherente al cambiar tu posición respecto de la estación. Si la señal es ambigua, no identificada o distinta, considera la verificación fallida y repite con otra estación.",
+      "simulatorAction": "Esta comprobación demuestra el funcionamiento dentro de MSFS. En operación real, la identificación, disponibilidad y uso de una radioayuda dependen de publicaciones vigentes, NOTAM, equipo certificado y procedimiento aplicable.",
+      "visual": {
+        "type": "comparisonDiagram",
+        "asset": "content/assets/vor-dme-distance.svg",
+        "alt": "Diagrama lateral conceptual que compara una línea morada de distancia DME inclinada con la distancia horizontal sobre el suelo.",
+        "purpose": "Evitar interpretar la lectura DME como si fuera siempre la distancia horizontal dibujada en un mapa.",
+        "teaches": "Reconocer que DME mide distancia inclinada desde el avión hasta la estación.",
+        "primaryTeachingObjective": "Interpretar distancia DME",
+        "perspective": "Vista conceptual lateral",
+        "movingElement": "Línea de distancia morada",
+        "axisOfMovement": "Plano vertical",
+        "directionOfMovement": "Entre avión y estación",
+        "comparisonJustification": "La comparación es necesaria para distinguir la distancia inclinada DME de la distancia horizontal del mapa.",
+        "userQuestionAnswered": ["dondeMirar", "queCambioEsperar", "queErrorEvitar"],
+        "tiedToStep": 4,
+        "expectedObservation": "La línea DME une directamente el avión elevado con la estación, mientras la línea horizontal queda sobre el suelo.",
+        "view": "comparacion",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce por qué DME puede diferir de la distancia horizontal, especialmente cerca de la estación.",
+        "recognizedElements": ["avión", "estación DME", "distancia DME", "distancia horizontal"],
+        "actionAfterViewing": "Verifica la identificación y observa el cambio de DME sin sustituirlo por distancia horizontal.",
+        "coverage": ["instrument"]
+      },
+      "requiredVisualCoverage": [
+        {"type": "instrument", "status": "notRequired", "reason": "La presentación de identificación y DME cambia según aeronave, aviónica y complemento, sin referencia fiel disponible."}
+      ]
+    }
+  ],
+  "practice": {
+    "title": "Confirmación de una estación VOR/DME",
+    "scenario": "En MSFS 2024, carga una aeronave que muestre un receptor NAV y, si está disponible, DME. Sitúala en vuelo estable diurno cerca de una radioayuda que el mapa o planificador de esa misma sesión identifique. Es una práctica de simulación, no una navegación ni verificación real.",
+    "task": "Anota frecuencia e identificación de una estación visible en la sesión. Sintonízala en el receptor NAV que alimente tu indicador, confirma la frecuencia activa y compara la identificación recibida o mostrada. Si hay DME, vuela un tramo corto y observa cómo cambia la distancia.",
+    "successSignal": "La frecuencia activa y la identificación coinciden con la estación anotada. Cuando existe DME, puedes explicar que su lectura es distancia inclinada y observar que responde al cambio de posición. Si cualquier dato no coincide, abandonas esa lectura y repites.",
+    "conceptDemonstrated": "Verificación de radioayuda",
+    "possibleConfounders": ["Sintonizar una frecuencia correcta para una estación distinta de la que se anotó.", "Interpretar un radial como si fuera el rumbo que lleva el avión.", "Suponer que toda estación VOR o toda aeronave de MSFS dispone de DME.", "Tratar la distancia DME como distancia horizontal exacta sobre el mapa."],
+    "whyThisExerciseDemonstratesTheConcept": "El ejercicio obliga a unir tres comprobaciones observables: estación anotada, frecuencia activa e identificación recibida. El tramo estable añade una observación de cambio de DME sin exigir una ruta publicada, una carta real ni una asignación de hardware. Así separa seleccionar una señal de verificar qué información entrega."
+  },
+  "commonMistakes": [
+    {"mistake": "Sintonizar una frecuencia y asumir que la estación es correcta sin revisar su identificación.", "recovery": "Vuelve al mapa de la sesión, compara identificación y frecuencia, y no interpretes la indicación hasta que ambos datos coincidan."},
+    {"mistake": "Llamar rumbo al radial que indica el VOR.", "recovery": "Vuelve al diagrama: el radial sale de la estación; después mira por separado el rumbo de tu avión en la simulación."},
+    {"mistake": "Usar una lectura DME como distancia horizontal exacta.", "recovery": "Recuerda que el DME une avión y estación en línea inclinada; úsalo solo con esa interpretación durante esta práctica."},
+    {"mistake": "Forzar una estación que no ofrece una identificación clara o DME disponible.", "recovery": "Declara fallida esa comprobación, vuelve al mapa de MSFS y elige una estación que exponga los datos necesarios."}
+  ],
+  "checklist": [
+    "Aeronave en vuelo estable de simulación y radioayuda visible en el mapa o planificador de la sesión.",
+    "Frecuencia e identificación de la estación anotadas exactamente como aparecen en MSFS.",
+    "Frecuencia activa confirmada en el receptor NAV usado por la aeronave.",
+    "Identificación recibida o mostrada comparada con la anotación antes de usar la indicación.",
+    "DME observado durante un tramo corto solo si la estación y aeronave lo ofrecen.",
+    "Radial interpretado desde la estación y DME entendido como distancia inclinada."
+  ],
+  "quiz": [
+    {"question": "¿Qué describe un radial VOR?", "options": ["La posición angular del avión respecto de la estación, medida desde ella hacia afuera.", "El rumbo que el avión está volando en ese instante.", "La distancia horizontal exacta entre avión y estación."], "answer": "La posición angular del avión respecto de la estación, medida desde ella hacia afuera.", "explanation": "El radial sale de la estación VOR; el rumbo es una lectura distinta que depende de la dirección del avión."},
+    {"question": "¿Qué debes comparar después de sintonizar una frecuencia en esta práctica?", "options": ["La identificación recibida o mostrada con la identificación anotada de la sesión.", "La frecuencia con cualquier número de pista cercano.", "La distancia DME con una velocidad fija."], "answer": "La identificación recibida o mostrada con la identificación anotada de la sesión.", "explanation": "La identificación es la comprobación que vincula la señal sintonizada con la estación que pretendías usar."},
+    {"question": "¿Qué representa la lectura DME?", "options": ["La distancia inclinada entre el avión y la estación compatible.", "La distancia horizontal exacta del mapa en todos los casos.", "El radial seleccionado en el indicador VOR."], "answer": "La distancia inclinada entre el avión y la estación compatible.", "explanation": "DME mide una línea directa entre avión y estación, por lo que no debe confundirse automáticamente con distancia sobre el suelo."}
+  ],
+  "completionCriteria": [
+    "Seleccionaste en MSFS una estación con frecuencia e identificación que pudiste volver a consultar.",
+    "Sintonizaste la frecuencia en el receptor NAV de tu aeronave y confirmaste cuál quedó activa.",
+    "Verificaste la identificación antes de interpretar la información de navegación.",
+    "Explicaste que el radial se mide desde la estación y que DME, cuando está disponible, expresa distancia inclinada.",
+    "Descartaste una lectura cuando estación, frecuencia o identificación no coincidieron."
+  ],
+  "sources": [
+    {"title": "FAA Aeronautical Information Manual, Chapter 1: Navigation Aids", "url": "https://www.faa.gov/air_traffic/publications/aim_html/chap1_section_1.html", "verified": true},
+    {"title": "FAA Aeronautical Information Publication, ENR 4.1 Navigation Aids", "url": "https://www.faa.gov/air_traffic/publications/atpubs/aip_html/part2_enr_section_4.1.html", "verified": true},
+    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
+  ]
+}

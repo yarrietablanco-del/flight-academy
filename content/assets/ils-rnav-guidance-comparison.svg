@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Comparación conceptual del origen del guiado ILS y RNAV</title>
+  <desc id="desc">Dos columnas comparan un ILS, que recibe guía lateral y vertical desde instalaciones de tierra, con una RNAV, cuya guía disponible depende de la línea de mínimos, aeronave y procedimiento verificados. No presenta una carta ni una cabina reales.</desc>
+  <defs><style>.bg{fill:#f7fafc}.card{fill:#fff;stroke:#cbd5e1;stroke-width:3}.heading{font:700 31px Arial,sans-serif;fill:#102a43}.sub{font:600 21px Arial,sans-serif;fill:#243b53}.body{font:19px Arial,sans-serif;fill:#486581}.blue{fill:#1877b8}.green{fill:#0f9d75}.amber{fill:#b7791f}.line{stroke:#1877b8;stroke-width:6;fill:none}.dash{stroke-dasharray:12 10}.runway{fill:#475569}.tag{fill:#e6f4ff;stroke:#1877b8;stroke-width:2}</style></defs>
+  <rect class="bg" width="1200" height="700"/>
+  <text x="600" y="54" text-anchor="middle" class="heading">El guiado se identifica por su fuente y por lo que autoriza la carta</text>
+  <rect class="card" x="45" y="90" width="530" height="555" rx="20"/>
+  <text x="310" y="142" text-anchor="middle" class="heading">ILS</text>
+  <text x="310" y="180" text-anchor="middle" class="body">Instalaciones de tierra transmiten las referencias</text>
+  <rect class="runway" x="420" y="445" width="110" height="115" rx="5"/>
+  <path class="line" d="M115 370L420 500"/><path class="line dash" d="M420 500L145 250"/>
+  <circle class="blue" cx="135" cy="385" r="20"/><text x="165" y="392" class="sub">Localizador: lateral</text>
+  <circle class="green" cx="425" cy="420" r="20"/><text x="455" y="427" class="sub">Glide slope: vertical</text>
+  <path class="blue" d="M250 285l22 9-10 7 4 17-16-13-16 13 4-17-10-7z"/>
+  <text x="310" y="605" text-anchor="middle" class="sub">Comprueba señal, identificación y carta aplicable</text>
+  <rect class="card" x="625" y="90" width="530" height="555" rx="20"/>
+  <text x="890" y="142" text-anchor="middle" class="heading">RNAV</text>
+  <text x="890" y="180" text-anchor="middle" class="body">El sistema navega hacia puntos definidos por el procedimiento</text>
+  <rect class="tag" x="705" y="235" width="370" height="65" rx="10"/><text x="890" y="276" text-anchor="middle" class="sub">Lateral: trayectoria RNAV publicada</text>
+  <rect x="705" y="330" width="370" height="92" rx="10" fill="#fff7e6" stroke="#b7791f" stroke-width="2"/>
+  <text x="890" y="368" text-anchor="middle" class="sub">Vertical: solo si la línea de mínimos</text><text x="890" y="397" text-anchor="middle" class="sub">y el equipo verificados la proporcionan</text>
+  <path class="line" d="M720 485H1050"/><circle class="blue" cx="750" cy="485" r="14"/><circle class="blue" cx="875" cy="485" r="14"/><circle class="blue" cx="1015" cy="485" r="14"/>
+  <text x="890" y="535" text-anchor="middle" class="body">No deduzcas guiado vertical solo por leer “RNAV”.</text>
+  <text x="890" y="605" text-anchor="middle" class="sub">Verifica procedimiento, mínimos y capacidad del avión</text>
+</svg>

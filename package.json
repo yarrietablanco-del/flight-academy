@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "test": "node authoring/test-content-engine.mjs && node authoring/validate-content.mjs",
+    "test": "node authoring/test-content-engine.mjs && node authoring/test-author-batch.mjs && node authoring/validate-content.mjs",
     "validate:content": "node authoring/validate-content.mjs",
     "author:next": "node authoring/author-next.mjs",
     "author:batch": "node authoring/author-batch.mjs",

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Cadena de verificación de datos de performance en simulación</title>
+  <desc id="desc">Un diagrama conceptual enlaza escenario de MSFS, fuente de la variante, dato observado, entrada en MCDU y comprobación de coherencia. Las flechas indican que cada dato debe conservar su origen.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#59d7c6"/></marker></defs>
+  <rect width="1200" height="520" fill="#10212d"/>
+  <text x="600" y="58" text-anchor="middle" fill="#f6fbff" font-family="Arial, sans-serif" font-size="30" font-weight="700">Un dato útil conserva su origen</text>
+  <text x="600" y="92" text-anchor="middle" fill="#b9cad5" font-family="Arial, sans-serif" font-size="18">Flujo conceptual para una práctica en MSFS; no representa una pantalla real.</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g><rect x="45" y="190" width="200" height="145" rx="16" fill="#17394a" stroke="#59d7c6" stroke-width="3"/><text x="145" y="238" fill="#f6fbff" font-size="22" font-weight="700">Escenario</text><text x="145" y="268" fill="#d9e6ed" font-size="17">aeronave, aeropuerto</text><text x="145" y="294" fill="#d9e6ed" font-size="17">y condiciones cargadas</text></g>
+    <g><rect x="290" y="190" width="200" height="145" rx="16" fill="#17394a" stroke="#59d7c6" stroke-width="3"/><text x="390" y="238" fill="#f6fbff" font-size="22" font-weight="700">Fuente</text><text x="390" y="268" fill="#d9e6ed" font-size="17">EFB o ayuda de</text><text x="390" y="294" fill="#d9e6ed" font-size="17">tu variante</text></g>
+    <g><rect x="535" y="190" width="200" height="145" rx="16" fill="#17394a" stroke="#59d7c6" stroke-width="3"/><text x="635" y="238" fill="#f6fbff" font-size="22" font-weight="700">Dato observado</text><text x="635" y="268" fill="#d9e6ed" font-size="17">anótalo junto con</text><text x="635" y="294" fill="#d9e6ed" font-size="17">su procedencia</text></g>
+    <g><rect x="780" y="190" width="200" height="145" rx="16" fill="#17394a" stroke="#59d7c6" stroke-width="3"/><text x="880" y="238" fill="#f6fbff" font-size="22" font-weight="700">Entrada</text><text x="880" y="268" fill="#d9e6ed" font-size="17">solo si coincide con</text><text x="880" y="294" fill="#d9e6ed" font-size="17">la variante cargada</text></g>
+    <g><rect x="1025" y="190" width="130" height="145" rx="16" fill="#1b4f50" stroke="#f4ca64" stroke-width="3"/><text x="1090" y="238" fill="#f6fbff" font-size="20" font-weight="700">Revisar</text><text x="1090" y="268" fill="#d9e6ed" font-size="16">¿origen y</text><text x="1090" y="292" fill="#d9e6ed" font-size="16">resultado?</text></g>
+  </g>
+  <path d="M245 262 H282 M490 262 H527 M735 262 H772 M980 262 H1017" fill="none" stroke="#59d7c6" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M1090 350 C1090 438,635 450,635 350" fill="none" stroke="#f4ca64" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#arrow)"/>
+  <text x="635" y="486" text-anchor="middle" fill="#f4ca64" font-family="Arial, sans-serif" font-size="18">Si no coincide, no continúes: vuelve a la fuente y corrige el escenario o el dato.</text>
+</svg>

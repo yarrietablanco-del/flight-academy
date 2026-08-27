@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "id": "a320-cockpit",
+    "title": "Transición al Airbus A320",
+    "subtitle": "Reconoce la lógica de control y supervisión antes de buscar procedimientos.",
+    "objective": "Reconocer filosofía y cockpit Airbus.",
+    "estimatedTime": "20 min",
+    "prerequisites": ["ifr-atc"],
+    "level": 5,
+    "module": "a320-transition",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "La transición al A320 no consiste en memorizar botones. Airbus usa controles digitales fly-by-wire: una orden del piloto o de la automatización pasa por ordenadores de control de vuelo y debe ser supervisada por la tripulación. En MSFS, el objetivo inicial es reconocer ese ciclo sin confundirlo con entrenamiento o autorización para operar el avión real.",
+  "concepts": [
+    {
+      "term": "Fly-by-wire",
+      "meaning": "Es un sistema de control de vuelo en el que las órdenes del piloto o del piloto automático se procesan digitalmente y se transmiten mediante señales eléctricas a los actuadores de las superficies. No significa que el piloto deje de vigilar el resultado."
+    },
+    {
+      "term": "Sidestick",
+      "meaning": "Es el mando lateral utilizado en lugar de un yoke convencional en el A320. En esta lección solo se reconoce como parte de la filosofía Airbus; su ubicación y respuesta deben confirmarse en la variante de MSFS que estés usando."
+    },
+    {
+      "term": "Commonality",
+      "meaning": "Es la similitud deliberada de disposición y función entre aviones Airbus. Ayuda a comprender por qué la cabina sigue una lógica repetida, pero no autoriza a asumir que cada variante, complemento o actualización de MSFS se verá igual."
+    },
+    {
+      "term": "Supervisión",
+      "meaning": "Es comparar de forma activa la intención con lo que el avión y sus indicaciones muestran. En simulación, observar antes y después de una acción evita aprender por tanteo o atribuir a Airbus una función que pertenece a una variante concreta."
+    }
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Empieza por el ciclo, no por los interruptores",
+      "instruction": "Carga el A320 que usarás en MSFS 2024 en una situación estacionada. Antes de tocar nada, mira la cabina durante unos segundos y di: «orden, procesamiento, respuesta y supervisión». Si el avión ya se mueve o no puedes dejarlo quieto, reinicia en una posición segura antes de continuar.",
+      "explanation": "El A320 emplea fly-by-wire: una orden no equivale por sí sola a un resultado observado. La primera habilidad es seguir el ciclo completo y comprobar qué ocurrió. Esto prepara la lectura de pantallas y controles posteriores sin convertir una interfaz de simulación en un procedimiento real.",
+      "expectedResult": "Puedes explicar que una orden de control pasa por sistemas del avión y que el resultado se debe comprobar. No has cambiado potencia, configuración ni automatización. Si no puedes mantener esa separación, vuelve a observar con el avión inmóvil.",
+      "simulatorAction": "Usa una vista de cabina que te permita observar sin accionar controles. La presentación cambia entre aeronaves y actualizaciones de MSFS; no se prescribe una vista, botón ni asignación de VelocityOne.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/a320-cockpit-fly-by-wire-loop.svg",
+        "alt": "Diagrama conceptual del ciclo de una orden de vuelo: piloto o automatización, ordenadores de control, respuesta del avión y supervisión de la tripulación.",
+        "purpose": "Mostrar la relación entre una orden de vuelo y la necesidad de comprobar su resultado.",
+        "teaches": "Entender que fly-by-wire exige supervisión activa del resultado.",
+        "primaryTeachingObjective": "Reconocer el ciclo fly-by-wire",
+        "perspective": "Flujo conceptual de izquierda a derecha",
+        "movingElement": "Orden de vuelo",
+        "axisOfMovement": "Flujo de información",
+        "directionOfMovement": "De la orden al resultado observado",
+        "userQuestionAnswered": ["queCambioEsperar", "queErrorEvitar"],
+        "tiedToStep": 1,
+        "expectedObservation": "La orden recorre un ciclo que termina en una comprobación de la tripulación, no en una acción automática sin vigilancia.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que la supervisión forma parte del control digital del A320.",
+        "recognizedElements": ["orden de vuelo", "ordenadores", "respuesta", "supervisión"],
+        "actionAfterViewing": "Deja el avión inmóvil y nombra el ciclo antes de explorar la cabina.",
+        "coverage": ["cockpit"]
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "No se aportó una referencia fiel de la variante A320 y la disposición puede variar en MSFS; un diagrama conceptual no pretende sustituirla."
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "El paso no pide accionar un mando ni afirma una asignación del VelocityOne Flight."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Recorre la cabina sin adivinar",
+      "instruction": "Con el avión aún inmóvil, usa la vista de cabina para localizar únicamente zonas de información y de mando que puedas identificar con certeza. Señálalas sin accionarlas. Si una pantalla, mando o etiqueta no coincide con lo que esperabas, no le asignes una función: anota la diferencia para comprobarla en la variante concreta.",
+      "explanation": "La commonality Airbus describe una lógica compartida, no una licencia para memorizar una cabina genérica. Reconocer con certeza y detenerse ante una diferencia protege contra el error más común de transición: aplicar una imagen o vídeo de otra variante a tu aeronave de MSFS.",
+      "expectedResult": "Has separado lo que puedes reconocer visualmente de lo que todavía necesitas verificar. El avión sigue inmóvil y no has usado una imagen genérica para decidir qué control tocar. Si aparece una diferencia, la conservas como duda, no como supuesto.",
+      "simulatorAction": "La referencia visual fiel de cabina para esta acción depende de la variante instalada y no está disponible en el material de la lección. Usa la ayuda interactiva o la documentación específica de tu aeronave para verificarla, sin asumir posiciones ni nombres.",
+      "visual": {
+        "type": "annotatedDiagram",
+        "alt": "Referencia pendiente de una cabina A320 de la misma variante de MSFS que permita distinguir zonas de información y de mando sin inventar posiciones.",
+        "purpose": "Indicar que el reconocimiento físico requiere una referencia fiel de la variante cargada.",
+        "teaches": "Evitar atribuir funciones a una cabina no verificada.",
+        "primaryTeachingObjective": "Verificar la variante",
+        "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"],
+        "tiedToStep": 2,
+        "expectedObservation": "La cabina observada puede diferir de cualquier referencia externa y solo se identifica lo que coincide con la variante cargada.",
+        "view": "instrumento",
+        "visualCategory": "reference",
+        "fidelity": "recreated-faithful",
+        "recognitionGoal": "Reconoce que necesita una referencia de la misma variante A320 para identificar zonas de cabina con seguridad.",
+        "recognizedElements": ["variante A320", "zona de información", "zona de mando"],
+        "actionAfterViewing": "No asignes funciones por apariencia; verifica la documentación o ayuda de la variante antes de usar un control.",
+        "quality": {
+          "sourceWidth": 1920,
+          "sourceHeight": 1080,
+          "intendedDisplayWidth": 760,
+          "supportsZoom": true,
+          "detailTarget": "Zonas de información y mando de la cabina de la misma variante A320 cargada en MSFS."
+        },
+        "coverage": ["cockpit", "instrument"],
+        "requiresReference": true
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "Falta una referencia fiel de la variante A320 instalada; la lección la declara pendiente en lugar de recrear la cabina."
+        },
+        {
+          "type": "instrument",
+          "status": "notRequired",
+          "reason": "Este paso no enseña lectura de instrumentos y no debe usar una pantalla de otra variante como referencia operativa."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Practica una supervisión deliberada",
+      "instruction": "Elige una sola indicación o control que ya puedas identificar con seguridad en tu variante, pero no lo muevas todavía. Di qué estado observas ahora y qué comprobarías después de una acción futura. Si no puedes describir ambas cosas sin inventar un valor o modo, no actúes: vuelve a la ayuda de la aeronave.",
+      "explanation": "La supervisión comienza antes del movimiento: primero se observa el estado presente, luego se formula qué se quiere confirmar y al final se compara el resultado. Este orden reduce la carga de una cabina compleja y mantiene la práctica dentro de lo que tu variante realmente muestra.",
+      "expectedResult": "Puedes expresar una comprobación en tres partes: estado actual, resultado que verificarías y condición para detenerte. No es necesario accionar el control. Si aparece incertidumbre, sabes que detenerte y verificar es el resultado correcto de la práctica.",
+      "simulatorAction": "Mantén el avión estacionado. No se prescriben modos, valores, palancas ni botones: el siguiente bloque de la ruta tratará las pantallas y el FCU con referencias verificadas.",
+      "visual": {
+        "type": "diagram",
+        "asset": "content/assets/a320-cockpit-supervision-flow.svg",
+        "alt": "Flujo conceptual para una práctica estacionada: observar el estado, identificar qué se necesita entender, comprobar el resultado y detenerse ante una duda.",
+        "purpose": "Fijar el orden de observación y comprobación antes de actuar en una cabina A320.",
+        "teaches": "Aplicar una secuencia de supervisión sin adivinar acciones.",
+        "primaryTeachingObjective": "Ordenar la supervisión",
+        "perspective": "Flujo conceptual de izquierda a derecha",
+        "movingElement": "Información observada",
+        "axisOfMovement": "Flujo de decisión",
+        "directionOfMovement": "De observar a comprobar",
+        "userQuestionAnswered": ["dondeMirar", "queCambioEsperar", "queErrorEvitar"],
+        "tiedToStep": 3,
+        "expectedObservation": "El flujo obliga a detener la práctica cuando no se puede identificar o comprobar un resultado con certeza.",
+        "view": "flujo",
+        "visualCategory": "conceptual",
+        "fidelity": "conceptual",
+        "recognitionGoal": "Reconoce que observar, identificar y comprobar preceden a la siguiente acción.",
+        "recognizedElements": ["estado", "intención", "comprobación", "duda"],
+        "actionAfterViewing": "Formula una comprobación concreta o detén la práctica para verificar la variante.",
+        "coverage": ["cockpit"]
+      },
+      "requiredVisualCoverage": [
+        {
+          "type": "cockpit",
+          "status": "notRequired",
+          "reason": "La secuencia enseña una relación de decisión y no pretende reconocer una posición física concreta de cabina."
+        },
+        {
+          "type": "hardware",
+          "status": "notRequired",
+          "reason": "La práctica no pide mover hardware ni declara una asignación para el VelocityOne Flight."
+        }
+      ]
+    }
+  ],
+  "practice": {
+    "title": "Recorrido de supervisión en cabina",
+    "scenario": "A320 de tu instalación de MSFS 2024 estacionado, con la cabina visible y sin intención de iniciar rodaje o vuelo.",
+    "task": "Haz el ciclo tres veces: observa una zona que reconozcas, di qué información puedes confirmar y explica qué resultado comprobarías antes de una acción futura. No muevas un control que no hayas verificado en la variante cargada.",
+    "successSignal": "Completas tres recorridos sin accionar controles desconocidos y puedes decir cuándo debes detenerte para verificar.",
+    "conceptDemonstrated": "Supervisión del control digital",
+    "possibleConfounders": [
+      "Una cabina de otra variante o complemento puede tener presentación distinta.",
+      "La posición inicial de MSFS puede mostrar sistemas ya configurados.",
+      "Una asignación del VelocityOne puede no corresponder al perfil activo."
+    ],
+    "whyThisExerciseDemonstratesTheConcept": "Mantener el avión estacionado aísla la relación entre observar, identificar y comprobar, sin mezclarla con rodaje, potencia o navegación. El alumno demuestra el concepto cuando rechaza una suposición y usa una referencia específica de su variante antes de actuar."
+  },
+  "commonMistakes": [
+    {
+      "mistake": "Tratar fly-by-wire como si la automatización eliminara la necesidad de observar el resultado.",
+      "recovery": "Vuelve al ciclo orden, procesamiento, respuesta y supervisión; no continúes hasta poder decir qué comprobarías."
+    },
+    {
+      "mistake": "Usar una foto, vídeo o guía de otro A320 para asumir una posición o una función.",
+      "recovery": "Confirma la variante exacta cargada y consulta su ayuda interactiva o documentación antes de tocar el control."
+    },
+    {
+      "mistake": "Empezar a explorar mientras el avión se mueve o con una sesión no preparada.",
+      "recovery": "Detén la práctica, vuelve a una situación estacionada y reanuda solo la observación."
+    }
+  ],
+  "checklist": [
+    "A320 estacionado antes de explorar la cabina.",
+    "Puedo explicar el ciclo orden, procesamiento, respuesta y supervisión.",
+    "No he asignado una función a un control que no pude verificar.",
+    "He separado una referencia de mi variante de una imagen genérica.",
+    "Sé que una duda exige detener la práctica y verificar."
+  ],
+  "quiz": [
+    {
+      "question": "¿Qué describe mejor el objetivo inicial de la transición al A320?",
+      "options": [
+        "Memorizar todos los botones de una foto de cabina.",
+        "Seguir una orden desde la intención hasta el resultado y supervisarlo.",
+        "Aplicar los mismos controles a toda variante disponible en MSFS."
+      ],
+      "answer": "Seguir una orden desde la intención hasta el resultado y supervisarlo.",
+      "explanation": "La filosofía fly-by-wire exige relacionar la orden con un resultado observado; las disposiciones y funciones se verifican en la variante concreta."
+    },
+    {
+      "question": "Si la cabina de tu A320 no coincide con una referencia externa, ¿qué haces?",
+      "options": [
+        "Uso la referencia externa porque todos los A320 son idénticos.",
+        "Adivino la función por la forma del control.",
+        "No actúo por suposición y verifico la variante cargada."
+      ],
+      "answer": "No actúo por suposición y verifico la variante cargada.",
+      "explanation": "La commonality no sustituye una referencia fiel de la aeronave y versión que estás usando."
+    }
+  ],
+  "completionCriteria": [
+    "Explicas con tus palabras la relación entre una orden fly-by-wire y la supervisión del resultado.",
+    "Completas tres recorridos de observación con el A320 estacionado y sin accionar un control no verificado.",
+    "Ante una diferencia de cabina, indicas que debes comprobar la variante antes de continuar."
+  ],
+  "sources": [
+    {
+      "title": "Airbus A320 Family: cockpit and fly-by-wire",
+      "url": "https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft/a320-family",
+      "verified": true
+    },
+    {
+      "title": "Airbus Cockpits: A320 cockpit commonality",
+      "url": "https://www.airbus.com/en/products-services/commercial-aircraft/cockpits",
+      "verified": true
+    },
+    {
+      "title": "Airbus: Safety innovation #1, fly-by-wire",
+      "url": "https://www.airbus.com/en/newsroom/stories/2022-06-safety-innovation-1-fly-by-wire-fbw",
+      "verified": true
+    }
+  ]
+}

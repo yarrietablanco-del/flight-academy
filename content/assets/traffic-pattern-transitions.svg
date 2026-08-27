@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Secuencia observable de transición del circuito</title>
+  <desc id="desc">Cinco tarjetas conectadas muestran qué observar para pasar de salida a viento cruzado, viento en cola, base y final.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L9 4L0 8Z" fill="#185a9d"/></marker></defs>
+  <rect width="1200" height="560" fill="#f7fbfe"/>
+  <text x="60" y="62" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#17324d">No sigas una forma: observa antes de enlazar el siguiente tramo</text>
+  <g font-family="Arial, sans-serif">
+    <g><rect x="55" y="125" width="190" height="270" rx="14" fill="#d8e9f7" stroke="#185a9d" stroke-width="3"/><text x="78" y="172" font-size="23" font-weight="700" fill="#17324d">1. Salida</text><text x="78" y="220" font-size="18" fill="#17324d">Trayectoria</text><text x="78" y="248" font-size="18" fill="#17324d">estable y</text><text x="78" y="276" font-size="18" fill="#17324d">espacio seguro</text></g>
+    <path d="M250 260H290" stroke="#185a9d" stroke-width="8" marker-end="url(#arrow)"/>
+    <g><rect x="300" y="125" width="190" height="270" rx="14" fill="#d8e9f7" stroke="#185a9d" stroke-width="3"/><text x="317" y="172" font-size="23" font-weight="700" fill="#17324d">2. Cruzado</text><text x="317" y="220" font-size="18" fill="#17324d">Giro suave;</text><text x="317" y="248" font-size="18" fill="#17324d">mira pista y</text><text x="317" y="276" font-size="18" fill="#17324d">tráfico simulado</text></g>
+    <path d="M495 260H535" stroke="#185a9d" stroke-width="8" marker-end="url(#arrow)"/>
+    <g><rect x="545" y="125" width="190" height="270" rx="14" fill="#d8e9f7" stroke="#185a9d" stroke-width="3"/><text x="560" y="172" font-size="23" font-weight="700" fill="#17324d">3. En cola</text><text x="560" y="220" font-size="18" fill="#17324d">Pista a un lado;</text><text x="560" y="248" font-size="18" fill="#17324d">observa tu</text><text x="560" y="276" font-size="18" fill="#17324d">posición</text></g>
+    <path d="M740 260H780" stroke="#185a9d" stroke-width="8" marker-end="url(#arrow)"/>
+    <g><rect x="790" y="125" width="160" height="270" rx="14" fill="#d8e9f7" stroke="#185a9d" stroke-width="3"/><text x="818" y="172" font-size="23" font-weight="700" fill="#17324d">4. Base</text><text x="810" y="220" font-size="18" fill="#17324d">Alineación</text><text x="810" y="248" font-size="18" fill="#17324d">se acerca</text></g>
+    <path d="M955 260H995" stroke="#185a9d" stroke-width="8" marker-end="url(#arrow)"/>
+    <g><rect x="1005" y="125" width="140" height="270" rx="14" fill="#d8e9f7" stroke="#185a9d" stroke-width="3"/><text x="1020" y="172" font-size="23" font-weight="700" fill="#17324d">5. Final</text><text x="1020" y="220" font-size="18" fill="#17324d">Pista</text><text x="1020" y="248" font-size="18" fill="#17324d">delante</text></g>
+    <text x="60" y="472" font-size="20" fill="#38536a">Si no puedes describir la posición, la pista o la trayectoria, estabiliza o reinicia la práctica: este flujo no reemplaza un procedimiento real.</text>
+  </g>
+</svg>

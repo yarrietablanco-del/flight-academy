@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Decisión entre aterrizar y frustrar</title>
+  <desc id="desc">Diagrama de flujo conceptual que separa una aproximación estable, que puede continuar a una toma, de una aproximación inestable, que conduce a una frustrada y a otro intento.</desc>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#c8e1ed"/></marker></defs>
+  <rect width="1200" height="700" fill="#071a2b"/>
+  <text x="600" y="76" fill="#f4f8fa" font-family="Arial, sans-serif" font-size="40" font-weight="700" text-anchor="middle">DECISIÓN EN FINAL</text>
+  <rect x="430" y="122" width="340" height="105" rx="16" fill="#14384b" stroke="#c8e1ed" stroke-width="3"/>
+  <text x="600" y="166" fill="#f4f8fa" font-family="Arial, sans-serif" font-size="27" text-anchor="middle">¿La pista y la trayectoria</text><text x="600" y="202" fill="#f4f8fa" font-family="Arial, sans-serif" font-size="27" text-anchor="middle">siguen siendo comprensibles?</text>
+  <path d="M520 228 L300 325" fill="none" stroke="#c8e1ed" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M680 228 L900 325" fill="none" stroke="#c8e1ed" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="388" y="286" fill="#52d6a0" font-family="Arial, sans-serif" font-size="28" font-weight="700">SÍ</text>
+  <text x="784" y="286" fill="#ff9b85" font-family="Arial, sans-serif" font-size="28" font-weight="700">NO</text>
+  <rect x="92" y="332" width="416" height="153" rx="16" fill="#103b35" stroke="#52d6a0" stroke-width="4"/>
+  <text x="300" y="382" fill="#e9fff5" font-family="Arial, sans-serif" font-size="31" font-weight="700" text-anchor="middle">CONTINÚA A LA TOMA</text>
+  <text x="300" y="423" fill="#d9f3e7" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">Mantén la observación.</text><text x="300" y="454" fill="#d9f3e7" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">No persigas una imagen fija.</text>
+  <rect x="692" y="332" width="416" height="153" rx="16" fill="#522c2e" stroke="#ff9b85" stroke-width="4"/>
+  <text x="900" y="382" fill="#fff0ed" font-family="Arial, sans-serif" font-size="31" font-weight="700" text-anchor="middle">FRUSTRA</text>
+  <text x="900" y="423" fill="#ffe0d9" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">Recupera una trayectoria clara</text><text x="900" y="454" fill="#ffe0d9" font-family="Arial, sans-serif" font-size="24" text-anchor="middle">y prepara otro intento.</text>
+  <path d="M900 488 C900 605 610 620 600 535" fill="none" stroke="#ff9b85" stroke-width="6" marker-end="url(#arrow)"/>
+  <rect x="388" y="530" width="424" height="100" rx="16" fill="#243b55" stroke="#c8e1ed" stroke-width="3"/>
+  <text x="600" y="572" fill="#f4f8fa" font-family="Arial, sans-serif" font-size="27" text-anchor="middle">Estabiliza, reevalúa</text><text x="600" y="606" fill="#f4f8fa" font-family="Arial, sans-serif" font-size="27" text-anchor="middle">y vuelve a intentarlo.</text>
+</svg>

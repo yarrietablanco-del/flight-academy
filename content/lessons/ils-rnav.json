@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "id": "ils-rnav",
+    "title": "ILS y RNAV",
+    "subtitle": "Distingue la trayectoria lateral de la vertical antes de practicar una aproximación.",
+    "objective": "Distinguir guiado lateral y vertical.",
+    "estimatedTime": "25 min",
+    "prerequisites": ["approach-charts"],
+    "level": 4,
+    "module": "instrument-and-procedures",
+    "visualStandardVersion": 3
+  },
+  "whyItMatters": "Una aproximación puede guiar el avión hacia el eje de pista, hacia una trayectoria de descenso, o hacia ambas. Separar lateral de vertical impide asumir que una línea en la pantalla autoriza un descenso. En MSFS esta distinción ayuda a leer el procedimiento cargado; en operación real mandan la carta vigente, la autorización, el equipo aprobado y sus indicaciones.",
+  "concepts": [
+    {"term": "Guiado lateral", "meaning": "Indica la posición respecto de una trayectoria en el plano horizontal: izquierda o derecha. No comunica por sí mismo una altura ni una autorización para descender."},
+    {"term": "Guiado vertical", "meaning": "Indica la posición respecto de una trayectoria de descenso: por encima o por debajo. Solo se usa cuando el procedimiento, los mínimos y el equipo aplicable proporcionan ese guiado."},
+    {"term": "ILS", "meaning": "El Instrument Landing System proporciona guiado de curso mediante localizador y guiado de descenso mediante glide slope cuando el sistema está operativo y se usa el procedimiento publicado aplicable."},
+    {"term": "RNAV", "meaning": "La navegación de área sigue una trayectoria definida por el procedimiento. Una aproximación RNAV puede publicar opciones con solo guiado lateral o con guiado vertical; la línea de mínimos y la capacidad verificada determinan cuál corresponde."}
+  ],
+  "steps": [
+    {
+      "number": 1,
+      "title": "Separa dirección y altura",
+      "instruction": "Mira primero el diagrama. En la vista superior señala la posición lateral; en la vista lateral señala la posición vertical. Si las dos preguntas te parecen la misma, vuelve a mirar una vista cada vez y nómbrala antes de abrir MSFS.",
+      "explanation": "Lateral responde dónde está el avión a cada lado de la trayectoria. Vertical responde dónde está respecto de una trayectoria de descenso. Una aproximación puede ofrecer una, la otra o ambas; por eso una indicación lateral no prueba que exista guiado vertical.",
+      "expectedResult": "Puedes decir “izquierda o derecha” al mirar desde arriba y “por encima o por debajo” al mirar de lado. Si no puedes, no intentes interpretar una indicación de aproximación todavía.",
+      "simulatorAction": "Práctica de simulación: deja el avión en pausa o en posición segura. No cambies modos ni controles; usa este paso para asociar cada dimensión con lo que observarás después en la aviónica disponible.",
+      "visual": {"type": "comparisonDiagram", "asset": "content/assets/ils-rnav-lateral-vertical.svg", "alt": "Comparación conceptual entre una vista superior de guiado lateral hacia el eje de pista y una vista lateral de guiado vertical hacia la trayectoria de descenso.", "purpose": "Separar visualmente las dos dimensiones que una aproximación puede guiar.", "teaches": "Distinguir la desviación lateral de la desviación vertical sin depender de una cabina concreta.", "primaryTeachingObjective": "Separar dimensiones de guiado", "perspective": "Vistas superior y lateral conceptuales", "movingElement": "Trayectoria de la aeronave", "axisOfMovement": "Planos horizontal y vertical", "directionOfMovement": "Hacia la pista", "comparisonJustification": "La comparación es necesaria porque el objetivo es diferenciar dos dimensiones de guiado que se observan desde perspectivas distintas.", "userQuestionAnswered": ["dondeMirar", "queCambioEsperar", "queErrorEvitar"], "tiedToStep": 1, "expectedObservation": "La vista superior muestra convergencia hacia el eje y la lateral muestra convergencia hacia la trayectoria de descenso.", "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que lateral y vertical responden preguntas distintas sobre la posición del avión.", "recognizedElements": ["vista superior", "eje de pista", "vista lateral", "trayectoria de descenso"], "actionAfterViewing": "Nombra la dimensión observada antes de interpretar cualquier indicación en MSFS."},
+      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "El paso introduce una relación conceptual y no se proporcionó una referencia fiel de la aviónica elegida."}]
+    },
+    {
+      "number": 2,
+      "title": "Compara qué puede entregar cada sistema",
+      "instruction": "Mira las dos columnas del diagrama. Para ILS, relaciona localizador con lateral y glide slope con vertical. Para RNAV, lee que el guiado vertical no se supone: debe estar disponible para la línea de mínimos y el equipo que verificaste. Si una etiqueta no coincide con tu carta, no la generalices.",
+      "explanation": "Un ILS usa el localizador para el curso y el glide slope para el descenso. RNAV describe la forma de navegar, no una promesa única de guiado vertical. En una carta RNAV, la línea de mínimos aplicable y la capacidad del equipo separan una aproximación lateral de una con guía vertical.",
+      "expectedResult": "Explicas que ILS y RNAV no se distinguen solo por una aguja o una línea dibujada. También identificas que una RNAV debe revisarse en su carta y equipo antes de afirmar que ofrece trayectoria vertical.",
+      "simulatorAction": "En MSFS 2024, abre el planificador o la navegación de la aeronave solo para localizar los nombres de procedimientos disponibles. No copies frecuencias, mínimos ni modos desde este diagrama conceptual; usa la publicación y aeronave de tu sesión.",
+      "visual": {"type": "comparisonDiagram", "asset": "content/assets/ils-rnav-guidance-comparison.svg", "alt": "Diagrama conceptual que compara el origen del guiado lateral y vertical de un ILS con la necesidad de verificar procedimiento, mínimos y equipo para una RNAV.", "purpose": "Contrastar el origen del guiado ILS con las condiciones que determinan el guiado disponible en RNAV.", "teaches": "Evitar asumir que toda aproximación RNAV incluye guiado vertical.", "primaryTeachingObjective": "Comparar disponibilidad de guiado", "perspective": "Comparación conceptual de sistemas", "movingElement": "Flujo de información de guiado", "axisOfMovement": "No aplica: flujo informativo", "directionOfMovement": "Hacia la aeronave", "comparisonJustification": "La comparación permite separar la fuente terrestre del ILS de la verificación documental y de equipo requerida en RNAV.", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 2, "expectedObservation": "ILS asocia localizador con lateral y glide slope con vertical, mientras RNAV exige verificar la opción publicada y el equipo.", "view": "comparacion", "visualCategory": "conceptual", "fidelity": "conceptual", "recognitionGoal": "Reconoce que la disponibilidad de guiado RNAV no puede inferirse únicamente de su nombre.", "recognizedElements": ["localizador", "glide slope", "trayectoria RNAV", "línea de mínimos"], "actionAfterViewing": "Busca en la carta aplicable qué línea de mínimos y qué guiado corresponden a tu sesión."},
+      "requiredVisualCoverage": [{"type": "chart", "status": "notRequired", "reason": "No se proporcionó una carta vigente; un diagrama conceptual no sustituye la lectura de mínimos de un procedimiento real."}]
+    },
+    {
+      "number": 3,
+      "title": "Verifica la carta del procedimiento",
+      "instruction": "Abre una carta vigente del ILS o RNAV que pretendes cargar. Confirma aeropuerto, pista, título, revisión y línea de mínimos que estudiarás. Después localiza las notas y el perfil asociados. Si falta cualquiera de esos datos o la carta no coincide con la sesión, detén el ejercicio y consigue la referencia correcta.",
+      "explanation": "La carta vincula la trayectoria, las restricciones y los mínimos de una aproximación concreta. Un nombre de procedimiento en el simulador no confirma por sí solo señal, guiado vertical, disponibilidad ni autorización. Leer la carta evita trasladar conclusiones de otro aeropuerto, pista o línea de mínimos.",
+      "expectedResult": "Tienes una carta aplicable o declaras la práctica pendiente. Puedes señalar la línea de mínimos y explicar si estudiarás solo lateral o lateral con vertical, sin escribir valores en esta lección.",
+      "simulatorAction": "Compara el procedimiento elegido en MSFS con la carta ya verificada. Esta es una práctica de simulación; MSFS no sustituye publicaciones vigentes, NOTAM, certificación de equipo ni una autorización IFR real.",
+      "visual": {"type": "chartExplanation", "requiresReference": true, "alt": "Contrato de referencia para una carta de aproximación real cuya identificación y línea de mínimos deben verificarse antes de clasificar el guiado disponible.", "purpose": "Exigir una carta vigente para relacionar guiado, perfil y mínimos de un procedimiento concreto.", "teaches": "Verificar la referencia documental antes de interpretar la disponibilidad de guiado.", "primaryTeachingObjective": "Confirmar carta aplicable", "perspective": "Referencia documental real", "movingElement": "No aplica", "axisOfMovement": "No aplica", "directionOfMovement": "No aplica", "userQuestionAnswered": ["dondeMirar", "queErrorEvitar"], "tiedToStep": 3, "expectedObservation": "En una carta real se reconocen título, aeropuerto, pista, revisión, perfil y líneas de mínimos del procedimiento.", "view": "flujo", "visualCategory": "reference", "fidelity": "real", "recognitionGoal": "Reconoce que solo una carta vigente permite clasificar el guiado de un procedimiento específico.", "recognizedElements": ["título", "pista", "perfil", "mínimos"], "actionAfterViewing": "Detén la práctica si la carta no coincide y vuelve a seleccionarla antes de cargar la aproximación.", "quality": {"sourceWidth": 1200, "sourceHeight": 1600, "intendedDisplayWidth": 600, "supportsZoom": true, "detailTarget": "Identificación, perfil y línea de mínimos de la carta vigente."}},
+      "requiredVisualCoverage": [{"type": "chart", "status": "notRequired", "reason": "No se proporcionó una carta vigente concreta y recrearla impediría verificar el procedimiento real de la sesión."}]
+    },
+    {
+      "number": 4,
+      "title": "Observa la indicación sin adivinar modos",
+      "instruction": "Con una aeronave y procedimiento compatibles en MSFS, carga primero una aproximación y observa qué fuente, ruta y anunciaciones muestra su aviónica. Repite con la otra solo si aparece disponible. Si la fuente, la ruta o la indicación no coinciden con la carta y el procedimiento cargado, abandona la comparación y revisa la selección.",
+      "explanation": "La presentación y los controles cambian entre aeronaves y complementos, por lo que no existe una posición universal que esta lección pueda afirmar. La observación útil es relacionar una indicación lateral o vertical con la carta verificada, no activar un modo por parecido visual.",
+      "expectedResult": "Identificas qué dimensión muestra la aeronave durante cada aproximación disponible y no concluyes que hay guiado vertical si no puedes verificarlo. Si el avión no ofrece una de las aproximaciones, registras ese límite.",
+      "simulatorAction": "Práctica de simulación: realiza la comparación en condiciones seguras, con pausa si hace falta. No uses esta práctica como guía operacional real ni como sustituto de entrenamiento, procedimientos o autorizaciones aplicables.",
+      "visual": {"type": "instrumentDiagram", "requiresReference": true, "alt": "Contrato de referencia para la aviónica real de una aeronave de MSFS donde deben observarse fuente de navegación y desviaciones antes de interpretar el guiado.", "purpose": "Indicar que la lectura de fuente y desviaciones requiere una referencia fiel de la aeronave usada.", "teaches": "Comprobar la indicación de la aviónica contra el procedimiento verificado.", "primaryTeachingObjective": "Verificar indicación de aviónica", "perspective": "Referencia de instrumento real", "movingElement": "Indicaciones de desviación", "axisOfMovement": "Pantalla de instrumento", "directionOfMovement": "Según la desviación mostrada", "userQuestionAnswered": ["dondeMirar", "queCambioEsperar", "queErrorEvitar"], "tiedToStep": 4, "expectedObservation": "La fuente de navegación y las indicaciones disponibles se leen en la aviónica concreta de la aeronave seleccionada.", "view": "instrumento", "visualCategory": "reference", "fidelity": "real", "recognitionGoal": "Reconoce que la cabina concreta determina dónde verificar fuente y desviaciones.", "recognizedElements": ["fuente", "desviación lateral", "desviación vertical", "anunciación"], "actionAfterViewing": "Compara la indicación con la carta y detén la práctica si no coinciden.", "quality": {"sourceWidth": 1920, "sourceHeight": 1080, "intendedDisplayWidth": 720, "supportsZoom": true, "detailTarget": "Fuente activa y desviaciones de la aviónica de la aeronave usada."}},
+      "requiredVisualCoverage": [{"type": "instrument", "status": "notRequired", "reason": "No se proporcionó una referencia fiel de la aviónica y sus anunciaciones cambian según aeronave y complemento."}, {"type": "cockpit", "status": "notRequired", "reason": "No se proporcionó una cabina concreta y esta lección no afirma controles ni modos universales."}, {"type": "hardware", "status": "notRequired", "reason": "No se confirmó perfil ni asignación de VelocityOne para seleccionar o armar navegación."}]
+    }
+  ],
+  "practice": {
+    "title": "Comparación documentada de guiado disponible",
+    "scenario": "En MSFS 2024, elige un aeropuerto y una aeronave que presenten una aproximación ILS y, si está disponible, una RNAV. Reúne primero las cartas vigentes aplicables. Es una práctica de simulación, no una operación IFR real ni una comprobación de capacidad certificada.",
+    "task": "Para cada procedimiento disponible, anota su título y la línea de mínimos que estudiarás. Clasifica en tu nota el guiado lateral y vertical que la carta permite estudiar. Carga solo el procedimiento que coincida y observa la fuente y desviaciones que muestre la aeronave. Detén la comparación ante cualquier discrepancia.",
+    "successSignal": "Puedes clasificar cada procedimiento observado como lateral o lateral con vertical basándote en su carta y capacidad verificada, no en una suposición. También puedes explicar qué dato faltó cuando no pudiste hacer la comparación.",
+    "conceptDemonstrated": "Clasificación de guiado disponible",
+    "possibleConfounders": ["Confundir el nombre RNAV con una garantía de guiado vertical.", "Usar una carta de otra pista, revisión o aeropuerto.", "Interpretar una indicación de aviónica sin confirmar su fuente activa.", "Suponer que dos aeronaves de MSFS muestran o configuran el guiado igual."],
+    "whyThisExerciseDemonstratesTheConcept": "La práctica obliga a separar primero la información publicada de la presentación del simulador. Al clasificar lateral y vertical antes de mirar la aviónica, evita que una indicación o el nombre del procedimiento sustituya la carta. Comparar solo procedimientos y equipo disponibles mantiene el ejercicio verificable sin inventar una cabina, mínimos o asignaciones de hardware."
+  },
+  "commonMistakes": [
+    {"mistake": "Tratar una desviación lateral como autorización para iniciar o continuar un descenso.", "recovery": "Vuelve a separar las dos preguntas: confirma la trayectoria vertical publicada, la línea de mínimos y la indicación aplicable antes de interpretar altura."},
+    {"mistake": "Concluir que toda RNAV tiene guiado vertical.", "recovery": "Revisa la carta vigente y la capacidad verificada de la aeronave; si no puedes confirmarlas, clasifica el guiado vertical como no verificado."},
+    {"mistake": "Usar el procedimiento cargado en MSFS como sustituto de una carta vigente.", "recovery": "Detén la práctica, compara título, pista y revisión con la publicación aplicable y vuelve a cargar solo una coincidencia."},
+    {"mistake": "Copiar modos o controles de otra aeronave.", "recovery": "Consulta la referencia de la aeronave que estás usando y limita la práctica a observar fuente y desviaciones disponibles."}
+  ],
+  "checklist": [
+    "Carta vigente identificada por aeropuerto, pista, título y revisión antes de clasificar el guiado.",
+    "Guiado lateral explicado como posición izquierda o derecha respecto de la trayectoria.",
+    "Guiado vertical explicado como posición por encima o por debajo de una trayectoria de descenso.",
+    "Línea de mínimos y capacidad de equipo verificadas antes de afirmar guiado vertical RNAV.",
+    "Fuente e indicaciones de la aviónica comparadas con el procedimiento cargado solo en la aeronave usada.",
+    "Diferencia entre práctica en MSFS y operación IFR real mantenida durante todo el ejercicio."
+  ],
+  "quiz": [
+    {"question": "¿Qué pregunta responde el guiado lateral?", "options": ["Si el avión está a izquierda o derecha de la trayectoria.", "Si el avión está por encima o por debajo de la trayectoria de descenso.", "Qué mínimos se pueden usar sin revisar la carta."], "answer": "Si el avión está a izquierda o derecha de la trayectoria.", "explanation": "El guiado lateral sitúa la aeronave en el plano horizontal; no determina una altura."},
+    {"question": "¿Qué debes verificar antes de afirmar que una RNAV proporciona guiado vertical?", "options": ["La línea de mínimos, el procedimiento y la capacidad aplicable del equipo.", "Solo que el nombre de la aproximación contiene RNAV.", "Solo que el avión muestra una ruta hacia la pista."], "answer": "La línea de mínimos, el procedimiento y la capacidad aplicable del equipo.", "explanation": "RNAV no expresa por sí sola qué guiado vertical está disponible para una aproximación concreta."},
+    {"question": "En un ILS, ¿qué componente proporciona el guiado de curso hacia el eje de pista?", "options": ["El localizador.", "El glide slope.", "La línea de mínimos."], "answer": "El localizador.", "explanation": "El localizador entrega la referencia lateral; el glide slope entrega la referencia vertical."}
+  ],
+  "completionCriteria": [
+    "Explicaste lateral y vertical con sus respectivas preguntas de posición sin mezclarlas.",
+    "Identificaste en una carta vigente la línea de mínimos que estudiarías antes de clasificar el guiado RNAV.",
+    "Relacionaste localizador con guiado lateral y glide slope con guiado vertical en el ILS.",
+    "Registraste una discrepancia o límite de aeronave en vez de deducir un modo, una señal o guiado vertical no verificado.",
+    "Mantuviste la práctica en MSFS separada de los requisitos de una operación IFR real."
+  ],
+  "sources": [
+    {"title": "FAA Aeronautical Information Manual, 1-1-9 Instrument Landing System", "url": "https://www.faa.gov/air_traffic/publications/atpubs/aim_html/chap1_section_1.html", "verified": true},
+    {"title": "FAA Aeronautical Information Manual, 5-4-5 Instrument Approach Procedure Charts", "url": "https://www.faa.gov/Air_traffic/publications/atpubs/aim_html/chap5_section_4.html", "verified": true},
+    {"title": "Microsoft Flight Simulator Support", "url": "https://flightsimulator.zendesk.com/hc/en-us", "verified": true}
+  ]
+}
