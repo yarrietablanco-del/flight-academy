@@ -23,6 +23,8 @@ jobs:
         run: npm ci
       - name: Apply final audit fixes
         run: node authoring/apply-final-audit-fixes.mjs
+      - name: Normalize schema fields
+        run: node authoring/apply-final-validator-fixes.mjs
       - name: Final 33-lesson audit
         run: node authoring/audit-all-lessons.mjs
       - name: Validate content
