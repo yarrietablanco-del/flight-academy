@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">A320neo V2 — MCDU PERF TAKEOFF</title>
+<desc id="desc">Recreación educativa de la lógica de una página PERF TAKEOFF del A320neo V2, con campos V1, VR y V2 mostrados como valores provenientes de la fuente de performance del vuelo, sin números inventados.</desc>
+<rect width="1600" height="900" fill="#111518"/>
+<text x="70" y="65" fill="#fff" font-family="Arial" font-size="34" font-weight="700">A320neo V2 · MCDU PERF TAKEOFF</text>
+<text x="70" y="103" fill="#aab5bb" font-family="Arial" font-size="18">La página recibe datos del vuelo; no crea valores universales</text>
+<rect x="360" y="145" width="650" height="650" rx="26" fill="#2c3032" stroke="#858d91" stroke-width="4"/>
+<rect x="420" y="200" width="530" height="380" rx="8" fill="#06110b" stroke="#5d6964" stroke-width="3"/>
+<text x="685" y="240" text-anchor="middle" fill="#fff" font-family="monospace" font-size="24">PERF TO</text>
+<text x="455" y="292" fill="#e5e5e5" font-family="monospace" font-size="18">V1</text><text x="565" y="292" fill="#5be6ff" font-family="monospace" font-size="20">[FROM PERF]</text>
+<text x="455" y="342" fill="#e5e5e5" font-family="monospace" font-size="18">VR</text><text x="565" y="342" fill="#5be6ff" font-family="monospace" font-size="20">[FROM PERF]</text>
+<text x="455" y="392" fill="#e5e5e5" font-family="monospace" font-size="18">V2</text><text x="565" y="392" fill="#5be6ff" font-family="monospace" font-size="20">[FROM PERF]</text>
+<text x="455" y="462" fill="#e5e5e5" font-family="monospace" font-size="18">FLAPS/THS</text><text x="635" y="462" fill="#65ff8e" font-family="monospace" font-size="18">[VERIFY]</text>
+<text x="455" y="512" fill="#e5e5e5" font-family="monospace" font-size="18">FLEX / TO DATA</text><text x="680" y="512" fill="#65ff8e" font-family="monospace" font-size="18">[VERIFY]</text>
+<g fill="#161a1c" stroke="#858d91" stroke-width="2"><rect x="420" y="610" width="75" height="55" rx="6"/><rect x="515" y="610" width="75" height="55" rx="6"/><rect x="610" y="610" width="75" height="55" rx="6"/><rect x="705" y="610" width="75" height="55" rx="6"/><rect x="800" y="610" width="75" height="55" rx="6"/><rect x="895" y="610" width="55" height="55" rx="6"/></g>
+<text x="460" y="645" fill="#fff" font-family="Arial" font-size="14">INIT</text><text x="548" y="645" fill="#fff" font-family="Arial" font-size="14">F-PLN</text><text x="638" y="645" fill="#fff" font-family="Arial" font-size="14">PERF</text>
+<rect x="1060" y="170" width="460" height="590" rx="20" fill="#1d2428" stroke="#68767d" stroke-width="3"/>
+<text x="1095" y="215" fill="#fff" font-family="Arial" font-size="23" font-weight="700">Cadena de verificación</text>
+<g font-family="Arial" font-size="18"><rect x="1100" y="260" width="380" height="80" rx="12" fill="#27333a"/><text x="1130" y="295" fill="#fff">1. Escenario del vuelo</text><text x="1130" y="322" fill="#bac7cd" font-size="15">masa · pista · configuración · condiciones</text>
+<rect x="1100" y="370" width="380" height="80" rx="12" fill="#27333a"/><text x="1130" y="405" fill="#fff">2. Fuente de performance</text><text x="1130" y="432" fill="#bac7cd" font-size="15">misma variante / mismo escenario</text>
+<rect x="1100" y="480" width="380" height="80" rx="12" fill="#27333a"/><text x="1130" y="515" fill="#fff">3. MCDU PERF</text><text x="1130" y="542" fill="#bac7cd" font-size="15">introducir o confirmar datos trazables</text>
+<rect x="1100" y="590" width="380" height="80" rx="12" fill="#27333a"/><text x="1130" y="625" fill="#fff">4. PFD / salida</text><text x="1130" y="652" fill="#bac7cd" font-size="15">comprobar que la indicación corresponde</text></g>
+<path d="M1290 340v28M1290 450v28M1290 560v28" stroke="#f1c557" stroke-width="5" marker-end="url(#a)"/>
+<rect x="70" y="805" width="1450" height="55" rx="10" fill="#192126"/>
+<text x="100" y="839" fill="#dce5e9" font-family="Arial" font-size="17">V1 = decisión · VR = rotación · V2 = seguridad de despegue. Aprende el significado; el número se calcula para el vuelo y se verifica, nunca se memoriza.</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f1c557"/></marker></defs>
+</svg>
