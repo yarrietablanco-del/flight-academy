@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   audit:
@@ -21,6 +21,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Apply final audit fixes
+        run: node authoring/apply-final-audit-fixes.mjs
       - name: Final 33-lesson audit
         run: node authoring/audit-all-lessons.mjs
       - name: Validate content
@@ -31,3 +33,14 @@ jobs:
         run: npm run lint
       - name: Build
         run: npm run build
+      - name: Commit generated fixes
+        run: |
+          if git diff --quiet; then
+            echo "No generated changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/lessons content/assets reference-library
+          git commit -m "fix: close final operational competency gaps"
+          git push origin HEAD:chatgpt/final-33-audit
