@@ -34,6 +34,9 @@ temp/
 *.tmp
 *.temp
 
+# Copyright-restricted research sources; manifest links remain public.
+reference-library/source-cache/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

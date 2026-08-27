@@ -70,6 +70,23 @@ function validatePractice(file, practice) {
   return errors;
 }
 
+function validateRefinement(file, lesson) {
+  const errors = [];
+  const steps = lesson.steps ?? [];
+  for (const [index, step] of steps.entries()) if (step.number !== index + 1) errors.push(issue(file, 'los pasos deben formar una secuencia continua para lectura móvil.'));
+  for (const step of steps) {
+    const visuals = [step.visual, ...(step.referenceVisuals ?? [])].filter(Boolean);
+    for (const visual of visuals) {
+      if (visual.visualCategory === 'reference' && !visual.asset && visual.requiresReference !== true) errors.push(issue(file, `paso ${step.number} referencia operativa sin asset ni requiresReference:true.`));
+    }
+  }
+  const id = lesson.metadata?.id ?? '';
+  const operationalAdvanced = /^(sid-star|approach-charts|ils-rnav|a320-)/.test(id);
+  const references = steps.flatMap((step) => [step.visual, ...(step.referenceVisuals ?? [])]).filter((visual) => visual?.visualCategory === 'reference');
+  if (operationalAdvanced && references.length === 0) errors.push(issue(file, 'contenido avanzado operativo requiere una referencia fiel o una referencia declarada pendiente.'));
+  return errors;
+}
+
 function validate(file) {
   let lesson;
   try { lesson = JSON.parse(readFileSync(file, 'utf8')); } catch { return [issue(file, 'JSON inválido')]; }
@@ -78,6 +95,7 @@ function validate(file) {
   for (const key of ['id', 'title', 'subtitle', 'objective', 'estimatedTime', 'prerequisites', 'level', 'module']) if (lesson.metadata?.[key] === undefined || lesson.metadata[key] === '') errors.push(issue(file, `metadata.${key} falta`));
   if (lesson.metadata?.visualStandardVersion !== 3) errors.push(issue(file, 'requiere metadata.visualStandardVersion: 3 (Authoring Standard 1.0)'));
   errors.push(...validatePractice(file, lesson.practice));
+  errors.push(...validateRefinement(file, lesson));
   for (const step of lesson.steps ?? []) {
     for (const key of stepRequired) if (step[key] === undefined || step[key] === '') errors.push(issue(file, `paso ${step.number ?? '?'} sin ${key}`));
     errors.push(...validateVisual(file, step, step.visual, 'visual'));

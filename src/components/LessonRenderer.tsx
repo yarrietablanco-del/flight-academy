@@ -40,7 +40,9 @@ function LessonVisualFigure({ visual }: { visual: LessonDocument["steps"][number
   const source = visualUrl(visual.asset);
   const category = visual.visualCategory === "reference" ? "Referencia visual" : "Concepto";
   const guide = <div className="visual-guide"><p className={`visual-category ${visual.visualCategory}`}><strong>{category}</strong></p><p><strong>Estás viendo:</strong> {visual.alt}</p><p><strong>Reconoce:</strong> {visual.recognitionGoal}</p><p><strong>Después:</strong> {visual.actionAfterViewing}</p></div>;
-  const canZoom = visual.visualCategory === "reference" && visual.quality?.supportsZoom === true;
+  // La ampliación permite inspeccionar flechas, etiquetas y relaciones sin
+  // depender de microtexto en pantalla móvil.
+  const canZoom = Boolean(source);
   useEffect(() => {
     if (!isZoomed) return;
     const closeOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setIsZoomed(false); };

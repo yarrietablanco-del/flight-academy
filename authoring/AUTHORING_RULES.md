@@ -1,5 +1,14 @@
 # Flight Academy Authoring Standard 1.0
 
+## Refinamiento transversal y auditorÃ­a de uso
+
+13. Aplica la prueba de dos segundos a cada visual: un alumno nuevo debe identificar quÃ© mira, el orden y el cambio esperado. Un visual conserva un solo objetivo; divide cualquier diagrama que mezcle decisiones, perspectivas o secuencias. Conceptual no significa tosco: una aeronave debe tener silueta, perspectiva y sentido de movimiento inequÃ­vocos.
+14. Toda acciÃ³n de reconocimiento de interfaz (MSFS/EFB, G1000, PFD/MFD, MCDU, FCU, ND, ECAM, VelocityOne, carta, diagrama o vista exterior) exige referencia `real` o `recreated-faithful`, zona de atenciÃ³n, resultado esperado y zoom. Sin fuente fiel, usa `requiresReference: true`; no inventes la interfaz.
+15. Cartas, mapas y diagramas se enseÃ±an por capas: documento y vigencia, parte usada hoy, significado, orden de lectura, acciÃ³n en MSFS y comprobaciÃ³n. Un diagrama conceptual no sustituye una carta. En aeropuerto diferencia rampa/gate, calles, intersecciones, espera, pista, hotspots y frecuencias cuando correspondan.
+16. La prÃ¡ctica debe aislar una observaciÃ³n comprobable. Declara factores de confusiÃ³n y un resultado visible que demuestre el concepto, no solo una secuencia plausible.
+17. Toda promesa posterior enlaza una lecciÃ³n existente o declara su alcance. Para velocidades y performance no uses valores universales: identifica variante, POH y condiciones. El recorrido C172 prepara Vx, Vy y performance; el A320 prepara V1, VR, V2, performance, MCDU y PFD sin adelantar lecciones planned.
+18. Desde nivel 4, reemplaza paredes de texto por lectura guiada, visuales ampliables y trazabilidad explÃ­cita de continuidad, referencias operativas y aislamiento de prÃ¡ctica.
+
 Este estándar es obligatorio para `author:next`, `author:batch` y toda edición de una lección. Enseña a una persona sin experiencia a practicar un Airbus A320 o C172 en MSFS 2024 con Xbox y VelocityOne sin presentar simulación como procedimiento real.
 
 1. Lee `AGENTS.md`, este estándar, `lesson-schema.json` y el currículo antes de generar. Genera únicamente la lección solicitada y sus assets necesarios; no alteres el currículo ni la UI.

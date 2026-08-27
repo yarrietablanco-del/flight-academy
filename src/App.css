@@ -1690,6 +1690,7 @@ main {
 .visual-lightbox-content img { display: block; width: auto; height: auto; max-width: min(100%, calc(100vw - 84px)); max-height: calc(100vh - 150px); }
 .visual-lightbox-content p { max-width: 860px; margin: 0; color: var(--ink); font-size: 14px; }
 .visual-lightbox-close { position: absolute; z-index: 1; top: 6px; right: 6px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgba(10, 25, 34, .88); color: #fff; font-size: 28px; line-height: 1; cursor: pointer; }
+@media (max-width: 640px) { .visual-zoom-trigger span { right: 8px; bottom: 8px; font-size: 11px; } .visual-lightbox { padding: 12px; } .visual-lightbox-content { max-width: calc(100vw - 24px); max-height: calc(100vh - 24px); padding: 12px; } }
 .lesson-continuity {
   margin: 0 0 28px;
   padding: 20px;
